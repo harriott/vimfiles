@@ -1,6 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-# Sorry folks, I'm using unix line-endings even on my Windows system.
 
 # Ensure these won't be messed with:
 *.spl binary
