@@ -1,185 +1,120 @@
-vim: set ft=ghmarkdown fdm=expr: Joseph's useful (g)Vim commands
-
-----------------------------------------------------------------
-
-# Vim
-
-```
-arga $HOME/_vimrc $HOME/_gvimrc $HOME/vimfiles/vimrc_example.vim $VIMRUNTIME/mswin.vim |tab sall
-
-@:  => repeat last command-line
-K   => brings up a man page (if there is one) for word under cursor
-ga  => returns code values for character under cursor
-gQ  => enter Ex mode
-q:  => brings up an interactive history of :commands (in an editable window)
-vi  => exit Ex mode
-
-C-k<non-text-key>  => enters the Vim value of a non-text-key
-C-r"               => (in command line) insert the unnamed register
-:Tabularize/ =>    => aligns these lists
-:help index        => lists the all of the commands
-```
-
-# Shell
-
-```
-1C-g                => display full path of current file
-<shellcmd>|gvim -   => pipes shell command output into gvim
-gf                  => open file under cursor
-gx                  => open url under cursor
-C-r%                => inserts name of current file
-:!<shellcmd>        => runs the external shell command
-:Vexplore           => opens a netrw vertical directory browsing window
-                    => opens my configuration files
-:r!<shell command>  => reads shell command output into the buffer
-:tabe $HOME/_vimrc  => bring up my vimrc in a new tab
-```
-
-# Change
-
-```
-.        => repeat last change
-D        => delete to end of line
-I        => cursor to start of line and insert
-J        => join next line to current
-N        => search for next match backwards
-P        => paste after cursor
-R        => replace mode
-U        => selection to uppercase
-YP or Yp => yank current line, and paste it above or below
-c'a      => change text from current line to line of mark a
-cc       => Delete current line and enter insert mode
-d'k      => delete from current position to mark k
-dG       => delete from current line to end of file
-dd       => delete current line
-ddp      => switch the current line and the next
-gi       => go to insert mode where you last left it
-r        => replace char under cursor
-s        => substitute selection
-u        => selection to lowercase
-x        => delete char under cursor
-xp       => switch the current char and the next
-C-n      => insert the next matching word
-C-p      => insert the previous matching word
-:%s/srch/repl/gc
-             => replace all matchs of srch with repl in the whole file with confirmation prompt
-:s/foo/bar/g => substitute foo -> bar in current line only
-:t.          => copy current line to next
-```
-
-# Movements
-
-```
-#G         => go to line #
-$          => end of line
-'.         => jump to position where last change occurred in current buffer
-'k         => move to mark k
-0          => start of line
-H          => go Home (top line of current window display)
-M          => go Middle line (of current window display)
-L          => go Last line (of current window display)
-^          => first non-blank char of line
-``         => jump back (to position in current buffer where jumped from)
-`a         => jump to position (line and column) of mark a
-g,         => jump forward to position of a newer change
-g;         => jump back to position of an older change
-mJ         => put a file-specific mark in current file (can use a-z)
-zz         => centre window on cursor
-{ or }     => move cursor to start or end of paragraph
-~          => toggle case of selection
-<leader>zz => (mapped in my vimrc to) toggle the value of 'scrolloff'
-C-b        => back (=up) a page
-C-d        => down half a screen
-C-f        => forward (=down) a page
-C-u        => up half a screen
-:(5,7)m0   => move line(s 5-7) to start
-:#         => go to line #
-:m-2       => That is, the current line is moved up one line
-:m+        => the current line is moved down one line
-```
-
-# Search
-
-```
-#        => over a word highlights all exact instances, and jumps to last
-%        => find brackets in a line
-*        => highlight all instances of exactly the word under the cursor
-,/       => (abbreviation for) clearing yellow searched highlights
-/text    => searches for text
-/C-rC-w  => searches for the word under cursor - allowing skipping thru with n
-[I or ]I => list lines containing word under cursor
-n        => find next highlighted search result
-```
+vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentary.eu/
 
 # Buffers
-
-```
-'J        => bring up file marked with J (as saved in viminfo) into buffer
-ZQ        => :q!
-ZZ        => :wq
-C-6       => edit the alternate file (usually = the previous buffer)
-C-Wgf     => open the file under the cursor in a new tab
-C-Wo      => closes all other windows
-C-Wv      => vertical split
-C-i       => jump forward (to where you've been)
-C-o       => jump back (to where you've been)
-:bd!(n)   => buffer delete
-:ls       => buffer list
-:marks    => list all the current marks
-:sp       => split current window
-:unh      => unhides all buffers (into windows)
-:wa       => write all changed buffers
-:wq       => write buffer in window to file and quit vim window
-```
-
-# Tab views
-
-```
-gT  gt    => move around tabs
-:tab ball => all buffers into tabs
-```
+	'J        => bring up file marked with J (as saved in viminfo) into buffer
+	ZQ        => :q!
+	ZZ        => :wq
+	C-6       => edit the alternate file (usually = the previous buffer)
+	C-Wgf     => open the file under the cursor in a new tab
+	C-Wo      => closes all other windows
+	C-Wv      => vertical split
+	C-i       => jump forward (to where you've been)
+	C-o       => jump back (to where you've been)
+	:bd!(n)   => buffer delete
+	:ls       => buffer list
+	:marks    => list all the current marks
+	:sp       => split current window
+	:unh      => unhides all buffers (into windows)
+	:wa       => write all changed buffers
+	:wq       => write buffer in window to file and quit vim window
 
 # Folds
-
-```
-:set fdl? => reports the current foldlevel
-zC  => close current fold & subfolds
-zM  => close all folds
-zO  => expand current fold & subfolds
-zR  => expand all folds
-za  => toggle current fold open/closed
-zc  => close a fold (or, if already closed, close its parent)
-zi  => toggle foldenable
-zj  => down to next fold
-zk  => up to next fold
-zm  => reduce foldlevel
-zr  => increase foldlevel (#zr => foldlevel #)
-zv  => view cursor line (opening just enough folds)
-zx  => set folds back to foldlevel
-```
-
-# Tricks
-
-```
-:exe ":normal i" . strftime("%c") => put date-time at cursor
-```
+	:set fdl? => reports the current foldlevel
+	zC  => close current fold & subfolds
+	zM  => close all folds
+	zO  => expand current fold & subfolds
+	zR  => expand all folds
+	za  => toggle current fold open/closed
+	zc  => close a fold (or, if already closed, close its parent)
+	zi  => toggle foldenable
+	zj  => down to next fold
+	zk  => up to next fold
+	zm  => reduce foldlevel
+	zr  => increase foldlevel (#zr => foldlevel #)
+	zv  => view cursor line (opening just enough folds)
+	zx  => set folds back to foldlevel
 
 # Insert mode commands
+	C-ke'    => digraph code for é
+	C-O      => moves to normal mode for just one command
+	C-p      => keyword (insert-mode) completion
+	C-qu201c => unicode codepoint for “
 
-```
-C-ke'    => digraph code for é
-C-O      => moves to normal mode for just one command
-C-p      => keyword (insert-mode) completion
-C-qu201c => unicode codepoint for “
-```
+# Movements
+	$           => end of line
+	'.          => jump to position where last change occurred in current buffer
+	'k          => move to mark k
+	0           => start of line
+	#G          => go to line #
+	H           => go Home (top line of current window display)
+	M           => go Middle line (of current window display)
+	L           => go Last line (of current window display)
+	^           => first non-blank char of line
+	``          => jump back (to position in current buffer where jumped from)
+	`a          => jump to position (line and column) of mark a
+	g,          => jump forward to position of a newer change
+	g;          => jump back to position of an older change
+	g^          => jump to first character of screen line
+	g$          => jump to last character of screen line
+	mJ          => put a file-specific mark in current file (can use a-z)
+	zz          => centre window on cursor
+	{ or }      => move cursor to start or end of paragraph
+	( or )      => move cursor to start or end of sentence
+	~           => toggle case of selection
+	<leader>zz  => (mapped in my vimrc to) toggle the value of 'scrolloff'
+	C-b         => back (=up) a page
+	C-d         => down half a screen
+	C-f         => forward (=down) a page
+	C-u         => up half a screen
+	:(5,7)m0    => move line(s 5-7) to start
+	:#          => go to line #
+	:m-2        => That is, the current line is moved up one line
+	:m+         => the current line is moved down one line
+
+# Search
+	#        => over a word highlights all exact instances, and jumps to last
+	%        => find brackets in a line
+	*        => highlight all instances of exactly the word under the cursor
+	,/       => (abbreviation for) clearing yellow searched highlights
+	/text    => searches for text
+	/C-rC-w  => searches for the word under cursor - allowing skipping thru with n
+	[I or ]I => list lines containing word under cursor
+	n        => find next highlighted search result
+
+# Shell
+	1C-g                => display full path of current file
+	<shellcmd>|gvim -   => pipes shell command output into gvim
+	gf                  => open file under cursor
+	gx                  => open url under cursor
+	C-r%                => inserts name of current file
+	:!<shellcmd>        => runs the external shell command
+	:Vexplore           => opens a netrw vertical directory browsing window
+	:r!<shell command>  => reads shell command output into the buffer
+	:tabe $HOME/_vimrc  => bring up my vimrc in a new tab
+
+# Tab views
+	gT  gt    => move around tabs
+	:tab ball => all buffers into tabs
+
+# Tricks
+	:exe ":normal i" . strftime("%c") => put date-time at cursor
+	:Tabularize/ =>    => aligns these lists
+
+# Vim
+	@:  => repeat last command-line
+	K   => brings up a man page (if there is one) for word under cursor
+	ga  => returns code values for character under cursor
+	gQ  => enter Ex mode
+	q:  => brings up an interactive history of :commands (in an editable window)
+	vi  => exit Ex mode
+
+	C-k<non-text-key>  => enters the Vim value of a non-text-key
+	C-r"               => (in command line) insert the unnamed register
+	:help index        => lists the all of the commands
 
 # Visual mode commands
+	V  => line-based visual selection
+	gv => reselect the last block
+	j  => in Visual mode, selects line and moves cursor down (k for up)
+	v  => character-based visual selection
 
-```
-V  => line-based visual selection
-gv => reselect the last block
-j  => in Visual mode, selects line and moves cursor down (k for up)
-v  => character-based visual selection
-```
-
-http://momentary.eu/
