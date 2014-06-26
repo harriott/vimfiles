@@ -40,6 +40,7 @@ WriteBackup-dynamic-backupdir	writebackup.txt	/*WriteBackup-dynamic-backupdir*
 WriteBackup-history	writebackup.txt	/*WriteBackup-history*
 WriteBackup-installation	writebackup.txt	/*WriteBackup-installation*
 WriteBackup-known-problems	writebackup.txt	/*WriteBackup-known-problems*
+WriteBackup-limitations	writebackup.txt	/*WriteBackup-limitations*
 WriteBackup-todo	writebackup.txt	/*WriteBackup-todo*
 WriteBackup-usage	writebackup.txt	/*WriteBackup-usage*
 WriteBackupVersionControl-configuration	writebackupVersionControl.txt	/*WriteBackupVersionControl-configuration*
@@ -48,6 +49,7 @@ WriteBackupVersionControl-description	writebackupVersionControl.txt	/*WriteBacku
 WriteBackupVersionControl-history	writebackupVersionControl.txt	/*WriteBackupVersionControl-history*
 WriteBackupVersionControl-installation	writebackupVersionControl.txt	/*WriteBackupVersionControl-installation*
 WriteBackupVersionControl-known-problems	writebackupVersionControl.txt	/*WriteBackupVersionControl-known-problems*
+WriteBackupVersionControl-limitations	writebackupVersionControl.txt	/*WriteBackupVersionControl-limitations*
 WriteBackupVersionControl-todo	writebackupVersionControl.txt	/*WriteBackupVersionControl-todo*
 WriteBackupVersionControl-usage	writebackupVersionControl.txt	/*WriteBackupVersionControl-usage*
 [%	matchit.txt	/*[%*
@@ -79,6 +81,17 @@ g:WriteBackup_DiffCreateDefaultArguments	writebackupVersionControl.txt	/*g:Write
 g:WriteBackup_DiffShellCommand	writebackupVersionControl.txt	/*g:WriteBackup_DiffShellCommand*
 g:WriteBackup_DiffVertSplit	writebackupVersionControl.txt	/*g:WriteBackup_DiffVertSplit*
 g:WriteBackup_ScratchBufferCommandModifiers	writebackupVersionControl.txt	/*g:WriteBackup_ScratchBufferCommandModifiers*
+ingo-library-dependencies	ingo-library.txt	/*ingo-library-dependencies*
+ingo-library-description	ingo-library.txt	/*ingo-library-description*
+ingo-library-history	ingo-library.txt	/*ingo-library-history*
+ingo-library-ideas	ingo-library.txt	/*ingo-library-ideas*
+ingo-library-installation	ingo-library.txt	/*ingo-library-installation*
+ingo-library-known-problems	ingo-library.txt	/*ingo-library-known-problems*
+ingo-library-limitations	ingo-library.txt	/*ingo-library-limitations*
+ingo-library-todo	ingo-library.txt	/*ingo-library-todo*
+ingo-library-usage	ingo-library.txt	/*ingo-library-usage*
+ingo-library.txt	ingo-library.txt	/*ingo-library.txt*
+ingo-library.vim	ingo-library.txt	/*ingo-library.vim*
 matchit	matchit.txt	/*matchit*
 matchit-%	matchit.txt	/*matchit-%*
 matchit-\1	matchit.txt	/*matchit-\\1*

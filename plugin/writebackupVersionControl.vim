@@ -7,17 +7,19 @@
 "
 "   - writebackup plugin (vimscript #1828)
 "   - writebackupVersionControl.vim autoload script
+"   - ingo/err.vim autoload script
 "
 "   - External command "cmp", "diff" or equivalent for comparison
 "   - External command "diff" or equivalent for listing of differences
 "
-" Copyright: (C) 2007-2012 Ingo Karkat
+" Copyright: (C) 2007-2013 Ingo Karkat
 "   The VIM LICENSE applies to this script; see ':help copyright'.
 "
 " Maintainer:	Ingo Karkat <ingo@karkat.de>
 "
-let s:version = 320
+let s:version = 321
 " REVISION	DATE		REMARKS
+"   3.21.036	26-Jun-2013	Implement abort on error for all commands.
 "   3.20.035	14-Dec-2012	Make message for missing writebackup.vim plugin
 "				more precise.
 "   3.10.034	20-Feb-2012	ENH: Add :WriteBackupDiffDaysChanges and
@@ -125,7 +127,7 @@ let s:version = 320
 "				WriteBackup_GetBackupFilename() now takes a
 "				originalFilespec argument, too.
 "				BF: :WriteBackupIsBackedUp doesn't deal
-"				correctly with filenames that contain special ex
+"				correctly with filenames that contain special Ex
 "				characters [%#!]. Now using system() instead of
 "				'silent !' to avoid additional escaping.
 "   1.00.006	07-Mar-2007	Added documentation.
@@ -221,19 +223,19 @@ endif
 
 "- commands -------------------------------------------------------------------
 
-command! -bar -count=1 WriteBackupDiffWithPred		    call writebackupVersionControl#DiffWithPred(expand('%'), <count>)
-command! -bar -count=1 WriteBackupDiffDaysChanges	    call writebackupVersionControl#DiffDaysChanges(expand('%'), <count>)
-command! -nargs=? -count=0 WriteBackupViewDiffWithPred	    call writebackupVersionControl#ViewDiffWithPred(expand('%'), <count>, <q-args>)
-command! -nargs=? -count=0 WriteBackupViewDaysChanges	    call writebackupVersionControl#ViewDiffDaysChanges(expand('%'), <count>, <q-args>)
-command! -bar WriteBackupListVersions			    call writebackupVersionControl#ListVersions(expand('%'))
-command! -bar -bang -count=1 WriteBackupGoPrev	    	    call writebackupVersionControl#WriteBackupGoBackup(expand('%'), <bang>0, -1 * <count>)
-command! -bar -bang -count=1 WriteBackupGoNext	    	    call writebackupVersionControl#WriteBackupGoBackup(expand('%'), <bang>0, <count>)
-command! -bar -bang WriteBackupGoOriginal	    	    call writebackupVersionControl#WriteBackupGoOriginal(expand('%'), <bang>0)
-command! -bar WriteBackupIsBackedUp		    	    call writebackupVersionControl#IsBackedUp(expand('%'))
-command! -bar -bang -count=1 WriteBackupRestoreFromPred	    call writebackupVersionControl#RestoreFromPred(expand('%'), <bang>0, <count>)
-command! -bar -bang WriteBackupRestoreThisBackup    	    call writebackupVersionControl#RestoreThisBackup(expand('%'), <bang>0)
-command! -bar -bang WriteBackupOfSavedOriginal	    	    call writebackupVersionControl#WriteBackupOfSavedOriginal(expand('%'), <bang>0)
-command! -bar -bang WriteBackupDeleteLastBackup	    	    call writebackupVersionControl#DeleteBackupLastBackup(expand('%'), <bang>0)
+command! -bar -count=1 WriteBackupDiffWithPred              if ! writebackupVersionControl#DiffWithPred(expand('%'), <count>) | echoerr ingo#err#Get() | endif
+command! -bar -count=1 WriteBackupDiffDaysChanges           if ! writebackupVersionControl#DiffDaysChanges(expand('%'), <count>) | echoerr ingo#err#Get() | endif
+command! -nargs=? -count=0 WriteBackupViewDiffWithPred      if ! writebackupVersionControl#ViewDiffWithPred(expand('%'), <count>, <q-args>) | echoerr ingo#err#Get() | endif
+command! -nargs=? -count=0 WriteBackupViewDaysChanges       if ! writebackupVersionControl#ViewDiffDaysChanges(expand('%'), <count>, <q-args>) | echoerr ingo#err#Get() | endif
+command! -bar WriteBackupListVersions                       if ! writebackupVersionControl#ListVersions(expand('%')) | echoerr ingo#err#Get() | endif
+command! -bar -bang -count=1 WriteBackupGoPrev              if ! writebackupVersionControl#WriteBackupGoBackup(expand('%'), <bang>0, -1 * <count>) | echoerr ingo#err#Get() | endif
+command! -bar -bang -count=1 WriteBackupGoNext              if ! writebackupVersionControl#WriteBackupGoBackup(expand('%'), <bang>0, <count>) | echoerr ingo#err#Get() | endif
+command! -bar -bang WriteBackupGoOriginal                   if ! writebackupVersionControl#WriteBackupGoOriginal(expand('%'), <bang>0) | echoerr ingo#err#Get() | endif
+command! -bar WriteBackupIsBackedUp                         if   writebackupVersionControl#IsBackedUp(expand('%')) <= 0 | echoerr ingo#err#Get() | endif
+command! -bar -bang -count=1 WriteBackupRestoreFromPred     if ! writebackupVersionControl#RestoreFromPred(expand('%'), <bang>0, <count>) | echoerr ingo#err#Get() | endif
+command! -bar -bang WriteBackupRestoreThisBackup            if ! writebackupVersionControl#RestoreThisBackup(expand('%'), <bang>0) | echoerr ingo#err#Get() | endif
+command! -bar -bang WriteBackupOfSavedOriginal              if   writebackupVersionControl#WriteBackupOfSavedOriginal(expand('%'), <bang>0) <= 0 | echoerr ingo#err#Get() | endif
+command! -bar -bang WriteBackupDeleteLastBackup             if ! writebackupVersionControl#DeleteBackupLastBackup(expand('%'), <bang>0) | echoerr ingo#err#Get() | endif
 
 unlet s:version
 " vim: set ts=8 sts=4 sw=4 noexpandtab ff=unix fdm=syntax :
