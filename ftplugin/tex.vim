@@ -10,7 +10,7 @@
 " let g:tex_fold_enabled=1
 " needs to be done before opening the buffer, eg in vimrc
 
-set fdc=1 tw=0
+setlocal fdc=1 tw=0
 
 " As Vim's LaTeX syntax folding is slow, need a means to turn it off.
 " Turn off gVim's default syntax folding:

@@ -6,7 +6,7 @@
 " You need to this modeline in the file that you want to affect: 
 " vim: ft=ghmarkdown fdm=expr:
 
-set tw=0
+setlocal tw=0
 
 " Markdown folding by header marks
 " --------------------------------------
