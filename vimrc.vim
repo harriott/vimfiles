@@ -41,6 +41,9 @@ nnoremap <F5> :buffers<CR>:sbuffer<Space>
 " toggle centering line in window:
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
+" toggle relativenumber:
+nnoremap <silent><leader>n :set rnu! rnu? <CR>
+
 " shell interaction
 " -----------------
 " set working directory to that of the currently loaded file's:
