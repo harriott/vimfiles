@@ -1,3 +1,5 @@
+[//]: # ( vim: set tw=0 ft=ghmarkdown fdm=expr fdl=4: )
+
 ## vimfiles
 all of my dot vim files (except my .gvimrc &amp; .vimrc - which vary by machine)
 
@@ -7,8 +9,8 @@ My gVim installation is setup for coding in Python and Perl, and for quick navig
 ### prerequisites
 gVim, of course, and to point to these files, you'll need something like these:
 
-#### $HOME\_vimrc
-Should at least point to the `vimrc`, like this:
+##### `$HOME\\_vimrc`
+which should at least point to the substantive `vimrc`, like this:
 
 ```vim
 source $HOME/vimfiles/vimrc.vim
@@ -16,7 +18,7 @@ source $HOME/vimfiles/vimrc.vim
 
 You can [checkout mine](http://it.momentary.eu/lib/exe/fetch.php?media=cross_platform:vimrc_win32.vim).
 
-#### $HOME\_gvimrc
+###### `$HOME\\_gvimrc`
 
 ```vim
 source $HOME/vimfiles/gvimrc.vim
@@ -25,4 +27,3 @@ source $HOME/vimfiles/gvimrc.vim
 autocmd BufRead,BufNewFile D:/Dropbox/Current/IT/pages/* setlocal ft=dokuwiki fdm=expr
 ```
 
-[//]: # ( vim: set tw=0 ft=ghmarkdown fdm=expr fdl=3: )
