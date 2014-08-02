@@ -52,10 +52,11 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	^           => first non-blank char of line
 	``          => jump back (to position in current buffer where jumped from)
 	`a          => jump to position (line and column) of mark a
+	g$          => jump to last character of screen line
 	g,          => jump forward to position of a newer change
 	g;          => jump back to position of an older change
 	g^          => jump to first character of screen line
-	g$          => jump to last character of screen line
+	ge 			=> go backwards to end of word
 	mJ          => put a file-specific mark in current file (can use a-z)
 	zz          => centre window on cursor
 	{ or }      => move cursor to start or end of paragraph

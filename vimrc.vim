@@ -141,6 +141,11 @@ let g:syntastic_python_checkers = ['flake8']
 
 command -bar -bang W :WriteBackup<bang>
 
+let MRU_Max_Entries = 900
+let MRU_Window_Height = 15
+" which is overriden by this:
+let MRU_Use_Current_Window = 1
+
 " ShowTrailingWhitespace
 " ----------------------
 highlight ShowTrailingWhitespace ctermbg=White
