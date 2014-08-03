@@ -97,6 +97,10 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	gT  gt    => move around tabs
 	:tab ball => all buffers into tabs
 
+# Text Objects
+	ci> => change inside angle brackets
+    ci} => change inside curly braces
+
 # Tricks
 	:exe ":normal i" . strftime("%c") => put date-time at cursor
 	:Tabularize/ =>    => aligns these lists
