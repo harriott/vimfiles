@@ -10,7 +10,7 @@
 " (My preference would be to set foldmethod in this ftplugin, but doing so
 " makes it global, for some reason I've not fathomed.)
 
-setlocal tw=0 fde=DWF() fdl=2 fdc=1
+setlocal tw=0 fde=DWF() fdl=0 fdc=1
 
 " DokuWiki folding by header marks
 " --------------------------------
