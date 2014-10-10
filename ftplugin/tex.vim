@@ -21,7 +21,7 @@ nnoremap <S-F7> :set fdm=syntax<cr>
 
 " Tabbing
 " -------
-" (lifted from dokuwiki.vim):
+" (lifted from syntax\dokuwiki.vim):
 " Set shift width for indent
 setlocal shiftwidth=2
 " Set the tab key size to two spaces
