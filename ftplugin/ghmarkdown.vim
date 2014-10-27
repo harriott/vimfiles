@@ -1,7 +1,7 @@
 " Couple of adjustments.
-" Language:	markdown
+" Language:	ghmarkdown (= GitHub Flavored Markdown)
 " Maintainer: Joseph Harriott
-" Last Change: Sat 03 May 2014
+" Last Change: Mon 27 Oct 2014
 " This file should be in your vimfiles\ftplugin folder.
 " You need to this modeline in the file that you want to affect: 
 " vim: ft=ghmarkdown fdm=expr:
