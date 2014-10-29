@@ -1,16 +1,31 @@
 " Folding adjustments
 " Language:	dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Sat 22 Feb 2014
+" Last Change: Wed 29 Oct 2014
 " This file should be in your vimfiles\ftplugin folder,
 " and you'll need to (autocmd BufRead,BufNewFile) setlocal ft=dokuwiki.
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
-" /* vim: set ft=dokuwiki fdm=expr: */
-" (My preference would be to set foldmethod in this ftplugin, but doing so
-" makes it global, for some reason I've not fathomed.)
+" /* vim: set ft=dokuwiki: */
 
-setlocal tw=0 fde=DWF() fdl=0 fdc=1
+" While developing this plugin, I used
+" :source $HOME/vimfiles/ftplugin/dokuwiki.vim
+
+setlocal tw=0 fdc=1 fde=DWF() fdl=0 fdm=expr
+
+" Command to add wrap indent tags around quotes
+" ---------------------------------------------
+" For use when Anika Henke's excellent Wrap Plugin is installed in DokuWiki.
+" While developing this I used
+"   :nmap \i
+"     to check what's been mapped, and
+"   :unmap <leader>i
+"     to clear global mappings.
+" Ensure magic is set, and make an atom of one or more occurences of > at start of line,
+" replace that with that atom plus opening tag, then add closing tag to end of line:
+nnoremap <buffer> <leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A </wrap><Esc>
+" Note: the repeat operator . will only repeat the last action here,
+" but you can add a count, eg 3\i to work on the next three lines.
 
 " DokuWiki folding by header marks
 " --------------------------------
