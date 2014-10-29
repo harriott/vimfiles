@@ -24,8 +24,9 @@ setlocal tw=0 fdc=1 fde=DWF() fdl=0 fdm=expr
 " Ensure magic is set, and make an atom of one or more occurences of > at start of line,
 " replace that with that atom plus opening tag, then add closing tag to end of line:
 nnoremap <buffer> <leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A </wrap><Esc>
-" Note: the repeat operator . will only repeat the last action here,
-" but you can add a count, eg 3\i to work on the next three lines.
+" Notes: the repeat operator . will only repeat the last action here;
+"    you can add a count, eg 3\i to work on the next three lines,
+"    but only the last closing tag gets pasted, you have to do the other two manually.
 
 " DokuWiki folding by header marks
 " --------------------------------
