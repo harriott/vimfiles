@@ -1,8 +1,8 @@
-" -------------------------------------------------
-" This is a wrapper vimrc for use on a Win32 system
-" This file should be located at $HOME\_vimrc 
-" Joseph Harriott - http://momentary.eu/
-" -------------------------------------------------
+" -------------------------------------------------------------
+" This is a wrapper vimrc for use on a Win32 system.
+" This file should be located at $HOME\_vimrc (I symlink to it).
+" Joseph Harriott - http://momentary.eu/ - Thu 30 Oct 2014
+" --------------------------------------------------------------
 
 " don't recall where I got this query from, or what it serves:
 if $VIM == 'C:\Program Files\Git\share\vim'
