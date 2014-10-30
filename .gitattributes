@@ -1,6 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-# Ensure these won't be messed with:
+# Ensure these tracked files won't be messed with:
 *.spl binary
 *.sug binary
