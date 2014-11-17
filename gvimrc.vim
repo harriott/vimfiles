@@ -78,8 +78,10 @@ set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
 set background=light  " for solarized
 let g:solarized_contrast="high"    "default value is normal
 
-" setting guibg after adjustments to solarised:
+" Set guibg after any adjustments to Solarised:
 highlight ShowTrailingWhitespace ctermbg=White guibg=White
+" and add a mapping to reset this if Solarized has been toggled:
+nnoremap <leader>W :highlight ShowTrailingWhitespace ctermbg=White guibg=White<cr>
 
 autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
 " and <leader>p toggles it:
@@ -95,11 +97,5 @@ function! ParenthsToggle()
     endif
 endfunction
 
-" -------
-" folding
-" -------
 nnoremap <Space> za  " handy for toggling folds open/closed
 
-" ----------
-" gvimrc ends
-" ----------

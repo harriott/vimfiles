@@ -6,7 +6,7 @@
 " You need to this modeline in the file that you want to affect: 
 " vim: ft=markdown fdm=expr:
 
-setlocal tw=0
+setlocal expandtab tw=0
 
 " Add a useful abbreviation for URL highlighting:
 " inoremap <buffer> < <><Esc>i

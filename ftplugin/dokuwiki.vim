@@ -7,6 +7,7 @@
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
 " /* vim: set ft=dokuwiki: */
+" You should also have vim-dokuwiki installed at $HOME/vimfiles/syntax/dokuwiki.vim
 
 " While developing this plugin, I used
 " :source $HOME/vimfiles/ftplugin/dokuwiki.vim
