@@ -74,6 +74,18 @@ nnoremap <C-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 set go-=T  "removes toolbar
 set lines=34  "gVim with tabs just fits in my N130 at 600pixel height
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
+" Shift-F3 toggles a better size for reading prose:
+nnoremap <S-F2> :call ColumnsToggle()<cr>
+let g:columnsdefault = 1
+function! ColumnsToggle()
+    if g:columnsdefault
+        set columns=82
+        let g:columnsdefault = 0
+    else
+        set columns=106
+        let g:columnsdefault = 1
+    endif
+endfunction
 
 set background=light  " for solarized
 let g:solarized_contrast="high"    "default value is normal
