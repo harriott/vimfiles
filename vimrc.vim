@@ -33,7 +33,6 @@ set wmh=0  "reduce minimized windows to zero lines shown
 
 " swapfiles:
 set directory=$HOME/.vimswap//
-" set noswapfile  " so remember to keep saving stuff!
 
 " F2 to write all changed buffers:
 nnoremap <F2> :wa<CR>
