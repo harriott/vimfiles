@@ -2,13 +2,15 @@
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2014 Feb 05
-" slightly adapted (as noted herein) by JH 26/11/14.
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
 "	      for Amiga:  s:.vimrc
 "  for MS-DOS and Win32:  $VIM\_vimrc
 "	    for OpenVMS:  sys$login:.vimrc
+"
+" Slightly adapted from the original ($VIMRUNTIME/vimrc_example.vim)
+" as noted herein ( - find my initials -> ) JH 26/11/14.
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"

@@ -3,25 +3,23 @@
 " This file should be located at $HOME\_vimrc (I symlink to it).
 " Joseph Harriott - http://momentary.eu/ - Thu 30 Oct 2014
 " --------------------------------------------------------------
-
-" don't recall where I got this query from, or what it serves:
+" quit if called from Git's vim:
 if $VIM == 'C:\Program Files\Git\share\vim'
   finish
 endif
 
-" --------------------------------------------------------
-" stuff pulled directly from gVim for MSWin's $VIM/_vimrc:
-" --------------------------------------------------------
+" --------------------------------------------
+" Adjusted from gVim for Windows' $VIM/_vimrc:
 set nocompatible  
 " source $VIMRUNTIME/vimrc_example.vim - changed to my adapted version:
 source $HOME/vimfiles/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
-" revert Ctrl-A back to number increment:
+" but revert Ctrl-A back to number increment:
 unmap <C-A>
 behave mswin
 
-" -------------------------?
-" not sure what this is for:
+" ------------------------------------------------------------------?
+" not sure what this (from $VIM/_vimrc) is for, but I'm including it:
 set diffexpr=MyDiff()
 function MyDiff()
   let opt = '-a --binary '
@@ -46,11 +44,14 @@ function MyDiff()
   endif
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
-" -------------------------?
 
-" -----------------------------
-" Now my preferences for MSWin:
-" -----------------------------
+" ---------------------------------
+" More of my preferences for MSWin:
+
+" swapfiles:
+if isdirectory($HOME . '/.vimswap') == 0
+  :silent !md \%UserProfile\%\\.vimswap
+endif
 
 "  Point to my more portable vimrc:
 source $HOME/vimfiles/vimrc.vim
@@ -58,6 +59,6 @@ source $HOME/vimfiles/vimrc.vim
 " A nicer font for MSWin:
 set guifont=Lucida_Console:h9  "better to append size so that it's reported
 
-" where I like to keep my backups:
+" where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 
