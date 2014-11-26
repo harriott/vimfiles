@@ -22,12 +22,13 @@ set nocompatible
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-"if has("vms")
-"  set nobackup		" do not keep a backup file, use versions instead
-"else
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+"else - I prefer not to have these files lying around, JH:
 " set backup		" keep a backup file
-"endif
-set history=150		" keep 50 lines of command line history
+" set undofile		" keep an undo file (undo changes after closing)
+endif
+set history=150		" keep 150 lines of command line history - more history, JH
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
