@@ -2,6 +2,7 @@
 "
 " Maintainer:	Bram Moolenaar <Bram@vim.org>
 " Last change:	2014 Feb 05
+" slightly adapted (as noted herein) by JH 26/11/14.
 "
 " To use it, copy it to
 "     for Unix and OS/2:  ~/.vimrc
@@ -68,6 +69,7 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=99
+  " - JH changed to my preference
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
