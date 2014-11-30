@@ -1,4 +1,4 @@
-# VIM Table Mode [![Build Status](https://travis-ci.org/dhruvasagar/vim-table-mode.png?branch=master)](https://travis-ci.org/dhruvasagar/vim-table-mode)
+# VIM Table Mode v4.6.2 [![Build Status](https://travis-ci.org/dhruvasagar/vim-table-mode.png?branch=master)](https://travis-ci.org/dhruvasagar/vim-table-mode)
 
 An awesome automatic table creator & formatter allowing one to create neat
 tables as you type.
@@ -48,6 +48,10 @@ $ git submodule add git@github.com:dhruvasagar/vim-table-mode.git bundle/table-m
    per buffer basis and so it does not cause any unusual behavior unless it is
    enabled explicitly. Please read `:h table-mode` for further information.
 
+   You can also define in a table header border how it's content should be
+   aligned, whether right or left by using a `:` character defined by
+   `g:table_mode_align_char` option.
+
 - **Format existing content into a table** :
 
    Table Mode wouldn't justify it's name if it didn't allow formatting
@@ -72,29 +76,20 @@ $ git submodule add git@github.com:dhruvasagar/vim-table-mode.git bundle/table-m
 
 - **Move between cells** :
 
-   Now you can move between cells using table mode motions <kbd>\<Leader\>t[hjkl]</kbd>
-   to move left | down | up | right cells respectively. You can use
-   `g:table_mode_map_prefix` option to define the prefix mapping to be used
-   before 'hjkl'. The left | right motions wrap around the table and move to
-   the next | previous row after the last | first cell in the current row if
-   one exists. 
+   Now you can move between cells using table mode motions <kbd>[|</kbd>,
+   <kbd>]|</kbd>, <kbd>{|</kbd> & <kbd>}|</kbd> to move left | right | up |
+   down cells respectively. The left | right motions wrap around the table
+   and move to the next | previous row after the last | first cell in the
+   current row if one exists. 
 
 - **Manipulating Table** :
 
   - **Cell Text Object** :
 
-      Tableize provides a text object for manipulating table cells. By default
-      it's <kbd>tc</kbd>, but that can be changed if you wish to by setting the
-      `g:table_mode_cell_text_object` option.
-
-      This is intelligent in the sense that if you use it to delete the
-      contents it will delete everything till the `g:table_mode_separator` so
-      that the cell is removed and you can enter new stuff if you wish to (had
-      you used 'c' operator), having to input the `g:table_mode_separator`
-      again to form the cell & realign it (since it can't be done from the
-      text object itself). However if you were to 'y' or yank the text, it
-      would copy the right text, i.e. the contents of the cell and nothing
-      else.
+      Tableize provides a text object for manipulating table cells. Following
+      the vim philosophy the you have <kbd>i|</kbd> & <kbd>a|</kbd> for the
+      inner and around (including the immidiate right table separator) the
+      table cell.
 
   - **Delete Row** :
 
@@ -142,11 +137,13 @@ $ git submodule add git@github.com:dhruvasagar/vim-table-mode.git bundle/table-m
 
       - `$n`: This matches the table column number `n`. So the `formula` would
         be evaluated for each cell in that column and the result would be placed
-        in it.
+        in it. You can use negative indice to represent column relative to the
+        last, -1 being the last.
 
       - `$n,m`: This matches the table cell n,m (row, column). So in this case
         the formula would be evaluated and the result will be placed in this
-        cell.
+        cell. You can also use negative values to refer to cells relative to
+        the size, -1 being the last (row or column).
 
   - The `formula` can be a simple mathematical expression involving cells
     which are also defined by the same format as that of the target cell.  You
@@ -154,7 +151,7 @@ $ git submodule add git@github.com:dhruvasagar/vim-table-mode.git bundle/table-m
     mode also provides 2 special functions `Sum` and `Average`. Both these
     functions take a range as input. A range can be of two forms :
 
-      - `r1,r2`: This represents cells in the current column from row `r1`
+      - `r1:r2`: This represents cells in the current column from row `r1`
         through `r2`. If `r2` is negative it represents `r2` rows above the
         current row (of the target cell).
 

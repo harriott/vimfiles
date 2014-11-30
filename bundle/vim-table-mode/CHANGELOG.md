@@ -1,4 +1,57 @@
 # Change Log
+
+## Version 4.6.2
+* Added custom User autocmd event for tablemode activation (enabled /
+  disabled)
+* Adding better header support for pandoc, headers can now have a different
+  fillchar configured with `g:table_mode_header_fillchar`
+
+## Version 4.6.1
+* Minor bug fixes
+
+## Version 4.6.0
+* Added better table header support. The first line of the table if separated
+  by a table border will be considered as the header. This also means that it
+  will not be considered / included when evaluating table formulas and that
+  the first line after the header would be considered the first line of the
+  table.
+
+## Version 4.5.0
+* Refactored toggled mappings
+* Table Syntax now gets toggled with Table Mode
+
+## Version 4.4.2
+* Updated mappings to be buffer local.
+* Updated mappings to toggle and function only when table mode is active.
+
+## Version 4.4.1
+* Added syntax for matching tables
+
+## Version 4.4.0
+* Minor bug fixes
+* Added feature to allow using negative indices within formulas to access rows,
+  columns relative to the last, -1 being the last.
+
+## Version 4.3.0
+* Refactored some more
+* Fixed issue #19, hiphens in the table broke alignment
+* Added feature #26, you can now define column alignments in the table header
+
+## Version 4.2.0
+* Refactored cells logic out to autoload/tablemode/spreadsheet/cell.vim
+* Refactored formula logic out to autoload/tablemode/spreadsheet/formula.vim
+
+## Version 4.1.0
+* Fixed bad references within plugin
+* Added fixtures
+
+## Version 4.0.0
+* Major refactoring of the codebase.
+* Improved modular tests.
+* Fixed long standing unicode character alignment issue.
+* Moved to providing \<Plug\> mappings rather than configuration based mappings
+  which can be more easily overriden by end user.
+
 ## Version 3.3.2
 * Added new mapping \t? to echo a cells representation for use while defining
   formulas.
@@ -78,3 +131,7 @@
 
 ## Version 1.0 :
 * First stable release, create tables as you type.
+
+<!--
+  vim: ft=markdown
+-->
