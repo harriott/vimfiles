@@ -22,6 +22,8 @@ map <F3> :set list! list? <CR>
 
 runtime macros/matchit.vim
 
+set history=300
+
 " LaTeX syntax folding on:
 let g:tex_fold_enabled=1
 
