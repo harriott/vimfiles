@@ -106,6 +106,9 @@ nnoremap <leader>u :Underline
 " Plugins
 " -------
 
+" for mru.vim:
+let MRU_Max_Entries = 1000
+
 " quickly close all but current buffer:
 nnoremap <S-F4> :BufOnly<CR>
 
