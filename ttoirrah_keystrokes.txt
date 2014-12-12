@@ -1,6 +1,13 @@
 vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentary.eu/
 
 # Buffers
+	:bd!(n)   => buffer delete
+	:ls       => buffer list
+	:marks    => list all the current marks
+	:sp       => split current window
+	:unh      => unhides all buffers (into windows)
+	:wa       => write all changed buffers
+	:wq       => write buffer in window to file and quit vim window
 	'J        => bring up file marked with J (as saved in viminfo) into buffer
 	ZQ        => :q!
 	ZZ        => :wq
@@ -10,13 +17,8 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	C-Wv      => vertical split
 	C-i       => jump forward (to where you've been)
 	C-o       => jump back (to where you've been)
-	:bd!(n)   => buffer delete
-	:ls       => buffer list
-	:marks    => list all the current marks
-	:sp       => split current window
-	:unh      => unhides all buffers (into windows)
-	:wa       => write all changed buffers
-	:wq       => write buffer in window to file and quit vim window
+    g-        => revert to previous change
+    g+        => advance to next change
 
 # Folds
 	:set fdl? => reports the current foldlevel
