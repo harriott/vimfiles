@@ -63,7 +63,7 @@ nnoremap <leader>- :Explore<cr>
 " ---------
 set ignorecase smartcase
 nmap <silent> ,/ :nohlsearch<CR>
-" for clearing yellow searched highlights
+" for clearing search highlights
 
 " Vim
 " ---
