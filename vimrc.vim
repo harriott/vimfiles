@@ -18,7 +18,8 @@ set tw=99
 " but otherwise unsaved buffers open as tw=0
 
 set lcs=eol:│,trail:·,tab:»·  "nicer settings for list:
-map <F3> :set list! list? <CR>
+noremap <F3> :set list! list? <CR>
+inoremap <F3> <Esc>:set list! list? <CR>
 
 runtime macros/matchit.vim
 
