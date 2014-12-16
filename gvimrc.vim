@@ -71,3 +71,6 @@ endfunction
 
 nnoremap <Space> za  " handy for toggling folds open/closed
 
+" have the installed DokuWiki syntax file open ready configured:
+autocmd BufRead,BufNewFile */pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
+
