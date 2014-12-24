@@ -1,9 +1,9 @@
 " Vim auto-load script
 " Author: Peter Odding <peter@peterodding.com>
-" Last Change: September 2, 2013
+" Last Change: July 7, 2014
 " URL: http://peterodding.com/code/vim/shell/
 
-let g:xolox#shell#version = '0.13.2'
+let g:xolox#shell#version = '0.13.6'
 
 if !exists('s:fullscreen_enabled')
   let s:enoimpl = "%s() hasn't been implemented on your platform! %s"
@@ -233,6 +233,12 @@ function! xolox#shell#fullscreen() " {{{1
       if error != ''
         throw "shell.dll failed with: " . error
       endif
+    elseif has('macunix') && has('gui')
+      if !s:fullscreen_enabled
+        set fullscreen
+      else
+        set nofullscreen
+      endif
     elseif has('unix')
       if !executable('wmctrl')
         let msg = "Full-screen on UNIX requires the `wmctrl' program!"
@@ -273,7 +279,7 @@ function! xolox#shell#fullscreen() " {{{1
   let s:fullscreen_enabled = !s:fullscreen_enabled
 
   " Let the user know how to leave full-screen mode?
-  if s:fullscreen_enabled
+  if s:fullscreen_enabled && g:shell_fullscreen_message
     " Take a moment to let Vim's GUI finish redrawing (:redraw is
     " useless here because it only redraws Vim's internal state).
     sleep 50 m
@@ -367,8 +373,19 @@ function! xolox#shell#can_use_dll() " {{{1
   if xolox#misc#os#is_win()
     try
       call xolox#misc#msg#debug("shell.vim %s: Checking if compiled DDL is supported ..", g:xolox#shell#version)
-      return s:library_call('libversion', '') == '0.5'
+      if !xolox#misc#option#get('shell_use_dll', 1)
+        call xolox#misc#msg#debug("shell.vim %s: Use of DDL is disabled using 'g:shell_use_dll'.", g:xolox#shell#version)
+        return 0
+      endif
+      let expected_version = '0.5'
+      let actual_version = s:library_call('libversion', '')
+      if actual_version == expected_version
+        call xolox#misc#msg#debug("shell.vim %s: Yes the DDL works. Good for you! :-)", g:xolox#shell#version)
+        return 1
+      endif
+      call xolox#misc#msg#debug("shell.vim %s: The DDL works but reports version %s while I was expecting %s!", g:xolox#shell#version, string(actual_version), string(expected_version))
     catch
+      call xolox#misc#msg#debug("shell.vim %s: Looks like the DDL is not working! (Vim raised an exception: %s)", g:xolox#shell#version, v:exception)
       return 0
     endtry
   endif

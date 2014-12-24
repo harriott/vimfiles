@@ -10,7 +10,7 @@ This plug-in aims to improve the integration between [Vim] [vim] and its environ
 
  * The `xolox#misc#os#exec()` function enables other Vim plug-ins (like my [easytags.vim] [easytags] plug-in) to execute external commands in the background (i.e. asynchronously) *without opening a command prompt window on Windows*.
 
-Two [Windows DLL files] [dll] are included to perform these functions on Windows, while on UNIX external commands are used.
+Two [Windows DLL files] [dll] are included to perform these functions on Windows, while on UNIX external commands are used. MacVim supports full-screen out of the box (and vim-shell knows how to enable it) but is otherwise treated as UNIX.
 
 ## Installation
 
@@ -101,6 +101,10 @@ On Windows the `:Fullscreen` command sets the Vim window to "always on top". Som
 
     :let g:shell_fullscreen_always_on_top = 0
 
+### The `g:shell_fullscreen_message` option
+
+When you enter full screen the plug-in shows a Vim message explaining how to leave full screen. If you don't want to see this message you can set this option to false (0).
+
 ### The `g:shell_mappings_enabled` option
 
 If you don't like the default mappings for the `:Open` and `:Fullscreen` commands then add the following to your [vimrc script] [vimrc]:
@@ -120,6 +124,10 @@ When you use the `:Open` command or the `<F6>` mapping to open the URL under the
 
 If you actually deal with URLs that include significant trailing punctuation and your Vim is compiled with Python support you can enable the option `g:shell_verify_urls` (by setting it to 1 in your [vimrc script] [vimrc]). When you do this the plug-in will perform an HTTP HEAD request on the URL without stripping trailing punctuation. If the request returns an HTTP status code that indicates some form of success (the status code is at least 200 and less than 400) the URL including trailing punctuation is opened. If the HEAD request fails the plug-in will try again without trailing punctuation.
 
+### The `g:shell_use_dll` option
+
+If you set this to false (0) the DDL is never used. This is very useful during testing :-).
+
 ## Background
 
 Vim has a limited ability to call external libraries using the Vim script function [libcall()] [libcall]. A few years ago when I was still using Windows a lot I created a [Windows DLL] [dll] that could be used with [libcall()] [libcall] to toggle [Vim] [vim]'s GUI window between regular and full-screen mode. I also added a few other useful functions, e.g. `openurl()` to launch the default web browser and `execute()` which works like Vim's [system()] [system] function but doesn't wait for the process to finish and doesn't show a command prompt.
@@ -136,8 +144,8 @@ If you have questions, bug reports, suggestions, etc. the author can be contacte
 
 ## License
 
-This software is licensed under the [MIT license] [mit].  
-© 2013 Peter Odding &lt;<peter@peterodding.com>&gt;.
+This software is licensed under the [MIT license] [mit].
+© 2014 Peter Odding &lt;<peter@peterodding.com>&gt;.
 
 
 [:make]: http://vimdoc.sourceforge.net/htmldoc/quickfix.html#:make
