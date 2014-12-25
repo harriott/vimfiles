@@ -123,7 +123,6 @@ set background=dark  " at this stage, assuming vim's in terminal
 colorscheme solarized
 call togglebg#map("<S-F5>")  " reassign the toggle light/dark
 
-autocmd vimenter * if !argc() | cd D:/ | NERDTree | endif  "open empty vim to NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
 " to help CtrlP when in my Win7 %USERPROFILE%:
