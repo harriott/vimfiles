@@ -9,15 +9,19 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
+
 if exists("g:loaded_syntastic_ruby_jruby_checker")
     finish
 endif
-let g:loaded_syntastic_ruby_jruby_checker=1
+let g:loaded_syntastic_ruby_jruby_checker = 1
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 function! SyntaxCheckers_ruby_jruby_GetLocList() dict
     let makeprg = self.makeprgBuild({
-        \ 'exe': s:exe(),
-        \ 'args': s:args() })
+        \ 'args': (syntastic#util#isRunningWindows() ? '-T1' : ''),
+        \ 'args_after': '-W1 -c' })
 
     let errorformat =
         \ '%-GSyntax OK for %f,'.
@@ -28,19 +32,19 @@ function! SyntaxCheckers_ruby_jruby_GetLocList() dict
         \ '%W%f:%l: %m,'.
         \ '%-C%.%#'
 
+    let env = syntastic#util#isRunningWindows() ? {} : { 'RUBYOPT': '' }
+
     return SyntasticMake({
         \ 'makeprg': makeprg,
-        \ 'errorformat': errorformat })
-endfunction
-
-function! s:args()
-    return has('win32') ? '-W1 -T1 -c' : '-W1 -c'
-endfunction
-
-function! s:exe()
-    return has('win32') ? 'jruby' : 'RUBYOPT= jruby'
+        \ 'errorformat': errorformat,
+        \ 'env': env })
 endfunction
 
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'ruby',
     \ 'name': 'jruby'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:

@@ -6,23 +6,13 @@
 "
 "============================================================================
 
-" in order to also check header files add this to your .vimrc:
-" (this creates an empty .syntastic_dummy.cu file in your source directory)
-"
-"   let g:syntastic_cuda_check_header = 1
-
-" By default, nvcc and thus syntastic, defaults to the most basic architecture.
-" This can produce false errors if the developer intends to compile for newer
-" hardware and use newer features, eg. double precision numbers. To pass a
-" specific target arch to nvcc, e.g. add the following to your .vimrc:
-"
-"   let g:syntastic_cuda_arch = "sm_20"
-
-
 if exists("g:loaded_syntastic_cuda_nvcc_checker")
     finish
 endif
-let g:loaded_syntastic_cuda_nvcc_checker=1
+let g:loaded_syntastic_cuda_nvcc_checker = 1
+
+let s:save_cpo = &cpo
+set cpo&vim
 
 function! SyntaxCheckers_cuda_nvcc_GetLocList() dict
     if exists('g:syntastic_cuda_arch')
@@ -31,7 +21,8 @@ function! SyntaxCheckers_cuda_nvcc_GetLocList() dict
         let arch_flag = ''
     endif
     let makeprg =
-        \ self.getExec() . ' ' . arch_flag . ' --cuda -O0 -I . -Xcompiler -fsyntax-only ' .
+        \ self.getExecEscaped() . ' ' . arch_flag .
+        \ ' --cuda -O0 -I . -Xcompiler -fsyntax-only ' .
         \ syntastic#util#shexpand('%') . ' ' . syntastic#c#NullOutput()
 
     let errorformat =
@@ -54,7 +45,7 @@ function! SyntaxCheckers_cuda_nvcc_GetLocList() dict
         if exists('g:syntastic_cuda_check_header')
             let makeprg =
                 \ 'echo > .syntastic_dummy.cu ; ' .
-                \ self.getExec() . ' ' . arch_flag .
+                \ self.getExecEscaped() . ' ' . arch_flag .
                 \ ' --cuda -O0 -I . .syntastic_dummy.cu -Xcompiler -fsyntax-only -include ' .
                 \ syntastic#util#shexpand('%') . ' ' . syntastic#c#NullOutput()
         else
@@ -68,3 +59,8 @@ endfunction
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'cuda',
     \ 'name': 'nvcc'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:

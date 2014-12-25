@@ -9,33 +9,22 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
-"
-" For details about perlcritic see:
-"
-" - http://perlcritic.tigris.org/
-" - https://metacpan.org/module/Perl::Critic
-"
-" Checker options:
-"
-" - g:syntastic_perl_perlcritic_thres (integer; default: 5)
-"   error threshold: policy violations with a severity above this
-"   value are highlighted as errors, the others are warnings
-"
-" - g:syntastic_perl_perlcritic_args (string; default: empty)
-"   command line options to pass to perlcritic
 
 if exists("g:loaded_syntastic_perl_perlcritic_checker")
     finish
 endif
-let g:loaded_syntastic_perl_perlcritic_checker=1
+let g:loaded_syntastic_perl_perlcritic_checker = 1
 
 if !exists('g:syntastic_perl_perlcritic_thres')
     let g:syntastic_perl_perlcritic_thres = 5
 endif
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! SyntaxCheckers_perl_perlcritic_GetLocList() dict
     let makeprg = self.makeprgBuild({
-        \ 'post_args': '--quiet --nocolor --verbose "\%s:\%f:\%l:\%c:(\%s) \%m (\%e)\n"' })
+        \ 'args_after': '--quiet --nocolor --verbose "\%s:\%f:\%l:\%c:(\%s) \%m (\%e)\n"' })
 
     let errorformat = '%t:%f:%l:%c:%m'
 
@@ -56,3 +45,8 @@ endfunction
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'perl',
     \ 'name': 'perlcritic'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:

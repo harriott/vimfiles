@@ -9,18 +9,6 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
-"
-" For details about cpplint see:
-"    https://code.google.com/p/google-styleguide/
-"
-" Checker options:
-"
-" - g:syntastic_cpp_cpplint_thres (integer; default: 5)
-"   error threshold: policy violations with a severity above this
-"   value are highlighted as errors, the others are warnings
-"
-" - g:syntastic_cpp_cpplint_args (string; default: '--verbose=3')
-"   command line options to pass to cpplint
 
 if exists("g:loaded_syntastic_cpp_cpplint_checker")
     finish
@@ -31,6 +19,9 @@ if !exists('g:syntastic_cpp_cpplint_thres')
     let g:syntastic_cpp_cpplint_thres = 5
 endif
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! SyntaxCheckers_cpp_cpplint_GetLocList() dict
     let makeprg = self.makeprgBuild({ 'args': '--verbose=3' })
 
@@ -39,7 +30,8 @@ function! SyntaxCheckers_cpp_cpplint_GetLocList() dict
     let loclist = SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
-        \ 'subtype': 'Style' })
+        \ 'subtype': 'Style',
+        \ 'returns': [0, 1] })
 
     " change error types according to the prescribed threshold
     for e in loclist
@@ -53,3 +45,8 @@ call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'cpp',
     \ 'name': 'cpplint',
     \ 'exec': 'cpplint.py'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:

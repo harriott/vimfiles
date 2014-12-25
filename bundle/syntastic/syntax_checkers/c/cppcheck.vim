@@ -8,13 +8,6 @@
 "             Want To Public License, Version 2, as published by Sam Hocevar.
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "============================================================================
-"
-" The setting 'g:syntastic_cppcheck_config_file' allows you to define a file
-" that contains additional compiler arguments like include directories or
-" CFLAGS. The file is expected to contain one option per line. If none is
-" given the filename defaults to '.syntastic_cppcheck_config':
-"
-"   let g:syntastic_cppcheck_config_file = '.config'
 
 if exists("g:loaded_syntastic_c_cppcheck_checker")
     finish
@@ -25,10 +18,13 @@ if !exists('g:syntastic_cppcheck_config_file')
     let g:syntastic_cppcheck_config_file = '.syntastic_cppcheck_config'
 endif
 
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! SyntaxCheckers_c_cppcheck_GetLocList() dict
     let makeprg = self.makeprgBuild({
-        \ 'args': '-q ' . syntastic#c#ReadConfig(g:syntastic_cppcheck_config_file),
-        \ 'post_args': '--enable=style' })
+        \ 'args': syntastic#c#ReadConfig(g:syntastic_cppcheck_config_file),
+        \ 'args_after': '-q --enable=style' })
 
     let errorformat =
         \ '[%f:%l]: (%trror) %m,' .
@@ -43,6 +39,7 @@ function! SyntaxCheckers_c_cppcheck_GetLocList() dict
     let loclist = SyntasticMake({
         \ 'makeprg': makeprg,
         \ 'errorformat': errorformat,
+        \ 'preprocess': 'cppcheck',
         \ 'returns': [0] })
 
     for e in loclist
@@ -58,3 +55,8 @@ endfunction
 call g:SyntasticRegistry.CreateAndRegisterChecker({
     \ 'filetype': 'c',
     \ 'name': 'cppcheck'})
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
+
+" vim: set et sts=4 sw=4:
