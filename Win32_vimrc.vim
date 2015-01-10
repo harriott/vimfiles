@@ -62,3 +62,5 @@ set guifont=Lucida_Console:h9  "better to append size so that it's reported
 " where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 
+autocmd vimenter * if !argc() | cd D:/ | NERDTree | endif  "open empty vim to NERDTree
+

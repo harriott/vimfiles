@@ -109,6 +109,8 @@ nnoremap <leader>u :Underline
 " Plugins
 " -------
 
+let g:gitgutter_enabled = 0
+
 " for mru.vim:
 let MRU_Max_Entries = 1000
 
