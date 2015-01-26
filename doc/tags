@@ -1,6 +1,10 @@
+:FinishRecovery	recoverPlugin.txt	/*:FinishRecovery*
 :HistID	histwin.txt	/*:HistID*
 :Histwin	histwin.txt	/*:Histwin*
 :MatchDebug	matchit.txt	/*:MatchDebug*
+:RecoverPluginFinish	recoverPlugin.txt	/*:RecoverPluginFinish*
+:RecoverPluginGet	recoverPlugin.txt	/*:RecoverPluginGet*
+:RecoverPluginHelp	recoverPlugin.txt	/*:RecoverPluginHelp*
 :UB	histwin.txt	/*:UB*
 :WriteBackup	writebackup.txt	/*:WriteBackup*
 :WriteBackupDeleteLastBackup	writebackupVersionControl.txt	/*:WriteBackupDeleteLastBackup*
@@ -17,6 +21,10 @@
 :WriteBackupViewDaysChanges	writebackupVersionControl.txt	/*:WriteBackupViewDaysChanges*
 :WriteBackupViewDiffWithPred	writebackupVersionControl.txt	/*:WriteBackupViewDiffWithPred*
 MatchError	matchit.txt	/*MatchError*
+RecovePlugin-config	recoverPlugin.txt	/*RecovePlugin-config*
+RecoverPlugin	recoverPlugin.txt	/*RecoverPlugin*
+RecoverPlugin-manual	recoverPlugin.txt	/*RecoverPlugin-manual*
+RecoverPlugin-misc	recoverPlugin.txt	/*RecoverPlugin-misc*
 ShowTrailingWhitespace-colors	ShowTrailingWhitespace.txt	/*ShowTrailingWhitespace-colors*
 ShowTrailingWhitespace-commands	ShowTrailingWhitespace.txt	/*ShowTrailingWhitespace-commands*
 ShowTrailingWhitespace-configuration	ShowTrailingWhitespace.txt	/*ShowTrailingWhitespace-configuration*
@@ -73,6 +81,7 @@ b:match_tail	matchit.txt	/*b:match_tail*
 b:match_wholeBR	matchit.txt	/*b:match_wholeBR*
 b:match_word	matchit.txt	/*b:match_word*
 b:match_words	matchit.txt	/*b:match_words*
+cvim	recoverPlugin.txt	/*cvim*
 g%	matchit.txt	/*g%*
 g:ShowTrailingWhitespace	ShowTrailingWhitespace.txt	/*g:ShowTrailingWhitespace*
 g:ShowTrailingWhitespace_FilterFunc	ShowTrailingWhitespace.txt	/*g:ShowTrailingWhitespace_FilterFunc*
@@ -139,6 +148,10 @@ matchit.vim	matchit.txt	/*matchit.vim*
 o_[%	matchit.txt	/*o_[%*
 o_]%	matchit.txt	/*o_]%*
 o_g%	matchit.txt	/*o_g%*
+recover-feedback	recoverPlugin.txt	/*recover-feedback*
+recover-history	recoverPlugin.txt	/*recover-history*
+recover-manual	recoverPlugin.txt	/*recover-manual*
+recover.vim	recoverPlugin.txt	/*recover.vim*
 v_[%	matchit.txt	/*v_[%*
 v_]%	matchit.txt	/*v_]%*
 v_a%	matchit.txt	/*v_a%*
