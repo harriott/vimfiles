@@ -1,6 +1,7 @@
+" Sourced from my Arch Linux installation's ~/.vimrc
 " To investigate Debian's vim installation, begin here: /etc/vim/vimrc
 
-" Point now to my more portably located vimrc:
+" Source my more portably located vimrc:
 source $HOME/.vim/vimrc.vim
 source $HOME/.vim/debian.vim
 
