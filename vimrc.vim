@@ -140,8 +140,8 @@ let g:colorizer_startup = 0
 
 noremap <silent> <F4> :BufExplorer<CR>
 
-noremap <F7> :CalendarH<CR>
-inoremap <F7> <Esc>:CalendarH<CR>
+noremap <F8> :CalendarH<CR>
+inoremap <F8> <Esc>:CalendarH<CR>
 
 " remove these two mappings made in vim-buffing-wheel\plugin\buffingwheel.vim:
 autocmd vimenter * silent unmap L|silent unmap H
