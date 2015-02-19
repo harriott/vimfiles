@@ -9,12 +9,16 @@ setlocal tw=0 fdc=1 fde=DLF() fdl=1 fdm=expr
 " dirlist folding by header marks
 " --------------------------------
 function! DLF()
+	let t = getline(3)
 	let j = getline(v:lnum)
 	if empty(matchstr(j, '^\.'))
 		return "="
 	else
-		let k =	substitute(j, "\\", "", "g")
-"	echo k
+        if empty(matchstr(t, '/'))
+	    	let k =	substitute(j, "\\", "", "g")
+        else
+	    	let k =	substitute(j, "/", "", "g")
+        endif
 		let l = len(j) - len(k) +1
 		return ">".l
 	endif
