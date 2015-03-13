@@ -109,7 +109,10 @@ nnoremap <leader>u :Underline
 " Plugins
 " -------
 
+" vim-gitgutter:
 let g:gitgutter_enabled = 0
+noremap <F9> :GitGutterToggle<CR>
+inoremap <F9> <Esc>:GitGutterToggle<CR>
 
 " for mru.vim:
 let MRU_Max_Entries = 1000
