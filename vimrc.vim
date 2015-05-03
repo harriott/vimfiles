@@ -3,6 +3,7 @@
 " ----------------------------------------------------------
 "  Real vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
 
+" ---------
 " interface
 " ---------
 set linebreak number relativenumber
@@ -28,6 +29,7 @@ set history=300
 " LaTeX syntax folding on:
 let g:tex_fold_enabled=1
 
+" ------------
 " buffer stuff
 " ------------
 set autoread
@@ -50,6 +52,7 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 " toggle relativenumber:
 nnoremap <silent><leader>n :set rnu! rnu? <CR>
 
+" -----------------
 " shell interaction
 " -----------------
 " set working directory to that of the currently loaded file's:
@@ -60,12 +63,22 @@ set pastetoggle=<S-F3>
 " open netrw:
 nnoremap <leader>- :Explore<cr>
 
+" ---------
 " searching
 " ---------
 set ignorecase smartcase
 nmap <silent> ,/ :nohlsearch<CR>
 " for clearing search highlights
 
+" Ggrep the current selection
+function! GgrepROR()
+  let lastvimsearch = getreg('/')
+  let @s=strpart(lastvimsearch, 2, strlen(lastvimsearch)-4)
+endfunction
+command! -nargs=? GgrepLastSearch call GgrepROR()
+nnoremap <S-F9> :GgrepLastSearch<CR>:Ggrep "<C-R>s" <bar>cw
+
+" ---
 " Vim
 " ---
 " to get the output of a command in a new tab, just enter :TabEx <cmd>
@@ -80,6 +93,12 @@ endfunction
 command! -nargs=+ -complete=command TabEx call TabEx(<q-args>)
 " (from http://vim.wikia.com/wiki/Capture_ex_command_output)
 
+"  -----
+"  Dates
+"  -----
+noremap <F8> :CalendarH<CR>
+inoremap <F8> <Esc>:CalendarH<CR>
+
 " abbreviation for current date
 " -----------------------------
 iab <expr> d8c strftime("%y%m%d")
@@ -89,9 +108,7 @@ iab <expr> d8m strftime("%y%m%d-%Hh%Mm")
 iab <expr> d8s strftime("%d/%m/%y")
 iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
-" switch on comment highlighting (read by C:\Users\jo\vimfiles\syntax\dokuwiki.vim)
-let dokuwiki_comment=1
-
+" ------------------------------------
 " Underline using dashes automatically 
 " ------------------------------------
 " (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
@@ -106,45 +123,41 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 " map:
 nnoremap <leader>u :Underline
 
-" Plugins
-" -------
+" ---------------------
+" Plugin configurations
+" ---------------------
+" load in plugins from bundle directory:
+execute pathogen#infect()
+
+" Appearance
+" ----------
+" start vim with colorizer's highlighting off:
+let g:colorizer_startup = 0
+
+" switch on DokuWiki comment highlighting (read by ./syntax/dokuwiki.vim)
+let dokuwiki_comment=1
 
 " vim-gitgutter:
 let g:gitgutter_enabled = 0
 noremap <F9> :GitGutterToggle<CR>
 inoremap <F9> <Esc>:GitGutterToggle<CR>
 
-" for mru.vim:
-let MRU_Max_Entries = 1000
-
-" quickly close all but current buffer:
-nnoremap <S-F4> :BufOnly<CR>
-
-" load in plugins from bundle directory:
-execute pathogen#infect()
-
 " for Solarized:
 set background=dark  " at this stage, assuming vim's in terminal
 colorscheme solarized
 call togglebg#map("<S-F5>")  " reassign the toggle light/dark
 
-map <C-n> :NERDTreeToggle<CR>
-
-" to help CtrlP when in my Win7 %USERPROFILE%:
-set wildignore+=NTUSER.DAT*,*.lnk
-let g:ctrlp_cmd = 'CtrlPMRU'
-
 nnoremap <leader>a :Tabularize/-/r1c1l0
 " this produces GFM-style tables:
 let g:table_mode_corner='|'
 
-" start vim with colorizer's highlighting off:
-let g:colorizer_startup = 0
+let g:languagetool_jar='$HOME\LanguageTool-2.4.1\languagetool-commandline.jar'
 
+let g:syntastic_python_checkers = ['flake8']
+
+" Files & buffers
+" ---------------
 noremap <silent> <F4> :BufExplorer<CR>
-
-noremap <F8> :CalendarH<CR>
-inoremap <F8> <Esc>:CalendarH<CR>
 
 " remove these two mappings made in vim-buffing-wheel\plugin\buffingwheel.vim:
 autocmd vimenter * silent unmap L|silent unmap H
@@ -152,16 +165,22 @@ autocmd vimenter * silent unmap L|silent unmap H
 noremap <silent> + :<C-u>BuffingWheelNext<CR>
 noremap <silent> - :<C-u>BuffingWheelPrevious<CR>
 
-let g:languagetool_jar='$HOME\LanguageTool-2.4.1\languagetool-commandline.jar'
+" quickly close all but current buffer:
+nnoremap <S-F4> :BufOnly<CR>
 
-let g:syntastic_python_checkers = ['flake8']
+" to help CtrlP when in my Win7 %USERPROFILE%:
+set wildignore+=NTUSER.DAT*,*.lnk
+let g:ctrlp_cmd = 'CtrlPMRU'
 
-command -bar -bang W :WriteBackup<bang>
-
-let MRU_Max_Entries = 900
+" for mru.vim:
+let MRU_Max_Entries = 1000
 let MRU_Window_Height = 15
 " which is overriden by this:
 let MRU_Use_Current_Window = 1
+
+map <C-n> :NERDTreeToggle<CR>
+
+command! -bar -bang W :WriteBackup<bang>
 
 " ShowTrailingWhitespace
 " ----------------------
