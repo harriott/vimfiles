@@ -11,7 +11,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-syntax region buildH start=/#/ end=/$/
+syntax region buildH start=/^#/ end=/$/
 
 hi def link buildH Folded
 
