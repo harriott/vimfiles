@@ -73,9 +73,13 @@ nmap <silent> ,/ :nohlsearch<CR>
 " Ggrep the current selection
 function! GgrepROR()
   let lastvimsearch = getreg('/')
-  let @s=strpart(lastvimsearch, 2, strlen(lastvimsearch)-4)
+  " convert '\Vlastvimsearch' to simply 'lastvimsearch':
+  let lvsnovisual = substitute(lastvimsearch, "^\\\\V", "", "")
+  " convert '\<lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
+  let @s = substitute(lvsnovisual, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
 endfunction
 command! -nargs=? GgrepLastSearch call GgrepROR()
+" Ggrep with the contents of s register:
 nnoremap <S-F9> :GgrepLastSearch<CR>:Ggrep "<C-R>s" <bar>cw
 
 " ---
@@ -112,7 +116,7 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 " Text Formatting
 " ---------------
 " Convert url parenthesis:
-"nnoremap <S-F10> :s/(/%28/<bar><F2>s/)/%29/<CR>
+nnoremap <S-F10> :s/(/%28/ <bar> s/)/%29/ <bar> nohlsearch<CR>
 
 nnoremap <leader>a :Tabularize/-/r1c1l0
 " this produces GFM-style tables:
