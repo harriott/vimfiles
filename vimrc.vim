@@ -108,7 +108,16 @@ iab <expr> d8m strftime("%y%m%d-%Hh%Mm")
 iab <expr> d8s strftime("%d/%m/%y")
 iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
-" ------------------------------------
+" ---------------
+" Text Formatting
+" ---------------
+" Convert url parenthesis:
+"nnoremap <S-F10> :s/(/%28/<bar><F2>s/)/%29/<CR>
+
+nnoremap <leader>a :Tabularize/-/r1c1l0
+" this produces GFM-style tables:
+let g:table_mode_corner='|'
+
 " Underline using dashes automatically 
 " ------------------------------------
 " (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
@@ -146,10 +155,6 @@ inoremap <F9> <Esc>:GitGutterToggle<CR>
 set background=dark  " at this stage, assuming vim's in terminal
 colorscheme solarized
 call togglebg#map("<S-F5>")  " reassign the toggle light/dark
-
-nnoremap <leader>a :Tabularize/-/r1c1l0
-" this produces GFM-style tables:
-let g:table_mode_corner='|'
 
 let g:languagetool_jar='$HOME\LanguageTool-2.4.1\languagetool-commandline.jar'
 
