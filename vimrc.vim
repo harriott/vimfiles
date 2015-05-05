@@ -115,8 +115,10 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 " ---------------
 " Text Formatting
 " ---------------
-" a DokuWiki heading I often use:
+" a fourth-level DokuWiki heading I often use:
 iab =w === at Wikipedia ===
+" boost up a DokuWiki heading:
+nnoremap <leader>= I=<Esc>A=<Esc>
 
 " Convert url parenthesis:
 nnoremap <S-F10> :s/(/%28/ <bar> s/)/%29/ <bar> nohlsearch<CR>
