@@ -115,6 +115,7 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 " ---------------
 " Text Formatting
 " ---------------
+" a DokuWiki heading I often use:
 iab =w === at Wikipedia ===
 
 " Convert url parenthesis:
