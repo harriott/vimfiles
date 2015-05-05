@@ -115,6 +115,8 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 " ---------------
 " Text Formatting
 " ---------------
+iab =w === at Wikipedia ===
+
 " Convert url parenthesis:
 nnoremap <S-F10> :s/(/%28/ <bar> s/)/%29/ <bar> nohlsearch<CR>
 
