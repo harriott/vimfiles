@@ -115,7 +115,9 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 " ---------------
 " Text Formatting
 " ---------------
-" a fourth-level DokuWiki heading I often use:
+" some fourth-level DokuWiki heading I often use:
+iab =a === at ArchWiki ===
+iab =g === at Gentoo Wiki ===
 iab =w === at Wikipedia ===
 " boost up a DokuWiki heading:
 nnoremap <leader>= I=<Esc>A=<Esc>
