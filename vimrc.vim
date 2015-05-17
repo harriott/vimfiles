@@ -118,6 +118,7 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 " some fourth-level DokuWiki heading I often use:
 iab =a === at ArchWiki ===
 iab =g === at Gentoo Wiki ===
+iab =w === at opensuse.org ===
 iab =w === at Wikipedia ===
 " boost up a DokuWiki heading:
 nnoremap <leader>= I=<Esc>A=<Esc>
