@@ -105,6 +105,7 @@ inoremap <F8> <Esc>:CalendarH<CR>
 
 " abbreviation for current date
 " -----------------------------
+iab <expr> d8- strftime("%y-%m-%d")
 iab <expr> d8c strftime("%y%m%d")
 iab <expr> d8d strftime("%a %d %b %Y")
 iab <expr> d8l strftime("%Hh%M %a %d %b %Y")
