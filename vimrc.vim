@@ -55,6 +55,9 @@ nnoremap <silent><leader>n :set rnu! rnu? <CR>
 " -----------------
 " shell interaction
 " -----------------
+" get filepath into register f:
+nnoremap <leader>f :let@f=@%<CR>
+
 " set working directory to that of the currently loaded file's:
 nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
