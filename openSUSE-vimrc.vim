@@ -3,6 +3,7 @@
 source $HOME/.vim/GNULinux-vimrc.vim
 
 set gfn=Droid\ Sans\ Mono\ 10
+set noshowmatch
 
 " Useful when making adjustements to configurations:
 nnoremap <S-F6> :source ~/.vim/openSUSE-vimrc.vim <bar> source ~/.vim/gvimrc.vim <bar> nohlsearch<CR>
