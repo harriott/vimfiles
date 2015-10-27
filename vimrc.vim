@@ -83,7 +83,7 @@ function! GgrepROR()
 endfunction
 command! -nargs=? GgrepLastSearch call GgrepROR()
 " Ggrep with the contents of s register:
-nnoremap <S-F9> :GgrepLastSearch<CR>:Ggrep "<C-R>s" <bar>cw
+nnoremap <S-F9> :GgrepLastSearch<CR>:Ggrep -i "<C-R>s" <bar>cw
 
 " ---
 " Vim

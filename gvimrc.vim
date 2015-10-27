@@ -51,7 +51,7 @@ endfunction
 set background=light  " for solarized
 let g:solarized_contrast="high"    "default value is normal
 
-" Set guibg after any adjustments to Solarised:
+" Set guibg after any adjustments to Solarized:
 highlight ShowTrailingWhitespace ctermbg=White guibg=White
 " and add a mapping to reset this if Solarized has been toggled:
 nnoremap <leader>W :highlight ShowTrailingWhitespace ctermbg=White guibg=White<cr>
@@ -72,6 +72,6 @@ endfunction
 
 nnoremap <Space> za  " handy for toggling folds open/closed
 
-" have the installed DokuWiki syntax file open ready configured:
-autocmd BufRead,BufNewFile */pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
+" have two installed DokuWiki files open ready configured:
+autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
 
