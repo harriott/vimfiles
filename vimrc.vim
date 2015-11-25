@@ -128,12 +128,16 @@ iab =w === at Wikipedia ===
 " boost up a DokuWiki heading:
 nnoremap <leader>= I=<Esc>A=<Esc>
 
-" Convert url parenthesis:
-nnoremap <S-F10> :s/(/%28/ <bar> s/)/%29/ <bar> nohlsearch<CR>
-
 nnoremap <leader>a :Tabularize/-/r1c1l0
 " this produces GFM-style tables:
 let g:table_mode_corner='|'
+
+" Convert url parenthesis
+" -----------------------
+" 5 here means convert to % code (my general preference):
+nnoremap <leader>5 :s/(/%28/ <bar> s/)/%29/ <bar> nohlsearch<CR>
+" 9 here means convert back to parentheses (eg for a quoted url in tex):
+nnoremap <leader>9 :s/%28/(/ <bar> s/%29/)/ <bar> nohlsearch<CR>
 
 " Underline using dashes automatically 
 " ------------------------------------
