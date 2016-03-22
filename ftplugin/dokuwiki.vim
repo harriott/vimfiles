@@ -14,6 +14,11 @@
 
 setlocal tw=0 fdc=1 fde=DWF() fdl=0 fdm=expr
 
+" abbreviations for code tags
+" ---------------------------
+iab <a <code awk>
+iab </ </code>
+
 " Command to add wrap indent tags around quotes
 " ---------------------------------------------
 " For use when Anika Henke's excellent Wrap Plugin is installed in DokuWiki.
