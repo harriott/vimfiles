@@ -17,6 +17,8 @@ setlocal tw=0 fdc=1 fde=DWF() fdl=0 fdm=expr
 " abbreviations for code tags
 " ---------------------------
 iab <a <code awk>
+iab <b <code bash>
+iab <l <code latex>
 iab </ </code>
 
 " Command to add wrap indent tags around quotes
