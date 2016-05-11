@@ -10,7 +10,7 @@ endif
 
 " --------------------------------------------
 " Adjusted from gVim for Windows' $VIM/_vimrc:
-set nocompatible  
+set nocompatible
 " source $VIMRUNTIME/vimrc_example.vim - changed to my adapted version:
 source $HOME/vimfiles/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
