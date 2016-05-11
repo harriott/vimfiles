@@ -1,7 +1,7 @@
 " ----------------------------------------------------------
 " My portable vimrc - Joseph Harriott - http://momentary.eu/
 " ----------------------------------------------------------
-"  Real vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
+" Real vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
 
 " ---------
 " interface
@@ -25,6 +25,7 @@ inoremap <F3> <Esc>:set list! list? <CR>
 runtime macros/matchit.vim
 
 set history=300
+set modelines=4
 
 " LaTeX syntax folding on:
 let g:tex_fold_enabled=1
@@ -171,6 +172,7 @@ let g:colorizer_startup = 0
 let dokuwiki_comment=1
 
 " vim-gitgutter:
+let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
 noremap <F9> :GitGutterToggle<CR>
 inoremap <F9> <Esc>:GitGutterToggle<CR>

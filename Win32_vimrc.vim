@@ -1,10 +1,10 @@
 " -------------------------------------------------------------
 " This is a wrapper vimrc for use on a Win32 system.
 " This file should be located at $HOME\_vimrc (I symlink to it).
-" Joseph Harriott - http://momentary.eu/ - Thu 30 Oct 2014
+" Joseph Harriott - http://momentary.eu/ - Tue 10 May 2016
 " --------------------------------------------------------------
-" quit if called from Git's vim:
-if $VIM == 'C:\Program Files\Git\share\vim'
+" quit if called from Git's vim (adapted for Git-2.8.1-64-bit.exe on Windows 10):
+if $VIM == '/usr/share/vim'
   finish
 endif
 
@@ -62,5 +62,6 @@ set guifont=Lucida_Console:h9  "better to append size so that it's reported
 " where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 
-autocmd vimenter * if !argc() | cd D:/ | NERDTree | endif  "open empty vim to NERDTree
+"autocmd vimenter * if !argc() | cd E:/ | NERDTree | endif  "open empty vim to NERDTree
+autocmd vimenter * if !argc() | cd E:/DropboxFiles/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/pages | NERDTree | endif  "open empty vim to NERDTree
 
