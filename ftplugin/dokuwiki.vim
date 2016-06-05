@@ -20,6 +20,7 @@ iab <a <code awk>
 iab <b <code bash>
 iab <l <code latex>
 iab <p <code powershell>
+iab <v <code vim>
 iab </ </code>
 
 " Command to add wrap indent tags around quotes

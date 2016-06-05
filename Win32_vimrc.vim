@@ -1,7 +1,7 @@
 " -------------------------------------------------------------
 " This is a wrapper vimrc for use on a Win32 system.
-" This file should be located at $HOME\_vimrc (I symlink to it).
-" Joseph Harriott - http://momentary.eu/ - Tue 10 May 2016
+" This file should be called from $HOME\_vimrc 
+" Joseph Harriott - http://momentary.eu/ - Sun 05 Jun 2016
 " --------------------------------------------------------------
 " quit if called from Git's vim (adapted for Git-2.8.1-64-bit.exe on Windows 10):
 if $VIM == '/usr/share/vim'
@@ -64,4 +64,7 @@ let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 
 "autocmd vimenter * if !argc() | cd E:/ | NERDTree | endif  "open empty vim to NERDTree
 autocmd vimenter * if !argc() | cd E:/DropboxFiles/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/pages | NERDTree | endif  "open empty vim to NERDTree
+
+" Useful when making adjustements to configurations:
+nnoremap <S-F6> :source $HOME/vimfiles/Win32_vimrc.vim <bar> source $HOME/vimfiles/gvimrc.vim <bar> nohlsearch<CR>
 
