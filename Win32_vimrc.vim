@@ -44,6 +44,7 @@ function MyDiff()
   endif
   silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 endfunction
+" this function causes a complaint if I source this file...
 
 " ---------------------------------
 " More of my preferences for MSWin:
@@ -64,7 +65,4 @@ let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 
 "autocmd vimenter * if !argc() | cd E:/ | NERDTree | endif  "open empty vim to NERDTree
 autocmd vimenter * if !argc() | cd E:/DropboxFiles/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/pages | NERDTree | endif  "open empty vim to NERDTree
-
-" Useful when making adjustements to configurations:
-nnoremap <S-F6> :source $HOME/vimfiles/Win32_vimrc.vim <bar> source $HOME/vimfiles/gvimrc.vim <bar> nohlsearch<CR>
 
