@@ -124,9 +124,6 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 " boost up a DokuWiki heading:
 nnoremap <leader>= I=<Esc>A=<Esc>
 
-" a Markdown heading I often use:
-iab #w # at Wikipedia
-
 nnoremap <leader>a :Tabularize/-/r1c1l0
 " this produces GFM-style tables:
 let g:table_mode_corner='|'
