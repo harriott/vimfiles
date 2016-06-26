@@ -1,7 +1,7 @@
 " Folding adjustments
 " Language:	dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: 2016
+" Last Change: Sun 26 Jun 2016
 " This file should be in your vimfiles\ftplugin folder,
 " and you'll need to (autocmd BufRead,BufNewFile) setlocal ft=dokuwiki.
 
@@ -20,6 +20,7 @@ iab <a <code awk>
 iab <b <code bash>
 iab <l <code latex>
 iab <p <code powershell>
+iab <y <code python>
 iab <v <code vim>
 iab </ </code>
 
