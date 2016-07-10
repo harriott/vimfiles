@@ -80,10 +80,10 @@ nmap <silent> ,/ :nohlsearch<CR>
 " Strip the current selection & store it in s register:
 function! StripStoreCurSel()
   let lastvimsearch = getreg('/')
-  " convert '\Vlastvimsearch' to simply 'lastvimsearch':
-  let lvsnovisual = substitute(lastvimsearch, "^\\\\V", "", "")
+  " remove the '\V' (very nomagic) prefix, if it's there:
+  let lvsvnm = substitute(lastvimsearch, "^\\\\V", "", "")
   " convert '\<lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
-  let @s = substitute(lvsnovisual, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
+  let @s = substitute(lvsvnm, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
 endfunction
 command! -nargs=? CSinS call StripStoreCurSel()
 
