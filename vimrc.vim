@@ -70,21 +70,22 @@ nnoremap <leader>- :Explore<cr>
 " ---------
 " searching
 " ---------
+" Ggrep with the contents of s register:
+nnoremap <S-F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
+
 set ignorecase smartcase
 nmap <silent> ,/ :nohlsearch<CR>
 " for clearing search highlights
 
-" Ggrep the current selection
-function! GgrepROR()
+" Strip the current selection & store it in s register:
+function! StripStoreCurSel()
   let lastvimsearch = getreg('/')
   " convert '\Vlastvimsearch' to simply 'lastvimsearch':
   let lvsnovisual = substitute(lastvimsearch, "^\\\\V", "", "")
   " convert '\<lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
   let @s = substitute(lvsnovisual, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
 endfunction
-command! -nargs=? GgrepLastSearch call GgrepROR()
-" Ggrep with the contents of s register:
-nnoremap <S-F9> :GgrepLastSearch<CR>:Ggrep -i "<C-R>s" <bar>cw
+command! -nargs=? CSinS call StripStoreCurSel()
 
 " ---
 " Vim
