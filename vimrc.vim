@@ -77,13 +77,13 @@ set ignorecase smartcase
 nmap <silent> ,/ :nohlsearch<CR>
 " for clearing search highlights
 
-" Strip the current selection & store it in s register:
+" Strip the current selection & store it in the l then s register:
 function! StripStoreCurSel()
   let lastvimsearch = getreg('/')
   " remove the '\V' (very nomagic) prefix, if it's there:
-  let lvsvnm = substitute(lastvimsearch, "^\\\\V", "", "")
+  let @l = substitute(lastvimsearch, "^\\\\V", "", "")
   " convert '\<lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
-  let @s = substitute(lvsvnm, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
+  let @s = substitute(@l, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
 endfunction
 command! -nargs=? CSinS call StripStoreCurSel()
 
@@ -177,6 +177,7 @@ call togglebg#map("<S-F5>")  " reassign the toggle light/dark
 
 let g:languagetool_jar='$HOME\LanguageTool-2.4.1\languagetool-commandline.jar'
 
+let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
 let g:syntastic_python_checkers = ['flake8']
 
 " Files & buffers
