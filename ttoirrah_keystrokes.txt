@@ -39,7 +39,8 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 # Insert mode commands
 	C-ke'    => digraph code for é
 	C-O      => moves to normal mode for just one command
-	C-p      => keyword (insert-mode) completion
+	C-p      => keyword completion
+	C-r%     => insert relative path of current file
 	C-qu201c => unicode codepoint for “
 
 # Movements
@@ -85,11 +86,10 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	n        => find next highlighted search result
 
 # Shell
-	1C-g                => display full path of current file
+	C-g                 => display relative path of current file
 	<shellcmd>|gvim -   => pipes shell command output into gvim
 	gf                  => open file under cursor
 	gx                  => open url under cursor
-	C-r%                => inserts name of current file
 	:!<shellcmd>        => runs the external shell command
 	:Vexplore           => opens a netrw vertical directory browsing window
 	:r!<shell command>  => reads shell command output into the buffer
