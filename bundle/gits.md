@@ -41,7 +41,7 @@ git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/vim-scripts/gitignore.vim
 ```
 
-## Legacy (now handled by vim-plug):
+## legacy (= now handled by vim-plug):
 
 ```bash
 git clone git://github.com/airblade/vim-gitgutter.git

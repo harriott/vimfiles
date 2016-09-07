@@ -156,6 +156,7 @@ nnoremap <leader>u :Underline
 " ---------------------
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
+Plug 'haya14busa/incsearch.vim'
 call plug#end()
 
 " load in plugins from bundle directory:
