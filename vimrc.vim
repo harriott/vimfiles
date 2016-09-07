@@ -73,7 +73,8 @@ nnoremap <leader>- :Explore<cr>
 " Ggrep with the contents of s register:
 nnoremap <S-F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
 
-set ignorecase smartcase
+set ignorecase incsearch smartcase
+
 nmap <silent> ,/ :nohlsearch<CR>
 " for clearing search highlights
 
@@ -159,6 +160,30 @@ call plug#end()
 
 " load in plugins from bundle directory:
 execute pathogen#infect()
+
+" EasyMotion
+" ----------
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" s{char}{char}{label}
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
+" toggle searching functionality
+nnoremap <leader>e :call EasyMotionSearchToggle()<cr>
+let g:searchingwitheasymotion = 0
+function! EasyMotionSearchToggle()
+    if g:searchingwitheasymotion
+        unmap /
+        unmap n
+        unmap N
+        let g:searchingwitheasymotion = 0
+		echo 'searching normally'
+    else
+        map / <Plug>(easymotion-sn)
+        map n <Plug>(easymotion-next)
+        map N <Plug>(easymotion-prev)
+        let g:searchingwitheasymotion = 1
+		echo 'searching with EasyMotion'
+    endif
+endfunction
 
 " Appearance
 " ----------

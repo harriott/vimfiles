@@ -6,15 +6,15 @@ vim: ft=ghmarkdown fdl=1 fdm=expr:
 find -name .git
 find -name .git -exec rm -rf {} \;
 ```
+
+
+```vim
 :Helptags
+```
 
 ## cloned
 
 ```bash
-git clone git://github.com/tpope/vim-repeat.git
-git clone git://github.com/altercation/vim-colors-solarized.git
-git clone git://github.com/tpope/vim-surround.git
-git clone https://github.com/Lokaltog/vim-easymotion.git
 git clone https://github.com/PProvost/vim-ps1.git
 git clone https://github.com/bling/vim-airline
 git clone https://github.com/chikamichi/mediawiki.vim.git
@@ -41,14 +41,26 @@ git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/vim-scripts/gitignore.vim
 ```
 
-## Handled by vim-plug:
+## Legacy (now handled by vim-plug):
+
+```bash
 git clone git://github.com/airblade/vim-gitgutter.git
+```
 
 ## Wed 07 Sep 2016
 
-```shell
+### Checked
+```bash
+git clone git://github.com/altercation/vim-colors-solarized.git
+git clone git://github.com/tpope/vim-surround.git
+```
+
+### Updated
+```bash
 git clone git://github.com/godlygeek/tabular.git
 git clone git://github.com/mattn/calendar-vim
 git clone git://github.com/tpope/vim-fugitive.git
+git clone git://github.com/tpope/vim-repeat.git
+git clone https://github.com/easymotion/vim-easymotion
 ```
 

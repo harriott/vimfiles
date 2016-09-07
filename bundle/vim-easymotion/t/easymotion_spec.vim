@@ -1,7 +1,6 @@
 "=============================================================================
 " FILE: t/easymotion_spec.vim
 " AUTHOR: haya14busa
-" Last Change: 21 Mar 2014.
 " Test: https://github.com/kana/vim-vspec
 " Refer: https://github.com/rhysd/clever-f.vim
 " Description: EasyMotion test with vim-vspec
@@ -218,7 +217,7 @@ describe 'Default settings'
         "}}}
     end
 
-    it 'provide default <Plug> mappings for regrex motion'
+    it 'provide default <Plug> mappings for regex motion'
         "(is_visual, direction)
         " direction:
         "   - 0: forward
@@ -330,15 +329,23 @@ describe 'Default settings'
         " }}}
 
         " Search Motion: {{{
-        Expect maparg('<Plug>(easymotion-n)', 'n') ==# ':<C-U>call EasyMotion#Search(0,0)<CR>'
-        Expect maparg('<Plug>(easymotion-n)', 'o') ==# ':<C-U>call EasyMotion#Search(0,0)<CR>'
-        Expect maparg('<Plug>(easymotion-n)', 'v') ==# '<Esc>:<C-U>call EasyMotion#Search(1,0)<CR>'
-        Expect maparg('<Plug>(easymotion-N)', 'n') ==# ':<C-U>call EasyMotion#Search(0,1)<CR>'
-        Expect maparg('<Plug>(easymotion-N)', 'o') ==# ':<C-U>call EasyMotion#Search(0,1)<CR>'
-        Expect maparg('<Plug>(easymotion-N)', 'v') ==# '<Esc>:<C-U>call EasyMotion#Search(1,1)<CR>'
-        Expect maparg('<Plug>(easymotion-bd-n)', 'n') ==# ':<C-U>call EasyMotion#Search(0,2)<CR>'
-        Expect maparg('<Plug>(easymotion-bd-n)', 'o') ==# ':<C-U>call EasyMotion#Search(0,2)<CR>'
-        Expect maparg('<Plug>(easymotion-bd-n)', 'v') ==# '<Esc>:<C-U>call EasyMotion#Search(1,2)<CR>'
+        Expect maparg('<Plug>(easymotion-n)', 'n') ==# ':<C-U>call EasyMotion#Search(0,0,0)<CR>'
+        Expect maparg('<Plug>(easymotion-n)', 'o') ==# ':<C-U>call EasyMotion#Search(0,0,0)<CR>'
+        Expect maparg('<Plug>(easymotion-n)', 'v') ==# '<Esc>:<C-U>call EasyMotion#Search(1,0,0)<CR>'
+        Expect maparg('<Plug>(easymotion-N)', 'n') ==# ':<C-U>call EasyMotion#Search(0,1,0)<CR>'
+        Expect maparg('<Plug>(easymotion-N)', 'o') ==# ':<C-U>call EasyMotion#Search(0,1,0)<CR>'
+        Expect maparg('<Plug>(easymotion-N)', 'v') ==# '<Esc>:<C-U>call EasyMotion#Search(1,1,0)<CR>'
+        Expect maparg('<Plug>(easymotion-bd-n)', 'n') ==# ':<C-U>call EasyMotion#Search(0,2,0)<CR>'
+        Expect maparg('<Plug>(easymotion-bd-n)', 'o') ==# ':<C-U>call EasyMotion#Search(0,2,0)<CR>'
+        Expect maparg('<Plug>(easymotion-bd-n)', 'v') ==# '<Esc>:<C-U>call EasyMotion#Search(1,2,0)<CR>'
+
+        " respect previous direction
+        Expect maparg('<Plug>(easymotion-vim-n)', 'n') ==# ':<C-U>call EasyMotion#Search(0,0,1)<CR>'
+        Expect maparg('<Plug>(easymotion-vim-n)', 'o') ==# ':<C-U>call EasyMotion#Search(0,0,1)<CR>'
+        Expect maparg('<Plug>(easymotion-vim-n)', 'v') ==# '<Esc>:<C-U>call EasyMotion#Search(1,0,1)<CR>'
+        Expect maparg('<Plug>(easymotion-vim-N)', 'n') ==# ':<C-U>call EasyMotion#Search(0,1,1)<CR>'
+        Expect maparg('<Plug>(easymotion-vim-N)', 'o') ==# ':<C-U>call EasyMotion#Search(0,1,1)<CR>'
+        Expect maparg('<Plug>(easymotion-vim-N)', 'v') ==# '<Esc>:<C-U>call EasyMotion#Search(1,1,1)<CR>'
         " }}}
 
         " JumpToAnywhere Motion: {{{
@@ -359,11 +366,11 @@ describe 'Default settings'
         Expect maparg('<Plug>(easymotion-repeat)', 'v')
             \ ==# '<Esc>:<C-U>call EasyMotion#Repeat(1)<CR>'
         Expect maparg('<Plug>(easymotion-dotrepeat)', 'n')
-            \ ==# ':<C-U>call EasyMotion#DotRepeat(0)<CR>'
+            \ ==# ':<C-U>call EasyMotion#DotRepeat()<CR>'
         Expect maparg('<Plug>(easymotion-dotrepeat)', 'o')
-            \ ==# ':<C-U>call EasyMotion#DotRepeat(0)<CR>'
+            \ ==# ':<C-U>call EasyMotion#DotRepeat()<CR>'
         Expect maparg('<Plug>(easymotion-dotrepeat)', 'v')
-            \ ==# '<Esc>:<C-U>call EasyMotion#DotRepeat(1)<CR>'
+            \ ==# ':<C-U>call EasyMotion#DotRepeat()<CR>'
         " }}}
 
         " Next, Previous motion {{{
@@ -1404,8 +1411,8 @@ describe 'Word motion'
         close!
     end
 
-    " Default word motion {{
-    it 'Default word motion'
+    " Word motion {{
+    it 'Word motion'
         normal! 0
         let l = line('.')
         Expect CursorPos() == [l,1,'p']
@@ -1423,7 +1430,41 @@ describe 'Word motion'
         normal bh
         Expect CursorPos() == [l,1,'p']
     end
-    "}}}
+    "}}
+end
+
+describe 'Verbose'
+    before
+        new
+        map s <Plug>(easymotion-s)
+        map f <Plug>(easymotion-f)
+        map F <Plug>(easymotion-F)
+        map t <Plug>(easymotion-t)
+        map T <Plug>(easymotion-T)
+        call EasyMotion#init()
+        call AddLine('some words in the sentence')
+    end
+
+    after
+        close!
+    end
+
+    it 'Verbose global variable'
+        Expect g:EasyMotion_verbose ==# 1
+    end
+
+    it 'Turned On'
+        let g:EasyMotion_verbose = 1
+        let &verbosefile = tempname()
+        normal sa
+        " TODO: l:tmp_name_verbose should have one line
+    end
+    it 'Turned Off'
+        let g:EasyMotion_verbose = 0
+        let &verbosefile = &verbosefile
+        normal s_
+        " TODO: l:tmp_name_not_verbose should have no lines
+    end
 end
 "}}}
 
