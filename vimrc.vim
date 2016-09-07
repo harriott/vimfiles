@@ -153,6 +153,10 @@ nnoremap <leader>u :Underline
 " ---------------------
 " Plugin configurations
 " ---------------------
+call plug#begin()
+Plug 'airblade/vim-gitgutter'
+call plug#end()
+
 " load in plugins from bundle directory:
 execute pathogen#infect()
 
