@@ -1,17 +1,16 @@
-vim: ft=ghmarkdown fdm=expr:
+vim: ft=ghmarkdown fdl=1 fdm=expr:
 
-Pathogen managed plugins
+# Pathogen managed plugins
 
 ```bash
 find -name .git
 find -name .git -exec rm -rf {} \;
 ```
+:Helptags
 
-# Wed 07 Sep 2016
-git clone git://github.com/godlygeek/tabular.git
-git clone git://github.com/mattn/calendar-vim
+## cloned
 
-git clone git://github.com/tpope/vim-fugitive.git
+```bash
 git clone git://github.com/tpope/vim-repeat.git
 git clone git://github.com/altercation/vim-colors-solarized.git
 git clone git://github.com/tpope/vim-surround.git
@@ -40,7 +39,16 @@ git clone https://github.com/xolox/vim-shell.git
 git clone https://github.com/kien/rainbow_parentheses.vim.git
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/vim-scripts/gitignore.vim
+```
 
-# Handled by vim-plug:
+## Handled by vim-plug:
 git clone git://github.com/airblade/vim-gitgutter.git
+
+## Wed 07 Sep 2016
+
+```shell
+git clone git://github.com/godlygeek/tabular.git
+git clone git://github.com/mattn/calendar-vim
+git clone git://github.com/tpope/vim-fugitive.git
+```
 
