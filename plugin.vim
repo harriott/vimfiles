@@ -6,6 +6,7 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'haya14busa/incsearch.vim'
+Plug 'haya14busa/incsearch-fuzzy.vim'
 call plug#end()
 
 " load in plugins from bundle directory:
@@ -62,6 +63,7 @@ endfunction
 " incsearch
 " ---------
 map g/ <Plug>(incsearch-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
 
 " Files & buffers
 " ---------------
