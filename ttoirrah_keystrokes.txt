@@ -81,6 +81,7 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	*        => highlight all instances of exactly the word under the cursor
 	,/       => (abbreviation for) clearing yellow searched highlights
 	[I or ]I => list lines containing word under cursor
+    g/       => incsearch-stay
 	n        => find next highlighted search result
 
 ## following /

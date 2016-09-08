@@ -61,7 +61,7 @@ endfunction
 
 " incsearch
 " ---------
-" map g/ <Plug>(incsearch-stay)
+map g/ <Plug>(incsearch-stay)
 
 " Files & buffers
 " ---------------
