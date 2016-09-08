@@ -77,13 +77,19 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 
 # Search
 	#        => over a word highlights all exact instances, and jumps to last
-	%        => find brackets in a line
+	%        => find opposing bracket in a line
 	*        => highlight all instances of exactly the word under the cursor
 	,/       => (abbreviation for) clearing yellow searched highlights
-	/text    => searches for text
-	/C-rC-w  => searches for the word under cursor - allowing skipping thru with n
 	[I or ]I => list lines containing word under cursor
 	n        => find next highlighted search result
+
+## following /
+    \M        => nomagic (for what follows), eg returning . & * to themselves
+    \V        => very nomagic (for what follows), eg (also) returning $ to itself
+    \v        => very magic (for what follows), eg making | separate alternatives
+	text      => searches for text
+	text\|alt => searches for text & alt
+	C-rC-w    => searches for the word under cursor - allowing skipping thru with n
 
 # Shell
 	C-g                 => display relative path of current file
