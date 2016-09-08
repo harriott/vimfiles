@@ -25,6 +25,9 @@ iab <y <code python>
 iab <v <code vim>
 iab </ </code>
 
+" boost up a heading:
+nnoremap <leader>= I=<Esc>A=<Esc>
+
 " Command to add wrap indent tags around quotes
 " ---------------------------------------------
 " For use when Anika Henke's excellent Wrap Plugin is installed in DokuWiki.

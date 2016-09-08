@@ -3,7 +3,7 @@
 " ----------------------------------------------------------
 " Real vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
 
-" ---------
+"----------
 " interface
 " ---------
 set linebreak number relativenumber
@@ -22,15 +22,13 @@ set lcs=eol:│,trail:·,tab:»·  "nicer settings for list:
 noremap <F3> :set list! list? <CR>
 inoremap <F3> <Esc>:set list! list? <CR>
 
-runtime macros/matchit.vim
-
 set history=300
 set modelines=4
 
 " LaTeX syntax folding on:
 let g:tex_fold_enabled=1
 
-" ------------
+"-------------
 " buffer stuff
 " ------------
 set autoread
@@ -53,59 +51,9 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 " toggle relativenumber:
 nnoremap <silent><leader>n :set rnu! rnu? <CR>
 
-" -----------------
-" shell interaction
-" -----------------
-" get filepath into register f:
-nnoremap <leader>f :let@f=@%<CR>
-
-" set working directory to that of the currently loaded file's:
-nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
-
-set pastetoggle=<S-F3>
-
-" open netrw:
-nnoremap <leader>- :Explore<cr>
-
-" ---------
-" searching
-" ---------
-" Ggrep with the contents of s register:
-nnoremap <S-F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
-
-set ignorecase incsearch smartcase
-
-nmap <silent> ,/ :nohlsearch<CR>
-" for clearing search highlights
-
-" Strip the current selection & store it in the l then s register:
-function! StripStoreCurSel()
-  let lastvimsearch = getreg('/')
-  " remove the '\V' (very nomagic) prefix, if it's there:
-  let @l = substitute(lastvimsearch, "^\\\\V", "", "")
-  " convert '\<lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
-  let @s = substitute(@l, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
-endfunction
-command! -nargs=? CSinS call StripStoreCurSel()
-
-" ---
-" Vim
-" ---
-" to get the output of a command in a new tab, just enter :TabEx <cmd>
-function! TabEx(cmd)
-  redir => message
-  silent execute a:cmd
-  redir END
-  tabnew
-  silent put=message
-  set nomodified
-endfunction
-command! -nargs=+ -complete=command TabEx call TabEx(<q-args>)
-" (from http://vim.wikia.com/wiki/Capture_ex_command_output)
-
-"  -----
+"-------
 "  Dates
-"  -----
+" ------
 noremap <F8> :CalendarH<CR>
 inoremap <F8> <Esc>:CalendarH<CR>
 
@@ -120,12 +68,51 @@ iab <expr> d8p strftime("%Y-%m-%d %H:%M")
 iab <expr> d8s strftime("%d/%m/%y")
 iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
-" ---------------
+"----------------------
+" Plugin configurations
+" ---------------------
+source $HOME/.vim/plugin.vim
+
+"----------
+" searching
+" ---------
+" Ggrep with the contents of s register:
+nnoremap <S-F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
+
+set ignorecase incsearch smartcase
+
+runtime macros/matchit.vim
+
+nmap <silent> ,/ :nohlsearch<CR>
+" for clearing search highlights
+
+" Strip the current selection & store it in the l then s register:
+function! StripStoreCurSel()
+  let lastvimsearch = getreg('/')
+  " remove the '\V' (very nomagic) prefix, if it's there:
+  let @l = substitute(lastvimsearch, "^\\\\V", "", "")
+  " convert '\<lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
+  let @s = substitute(@l, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
+endfunction
+command! -nargs=? CSinS call StripStoreCurSel()
+
+"------------------
+" shell interaction
+" -----------------
+" get filepath into register f:
+nnoremap <leader>f :let@f=@%<CR>
+
+" set working directory to that of the currently loaded file's:
+nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+
+set pastetoggle=<S-F3>
+
+" open netrw:
+nnoremap <leader>- :Explore<cr>
+
+"----------------
 " Text Formatting
 " ---------------
-" boost up a DokuWiki heading:
-nnoremap <leader>= I=<Esc>A=<Esc>
-
 nnoremap <leader>a :Tabularize/-/r1c1l0
 " this produces GFM-style tables:
 let g:table_mode_corner='|'
@@ -137,7 +124,10 @@ nnoremap <leader>5 :s/(/%28/ <bar> s/)/%29/ <bar> nohlsearch<CR>
 " 9 here means convert back to parentheses (eg for a quoted url in tex):
 nnoremap <leader>9 :s/%28/(/ <bar> s/%29/)/ <bar> nohlsearch<CR>
 
-" Underline using dashes automatically 
+" Remove all square bracketed text
+nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
+
+" Underline using dashes automatically
 " ------------------------------------
 " (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
 " eg :Underline ~+-	 gives underlining like ~+-~+-~+-~+-~+-~+-
@@ -151,5 +141,18 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 " map:
 nnoremap <leader>u :Underline
 
-source $HOME/.vim/plugin.vim
+"----
+" Vim
+" ---
+" to get the output of a command in a new tab, just enter :TabEx <cmd>
+function! TabEx(cmd)
+  redir => message
+  silent execute a:cmd
+  redir END
+  tabnew
+  silent put=message
+  set nomodified
+endfunction
+command! -nargs=+ -complete=command TabEx call TabEx(<q-args>)
+" (from http://vim.wikia.com/wiki/Capture_ex_command_output)
 

@@ -1,4 +1,4 @@
-" ---------------------
+"----------------------
 " Plugin configurations
 " ---------------------
 " called by my vimrc.vim
