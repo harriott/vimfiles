@@ -19,9 +19,6 @@ execute pathogen#infect()
 map g/ <Plug>(incsearch-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 
-
-let g:table_mode_verbose=1
-
 " Appearance
 " ----------
 let g:airline#extensions#tabline#enabled = 1
