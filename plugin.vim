@@ -5,15 +5,29 @@
 
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
+Plug 'chikamichi/mediawiki.vim'
+Plug 'harriott/vim-table-mode'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " load in plugins from bundle directory:
 execute pathogen#infect()
 
+map g/ <Plug>(incsearch-stay)
+map z/ <Plug>(incsearch-fuzzy-/)
+
+
+let g:table_mode_verbose=1
+
 " Appearance
 " ----------
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
+let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
+
 " start vim with colorizer's highlighting off:
 let g:colorizer_startup = 0
 
@@ -25,6 +39,8 @@ let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
 noremap <F9> :GitGutterToggle<CR>
 inoremap <F9> <Esc>:GitGutterToggle<CR>
+
+highlight ShowTrailingWhitespace ctermbg=White
 
 " for Solarized:
 set background=dark  " at this stage, assuming vim's in terminal
@@ -60,11 +76,6 @@ function! EasyMotionSearchToggle()
     endif
 endfunction
 
-" incsearch
-" ---------
-map g/ <Plug>(incsearch-stay)
-map z/ <Plug>(incsearch-fuzzy-/)
-
 " Files & buffers
 " ---------------
 noremap <silent> <F4> :BufExplorer<CR>
@@ -91,11 +102,4 @@ let MRU_Use_Current_Window = 1
 map <C-n> :NERDTreeToggle<CR>
 
 command! -bar -bang W :WriteBackup<bang>
-
-" ShowTrailingWhitespace
-" ----------------------
-highlight ShowTrailingWhitespace ctermbg=White
-
-" Toggle ShowTrailingWhitespace locally (using w because t's taken by table-mode):
-nnoremap <silent> <Leader>w :<C-u>call ShowTrailingWhitespace#Toggle(0)<Bar>echo (ShowTrailingWhitespace#IsSet() ? 'Show trailing whitespace' : 'Not showing trailing whitespace')<CR>
 

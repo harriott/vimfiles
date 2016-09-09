@@ -15,10 +15,6 @@ find -name .git -exec rm -rf {} \;
 ## cloned
 
 ```bash
-git clone https://github.com/PProvost/vim-ps1.git
-git clone https://github.com/bling/vim-airline
-git clone https://github.com/chikamichi/mediawiki.vim.git
-git clone https://github.com/dhruvasagar/vim-table-mode.git
 git clone https://github.com/drmikehenry/vim-fontsize.git
 git clone https://github.com/ervandew/supertab.git
 git clone https://github.com/hdima/python-syntax.git
@@ -45,6 +41,9 @@ git clone https://github.com/vim-scripts/gitignore.vim
 
 ```bash
 git clone git://github.com/airblade/vim-gitgutter.git
+git clone git://github.com/chikamichi/mediawiki.vim.git
+git clone https://github.com/bling/vim-airline
+git clone https://github.com/dhruvasagar/vim-table-mode.git
 ```
 
 ## Wed 07 Sep 2016
@@ -64,3 +63,7 @@ git clone git://github.com/tpope/vim-repeat.git
 git clone https://github.com/easymotion/vim-easymotion
 ```
 
+## Fri 09 Sep 2016
+```bash
+git clone https://github.com/PProvost/vim-ps1.git
+```

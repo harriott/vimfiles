@@ -40,7 +40,7 @@ syn match ps1Repeat /\<foreach\>/ nextgroup=ps1Block skipwhite
 syn match ps1Keyword /\<while\>/ nextgroup=ps1Block skipwhite
 syn match ps1Keyword /\<where\>/ nextgroup=ps1Block skipwhite
 
-syn keyword ps1Exception begin process end exit
+syn keyword ps1Exception begin process end exit inlinescript parallel sequence
 syn keyword ps1Keyword try catch finally throw
 syn keyword ps1Keyword return filter in trap param data dynamicparam 
 syn match ps1Keyword /&/
@@ -57,6 +57,10 @@ syn keyword ps1Keyword class define from using var
 syn match ps1Cmdlet /\w\+-\w\+/
 syn keyword ps1Keyword function nextgroup=ps1Function skipwhite
 syn keyword ps1Keyword filter nextgroup=ps1Function skipwhite
+syn keyword ps1Keyword workflow nextgroup=ps1Function skipwhite
+syn keyword ps1Keyword configuration nextgroup=ps1Function skipwhite
+syn keyword ps1Keyword class nextgroup=ps1Function skipwhite
+syn keyword ps1Keyword enum nextgroup=ps1Function skipwhite
 syn match ps1Function /\w\+-*\w*/ contained
 
 " Type declarations
@@ -81,18 +85,18 @@ syn keyword ps1Operator f contained
 
 " Regular Strings
 " These aren't precisely correct and could use some work
-syn region ps1String start=/"/ skip=/`"/ end=/"/ contains=@ps1StringSpecial 
+syn region ps1String start=/"/ skip=/`"/ end=/"/ contains=@ps1StringSpecial,@Spell
 syn region ps1String start=/'/ skip=/''/ end=/'/
 
 " Here-Strings
-syn region ps1String start=/@"$/ end=/^"@/ contains=@ps1StringSpecial
+syn region ps1String start=/@"$/ end=/^"@/ contains=@ps1StringSpecial,@Spell
 syn region ps1String start=/@'$/ end=/^'@/
 
 " Interpolation
 syn match ps1Escape /`./ contained
 syn region ps1Interpolation matchgroup=ps1InterpolationDelimiter start="$(" end=")" contained contains=ALLBUT,@ps1NotTop
 syn region ps1NestedParentheses start="(" skip="\\\\\|\\)" matchgroup=ps1Interpolation end=")" transparent contained
-syn cluster ps1StringSpecial contains=ps1Escape,ps1Interpolation,ps1Variable,ps1Boolean,ps1Constant,ps1BuiltIn
+syn cluster ps1StringSpecial contains=ps1Escape,ps1Interpolation,ps1Variable,ps1Boolean,ps1Constant,ps1BuiltIn,@Spell
 
 " Numbers
 syn match   ps1Number		"\<\(0[xX]\x\+\|\d\+\)\([KMGTP][B]\)\=\>"

@@ -54,7 +54,7 @@ let g:solarized_contrast="high"    "default value is normal
 " Set guibg after any adjustments to Solarized:
 highlight ShowTrailingWhitespace ctermbg=White guibg=White
 " and add a mapping to reset this if Solarized has been toggled:
-nnoremap <leader>W :highlight ShowTrailingWhitespace ctermbg=White guibg=White<cr>
+nnoremap <leader>w :highlight ShowTrailingWhitespace ctermbg=White guibg=White<cr>
 
 autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
 " and <leader>p toggles it:
