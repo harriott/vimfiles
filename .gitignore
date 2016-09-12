@@ -2,5 +2,5 @@
 # These are the files that I want to ignore:
 .directory
 .netrwhist
-# plugged/
+plugged/
 
