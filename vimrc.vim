@@ -68,11 +68,6 @@ iab <expr> d8p strftime("%Y-%m-%d %H:%M")
 iab <expr> d8s strftime("%d/%m/%y")
 iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
-"----------------------
-" Plugin configurations
-" ---------------------
-source $HOME/.vim/plugin.vim
-
 "----------
 " searching
 " ---------
