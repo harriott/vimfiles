@@ -6,6 +6,7 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'chikamichi/mediawiki.vim'
+Plug 'harriott/vim-buf'
 Plug 'harriott/vim-table-mode'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
@@ -84,12 +85,6 @@ noremap <silent> <F4> :BufExplorer<CR>
 let g:miniBufExplorerAutoStart = 0
 map <Leader>m :MBEOpen<cr>:MBEFocus<cr>
 let g:miniBufExplCloseOnSelect = 1
-
-" remove these two mappings made in vim-buffing-wheel\plugin\buffingwheel.vim:
-autocmd vimenter * silent unmap L|silent unmap H
-" and replace with these mappings:
-noremap <silent> + :<C-u>BuffingWheelNext<CR>
-noremap <silent> - :<C-u>BuffingWheelPrevious<CR>
 
 " quickly close all but current buffer:
 nnoremap <S-F4> :BufOnly<CR>

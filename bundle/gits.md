@@ -29,7 +29,6 @@ git clone https://github.com/jtratner/vim-flavored-markdown.git
 git clone https://github.com/justinmk/vim-sneak.git
 git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim
 git clone https://github.com/lilydjwg/colorizer.git
-git clone https://github.com/ngn/vim-buffing-wheel.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/thinca/vim-visualstar.git
