@@ -8,6 +8,12 @@ find -name .git -exec rm -rf {} \;
 ```
 
 
+```PowerShell
+ls -force -r .git
+ls -force -r .git | ri -force -recurse
+```
+
+
 ```vim
 :Helptags
 ```
@@ -67,3 +73,9 @@ git clone https://github.com/easymotion/vim-easymotion
 ```bash
 git clone https://github.com/PProvost/vim-ps1.git
 ```
+
+## Thu 15 Sep 2016
+```bash
+git clone https://github.com/fholgado/minibufexpl.vim.git
+```
+

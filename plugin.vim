@@ -9,6 +9,7 @@ Plug 'chikamichi/mediawiki.vim'
 Plug 'harriott/vim-table-mode'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -21,7 +22,6 @@ map z/ <Plug>(incsearch-fuzzy-/)
 
 " Appearance
 " ----------
-let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 
@@ -52,6 +52,9 @@ let g:syntastic_python_checkers = ['flake8']
 " EasyMotion
 " ----------
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" <Leader>f{char} to move to {char}
+map  <Leader><Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
 " s{char}{char}{label}
 nmap <Leader>s <Plug>(easymotion-overwin-f2)
 " toggle searching functionality
@@ -76,6 +79,11 @@ endfunction
 " Files & buffers
 " ---------------
 noremap <silent> <F4> :BufExplorer<CR>
+
+" open & focus on MiniBufExplorer
+let g:miniBufExplorerAutoStart = 0
+map <Leader>m :MBEOpen<cr>:MBEFocus<cr>
+let g:miniBufExplCloseOnSelect = 1
 
 " remove these two mappings made in vim-buffing-wheel\plugin\buffingwheel.vim:
 autocmd vimenter * silent unmap L|silent unmap H

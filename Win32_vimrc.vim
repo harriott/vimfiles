@@ -1,22 +1,13 @@
 " -------------------------------------------------------------
 " This is a wrapper vimrc for use on a Win32 system.
-" This file should be called from $HOME\_vimrc 
-" Joseph Harriott - http://momentary.eu/ - Sun 05 Jun 2016
+" This file should be called from $HOME\_vimrc
+" Joseph Harriott - http://momentary.eu/ - Thu 15 Sep 2016
 " --------------------------------------------------------------
+
 " quit if called from Git's vim (adapted for Git-2.8.1-64-bit.exe on Windows 10):
 if $VIM == '/usr/share/vim'
   finish
 endif
-
-" --------------------------------------------
-" Adjusted from gVim for Windows' $VIM/_vimrc:
-set nocompatible
-" source $VIMRUNTIME/vimrc_example.vim - changed to my adapted version:
-source $HOME/vimfiles/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-" but revert Ctrl-A back to number increment:
-unmap <C-A>
-behave mswin
 
 " ------------------------------------------------------------------?
 " not sure what this (from $VIM/_vimrc) is for, but I'm including it:
@@ -46,24 +37,9 @@ function MyDiff()
 endfunction
 " this function causes a complaint if I source this file...
 
-" ---------------------------------
-" More of my preferences for MSWin:
+"  Point to my source-able vimrc:
+source $HOME/vimfiles/Win10-vimrc.vim
 
-" swapfiles:
-if isdirectory($HOME . '/.vimswap') == 0
-  :silent !md \%UserProfile\%\\.vimswap
-endif
-
-"  Point to my more portable vimrc:
-source $HOME/vimfiles/plugin.vim
-source $HOME/vimfiles/vimrc.vim
-
-" A nicer font for MSWin:
-set guifont=Lucida_Console:h9  "better to append size so that it's reported
-
-" where I like to keep my WriteBackups:
-let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
-
-"autocmd vimenter * if !argc() | cd E:/ | NERDTree | endif  "open empty vim to NERDTree
-autocmd vimenter * if !argc() | cd E:/DropboxFiles/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/pages | NERDTree | endif  "open empty vim to NERDTree
+" Useful when making adjustements to configurations:
+nnoremap <S-F6> :source ~/vimfiles/Win10-vimrc.vim <bar> source ~/vimfiles/gvimrc.vim <bar> nohlsearch<CR>
 
