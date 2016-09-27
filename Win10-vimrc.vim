@@ -32,6 +32,3 @@ nnoremap <S-F6> :source ~/vimfiles/Win32_vimrc.vim <bar> source ~/vimfiles/gvimr
 " where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 
-"autocmd vimenter * if !argc() | cd E:/ | NERDTree | endif  "open empty vim to NERDTree
-autocmd vimenter * if !argc() | cd E:/DropboxFiles/Now/Technos/IT/InterNetworking/Web_Design/DokuWiki/pages | NERDTree | endif  "open empty vim to NERDTree
-
