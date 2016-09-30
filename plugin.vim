@@ -6,6 +6,7 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'chikamichi/mediawiki.vim'
+Plug 'drmikehenry/vim-fontsize'
 Plug 'harriott/vim-buf'
 Plug 'harriott/vim-table-mode'
 Plug 'haya14busa/incsearch.vim'
