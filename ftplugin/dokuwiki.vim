@@ -16,6 +16,8 @@ setlocal tw=0 fdc=1 fde=DWF() fdl=0 fdm=expr
 
 " abbreviations for code tags
 " ---------------------------
+iab </ </code>
+iab </f </file>
 iab <a <code awk>
 iab <b <code bash>
 iab <d <code dos>
@@ -24,7 +26,7 @@ iab <l <code latex>
 iab <p <code powershell>
 iab <y <code python>
 iab <v <code vim>
-iab </ </code>
+iab <f <file>
 
 " boost up a heading:
 nnoremap <leader>= I=<Esc>A=<Esc>
