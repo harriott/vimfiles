@@ -1,5 +1,17 @@
 vim: ft=ghmarkdown fdl=1 fdm=expr:
 
+# vim-plug managed
+
+```bash
+git clone git://github.com/chikamichi/mediawiki.vim.git
+git clone https://github.com/bling/vim-airline
+git clone https://github.com/dhruvasagar/vim-table-mode.git
+```
+
+Vim Git Gutter:
+  * last studied, Sun 02 Oct 2016
+  * Pathogen call: ''git clone git://github.com/airblade/vim-gitgutter.git''
+
 # Pathogen managed plugins
 
 ```bash
@@ -40,15 +52,6 @@ git clone https://github.com/xolox/vim-shell.git
 git clone https://github.com/kien/rainbow_parentheses.vim.git
 git clone https://github.com/plasticboy/vim-markdown.git
 git clone https://github.com/vim-scripts/gitignore.vim
-```
-
-## legacy (= now handled by vim-plug):
-
-```bash
-git clone git://github.com/airblade/vim-gitgutter.git
-git clone git://github.com/chikamichi/mediawiki.vim.git
-git clone https://github.com/bling/vim-airline
-git clone https://github.com/dhruvasagar/vim-table-mode.git
 ```
 
 ## Wed 07 Sep 2016
