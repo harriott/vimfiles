@@ -26,9 +26,6 @@ source $HOME/vimfiles/vimrc.vim
 " A nicer font for MSWin:
 set guifont=Lucida_Console:h9  "better to append size so that it's reported
 
-" Useful when making adjustements to configurations:
-nnoremap <S-F6> :source ~/vimfiles/Win32_vimrc.vim <bar> source ~/vimfiles/gvimrc.vim <bar> nohlsearch<CR>
-
 " where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 
