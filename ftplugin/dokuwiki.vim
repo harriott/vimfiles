@@ -1,13 +1,14 @@
-" Folding adjustments
+" My adjustments
 " Language:	dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Sun 26 Jun 2016
+" Last Change: Fri 07 Oct 2016
 " This file should be in your vimfiles\ftplugin folder,
 " and you'll need to (autocmd BufRead,BufNewFile) setlocal ft=dokuwiki.
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
 " /* vim: set ft=dokuwiki: */
-" You should also have vim-dokuwiki installed at $HOME/vimfiles/syntax/dokuwiki.vim
+" You should also have  https://github.com/nblock/vim-dokuwiki/blob/master/syntax/dokuwiki.vim
+" installed at  $HOME/vimfiles/syntax/dokuwiki.vim
 
 " While developing this plugin, I used
 " :source $HOME/vimfiles/ftplugin/dokuwiki.vim
