@@ -10,7 +10,7 @@ git clone https://github.com/dhruvasagar/vim-table-mode.git
 
 Vim Git Gutter:
   * last studied, Sun 02 Oct 2016
-  * Pathogen call: ''git clone git://github.com/airblade/vim-gitgutter.git''
+  * Pathogen call: `git clone git://github.com/airblade/vim-gitgutter.git`
 
 # Pathogen managed plugins
 
