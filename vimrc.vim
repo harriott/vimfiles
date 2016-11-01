@@ -28,6 +28,9 @@ set modelines=4
 " LaTeX syntax folding on:
 let g:tex_fold_enabled=1
 
+" XML syntax folding on:
+let g:xml_syntax_folding = 1
+
 "-------------
 " buffer stuff
 " ------------
