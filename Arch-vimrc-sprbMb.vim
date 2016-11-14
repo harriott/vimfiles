@@ -2,6 +2,6 @@
 
 source $HOME/.vim/Arch-vimrc.vim
 
-set gfn=Ubuntu\ Mono\ 12
+set gfn=Ubuntu\ Mono\ 10
 
-let g:WriteBackup_BackupDir = '/mnt/WD2000JD/Dropbox/Stack/WriteBackup/'
+let g:WriteBackup_BackupDir = '/mnt/SDSSDA240G/Dropbox/JH/d-Stack/WriteBackup'
