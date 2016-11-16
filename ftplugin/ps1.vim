@@ -4,5 +4,5 @@
 " Last Change: Wed 16 Nov 2016
 " This file should be in your  vimfiles\ftplugin  folder.
 
-setlocal foldmethod=syntax textwidth=0
+setlocal expandtab foldmethod=syntax textwidth=0
 

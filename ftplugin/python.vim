@@ -1,5 +1,5 @@
 " My modifications - JH:
-set foldcolumn=1 foldlevel=1 softtabstop=4 expandtab
+setlocal foldcolumn=1 fdl=1 softtabstop=4 expandtab
 
 " Fold routines for python code, version 3.2
 " Source: http://www.vim.org/scripts/script.php?script_id=2527
