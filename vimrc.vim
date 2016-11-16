@@ -15,8 +15,6 @@ set laststatus=2  "ls=2  - always display the status line
 set wildmode=longest,full
 set wildmenu
 set tw=99
-" - I'm doubling up on what's in $HOME/vimfiles/vimrc_example.vim here,
-" but otherwise unsaved buffers open as tw=0
 
 set lcs=eol:│,trail:·,tab:»·  "nicer settings for list:
 noremap <F3> :set list! list? <CR>
