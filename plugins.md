@@ -6,6 +6,7 @@ vim: ft=ghmarkdown fdl=1 fdm=expr:
 git clone git://github.com/chikamichi/mediawiki.vim.git
 git clone https://github.com/bling/vim-airline
 git clone https://github.com/dhruvasagar/vim-table-mode.git
+git clone https://github.com/PProvost/vim-ps1.git
 ```
 
 Vim Git Gutter:
@@ -69,11 +70,6 @@ git clone git://github.com/mattn/calendar-vim
 git clone git://github.com/tpope/vim-fugitive.git
 git clone git://github.com/tpope/vim-repeat.git
 git clone https://github.com/easymotion/vim-easymotion
-```
-
-## Fri 09 Sep 2016
-```bash
-git clone https://github.com/PProvost/vim-ps1.git
 ```
 
 ## Thu 15 Sep 2016

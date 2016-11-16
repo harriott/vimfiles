@@ -14,10 +14,10 @@ setlocal fdc=1 fdl=1 tw=0
 
 " As Vim's LaTeX syntax folding is slow, need a means to turn it off.
 " Turn off gVim's default syntax folding:
-nnoremap <F7> :set fdm=manual<cr>
-inoremap <F7> <Esc>:set fdm=manual<cr>
+nnoremap <F7> :setlocal fdm=manual<cr>
+inoremap <F7> <Esc>:setlocal fdm=manual<cr>
 " and turn it back on:
-nnoremap <S-F7> :set fdm=syntax<cr>
+nnoremap <S-F7> :setlocal fdm=syntax<cr>
 
 " Tabbing
 " -------
