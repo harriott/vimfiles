@@ -17,8 +17,8 @@ set wildmenu
 set tw=99
 
 set lcs=eol:│,trail:·,tab:»·  "nicer settings for list:
-noremap <F3> :set list! list? <CR>
-inoremap <F3> <Esc>:set list! list? <CR>
+noremap <S-F3> :set list! list? <CR>
+inoremap <S-F3> <Esc>:set list! list? <CR>
 
 set history=300
 set modelines=4
@@ -36,14 +36,17 @@ set autoread
 set hidden
 set wmh=0  "reduce minimized windows to zero lines shown
 
-" swapfiles:
+" undofiles, centrally stored with complete paths:
+set directory=$HOME/.vimundo//
+
+" swapfiles, centrally stored with complete paths:
 set directory=$HOME/.vimswap//
 
 " F2 to write all changed buffers:
 nnoremap <F2> :wa<CR>
 inoremap <F2> <Esc>:wa<CR>
 
-" F5 to split window to a buffer number:
+" Split window to a buffer number:
 nnoremap <F5> :buffers<CR>:sbuffer<Space>
 
 " toggle centering line in window:
@@ -73,7 +76,7 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 " searching
 " ---------
 " Ggrep with the contents of s register:
-nnoremap <S-F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
+nnoremap <F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
 
 set ignorecase incsearch smartcase
 

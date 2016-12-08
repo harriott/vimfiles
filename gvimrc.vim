@@ -35,8 +35,8 @@ set go-=T  "removes toolbar
 
 set lines=34  "gVim with tabs just fits in my N130 at 600pixel height
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
-" Shift-F2 toggles a better size for reading prose:
-nnoremap <S-F2> :call ColumnsToggle()<cr>
+" F3 toggles a better size for reading prose:
+nnoremap <F3> :call ColumnsToggle()<cr>
 let g:columnsdefault = 1
 function! ColumnsToggle()
     if g:columnsdefault
@@ -48,7 +48,8 @@ function! ColumnsToggle()
     endif
 endfunction
 
-set background=light  " for solarized
+" solarized
+set background=light
 let g:solarized_contrast="high"    "default value is normal
 
 " Set guibg after any adjustments to Solarized:

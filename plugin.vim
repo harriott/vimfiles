@@ -12,7 +12,9 @@ Plug 'harriott/vim-table-mode'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'mbbill/undotree'
 Plug 'PProvost/vim-ps1'
+" Plug 'simnalamburt/vim-mundo'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
@@ -37,8 +39,8 @@ let dokuwiki_comment=1
 " vim-gitgutter:
 let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
-noremap <F9> :GitGutterToggle<CR>
-inoremap <F9> <Esc>:GitGutterToggle<CR>
+noremap <S-F9> :GitGutterToggle<CR>
+inoremap <S-F9> <Esc>:GitGutterToggle<CR>
 
 highlight ShowTrailingWhitespace ctermbg=White
 
@@ -102,6 +104,15 @@ let MRU_Window_Height = 15
 let MRU_Use_Current_Window = 1
 
 map <C-n> :NERDTreeToggle<CR>
+
+" Recovery
+" --------
+
+" Mundo:
+" nnoremap <S-F2> :MundoToggle<CR>
+
+" Undotree:
+nnoremap <S-F2> :UndotreeToggle<CR>
 
 command! -bar -bang W :WriteBackup<bang>
 
