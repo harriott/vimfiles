@@ -4,6 +4,7 @@ vim: ft=ghmarkdown fdl=1 fdm=expr:
 
 ```bash
 git clone git://github.com/chikamichi/mediawiki.vim.git
+git clone git://github.com/godlygeek/tabular.git
 git clone https://github.com/bling/vim-airline
 git clone https://github.com/dhruvasagar/vim-table-mode.git
 git clone https://github.com/PProvost/vim-ps1.git
@@ -65,7 +66,6 @@ git clone git://github.com/tpope/vim-surround.git
 
 ### Updated
 ```bash
-git clone git://github.com/godlygeek/tabular.git
 git clone git://github.com/mattn/calendar-vim
 git clone git://github.com/tpope/vim-fugitive.git
 git clone git://github.com/tpope/vim-repeat.git
