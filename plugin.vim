@@ -6,6 +6,7 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'chikamichi/mediawiki.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'drmikehenry/vim-fontsize'
 Plug 'godlygeek/tabular'
 Plug 'harriott/vim-buf'

@@ -48,7 +48,7 @@ git clone https://github.com/hdima/python-syntax.git
 git clone https://github.com/jlanzarotta/bufexplorer.git
 git clone https://github.com/jtratner/vim-flavored-markdown.git
 git clone https://github.com/justinmk/vim-sneak.git
-git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim
+git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/lilydjwg/colorizer.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/scrooloose/syntastic.git
