@@ -30,6 +30,7 @@ source $HOME/vimfiles/vimrc.vim
 
 " A nicer font for MSWin:
 set guifont=Lucida_Console:h9  "better to append size so that it's reported
+set linespace=4
 
 " where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'

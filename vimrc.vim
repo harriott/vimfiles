@@ -8,7 +8,6 @@
 " ---------
 set linebreak number relativenumber
 set encoding=utf-8
-set linespace=4
 set shiftwidth=4
 set tabstop=4
 set laststatus=2  "ls=2  - always display the status line

@@ -1,9 +1,5 @@
 :HistID	histwin.txt	/*:HistID*
 :Histwin	histwin.txt	/*:Histwin*
-:LP	pi_logipat.txt	/*:LP*
-:LPE	pi_logipat.txt	/*:LPE*
-:LPF	pi_logipat.txt	/*:LPF*
-:LogiPat	pi_logipat.txt	/*:LogiPat*
 :MatchDebug	matchit.txt	/*:MatchDebug*
 :UB	histwin.txt	/*:UB*
 :WriteBackup	writebackup.txt	/*:WriteBackup*
@@ -20,8 +16,6 @@
 :WriteBackupRestoreThisBackup	writebackupVersionControl.txt	/*:WriteBackupRestoreThisBackup*
 :WriteBackupViewDaysChanges	writebackupVersionControl.txt	/*:WriteBackupViewDaysChanges*
 :WriteBackupViewDiffWithPred	writebackupVersionControl.txt	/*:WriteBackupViewDiffWithPred*
-LogiPat()	pi_logipat.txt	/*LogiPat()*
-LogiPat-flags	pi_logipat.txt	/*LogiPat-flags*
 MatchError	matchit.txt	/*MatchError*
 ShowTrailingWhitespace-colors	ShowTrailingWhitespace.txt	/*ShowTrailingWhitespace-colors*
 ShowTrailingWhitespace-commands	ShowTrailingWhitespace.txt	/*ShowTrailingWhitespace-commands*
@@ -117,18 +111,6 @@ ingo-library-todo	ingo-library.txt	/*ingo-library-todo*
 ingo-library-usage	ingo-library.txt	/*ingo-library-usage*
 ingo-library.txt	ingo-library.txt	/*ingo-library.txt*
 ingo-library.vim	ingo-library.txt	/*ingo-library.vim*
-logiPat	pi_logipat.txt	/*logiPat*
-logiPat-arg	pi_logipat.txt	/*logiPat-arg*
-logiPat-caveat	pi_logipat.txt	/*logiPat-caveat*
-logiPat-contents	pi_logipat.txt	/*logiPat-contents*
-logiPat-copyright	pi_logipat.txt	/*logiPat-copyright*
-logiPat-examples	pi_logipat.txt	/*logiPat-examples*
-logiPat-history	pi_logipat.txt	/*logiPat-history*
-logiPat-input	pi_logipat.txt	/*logiPat-input*
-logiPat-man	pi_logipat.txt	/*logiPat-man*
-logiPat-manual	pi_logipat.txt	/*logiPat-manual*
-logiPat-operators	pi_logipat.txt	/*logiPat-operators*
-logiPat-pattern	pi_logipat.txt	/*logiPat-pattern*
 matchit	matchit.txt	/*matchit*
 matchit-%	matchit.txt	/*matchit-%*
 matchit-\1	matchit.txt	/*matchit-\\1*
@@ -157,7 +139,6 @@ matchit.vim	matchit.txt	/*matchit.vim*
 o_[%	matchit.txt	/*o_[%*
 o_]%	matchit.txt	/*o_]%*
 o_g%	matchit.txt	/*o_g%*
-pi_logipat.txt	pi_logipat.txt	/*pi_logipat.txt*
 v_[%	matchit.txt	/*v_[%*
 v_]%	matchit.txt	/*v_]%*
 v_a%	matchit.txt	/*v_a%*

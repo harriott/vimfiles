@@ -1,20 +1,27 @@
 vim: ft=ghmarkdown fdl=1 fdm=expr:
 
 # vim-plug managed
+Vim Git Gutter:
+  * last studied, Sun 02 Oct 2016
+  * clone for Pathogen's bundle directory: `git clone git://github.com/airblade/vim-gitgutter.git`
+  * `Plug 'airblade/vim-gitgutter'`
+
+## the full git clones
 
 ```bash
 git clone git://github.com/chikamichi/mediawiki.vim.git
 git clone git://github.com/godlygeek/tabular.git
+git clone git://github.com/mattn/calendar-vim
 git clone https://github.com/bling/vim-airline
 git clone https://github.com/dhruvasagar/vim-table-mode.git
+git clone https://github.com/lilydjwg/colorizer.git
 git clone https://github.com/PProvost/vim-ps1.git
 ```
 
-Vim Git Gutter:
-  * last studied, Sun 02 Oct 2016
-  * Pathogen call: `git clone git://github.com/airblade/vim-gitgutter.git`
-
 # Pathogen managed plugins
+Move away from this to native plugin management & git submodules!
+
+## post-installation housework
 
 ```bash
 find -name .git
@@ -32,7 +39,7 @@ ls -force -r .git | ri -force -recurse
 :Helptags
 ```
 
-## cloned
+## cloned into bundle
 
 ```bash
 git clone https://github.com/drmikehenry/vim-fontsize.git
