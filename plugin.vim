@@ -21,6 +21,7 @@ Plug 'PProvost/vim-ps1'
 " Plug 'simnalamburt/vim-mundo'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/gitignore.vim'
 call plug#end()
 
 " load in plugins from bundle directory:
