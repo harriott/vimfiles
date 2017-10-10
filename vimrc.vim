@@ -59,7 +59,7 @@ nnoremap <silent><leader>n :set rnu! rnu? <CR>
 " ------
 noremap <F8> :CalendarH<CR>
 inoremap <F8> <Esc>:CalendarH<CR>
-noremap <C-F8> :lan fr_FR.UTF-8
+noremap <C-F8> :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
 
 " abbreviation for current date
 " -----------------------------
