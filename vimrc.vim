@@ -1,4 +1,4 @@
-" ----------------------------------------------------------
+
 " My portable vimrc - Joseph Harriott - http://momentary.eu/
 " ----------------------------------------------------------
 " Real vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
