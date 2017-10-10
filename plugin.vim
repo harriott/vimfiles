@@ -6,6 +6,7 @@
 call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'chikamichi/mediawiki.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'drmikehenry/vim-fontsize'
 Plug 'godlygeek/tabular'
 Plug 'harriott/vim-buf'
@@ -13,11 +14,14 @@ Plug 'harriott/vim-table-mode'
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-fuzzy.vim'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'lilydjwg/colorizer'
+Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
 Plug 'PProvost/vim-ps1'
 " Plug 'simnalamburt/vim-mundo'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/gitignore.vim'
 call plug#end()
 
 " load in plugins from bundle directory:

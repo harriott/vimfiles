@@ -1,20 +1,28 @@
 vim: ft=ghmarkdown fdl=1 fdm=expr:
 
 # vim-plug managed
+Vim Git Gutter:
+  * last studied, Sun 02 Oct 2016
+  * clone for Pathogen's bundle directory: `git clone git://github.com/airblade/vim-gitgutter.git`
+  * `Plug 'airblade/vim-gitgutter'`
+
+## the full git clones
 
 ```bash
 git clone git://github.com/chikamichi/mediawiki.vim.git
 git clone git://github.com/godlygeek/tabular.git
+git clone git://github.com/mattn/calendar-vim
 git clone https://github.com/bling/vim-airline
 git clone https://github.com/dhruvasagar/vim-table-mode.git
+git clone https://github.com/lilydjwg/colorizer.git
 git clone https://github.com/PProvost/vim-ps1.git
+git clone https://github.com/vim-scripts/gitignore.vim
 ```
 
-Vim Git Gutter:
-  * last studied, Sun 02 Oct 2016
-  * Pathogen call: `git clone git://github.com/airblade/vim-gitgutter.git`
-
 # Pathogen managed plugins
+Move away from this to native plugin management & git submodules!
+
+## post-installation housework
 
 ```bash
 find -name .git
@@ -32,7 +40,7 @@ ls -force -r .git | ri -force -recurse
 :Helptags
 ```
 
-## cloned
+## cloned into bundle
 
 ```bash
 git clone https://github.com/drmikehenry/vim-fontsize.git
@@ -41,7 +49,7 @@ git clone https://github.com/hdima/python-syntax.git
 git clone https://github.com/jlanzarotta/bufexplorer.git
 git clone https://github.com/jtratner/vim-flavored-markdown.git
 git clone https://github.com/justinmk/vim-sneak.git
-git clone https://github.com/kien/ctrlp.vim.git ctrlp.vim
+git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/lilydjwg/colorizer.git
 git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/scrooloose/syntastic.git
@@ -53,7 +61,6 @@ git clone https://github.com/xolox/vim-shell.git
 
 git clone https://github.com/kien/rainbow_parentheses.vim.git
 git clone https://github.com/plasticboy/vim-markdown.git
-git clone https://github.com/vim-scripts/gitignore.vim
 ```
 
 ## Wed 07 Sep 2016
