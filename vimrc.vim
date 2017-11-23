@@ -54,6 +54,11 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 " toggle relativenumber:
 nnoremap <silent><leader>n :set rnu! rnu? <CR>
 
+" pack msgFilterRules.dat "name" lines:
+autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g<CR>
+" unpack msgFilterRules.dat "name" lines:
+autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
+
 "-------
 "  Dates
 " ------
