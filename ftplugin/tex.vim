@@ -1,7 +1,7 @@
 " Couple of useful adjustments for working with LaTeX documents.
 " Language:	TeX
 " Maintainer: Joseph Harriott
-" Last Change: Tue 01 Apr 2014
+" Last Change: Tue 05 Dec 2017
 " This file should be in your vimfiles\ftplugin folder.
 
 " Folding
@@ -14,10 +14,10 @@ setlocal fdc=1 fdl=1 tw=0
 
 " As Vim's LaTeX syntax folding is slow, need a means to turn it off.
 " Turn off gVim's default syntax folding:
-nnoremap <F7> :setlocal fdm=manual<cr>
-inoremap <F7> <Esc>:setlocal fdm=manual<cr>
+nnoremap <buffer> <F7> :setlocal fdm=manual<cr>
+inoremap <buffer> <F7> <Esc>:setlocal fdm=manual<cr>
 " and turn it back on:
-nnoremap <S-F7> :setlocal fdm=syntax<cr>
+nnoremap <buffer> <S-F7> :setlocal fdm=syntax<cr>
 
 " Tabbing
 " -------
@@ -28,4 +28,11 @@ setlocal shiftwidth=2
 setlocal softtabstop=2
 " Let tab keys always be expanded to spaces
 setlocal expandtab
+
+" for Verse
+" ---------
+" append  \\:
+vnoremap <buffer> <F12> :s#^\v(.+)$#\1 \\\\#g <bar> nohlsearch <CR>
+" remove  \\ from the last line of a stanza:
+vnoremap <buffer> <S-F12> :s#^\v(.+) \\\\$\n^$#\1\r#g <CR>
 
