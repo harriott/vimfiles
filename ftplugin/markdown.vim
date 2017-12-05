@@ -22,3 +22,11 @@ function! MdF()
 endfunction
 
 set fde=MdF() fdl=0 fdc=1
+"
+" for Verse
+" ---------
+" prepend >  & append  :
+vnoremap <buffer> <F12> :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
+" remove   from the last line of a stanza:
+vnoremap <buffer> <S-F12> :s#^\v(.+)  $\n^$#\1\r#g <CR>
+

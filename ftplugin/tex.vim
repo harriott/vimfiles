@@ -29,6 +29,9 @@ setlocal softtabstop=2
 " Let tab keys always be expanded to spaces
 setlocal expandtab
 
+" \textbf{<selection>}
+vnoremap <leader>b c\textbf{}<Esc>P
+
 " for Verse
 " ---------
 " append  \\:
