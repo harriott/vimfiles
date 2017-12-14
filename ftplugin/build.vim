@@ -18,4 +18,4 @@ function! BdF()
 	if empty(j) | return "=" | else | return ">".len(j) | endif
 endfunction
 
-set fde=BdF() fdl=0 fdc=1
+set fde=BdF() fdc=1
