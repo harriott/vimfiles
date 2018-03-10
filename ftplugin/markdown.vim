@@ -3,7 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Wed 04 Dec 2013
 " This file should be in your vimfiles\ftplugin folder.
-" You need to this modeline in the file that you want to affect: 
+" You need to this modeline in the file that you want to affect:
 " vim: ft=markdown fdm=expr:
 
 setlocal expandtab tw=0
