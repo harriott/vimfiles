@@ -76,7 +76,6 @@ endif
 iab <expr> d8- strftime("%y-%m-%d")
 iab <expr> d8c strftime("%y%m%d")
 iab <expr> d8d strftime("%a %d %b %Y")
-iab <expr> d8f strftime("%a %d %b %Y")
 iab <expr> d8l strftime("%Hh%M %a %d %b %Y")
 iab <expr> d8m strftime("%y%m%d-%Hh%Mm")
 iab <expr> d8p strftime("%Y-%m-%d %H:%M")
