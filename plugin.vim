@@ -22,6 +22,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/gitignore.vim'
+Plug 'xolox/vim-shell'
 call plug#end()
 
 " load in plugins from bundle directory:

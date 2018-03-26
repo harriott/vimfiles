@@ -17,6 +17,7 @@ git clone https://github.com/dhruvasagar/vim-table-mode.git
 git clone https://github.com/lilydjwg/colorizer.git
 git clone https://github.com/PProvost/vim-ps1.git
 git clone https://github.com/vim-scripts/gitignore.vim
+git clone https://github.com/xolox/vim-shell.git
 ```
 
 # Pathogen managed plugins
@@ -57,7 +58,6 @@ git clone https://github.com/thinca/vim-visualstar.git
 git clone https://github.com/tpope/vim-markdown.git
 git clone https://github.com/vim-scripts/LanguageTool.git
 git clone https://github.com/xolox/vim-misc.git
-git clone https://github.com/xolox/vim-shell.git
 
 git clone https://github.com/kien/rainbow_parentheses.vim.git
 git clone https://github.com/plasticboy/vim-markdown.git

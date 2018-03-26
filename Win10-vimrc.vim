@@ -1,6 +1,6 @@
 " -------------------------------------------------------------
 " This is a wrapper vimrc for use on a MS Windows 10 system.
-" Joseph Harriott - http://momentary.eu/ - Thu 15 Sep 2016
+" Joseph Harriott - http://momentary.eu/ - Mon 26 Mar 2018
 " --------------------------------------------------------------
 
 " --------------------------------------------
@@ -31,6 +31,11 @@ source $HOME/vimfiles/vimrc.vim
 " A nicer font for MSWin:
 set guifont=Lucida_Console:h9  "better to append size so that it's reported
 set linespace=4
+
+" switch off shell.vim's full screen toggle:
+let g:shell_mappings_enabled = 0
+inoremap <F6> <C-o>:Open<CR>
+nnoremap <F6> :Open<CR>
 
 " where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
