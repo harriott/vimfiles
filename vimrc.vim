@@ -127,12 +127,12 @@ nnoremap <leader>a :Tabularize/-/r1c1l0
 " this produces GFM-style tables:
 let g:table_mode_corner='|'
 
-" Convert url parenthesis, and é
-" ------------------------------
+" Convert url parenthesis, é, and è
+" ---------------------------------
 " 5 here means convert to % code (my general preference):
-nnoremap <leader>5 :s/(/%28/e <bar> s/)/%29/e <bar> s/é/%e9/eg <bar> nohlsearch<CR>
+nnoremap <leader>5 :s/(/%28/e <bar> s/)/%29/e <bar> s/é/%e9/eg <bar> s/è/%C3%A8/eg <bar> nohlsearch<CR>
 " 9 here means convert back to parentheses (eg for a quoted url in tex):
-nnoremap <leader>9 :s/%28/(/e <bar> s/%29/)/e <bar> s/%e9/é/eg <bar> nohlsearch<CR>
+nnoremap <leader>9 :s/%28/(/e <bar> s/%29/)/e <bar> s/%e9/é/eg <bar> s/%C3%A8/è/eg <bar> nohlsearch<CR>
 
 " Remove all square bracketed text
 nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
