@@ -63,7 +63,7 @@ function! DWF()
 	elseif j =~ 3 | return ">4"
 	endif
 	" if there was no heading detected, just use the fold level from the previous line
-    return "=" 
+    return "="
 endfunction
 " - requires this:  foldmethod=expr foldexpr=DWF()
 "   and this helps visually:        foldcolumns=1
