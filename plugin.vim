@@ -24,6 +24,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/gitignore.vim'
 Plug 'xolox/vim-shell'
 Plug 'xolox/vim-misc'
+Plug 'yegappan/mru'
 call plug#end()
 
 " load in plugins from bundle directory:
