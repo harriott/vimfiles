@@ -19,6 +19,8 @@ autocmd FileType text setlocal textwidth=99
 source $VIMRUNTIME/mswin.vim
 " but revert Ctrl-A back to number increment:
 unmap <C-A>
+" and Ctrl-F back to move forward:
+unmap <C-F>
 
 " ---------------------------------
 " More of my preferences for MSWin:
