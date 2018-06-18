@@ -3,6 +3,11 @@
 " Joseph Harriott - http://momentary.eu/ - Mon 26 Mar 2018
 " --------------------------------------------------------------
 
+" quit if called from Git's vim (adapted for Git-2.8.1-64-bit.exe on Windows 10):
+if $VIM == '/usr/share/vim'
+  finish
+endif
+
 " --------------------------------------------
 " Adjusted from gVim for Windows' $VIM/_vimrc:
 " source $VIMRUNTIME/vimrc_example.vim - changed to my adapted version:
@@ -36,6 +41,9 @@ set linespace=4
 let g:shell_mappings_enabled = 0
 inoremap <F6> <C-o>:Open<CR>
 nnoremap <F6> :Open<CR>
+
+" Useful when making adjustements to configurations:
+nnoremap <S-F6> :source ~/vimfiles/Win10-vimrc.vim <bar> source ~/vimfiles/gvimrc.vim <bar> nohlsearch<CR>
 
 " where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
