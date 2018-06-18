@@ -9,9 +9,13 @@ if $VIM == '/usr/share/vim'
 endif
 
 " --------------------------------------------
-" Adjusted from gVim for Windows' $VIM/_vimrc:
-" source $VIMRUNTIME/vimrc_example.vim - changed to my adapted version:
-source $HOME/vimfiles/vimrc_example.vim
+" Some recommended defaults, with adjustments:
+source $VIMRUNTIME/vimrc_example.vim
+" revert a few things:
+set nobackup
+set noundofile
+autocmd FileType text setlocal textwidth=99
+
 source $VIMRUNTIME/mswin.vim
 " but revert Ctrl-A back to number increment:
 unmap <C-A>
