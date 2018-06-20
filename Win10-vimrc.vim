@@ -1,6 +1,6 @@
 " -------------------------------------------------------------
 " This is a wrapper vimrc for use on a MS Windows 10 system.
-" Joseph Harriott - http://momentary.eu/ - Mon 26 Mar 2018
+" Joseph Harriott - http://momentary.eu/ - Wed 20 Jun 2018
 " --------------------------------------------------------------
 
 " quit if called from Git's vim (adapted for Git-2.8.1-64-bit.exe on Windows 10):
@@ -14,6 +14,7 @@ source $VIMRUNTIME/vimrc_example.vim
 " revert a few things:
 set nobackup
 set noundofile
+set scrolloff=0
 autocmd FileType text setlocal textwidth=99
 
 source $VIMRUNTIME/mswin.vim

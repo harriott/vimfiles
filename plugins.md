@@ -12,10 +12,11 @@ Vim Git Gutter:
 git clone git://github.com/chikamichi/mediawiki.vim.git
 git clone git://github.com/godlygeek/tabular.git
 git clone git://github.com/mattn/calendar-vim
+git clone https://github.com/PProvost/vim-ps1.git
 git clone https://github.com/bling/vim-airline
 git clone https://github.com/dhruvasagar/vim-table-mode.git
+git clone https://github.com/justinmk/vim-sneak.git
 git clone https://github.com/lilydjwg/colorizer.git
-git clone https://github.com/PProvost/vim-ps1.git
 git clone https://github.com/vim-scripts/gitignore.vim
 git clone https://github.com/xolox/vim-shell.git
 ```
@@ -49,7 +50,6 @@ git clone https://github.com/ervandew/supertab.git
 git clone https://github.com/hdima/python-syntax.git
 git clone https://github.com/jlanzarotta/bufexplorer.git
 git clone https://github.com/jtratner/vim-flavored-markdown.git
-git clone https://github.com/justinmk/vim-sneak.git
 git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/lilydjwg/colorizer.git
 git clone https://github.com/scrooloose/nerdtree.git

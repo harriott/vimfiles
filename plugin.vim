@@ -4,6 +4,7 @@
 " called by my vimrc.vim
 
 call plug#begin()
+Plug 'justinmk/vim-sneak'
 Plug 'airblade/vim-gitgutter'
 Plug 'chikamichi/mediawiki.vim'
 Plug 'ctrlpvim/ctrlp.vim'
