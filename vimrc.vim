@@ -3,17 +3,15 @@
 " ----------------------------------------------------------
 " Real vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
 
+source textFormat.vim
+
 "----------
 " interface
 " ---------
 set linebreak number relativenumber
-set encoding=utf-8
-set shiftwidth=4
-set tabstop=4
 set laststatus=2  "ls=2  - always display the status line
 set wildmode=longest,full
 set wildmenu
-set tw=99
 
 set lcs=eol:│,trail:·,tab:»·  "nicer settings for list:
 noremap <S-F3> :set list! list? <CR>
@@ -119,37 +117,6 @@ set pastetoggle=<S-F3>
 
 " open netrw:
 nnoremap <leader>- :Explore<cr>
-
-"----------------
-" Text Formatting
-" ---------------
-nnoremap <leader>a :Tabularize/-/r1c1l0
-" this produces GFM-style tables:
-let g:table_mode_corner='|'
-
-" Convert url parenthesis, é, and è
-" ---------------------------------
-" 5 here means convert to % code (my general preference):
-nnoremap <leader>5 :s/(/%28/e <bar> s/)/%29/e <bar> s/é/%e9/eg <bar> s/è/%C3%A8/eg <bar> nohlsearch<CR>
-" 9 here means convert back to parentheses (eg for a quoted url in tex):
-nnoremap <leader>9 :s/%28/(/e <bar> s/%29/)/e <bar> s/%e9/é/eg <bar> s/%C3%A8/è/eg <bar> nohlsearch<CR>
-
-" Remove all square bracketed text
-nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
-
-" Underline using dashes automatically
-" ------------------------------------
-" (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
-" eg :Underline ~+-	 gives underlining like ~+-~+-~+-~+-~+-~+-
-function! s:Underline(chars)
-  let chars = empty(a:chars) ? '-' : a:chars
-  let nr_columns = virtcol('$') - 1
-  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
-  put =strpart(uline, 0, nr_columns)
-endfunction
-command! -nargs=? Underline call s:Underline(<q-args>)
-" map:
-nnoremap <leader>u :Underline
 
 "----
 " Vim
