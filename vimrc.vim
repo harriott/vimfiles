@@ -3,7 +3,7 @@
 " ----------------------------------------------------------
 " Real vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
 
-source textFormat.vim
+set encoding=utf-8  " get this done early
 
 "----------
 " interface

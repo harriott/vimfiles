@@ -1,12 +1,12 @@
+" vim: set et:
 
 " Joseph Harriott - http://momentary.eu/
 " ----------------------------------------------------------
-" source this from vimrc
+" keep this file in your plugin directory so's it's automatically sourced at startup
 
 "----------------
 " Text Formatting
 " ---------------
-set encoding=utf-8
 set shiftwidth=4
 set tabstop=4
 set tw=99
@@ -15,16 +15,16 @@ nnoremap <leader>a :Tabularize/-/r1c1l0
 " this produces GFM-style tables:
 let g:table_mode_corner='|'
 
-" Convert url parenthesis, é, è, and Î
-" ------------------------------------
+" Convert url parenthesis, é and è, Î and î
+" -----------------------------------------
 " 5 here means convert to % code (my general preference):
 nnoremap <leader>5 :s/(/%28/e <bar> s/)/%29/e
-	\ <bar> s/é/%C3%A9/eg <bar> s/è/%C3%A8/eg <bar> s/Î/%C3%8E/eg
-	\ <bar> nohlsearch<CR>
+    \ <bar> s/é/%C3%A9/eg <bar> s/è/%C3%A8/eg <bar> s/Î/%C3%8E/eg <bar> s/î/%C3%AE/eg
+    \ <bar> nohlsearch<CR>
 " 9 here means convert back to parentheses (eg for a quoted url in tex):
 nnoremap <leader>9 :s/%28/(/e <bar> s/%29/)/e
-	\ <bar> s/%C3%A9/é/eg <bar> s/%C3%A8/è/eg <bar> s/%C3%8E/Î/eg
-	\ <bar> nohlsearch<CR>
+    \ <bar> s/%C3%A9/é/eg <bar> s/%C3%A8/è/eg <bar> s/%C3%8E/Î/eg <bar> s/%C3%AE/î/eg
+    \ <bar> nohlsearch<CR>
 
 " lesser indentation of vimscript continuation line:
 let g:vim_indent_cont = &sw
@@ -35,7 +35,7 @@ nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
 " Underline using dashes automatically
 " ------------------------------------
 " (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
-" eg :Underline ~+-	 gives underlining like ~+-~+-~+-~+-~+-~+-
+" eg :Underline ~+-  gives underlining like ~+-~+-~+-~+-~+-~+-
 function! s:Underline(chars)
   let chars = empty(a:chars) ? '-' : a:chars
   let nr_columns = virtcol('$') - 1
