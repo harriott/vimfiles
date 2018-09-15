@@ -1,8 +1,13 @@
 " ---------------------------
 " My debian vimrc adjustments
 " ---------------------------
-" source $VIMRUNTIME/vimrc_example.vim - changed to my adapted version:
-source $HOME/.vim/vimrc_example.vim
+" Some recommended defaults, with adjustments:
+source $VIMRUNTIME/vimrc_example.vim
+" revert a few things:
+set nobackup
+set noundofile
+set scrolloff=0
+autocmd FileType text setlocal textwidth=99
 
 " switch modelines back on - overriding /usr/share/vim/vim73/debian.vim
 set modeline
