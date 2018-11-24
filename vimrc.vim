@@ -58,6 +58,10 @@ autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name
 autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
 " (These hooks aren't in an  ftplugin/dat.vim  because there's no such default filetype.)
 
+" For Thymio's Aseba code, I suppose that  sgml  filetype might be more appropriate,
+" but I use  xml  filetype  because it has folding
+autocmd BufNewFile,BufRead *.aesl setlocal filetype=xml
+
 "-------
 "  Dates
 " ------
