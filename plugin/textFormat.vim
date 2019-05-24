@@ -21,7 +21,7 @@ let g:table_mode_corner='|'
 " 5 here means convert to % code (my general preference):
 nnoremap <leader>5 :
     \ s/(/%28/eg <bar> s/)/%29/eg <bar>
-    \ s/Â/%C3%82/eg <bar> \ s/ä/%C3%A4/eg <bar>
+    \ s/Â/%C3%82/eg <bar> s/ä/%C3%A4/eg <bar>
     \ s/º/%C2%BA/eg <bar>
     \ s/Ø/%C3%98/eg <bar>
     \ s/ç/%C3%A7/eg <bar>
@@ -34,7 +34,7 @@ nnoremap <leader>5 :
 " 9 here means convert back to parentheses (eg for a quoted url in tex):
 nnoremap <leader>9 :
     \ s/%28/(/e <bar> s/%29/)/e <bar>
-    \ s/%C3%82/Â/eg <bar> \ s/%C3%A4/ä/eg <bar>
+    \ s/%C3%82/Â/eg <bar> s/%C3%A4/ä/eg <bar>
     \ s/%C2%BA/º/eg <bar>
     \ s/%C3%98/Ø/eg <bar>
     \ s/%C3%A7/ç/eg <bar>
