@@ -1,6 +1,6 @@
 " Sourced from my Arch Linux installation's ~/.vimrc
 
-source $HOME/.vim/Arch-vimrc.vim
+source $HOME/.vim/vimrc-Arch.vim
 
 set gfn=Ubuntu\ Mono\ 10
 set linespace=2
