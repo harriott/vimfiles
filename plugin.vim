@@ -25,6 +25,7 @@ Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/gitignore.vim'
+Plug 'vim-scripts/LanguageTool'
 Plug 'yegappan/mru'
 call plug#end()
 " PlugUpdate
@@ -59,7 +60,7 @@ set background=dark  " at this stage, assuming vim's in terminal
 colorscheme solarized
 call togglebg#map("<S-F5>")  " reassign the toggle light/dark
 
-let g:languagetool_jar='$HOME\LanguageTool-2.4.1\languagetool-commandline.jar'
+let g:languagetool_jar='$HOME\LanguageTool-4.5\languagetool-commandline.jar'
 
 let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
 let g:syntastic_python_checkers = ['flake8']
