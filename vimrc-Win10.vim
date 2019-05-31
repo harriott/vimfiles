@@ -45,11 +45,10 @@ source $HOME/vimfiles/vimrc.vim
 set guifont=Lucida_Console:h9  "better to append size so that it's reported
 set linespace=4
 
-" switch off shell.vim's full screen toggle:
-let g:shell_mappings_enabled = 0
-inoremap <F6> <C-o>:Open<CR>
-nnoremap <F6> :Open<CR>
-
+" Open Windows Explorer showing directory of current buffer
+nmap <F11> :!start explorer /select,%:p<CR>
+imap <F11> <Esc><F11>
+"
 " Useful when making adjustements to configurations:
 nnoremap <S-F6> :source ~/vimfiles/vimrc-Win10.vim <bar> source ~/vimfiles/gvimrc.vim <bar> nohlsearch<CR>
 

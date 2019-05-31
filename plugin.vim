@@ -21,13 +21,13 @@ Plug 'justinmk/vim-sneak'
 Plug 'lilydjwg/colorizer'
 Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
+Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/gitignore.vim'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-shell'
 Plug 'yegappan/mru'
 call plug#end()
+" PlugUpdate
 
 " load in plugins from bundle directory:
 execute pathogen#infect()
