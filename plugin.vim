@@ -11,6 +11,7 @@ Plug 'chikamichi/mediawiki.vim'
 Plug 'christianrondeau/vim-base64'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'drmikehenry/vim-fontsize'
+Plug 'ervandew/supertab'
 Plug 'godlygeek/tabular'
 Plug 'harriott/vim-buf'
 Plug 'harriott/vim-table-mode'
@@ -22,6 +23,7 @@ Plug 'lilydjwg/colorizer'
 Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -36,6 +38,9 @@ execute pathogen#infect()
 
 map g/ <Plug>(incsearch-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
+
+" The NERD Commenter
+let NERDSpaceDelims = 1
 
 " Appearance
 " ----------
