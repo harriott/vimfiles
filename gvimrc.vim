@@ -48,15 +48,6 @@ function! ColumnsToggle()
     endif
 endfunction
 
-" solarized
-set background=light
-let g:solarized_contrast="high"    "default value is normal
-
-" Set guibg after any adjustments to Solarized:
-highlight ShowTrailingWhitespace ctermbg=White guibg=White
-" and add a mapping to reset this if Solarized has been toggled:
-nnoremap <leader>w :highlight ShowTrailingWhitespace ctermbg=White guibg=White<cr>
-
 autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
 " and <leader>p toggles it:
 nnoremap <leader>p :call ParenthsToggle()<cr>
@@ -73,9 +64,22 @@ endfunction
 
 nnoremap <Space> za  " handy for toggling folds open/closed
 
+" toggle cursorcolumn:
+nnoremap <silent><leader>l :set cuc! cuc? <CR>
 " toggle cursorline:
 nnoremap <silent><leader>c :set cul! cul? <CR>
 
 " have two installed DokuWiki files open ready configured:
 autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
+
+" Color Scheme
+" ------------
+" Solarized
+set background=light
+let g:solarized_contrast="high"    "default value is normal
+
+" ShowTrailingWhitespace - set guibg after adjustments to Solarized:
+highlight ShowTrailingWhitespace ctermbg=White guibg=White
+" and add a mapping to reset this if Solarized has been toggled:
+nnoremap <leader>w :highlight ShowTrailingWhitespace ctermbg=White guibg=White<cr>
 

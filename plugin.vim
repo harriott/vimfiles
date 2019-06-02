@@ -22,8 +22,10 @@ Plug 'justinmk/vim-sneak'
 Plug 'lilydjwg/colorizer'
 Plug 'mattn/calendar-vim'
 Plug 'mbbill/undotree'
+Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -61,15 +63,34 @@ inoremap <S-F9> <Esc>:GitGutterToggle<CR>
 
 highlight ShowTrailingWhitespace ctermbg=White
 
-" for Solarized:
-set background=dark  " at this stage, assuming vim's in terminal
-colorscheme solarized
-call togglebg#map("<S-F5>")  " reassign the toggle light/dark
-
 let g:languagetool_jar='$HOME\LanguageTool-4.5\languagetool-commandline.jar'
 
 let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
 let g:syntastic_python_checkers = ['flake8']
+
+" Colour Scheme
+" ------------
+" colorscheme gruvbox
+" start with Solarized dark
+colorscheme solarized
+call togglebg#map("<S-F5>")  " reassign Solarized provided toggle for light/dark
+
+" colour scheme toggle
+nnoremap <C-F5> :call GruvboxSolarized()<cr>
+" assume starting with Solarized:
+let g:gruvboxScheme = 0
+" toggle with gruvbox
+function! GruvboxSolarized()
+  if g:gruvboxScheme
+    colorscheme solarized
+    let g:gruvboxScheme = 0
+  else
+    colorscheme gruvbox
+    let g:gruvboxScheme = 1
+  endif
+  redraw
+  colorscheme
+endfunction
 
 " EasyMotion
 " ----------
@@ -88,13 +109,13 @@ function! EasyMotionSearchToggle()
         unmap n
         unmap N
         let g:searchingwitheasymotion = 0
-		echo 'searching normally'
+        echo 'searching normally'
     else
         map / <Plug>(easymotion-sn)
         map n <Plug>(easymotion-next)
         map N <Plug>(easymotion-prev)
         let g:searchingwitheasymotion = 1
-		echo 'searching with EasyMotion'
+        echo 'searching with EasyMotion'
     endif
 endfunction
 
