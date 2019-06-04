@@ -9,14 +9,8 @@ if $VIM == '/usr/share/vim'
   finish
 endif
 
-" --------------------------------------------
-" Some recommended defaults, with adjustments:
-source $VIMRUNTIME/vimrc_example.vim
-" revert a few things:
-set nobackup
-set noundofile
-set scrolloff=0
-autocmd FileType text setlocal textwidth=99
+" first, some general settings
+source $HOME/vimfiles/vimrc_example.vim
 
 source $VIMRUNTIME/mswin.vim
 " but revert Ctrl-A back to number increment:
