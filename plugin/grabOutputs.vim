@@ -14,21 +14,6 @@ endfunction
 command! -nargs=+ -complete=command TabEx call TabEx(<q-args>)
 " (from http://vim.wikia.com/wiki/Capture_ex_command_output)
 
-function! GrabFmaps()
-  redir @n
-    silent map
-  redir END
-  redir @i
-    silent map!
-  redir END
-  new
-  normal! "np "ip
-  v/<.\=.\=F.*>/d
-  nohlsearch
-  sav! $HOME/vim-Fmaps.txt
-endfunction
-command! -complete=command GrabFmaps call GrabFmaps()
-
 function! GrabScriptnames()
   redir @p
     silent scriptnames
@@ -38,4 +23,37 @@ function! GrabScriptnames()
   sav! $HOME/vim-scriptnames.txt
 endfunction
 command! -complete=command GrabScriptnames call GrabScriptnames()
+
+" Grab mappings
+" -------------
+function! Grabmaps()
+  redir @n
+    silent map
+  redir END
+  redir @i
+    silent map!
+  redir END
+  new
+  normal! "np "ip
+endfunction
+
+function! GrabFmaps()
+  call Grabmaps()
+  v/<.\=.\=F.*>/d
+  nohlsearch
+  sav! $HOME/vim-Fmaps.txt
+endfunction
+command! -complete=command GrabFmaps call GrabFmaps()
+
+function! GrabNonFmaps()
+  call Grabmaps()
+  g/<.\=.\=F.*>/d
+  g/<Plug>/d
+  g/<SNR>/d
+  g/<simalt>/d
+  g/ /d " non-breaking space
+  nohlsearch
+  sav! $HOME/vim-nonFmaps.txt
+endfunction
+command! -complete=command GrabNonFmaps call GrabNonFmaps()
 
