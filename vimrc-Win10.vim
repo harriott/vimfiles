@@ -32,7 +32,7 @@ if isdirectory($HOME . '/.vimswap') == 0
 endif
 
 "  Point to my more portable vimrc:
-source $HOME/vimfiles/plugin.vim
+source $HOME/vimfiles/plugins.vim
 source $HOME/vimfiles/vimrc.vim
 
 " A nicer font for MSWin:
@@ -43,9 +43,6 @@ set linespace=4
 nmap <F11> :!start explorer /select,%:p<CR>
 imap <F11> <Esc><F11>
 "
-" Useful when making adjustements to configurations:
-nnoremap <S-F6> :source ~/vimfiles/vimrc-Win10.vim <bar> source ~/vimfiles/gvimrc.vim <bar> nohlsearch<CR>
-
 " where I like to keep my WriteBackups:
 let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 

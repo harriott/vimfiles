@@ -131,6 +131,7 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	:help index        => lists the all of the commands
     :his               => Display command-line history
     :his s             => Display search string history
+    :so %              => source the current file
 
 # Visual mode commands
 	V  => line-based visual selection
