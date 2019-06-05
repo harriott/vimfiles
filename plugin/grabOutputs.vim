@@ -14,6 +14,8 @@ endfunction
 command! -nargs=+ -complete=command TabEx call TabEx(<q-args>)
 " (from http://vim.wikia.com/wiki/Capture_ex_command_output)
 
+" grabbing configurations (somehow leaving empty buffers and sometimes throwing errors)
+" -------------------------------------------------------------------------------------
 function! GrabScriptnames()
   redir @p
     silent scriptnames
@@ -22,7 +24,7 @@ function! GrabScriptnames()
   normal! "pp
   sav! $HOME/vim-scriptnames.txt
 endfunction
-command! -complete=command GrabScriptnames call GrabScriptnames()
+command! GrabScriptnames call GrabScriptnames()
 
 " Grab mappings
 " -------------
@@ -37,23 +39,24 @@ function! Grabmaps()
   normal! "np "ip
 endfunction
 
+" for some reason, these leave an empty buffer up...
+"
 function! GrabFmaps()
   call Grabmaps()
   v/<.\=.\=F.*>/d
   nohlsearch
   sav! $HOME/vim-Fmaps.txt
 endfunction
-command! -complete=command GrabFmaps call GrabFmaps()
+command! GrabFmaps call GrabFmaps()
 
 function! GrabNonFmaps()
   call Grabmaps()
   g/<.\=.\=F.*>/d
   g/<Plug>/d
   g/<SNR>/d
-  g/<simalt>/d
   g/ /d " non-breaking space
   nohlsearch
   sav! $HOME/vim-nonFmaps.txt
 endfunction
-command! -complete=command GrabNonFmaps call GrabNonFmaps()
+command! GrabNonFmaps call GrabNonFmaps()
 

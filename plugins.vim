@@ -3,38 +3,6 @@
 " ---------------------
 " called by my vimrc.vim
 
-call plug#begin()
-" Plug 'simnalamburt/vim-mundo'
-Plug 'PProvost/vim-ps1'
-Plug 'airblade/vim-gitgutter'
-Plug 'chikamichi/mediawiki.vim'
-Plug 'christianrondeau/vim-base64'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'drmikehenry/vim-fontsize'
-Plug 'ervandew/supertab'
-Plug 'godlygeek/tabular'
-Plug 'harriott/vim-buf'
-Plug 'harriott/vim-table-mode'
-Plug 'haya14busa/incsearch-fuzzy.vim'
-Plug 'haya14busa/incsearch.vim'
-Plug 'jlanzarotta/bufexplorer'
-Plug 'justinmk/vim-sneak'
-Plug 'lilydjwg/colorizer'
-Plug 'mattn/calendar-vim'
-Plug 'mbbill/undotree'
-Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'tyru/open-browser.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/gitignore.vim'
-Plug 'vim-scripts/LanguageTool'
-Plug 'yegappan/mru'
-call plug#end()
-" PlugUpdate
-
 " load in plugins from bundle directory:
 execute pathogen#infect()
 
