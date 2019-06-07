@@ -1,11 +1,14 @@
 
 " My portable vimrc - Joseph Harriott - http://momentary.eu/
 " ----------------------------------------------------------
-" Real vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
+" True vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
 
 set encoding=utf-8  " get this done early
 
 " set pastetoggle=<S-F3>
+
+" load in plugins from bundle directory:
+execute pathogen#infect()
 
 "----------
 " interface
@@ -19,7 +22,7 @@ set listchars=eol:│,trail:·,tab:»·  "nicer settings for list mode:
 noremap <S-F3> :set list! list? <CR>
 inoremap <S-F3> <Esc>:set list! list? <CR>
 
-set history=300
+set history=400
 set modelines=4
 
 "-------------

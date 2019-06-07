@@ -1,5 +1,10 @@
 vim: ft=ghmarkdown fdl=1 fdm=expr:
 
+    :helptags $HOME\vimfiles
+
+# Arch packaged
+vim-easymotion
+
 # vim-plug managed
 Vim Git Gutter:
   * last studied, Sun 02 Oct 2016
@@ -48,11 +53,9 @@ ls -force -r .git | ri -force -recurse
 git clone https://github.com/drmikehenry/vim-fontsize.git
 git clone https://github.com/ervandew/supertab.git
 git clone https://github.com/hdima/python-syntax.git
-git clone https://github.com/jlanzarotta/bufexplorer.git
 git clone https://github.com/jtratner/vim-flavored-markdown.git
 git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/lilydjwg/colorizer.git
-git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/thinca/vim-visualstar.git
 git clone https://github.com/tpope/vim-markdown.git

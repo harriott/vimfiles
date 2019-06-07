@@ -32,7 +32,6 @@ if isdirectory($HOME . '/.vimswap') == 0
 endif
 
 "  Point to my more portable vimrc:
-source $HOME/vimfiles/plugins.vim
 source $HOME/vimfiles/vimrc.vim
 
 " A nicer font for MSWin:

@@ -13,6 +13,7 @@ function! TabEx(cmd)
 endfunction
 command! -nargs=+ -complete=command TabEx call TabEx(<q-args>)
 " (from http://vim.wikia.com/wiki/Capture_ex_command_output)
+" doesn't catch Errors
 
 " grabbing configurations (somehow leaving empty buffers and sometimes throwing errors)
 " -------------------------------------------------------------------------------------

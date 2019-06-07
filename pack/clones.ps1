@@ -3,34 +3,65 @@
 # Joseph Harriott http://momentary.eu/
 # grab or tidy repositories
 
-cd shell\start
+Function gicl { git clone $args[0] }
+Function rirf { ri -recurse -force $args[0] }
+Function tryPath {
+  $goodPath = ""
+  if ( $(Try { Test-Path $args[0] } Catch { $false }) )
+    # { $script:goodPath = "yes"; $goodPath }
+    { "cd $($args[0])"; cd $($args[0]); $script:goodPath = "yes" }
+  else { "Sorry, $($args[0]) ain't there..." }
+  }
 
-ri -recurse -force bufexplorer
-git clone https://github.com/jlanzarotta/bufexplorer
-# ri -recurse -force bufexplorer\.git
+tryPath layout\opt
+if ( $goodPath ){
 
-# ri -recurse -force ctrlp.vim
-# git clone https://github.com/ctrlpvim/ctrlp.vim
-# ri -recurse -force ctrlp.vim\.git
+  # gicl https://github.com/dhruvasagar/vim-table-mode
+  # :packadd vim-table-mode
 
-# ri -recurse -force mru
-# git clone https://github.com/yegappan/mru
-# ri -recurse -force mru\.git
+  cd ..\.. }
 
-# ri -recurse -force nerdtree
-# git clone https://github.com/scrooloose/nerdtree
-# ri -recurse -force nerdtree\.git
+tryPath layout\start
+if ( $goodPath ){
 
-# ri -recurse -force open-browser.vim
-# git clone https://github.com/tyru/open-browser.vim
-# ri -recurse -force open-browser.vim\.git
+  cd ..\.. }
 
-# git clone https://github.com/harriott/vim-buffing-wheel
-# mine
+tryPath other\start
+if ( $goodPath ){
 
-# ri -recurse vim-open-url
-# git clone https://github.com/dhruvasagar/vim-open-url
-# ri -recurse -force vim-open-url\.git
+  # gicl https://github.com/AndrewRadev/bufferize.vim
 
-cd ..\..
+  cd ..\.. }
+
+tryPath shell\start
+if ( $goodPath ){
+
+  # rirf bufexplorer
+  # gicl https://github.com/jlanzarotta/bufexplorer
+  # rirf bufexplorer\.git
+
+  # rirf ctrlp.vim
+  # gicl https://github.com/ctrlpvim/ctrlp.vim
+  # rirf ctrlp.vim\.git
+
+  # rirf mru
+  # gicl https://github.com/yegappan/mru
+  # rirf mru\.git
+
+  # rirf nerdtree
+  # gicl https://github.com/scrooloose/nerdtree
+  # rirf nerdtree\.git
+
+  # rirf open-browser.vim
+  # gicl https://github.com/tyru/open-browser.vim
+  # rirf open-browser.vim\.git
+
+  # gicl https://github.com/harriott/vim-buffing-wheel
+  # mine
+
+  # rirf vim-open-url
+  # gicl https://github.com/dhruvasagar/vim-open-url
+  # rirf vim-open-url\.git
+
+  cd ..\.. }
 

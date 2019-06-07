@@ -3,9 +3,6 @@
 " ---------------------
 " called by my vimrc.vim
 
-" load in plugins from bundle directory:
-execute pathogen#infect()
-
 map g/ <Plug>(incsearch-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 
