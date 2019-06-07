@@ -30,6 +30,7 @@ tryPath other\start
 if ( $goodPath ){
 
   # gicl https://github.com/AndrewRadev/bufferize.vim
+  gicl https://github.com/inkarkat/vim-ingo-library
 
   cd ..\.. }
 

@@ -15,8 +15,8 @@ command! -nargs=+ -complete=command TabEx call TabEx(<q-args>)
 " (from http://vim.wikia.com/wiki/Capture_ex_command_output)
 " doesn't catch Errors
 
-" grabbing configurations (somehow leaving empty buffers and sometimes throwing errors)
-" -------------------------------------------------------------------------------------
+" grab configurations (somehow leaving empty buffers and sometimes throwing errors)
+" ---------------------------------------------------------------------------------
 function! GrabScriptnames()
   redir @p
     silent scriptnames
@@ -40,8 +40,6 @@ function! Grabmaps()
   normal! "np "ip
 endfunction
 
-" for some reason, these leave an empty buffer up...
-"
 function! GrabFmaps()
   call Grabmaps()
   v/<.\=.\=F.*>/d
@@ -60,4 +58,17 @@ function! GrabNonFmaps()
   sav! $HOME/vim-nonFmaps.txt
 endfunction
 command! GrabNonFmaps call GrabNonFmaps()
+
+" grab runtimepath
+" ----------------
+function! GrabRtp()
+  redir @p
+    silent echo &runtimepath
+  redir END
+  new
+  normal! "pp
+  %s/,/\r/g
+  sav! $HOME/vim-runtimepath.txt
+endfunction
+command! GrabRtp call GrabRtp()
 
