@@ -117,5 +117,3 @@ map <C-n> :NERDTreeToggle<CR>
 " Undotree:
 nnoremap <S-F2> :UndotreeToggle<CR>
 
-command! -bar -bang W :WriteBackup<bang>
-

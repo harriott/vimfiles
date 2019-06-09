@@ -41,7 +41,4 @@ set linespace=4
 " Open Windows Explorer showing directory of current buffer
 nmap <F11> :!start explorer /select,%:p<CR>
 imap <F11> <Esc><F11>
-"
-" where I like to keep my WriteBackups:
-let g:WriteBackup_BackupDir = 'D:\Dropbox\Stack\WriteBackup'
 

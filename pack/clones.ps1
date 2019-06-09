@@ -3,6 +3,8 @@
 # Joseph Harriott http://momentary.eu/
 # grab or tidy repositories
 
+# use PowerShell function packs to list folders two down
+
 Function gicl { git clone $args[0] }
 Function rirf { ri -recurse -force $args[0] }
 Function tryPath {
@@ -12,6 +14,11 @@ Function tryPath {
     { "cd $($args[0])"; cd $($args[0]); $script:goodPath = "yes" }
   else { "Sorry, $($args[0]) ain't there..." }
   }
+
+tryPath ingo\start
+if ( $goodPath ){
+
+  cd ..\.. }
 
 tryPath layout\opt
 if ( $goodPath ){
@@ -31,7 +38,8 @@ if ( $goodPath ){
 
   # gicl https://github.com/AndrewRadev/bufferize.vim
   # gicl https://github.com/inkarkat/vim-ingo-library
-  gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
+  # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
+  gicl https://github.com/Asheq/close-buffers.vim
 
   cd ..\.. }
 

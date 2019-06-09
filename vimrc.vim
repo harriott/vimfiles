@@ -41,9 +41,11 @@ set directory=$HOME/.vimswap//
 "----------
 " searching
 " ---------
-set ignorecase incsearch smartcase
+if has('syntax') && has('eval')
+  packadd! matchit
+endif
 
-runtime macros/matchit.vim
+set ignorecase incsearch smartcase
 
 nmap <silent> ,/ :nohlsearch<CR>
 " for clearing search highlights
