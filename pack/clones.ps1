@@ -24,7 +24,8 @@ tryPath layout\opt
 if ( $goodPath ){
 
   # gicl https://github.com/dhruvasagar/vim-table-mode
-  # :packadd vim-table-mode
+  # gicl https://github.com/lilydjwg/colorizer
+  # gicl https://github.com/tmhedberg/SimpylFold
 
   cd ..\.. }
 
@@ -37,9 +38,9 @@ tryPath other\start
 if ( $goodPath ){
 
   # gicl https://github.com/AndrewRadev/bufferize.vim
+  # gicl https://github.com/Asheq/close-buffers.vim
   # gicl https://github.com/inkarkat/vim-ingo-library
   # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
-  gicl https://github.com/Asheq/close-buffers.vim
 
   cd ..\.. }
 

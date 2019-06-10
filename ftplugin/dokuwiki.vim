@@ -15,6 +15,11 @@
 
 setlocal tw=0 fdc=1 fde=DWF() fdl=0 fdm=expr
 
+" for the syntax plugin:
+let dokuwiki_comment=1 " can't see what this achieves...
+let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
+" not available in $VIMRUNTIME\syntax: powershell
+
 " abbreviations for code tags
 " ---------------------------
 iab </ </code>

@@ -24,6 +24,9 @@ function! GrabScriptnames()
   new
   normal! "pp
   sav! $HOME/vim-scriptnames.txt
+  if exists("g:loaded_close_buffers")
+    CloseNamelessBuffers
+  endif
 endfunction
 command! GrabScriptnames call GrabScriptnames()
 
@@ -38,6 +41,9 @@ function! Grabmaps()
   redir END
   new
   normal! "np "ip
+  if exists("g:loaded_close_buffers")
+    CloseNamelessBuffers
+  endif
 endfunction
 
 function! GrabFmaps()
@@ -69,6 +75,9 @@ function! GrabRtp()
   normal! "pp
   %s/,/\r/g
   sav! $HOME/vim-runtimepath.txt
+  if exists("g:loaded_close_buffers")
+    CloseNamelessBuffers
+  endif
 endfunction
 command! GrabRtp call GrabRtp()
 

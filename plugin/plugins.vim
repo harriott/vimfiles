@@ -14,9 +14,6 @@ let NERDSpaceDelims = 1
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 
-" start vim with colorizer's highlighting off:
-let g:colorizer_startup = 0
-
 " switch on DokuWiki comment highlighting (read by ./syntax/dokuwiki.vim)
 let dokuwiki_comment=1
 
@@ -94,7 +91,9 @@ map <Leader>m :MBEOpen<cr>:MBEFocus<cr>
 let g:miniBufExplCloseOnSelect = 1
 
 " quickly close all but current buffer:
-nnoremap <S-F4> :BufOnly<CR>
+nnoremap <S-F4> :CloseOtherBuffers<CR>
+" quickly close all but visible buffers:
+nnoremap <C-F4> :CloseHiddenBuffers<CR>
 
 " to help CtrlP when in my Win7 %USERPROFILE%:
 set wildignore+=NTUSER.DAT*,*.lnk
