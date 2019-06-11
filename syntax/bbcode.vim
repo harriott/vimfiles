@@ -1,3 +1,5 @@
+" lost track of where I found this...
+"
 if version < 600
     syntax clear
 elseif exists("b:current_syntax")

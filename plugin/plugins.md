@@ -6,12 +6,21 @@ vim: ft=ghmarkdown fdl=1 fdm=expr:
 calendar-vim
 
 # Arch Community packaged
+vim-airline
+vim-airline-themes
 vim-easymotion
+vim-gitgutter
+vim-nerdcommenter
+vim-supertab
+vim-syntastic
 
 # opts: packadd's
     :packadd colorizer
-    :packadd vim-table-mode
+    :packadd limelight.vim | Limelight
     :packadd SimpylFold
+    :packadd vim-base64
+    :packadd vim-gitgutter
+    :packadd vim-table-mode
 
 # Pathogen managed plugins
 Move away from this to native plugin management & git submodules!
@@ -62,7 +71,6 @@ git clone git://github.com/tpope/vim-surround.git
 
 ### Updated
 ```bash
-git clone git://github.com/mattn/calendar-vim
 git clone git://github.com/tpope/vim-fugitive.git
 git clone git://github.com/tpope/vim-repeat.git
 git clone https://github.com/easymotion/vim-easymotion
@@ -71,24 +79,5 @@ git clone https://github.com/easymotion/vim-easymotion
 ## Thu 15 Sep 2016
 ```bash
 git clone https://github.com/fholgado/minibufexpl.vim.git
-```
-
-# vim-plug managed
-Vim Git Gutter:
-  * last studied, Sun 02 Oct 2016
-  * clone for Pathogen's bundle directory: `git clone git://github.com/airblade/vim-gitgutter.git`
-  * `Plug 'airblade/vim-gitgutter'`
-
-## the full git clones
-
-```bash
-git clone git://github.com/chikamichi/mediawiki.vim.git
-git clone git://github.com/godlygeek/tabular.git
-git clone git://github.com/mattn/calendar-vim
-git clone https://github.com/PProvost/vim-ps1.git
-git clone https://github.com/bling/vim-airline
-git clone https://github.com/justinmk/vim-sneak.git
-git clone https://github.com/vim-scripts/gitignore.vim
-git clone https://github.com/xolox/vim-shell.git
 ```
 
