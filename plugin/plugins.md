@@ -9,6 +9,7 @@ calendar-vim
 vim-airline
 vim-airline-themes
 vim-easymotion
+vim-fugitive
 vim-gitgutter
 vim-nerdcommenter
 vim-supertab
@@ -53,7 +54,6 @@ git clone https://github.com/jtratner/vim-flavored-markdown.git
 git clone https://github.com/kien/ctrlp.vim.git
 git clone https://github.com/scrooloose/syntastic.git
 git clone https://github.com/thinca/vim-visualstar.git
-git clone https://github.com/tpope/vim-markdown.git
 git clone https://github.com/vim-scripts/LanguageTool.git
 git clone https://github.com/xolox/vim-misc.git
 
@@ -65,15 +65,12 @@ git clone https://github.com/plasticboy/vim-markdown.git
 
 ### Checked
 ```bash
-git clone git://github.com/altercation/vim-colors-solarized.git
 git clone git://github.com/tpope/vim-surround.git
 ```
 
 ### Updated
 ```bash
-git clone git://github.com/tpope/vim-fugitive.git
 git clone git://github.com/tpope/vim-repeat.git
-git clone https://github.com/easymotion/vim-easymotion
 ```
 
 ## Thu 15 Sep 2016

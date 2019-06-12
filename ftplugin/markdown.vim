@@ -8,10 +8,6 @@
 
 setlocal expandtab tw=0
 
-" Add a useful abbreviation for URL highlighting:
-" inoremap <buffer> < <><Esc>i
-" Was working, but wasn't as useful as I'd expected.
-
 " Markdown folding by header marks
 " --------------------------------------
 " (based on http://stackoverflow.com/questions/3828606/vim-markdown-folding)

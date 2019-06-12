@@ -82,4 +82,5 @@ let g:solarized_contrast="high"    "default value is normal
 highlight ShowTrailingWhitespace ctermbg=White guibg=White
 " and add a mapping to reset this if Solarized has been toggled:
 nnoremap <leader>w :highlight ShowTrailingWhitespace ctermbg=White guibg=White<cr>
+" ( might prefer W so's not to conflict with EasyMotion's \\w )
 

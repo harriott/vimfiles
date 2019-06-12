@@ -60,8 +60,12 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " <Leader>f{char} to move to {char}
 map  <Leader><Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
+" Move to word
+map  <Leader><Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 " s{char}{char}{label}
-nmap <Leader>s <Plug>(easymotion-overwin-f2)
+nmap <leader>s <Plug>(easymotion-overwin-f2)
+
 " toggle searching functionality
 nnoremap <leader>e :call EasyMotionSearchToggle()<cr>
 let g:searchingwitheasymotion = 0
@@ -106,13 +110,4 @@ let MRU_Window_Height = 15
 let MRU_Use_Current_Window = 1
 
 map <C-n> :NERDTreeToggle<CR>
-
-" Recovery
-" --------
-
-" Mundo:
-" nnoremap <S-F2> :MundoToggle<CR>
-
-" Undotree:
-nnoremap <S-F2> :UndotreeToggle<CR>
 

@@ -17,6 +17,9 @@ Function tryPath {
 tryPath ingo\start
 if ( $goodPath ){
 
+  # gicl https://github.com/inkarkat/vim-ingo-library
+  # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
+
   cd ..\.. }
 
 tryPath ft\opt
@@ -31,9 +34,10 @@ if ( $goodPath ){
 
   # gicl https://github.com/chikamichi/mediawiki.vim
   # gicl https://github.com/ervandew/supertab
-  gicl https://github.com/PProvost/vim-ps1
+  # gicl https://github.com/PProvost/vim-ps1
   # gicl https://github.com/scrooloose/nerdcommenter
   # gicl https://github.com/vim-syntastic/syntastic
+  # gicl https://github.com/jtratner/vim-flavored-markdown
 
   cd ..\.. }
 
@@ -48,6 +52,7 @@ tryPath git\start
 if ( $goodPath ){
 
   # gicl https://github.com/mbbill/undotree
+  # gicl https://github.com/tpope/vim-fugitive
 
   cd ..\.. }
 
@@ -86,9 +91,8 @@ if ( $goodPath ){
 
   # gicl https://github.com/AndrewRadev/bufferize.vim
   # gicl https://github.com/Asheq/close-buffers.vim
-  # gicl https://github.com/inkarkat/vim-ingo-library
-  # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # gicl https://github.com/maxbrunsfeld/vim-yankstack
+  # gicl https://github.com/easymotion/vim-easymotion
 
   cd ..\.. }
 

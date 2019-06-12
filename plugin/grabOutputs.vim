@@ -24,11 +24,16 @@ function! GrabScriptnames()
   new
   normal! "pp
   sav! $HOME/vim-scriptnames.txt
+  TryCNB
+endfunction
+command! GrabScriptnames call GrabScriptnames()
+
+function! TryCNB()
   if exists("g:loaded_close_buffers")
     CloseNamelessBuffers
   endif
 endfunction
-command! GrabScriptnames call GrabScriptnames()
+command! TryCNB call TryCNB()
 
 " Grab mappings
 " -------------
@@ -41,9 +46,6 @@ function! Grabmaps()
   redir END
   new
   normal! "np "ip
-  if exists("g:loaded_close_buffers")
-    CloseNamelessBuffers
-  endif
 endfunction
 
 function! GrabFmaps()
@@ -51,6 +53,7 @@ function! GrabFmaps()
   v/<.\=.\=F.*>/d
   nohlsearch
   sav! $HOME/vim-Fmaps.txt
+  TryCNB
 endfunction
 command! GrabFmaps call GrabFmaps()
 
@@ -62,8 +65,18 @@ function! GrabNonFmaps()
   g/ /d " non-breaking space
   nohlsearch
   sav! $HOME/vim-nonFmaps.txt
+  TryCNB
 endfunction
 command! GrabNonFmaps call GrabNonFmaps()
+
+function! GrabPlugMaps()
+  call Grabmaps()
+  v/<Plug>/d
+  nohlsearch
+  sav! $HOME/vim-PlugMaps.txt
+  TryCNB
+endfunction
+command! GrabPlugMaps call GrabPlugMaps()
 
 " grab runtimepath
 " ----------------
@@ -75,9 +88,7 @@ function! GrabRtp()
   normal! "pp
   %s/,/\r/g
   sav! $HOME/vim-runtimepath.txt
-  if exists("g:loaded_close_buffers")
-    CloseNamelessBuffers
-  endif
+  TryCNB
 endfunction
 command! GrabRtp call GrabRtp()
 
