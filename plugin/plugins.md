@@ -13,6 +13,7 @@ vim-fugitive
 vim-gitgutter
 vim-nerdcommenter
 vim-supertab
+vim-surround
 vim-syntastic
 
 # opts: packadd's
@@ -59,18 +60,6 @@ git clone https://github.com/xolox/vim-misc.git
 
 git clone https://github.com/kien/rainbow_parentheses.vim.git
 git clone https://github.com/plasticboy/vim-markdown.git
-```
-
-## Wed 07 Sep 2016
-
-### Checked
-```bash
-git clone git://github.com/tpope/vim-surround.git
-```
-
-### Updated
-```bash
-git clone git://github.com/tpope/vim-repeat.git
 ```
 
 ## Thu 15 Sep 2016

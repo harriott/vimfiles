@@ -7,9 +7,6 @@ set encoding=utf-8  " get this done early
 
 " set pastetoggle=<S-F3>
 
-" load in plugins from bundle directory:
-execute pathogen#infect()
-
 "----------
 " interface
 " ---------
@@ -49,4 +46,6 @@ set ignorecase incsearch smartcase
 
 nmap <silent> ,/ :nohlsearch<CR>
 " for clearing search highlights
+
+noremap <leader>q :cw<CR>
 

@@ -16,3 +16,5 @@ function! StripStoreCurSel()
 endfunction
 command! -nargs=? CSinS call StripStoreCurSel()
 
+" cd to file's and vimgrep for last search
+noremap <C-F9> :cd %:p:h<CR> :CSinS<CR> :vimgrep #<c-r>s#j **/*.md **/*.txt <bar> cw <cr>

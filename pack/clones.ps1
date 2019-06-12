@@ -83,6 +83,7 @@ tryPath other\opt
 if ( $goodPath ){
 
   # gicl https://github.com/dpelle/vim-LanguageTool
+  # gicl https://github.com/tpope/vim-surround
 
   cd ..\.. }
 
@@ -93,6 +94,8 @@ if ( $goodPath ){
   # gicl https://github.com/Asheq/close-buffers.vim
   # gicl https://github.com/maxbrunsfeld/vim-yankstack
   # gicl https://github.com/easymotion/vim-easymotion
+  # gicl https://github.com/tpope/vim-repeat
+  gicl https://github.com/bronson/vim-visual-star-search
 
   cd ..\.. }
 
