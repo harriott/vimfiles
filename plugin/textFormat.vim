@@ -21,6 +21,7 @@ let g:table_mode_corner='|'
 " 5 here means convert to % code (my general preference):
 nnoremap <leader>5 :call UnicodePercent()<cr>
 function! UnicodePercent()
+    :keepp s/'/%27/eg
     :keepp s/(/%28/e
     :keepp s/)/%29/e
     :keepp s/Â/%C3%82/eg
@@ -47,6 +48,7 @@ endfunction
 " 9 here means convert back to parentheses (eg for a quoted url in tex):
 nnoremap <leader>9 :call PercentUnicode()<cr>
 function! PercentUnicode()
+    :keepp s/%27/'/e
     :keepp s/%28/(/e
     :keepp s/%29/)/e
     :keepp s/%C3%82/Â/eg

@@ -23,8 +23,6 @@ let g:gitgutter_enabled = 0
 noremap <S-F9> :GitGutterToggle<CR>
 inoremap <S-F9> <Esc>:GitGutterToggle<CR>
 
-highlight ShowTrailingWhitespace ctermbg=White
-
 let g:languagetool_jar='$HOME\LanguageTool-4.5\languagetool-commandline.jar'
 
 let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
