@@ -11,8 +11,10 @@ function! StripStoreCurSel()
   let lastvimsearch = getreg('/')
   " remove the '\V' (very nomagic) prefix, if it's there:
   let @l = substitute(lastvimsearch, "^\\\\V", "", "")
+  " remove any leading hyphens that somehow cause chaos in Ggrep:
+  let @h = substitute(@l, "^-\\+", "", "")
   " convert '\<lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
-  let @s = substitute(@l, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
+  let @s = substitute(@h, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
 endfunction
 command! -nargs=? CSinS call StripStoreCurSel()
 
