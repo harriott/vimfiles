@@ -44,7 +44,7 @@ function! UnicodePercent()
     :keepp s/ö/%C3%B6/eg
     :keepp s/û/%C3%BB/eg
     :keepp s/ü/%C3%BC/eg
-    :keepp s/ū/%C5%AB/eg
+    :keepp s/–/%E2%80%93/eg
 endfunction
 " 9 here means convert back to parentheses (eg for a quoted url in tex):
 nnoremap <leader>9 :call PercentUnicode()<cr>
@@ -73,6 +73,7 @@ function! PercentUnicode()
     :keepp s/%C3%BB/û/eg
     :keepp s/%C3%BC/ü/eg
     :keepp s/%C5%AB/ū/eg
+    :keepp s/%E2%80%93/–/eg
 endfunction
 " if you need to work on a range, use  :<selection>call PercentUnicode()
 
