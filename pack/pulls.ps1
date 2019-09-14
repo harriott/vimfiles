@@ -4,7 +4,8 @@
 # run this when you want to update your remote plugins
 
 # List the plugins:
-# gci */*/* | where { $_.PSIsContainer } | select -ExpandProperty FullName
+# gci */*/* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all.txt
+# strip down just to filenames in gVim: %s#\S\{-}\\##g
 
 gci */*/* |
 foreach{
