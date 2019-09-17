@@ -97,14 +97,15 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	C-rC-w    => searches for the word under cursor - allowing skipping thru with n
 
 # Shell
-	C-g                 => display relative path of current file
-	<shellcmd>|gvim -   => pipes shell command output into gvim
-	gf                  => open file under cursor
-	gx                  => open url under cursor
-	:!<shellcmd>        => runs the external shell command
-	:Vexplore           => opens a netrw vertical directory browsing window
-	:r!<shell command>  => reads shell command output into the buffer
-	:tabe $HOME/_vimrc  => bring up my vimrc in a new tab
+	C-g                   => display relative path of current file
+	<shellcmd>|gvim -     => pipes shell command output into gvim
+	gf                    => open file under cursor
+	gx                    => open url under cursor
+	:!<shellcmd>          => runs the external shell command
+	:Vexplore             => opens a netrw vertical directory browsing window
+    :packadd vim-rhubarb  => load the plugin from an opt directory, for :Gbrowse to work
+	:r!<shell command>    => reads shell command output into the buffer
+	:tabe $HOME/_vimrc    => bring up my vimrc in a new tab
 
 # Tab views
 	gT  gt    => move around tabs
@@ -117,9 +118,12 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 # Tricks
     &                                  => repeat last substitute
 	:exe ":normal i" . strftime("%c")  => put date-time at cursor
-	<leader>tc                         => (mapped to) ColorToggle
     :set cuc                           => highlight cursor column
     :set cul                           => highlight cursor line
+
+## Colorizer
+	<leader>tc          => (mapped to) ColorToggle
+    :packadd colorizer  => load the plugin from an opt directory
 
 # Vim
 	@:  => repeat last command-line

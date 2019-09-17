@@ -3,7 +3,9 @@
 # Joseph Harriott http://momentary.eu/
 # grab or tidy repositories
 
-# use PowerShell function packs to list folders two down
+# use my PowerShell function packs to list folders two down
+
+# gci -r -force .git |?{$_.PSIsContainer} | select -ExpandProperty fullname > gits.txt
 
 Function gicl { git clone $args[0] }
 Function rirf { ri -recurse -force $args[0] }
@@ -25,6 +27,7 @@ if ( $goodPath ){
 tryPath ft\opt
 if ( $goodPath ){
 
+  # gicl https://github.com/vim-syntastic/syntastic
   # gicl https://github.com/christianrondeau/vim-base64
 
   cd ..\.. }
@@ -36,7 +39,6 @@ if ( $goodPath ){
   # gicl https://github.com/ervandew/supertab
   # gicl https://github.com/PProvost/vim-ps1
   # gicl https://github.com/scrooloose/nerdcommenter
-  # gicl https://github.com/vim-syntastic/syntastic
   # gicl https://github.com/jtratner/vim-flavored-markdown
 
   cd ..\.. }
@@ -45,6 +47,8 @@ tryPath git\opt
 if ( $goodPath ){
 
   # gicl https://github.com/airblade/vim-gitgutter
+  # rirf vim-rhubarb
+  # gicl https://github.com/tpope/vim-rhubarb
 
   cd ..\.. }
 
@@ -77,6 +81,9 @@ if ( $goodPath ){
   # gicl https://github.com/vim-scripts/gitignore.vim
   # gicl https://github.com/drmikehenry/vim-fontsize
 
+  # rirf vim-colors-solarized
+  # gicl https://github.com/altercation/vim-colors-solarized
+
   cd ..\.. }
 
 tryPath other\opt
@@ -95,7 +102,7 @@ if ( $goodPath ){
   # gicl https://github.com/maxbrunsfeld/vim-yankstack
   # gicl https://github.com/easymotion/vim-easymotion
   # gicl https://github.com/tpope/vim-repeat
-  gicl https://github.com/bronson/vim-visual-star-search
+  # gicl https://github.com/bronson/vim-visual-star-search
 
   cd ..\.. }
 
@@ -104,30 +111,24 @@ if ( $goodPath ){
 
   # rirf bufexplorer
   # gicl https://github.com/jlanzarotta/bufexplorer
-  # rirf bufexplorer\.git
 
   # rirf ctrlp.vim
   # gicl https://github.com/ctrlpvim/ctrlp.vim
-  # rirf ctrlp.vim\.git
 
   # rirf mru
   # gicl https://github.com/yegappan/mru
-  # rirf mru\.git
 
   # rirf nerdtree
   # gicl https://github.com/scrooloose/nerdtree
-  # rirf nerdtree\.git
 
   # rirf open-browser.vim
   # gicl https://github.com/tyru/open-browser.vim
-  # rirf open-browser.vim\.git
 
   # gicl https://github.com/harriott/vim-buffing-wheel
   # mine
 
   # rirf vim-open-url
   # gicl https://github.com/dhruvasagar/vim-open-url
-  # rirf vim-open-url\.git
 
   cd ..\.. }
 
