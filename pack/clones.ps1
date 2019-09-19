@@ -1,7 +1,7 @@
 # vim: set et tw=0:
 
-# Joseph Harriott http://momentary.eu/
-# grab or tidy repositories
+# Joseph Harriott http://momentary.eu/ - Thu 19 Sep 2019
+# grab repositories
 
 # use my PowerShell function packs to list folders two down
 
