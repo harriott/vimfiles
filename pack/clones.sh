@@ -4,10 +4,16 @@
 # grab repositories
 
 packFolder="ft/opt"
-if [ -d packFolder ]; then; cd packFolder
-  git clone https://github.com/christianrondeau/vim-base64
+if [ -d $packFolder ]; then cd $packFolder
+  # git clone https://github.com/christianrondeau/vim-base64
   cd ../..
-else; echo "Sorry, $packFolder ain't there..."; fi
+else echo "no $packFolder"; fi
+
+packFolder="layout/start"
+if [ -d $packFolder ]; then cd $packFolder
+  git clone https://github.com/vim-scripts/gitignore.vim
+  cd ../..
+else echo "no $packFolder"; fi
 
 # gitignore.vim
 # vim-flavored-markdown
