@@ -13,6 +13,12 @@ if [ -d $packFolder ]; then cd $packFolder
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
+packFolder="git/start"
+if [ -d $packFolder ]; then cd $packFolder
+  git clone https://github.com/tpope/vim-fugitive
+  cd ../..
+else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
+
 packFolder="layout/opt"
 if [ -d $packFolder ]; then cd $packFolder
   # git clone https://github.com/lilydjwg/colorizer
@@ -45,7 +51,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # sudo rm -r vim-buffing-wheel
   # git clone https://github.com/harriott/vim-buffing-wheel
   # git clone https://github.com/dhruvasagar/vim-open-url
-  git clone https://github.com/scrooloose/nerdtree
+  # git clone https://github.com/scrooloose/nerdtree
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
