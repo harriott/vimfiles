@@ -3,7 +3,7 @@
 
 " Source my more portably located vimrc:
 " first, some general settings
-source $HOME/vimfiles/vimrc_example.vim
+source $HOME/.vim/vimrc_example.vim
 
 " switch modelines back on - overriding /usr/share/vim/vim73/debian.vim
 " set modeline
