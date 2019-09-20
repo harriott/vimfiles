@@ -18,7 +18,6 @@ set clipboard=unnamedplus
 " nnoremap <Insert> :wa<Bar>!python -c 'from ctypes import *; X11 = cdll.LoadLibrary("libX11.so.6"); display = X11.XOpenDisplay(None); X11.XkbLockModifiers(display, c_uint(0x0100), c_uint(2), c_uint(0)); X11.XCloseDisplay(display)'
 " (useful if there's no keyboard LED for this)
 
-source $HOME/.vim/plugin.vim
 source $HOME/.vim/vimrc.vim
 
 " Set keywordprg empty, to make K invoke vim's internal help:
