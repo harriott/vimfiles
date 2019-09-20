@@ -42,8 +42,8 @@ packFolder="shell/start"
 if [ -d $packFolder ]; then cd $packFolder
   # git clone https://github.com/yegappan/mru
   # git clone https://github.com/tyru/open-browser.vim
-  rm -r vim-buffing-wheel
-  git clone https://github.com/harriott/vim-buffing-wheel
+  # sudo rm -r vim-buffing-wheel
+  # git clone https://github.com/harriott/vim-buffing-wheel
   # git clone https://github.com/dhruvasagar/vim-open-url
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi

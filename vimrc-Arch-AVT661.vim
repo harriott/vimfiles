@@ -10,3 +10,7 @@ set gfn=Ubuntu\ Mono\ 10
 
 set linespace=2
 
+" Open PCManFM on directory of current buffer
+nmap <F11> :!pcmanfm &<CR>
+imap <F11> <Esc><F11>
+
