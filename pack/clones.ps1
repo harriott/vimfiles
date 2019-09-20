@@ -5,7 +5,7 @@
 
 # use my PowerShell function packs to list folders two down
 
-# gci -r -force .git |?{$_.PSIsContainer} | select -ExpandProperty fullname > gits.txt
+# gci -r -force .git |?{$_.PSIsContainer} | select -ExpandProperty fullname > gits-MSW10.txt
 
 Function gicl { git clone $args[0] }
 Function rirf { ri -recurse -force $args[0] }
@@ -20,7 +20,6 @@ tryPath ft\opt
 if ( $goodPath ){
 
   # gicl https://github.com/vim-syntastic/syntastic
-  # gicl https://github.com/christianrondeau/vim-base64
 
   cd ..\.. }
 
@@ -28,6 +27,7 @@ tryPath ft\start
 if ( $goodPath ){
 
   # gicl https://github.com/chikamichi/mediawiki.vim
+  # gicl https://github.com/christianrondeau/vim-base64
   # gicl https://github.com/ervandew/supertab
   # gicl https://github.com/PProvost/vim-ps1
   # gicl https://github.com/scrooloose/nerdcommenter
