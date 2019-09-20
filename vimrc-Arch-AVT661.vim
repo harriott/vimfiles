@@ -11,6 +11,6 @@ set gfn=Ubuntu\ Mono\ 10
 set linespace=2
 
 " Open PCManFM on directory of current buffer
-nmap <F11> :cd %:p:h<CR> :!pcmanfm &<CR><CR>
+nmap <F11> :cd %:p:h<CR> <bar> :!pcmanfm &<CR><CR>
 imap <F11> <Esc><F11>
 
