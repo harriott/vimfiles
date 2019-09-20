@@ -34,7 +34,8 @@ let g:syntastic_python_checkers = ['flake8']
 "
 " start with Solarized dark
 colorscheme solarized
-au VimEnter * call togglebg#map("<S-F5>")  " reassign Solarized provided toggle for light/dark
+autocmd VimEnter * call togglebg#map("<S-F5>")  " reassign Solarized provided toggle for light/dark
+" (in an autocmd to be sure it works with Arch vim-colors-solarized)
 
 " colour scheme toggle
 nnoremap <C-F5> :call GruvboxSolarized()<cr>
