@@ -74,7 +74,7 @@ autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt set
 
 " Color Scheme
 " ------------
-" Solarized
+" for Solarized
 set background=light
 let g:solarized_contrast="high"    "default value is normal
 
