@@ -16,14 +16,6 @@ Function tryPath {
   else { "Sorry, $($args[0]) ain't there..." }
   }
 
-tryPath ingo\start
-if ( $goodPath ){
-
-  # gicl https://github.com/inkarkat/vim-ingo-library
-  # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
-
-  cd ..\.. }
-
 tryPath ft\opt
 if ( $goodPath ){
 
@@ -63,6 +55,10 @@ if ( $goodPath ){
 tryPath layout\opt
 if ( $goodPath ){
 
+  # rirf vim-table-mode
+  # rirf vim-ingo-library
+  # rirf vim-ShowTrailingWhitespace
+
   # gicl https://github.com/dhruvasagar/vim-table-mode
   # gicl https://github.com/lilydjwg/colorizer
   # gicl https://github.com/tmhedberg/SimpylFold
@@ -74,12 +70,13 @@ tryPath layout\start
 if ( $goodPath ){
 
   # gicl https://github.com/bling/vim-airline
+  # gicl https://github.com/drmikehenry/vim-fontsize
   # gicl https://github.com/godlygeek/tabular
   # gicl https://github.com/mattn/calendar-vim
   # gicl https://github.com/morhetz/gruvbox
+  # gicl https://github.com/ntpeters/vim-better-whitespace
   # gicl https://github.com/vim-airline/vim-airline-themes
   # gicl https://github.com/vim-scripts/gitignore.vim
-  # gicl https://github.com/drmikehenry/vim-fontsize
 
   # rirf vim-colors-solarized
   # gicl https://github.com/altercation/vim-colors-solarized

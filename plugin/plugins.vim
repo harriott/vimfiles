@@ -52,6 +52,11 @@ function! GruvboxSolarized()
   colorscheme
 endfunction
 
+" vim-better-whitespace
+highlight ExtraWhitespace ctermbg=white
+let g:better_whitespace_guicolor='white' " doesn't work if called from .gvimrc or later
+let g:better_whitespace_operator=''
+
 " EasyMotion
 " ----------
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
