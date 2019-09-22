@@ -114,5 +114,8 @@ let MRU_Window_Height = 15
 " which is overriden by this:
 let MRU_Use_Current_Window = 1
 
+" NERDTree:
 map <C-n> :NERDTreeToggle<CR>
+" Open it on buffer's directory:
+map <C-A-n> :cd %:p:h<CR>:NERDTreeCWD<CR>
 

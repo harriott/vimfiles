@@ -30,6 +30,7 @@ packFolder="layout/start"
 if [ -d $packFolder ]; then cd $packFolder
   # git clone https://github.com/vim-scripts/gitignore.vim
   # git clone https://github.com/drmikehenry/vim-fontsize
+  # git clone https://github.com/ntpeters/vim-better-whitespace
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
