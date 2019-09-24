@@ -117,5 +117,5 @@ let MRU_Use_Current_Window = 1
 " NERDTree:
 map <C-n> :NERDTreeToggle<CR>
 " Open it on buffer's directory:
-map <C-A-n> :cd %:p:h<CR>:NERDTreeCWD<CR>
+map <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
 
