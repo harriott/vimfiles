@@ -24,8 +24,6 @@ let g:syntastic_python_checkers = ['flake8']
 
 " Colour Scheme
 " ------------
-" colorscheme gruvbox
-"
 " start with Solarized dark
 colorscheme solarized
 autocmd VimEnter * call togglebg#map("<S-F5>")  " reassign Solarized provided toggle for light/dark

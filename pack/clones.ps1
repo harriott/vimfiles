@@ -99,6 +99,9 @@ if ( $goodPath ){
   # gicl https://github.com/easymotion/vim-easymotion
   # gicl https://github.com/tpope/vim-repeat
   # gicl https://github.com/bronson/vim-visual-star-search
+  # rirf vim-cutlass
+  # gicl https://github.com/svermeulen/vim-cutlass
+  # gicl https://github.com/wellle/targets.vim
 
   cd ..\.. }
 
@@ -123,7 +126,6 @@ if ( $goodPath ){
   # gicl https://github.com/harriott/vim-buffing-wheel
   # mine
 
-  # rirf vim-open-url
   # gicl https://github.com/dhruvasagar/vim-open-url
 
   cd ..\.. }

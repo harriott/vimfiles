@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Joseph Harriott, Fri 20 Sep 2019
+# Joseph Harriott, Thu 26 Sep 2019
 # grab repositories
 
 # find . -type d -name '*.git' > gits-GNULinux.txt
@@ -31,6 +31,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # git clone https://github.com/vim-scripts/gitignore.vim
   # git clone https://github.com/drmikehenry/vim-fontsize
   # git clone https://github.com/ntpeters/vim-better-whitespace
+  git clone https://github.com/svermeulen/vim-colors-tomorrow
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
