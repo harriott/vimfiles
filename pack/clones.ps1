@@ -55,10 +55,7 @@ if ( $goodPath ){
 tryPath layout\opt
 if ( $goodPath ){
 
-  # rirf vim-table-mode
-  # rirf vim-ingo-library
-  # rirf vim-ShowTrailingWhitespace
-
+  # gicl https://github.com/godlygeek/tabular
   # gicl https://github.com/dhruvasagar/vim-table-mode
   # gicl https://github.com/lilydjwg/colorizer
   # gicl https://github.com/tmhedberg/SimpylFold
@@ -69,9 +66,9 @@ if ( $goodPath ){
 tryPath layout\start
 if ( $goodPath ){
 
+  # gicl https://github.com/junegunn/vim-easy-align
   # gicl https://github.com/bling/vim-airline
   # gicl https://github.com/drmikehenry/vim-fontsize
-  # gicl https://github.com/godlygeek/tabular
   # gicl https://github.com/mattn/calendar-vim
   # gicl https://github.com/morhetz/gruvbox
   # gicl https://github.com/ntpeters/vim-better-whitespace
@@ -94,6 +91,7 @@ if ( $goodPath ){
 tryPath other\start
 if ( $goodPath ){
 
+  # gicl https://github.com/chrisbra/Recover.vim
   # gicl https://github.com/AndrewRadev/bufferize.vim
   # gicl https://github.com/Asheq/close-buffers.vim
   # gicl https://github.com/maxbrunsfeld/vim-yankstack

@@ -83,13 +83,14 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	:m+         => the current line is moved down one line
 
 # Search
-	#        => over a word highlights all exact instances, and jumps to last
-	%        => find opposing bracket in a line
-	*        => highlight all instances of exactly the word under the cursor
-	,/       => (abbreviation for) clearing yellow searched highlights
-	[I or ]I => list lines containing word under cursor
-    g/       => incsearch-stay
-	n        => find next highlighted search result
+	#                     => over a word highlights all exact instances, and jumps to last
+	%                     => find opposing bracket in a line
+	*                     => highlight all instances of exactly the word under the cursor
+	,/                    => (abbreviation for) clearing yellow searched highlights
+    :Bufferize il <word>  => grab list of lines containing <word> in a new buffer
+	[I or ]I              => list lines containing word under cursor
+    g/                    => incsearch-stay
+	n                     => find next highlighted search result
 
 ## following /
     \M        => nomagic (for what follows), eg returning . & * to themselves

@@ -69,7 +69,7 @@ nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
 map  <Leader><Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 " s{char}{char}{label}
-nmap <leader>s <Plug>(easymotion-overwin-f2)
+nmap s <Plug>(easymotion-overwin-f2)
 
 " toggle searching functionality
 nnoremap <leader>e :call EasyMotionSearchToggle()<cr>
@@ -93,11 +93,6 @@ endfunction
 " Files & buffers
 " ---------------
 noremap <silent> <F4> :BufExplorer<CR>
-
-" open & focus on MiniBufExplorer
-let g:miniBufExplorerAutoStart = 0
-map <Leader>m :MBEOpen<cr>:MBEFocus<cr>
-let g:miniBufExplCloseOnSelect = 1
 
 " quickly close all but current buffer:
 nnoremap <S-F4> :CloseOtherBuffers<CR>

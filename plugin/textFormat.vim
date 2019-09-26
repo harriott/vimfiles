@@ -11,10 +11,6 @@ set shiftwidth=4
 set tabstop=4
 set tw=99
 
-nnoremap <leader>a :Tabularize/-/r1c1l0
-" this produces GFM-style tables:
-let g:table_mode_corner='|'
-
 " Convert url parenthesis, and various diacritics to percent code
 " ---------------------------------------------------------------
 " to switch the order of these substitutions, use  s#/\(.\{-}\)/\(.\{-}\)/#/\2/\1/#g

@@ -22,8 +22,6 @@ inoremap <S-F3> <Esc>:set list! list? <CR>
 set history=400
 set modelines=4
 
-" let g:better_whitespace_guicolor='white'
-
 "-------------
 " buffer stuff
 " ------------
