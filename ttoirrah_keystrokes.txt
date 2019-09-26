@@ -1,10 +1,13 @@
 vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentary.eu/
 
+    vim-easy-align: Sip=
 	:Tabularize/ =>     aligns these lists
 
 ( see also https://vimhelp.org/quickref.txt.html )
 
-    :helptags $HOME\vimfiles
+    :Bufferize scriptnames   => vimfile load order at start
+    :Bufferize version       => Vim version etc
+    :helptags $HOME\vimfiles => set tags
 
 # Buffers
 	:bd!(n)   => buffer delete
@@ -101,17 +104,18 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	C-rC-w    => searches for the word under cursor - allowing skipping thru with n
 
 # Shell
-	C-g                    => display relative path of current file
-	<shellcmd>|gvim -      => pipes shell command output into gvim
-	gf                     => open file under cursor
-	gx                     => open url under cursor
-	:!<shellcmd>           => runs the external shell command
-	:Vexplore              => opens a netrw vertical directory browsing window
-    :packadd LanguageTool  => load the plugin from an opt directory
-    :packadd syntastic     => load the plugin from an opt directory
-    :packadd vim-rhubarb   => load the plugin from an opt directory, for :Gbrowse to work
-	:r!<shell command>     => reads shell command output into the buffer
-	:tabe $HOME/_vimrc     => bring up my vimrc in a new tab
+	C-g                   => display relative path of current file
+	<shellcmd>|gvim -     => pipes shell command output into gvim
+	gf                    => open file under cursor
+	gx                    => open url under cursor
+	:!<shellcmd>          => runs the external shell command
+	:Vexplore             => opens a netrw vertical directory browsing window
+    :packadd ale          => load the plugin from an opt directory
+    :packadd LanguageTool => load the plugin from an opt directory
+    :packadd syntastic    => load the plugin from an opt directory
+    :packadd vim-rhubarb  => load the plugin from an opt directory, for :Gbrowse to work
+	:r!<shell command>    => reads shell command output into the buffer
+	:tabe $HOME/_vimrc    => bring up my vimrc in a new tab
 
 # Tab views
 	gT  gt    => move around tabs

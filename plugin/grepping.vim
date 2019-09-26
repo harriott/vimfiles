@@ -1,7 +1,10 @@
 
 " Joseph Harriott - http://momentary.eu/
 " --------------------------------------
-" repeat the current search for the whole Git repository
+" Repeat the current search for the whole Git repository.
+"
+" (keep this file in your plugin directory so's it's automatically sourced at startup)
+" ------------------------------------------------------------------------------------
 
 " Ggrep with the contents of s register:
 nnoremap <F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw

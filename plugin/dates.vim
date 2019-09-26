@@ -1,7 +1,9 @@
 
 " Joseph Harriott - http://momentary.eu/
 " --------------------------------------
-"  Dates
+" Dates.
+"
+" (keep this file in your plugin directory so's it's automatically sourced at startup)
 
 noremap <F8> :CalendarH<CR>
 inoremap <F8> <Esc>:CalendarH<CR>

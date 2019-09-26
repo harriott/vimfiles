@@ -1,11 +1,16 @@
 
 " My portable vimrc - Joseph Harriott - http://momentary.eu/
 " ----------------------------------------------------------
-" True vimrc should source this file, which has settings that work in both MSWin & GNU+Linux
+" True vimrc should source this file, which has settings that work in both MSWin & GNU+Linux.
+"
+" My plugin configurations are sourced automatically in the likes of  plugin\plugins.vim.
 
 set encoding=utf-8  " get this done early
 
 " set pastetoggle=<S-F3>
+
+" clear the registers b-z
+command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
 
 "----------
 " interface

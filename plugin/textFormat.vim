@@ -1,15 +1,30 @@
 " vim: set et:
 
-" Joseph Harriott - http://momentary.eu/
-" ----------------------------------------------------------
-" keep this file in your plugin directory so's it's automatically sourced at startup
+" Joseph Harriott - http://momentary.eu/ - Thu 26 Sep 2019
+" --------------------------------------------------------
+" (keep this file in your plugin directory so's it's automatically sourced at startup)
 
 "----------------
 " Text Formatting
 " ---------------
+
 set shiftwidth=4
 set tabstop=4
 set tw=99
+
+" EasyAlign
+nmap S <Plug>(EasyAlign)
+xmap S <Plug>(EasyAlign)
+let g:easy_align_delimiters = { '>': { 'pattern': '>>\|=>\|>' } }
+
+" lesser indentation of vimscript continuation line:
+let g:vim_indent_cont = &sw
+
+" The NERD Commenter
+let NERDSpaceDelims = 1
+
+" Remove all square bracketed text
+nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
 
 " Convert url parenthesis, and various diacritics to percent code
 " ---------------------------------------------------------------
@@ -74,12 +89,6 @@ function! PercentUnicode()
     :keepp s/%E2%80%93/–/eg
 endfunction
 " if you need to work on a range, use  :<selection>call PercentUnicode()
-
-" lesser indentation of vimscript continuation line:
-let g:vim_indent_cont = &sw
-
-" Remove all square bracketed text
-nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
 
 " Underline using dashes automatically
 " ------------------------------------

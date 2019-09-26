@@ -1,7 +1,9 @@
 
 " Joseph Harriott - http://momentary.eu/
 " --------------------------------------
-" shell interaction
+" Shell interaction.
+"
+" (keep this file in your plugin directory so's it's automatically sourced at startup)
 
 " get filepath into register f:
 nnoremap <leader>f :let@f=@%<CR>

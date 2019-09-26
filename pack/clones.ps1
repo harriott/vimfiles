@@ -1,6 +1,6 @@
 # vim: set et tw=0:
 
-# Joseph Harriott http://momentary.eu/ - Thu 19 Sep 2019
+# Joseph Harriott http://momentary.eu/ - Thu 26 Sep 2019
 # grab repositories
 
 # use my PowerShell function packs to list folders two down
@@ -20,6 +20,7 @@ tryPath ft\opt
 if ( $goodPath ){
 
   # gicl https://github.com/vim-syntastic/syntastic
+  # gicl https://github.com/dense-analysis/ale
 
   cd ..\.. }
 

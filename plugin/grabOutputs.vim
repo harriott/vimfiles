@@ -1,6 +1,7 @@
 
 " Joseph Harriott - http://momentary.eu/
 " --------------------------------------
+" (keep this file in your plugin directory so's it's automatically sourced at startup)
 
 " to get the output of a command in a new tab, just enter :TabEx <cmd>
 function! TabEx(cmd)

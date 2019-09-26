@@ -1,8 +1,10 @@
 
 " Joseph Harriott - http://momentary.eu/
 " --------------------------------------
-" more buffer stuff
-" ------------
+" More buffer stuff.
+"
+" (keep this file in your plugin directory so's it's automatically sourced at startup)
+" ------------------------------------------------------------------------------------
 
 " F2 to write all changed buffers:
 nnoremap <F2> :wa<CR>
