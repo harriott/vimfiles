@@ -48,7 +48,9 @@ function! ColumnsToggle()
     endif
 endfunction
 
-autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
+if exists("g:loaded_matchparen")
+  autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
+endif
 " and <leader>p toggles it:
 nnoremap <leader>p :call ParenthsToggle()<cr>
 let g:parenthesismatch = 0

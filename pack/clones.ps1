@@ -95,13 +95,12 @@ if ( $goodPath ){
   # gicl https://github.com/chrisbra/Recover.vim
   # gicl https://github.com/AndrewRadev/bufferize.vim
   # gicl https://github.com/Asheq/close-buffers.vim
-  # gicl https://github.com/maxbrunsfeld/vim-yankstack
   # gicl https://github.com/easymotion/vim-easymotion
   # gicl https://github.com/tpope/vim-repeat
   # gicl https://github.com/bronson/vim-visual-star-search
-  # rirf vim-cutlass
   # gicl https://github.com/svermeulen/vim-cutlass
   # gicl https://github.com/wellle/targets.vim
+  # gicl https://github.com/adelarsq/vim-matchit
 
   cd ..\.. }
 

@@ -43,10 +43,6 @@ set directory=$HOME/.vimswap//
 "----------
 " searching
 " ---------
-if has('syntax') && has('eval')
-  packadd! matchit
-endif
-
 set ignorecase incsearch smartcase
 
 nmap <silent> ,/ :nohlsearch<CR>

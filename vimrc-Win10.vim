@@ -9,6 +9,12 @@ if $VIM == '/usr/share/vim'
   finish
 endif
 
+" Debug:
+" set noloadplugins
+" source ~\vimfiles\pack\git\start\vim-fugitive\plugin\fugitive.vim
+" source ~\vimfiles\pack\git\start\vim-fugitive\ftdetect\fugitive.vim
+" source ~\vimfiles\pack\git\start\vim-fugitive\autoload\fugitive.vim
+
 " first, some general settings
 source $HOME/vimfiles/vimrc_example.vim
 
