@@ -10,6 +10,10 @@
 nnoremap <F2> :wa<CR>
 inoremap <F2> <Esc>:wa<CR>
 
+" F2 to write all changed buffers and reload the current one:
+nnoremap <S-F2> :wa<CR>:e<CR>
+inoremap <S-F2> <Esc>:wa<CR>:e<CR>
+
 " Split window to a buffer number:
 nnoremap <F5> :buffers<CR>:sbuffer<Space>
 

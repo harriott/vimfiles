@@ -77,7 +77,6 @@ autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt set
 " Color Scheme
 " ------------
 " for Solarized
-set background=light
 let g:solarized_contrast="high"    "default value is normal
 
 " ShowTrailingWhitespace - set guibg after adjustments to Solarized:

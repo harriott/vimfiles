@@ -22,35 +22,6 @@ let g:languagetool_jar='$HOME\LanguageTool-4.5\languagetool-commandline.jar'
 let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
 let g:syntastic_python_checkers = ['flake8']
 
-" Colour Scheme
-" ------------
-" start with Solarized dark
-colorscheme solarized
-autocmd VimEnter * call togglebg#map("<S-F5>")  " reassign Solarized provided toggle for light/dark
-" (in an autocmd to be sure it works with Arch vim-colors-solarized)
-
-" colour scheme toggle
-nnoremap <C-F5> :call GruvboxSolarized()<cr>
-" assume starting with Solarized:
-let g:gruvboxScheme = 0
-" toggle with gruvbox
-function! GruvboxSolarized()
-  if g:gruvboxScheme
-    colorscheme solarized
-    let g:gruvboxScheme = 0
-  else
-    colorscheme gruvbox
-    let g:gruvboxScheme = 1
-  endif
-  redraw
-  colorscheme
-endfunction
-
-" vim-better-whitespace
-highlight ExtraWhitespace ctermbg=white
-let g:better_whitespace_guicolor='white' " doesn't work if called from .gvimrc or later
-let g:better_whitespace_operator=''
-
 " Files & buffers
 " ---------------
 noremap <silent> <F4> :BufExplorer<CR>

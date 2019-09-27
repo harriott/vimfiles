@@ -28,5 +28,7 @@ vnoremap <buffer> <S-F12> :s#^\v(.+)  $\n^$#\1\r#g <CR>
 
 " vim-better-whitespace
 " ---------------------
-EnableWhitespace
+if exists('g:loaded_better_whitespace_plugin')
+  EnableWhitespace
+endif
 
