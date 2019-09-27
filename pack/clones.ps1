@@ -72,7 +72,9 @@ if ( $goodPath ){
   # gicl https://github.com/drmikehenry/vim-fontsize
   # gicl https://github.com/mattn/calendar-vim
   # gicl https://github.com/morhetz/gruvbox
+  # rirf vim-better-whitespace
   # gicl https://github.com/ntpeters/vim-better-whitespace
+  # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # gicl https://github.com/vim-airline/vim-airline-themes
   # gicl https://github.com/vim-scripts/gitignore.vim
 

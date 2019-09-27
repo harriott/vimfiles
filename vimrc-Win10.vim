@@ -56,8 +56,3 @@ colorscheme solarized
 autocmd VimEnter * call togglebg#map("<S-F5>")
 " (in an autocmd to be sure it works with Arch vim-colors-solarized)
 
-" vim-better-whitespace
-highlight ExtraWhitespace ctermbg=white
-let g:better_whitespace_guicolor='white' " doesn't work if called from .gvimrc or later
-let g:better_whitespace_operator=''
-

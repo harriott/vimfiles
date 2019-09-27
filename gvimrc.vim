@@ -78,10 +78,6 @@ autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt set
 " ------------
 " for Solarized
 let g:solarized_contrast="high"    "default value is normal
-
-" ShowTrailingWhitespace - set guibg after adjustments to Solarized:
-highlight ShowTrailingWhitespace ctermbg=White guibg=White
-" and add a mapping to reset this if Solarized has been toggled:
-nnoremap <leader>w :highlight ShowTrailingWhitespace ctermbg=White guibg=White<cr>
-" ( might prefer W so's not to conflict with EasyMotion's \\w )
+" ShowTrailingWhitespace - set guibg after adjustments to Solarized
+highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
 
