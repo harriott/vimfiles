@@ -3,6 +3,10 @@
 " ---------------------
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
+" ALE
+" ---
+let g:airline#extensions#ale#enabled = 1
+
 " Appearance
 " ----------
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
@@ -45,4 +49,9 @@ let MRU_Use_Current_Window = 1
 map <C-n> :NERDTreeToggle<CR>
 " Open it on buffer's directory:
 map <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+
+" LanguageTool
+" ------------
+" for my Scratch files:
+nnoremap <C-F3> 3GVG:LanguageToolCheck <CR>
 

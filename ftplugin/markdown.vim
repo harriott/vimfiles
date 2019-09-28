@@ -8,6 +8,10 @@
 
 setlocal expandtab tw=0
 
+" ALE
+" ---
+let b:ale_enabled = 0
+
 " Markdown folding by header marks
 " --------------------------------------
 " (based on http://stackoverflow.com/questions/3828606/vim-markdown-folding)
