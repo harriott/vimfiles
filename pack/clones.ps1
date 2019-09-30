@@ -86,7 +86,8 @@ if ( $goodPath ){
 tryPath other\opt
 if ( $goodPath ){
 
-  # gicl https://github.com/dpelle/vim-LanguageTool
+  # rirf vim-LanguageTool
+
   # gicl https://github.com/tpope/vim-surround
 
   cd ..\.. }
@@ -103,6 +104,9 @@ if ( $goodPath ){
   # gicl https://github.com/svermeulen/vim-cutlass
   # gicl https://github.com/wellle/targets.vim
   # gicl https://github.com/adelarsq/vim-matchit
+
+  rirf vim-LanguageTool
+  gicl https://github.com/dpelle/vim-LanguageTool
 
   cd ..\.. }
 

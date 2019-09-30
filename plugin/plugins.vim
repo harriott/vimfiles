@@ -21,8 +21,6 @@ let g:gitgutter_enabled = 0
 noremap <S-F9> :GitGutterToggle<CR>
 inoremap <S-F9> <Esc>:GitGutterToggle<CR>
 
-let g:languagetool_jar='$HOME\LanguageTool-4.5\languagetool-commandline.jar'
-
 let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
 let g:syntastic_python_checkers = ['flake8']
 

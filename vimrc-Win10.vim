@@ -48,6 +48,8 @@ set linespace=4
 nmap <F11> :!start explorer /select,%:p<CR>
 imap <F11> <Esc><F11>
 
+let g:languagetool_jar='$HOME\LanguageTool-4.6\languagetool-commandline.jar'
+
 " Colour Scheme
 " ------------
 " start with Solarized dark
