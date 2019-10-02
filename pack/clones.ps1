@@ -77,7 +77,7 @@ if ( $goodPath ){
   # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # gicl https://github.com/vim-airline/vim-airline-themes
   # gicl https://github.com/vim-scripts/gitignore.vim
-  gicl https://github.com/mhinz/vim-startify
+  # gicl https://github.com/mhinz/vim-startify
 
   # rirf vim-colors-solarized
   # gicl https://github.com/altercation/vim-colors-solarized
