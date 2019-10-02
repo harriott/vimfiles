@@ -39,6 +39,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/junegunn/vim-easy-align
+  # $gc https://github.com/mhinz/vim-startify
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 

@@ -16,6 +16,7 @@
 ./layout/opt/limelight.vim
 ./layout/start/vim-colors-tomorrow
 ./layout/start/vim-easy-align
+./layout/start/vim-startify
 ./layout/start/gitignore.vim
 ./layout/start/vim-ShowTrailingWhitespace
 ./layout/start/vim-fontsize
