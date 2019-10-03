@@ -10,9 +10,14 @@ source $HOME/.vim/gvimrc.vim
 
 " Colour Scheme
 " ------------
+function! UpdateTWSDark()
+  highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
+endfunction
+
 " start with Tomorrow dark
 colorscheme tomorrow
 set background=dark
+call UpdateTWSDark()
 
 " colour scheme toggle
 nnoremap <C-F5> :call TomorrowSolarized()<cr>
@@ -24,7 +29,7 @@ function! TomorrowSolarized()
     colorscheme tomorrow
     set background=dark
     let g:SolarizedScheme = 0
-    highlight ShowTrailingWhitespace ctermbg=grey guibg=black
+    call UpdateTWSDark()
   else
     colorscheme solarized
     set background=light
