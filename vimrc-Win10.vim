@@ -50,11 +50,29 @@ imap <F11> <Esc><F11>
 
 let g:languagetool_jar='$HOME\LanguageTool-4.6\languagetool-commandline.jar'
 
-" Colour Scheme
-" ------------
-" start with Solarized dark
-colorscheme solarized
-" reassign Solarized provided toggle for light/dark
-autocmd VimEnter * call togglebg#map("<S-F5>")
-" (in an autocmd to be sure it works with Arch vim-colors-solarized)
+" Solarized
+" ---------
+colorscheme solarized " start with Solarized dark
+let g:SolarizedDark = 1
+
+function! UpdateWhiteSpaceDark()
+  highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
+endfunction
+function! UpdateWhiteSpaceLight()
+  highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
+endfunction
+
+" reliable light-dark toggle
+nnoremap <C-F5> :call SolarizedLightDark()<cr>
+function! SolarizedLightDark()
+  if g:SolarizedDark
+    set background=light
+    call UpdateWhiteSpaceLight()
+    let g:SolarizedDark = 0
+  else
+    set background=dark
+    call UpdateWhiteSpaceDark()
+    let g:SolarizedDark = 1
+  endif
+endfunction
 

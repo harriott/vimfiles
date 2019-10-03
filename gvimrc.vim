@@ -74,10 +74,5 @@ nnoremap <silent><leader>c :set cul! cul? <CR>
 " have two installed DokuWiki files open ready configured:
 autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
 
-" Color Scheme
-" ------------
-" for Solarized
 let g:solarized_contrast="high"    "default value is normal
-" ShowTrailingWhitespace - set guibg after adjustments to Solarized
-highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
 

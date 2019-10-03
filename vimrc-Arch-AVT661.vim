@@ -18,6 +18,6 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
-autocmd VimEnter * highlight ShowTrailingWhitespace ctermbg=grey guibg=black
-" (in an autocmd to be sure it works with Arch vim-colors-tomorrow)
+colorscheme solarized
+set background=light
 
