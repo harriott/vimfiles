@@ -1,8 +1,10 @@
 " -------------------------------------------------------------
 " This is a wrapper vimrc for use on a MS Windows 10 system.
-" Joseph Harriott - http://momentary.eu/ - Wed 20 Jun 2018
+" Joseph Harriott - http://momentary.eu/ - Mon 07 Oct 2019
 " this should be sourced by  C:\Users\jnbh\_vimrc
 " --------------------------------------------------------------
+
+let g:myPDFreader = 'start C:\Program Files\SumatraPDF\SumatraPDF.exe'
 
 " quit if called from Git's vim (adapted for Git-2.8.1-64-bit.exe on Windows 10):
 if $VIM == '/usr/share/vim'
