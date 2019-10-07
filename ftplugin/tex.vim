@@ -1,8 +1,11 @@
 " Couple of useful adjustments for working with LaTeX documents.
 " Language:	TeX
 " Maintainer: Joseph Harriott
-" Last Change: Tue 05 Dec 2017
+" Last Change: Mon 07 Oct 2019
 " This file should be in your vimfiles\ftplugin folder.
+
+" open compiled pdf:
+nnoremap <S-F11> :call CompiledPDF()<CR>
 
 " Folding
 " -------

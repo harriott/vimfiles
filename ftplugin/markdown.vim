@@ -1,7 +1,7 @@
 " Couple of adjustments.
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Wed 04 Dec 2013
+" Last Change: Mon 07 Oct 2019
 " This file should be in your vimfiles\ftplugin folder.
 " You need to this modeline in the file that you want to affect:
 " vim: ft=markdown fdm=expr:
@@ -22,7 +22,13 @@ function! MdF()
 endfunction
 
 set fde=MdF() fdl=0 fdc=1
-"
+
+" open Pandoc'd pdf
+nnoremap <S-F11> :call CompiledPDF()<CR>
+
+" inoremap <F7> <Esc><F7>
+" execute "silent !zathura ".expand('%:r').".pdf"<CR>
+
 " for Verse
 " ---------
 " prepend >  & append  :
