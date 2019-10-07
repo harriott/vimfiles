@@ -3,6 +3,7 @@
 let g:mySystem = 'AVT661'
 source $HOME/.vim/vimrc-GNULinux.vim
 let g:myPDFreader = 'zathura'
+let g:disownProcess = '& disown'
 
 " set gfn=DejaVu\ Sans\ Mono\ 10
 " set gfn=Droid\ Sans\ Mono\ 10

@@ -27,7 +27,7 @@ vmap <F6> <Plug>(openbrowser-smart-search)
 " open equivalent LaTeX compiled PDF:
 function! CompiledPDF()
   if exists("g:myPDFreader")
-    execute "silent !".g:myPDFreader." ".expand('%:r').".pdf"
+    execute "silent !".g:myPDFreader." ".expand('%:r').".pdf".g:disownProcess
   endif
 endfunction
 
