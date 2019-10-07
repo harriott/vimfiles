@@ -5,7 +5,7 @@
 " This file should be in your vimfiles\ftplugin folder.
 
 " open compiled pdf:
-nnoremap <S-F11> :call CompiledPDF()<CR>
+nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 
 " Folding
 " -------

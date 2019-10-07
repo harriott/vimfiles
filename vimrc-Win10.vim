@@ -4,8 +4,6 @@
 " this should be sourced by  C:\Users\jnbh\_vimrc
 " --------------------------------------------------------------
 
-let g:myPDFreader = 'start C:\Program Files\SumatraPDF\SumatraPDF.exe'
-
 " quit if called from Git's vim (adapted for Git-2.8.1-64-bit.exe on Windows 10):
 if $VIM == '/usr/share/vim'
   finish
@@ -39,6 +37,8 @@ if isdirectory($HOME . '/.vimswap') == 0
   :silent !md \%UserProfile\%\\.vimswap
 endif
 
+let g:languagetool_jar='$HOME\LanguageTool-4.6\languagetool-commandline.jar'
+
 "  Point to my more portable vimrc:
 source $HOME/vimfiles/vimrc.vim
 
@@ -46,11 +46,15 @@ source $HOME/vimfiles/vimrc.vim
 set guifont=Lucida_Console:h9  "better to append size so that it's reported
 set linespace=4
 
+" open equivalent LaTeX compiled PDF:
+function! CompiledPDF()
+  execute 'silent !start "C:\Program Files\SumatraPDF\SumatraPDF.exe" '.expand('%:p:r').".pdf"
+endfunction
+" this function is only needed for markdown and TeX files
+
 " Open Windows Explorer showing directory of current buffer
 nmap <F11> :!start explorer /select,%:p<CR>
 imap <F11> <Esc><F11>
-
-let g:languagetool_jar='$HOME\LanguageTool-4.6\languagetool-commandline.jar'
 
 " Solarized
 " ---------

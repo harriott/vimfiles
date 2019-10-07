@@ -24,7 +24,7 @@ endfunction
 set fde=MdF() fdl=0 fdc=1
 
 " open Pandoc'd pdf
-nnoremap <S-F11> :call CompiledPDF()<CR>
+nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 
 " inoremap <F7> <Esc><F7>
 " execute "silent !zathura ".expand('%:r').".pdf"<CR>

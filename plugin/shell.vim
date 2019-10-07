@@ -24,10 +24,3 @@ nmap <F6> <Plug>(openbrowser-smart-search)
 " If it looks like URI, Open selected URI. Otherwise, Search selected word.
 vmap <F6> <Plug>(openbrowser-smart-search)
 
-" open equivalent LaTeX compiled PDF:
-function! CompiledPDF()
-  if exists("g:myPDFreader")
-    execute "silent !".g:myPDFreader." ".expand('%:r').".pdf".g:disownProcess
-  endif
-endfunction
-
