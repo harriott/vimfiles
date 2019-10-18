@@ -11,4 +11,5 @@ set nobackup
 set noundofile
 set scrolloff=0
 autocmd FileType text setlocal textwidth=99
+" autocmd FileType fugitive unmap! X
 

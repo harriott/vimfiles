@@ -15,9 +15,9 @@ set clipboard=unnamedplus
 " see $HOME/.vim/xdg-open-bda.sh
 
 " Map the Insert key to turn off Caps Lock state:
-" nnoremap <Insert> :wa<Bar>!python -c 'from ctypes import *; X11 = cdll.LoadLibrary("libX11.so.6"); display = X11.XOpenDisplay(None); X11.XkbLockModifiers(display, c_uint(0x0100), c_uint(2), c_uint(0)); X11.XCloseDisplay(display)'
-inoremap <Insert> <Esc> :wa <CR> <bar> :silent !python XkbLockModifiers.py <CR> <bar> :echo "Insert => wa & XkbLockModifiers" <CR>
-nnoremap <Insert> :wa <CR> <bar> :silent !python XkbLockModifiers.py <CR> <bar> :echo "Insert => wa & XkbLockModifiers" <CR>
+command! CapsLockOff wa <bar> silent !python $HOME/.vim/XkbLockModifiers.py
+nnoremap <Insert> :CapsLockOff <CR>
+inoremap <Insert> <Esc> :CapsLockOff <CR>
 " (useful if there's no keyboard LED for this)
 
 source $HOME/.vim/vimrc.vim
