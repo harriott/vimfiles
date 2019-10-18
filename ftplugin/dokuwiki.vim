@@ -41,7 +41,7 @@ nnoremap <leader>= I=<Esc>A=<Esc>
 " wrap a selection with ''
 vnoremap <leader>' c''''<Esc>hP
 
-" Command to add wrap indent tags around quotes
+" Mapping to add wrap indent tags around quotes
 " ---------------------------------------------
 " For use when Anika Henke's excellent Wrap Plugin is installed in DokuWiki.
 " While developing this I used
