@@ -38,6 +38,12 @@ iab <f <file>
 " boost up a heading:
 nnoremap <leader>= I=<Esc>A=<Esc>
 
+" create a heading:
+nnoremap <leader><leader>= I=== <Esc>A ===<Esc>
+
+" wrap the inner word under cursor with ''
+nnoremap <leader>' viwc''''<Esc>hP
+
 " wrap a selection with ''
 vnoremap <leader>' c''''<Esc>hP
 
