@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Joseph Harriott, Fri 27 Sep 2019
+# Joseph Harriott
 # grab repositories
-
-# find . -type d -name '*.git' > gits-ArchLinux.txt
 
 gc='git clone'
 
@@ -68,4 +66,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/scrooloose/nerdtree
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
+
+find . -type d -name '*.git' > gits-ArchLinux.txt
+find . -mindepth 3 -maxdepth 3 -type d > all-ArchLinux.txt
 

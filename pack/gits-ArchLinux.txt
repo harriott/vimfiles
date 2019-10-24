@@ -4,7 +4,6 @@
 ./shell/start/nerdtree/.git
 ./shell/start/vim-open-url/.git
 ./other/start/close-buffers.vim/.git
-./other/start/vim-yankstack/.git
 ./other/start/vim-visual-star-search/.git
 ./other/start/targets.vim/.git
 ./other/start/incsearch.vim/.git
