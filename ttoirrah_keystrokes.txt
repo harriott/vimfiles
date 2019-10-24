@@ -54,36 +54,38 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 	C-qu201c => unicode codepoint for “
 
 # Movements
-	$           => end of line
-	'.          => jump to position where last change occurred in current buffer
-	'k          => move to mark k
-	0           => start of line
-	#G          => go to line #
-	H           => go Home (top line of current window display)
-	M           => go Middle line (of current window display)
-	L           => go Last line (of current window display)
-	^           => first non-blank char of line
-	``          => jump back (to position in current buffer where jumped from)
-	`a          => jump to position (line and column) of mark a
-	g$          => jump to last character of screen line
-	g,          => jump forward to position of a newer change
-	g;          => jump back to position of an older change
-	g^          => jump to first character of screen line
-	ge 			=> go backwards to end of word
-	mJ          => put a file-specific mark in current file (can use a-z)
-	zz          => centre window on cursor
-	{ or }      => move cursor to start or end of paragraph
-	( or )      => move cursor to start or end of sentence
-	~           => toggle case of selection
-	<leader>zz  => (mapped in my vimrc to) toggle the value of 'scrolloff'
-	C-b         => back (=up) a page
-	C-d         => down half a screen
-	C-f         => forward (=down) a page
-	C-u         => up half a screen
-	:(5,7)m0    => move line(s 5-7) to start
-	:#          => go to line #
-	:m-2        => That is, the current line is moved up one line
-	:m+         => the current line is moved down one line
+	$          => end of line
+	'.         => jump to position where last change occurred in current buffer
+	'k         => move to mark k
+	0          => start of line
+	#G         => go to line #
+    Ctrl+e     => scroll up the window, without displacing the cursor
+    Ctrl+y     => scroll down the window, without displacing the cursor
+	H          => go Home (top line of current window display)
+	M          => go Middle line (of current window display)
+	L          => go Last line (of current window display)
+	^          => first non-blank char of line
+	``         => jump back (to position in current buffer where jumped from)
+	`a         => jump to position (line and column) of mark a
+	g$         => jump to last character of screen line
+	g,         => jump forward to position of a newer change
+	g;         => jump back to position of an older change
+	g^         => jump to first character of screen line
+	ge         => go backwards to end of word
+	mJ         => put a file-specific mark in current file (can use a-z)
+	zz         => centre window on cursor
+	{ or }     => move cursor to start or end of paragraph
+	( or )     => move cursor to start or end of sentence
+	~          => toggle case of selection
+	<leader>zz => (mapped in my vimrc to) toggle the value of 'scrolloff'
+	C-b        => back (=up) a page
+	C-d        => down half a screen
+	C-f        => forward (=down) a page
+	C-u        => up half a screen
+	:(5,7)m0   => move line(s 5-7) to start
+	:#         => go to line #
+	:m-2       => That is, the current line is moved up one line
+	:m+        => the current line is moved down one line
 
 # Search
 	#                     => over a word highlights all exact instances, and jumps to last
