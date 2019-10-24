@@ -45,13 +45,15 @@ else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
 packFolder="other/start"
 if [ -d $packFolder ]; then cd $packFolder
-  # $gc https://github.com/wellle/targets.vim
   # $gc https://github.com/AndrewRadev/bufferize.vim
   # $gc https://github.com/Asheq/close-buffers.vim
+  # $gc https://github.com/bronson/vim-visual-star-search
   # $gc https://github.com/haya14busa/incsearch-fuzzy.vim
   # $gc https://github.com/haya14busa/incsearch.vim
-  # $gc https://github.com/bronson/vim-visual-star-search
+  # $gc https://github.com/kana/vim-textobj-entire
+  # sudo rm -r vim-textobj-entire
   # $gc https://github.com/maxbrunsfeld/vim-yankstack
+  # $gc https://github.com/wellle/targets.vim
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 

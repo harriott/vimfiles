@@ -129,8 +129,8 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
 # Tricks
     &                                  => repeat last substitute
 	:exe ":normal i" . strftime("%c")  => put date-time at cursor
-    :set cuc                           => highlight cursor column
-    :set cul                           => highlight cursor line
+    :\c                                => toggle cursor column
+    :\l                                => toggle cursor line
 
 ## Colorizer
 	<leader>tc          => (mapped to) ColorToggle
