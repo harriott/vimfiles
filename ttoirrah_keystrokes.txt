@@ -96,6 +96,7 @@ vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentar
     :Bufferize il <word>  => grab list of lines containing <word> in a new buffer
 	[I or ]I              => list lines containing word under cursor
     g/                    => incsearch-stay
+    z/                    => incsearch-fuzzy
 	n                     => find next highlighted search result
 
 ## following /
