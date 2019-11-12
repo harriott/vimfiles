@@ -3,6 +3,7 @@
 .directory
 .netrwhist
 pack/*/
+spell/
 tags
 tags-cn
 tags-te
