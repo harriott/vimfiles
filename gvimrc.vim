@@ -67,9 +67,9 @@ endfunction
 nnoremap <Space> za  " handy for toggling folds open/closed
 
 " toggle cursorcolumn:
-nnoremap <silent><leader>l :set cuc! cuc? <CR>
+nnoremap <silent><leader>o :set cuc! cuc? <CR>
 " toggle cursorline:
-nnoremap <silent><leader>c :set cul! cul? <CR>
+nnoremap <silent><leader>l :set cul! cul? <CR>
 
 " have two installed DokuWiki files open ready configured:
 autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
