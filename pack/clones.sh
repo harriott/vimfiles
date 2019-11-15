@@ -2,6 +2,7 @@
 
 # Joseph Harriott
 # grab repositories
+# bash clones.sh
 
 gc='git clone'
 
@@ -64,6 +65,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/harriott/vim-buffing-wheel
   # $gc https://github.com/dhruvasagar/vim-open-url
   # $gc https://github.com/scrooloose/nerdtree
+  # $gc https://github.com/srstevenson/vim-picker
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 

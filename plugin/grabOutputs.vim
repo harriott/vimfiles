@@ -3,24 +3,35 @@
 " --------------------------------------
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
-" to get the output of a command in a new tab, just enter :TabEx <cmd>
-function! TabEx(cmd)
-  redir => message
-  silent execute a:cmd
-  redir END
-  tabnew
-  silent put=message
-  set nomodified
-endfunction
-command! -nargs=+ -complete=command TabEx call TabEx(<q-args>)
-" (from http://vim.wikia.com/wiki/Capture_ex_command_output)
-" doesn't catch Errors
-
 function! GrabCommands()
   edit $HOME/vim-commands.txt
   normal! VGd
-  silent Bufferize command
-  echo "hello"
+  call GrabWrite("command")
+endfunction
+command! GrabCommands call GrabCommands()
+
+function! Grabmaps()
+  edit $HOME/vim-maps.txt
+  normal! VGd
+  call GrabWrite("map")
+  call GrabWrite("map!")
+endfunction
+command! Grabmaps call Grabmaps()
+
+function! GrabMyNonFmaps()
+  call Grabmaps()
+  g/<.\=.\=F.*>/d
+  g/<Plug>/d
+  g/<SNR>/d
+  g/ /d " non-breaking space
+  nohlsearch
+  sav! $HOME/vim-myNonFmaps.txt
+endfunction
+command! GrabMyNonFmaps call GrabMyNonFmaps()
+
+function! GrabWrite(toGrab)
+  " only to be called from within a parent function that has just before set up an empty buffer
+  silent execute 'Bufferize ' . a:toGrab
   blast
   normal! VGd
   bdelete
@@ -51,16 +62,6 @@ command! TryCNB call TryCNB()
 
 " Grab mappings
 " -------------
-function! Grabmaps()
-  redir @n
-    silent map
-  redir END
-  redir @i
-    silent map!
-  redir END
-  new
-  normal! "np "ip
-endfunction
 
 function! GrabFmaps()
   call Grabmaps()
@@ -70,18 +71,6 @@ function! GrabFmaps()
   TryCNB
 endfunction
 command! GrabFmaps call GrabFmaps()
-
-function! GrabNonFmaps()
-  call Grabmaps()
-  g/<.\=.\=F.*>/d
-  g/<Plug>/d
-  g/<SNR>/d
-  g/ /d " non-breaking space
-  nohlsearch
-  sav! $HOME/vim-nonFmaps.txt
-  TryCNB
-endfunction
-command! GrabNonFmaps call GrabNonFmaps()
 
 function! GrabPlugMaps()
   call Grabmaps()

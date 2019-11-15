@@ -18,6 +18,7 @@ endfunction
 colorscheme tomorrow
 set background=dark
 call UpdateTWSDark()
+set cul
 
 " colour scheme toggle
 nnoremap <C-F5> :call TomorrowSolarized()<cr>

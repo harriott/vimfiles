@@ -1,4 +1,5 @@
 ./shell/start/mru/.git
+./shell/start/vim-picker/.git
 ./shell/start/vim-buffing-wheel/.git
 ./shell/start/open-browser.vim/.git
 ./shell/start/nerdtree/.git

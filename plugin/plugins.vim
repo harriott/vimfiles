@@ -28,10 +28,13 @@ let g:syntastic_python_checkers = ['flake8']
 " ---------------
 noremap <silent> <F4> :BufExplorer<CR>
 
+nmap <unique> <leader>pe <Plug>(PickerEdit)
+nmap <unique> <leader>pb <Plug>(PickerBuffer)
+
 " quickly close all but current buffer:
-nnoremap <S-F4> :CloseOtherBuffers<CR>
+nnoremap <S-F4> :Bdelete other<CR>
 " quickly close all but visible buffers:
-nnoremap <C-F4> :CloseHiddenBuffers<CR>
+nnoremap <C-F4> :Bdelete hidden<CR>
 
 " to help CtrlP when in my Win7 %USERPROFILE%:
 set wildignore+=NTUSER.DAT*,*.lnk

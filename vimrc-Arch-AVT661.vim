@@ -24,6 +24,6 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
-colorscheme solarized
-set background=light
+" colorscheme solarized
+" set background=light
 

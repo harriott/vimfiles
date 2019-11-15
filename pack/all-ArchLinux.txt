@@ -1,4 +1,5 @@
 ./shell/start/mru
+./shell/start/vim-picker
 ./shell/start/vim-buffing-wheel
 ./shell/start/open-browser.vim
 ./shell/start/nerdtree
