@@ -27,6 +27,8 @@ inoremap <S-F3> <Esc>:set list! list? <CR>
 set history=400
 set modelines=4
 
+nnoremap <Space> za  " handy for toggling folds open/closed
+
 "-------------
 " buffer stuff
 " ------------

@@ -1,4 +1,6 @@
-vim: set ft=markdown fdm=expr: Joseph's useful (g)Vim commands - http://momentary.eu/
+vim: set fdm=expr:
+
+Joseph's useful (g)Vim commands - http://momentary.eu/
 
     vim-easy-align: Sip=
 	:Tabularize/ =>     aligns these lists

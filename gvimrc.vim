@@ -64,8 +64,6 @@ function! ParenthsToggle()
     endif
 endfunction
 
-nnoremap <Space> za  " handy for toggling folds open/closed
-
 " toggle cursorcolumn:
 nnoremap <silent><leader>o :set cuc! cuc? <CR>
 " toggle cursorline:

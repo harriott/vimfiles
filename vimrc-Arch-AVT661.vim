@@ -25,5 +25,5 @@ if has('syntax') && has('eval')
 endif
 
 " colorscheme solarized
-" set background=light
+set background=dark
 
