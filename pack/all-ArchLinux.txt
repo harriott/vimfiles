@@ -14,6 +14,7 @@
 ./git/start/vim-rhubarb
 ./layout/opt/colorizer
 ./layout/opt/limelight.vim
+./layout/start/vim-mbsync
 ./layout/start/vim-colors-tomorrow
 ./layout/start/vim-easy-align
 ./layout/start/vim-startify

@@ -31,7 +31,7 @@ else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
 packFolder="layout/start"
 if [ -d $packFolder ]; then cd $packFolder
-  # $gc https://github.com/vim-scripts/gitignore.vim
+  # $gc https://github.com/chunkhang/vim-mbsync
   # $gc https://github.com/drmikehenry/vim-fontsize
   # sudo rm -r vim-better-whitespace
   # $gc https://github.com/ntpeters/vim-better-whitespace
@@ -39,6 +39,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/mhinz/vim-startify
+  # $gc https://github.com/vim-scripts/gitignore.vim
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 

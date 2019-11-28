@@ -13,9 +13,12 @@ set tabstop=4
 set tw=99
 
 " EasyAlign
-nmap S <Plug>(EasyAlign)
-xmap S <Plug>(EasyAlign)
-let g:easy_align_delimiters = { '>': { 'pattern': '>>\|=>\|>' } }
+nmap gA <Plug>(EasyAlign)
+xmap gA <Plug>(EasyAlign)
+let g:easy_align_delimiters = {
+    \ 'm': { 'pattern': ' - ' },
+    \ '>': { 'pattern': '>>\|=>\|>' }
+    \ }
 
 " lesser indentation of vimscript continuation line:
 let g:vim_indent_cont = &sw
