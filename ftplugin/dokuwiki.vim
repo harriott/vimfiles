@@ -28,12 +28,13 @@ iab <a <code awk>
 iab <b <code bash>
 iab <d <code dos>
 iab <e <code perl>
+iab <f <file>
 iab <h <code html>
 iab <l <code latex>
 iab <p <code powershell>
 iab <y <code python>
 iab <v <code vim>
-iab <f <file>
+iab <y <code yaml>
 
 " boost up a heading:
 nnoremap <leader>= I=<Esc>A=<Esc>

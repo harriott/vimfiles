@@ -24,22 +24,33 @@ else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
 packFolder="layout/opt"
 if [ -d $packFolder ]; then cd $packFolder
-  # $gc https://github.com/lilydjwg/colorizer
   # $gc https://github.com/junegunn/limelight.vim
+  # $gc https://github.com/lilydjwg/colorizer
+  # $gc https://github.com/ntpeters/vim-better-whitespace
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
 packFolder="layout/start"
 if [ -d $packFolder ]; then cd $packFolder
+  # $gc https://github.com/challenger-deep-theme/vim challenger-deep
   # $gc https://github.com/chunkhang/vim-mbsync
+  # $gc https://github.com/dracula/vim dracula
   # $gc https://github.com/drmikehenry/vim-fontsize
-  # sudo rm -r vim-better-whitespace
-  # $gc https://github.com/ntpeters/vim-better-whitespace
   # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/mhinz/vim-startify
   # $gc https://github.com/vim-scripts/gitignore.vim
+  # $gc https://github.com/reedes/vim-colors-pencil
+  # $gc https://github.com/sheerun/vim-wombat-scheme
+  # $gc https://github.com/nanotech/jellybeans.vim
+  # $gc https://github.com/jnurmine/Zenburn
+  # sudo rm -r pacmanlog.vim
+  # sudo rm -r dracula
+  # sudo rm -r challenger-deep
+  # sudo rm -r vim-better-whitespace
+  # sudo rm -r vim-colors-pencil
+  # sudo rm -r Zenburn
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 

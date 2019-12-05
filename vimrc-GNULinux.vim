@@ -3,7 +3,9 @@
 
 " Source my more portably located vimrc:
 " first, some general settings
-source $HOME/.vim/vimrc_example.vim
+if !has('nvim')
+  source $HOME/.vim/vimrc_example.vim
+endif
 
 " switch modelines back on - overriding /usr/share/vim/vim73/debian.vim
 " set modeline

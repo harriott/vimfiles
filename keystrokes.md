@@ -138,7 +138,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :\l                                => toggle cursor line
 
 ## Colorizer
-	<leader>tc          => (mapped to) ColorToggle
+	<leader>tc          => (mapped to) ColorToggle (by colorizer)
     :packadd colorizer  => load the plugin from an opt directory
 
 # Vim

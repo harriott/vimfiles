@@ -13,13 +13,16 @@
 ./git/start/vim-fugitive
 ./git/start/vim-rhubarb
 ./layout/opt/colorizer
+./layout/opt/vim-ShowTrailingWhitespace
 ./layout/opt/limelight.vim
+./layout/opt/jellybeans.vim
+./layout/opt/vim-better-whitespace
 ./layout/start/vim-mbsync
 ./layout/start/vim-colors-tomorrow
 ./layout/start/vim-easy-align
 ./layout/start/vim-startify
 ./layout/start/gitignore.vim
-./layout/start/vim-ShowTrailingWhitespace
+./layout/start/vim-wombat-scheme
 ./layout/start/vim-fontsize
 ./ft/start/python_match.vim
 ./ft/start/vim-flavored-markdown

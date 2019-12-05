@@ -24,6 +24,18 @@ if has('syntax') && has('eval')
   packadd! matchit
 endif
 
-" colorscheme solarized
-set background=dark
+" select colorscheme and plugin for showing trailing white spaces
+if has('nvim')
+  packadd jellybeans.vim
+  colorscheme jellybeans
+  " packadd vim-wombat-scheme
+  " colorscheme wombat
+  packadd vim-better-whitespace
+  EnableWhitespace
+  highlight ExtraWhitespace ctermbg=blue
+  let g:better_whitespace_operator=''
+else
+  colorscheme tomorrow " good for terminal Vim
+  packadd vim-ShowTrailingWhitespace
+endif
 
