@@ -23,3 +23,4 @@ foreach{
 }
 cd ..\..
 
+gci */*/* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all-MSW10.txt

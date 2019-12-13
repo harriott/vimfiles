@@ -79,6 +79,12 @@ if ( $goodPath ){
   # gicl https://github.com/vim-scripts/gitignore.vim
   # gicl https://github.com/mhinz/vim-startify
 
+  # gicl https://github.com/arcticicestudio/nord-vim
+  rirf nord-vim
+
+  # gicl https://github.com/mhinz/vim-janah
+  # rirf vim-janah
+
   # rirf vim-colors-solarized
   # gicl https://github.com/altercation/vim-colors-solarized
 
@@ -106,8 +112,8 @@ if ( $goodPath ){
   # gicl https://github.com/wellle/targets.vim
   # gicl https://github.com/adelarsq/vim-matchit
 
-  rirf vim-LanguageTool
-  gicl https://github.com/dpelle/vim-LanguageTool
+  # rirf vim-LanguageTool
+  # gicl https://github.com/dpelle/vim-LanguageTool
 
   cd ..\.. }
 
@@ -135,4 +141,6 @@ if ( $goodPath ){
   # gicl https://github.com/dhruvasagar/vim-open-url
 
   cd ..\.. }
+
+gci */*/* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all-MSW10.txt
 

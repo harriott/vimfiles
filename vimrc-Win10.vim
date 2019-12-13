@@ -56,22 +56,23 @@ endfunction
 nmap <F11> :!start explorer /select,%:p<CR>
 imap <F11> <Esc><F11>
 
-" Solarized
-" ---------
-colorscheme solarized " start with Solarized dark
-let g:SolarizedDark = 1
+" Colorscheme
+" -----------
+colorscheme gruvbox
+set background=dark
+let g:CSDark = 1
 
 " reliable light-dark toggle
-nnoremap <C-F5> :call SolarizedLightDark()<cr>
-function! SolarizedLightDark()
-  if g:SolarizedDark
+nnoremap <C-F5> :call ColorLightDark()<cr>
+function! ColorLightDark()
+  if g:CSDark
     set background=light
     highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
-    let g:SolarizedDark = 0
+    let g:CSDark = 0
   else
     set background=dark
     highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
-    let g:SolarizedDark = 1
+    let g:CSDark = 1
   endif
 endfunction
 
