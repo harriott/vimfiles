@@ -58,7 +58,7 @@ imap <F11> <Esc><F11>
 
 " Colorscheme
 " -----------
-colorscheme gruvbox
+colorscheme tomorrow
 set background=dark
 let g:CSDark = 1
 
@@ -71,7 +71,7 @@ function! ColorLightDark()
     let g:CSDark = 0
   else
     set background=dark
-    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
+    highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
     let g:CSDark = 1
   endif
 endfunction

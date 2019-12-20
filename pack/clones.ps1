@@ -78,9 +78,10 @@ if ( $goodPath ){
   # gicl https://github.com/vim-airline/vim-airline-themes
   # gicl https://github.com/vim-scripts/gitignore.vim
   # gicl https://github.com/mhinz/vim-startify
+  # gicl https://github.com/svermeulen/vim-colors-tomorrow
 
   # gicl https://github.com/arcticicestudio/nord-vim
-  rirf nord-vim
+  # rirf nord-vim
 
   # gicl https://github.com/mhinz/vim-janah
   # rirf vim-janah
@@ -104,7 +105,6 @@ if ( $goodPath ){
 
   # gicl https://github.com/chrisbra/Recover.vim
   # gicl https://github.com/AndrewRadev/bufferize.vim
-  # gicl https://github.com/Asheq/close-buffers.vim
   # gicl https://github.com/easymotion/vim-easymotion
   # gicl https://github.com/tpope/vim-repeat
   # gicl https://github.com/bronson/vim-visual-star-search
@@ -112,6 +112,9 @@ if ( $goodPath ){
   # gicl https://github.com/wellle/targets.vim
   # gicl https://github.com/adelarsq/vim-matchit
 
+  # rirf close-buffers.vim
+  # gicl https://github.com/Asheq/close-buffers.vim
+  
   # rirf vim-LanguageTool
   # gicl https://github.com/dpelle/vim-LanguageTool
 
