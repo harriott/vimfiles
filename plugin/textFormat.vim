@@ -1,6 +1,6 @@
 " vim: set et:
 
-" Joseph Harriott - http://momentary.eu/ - Thu 26 Sep 2019
+" Joseph Harriott - http://momentary.eu/
 " --------------------------------------------------------
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
@@ -12,10 +12,14 @@ set shiftwidth=4
 set tabstop=4
 set tw=99
 
+" Clear left & right double quotes (as these aren't mapped to a keyboard key):
+nnoremap <leader>2 :%s/“/"/g<bar>:%s/”/"/g<cr>
+
 " EasyAlign
 nmap gA <Plug>(EasyAlign)
 xmap gA <Plug>(EasyAlign)
 let g:easy_align_delimiters = {
+    \ 'b': { 'pattern': '∙' },
     \ 'm': { 'pattern': ' - ' },
     \ '>': { 'pattern': '>>\|=>\|>' }
     \ }

@@ -25,6 +25,9 @@ nnoremap <silent><leader>n :set rnu! rnu? <CR>
 
 " Special file treatments:
 " ------------------------
+" muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
+autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
+
 " pack msgFilterRules.dat "name" lines:
 autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
 " unpack msgFilterRules.dat "name" lines:
