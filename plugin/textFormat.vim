@@ -97,6 +97,36 @@ function! PercentUnicode()
 endfunction
 " if you need to work on a range, use  :<selection>call PercentUnicode()
 
+" mysms
+" -----
+" format text messages scraped from screen
+function! MysmsReOrder()
+  :let s:mysmslist = @%
+  :1,3d
+  :e reOrdered.md
+  :put "
+  " :execute 'edit' s:mysmslist
+endfunction
+
+function! MysmsWeekdays()
+  " get the day headings
+  :%s/^Monday,\( \h\+ \d\+\),/\r# Monday\1/e
+  :%s/^Tuesday,\( \h\+ \d\+\),/\r# Tuesday\1/e
+  :%s/^Wednesday,\( \h\+ \d\+\),/\r# Wednesday\1/e
+  :%s/^Thursday,\( \h\+ \d\+\),/\r# Thursday\1/e
+  :%s/^Friday,\( \h\+ \d\+\),/\r# Friday\1/e
+  :%s/^Saturday,\( \h\+ \d\+\),/\r# Saturday\1/e
+  :%s/^Sunday,\( \h\+ \d\+\),/\r# Sunday\1/e
+  " mark the senders:
+  :%s/^\(\h\+\):/\r## \1 SMS ▀\r▄/e
+  " mark out the message:
+  :%s/ \(\d\+:\d\d \uM$\)/▲\1/e
+  " move the time up above the message:
+  :%s/▄\(\_.\{-}\)▲\(.\+\)/\2\r\1/e
+  " pull the time into sender line:
+  :%s/▀\n//
+endfunction
+
 " Underline using dashes automatically
 " ------------------------------------
 " (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
@@ -110,24 +140,4 @@ endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 " map:
 nnoremap <leader>u :Underline
-
-" format text messages scraped from mysms screen
-function! MysmsWeekdays()
-  " get the day headings
-  :%s/^Monday,\( \h\+ \d\+\),/\r# Monday\1/e
-  :%s/^Tuesday,\( \h\+ \d\+\),/\r# Tuesday\1/e
-  :%s/^Wednesday,\( \h\+ \d\+\),/\r# Wednesday\1/e
-  :%s/^Thursday,\( \h\+ \d\+\),/\r# Thursday\1/e
-  :%s/^Friday,\( \h\+ \d\+\),/\r# Friday\1/e
-  :%s/^Saturday,\( \h\+ \d\+\),/\r# Saturday\1/e
-  :%s/^Sunday,\( \h\+ \d\+\),/\r# Sunday\1/e
-  " mark the senders:
-  :%s/^\(\h\+\):/\r## \1 SMS ▀\r▄/e
-  " mark out the message:
-  :%s/ \(\d\+:\d\d \uM$\)/▲\1:/e
-  " move the time up above the message:
-  :%s/▄\(\_.\{-}\)▲\(.\+\)/\2\r\1/e
-  " pull the time into sender line:
-  :%s/▀\n//
-endfunction
 

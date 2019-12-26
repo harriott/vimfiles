@@ -26,8 +26,9 @@ set fde=MdF() fdl=0 fdc=1
 " open Pandoc'd pdf
 nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 
-" inoremap <F7> <Esc><F7>
-" execute "silent !zathura ".expand('%:r').".pdf"<CR>
+if has('unix') " should really be asking if Perl is available
+  nnoremap <S-F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsReOrder.pl ".expand('%:p')<CR>
+endif
 
 " for Verse
 " ---------
