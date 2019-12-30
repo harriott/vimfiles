@@ -108,7 +108,7 @@ function! MysmsReOrder()
   " :execute 'edit' s:mysmslist
 endfunction
 
-function! MysmsWeekdays()
+function! MySMSordered()
   " get the day headings
   :%s/^Monday,\( \h\+ \d\+\),/\r# Monday\1/e
   :%s/^Tuesday,\( \h\+ \d\+\),/\r# Tuesday\1/e
@@ -120,11 +120,11 @@ function! MysmsWeekdays()
   " mark the senders:
   :%s/^\(\h\+\):/\r## \1 SMS ▀\r▄/e
   " mark out the message:
-  :%s/ \(\d\+:\d\d \uM$\)/▲\1/e
+  " :%s/ \(\d\+:\d\d \uM$\)/▲\1/e
   " move the time up above the message:
-  :%s/▄\(\_.\{-}\)▲\(.\+\)/\2\r\1/e
+  " :%s/▄\(\_.\{-}\)▲\(.\+\)/\2\r\1/e
   " pull the time into sender line:
-  :%s/▀\n//
+  " :%s/▀\n//
 endfunction
 
 " Underline using dashes automatically
