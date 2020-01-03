@@ -13,6 +13,7 @@
 ./git/start/vim-fugitive/.git
 ./git/start/vim-rhubarb/.git
 ./layout/opt/colorizer/.git
+./layout/opt/vim-wombat-scheme/.git
 ./layout/opt/vim-ShowTrailingWhitespace/.git
 ./layout/opt/limelight.vim/.git
 ./layout/opt/jellybeans.vim/.git
@@ -22,7 +23,6 @@
 ./layout/start/vim-easy-align/.git
 ./layout/start/vim-startify/.git
 ./layout/start/gitignore.vim/.git
-./layout/start/vim-wombat-scheme/.git
 ./layout/start/vim-fontsize/.git
 ./ft/start/python_match.vim/.git
 ./ft/start/vim-flavored-markdown/.git

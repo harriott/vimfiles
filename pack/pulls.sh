@@ -12,3 +12,7 @@ find . -maxdepth 3 -mindepth 3 -type d | while read pluginName; do
   git pull origin master
   cd ~/.vim/pack
 done
+
+find . -type d -name '*.git' > gits-ArchLinux.txt
+find . -mindepth 3 -maxdepth 3 -type d > all-ArchLinux.txt
+
