@@ -3,7 +3,7 @@
 " ---------------------
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
-map g/ <Plug>(incsearch-stay)
+map g/ <Plug>(incsearch-fuzzy-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 
 " EasyMotion

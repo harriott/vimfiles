@@ -27,7 +27,7 @@ set fde=MdF() fdl=0 fdc=1
 nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 
 if has('unix') " should really be asking if Perl is available
-  nnoremap <S-F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsReOrder.pl ".expand('%:p')<CR>
+  nnoremap <S-F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
 endif
 
 " for Verse
