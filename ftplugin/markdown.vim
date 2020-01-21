@@ -28,6 +28,8 @@ nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 
 if has('unix') " should really be asking if Perl is available
   nnoremap <S-F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
+else
+  nnoremap <S-F7> :execute "silent ! C:\Strawberry\perl\bin\perl.exe D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
 endif
 
 " for Verse
