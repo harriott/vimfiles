@@ -18,6 +18,7 @@ nnoremap <leader>2 :%s/“/"/g<bar>:%s/”/"/g<cr>
 " EasyAlign
 nmap gA <Plug>(EasyAlign)
 xmap gA <Plug>(EasyAlign)
+" the following are just as easily entered as regex's
 let g:easy_align_delimiters = {
     \ 'b': { 'pattern': '∙' },
     \ 'm': { 'pattern': ' - ' },
