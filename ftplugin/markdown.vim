@@ -30,6 +30,7 @@ if has('unix') " should really be asking if Perl is available
   nnoremap <S-F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
 else
   nnoremap <S-F7> :execute "silent !perl D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
+  " fails - try with fileformat dos
 endif
 
 " for Verse
