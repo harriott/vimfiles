@@ -58,8 +58,12 @@ imap <F11> <Esc><F11>
 
 " Colorscheme
 " -----------
+function! STWDG()
+  highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
+endfunction
 colorscheme tomorrow
 set background=dark
+call STWDG()
 let g:CSDark = 1
 
 " reliable light-dark toggle
@@ -67,11 +71,14 @@ nnoremap <C-F5> :call ColorLightDark()<cr>
 function! ColorLightDark()
   if g:CSDark
     set background=light
-    highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
+    " " if Solarized
+    " highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
+    " if Tomorrow
+    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Grey
     let g:CSDark = 0
   else
     set background=dark
-    highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
+    call STWDG()
     let g:CSDark = 1
   endif
 endfunction
