@@ -34,6 +34,7 @@ packFolder="layout/start"
 if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/challenger-deep-theme/vim challenger-deep
   # $gc https://github.com/chunkhang/vim-mbsync
+  # $gc https://github.com/cespare/vim-toml
   # $gc https://github.com/dracula/vim dracula
   # $gc https://github.com/drmikehenry/vim-fontsize
   # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace

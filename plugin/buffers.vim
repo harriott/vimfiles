@@ -25,6 +25,9 @@ nnoremap <silent><leader>n :set rnu! rnu? <CR>
 
 " Special file treatments:
 " ------------------------
+" clear nnn selections:
+autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
+
 " muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
 autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 
