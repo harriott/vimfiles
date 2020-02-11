@@ -41,7 +41,6 @@ if ( $goodPath ){
 
   # gicl https://github.com/airblade/vim-gitgutter
   # rirf vim-rhubarb
-  # gicl https://github.com/tpope/vim-rhubarb
 
   cd ..\.. }
 
@@ -50,6 +49,7 @@ if ( $goodPath ){
 
   # gicl https://github.com/mbbill/undotree
   # gicl https://github.com/tpope/vim-fugitive
+  # gicl https://github.com/tpope/vim-rhubarb
 
   cd ..\.. }
 
