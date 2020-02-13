@@ -72,13 +72,13 @@ if ( $goodPath ){
   # gicl https://github.com/drmikehenry/vim-fontsize
   # gicl https://github.com/mattn/calendar-vim
   # gicl https://github.com/morhetz/gruvbox
-  # rirf vim-better-whitespace
   # gicl https://github.com/ntpeters/vim-better-whitespace
   # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # gicl https://github.com/vim-airline/vim-airline-themes
   # gicl https://github.com/vim-scripts/gitignore.vim
   # gicl https://github.com/mhinz/vim-startify
   # gicl https://github.com/svermeulen/vim-colors-tomorrow
+  gicl https://github.com/vim-pandoc/vim-pandoc-syntax
 
   # gicl https://github.com/arcticicestudio/nord-vim
   # rirf nord-vim
@@ -88,6 +88,8 @@ if ( $goodPath ){
 
   # rirf vim-colors-solarized
   # gicl https://github.com/altercation/vim-colors-solarized
+
+  # rirf vim-better-whitespace
 
   cd ..\.. }
 
