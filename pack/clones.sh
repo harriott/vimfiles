@@ -12,6 +12,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/jtratner/vim-flavored-markdown
   # $gc https://github.com/PProvost/vim-ps1
   # $gc https://github.com/vim-scripts/python_match.vim
+  $gc https://github.com/vim-pandoc/vim-pandoc-syntax
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
@@ -34,7 +35,6 @@ packFolder="layout/start"
 if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/challenger-deep-theme/vim challenger-deep
   # $gc https://github.com/chunkhang/vim-mbsync
-  # $gc https://github.com/cespare/vim-toml
   # $gc https://github.com/dracula/vim dracula
   # $gc https://github.com/drmikehenry/vim-fontsize
   # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
@@ -51,6 +51,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # sudo rm -r challenger-deep
   # sudo rm -r vim-better-whitespace
   # sudo rm -r vim-colors-pencil
+  # sudo rm -r vim-toml
   # sudo rm -r Zenburn
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi

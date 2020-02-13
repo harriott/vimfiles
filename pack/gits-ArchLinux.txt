@@ -23,9 +23,9 @@
 ./layout/start/vim-easy-align/.git
 ./layout/start/vim-startify/.git
 ./layout/start/gitignore.vim/.git
-./layout/start/vim-toml/.git
 ./layout/start/vim-fontsize/.git
 ./ft/start/python_match.vim/.git
+./ft/start/vim-pandoc-syntax/.git
 ./ft/start/vim-flavored-markdown/.git
 ./ft/start/vim-base64/.git
 ./ft/start/vim-ps1/.git
