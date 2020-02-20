@@ -45,6 +45,8 @@ autocmd BufNewFile,BufRead *.aesl setlocal filetype=xml
 " -------------------
 " LaTeX syntax folding on before opening a buffer:
 let g:tex_fold_enabled=1
+" turn off syntax folding for the long log files from  md4pdf.ps1
+autocmd BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 
 " XML syntax folding on:
 let g:xml_syntax_folding = 1
