@@ -23,7 +23,7 @@ endif
 nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 
 " wrap the inner word under cursor with backticks
-nnoremap <leader>` viwc``<Esc>hP
+nnoremap <leader>` viwc``<Esc>P
 
 " Markdown folding by header marks
 " --------------------------------------
