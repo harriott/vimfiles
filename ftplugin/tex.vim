@@ -4,6 +4,8 @@
 " Last Change: Mon 07 Oct 2019
 " This file should be in your vimfiles\ftplugin folder.
 
+" convert from markdown hyperlink references
+
 " open compiled pdf:
 nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 
