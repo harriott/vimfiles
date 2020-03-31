@@ -1,9 +1,10 @@
 # vim: set et tw=0:
 
-# Joseph Harriott http://momentary.eu/ - Thu 26 Sep 2019
+# Joseph Harriott
+#
 # grab repositories
 
-# use my PowerShell function packs to list folders two down
+# use my PowerShell function  packs  to list folders two down
 
 # gci -r -force .git |?{$_.PSIsContainer} | select -ExpandProperty fullname > gits-MSW10.txt
 

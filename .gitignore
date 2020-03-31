@@ -2,7 +2,11 @@
 # These are the files that I want to ignore:
 .directory
 .netrwhist
-pack/*/
+pack/ft
+pack/git
+pack/layout
+pack/other
+pack/shell
 spell/
 tags
 tags-cn
