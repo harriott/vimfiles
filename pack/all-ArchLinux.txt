@@ -8,6 +8,7 @@
 ./other/start/vim-visual-star-search
 ./other/start/targets.vim
 ./other/start/incsearch.vim
+./other/start/quick-scope
 ./other/start/bufferize.vim
 ./other/start/incsearch-fuzzy.vim
 ./git/start/vim-fugitive

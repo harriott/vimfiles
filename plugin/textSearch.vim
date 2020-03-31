@@ -6,6 +6,9 @@
 map g/ <Plug>(incsearch-fuzzy-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 
+" Trigger a quick-scope in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
 " EasyMotion
 " ----------
 let g:EasyMotion_do_mapping = 0 " Disable default mappings

@@ -11,8 +11,8 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/christianrondeau/vim-base64
   # $gc https://github.com/jtratner/vim-flavored-markdown
   # $gc https://github.com/PProvost/vim-ps1
+  # $gc https://github.com/vim-pandoc/vim-pandoc-syntax
   # $gc https://github.com/vim-scripts/python_match.vim
-  $gc https://github.com/vim-pandoc/vim-pandoc-syntax
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
@@ -68,6 +68,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/maxbrunsfeld/vim-yankstack
   # sudo rm -r vim-yankstack
   # $gc https://github.com/wellle/targets.vim
+  $gc https://github.com/unblevable/quick-scope
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 

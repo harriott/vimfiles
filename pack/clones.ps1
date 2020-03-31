@@ -33,7 +33,9 @@ if ( $goodPath ){
   # gicl https://github.com/PProvost/vim-ps1
   # gicl https://github.com/scrooloose/nerdcommenter
   # gicl https://github.com/jtratner/vim-flavored-markdown
-  gicl https://github.com/vim-pandoc/vim-pandoc-syntax
+
+  # gicl https://github.com/vim-pandoc/vim-pandoc-syntax
+  # rirf vim-pandoc-syntax
 
   cd ..\.. }
 
@@ -78,7 +80,7 @@ if ( $goodPath ){
   # gicl https://github.com/vim-scripts/gitignore.vim
   # gicl https://github.com/mhinz/vim-startify
   # gicl https://github.com/svermeulen/vim-colors-tomorrow
-  rirf vim-pandoc-syntax
+  gicl https://github.com/unblevable/quick-scope
 
   # gicl https://github.com/arcticicestudio/nord-vim
   # rirf nord-vim
@@ -117,7 +119,7 @@ if ( $goodPath ){
 
   # rirf close-buffers.vim
   # gicl https://github.com/Asheq/close-buffers.vim
-  
+
   # rirf vim-LanguageTool
   # gicl https://github.com/dpelle/vim-LanguageTool
 
