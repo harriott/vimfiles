@@ -4,6 +4,7 @@
 ./shell/start/open-browser.vim/.git
 ./shell/start/nerdtree/.git
 ./shell/start/vim-open-url/.git
+./neovim/opt/vim-hexokinase/.git
 ./other/start/close-buffers.vim/.git
 ./other/start/vim-visual-star-search/.git
 ./other/start/targets.vim/.git
@@ -14,6 +15,7 @@
 ./git/start/vim-fugitive/.git
 ./git/start/vim-rhubarb/.git
 ./layout/opt/colorizer/.git
+./layout/opt/Colorizer/.git
 ./layout/opt/vim-wombat-scheme/.git
 ./layout/opt/vim-ShowTrailingWhitespace/.git
 ./layout/opt/limelight.vim/.git

@@ -12,6 +12,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 
+" Colorizer
+let g:colorizer_disable_bufleave = 1
+
 " switch on DokuWiki comment highlighting (read by ./syntax/dokuwiki.vim)
 let dokuwiki_comment=1
 
