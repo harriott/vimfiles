@@ -82,7 +82,7 @@ endfunction
 
 " - notes for this (adapted from
 "     http://jeromyanglim.blogspot.fr/2011/04/case-study-in-customising-syntax.html)
-"     getline => a Vim function that returns the content of a line. 
+"     getline => a Vim function that returns the content of a line.
 "     v:lnum  => used by expr fold method to indicate a particular line number.
 "     '^=\+'  => match from the start of the line (^) any number of contiguous '='s
 "     =~      => a logical operator

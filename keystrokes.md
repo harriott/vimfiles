@@ -9,6 +9,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 
     :Bufferize scriptnames   => vimfile load order at start
     :Bufferize version       => Vim version etc
+    :helpt ALL               => generate all tags
     :helptags $HOME\vimfiles => set tags
 
 # Buffers
@@ -137,8 +138,15 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :\c                                => toggle cursor column
     :\l                                => toggle cursor line
 
-## Colorizer
-	<leader>tc          => (mapped to) ColorToggle (by colorizer)
+## colour codes
+    HexokinaseTurnOn
+
+### Colorizer
+    :ColorHighlight     => impressive syntax colourizing, but then can't be truly turned off
+    :packadd Colorizer  => load the plugin from an opt directory
+
+### colorizer
+	<leader>tc          => (mapped to) ColorToggle (by colorizer) and files open fast when off
     :packadd colorizer  => load the plugin from an opt directory
 
 # Vim

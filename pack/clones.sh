@@ -28,6 +28,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/junegunn/limelight.vim
   # $gc https://github.com/lilydjwg/colorizer
   # $gc https://github.com/ntpeters/vim-better-whitespace
+  # $gc https://github.com/chrisbra/Colorizer
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
@@ -56,6 +57,12 @@ if [ -d $packFolder ]; then cd $packFolder
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
+packFolder="neovim/opt"
+if [ -d $packFolder ]; then cd $packFolder
+  $gc https://github.com/RRethy/vim-hexokinase
+  cd ../..
+else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
+
 packFolder="other/start"
 if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/AndrewRadev/bufferize.vim
@@ -68,7 +75,7 @@ if [ -d $packFolder ]; then cd $packFolder
   # $gc https://github.com/maxbrunsfeld/vim-yankstack
   # sudo rm -r vim-yankstack
   # $gc https://github.com/wellle/targets.vim
-  $gc https://github.com/unblevable/quick-scope
+  # $gc https://github.com/unblevable/quick-scope
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
