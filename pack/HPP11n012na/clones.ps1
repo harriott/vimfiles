@@ -17,6 +17,7 @@ Function tryPath {
   else { "Sorry, $($args[0]) ain't there..." }
   }
 
+cd ..
 tryPath ft\opt
 if ( $goodPath ){
 
@@ -71,17 +72,19 @@ if ( $goodPath ){
 tryPath layout\start
 if ( $goodPath ){
 
-  # gicl https://github.com/junegunn/vim-easy-align
   # gicl https://github.com/bling/vim-airline
   # gicl https://github.com/drmikehenry/vim-fontsize
-  # gicl https://github.com/mattn/calendar-vim
-  # gicl https://github.com/morhetz/gruvbox
   # gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
-  # gicl https://github.com/vim-airline/vim-airline-themes
-  # gicl https://github.com/vim-scripts/gitignore.vim
+  # gicl https://github.com/junegunn/vim-easy-align
+  # gicl https://github.com/mattn/calendar-vim
   # gicl https://github.com/mhinz/vim-startify
   # gicl https://github.com/svermeulen/vim-colors-tomorrow
-  gicl https://github.com/unblevable/quick-scope
+  # gicl https://github.com/unblevable/quick-scope
+  # gicl https://github.com/vim-airline/vim-airline-themes
+  # gicl https://github.com/vim-scripts/gitignore.vim
+
+  # gicl https://github.com/altercation/vim-colors-solarized
+  # rirf vim-colors-solarized
 
   # gicl https://github.com/arcticicestudio/nord-vim
   # rirf nord-vim
@@ -89,8 +92,8 @@ if ( $goodPath ){
   # gicl https://github.com/mhinz/vim-janah
   # rirf vim-janah
 
-  # gicl https://github.com/altercation/vim-colors-solarized
-  # rirf vim-colors-solarized
+  # gicl https://github.com/morhetz/gruvbox
+  # rirf gruvbox
 
   # gicl https://github.com/ntpeters/vim-better-whitespace
   # rirf vim-better-whitespace
@@ -151,5 +154,6 @@ if ( $goodPath ){
 
   cd ..\.. }
 
-gci */*/* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all-MSW10.txt
+cd $PSScriptRoot
+gci ..\*\*\* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all.txt
 

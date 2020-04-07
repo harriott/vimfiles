@@ -5,22 +5,26 @@
 
 # List the plugins:
 #
-# PS> gci */*/* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all-MSW10.txt
 # strip down just to filenames in gVim: %s#\S\{-}\\##g
 #
 # PS> packs
 
-gci */*/* |
+gci ..\*\*\* |
 foreach{
   $dn=$_.basename
-  [System.Console]::BackgroundColor = 'DarkCyan'
-  [System.Console]::ForegroundColor = 'White'
-  echo $dn
-  [System.Console]::ResetColor()
-  cd $_
-  git pull origin master
-  cd ..
+  if ($dn -ne (Split-Path $PSScriptRoot)) {
+    "$dn"
+    # [System.Console]::BackgroundColor = 'DarkCyan'
+    # [System.Console]::ForegroundColor = 'White'
+    # echo $dn
+    # [System.Console]::ResetColor()
+    # cd $_
+    # git pull origin master
+    # cd ..
+  }
 }
-cd ..\..
+cd ..\
 
-gci */*/* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all-MSW10.txt
+cd $PSScriptRoot
+gci ..\*\*\* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all.txt
+
