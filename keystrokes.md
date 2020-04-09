@@ -149,6 +149,39 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	<leader>tc          => (mapped to) ColorToggle (by colorizer) and files open fast when off
     :packadd colorizer  => load the plugin from an opt directory
 
+### test
+`pack/neovim/opt/vim-hexokinase/test_colours.txt`
+
+#### cterm-colors
+    NR-16   NR-8    COLOR NAME
+    0       0       Black
+    1       4       DarkBlue
+    2       2       DarkGreen
+    3       6       DarkCyan
+    4       1       DarkRed
+    5       5       DarkMagenta
+    6       3       Brown, DarkYellow
+    7       7       LightGray, LightGrey, Gray, Grey
+    8       0*      DarkGray, DarkGrey
+    9       4*      Blue, LightBlue
+    10      2*      Green, LightGreen
+    11      6*      Cyan, LightCyan
+    12      1*      Red, LightRed
+    13      5*      Magenta, LightMagenta
+    14      3*      Yellow, LightYellow
+    15      7*      White
+
+#### gui-colors
+    Red         LightRed        DarkRed
+    Green       LightGreen      DarkGreen       SeaGreen
+    Blue        LightBlue       DarkBlue        SlateBlue
+    Cyan        LightCyan       DarkCyan
+    Magenta     LightMagenta    DarkMagenta
+    Yellow      LightYellow     Brown           DarkYellow
+    Gray        LightGray       DarkGray
+    Black       White
+    Orange      Purple          Violet
+
 # Vim
 	@:  => repeat last command-line
 	K   => brings up a man page (if there is one) for word under cursor
