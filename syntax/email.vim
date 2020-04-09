@@ -24,8 +24,8 @@ syn match heading2 '^=\{4} .* =\{4}$'
 syn match heading3 '^=\{2} .* =\{2}$'
 
 " the guifg's are best checked here with hexokinase
-hi def heading1 term=bold cterm=bold gui=bold guifg=Magenta
-hi def heading2 term=bold cterm=bold gui=bold guifg=Yellow
+hi def heading1 term=bold cterm=bold gui=bold guifg=LightGreen
+hi def heading2 term=bold cterm=bold gui=bold guifg=Violet
 hi def heading3 term=bold cterm=bold gui=bold guifg=Orange
 
 " Weblinks:
