@@ -1,12 +1,9 @@
-" Language:	email
+" Language:	mutt aliases file
 " Maintainer: Joseph Harriott
 " Last Change: Sun 12 Apr 2020
 
-" The intention here is to have a simple means for writing headings in emails,
-" and with the bonus of highlighting hyperlinks.
-
 " This file should be in your vimfiles/syntax folder,
-" and you might want to (autocmd BufRead,BufNewFile) setlocal ft=email.
+"  set filetype=muttaliases
 
 " This syntax file is intended to work with my  ../ftplugin/email.vim
 "

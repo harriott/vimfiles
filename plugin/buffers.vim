@@ -6,14 +6,6 @@
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
 
-" F2 to write all changed buffers:
-nnoremap <F2> :wa<CR>
-inoremap <F2> <Esc>:wa<CR>
-
-" F2 to write all changed buffers and reload the current one:
-nnoremap <S-F2> :wa<CR>:e<CR>
-inoremap <S-F2> <Esc>:wa<CR>:e<CR>
-
 " Split window to a buffer number:
 nnoremap <F5> :buffers<CR>:sbuffer<Space>
 
@@ -23,6 +15,20 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 " toggle relativenumber:
 nnoremap <silent><leader>n :set rnu! rnu? <CR>
 
+" buffer save mappings
+" --------------------
+" F2 to write all changed buffers:
+nnoremap <F2> :wa<CR>
+inoremap <F2> <Esc>:wa<CR>
+
+" Shift+F2 to write all changed buffers and reload the current one:
+nnoremap <S-F2> :wa<CR>:e<CR>
+inoremap <S-F2> <Esc>:wa<CR>:e<CR>
+
+" Ctrl+e to write all changed buffers and close the current one:
+nnoremap <C-e> :wa<CR>:e<CR>:bd<CR>
+inoremap <C-e> <Esc>:wa<CR>:e<CR>:bd<CR>
+
 " Special file treatments:
 " ------------------------
 " clear nnn selections:
@@ -30,6 +36,10 @@ autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
 
 " muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
 autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
+
+" neomutt temporary files (eg mail) finish
+autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <C-e> :wa<CR>:e<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <C-e> <Esc>:wa<CR>:e<CR>:q<CR>
 
 " pack msgFilterRules.dat "name" lines:
 autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
