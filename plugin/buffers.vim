@@ -36,8 +36,8 @@ inoremap <A-F2> <Esc>:wa<CR>:bd<CR>
 autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 
 " neomutt temporary files (eg mail) finish
-autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <A-e> :wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <A-e> <Esc>:wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <A-F2> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <A-F2> <Esc>:wa<CR>:q<CR>
 
 " nnn temporary file treatments
 " -----------------------------
