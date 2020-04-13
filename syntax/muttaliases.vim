@@ -2,7 +2,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Sun 12 Apr 2020
 
-" This file should be in your vimfiles/syntax folder,
+" This file should be in your vimfiles\syntax folder,
 "  set filetype=muttaliases
 
 " Quit when a (custom) syntax file was already loaded
