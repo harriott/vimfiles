@@ -25,22 +25,34 @@ inoremap <F2> <Esc>:wa<CR>
 nnoremap <S-F2> :wa<CR>:e<CR>
 inoremap <S-F2> <Esc>:wa<CR>:e<CR>
 
-" Ctrl+e to write all changed buffers and close the current one:
-nnoremap <C-e> :wa<CR>:e<CR>:bd<CR>
-inoremap <C-e> <Esc>:wa<CR>:e<CR>:bd<CR>
+" Alt+F2 to write all changed buffers and close the current one:
+nnoremap <A-F2> :wa<CR>:bd<CR>
+inoremap <A-F2> <Esc>:wa<CR>:bd<CR>
+" (only right-Ctrl+F2 works in Arch)
 
-" Special file treatments:
+" mutt file treatments:
 " ------------------------
-" clear nnn selections:
-autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
-
-" muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
+" required for muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
 autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 
 " neomutt temporary files (eg mail) finish
-autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <C-e> :wa<CR>:e<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <C-e> <Esc>:wa<CR>:e<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <A-e> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <A-e> <Esc>:wa<CR>:q<CR>
 
+" nnn temporary file treatments
+" -----------------------------
+" clear nnn selections:
+autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
+
+" finish an nnn file rename:
+autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <A-F2> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <A-F2> <Esc>:wa<CR>:q<CR>
+
+" turn off Hexokinase colouring:
+autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
+
+" Other special file treatments
+" -----------------------------
 " pack msgFilterRules.dat "name" lines:
 autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
 " unpack msgFilterRules.dat "name" lines:
