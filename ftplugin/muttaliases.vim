@@ -6,5 +6,5 @@
 "  set filetype=muttaliases
 
 " sort
-nnoremap <buffer> <F12> gg2jVG :sort u <cr>
+nnoremap <buffer> <F12> gg2jVG:sort u <cr>
 
