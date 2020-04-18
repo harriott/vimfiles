@@ -28,8 +28,8 @@ function! GrabWrite(toGrab)
   write
 endfunction
 
-" grab mappings
-" -------------
+" grab mappings (using Grabmaps() - to be changed to use GrabWrite)
+" -----------------------------------------------------------------
 function! GrabFmaps()
   call Grabmaps()
   v/<.\=.\=F.*>/d
@@ -66,8 +66,8 @@ function! Grabmaps()
 endfunction
 command! Grabmaps call Grabmaps()
 
-" grab configurations (somehow leaving empty buffers and sometimes throwing errors)
-" ---------------------------------------------------------------------------------
+" grab runtimepath (somehow leaving empty buffers and sometimes throwing errors)
+" ------------------------------------------------------------------------------
 function! TryCNB()
   if exists("g:loaded_close_buffers")
     CloseNamelessBuffers

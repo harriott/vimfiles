@@ -7,12 +7,10 @@
 
 set encoding=utf-8  " get this done early
 
-" set pastetoggle=<S-F3>
-
 " clear the registers b-z
 command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
 
-"----------
+" ---------
 " interface
 " ---------
 set linebreak number relativenumber
@@ -21,34 +19,66 @@ set wildmode=longest,full
 set wildmenu
 
 set listchars=eol:│,trail:·,tab:»·  "nicer settings for list mode:
-noremap <S-F3> :set list! list? <CR>
-inoremap <S-F3> <Esc>:set list! list? <CR>
+noremap <leader>ll :set list! list? <CR>
 
 set history=400
 set modelines=4
 
-nnoremap <Space> za  " handy for toggling folds open/closed
+" close window, including quickfix-window
+nnoremap <leader>x <C-W>c
 
-"-------------
+" toggle cursorcolumn:
+nnoremap <silent><leader>cc :set cuc! cuc? <CR>
+" toggle cursorline:
+nnoremap <silent><leader>cl :set cul! cul? <CR>
+
+" toggle folds open/closed
+nnoremap <Space> za
+
+" ------------
 " buffer stuff
 " ------------
 set autoread  " catch external changes to files
+set directory=$HOME/.vimswap// " swapfiles, centrally stored with complete paths
+" set undodir=$HOME/.vimundo// " undofiles, centrally stored with complete paths
 set hidden  " allows working on multiple files while not visually focussing on them all
-set winminheight=0  "reduce minimized windows to zero lines shown
+set winminheight=0  " reduce minimized windows to zero lines shown
 
-" undofiles, centrally stored with complete paths:
-set directory=$HOME/.vimundo//
+" -------------------------------
+" comma is colon (colon is comma)
+" -------------------------------
+"  https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
+nnoremap : ,
+xnoremap : ,
+onoremap : ,
+"  these require use of noremap when trying to acces : generically
 
-" swapfiles, centrally stored with complete paths:
-set directory=$HOME/.vimswap//
+nnoremap , :
+xnoremap , :
+onoremap , :
+"  any other mappings starting with , will slow this down
 
-"----------
+nnoremap g: g,
+nnoremap g, <NOP>
+
+nnoremap @, @:
+nnoremap @: <NOP>
+
+"  causes a slight lag in starting and ending macros
+nnoremap q, q:
+xnoremap q, q:
+
+nnoremap q: <NOP>
+xnoremap q: <NOP>
+
+" ---------
 " searching
 " ---------
 set ignorecase incsearch smartcase
 
-nmap <silent> ,/ :nohlsearch<CR>
-" for clearing search highlights
+" clear search highlights
+nmap <leader>/ :nohlsearch<CR>
 
-noremap <leader>q :cw<CR>
+" re-open the quickfix-window, eg to look again at results of vimgrep
+noremap <leader>q :copen<CR>
 

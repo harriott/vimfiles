@@ -21,26 +21,27 @@ let dokuwiki_comment=1
 " vim-gitgutter:
 let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
-noremap <S-F9> :GitGutterToggle<CR>
-inoremap <S-F9> <Esc>:GitGutterToggle<CR>
+noremap <leader>gg :GitGutterToggle<CR>
 
 let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
 let g:syntastic_python_checkers = ['flake8']
 
-" Files & buffers
-" ---------------
-noremap <silent> <F4> :BufExplorer<CR>
+" Files
+" -----
+if has('nvim')
+  function! QuitNoName()
+    if len(getbufinfo({'buflisted':1})) == 1
+      q!
+    endif
+  endfunction
+  noremap <S-F10> :call QuitNoName() <CR>
+  noremap <S-F22> :call QuitNoName() <CR>
+  " noremap <S-F10> :GitGutterToggle<CR>
+endif
 
-nmap <unique> <leader>pe <Plug>(PickerEdit)
-nmap <unique> <leader>pb <Plug>(PickerBuffer)
-
-" quickly close all but current buffer:
-nnoremap <S-F4> :Bdelete other<CR>
-" quickly close all but visible buffers:
-nnoremap <C-F4> :Bdelete hidden<CR>
-
-" to help CtrlP when in my Win7 %USERPROFILE%:
+" for CtrlP:
 set wildignore+=NTUSER.DAT*,*.lnk
+" - helps when in my Win7 %USERPROFILE%
 let g:ctrlp_cmd = 'CtrlPMRU'
 
 " for mru.vim:
@@ -49,10 +50,10 @@ let MRU_Window_Height = 15
 " which is overriden by this:
 let MRU_Use_Current_Window = 1
 
-" NERDTree:
-map <C-n> :NERDTreeToggle<CR>
+" for NERDTree:
+noremap <C-n> :NERDTreeToggle<CR>
 " Open it on buffer's directory:
-map <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+noremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
 
 " LanguageTool
 " ------------

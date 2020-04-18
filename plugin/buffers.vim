@@ -6,6 +6,16 @@
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
 
+noremap <silent> <F4> :BufExplorer<CR>
+
+nmap <unique> <leader>pe <Plug>(PickerEdit)
+nmap <unique> <leader>pb <Plug>(PickerBuffer)
+
+" quickly close all but current buffer:
+nnoremap <S-F4> :Bdelete other<CR>
+" quickly close all but visible buffers:
+nnoremap <C-F4> :Bdelete hidden<CR>
+
 " Split window to a buffer number:
 nnoremap <F5> :buffers<CR>:sbuffer<Space>
 
@@ -38,6 +48,7 @@ autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 " neomutt temporary files (eg mail) finish
 autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <A-F2> :wa<CR>:q<CR>
 autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <A-F2> <Esc>:wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal tw=0
 
 " nnn temporary file treatments
 " -----------------------------

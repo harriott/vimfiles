@@ -1,6 +1,5 @@
 " Sourced from my Arch Linux installation's ~/.vimrc
 
-let g:mySystem = 'AVT661'
 source $HOME/.vim/vimrc-GNULinux.vim
 
 " set gfn=DejaVu\ Sans\ Mono\ 10
@@ -16,7 +15,7 @@ endfunction
 " this function is only needed for markdown and TeX files
 
 " Open PCManFM on directory of current buffer
-nmap <F11> :cd %:p:h<CR><bar>:!pcmanfm &<CR><CR>
+noremap <F11> :cd %:p:h<CR><bar>:!pcmanfm &<CR><CR>
 imap <F11> <Esc><F11>
 
 " loads the matchit plugin if the required features are available
