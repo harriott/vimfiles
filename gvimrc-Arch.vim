@@ -21,11 +21,11 @@ call UpdateTWSDark()
 set cul
 
 " colour scheme toggle
-nnoremap <C-F5> :call TomorrowSolarized()<cr>
+nnoremap <C-F5> :call TomorrowSolarizedToggle()<cr>
 " assume starting with Solarized:
 let g:SolarizedScheme = 0
 " toggle with Solarized
-function! TomorrowSolarized()
+function! TomorrowSolarizedToggle()
   if g:SolarizedScheme
     colorscheme tomorrow
     set background=dark
