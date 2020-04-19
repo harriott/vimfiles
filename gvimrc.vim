@@ -33,8 +33,15 @@ nnoremap <S-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 
 set go-=T  "removes toolbar
 
+" have two installed DokuWiki files open ready configured:
+autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
+
+let g:solarized_contrast="high"    "default value is normal, for solarized & tomorrow
+
+" window sizes
+" ------------
 set lines=34  "gVim with tabs just fits in my N130 at 600pixel height
-if $AVT661 != ""
+if has('unix') && g:machine == 'AVT661'
   set lines=60
 endif
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
@@ -50,9 +57,4 @@ function! ColumnsToggle()
         let g:columnsdefault = 1
     endif
 endfunction
-
-" have two installed DokuWiki files open ready configured:
-autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
-
-let g:solarized_contrast="high"    "default value is normal, for solarized & tomorrow
 

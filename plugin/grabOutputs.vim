@@ -12,6 +12,16 @@ function! GrabCommands()
 endfunction
 command! GrabCommands call GrabCommands()
 
+function! GrabFnmaps()
+  exe 'edit' g:vimfiles.'/grabbed/FnMaps.txt'
+  normal! ggVGd
+  call GrabWrite("map|map!")
+  v/<.\=.\=F.*>/d
+  nohlsearch
+  write
+endfunction
+command! GrabFnmaps call GrabFnmaps()
+
 if has('unix')
   function! GrabLeaderUses()
     exe 'edit' g:vimfiles.'/grabbed/leaderUses.txt'
@@ -21,6 +31,16 @@ if has('unix')
   endfunction
   command! GrabLeaderUses call GrabLeaderUses()
 endif
+
+function! GrabPlugMaps()
+  exe 'edit' g:vimfiles.'/grabbed/PlugMaps.txt'
+  normal! ggVGd
+  call GrabWrite("map|map!")
+  v/<Plug>/d
+  nohlsearch
+  write
+endfunction
+command! GrabPlugMaps call GrabPlugMaps()
 
 " grab runtimepath
 function! GrabRtp()
@@ -65,31 +85,4 @@ function! GrabWrite(toGrab)
   normal! p
   write
 endfunction
-
-" grab mappings (using Grabmaps() - to be changed to use GrabWrite)
-" -----------------------------------------------------------------
-function! GrabFmaps()
-  call Grabmaps()
-  v/<.\=.\=F.*>/d
-  nohlsearch
-  sav! $HOME/vim-Fmaps.txt
-endfunction
-command! GrabFmaps call GrabFmaps()
-
-function! GrabPlugMaps()
-  call Grabmaps()
-  v/<Plug>/d
-  nohlsearch
-  sav! $HOME/vim-PlugMaps.txt
-endfunction
-command! GrabPlugMaps call GrabPlugMaps()
-
-function! Grabmaps()
-  " the heavy work
-  edit $HOME/vim-maps.txt
-  normal! VGd
-  call GrabWrite("map")
-  call GrabWrite("map!")
-endfunction
-command! Grabmaps call Grabmaps()
 
