@@ -3,6 +3,7 @@
 ./shell/start/vim-buffing-wheel/.git
 ./shell/start/open-browser.vim/.git
 ./shell/start/nerdtree/.git
+./shell/start/fzf.vim/.git
 ./shell/start/vim-open-url/.git
 ./neovim/opt/vim-hexokinase/.git
 ./other/start/close-buffers.vim/.git

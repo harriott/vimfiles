@@ -1,0 +1,261 @@
+
+    Name              Args Address Complete    Definition
+|   ALEComplete       0                        :call ale#completion#GetCompletions('ale-manual')
+|   ALEDetail         0                        :call ale#cursor#ShowCursorDetail()
+|   ALEDisable        0                        :call ale#toggle#Disable()
+|   ALEDisableBuffer  0                        :call ale#toggle#DisableBuffer(bufnr(''))
+|   ALEDocumentation  0                        :call ale#hover#ShowDocumentationAtCursor()
+|   ALEEnable         0                        :call ale#toggle#Enable()
+|   ALEEnableBuffer   0                        :call ale#toggle#EnableBuffer(bufnr(''))
+|   ALEFindReferences *                        :call ale#references#Find(<f-args>)
+    Name              Args Address Complete    Definition
+|   ALEComplete       0                        :call ale#completion#GetCompletions('ale-manual')
+|   ALEDetail         0                        :call ale#cursor#ShowCursorDetail()
+|   ALEDisable        0                        :call ale#toggle#Disable()
+|   ALEDisableBuffer  0                        :call ale#toggle#DisableBuffer(bufnr(''))
+|   ALEDocumentation  0                        :call ale#hover#ShowDocumentationAtCursor()
+|   ALEEnable         0                        :call ale#toggle#Enable()
+|   ALEEnableBuffer   0                        :call ale#toggle#EnableBuffer(bufnr(''))
+|   ALEFindReferences *                        :call ale#references#Find(<f-args>)
+|   ALEFirst          0                        :call ale#loclist_jumping#JumpToIndex(0)
+|   ALEFix            *            customlist  :call ale#fix#Fix(bufnr(''), '', <f-args>)
+|   ALEFixSuggest     0                        :call ale#fix#registry#Suggest(&filetype)
+|   ALEGoToDefinition 0                        :call ale#definition#GoTo({})
+|   ALEGoToDefinitionInSplit 0                 :call ale#definition#GoTo({'open_in': 'horizontal-split'})
+|   ALEGoToDefinitionInTab 0                   :call ale#definition#GoTo({'open_in': 'tab'})
+|   ALEGoToDefinitionInVSplit 0                :call ale#definition#GoTo({'open_in': 'vertical-split'})
+|   ALEGoToTypeDefinition 0                    :call ale#definition#GoToType({})
+|   ALEGoToTypeDefinitionInSplit 0             :call ale#definition#GoToType({'open_in': 'horizontal-spli
+|   ALEGoToTypeDefinitionInTab 0               :call ale#definition#GoToType({'open_in': 'tab'})
+|   ALEGoToTypeDefinitionInVSplit 0            :call ale#definition#GoToType({'open_in': 'vertical-split'
+|   ALEHover          0                        :call ale#hover#ShowAtCursor()
+|   ALEInfo           0                        :call ale#debugging#Info()
+|   ALEInfoToClipboard 0                       :call ale#debugging#InfoToClipboard()
+|   ALEInfoToFile     1                        :call ale#debugging#InfoToFile(<f-args>)
+|   ALELast           0                        :call ale#loclist_jumping#JumpToIndex(-1)
+|   ALELint           0                        :call ale#Queue(0, 'lint_file')
+|   ALENext           *                        :call ale#loclist_jumping#WrapJump('after', <q-args>)
+|   ALENextWrap       0                        :call ale#loclist_jumping#Jump('after', 1)
+|   ALEOrganizeImports 0                       :call ale#organize_imports#Execute()
+|   ALEPrevious       *                        :call ale#loclist_jumping#WrapJump('before', <q-args>)
+|   ALEPreviousWrap   0                        :call ale#loclist_jumping#Jump('before', 1)
+|   ALERename         0                        :call ale#rename#Execute()
+|   ALEReset          0                        :call ale#toggle#Reset()
+|   ALEResetBuffer    0                        :call ale#toggle#ResetBuffer(bufnr(''))
+|   ALEStopAllLSPs    0                        :call ale#lsp#reset#StopAllLSPs()
+    ALESymbolSearch   1                        :call ale#symbol#Search(<q-args>)
+|   ALEToggle         0                        :call ale#toggle#Toggle()
+|   ALEToggleBuffer   0                        :call ale#toggle#ToggleBuffer(bufnr(''))
+!   AddTabularPattern +                        call AddTabularPattern(<q-args>, <bang>0)
+!   AddTabularPipeline +                       call AddTabularPipeline(<q-args>, <bang>0)
+    AirlineExtensions 0                        call s:airline_extensions()
+|   AirlineRefresh    0                        call s:airline_refresh()
+|   AirlineTheme      ?            customlist  call <SNR>38_airline_theme(<f-args>)
+|   AirlineToggle     0                        call s:airline_toggle()
+|   AirlineToggleWhitespace 0                  call airline#extensions#whitespace#toggle()
+    BufExplorer       0                        :call BufExplorer()
+    BufExplorerHorizontalSplit 0               :call BufExplorerHorizontalSplit()
+    BufExplorerVerticalSplit 0                 :call BufExplorerVerticalSplit()
+    Bufferize         *            command     call bufferize#Run(<q-args>)
+    BufferizeTimer    *            command     call bufferize#RunWithTimer(<q-args>)
+    CSinS             ?                        call StripStoreCurSel()
+    Calendar          *                        call calendar#show(0,<f-args>)
+    CalendarH         *                        call calendar#show(1,<f-args>)
+    CalendarT         *                        call calendar#show(2,<f-args>)
+    CalendarVR        *                        call calendar#show(3,<f-args>)
+    CapsLockOff       0                        wa | silent !python $HOME/.vim/XkbLockModifiers.py
+|   ClearAllCtrlPCaches 0                      cal ctrlp#clra()
+|   ClearCtrlPCache   0                        cal ctrlp#clr()
+!   CloseAllBuffers   0                        call s:CloseAllBuffers(<bang>0)
+!   CloseBuffers      0                        call s:CloseBuffersMenu(<bang>0)
+!   CloseBuffersMenu  0                        call s:CloseBuffersMenu(<bang>0)
+!   CloseHiddenBuffers 0                       call s:CloseHiddenBuffers(<bang>0)
+!   CloseNamelessBuffers 0                     call s:CloseNamelessBuffers(<bang>0)
+!   CloseOtherBuffers 0                        call s:CloseOtherBuffers(<bang>0)
+!   CloseSelectedBuffers 0                     call s:CloseSelectedBuffers(<bang>0)
+!   CloseThisBuffer   0                        call s:CloseThisBuffer(<bang>0)
+    CtrlP             ?            dir         cal ctrlp#init(0, { 'dir': <q-args> })
+|   CtrlPBookmarkDir  0                        cal ctrlp#init(ctrlp#bookmarkdir#id())
+!   CtrlPBookmarkDirAdd ?          dir         cal ctrlp#call('ctrlp#bookmarkdir#add', '<bang>', <q-args>
+    CtrlPBufTag       ?            buffer      cal ctrlp#init(ctrlp#buffertag#cmd(0, <q-args>))
+|   CtrlPBufTagAll    0                        cal ctrlp#init(ctrlp#buffertag#cmd(1))
+|   CtrlPBuffer       0                        cal ctrlp#init('buf')
+    CtrlPChange       ?            buffer      cal ctrlp#init(ctrlp#changes#cmd('fil', <q-args>))
+|   CtrlPChangeAll    0                        cal ctrlp#init(ctrlp#changes#cmd(1))
+|   CtrlPClearAllCaches 0                      cal ctrlp#clra()
+|   CtrlPClearCache   0                        cal ctrlp#clr()
+|   CtrlPCurFile      0                        cal ctrlp#init('fil', { 'mode': 'c' })
+|   CtrlPCurWD        0                        cal ctrlp#init('fil', { 'mode': '' })
+    CtrlPDir          ?            dir         cal ctrlp#init(ctrlp#dir#id(), { 'dir': <q-args> })
+    CtrlPLastMode     ?                        cal ctrlp#init(-1, { 'args': <q-args> })
+    CtrlPLine         ?            buffer      cal ctrlp#init(ctrlp#line#cmd('buf', <q-args>))
+    CtrlPMRUFiles     ?            dir         cal ctrlp#init('mru', { 'dir': <q-args> })
+|   CtrlPMixed        0                        cal ctrlp#init(ctrlp#mixed#id())
+|   CtrlPQuickfix     0                        cal ctrlp#init(ctrlp#quickfix#id())
+|   CtrlPRTS          0                        cal ctrlp#init(ctrlp#rtscript#id())
+|   CtrlPRoot         0                        cal ctrlp#init('fil', { 'mode': 'r' })
+|   CtrlPTag          0                        cal ctrlp#init(ctrlp#tag#id())
+|   CtrlPUndo         0                        cal ctrlp#init(ctrlp#undo#id())
+    DiffOrig          0                        vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | w
+    DoMatchParen      0                        call s:DoMatchParen()
+    EMCommandLineMap  *                        call EasyMotion#command_line#cmap([<f-args>])
+    EMCommandLineNoreMap *                     call EasyMotion#command_line#cnoremap([<f-args>])
+    EMCommandLineUnMap 1                       call EasyMotion#command_line#cunmap(<f-args>)
+!   EasyAlign         *    .                   <line1>,<line2>call easy_align#align(<bang>0, 0, 'command'
+|   Errors            0                        call SyntasticErrors()
+!|  Explore           *    0c ?    dir         call netrw#Explore(<count>,0,0+<bang>0,<q-args>)
+!   G                 ?    .  ?    customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0
+    GLVS              0                        call getscript#GetLatestVimScripts()
+    GTabularize       *    %       customlist  <line1>,<line2> call Tabularize(<q-args>, { 'mode': 'GTabu
+!|  Gbrowse           *    .       customlist  exe fugitive#BrowseCommand(<line1>, <count>, +"<range>", <
+!|  Gcd               ?            customlist  exe fugitive#Cd(<q-args>, 0)
+!   Gcgrep            ?    .  win  customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0
+!   Gclog             ?    .  ?    customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>
+!|  Gdelete           0            customlist  exe fugitive#DeleteCommand(<line1>, <count>, +"<range>", <
+!|  Gdiffsplit        *            customlist  exe fugitive#Diffsplit(1, <bang>0, "<mods>", <q-args>, [<f
+!|  Ge                *            customlist  exe fugitive#Open("edit<bang>", 0, "<mods>", <q-args>, [<f
+!|  Gedit             *            customlist  exe fugitive#Open("edit<bang>", 0, "<mods>", <q-args>, [<f
+    GetLatestVimScripts 0                      call getscript#GetLatestVimScripts()
+    GetScripts        0                        call getscript#GetLatestVimScripts()
+!   Ggrep             ?    .  win  customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0
+!|  Ghdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "<mods>", <q-args>, [<f
+!   Git               ?    .  ?    customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0
+|   GitGutter         0                        call gitgutter#process_buffer(bufnr(''), 1)
+|   GitGutterAll      0                        call gitgutter#all(1)
+|   GitGutterBufferDisable 0                   call gitgutter#buffer_disable()
+|   GitGutterBufferEnable 0                    call gitgutter#buffer_enable()
+|   GitGutterBufferToggle 0                    call gitgutter#buffer_toggle()
+|   GitGutterDebug    0                        call gitgutter#debug#debug()
+|   GitGutterDisable  0                        call gitgutter#disable()
+|   GitGutterEnable   0                        call gitgutter#enable()
+|   GitGutterFold     0                        call gitgutter#fold#toggle()
+|   GitGutterLineHighlightsDisable 0           call gitgutter#highlight#line_disable()
+|   GitGutterLineHighlightsEnable 0            call gitgutter#highlight#line_enable()
+|   GitGutterLineHighlightsToggle 0            call gitgutter#highlight#line_toggle()
+|   GitGutterLineNrHighlightsDisable 0         call gitgutter#highlight#linenr_disable()
+|   GitGutterLineNrHighlightsEnable 0          call gitgutter#highlight#linenr_enable()
+|   GitGutterLineNrHighlightsToggle 0          call gitgutter#highlight#linenr_toggle()
+|   GitGutterNextHunk 0    1c ?                call gitgutter#hunk#next_hunk(<count>)
+|   GitGutterPrevHunk 0    1c ?                call gitgutter#hunk#prev_hunk(<count>)
+|   GitGutterPreviewHunk 0                     call gitgutter#hunk#preview()
+|   GitGutterQuickFix 0                        call gitgutter#quickfix()
+|   GitGutterSignsDisable 0                    call gitgutter#sign#disable()
+|   GitGutterSignsEnable 0                     call gitgutter#sign#enable()
+|   GitGutterSignsToggle 0                     call gitgutter#sign#toggle()
+|   GitGutterStageHunk 0   %                   call gitgutter#hunk#stage(<line1>,<line2>)
+|   GitGutterToggle   0                        call gitgutter#toggle()
+|   GitGutterUndoHunk 0                        call gitgutter#hunk#undo()
+!|  Glcd              ?            customlist  exe fugitive#Cd(<q-args>, 1)
+!   Glgrep            ?    .  win  customlist  exe fugitive#Command(0, <count> > 0 ? <count> : 0, +"<rang
+!   Gllog             ?    .  ?    customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>
+!   Glog              ?    .  ?    customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>
+!|  Gmove             1            customlist  exe fugitive#MoveCommand(  <line1>, <count>, +"<range>", <
+!|  Gpedit            *            customlist  exe fugitive#Open("pedit", <bang>0, "<mods>", <q-args>, [<
+!|  Gr                *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <ba
+    GrabCommands      0                        call GrabCommands()
+    GrabFmaps         0                        call GrabFmaps()
+    GrabPlugMaps      0                        call GrabPlugMaps()
+    GrabRtp           0                        call GrabRtp()
+    GrabScriptnames   0                        call GrabScriptnames()
+    Grabmaps          0                        call Grabmaps()
+!|  Gread             *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <ba
+!|  Gremove           0            customlist  exe fugitive#RemoveCommand(<line1>, <count>, +"<range>", <
+!|  Grename           1            customlist  exe fugitive#RenameCommand(<line1>, <count>, +"<range>", <
+!|  Gsplit            *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? 
+!|  Gtabedit          *    .  tab  customlist  exe fugitive#Open((<count> >= 0 ? <count> : "")."tabedit",
+!|  Gvdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "vert <mods>", <q-args>
+!|  Gvsplit           *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? 
+!|  Gw                *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <b
+!|  Gwq               *            customlist  exe fugitive#WqCommand(   <line1>, <count>, +"<range>", <b
+!|  Gwrite            *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <b
+!|  Hexplore          *    0c ?    dir         call netrw#Explore(<count>,1,2+<bang>0,<q-args>)
+    IncSearchMap      *                        call call('s:key_mapping', map([<f-args>], 's:as_keymappin
+    IncSearchNoreMap  *                        call call('s:key_mapping', map([<f-args>], 's:as_keymappin
+    LP                *                        call   LogiPat(<q-args>,1)
+    LPE               +                        echomsg LogiPat(<q-args>)
+    LPF               +                        let  s:LogiPatFlags="<args>"
+    LPR               *                        call   LogiPat(<q-args>,1,"r")
+    LanguageToolCheck 0    %                   :call s:LanguageToolCheck(<line1>, <line2>)
+    LanguageToolClear 0                        :call s:LanguageToolClear()
+!|  Lexplore          *    0c ?    dir         call netrw#Lexplore(<count>,<bang>0,<q-args>)
+!   LiveEasyAlign     *    .                   <line1>,<line2>call easy_align#align(<bang>0, 1, 'command'
+    LogiPat           *                        call   LogiPat(<q-args>,1)
+    LogiPatFlags      +                        let  s:LogiPatFlags="<args>"
+    MANPAGER          0                        call s:ManPager() | delcommand MANPAGER
+    MRU               ?            customlist  call s:MRU_Cmd(<q-args>)
+    MatchDebug        0                        call matchit#Match_debug()
+!   MkVimball         +    .       file        call vimball#MkVimball(<line1>,<line2>,<bang>0,<f-args>)
+    Mru               ?            customlist  call s:MRU_Cmd(<q-args>)
+|   NERDTree          ?            dir         :call g:NERDTreeCreator.CreateTabTree('<args>')
+|   NERDTreeCWD       0                        call NERDTreeCWD()
+|   NERDTreeClose     0                        :call g:NERDTree.Close()
+|   NERDTreeFind      ?            file        call s:findAndRevealPath('<args>')
+|   NERDTreeFocus     0                        call NERDTreeFocus()
+|   NERDTreeFromBookmark 1         customlist  call g:NERDTreeCreator.CreateTabTree('<args>')
+|   NERDTreeMirror    0                        call g:NERDTreeCreator.CreateMirror()
+|   NERDTreeRefreshRoot 0                      call s:refreshRoot()
+|   NERDTreeToggle    ?            dir         :call g:NERDTreeCreator.ToggleTabTree('<args>')
+|   NERDTreeVCS       ?            dir         :call <SNR>123_CreateTabTreeVCS('<args>')
+    NetUserPass       *                        call NetUserPass(<f-args>)
+!   NetrwClean        0                        call netrw#Clean(<bang>0)
+    NetrwSettings     0                        call netrwSettings#NetrwSettings()
+!|  Nexplore          *                        call netrw#Explore(-1,0,0,<q-args>)
+    NoMatchParen      0                        call s:NoMatchParen()
+    Nread             *    1c ?                let s:svpos= winsaveview()|call netrw#NetRead(<count>,<f-a
+    Nsource           *                        let s:svpos= winsaveview()|call netrw#NetSource(<f-args>)|
+    Ntree             ?                        call netrw#SetTreetop(1,<q-args>)
+    Nwrite            *    %                   let s:svpos= winsaveview()|<line1>,<line2>call netrw#NetWr
+    OpenBrowser       +                        call openbrowser#_cmd_open(<q-args>)
+    OpenBrowserSearch +            customlist  call openbrowser#_cmd_search(<q-args>)
+    OpenBrowserSmartSearch +       customlist  call openbrowser#_cmd_smart_search(<q-args>)
+    OpenIn            +            file        call open_url#open_in(<f-args>)
+    OpenInChrome      1            file        OpenIn Google\ Chrome <q-args>
+    OpenURL           1                        call open_url#open(<q-args>)
+!|  Pexplore          *                        call netrw#Explore(-2,0,0,<q-args>)
+    RecoverPluginDisable 0                     :call s:Recover(0)
+    RecoverPluginEnable 0                      :call s:Recover(1)
+    RecoverPluginHelp 0                        :call recover#Help()
+    RmVimball         *            dir         call vimball#SaveSettings()|call vimball#RmVimball(<f-args
+|   SClose            0                        call startify#session_close()
+!|  SDelete           ?            customlist  call startify#session_delete(<bang>0, <f-args>)
+!|  SLoad             ?            customlist  call startify#session_load(<bang>0, <f-args>)
+!|  SSave             ?            customlist  call startify#session_save(<bang>0, <f-args>)
+!|  Sexplore          *    0c ?    dir         call netrw#Explore(<count>,1,0+<bang>0,<q-args>)
+    SolarizedOptions  0                        :call s:SolarizedOptions()
+|   Startify          0                        call startify#insane_in_the_membrane(0)
+|   StartifyDebug     0                        call startify#debug()
+    SuperTabHelp      0                        :call <SNR>53_SuperTabHelp()
+|   SyntasticCheck    *            custom      call SyntasticCheck(<f-args>)
+|   SyntasticInfo     ?            custom      call SyntasticInfo(<f-args>)
+    SyntasticJavacEditClasspath 0              runtime! syntax_checkers/java/*.vim | SyntasticJavacEditCl
+    SyntasticJavacEditConfig 0                 runtime! syntax_checkers/java/*.vim | SyntasticJavacEditCo
+|   SyntasticReset    0                        call SyntasticReset()
+|   SyntasticSetLoclist 0                      call SyntasticSetLoclist()
+|   SyntasticToggleMode 0                      call SyntasticToggleMode()
+|   TOhtml            0    %                   :call tohtml#Convert2HTML(<line1>, <line2>)
+    TableAddFormula   0                        call tablemode#spreadsheet#formula#Add()
+    TableEvalFormulaLine 0                     call tablemode#spreadsheet#formula#EvaluateFormulaLine()
+    TableModeDisable  0                        call tablemode#Disable()
+    TableModeEnable   0                        call tablemode#Enable()
+    TableModeRealign  0                        call tablemode#table#Realign('.')
+    TableModeToggle   0                        call tablemode#Toggle()
+!   TableSort         ?                        call tablemode#spreadsheet#Sort(<bang>0, <q-args>)
+    Tableize          ?    .                   <line1>,<line2>call tablemode#TableizeRange(<q-args>)
+    Tabularize        *    .       customlist  <line1>,<line2>call Tabularize(<q-args>)
+|   Texplore          *    0c ?    dir         call netrw#Explore(<count>,0,6        ,<q-args>)
+    ToggleBG          0                        :call s:TogBG()
+    ToggleBufExplorer 0                        :call ToggleBufExplorer()
+    TomorrowOptions   0                        :call s:TomorrowOptions()
+    TryCNB            0                        call TryCNB()
+    Underline         ?                        call s:Underline(<q-args>)
+|   UndotreeFocus     0                        :call undotree#UndotreeFocus()
+|   UndotreeHide      0                        :call undotree#UndotreeHide()
+|   UndotreeShow      0                        :call undotree#UndotreeShow()
+|   UndotreeToggle    0                        :call undotree#UndotreeToggle()
+    UseVimball        ?            dir         call vimball#Vimball(1,<f-args>)
+!|  Vexplore          *    0c ?    dir         call netrw#Explore(<count>,1,4+<bang>0,<q-args>)
+    VimFoldh          *                        <args>
+    VimballList       0                        call vimball#Vimball(0)
+    Vimuntar          ?            file        call tar#Vimuntar(<q-args>)
+    Vitalize          *            customlist  call vitalizer#command([<f-args>])
+    WipeReg           0                        for i in range(98,122) | silent! call setreg(nr2char(i), [

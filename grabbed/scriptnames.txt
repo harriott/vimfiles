@@ -1,0 +1,205 @@
+
+  1: /etc/vimrc
+  2: /usr/share/vim/vimfiles/archlinux.vim
+  3: ~/.vimrc
+  4: ~/.vim/vimrc-Arch.vim
+  5: ~/.vim/vimrc-GNULinux.vim
+  6: ~/.vim/vimrc_example.vim
+  7: /usr/share/vim/vim82/vimrc_example.vim
+  8: /usr/share/vim/vim82/defaults.vim
+  9: /usr/share/vim/vim82/syntax/syntax.vim
+ 10: /usr/share/vim/vim82/syntax/synload.vim
+ 11: /usr/share/vim/vim82/syntax/syncolor.vim
+ 12: /usr/share/vim/vim82/filetype.vim
+ 13: /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+ 14: /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+ 15: /usr/share/vim/vimfiles/ftdetect/mediawiki.vim
+ 16: /usr/share/vim/vimfiles/ftdetect/meson.vim
+ 17: /usr/share/vim/vim82/menu.vim
+ 18: /usr/share/vim/vim82/lang/menu_en_gb.utf-8.vim
+ 19: /usr/share/vim/vim82/lang/menu_en_gb.latin1.vim
+ 20: /usr/share/vim/vim82/autoload/paste.vim
+ 21: /usr/share/vim/vim82/ftplugin.vim
+ 22: /usr/share/vim/vim82/indent.vim
+ 23: ~/.vim/vimrc.vim
+ 24: ~/.vim/pack/layout/start/vim-colors-tomorrow/colors/tomorrow.vim
+ 25: ~/.vim/pack/layout/opt/vim-ShowTrailingWhitespace/plugin/ShowTrailingWhitespace.vim
+ 26: ~/.vim/plugin/buffers.vim
+ 27: ~/.vim/plugin/dates.vim
+ 28: ~/.vim/plugin/grabOutputs.vim
+ 29: ~/.vim/plugin/grepping.vim
+ 30: ~/.vim/plugin/plugins.vim
+ 31: ~/.vim/plugin/shell.vim
+ 32: ~/.vim/plugin/textFormat.vim
+ 33: ~/.vim/plugin/textSearch.vim
+ 34: /usr/share/vim/vimfiles/plugin/EasyMotion.vim
+ 35: /usr/share/vim/vimfiles/plugin/LanguageTool.vim
+ 36: /usr/share/vim/vimfiles/plugin/NERD_commenter.vim
+ 37: /usr/share/vim/vimfiles/plugin/Tabular.vim
+ 38: /usr/share/vim/vimfiles/plugin/airline-themes.vim
+ 39: /usr/share/vim/vimfiles/plugin/airline.vim
+ 40: /usr/share/vim/vimfiles/autoload/airline/init.vim
+ 41: /usr/share/vim/vimfiles/autoload/airline/parts.vim
+ 42: /usr/share/vim/vimfiles/autoload/airline/util.vim
+ 43: /usr/share/vim/vimfiles/plugin/ale.vim
+ 44: /usr/share/vim/vimfiles/autoload/ale/balloon.vim
+ 45: /usr/share/vim/vimfiles/autoload/ale/events.vim
+ 46: /usr/share/vim/vimfiles/plugin/bufexplorer.vim
+ 47: /usr/share/vim/vimfiles/plugin/calendar.vim
+ 48: /usr/share/vim/vimfiles/plugin/ctrlp.vim
+ 49: /usr/share/vim/vimfiles/autoload/ctrlp/mrufiles.vim
+ 50: /usr/share/vim/vimfiles/plugin/fzf.vim
+ 51: /usr/share/vim/vimfiles/plugin/gitgutter.vim
+ 52: /usr/share/vim/vimfiles/autoload/gitgutter/utility.vim
+ 53: /usr/share/vim/vimfiles/autoload/gitgutter/highlight.vim
+ 54: /usr/share/vim/vimfiles/plugin/recover.vim
+ 55: /usr/share/vim/vimfiles/plugin/supertab.vim
+ 56: /usr/share/vim/vimfiles/plugin/surround.vim
+ 57: /usr/share/vim/vimfiles/plugin/syntastic/autoloclist.vim
+ 58: /usr/share/vim/vimfiles/plugin/syntastic/balloons.vim
+ 59: /usr/share/vim/vimfiles/plugin/syntastic/checker.vim
+ 60: /usr/share/vim/vimfiles/plugin/syntastic/cursor.vim
+ 61: /usr/share/vim/vimfiles/plugin/syntastic/highlighting.vim
+ 62: /usr/share/vim/vimfiles/plugin/syntastic/loclist.vim
+ 63: /usr/share/vim/vimfiles/plugin/syntastic/modemap.vim
+ 64: /usr/share/vim/vimfiles/plugin/syntastic/notifiers.vim
+ 65: /usr/share/vim/vimfiles/plugin/syntastic/registry.vim
+ 66: /usr/share/vim/vimfiles/plugin/syntastic/signs.vim
+ 67: /usr/share/vim/vimfiles/plugin/syntastic.vim
+ 68: /usr/share/vim/vimfiles/autoload/syntastic/util.vim
+ 69: /usr/share/vim/vimfiles/plugin/table-mode.vim
+ 70: /usr/share/vim/vimfiles/plugin/togglebg.vim
+ 71: ~/.vim/pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim
+ 72: /usr/share/vim/vimfiles/plugin/undotree.vim
+ 73: /usr/share/vim/vimfiles/plugin/vitalizer.vim
+ 74: /usr/share/vim/vim82/plugin/getscriptPlugin.vim
+ 75: /usr/share/vim/vim82/plugin/gzip.vim
+ 76: /usr/share/vim/vim82/plugin/logiPat.vim
+ 77: /usr/share/vim/vim82/plugin/manpager.vim
+ 78: /usr/share/vim/vim82/plugin/matchparen.vim
+ 79: /usr/share/vim/vim82/plugin/netrwPlugin.vim
+ 80: /usr/share/vim/vim82/plugin/rrhelper.vim
+ 81: /usr/share/vim/vim82/plugin/spellfile.vim
+ 82: /usr/share/vim/vim82/plugin/tarPlugin.vim
+ 83: /usr/share/vim/vim82/plugin/tohtml.vim
+ 84: /usr/share/vim/vim82/plugin/vimballPlugin.vim
+ 85: /usr/share/vim/vim82/plugin/zipPlugin.vim
+ 86: /usr/share/vim/vim82/pack/dist/opt/matchit/plugin/matchit.vim
+ 87: ~/.vim/pack/ft/start/vim-base64/plugin/base64.vim
+ 88: ~/.vim/pack/ft/start/vim-pandoc-syntax/plugin/pandoc-syntax-check.vim
+ 89: ~/.vim/pack/ft/start/vim-ps1/ftdetect/ps1.vim
+ 90: ~/.vim/pack/ft/start/vim-ps1/ftdetect/ps1xml.vim
+ 91: ~/.vim/pack/ft/start/vim-ps1/ftdetect/xml.vim
+ 92: ~/.vim/pack/git/start/vim-fugitive/plugin/fugitive.vim
+ 93: ~/.vim/pack/git/start/vim-fugitive/ftdetect/fugitive.vim
+ 94: ~/.vim/pack/git/start/vim-rhubarb/plugin/rhubarb.vim
+ 95: ~/.vim/pack/layout/start/gitignore.vim/ftdetect/gitignore.vim
+ 96: ~/.vim/pack/layout/start/vim-easy-align/plugin/easy_align.vim
+ 97: ~/.vim/pack/layout/start/vim-fontsize/plugin/fontsize.vim
+ 98: ~/.vim/pack/layout/start/vim-mbsync/ftdetect/mbsync.vim
+ 99: ~/.vim/pack/layout/start/vim-startify/plugin/startify.vim
+100: ~/.vim/pack/other/start/bufferize.vim/plugin/bufferize.vim
+101: ~/.vim/pack/other/start/close-buffers.vim/plugin/close-buffers.vim
+102: ~/.vim/pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim
+103: ~/.vim/pack/other/start/incsearch.vim/plugin/incsearch.vim
+104: ~/.vim/pack/other/start/quick-scope/plugin/quick_scope.vim
+105: ~/.vim/pack/other/start/targets.vim/plugin/targets.vim
+106: ~/.vim/pack/other/start/vim-visual-star-search/plugin/visual-star-search.vim
+107: ~/.vim/pack/shell/start/fzf.vim/plugin/fzf.vim
+108: ~/.vim/pack/shell/start/mru/plugin/mru.vim
+109: ~/.vim/pack/shell/start/nerdtree/plugin/NERD_tree.vim
+110: ~/.vim/pack/shell/start/nerdtree/autoload/nerdtree.vim
+111: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/path.vim
+112: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/menu_controller.vim
+113: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/menu_item.vim
+114: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/key_map.vim
+115: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/bookmark.vim
+116: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/tree_file_node.vim
+117: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/tree_dir_node.vim
+118: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/opener.vim
+119: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/creator.vim
+120: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/flag_set.vim
+121: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/nerdtree.vim
+122: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/ui.vim
+123: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/event.vim
+124: ~/.vim/pack/shell/start/nerdtree/lib/nerdtree/notifier.vim
+125: ~/.vim/pack/shell/start/nerdtree/autoload/nerdtree/ui_glue.vim
+126: ~/.vim/pack/shell/start/nerdtree/nerdtree_plugin/exec_menuitem.vim
+127: ~/.vim/pack/shell/start/nerdtree/nerdtree_plugin/fs_menu.vim
+128: ~/.vim/pack/shell/start/nerdtree/nerdtree_plugin/vcs.vim
+129: ~/.vim/pack/shell/start/open-browser.vim/plugin/openbrowser.vim
+130: ~/.vim/pack/shell/start/vim-buffing-wheel/plugin/buf.vim
+131: ~/.vim/pack/shell/start/vim-open-url/plugin/open_url.vim
+132: ~/.vim/pack/shell/start/vim-picker/plugin/picker.vim
+133: /usr/share/vim/vimfiles/after/plugin/TabularMaps.vim
+134: /usr/share/vim/vimfiles/autoload/tabular.vim
+135: ~/.gvimrc
+136: ~/.vim/gvimrc-Arch.vim
+137: ~/.vim/gvimrc.vim
+138: /usr/share/vim/vimfiles/autoload/airline/extensions.vim
+139: /usr/share/vim/vimfiles/autoload/airline/extensions/quickfix.vim
+140: /usr/share/vim/vimfiles/autoload/airline.vim
+141: /usr/share/vim/vimfiles/autoload/airline/extensions/netrw.vim
+142: /usr/share/vim/vimfiles/autoload/airline/extensions/term.vim
+143: /usr/share/vim/vimfiles/autoload/airline/section.vim
+144: /usr/share/vim/vimfiles/autoload/airline/highlighter.vim
+145: /usr/share/vim/vimfiles/autoload/airline/extensions/ctrlp.vim
+146: /usr/share/vim/vimfiles/autoload/airline/extensions/undotree.vim
+147: /usr/share/vim/vimfiles/autoload/airline/extensions/hunks.vim
+148: /usr/share/vim/vimfiles/autoload/airline/extensions/vista.vim
+149: /usr/share/vim/vimfiles/autoload/airline/extensions/csv.vim
+150: /usr/share/vim/vimfiles/autoload/airline/extensions/branch.vim
+151: /usr/share/vim/vimfiles/autoload/airline/extensions/fugitiveline.vim
+152: /usr/share/vim/vimfiles/autoload/airline/extensions/syntastic.vim
+153: /usr/share/vim/vimfiles/autoload/airline/extensions/ale.vim
+154: /usr/share/vim/vimfiles/autoload/airline/extensions/whitespace.vim
+155: /usr/share/vim/vimfiles/autoload/airline/extensions/po.vim
+156: /usr/share/vim/vimfiles/autoload/airline/extensions/wordcount.vim
+157: /usr/share/vim/vimfiles/autoload/airline/extensions/keymap.vim
+158: /usr/share/vim/vimfiles/autoload/airline/themes/tomorrow.vim
+159: /usr/share/vim/vimfiles/autoload/airline/themes.vim
+160: /usr/share/vim/vimfiles/autoload/airline/builder.vim
+161: /usr/share/vim/vimfiles/autoload/airline/extensions/default.vim
+162: /usr/share/vim/vim82/syntax/vim.vim
+163: /usr/share/vim/vim82/syntax/lua.vim
+164: /usr/share/vim/vim82/syntax/perl.vim
+165: /usr/share/vim/vim82/syntax/pod.vim
+166: /usr/share/vim/vim82/syntax/python.vim
+167: ~/.vim/ftplugin/vim.vim
+168: /usr/share/vim/vim82/ftplugin/vim.vim
+169: /usr/share/vim/vim82/indent/vim.vim
+170: ~/.vim/pack/layout/opt/vim-ShowTrailingWhitespace/autoload/ShowTrailingWhitespace.vim
+171: ~/.vim/pack/layout/opt/vim-ShowTrailingWhitespace/autoload/ShowTrailingWhitespace/Filter.vim
+172: /usr/share/vim/vimfiles/autoload/ale.vim
+173: /usr/share/vim/vimfiles/autoload/ale/util.vim
+174: /usr/share/vim/vimfiles/autoload/ale/linter.vim
+175: /usr/share/vim/vimfiles/ale_linters/vim/ale_custom_linting_rules.vim
+176: /usr/share/vim/vimfiles/ale_linters/vim/vint.vim
+177: /usr/share/vim/vimfiles/autoload/ale/engine.vim
+178: /usr/share/vim/vimfiles/autoload/ale/command.vim
+179: /usr/share/vim/vimfiles/autoload/ale/history.vim
+180: /usr/share/vim/vimfiles/autoload/ale/sign.vim
+181: /usr/share/vim/vimfiles/autoload/ale/list.vim
+182: /usr/share/vim/vimfiles/autoload/ale/highlight.vim
+183: /usr/share/vim/vimfiles/autoload/ale/cursor.vim
+184: /usr/share/vim/vimfiles/autoload/ctrlp/utils.vim
+185: /usr/share/vim/vimfiles/autoload/recover.vim
+186: /usr/share/vim/vimfiles/autoload/syntastic/log.vim
+187: /usr/share/vim/vimfiles/autoload/gitgutter.vim
+188: ~/.vim/pack/git/start/vim-fugitive/autoload/fugitive.vim
+189: /usr/share/vim/vimfiles/autoload/airline/async.vim
+190: /usr/share/vim/vimfiles/autoload/ale/statusline.vim
+191: /usr/share/vim/vim82/scripts.vim
+192: /usr/share/vim/vim82/ftplugin/text.vim
+193: /usr/share/vim/vimfiles/autoload/airline/extensions/wordcount/formatters/default.vim
+194: /usr/share/vim/vimfiles/ale_linters/text/alex.vim
+195: /usr/share/vim/vimfiles/autoload/ale/handlers/alex.vim
+196: /usr/share/vim/vimfiles/ale_linters/text/languagetool.vim
+197: /usr/share/vim/vimfiles/autoload/ale/handlers/languagetool.vim
+198: /usr/share/vim/vimfiles/ale_linters/text/proselint.vim
+199: /usr/share/vim/vimfiles/ale_linters/text/redpen.vim
+200: /usr/share/vim/vimfiles/ale_linters/text/textlint.vim
+201: /usr/share/vim/vimfiles/ale_linters/text/vale.vim
+202: /usr/share/vim/vimfiles/ale_linters/text/writegood.vim
+203: /usr/share/vim/vimfiles/autoload/ale/handlers/writegood.vim
+204: ~/.vim/pack/other/start/bufferize.vim/autoload/bufferize.vim

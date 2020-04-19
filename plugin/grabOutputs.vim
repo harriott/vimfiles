@@ -3,6 +3,8 @@
 " --------------------------------------------------------
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
+" g:vimfiles  should be set to your vim runtime folder
+
 function! GrabCommands()
   edit $HOME/vim-commands.txt
   normal! VGd
@@ -10,9 +12,19 @@ function! GrabCommands()
 endfunction
 command! GrabCommands call GrabCommands()
 
+if has('unix')
+  function! GrabLeaderUses()
+    exe 'edit' g:vimfiles.'/grabbed/leaderUses.txt'
+    normal! ggVGd
+    exe 'cd' g:vimfiles
+    call GrabWrite("!grep -ri '<leader>'")
+  endfunction
+  command! GrabLeaderUses call GrabLeaderUses()
+endif
+
 function! GrabScriptnames()
-  edit $HOME/vim-scriptnames.txt
-  normal! VGd
+  exe 'edit' g:vimfiles.'/grabbed/scriptnames.txt'
+  normal! ggVGd
   call GrabWrite("scriptnames")
 endfunction
 command! GrabScriptnames call GrabScriptnames()
@@ -21,7 +33,9 @@ function! GrabWrite(toGrab)
   " only to be called from within a parent function that has just before set up an empty buffer
   silent execute 'Bufferize ' . a:toGrab
   blast
-  normal! VGd
+  " remove spurious CRs
+  silent! exe '%s/\+$//'
+  normal! ggVGd
   bdelete
   blast
   normal! p

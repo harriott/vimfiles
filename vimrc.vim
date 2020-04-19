@@ -24,7 +24,7 @@ noremap <leader>ll :set list! list? <CR>
 set history=400
 set modelines=4
 
-" close window, including quickfix-window
+" close window, including quickfix-window and NerdTree navigation
 nnoremap <leader>x <C-W>c
 
 " toggle cursorcolumn:
@@ -48,28 +48,32 @@ set winminheight=0  " reduce minimized windows to zero lines shown
 " comma is colon (colon is comma)
 " -------------------------------
 "  https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
-nnoremap : ,
-xnoremap : ,
-onoremap : ,
-"  these require use of noremap when trying to acces : generically
+if 1
 
-nnoremap , :
-xnoremap , :
-onoremap , :
-"  any other mappings starting with , will slow this down
+  nnoremap : ,
+  xnoremap : ,
+  onoremap : ,
+  "  these require use of noremap when trying to acces : generically
 
-nnoremap g: g,
-nnoremap g, <NOP>
+  nnoremap , :
+  xnoremap , :
+  onoremap , :
+  "  any other mappings starting with , will slow this down
 
-nnoremap @, @:
-nnoremap @: <NOP>
+  nnoremap g: g,
+  nnoremap g, <NOP>
 
-"  causes a slight lag in starting and ending macros
-nnoremap q, q:
-xnoremap q, q:
+  nnoremap @, @:
+  nnoremap @: <NOP>
 
-nnoremap q: <NOP>
-xnoremap q: <NOP>
+  "  causes a slight lag in starting and ending macros, and in quitting NerdTree navigation
+  nnoremap q, q:
+  xnoremap q, q:
+
+  nnoremap q: <NOP>
+  xnoremap q: <NOP>
+
+endif
 
 " ---------
 " searching
@@ -77,7 +81,7 @@ xnoremap q: <NOP>
 set ignorecase incsearch smartcase
 
 " clear search highlights
-nmap <leader>/ :nohlsearch<CR>
+nmap <leader>nh :nohlsearch<CR>
 
 " re-open the quickfix-window, eg to look again at results of vimgrep
 noremap <leader>q :copen<CR>

@@ -1,0 +1,28 @@
+i  <F5>          <Plug>ToggleBackground
+i  <S-F9>      * <Esc>:GitGutterToggle<CR>
+i  <F8>        * <Esc>:CalendarH<CR>
+i  <S-F2>      * <Esc>:wa<CR>:e<CR>
+i  <F2>        * <Esc>:wa<CR>
+i  <F11>         <Esc><F11>
+i  <S-F3>      * <Esc>:set list! list? <CR>
+n  <C-F5>      * :call TomorrowSolarized()<CR>
+n  <F3>        * :call ColumnsToggle()<CR>
+n  <S-F1>      * :if &go=~#'m'|set go-=m|else|set go+=m|endif<CR>
+v  <F5>          <Plug>ToggleBackground
+v  <F6>          <Plug>(openbrowser-smart-search)
+n  <F6>          <Plug>(openbrowser-smart-search)
+n  <C-F3>      * 3GVG:LanguageToolCheck <CR>
+   <F10>         :cd %:p:h<CR>:NERDTreeCWD<CR>
+n  <C-F4>      * :Bdelete hidden<CR>
+n  <S-F4>      * :Bdelete other<CR>
+   <F4>        * :BufExplorer<CR>
+   <S-F9>      * :GitGutterToggle<CR>
+   <C-F9>      * :cd %:p:h<CR> :CSinS<CR> :vimgrep #<C-R>s#j **/*.md **/*.txt | cw <CR>
+n  <F9>        * :CSinS<CR>:Ggrep -i "<C-R>s" |cw
+   <C-F8>      * :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
+   <F8>        * :CalendarH<CR>
+n  <F5>        * :buffers<CR>:sbuffer<Space>
+n  <S-F2>      * :wa<CR>:e<CR>
+n  <F2>        * :wa<CR>
+n  <F11>         :cd %:p:h<CR>|:!pcmanfm &<CR><CR>
+   <S-F3>      * :set list! list? <CR>

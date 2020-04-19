@@ -1,0 +1,89 @@
+
+n  <Space>     * za  " handy for toggling folds open/closed
+x  #           * :<C-U>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
+x  *           * :<C-U>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
+n  ,cd         * :cd %:p:h<CR>:pwd<CR>
+n  ,/            :nohlsearch<CR>
+x  @(targets)  * :<C-U>call targets#do()<CR>
+o  @(targets)  * :<C-U>call targets#do()<CR>
+x  A             targets#e('x', 'A', 'A')
+o  A             targets#e('o', 'A', 'A')
+x  I             targets#e('x', 'I', 'I')
+o  I             targets#e('o', 'I', 'I')
+   Q             gq
+n  \l          * :set cul! cul? <CR>
+n  \o          * :set cuc! cuc? <CR>
+n  \p          * :call ParenthsToggle()<CR>
+v  \*          * :<C-U>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
+n  \*          * :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
+n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
+n  \btoa/      * :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
+v  \btoa       * :<C-U>call base64#v_btoa()<CR>
+v  \atob       * :<C-U>call base64#v_atob()<CR>
+n  \tm         * :<C-U>call tablemode#Toggle()<CR>
+n  \bv         & :BufExplorerVerticalSplit<CR>
+n  \bs         & :BufExplorerHorizontalSplit<CR>
+n  \bt         & :ToggleBufExplorer<CR>
+n  \e          * :call EasyMotionSearchToggle()<CR>
+n  \u          * :Underline
+n  \9          * :call PercentUnicode()<CR>
+n  \5          * :call UnicodePercent()<CR>
+n  \[          * :s/\m\[.\{-}]//g<CR>
+n  \-          * :Texplore<CR>
+n  \f          * :let@f=@%<CR>
+n  \n          * :set rnu! rnu? <CR>
+n  \zz         * :let &scrolloff=999-&scrolloff<CR>
+   \q          * :cw<CR>
+x  a             targets#e('x', 'a', 'a')
+o  a             targets#e('o', 'a', 'a')
+x  i             targets#e('x', 'i', 'i')
+o  i             targets#e('o', 'i', 'i')
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
+i  <C-Tab>     * <Tab>
+i  <Insert>    * <Esc> :CapsLockOff <CR>
+i  <C-U>       * <C-G>u<C-U>
+!  <S-Insert>    <MiddleMouse>
+n  <Space>     * za  " handy for toggling folds open/closed
+x  #           * :<C-U>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
+x  *           * :<C-U>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
+n  ,cd         * :cd %:p:h<CR>:pwd<CR>
+n  ,/            :nohlsearch<CR>
+x  @(targets)  * :<C-U>call targets#do()<CR>
+o  @(targets)  * :<C-U>call targets#do()<CR>
+x  A             targets#e('x', 'A', 'A')
+o  A             targets#e('o', 'A', 'A')
+x  I             targets#e('x', 'I', 'I')
+o  I             targets#e('o', 'I', 'I')
+   Q             gq
+n  \l          * :set cul! cul? <CR>
+n  \o          * :set cuc! cuc? <CR>
+n  \p          * :call ParenthsToggle()<CR>
+v  \*          * :<C-U>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
+n  \*          * :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
+n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
+n  \btoa/      * :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
+v  \btoa       * :<C-U>call base64#v_btoa()<CR>
+v  \atob       * :<C-U>call base64#v_atob()<CR>
+n  \tm         * :<C-U>call tablemode#Toggle()<CR>
+n  \bv         & :BufExplorerVerticalSplit<CR>
+n  \bs         & :BufExplorerHorizontalSplit<CR>
+n  \bt         & :ToggleBufExplorer<CR>
+n  \e          * :call EasyMotionSearchToggle()<CR>
+n  \u          * :Underline
+n  \9          * :call PercentUnicode()<CR>
+n  \5          * :call UnicodePercent()<CR>
+n  \[          * :s/\m\[.\{-}]//g<CR>
+n  \-          * :Texplore<CR>
+n  \f          * :let@f=@%<CR>
+n  \n          * :set rnu! rnu? <CR>
+n  \zz         * :let &scrolloff=999-&scrolloff<CR>
+   \q          * :cw<CR>
+x  a             targets#e('x', 'a', 'a')
+o  a             targets#e('o', 'a', 'a')
+x  i             targets#e('x', 'i', 'i')
+o  i             targets#e('o', 'i', 'i')
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+   <C-N>         :NERDTreeToggle<CR>
+n  <Insert>    * :CapsLockOff <CR>
+   <S-Insert>    <MiddleMouse>

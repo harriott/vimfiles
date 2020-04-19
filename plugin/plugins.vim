@@ -55,8 +55,3 @@ noremap <C-n> :NERDTreeToggle<CR>
 " Open it on buffer's directory:
 noremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
 
-" LanguageTool
-" ------------
-" for my Scratch files:
-nnoremap <C-F3> 3GVG:LanguageToolCheck <CR>
-

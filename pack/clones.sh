@@ -59,7 +59,7 @@ else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
 packFolder="neovim/opt"
 if [ -d $packFolder ]; then cd $packFolder
-  $gc https://github.com/RRethy/vim-hexokinase
+  # $gc https://github.com/RRethy/vim-hexokinase
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
@@ -81,16 +81,18 @@ else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
 packFolder="shell/start"
 if [ -d $packFolder ]; then cd $packFolder
-  # $gc https://github.com/yegappan/mru
-  # $gc https://github.com/tyru/open-browser.vim
-  # sudo rm -r vim-buffing-wheel
-  # $gc https://github.com/harriott/vim-buffing-wheel
   # $gc https://github.com/dhruvasagar/vim-open-url
+  # $gc https://github.com/harriott/vim-buffing-wheel
+  # $gc https://github.com/junegunn/fzf.vim
   # $gc https://github.com/scrooloose/nerdtree
   # $gc https://github.com/srstevenson/vim-picker
+  # $gc https://github.com/tyru/open-browser.vim
+  # $gc https://github.com/yegappan/mru
+  # sudo rm -r vim-buffing-wheel
   cd ../..
 else echo -en "\e[1m no $packFolder \e[0m"; echo; fi
 
 find . -type d -name '*.git' > gits-ArchLinux.txt
 find . -mindepth 3 -maxdepth 3 -type d > all-ArchLinux.txt
+echo -e "Don't forget to \e[1m\e[95m :helptags ALL \e[0m"
 
