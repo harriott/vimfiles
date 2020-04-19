@@ -29,8 +29,21 @@ function! GrabScriptnames()
 endfunction
 command! GrabScriptnames call GrabScriptnames()
 
+function! GrabSimpleMaps()
+  exe 'edit' g:vimfiles.'/grabbed/simpleMaps.txt'
+  normal! ggVGd
+  call GrabWrite("map|map!")
+  silent! exe 'g/<.\=.\=F.*>/d'
+  silent! exe 'g/<Plug>/d'
+  silent! exe 'g/<SNR>/d'
+  g/ /d " non-breaking space
+  nohlsearch
+  write
+endfunction
+command! GrabSimpleMaps call GrabSimpleMaps()
+
 function! GrabWrite(toGrab)
-  " only to be called from within a parent function that has just before set up an empty buffer
+  " only to be called from within a parent function that has just before opened an empty buffer
   silent execute 'Bufferize ' . a:toGrab
   blast
   " remove spurious CRs
@@ -51,17 +64,6 @@ function! GrabFmaps()
   sav! $HOME/vim-Fmaps.txt
 endfunction
 command! GrabFmaps call GrabFmaps()
-
-function! GrabMyNonFmaps()
-  call Grabmaps()
-  g/<.\=.\=F.*>/d
-  g/<Plug>/d
-  g/<SNR>/d
-  g/ /d " non-breaking space
-  nohlsearch
-  sav! $HOME/vim-myNonFmaps.txt
-endfunction
-command! GrabMyNonFmaps call GrabMyNonFmaps()
 
 function! GrabPlugMaps()
   call Grabmaps()

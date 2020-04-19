@@ -1,0 +1,78 @@
+
+n  <Space>     * za
+x  #           * :<C-U>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
+x  *           * :<C-U>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
+o  ,           * :
+x  ,           * :
+n  ,           * :
+o  :           * ,
+x  :           * ,
+n  :           * ,
+x  @(targets)  * :<C-U>call targets#do()<CR>
+o  @(targets)  * :<C-U>call targets#do()<CR>
+n  @:          * <Nop>
+n  @,          * @:
+x  A             targets#e('o', 'A', 'A')
+o  A             targets#e('o', 'A', 'A')
+x  F           * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
+o  F           * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  F           * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
+x  I             targets#e('o', 'I', 'I')
+o  I             targets#e('o', 'I', 'I')
+   Q             gq
+x  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+o  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  \pt         * :call ParenthsToggle()<CR>
+v  \*          * :<C-U>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
+n  \*          * :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
+n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
+n  \btoa/      * :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
+v  \btoa       * :<C-U>call base64#v_btoa()<CR>
+v  \atob       * :<C-U>call base64#v_atob()<CR>
+n  \tm         * :<C-U>call tablemode#Toggle()<CR>
+n  \bv         & :BufExplorerVerticalSplit<CR>
+n  \bs         & :BufExplorerHorizontalSplit<CR>
+n  \bt         & :ToggleBufExplorer<CR>
+n  \e          * :call EasyMotionSearchToggle()<CR>
+n  \u          * :Underline
+n  \9          * :call PercentUnicode()<CR>
+n  \5          * :call UnicodePercent()<CR>
+n  \[          * :s/\m\[.\{-}]//g<CR>
+n  \2          * :%s//"/g|:%s//"/g<CR>
+n  \d          * :cd %:p:h<CR>:pwd<CR>
+n  \-          * :Texplore<CR>
+n  \f          * :let@f=@%<CR>
+   \gg         * :GitGutterToggle<CR>
+n  \n          * :set rnu! rnu? <CR>
+n  \zz         * :let &scrolloff=999-&scrolloff<CR>
+   \q          * :copen<CR>
+n  \nh           :nohlsearch<CR>
+n  \x          * <C-W>c
+   \ll         * :set list! list? <CR>
+x  a             targets#e('o', 'a', 'a')
+o  a             targets#e('o', 'a', 'a')
+x  f           * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+o  f           * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  f           * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  g,          * <Nop>
+n  g:          * g,
+x  i             targets#e('o', 'i', 'i')
+o  i             targets#e('o', 'i', 'i')
+x  q:          * <Nop>
+n  q:          * <Nop>
+x  q,          * q:
+n  q,          * q:
+x  t           * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
+o  t           * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  t           * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+   <C-N>       * :NERDTreeToggle<CR>
+n  <Insert>    * :CapsLockOff <CR>
+   <S-Insert>    <MiddleMouse>
+
+c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
+i  <C-Tab>     * <Tab>
+i  <Insert>    * <Esc> :CapsLockOff <CR>
+i  <C-U>       * <C-G>u<C-U>
+!  <S-Insert>    <MiddleMouse>

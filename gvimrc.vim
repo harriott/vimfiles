@@ -54,8 +54,8 @@ endfunction
 if exists("g:loaded_matchparen")
   autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
 endif
-" and <leader>p toggles it:
-nnoremap <leader>p :call ParenthsToggle()<cr>
+" and <leader>pt toggles it:
+nnoremap <leader>pt :call ParenthsToggle()<cr>
 let g:parenthesismatch = 0
 function! ParenthsToggle()
     if g:parenthesismatch
