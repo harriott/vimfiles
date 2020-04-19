@@ -22,6 +22,17 @@ if has('unix')
   command! GrabLeaderUses call GrabLeaderUses()
 endif
 
+" grab runtimepath
+function! GrabRtp()
+  exe 'edit' g:vimfiles.'/grabbed/runtimepath.txt'
+  normal! ggVGd
+  call GrabWrite("echo &runtimepath")
+  %s/,/\r/g
+  nohlsearch
+  write
+endfunction
+command! GrabRtp call GrabRtp()
+
 function! GrabScriptnames()
   exe 'edit' g:vimfiles.'/grabbed/scriptnames.txt'
   normal! ggVGd
@@ -81,26 +92,4 @@ function! Grabmaps()
   call GrabWrite("map!")
 endfunction
 command! Grabmaps call Grabmaps()
-
-" grab runtimepath (somehow leaving empty buffers and sometimes throwing errors)
-" ------------------------------------------------------------------------------
-function! TryCNB()
-  if exists("g:loaded_close_buffers")
-    CloseNamelessBuffers
-  endif
-endfunction
-command! TryCNB call TryCNB()
-
-" grab runtimepath
-function! GrabRtp()
-  redir @p
-    silent echo &runtimepath
-  redir END
-  new
-  normal! "pp
-  %s/,/\r/g
-  sav! $HOME/vim-runtimepath.txt
-  TryCNB
-endfunction
-command! GrabRtp call GrabRtp()
 

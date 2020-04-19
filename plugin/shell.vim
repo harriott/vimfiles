@@ -5,6 +5,9 @@
 "
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
+" fugitive
+
+
 " get filepath into register f
 nnoremap <leader>f :let@f=@%<CR>
 

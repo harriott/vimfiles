@@ -51,22 +51,6 @@ function! ColumnsToggle()
     endif
 endfunction
 
-if exists("g:loaded_matchparen")
-  autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
-endif
-" and <leader>pt toggles it:
-nnoremap <leader>pt :call ParenthsToggle()<cr>
-let g:parenthesismatch = 0
-function! ParenthsToggle()
-    if g:parenthesismatch
-        NoMatchParen
-        let g:parenthesismatch = 0
-    else
-		DoMatchParen
-        let g:parenthesismatch = 1
-    endif
-endfunction
-
 " have two installed DokuWiki files open ready configured:
 autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
 

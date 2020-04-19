@@ -78,11 +78,27 @@ endif
 " ---------
 " searching
 " ---------
-set ignorecase incsearch smartcase
-
 " clear search highlights
+if exists("g:loaded_matchparen")
+  autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
+endif
+" and <leader>pt toggles it:
+nnoremap <leader>pt :call ParenthsToggle()<cr>
+let g:parenthesismatch = 0
+function! ParenthsToggle()
+    if g:parenthesismatch
+        NoMatchParen
+        let g:parenthesismatch = 0
+    else
+		DoMatchParen
+        let g:parenthesismatch = 1
+    endif
+endfunction
+
 nmap <leader>nh :nohlsearch<CR>
 
 " re-open the quickfix-window, eg to look again at results of vimgrep
 noremap <leader>q :copen<CR>
+
+set ignorecase incsearch smartcase
 
