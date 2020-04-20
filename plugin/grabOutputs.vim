@@ -9,9 +9,10 @@
 " I've switched to using  bufferize.vim  here, which makes life simpler
 " but with the disadvantage that it can only safely be run once for each instance of vim.
 
-" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
-" To avoid trouble, run these functions via  ~/.vim/grabbed/grabMaps.sh "
-" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+" To avoid trouble, prefer running these functions via  ~/.vim/grabbed/grabMaps.sh
+" If you call one of these functions to find conditional mappings, relaunch vim.
+" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
 
 " g:vimfiles  should be set to your vim runtime folder
 
@@ -20,9 +21,8 @@ function! GrabCommands()
   normal! VGd
   call GrabWrite("command")
 endfunction
-command! GrabCommands call GrabCommands()
 
-function! GrabFnmaps()
+function! GrabFnMaps()
   exe 'edit' g:vimfiles.'/grabbed/FnMaps.txt'
   normal! ggVGd
   call GrabWrite("map|map!")
@@ -30,7 +30,6 @@ function! GrabFnmaps()
   nohlsearch
   write
 endfunction
-command! GrabFnmaps call GrabFnmaps()
 
 function! GrabPlugMaps()
   exe 'edit' g:vimfiles.'/grabbed/PlugMaps.txt'
@@ -40,7 +39,6 @@ function! GrabPlugMaps()
   nohlsearch
   write
 endfunction
-command! GrabPlugMaps call GrabPlugMaps()
 
 " grab runtimepath
 function! GrabRtp()
@@ -51,14 +49,12 @@ function! GrabRtp()
   nohlsearch
   write
 endfunction
-command! GrabRtp call GrabRtp()
 
 function! GrabScriptnames()
   exe 'edit' g:vimfiles.'/grabbed/scriptnames.txt'
   normal! ggVGd
   call GrabWrite("scriptnames")
 endfunction
-command! GrabScriptnames call GrabScriptnames()
 
 function! GrabSimpleMaps()
   exe 'edit' g:vimfiles.'/grabbed/simpleMaps.txt'
@@ -71,7 +67,6 @@ function! GrabSimpleMaps()
   nohlsearch
   write
 endfunction
-command! GrabSimpleMaps call GrabSimpleMaps()
 
 function! GrabWrite(toGrab)
   " only to be called from within a parent function that has just before opened an empty buffer

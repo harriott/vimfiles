@@ -1,0 +1,599 @@
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerEdit) :PickerEdit<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerSplit) :PickerSplit<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerTabedit) :PickerTabedit<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerVsplit) :PickerVsplit<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerBuffer) :PickerBuffer<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerTag) :PickerTag<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerStag) :PickerStag<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerBufferTag) :PickerBufferTag<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerHelp) :PickerHelp<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerListUserCommands) :PickerListUserCommands<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerEdit :PickerEdit<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerSplit :PickerSplit<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerTabedit :PickerTabedit<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerVsplit :PickerVsplit<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerBuffer :PickerBuffer<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerTag :PickerTag<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerStag :PickerStag<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerBufferTag :PickerBufferTag<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerHelp :PickerHelp<CR>
+../pack/shell/start/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>PickerListUserCommands :PickerListUserCommands<CR>
+../pack/shell/start/vim-picker/doc/picker.txt:vim-picker provides the following |<Plug>| mappings:
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerEdit)                  Execute :PickerEdit
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerSplit)                 Execute :PickerSplit
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerTabedit)               Execute :PickerTabedit
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerVsplit)                Execute :PickerVsplit
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerBuffer)                Execute :PickerBuffer
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerTag)                   Execute :PickerTag
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerStag)                  Execute :PickerStag
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerBufferTag)             Execute :PickerBufferTag
+../pack/shell/start/vim-picker/doc/picker.txt:<Plug>(PickerHelp)                  Execute :PickerHelp
+../pack/shell/start/vim-picker/README.md:vim-picker defines the following [`<Plug>`][plug-mappings] mappings:
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerEdit)`: Execute `:PickerEdit`.
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerSplit)`: Execute `:PickerSplit`.
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerTabedit)`: Execute `:PickerTabedit`.
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerVsplit)`: Execute `:PickerVsplit`.
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerBuffer)`: Execute `:PickerBuffer`.
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerTag)`: Execute `:PickerTag`.
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerStag)`: Execute `:PickerStag`.
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerBufferTag)`: Execute `:PickerBufferTag`.
+../pack/shell/start/vim-picker/README.md:- `<Plug>(PickerHelp)`: Execute `:PickerHelp`.
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>pe <Plug>(PickerEdit)
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>ps <Plug>(PickerSplit)
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>pt <Plug>(PickerTabedit)
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>pv <Plug>(PickerVsplit)
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>pb <Plug>(PickerBuffer)
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>p] <Plug>(PickerTag)
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>pw <Plug>(PickerStag)
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>po <Plug>(PickerBufferTag)
+../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>ph <Plug>(PickerHelp)
+../pack/shell/start/vim-picker/README.md:Note that these mappings now have parentheses (e.g. `<Plug>(PickerBuffer)`
+../pack/shell/start/vim-picker/README.md:rather than `<Plug>PickerBuffer`) to fix an issue whereby Vim would pause before
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:nnoremap <silent> <Plug>(openbrowser-open) :<C-u>call openbrowser#_keymap_open('n')<CR>
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:xnoremap <silent> <Plug>(openbrowser-open) :<C-u>call openbrowser#_keymap_open('v')<CR>
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:nnoremap <silent> <Plug>(openbrowser-search) :<C-u>call openbrowser#_keymap_search('n')<CR>
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:xnoremap <silent> <Plug>(openbrowser-search) :<C-u>call openbrowser#_keymap_search('v')<CR>
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:nnoremap <silent> <Plug>(openbrowser-smart-search) :<C-u>call openbrowser#_keymap_smart_search('n')<CR>
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:xnoremap <silent> <Plug>(openbrowser-smart-search) :<C-u>call openbrowser#_keymap_smart_search('v')<CR>
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:    nmenu <silent> PopUp.Open\ URL <Plug>(openbrowser-open)
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:    xmenu <silent> PopUp.Open\ URL <Plug>(openbrowser-open)
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:    nmenu <silent> PopUp.Open\ Word(s) <Plug>(openbrowser-search)
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:    xmenu <silent> PopUp.Open\ Word(s) <Plug>(openbrowser-search)
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:    nmenu <silent> PopUp.Open\ URL\ or\ Word(s) <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/plugin/openbrowser.vim:    xmenu <silent> PopUp.Open\ URL\ or\ Word(s) <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/autoload/vital/__openbrowser__/OpenBrowser.vim:" <Plug>(openbrowser-open)
+../pack/shell/start/open-browser.vim/autoload/vital/__openbrowser__/OpenBrowser.vim:" <Plug>(openbrowser-search)
+../pack/shell/start/open-browser.vim/autoload/vital/__openbrowser__/OpenBrowser.vim:" <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/autoload/openbrowser.vim:" <Plug>(openbrowser-open)
+../pack/shell/start/open-browser.vim/autoload/openbrowser.vim:" <Plug>(openbrowser-search)
+../pack/shell/start/open-browser.vim/autoload/openbrowser.vim:" <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/doc/tags:<Plug>(openbrowser-open)	openbrowser.txt	/*<Plug>(openbrowser-open)*
+../pack/shell/start/open-browser.vim/doc/tags:<Plug>(openbrowser-search)	openbrowser.txt	/*<Plug>(openbrowser-search)*
+../pack/shell/start/open-browser.vim/doc/tags:<Plug>(openbrowser-smart-search)	openbrowser.txt	/*<Plug>(openbrowser-smart-search)*
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	nmap gx <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	vmap gx <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	nmap map-you-like <Plug>(openbrowser-open)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	vmap map-you-like <Plug>(openbrowser-open)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	nmap map-you-like <Plug>(openbrowser-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	" Search selected word. vmap map-you-like <Plug>(openbrowser-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	nmap map-you-like <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	vmap map-you-like <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:n <Plug>(openbrowser-open)				*<Plug>(openbrowser-open)*
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:v <Plug>(openbrowser-open)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:n <Plug>(openbrowser-search)				*<Plug>(openbrowser-search)*
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:v <Plug>(openbrowser-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:n <Plug>(openbrowser-smart-search)		*<Plug>(openbrowser-smart-search)*
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	Call |<Plug>(openbrowser-open)| and if it fails,
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:v <Plug>(openbrowser-smart-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	Call |<Plug>(openbrowser-open)| and if it fails,
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	If you execute |<Plug>(openbrowser-open)| on URI like: >
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	If you execute |<Plug>(openbrowser-open)| on URI like: >
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	If you execute |<Plug>(openbrowser-open)| on URI like: >
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	This is same as |<Plug>(openbrowser-open)|.
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	This is same as |<Plug>(openbrowser-search)|.
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:	This is same as |<Plug>(openbrowser-smart-search)|.
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:- Add <Plug>(openbrowser-search)
+../pack/shell/start/open-browser.vim/doc/openbrowser.txt:- Add <Plug>(openbrowser-smart-search)
+../pack/shell/start/fzf.vim/plugin/fzf.vim:inoremap <expr> <plug>(fzf-complete-word)        fzf#vim#complete#word()
+../pack/shell/start/fzf.vim/plugin/fzf.vim:  inoremap <expr> <plug>(fzf-complete-path)      fzf#vim#complete#path('dir /s/b')
+../pack/shell/start/fzf.vim/plugin/fzf.vim:  inoremap <expr> <plug>(fzf-complete-file)      fzf#vim#complete#path('dir /s/b/a:-d')
+../pack/shell/start/fzf.vim/plugin/fzf.vim:  inoremap <expr> <plug>(fzf-complete-path)      fzf#vim#complete#path("find . -path '*/\.*' -prune -o -print \| sed '1d;s:^..::'")
+../pack/shell/start/fzf.vim/plugin/fzf.vim:  inoremap <expr> <plug>(fzf-complete-file)      fzf#vim#complete#path("find . -path '*/\.*' -prune -o -type f -print -o -type l -print \| sed 's:^..::'")
+../pack/shell/start/fzf.vim/plugin/fzf.vim:inoremap <expr> <plug>(fzf-complete-file-ag)     fzf#vim#complete#path('ag -l -g ""')
+../pack/shell/start/fzf.vim/plugin/fzf.vim:inoremap <expr> <plug>(fzf-complete-line)        fzf#vim#complete#line()
+../pack/shell/start/fzf.vim/plugin/fzf.vim:inoremap <expr> <plug>(fzf-complete-buffer-line) fzf#vim#complete#buffer_line()
+../pack/shell/start/fzf.vim/plugin/fzf.vim:nnoremap <silent> <plug>(fzf-maps-n) :<c-u>call fzf#vim#maps('n', 0)<cr>
+../pack/shell/start/fzf.vim/plugin/fzf.vim:inoremap <silent> <plug>(fzf-maps-i) <c-o>:call fzf#vim#maps('i', 0)<cr>
+../pack/shell/start/fzf.vim/plugin/fzf.vim:xnoremap <silent> <plug>(fzf-maps-x) :<c-u>call fzf#vim#maps('x', 0)<cr>
+../pack/shell/start/fzf.vim/plugin/fzf.vim:onoremap <silent> <plug>(fzf-maps-o) <c-c>:<c-u>call fzf#vim#maps('o', 0)<cr>
+../pack/shell/start/fzf.vim/autoload/fzf/vim.vim:nnoremap <plug>(-fzf-vim-do) :execute g:__fzf_command<cr>
+../pack/shell/start/fzf.vim/autoload/fzf/vim.vim:nnoremap <plug>(-fzf-/) /
+../pack/shell/start/fzf.vim/autoload/fzf/vim.vim:nnoremap <plug>(-fzf-:) :
+../pack/shell/start/fzf.vim/autoload/fzf/vim.vim:  let prefix = "\<plug>(-fzf-".a:type.')'
+../pack/shell/start/fzf.vim/autoload/fzf/vim.vim:    call feedkeys("\<plug>(-fzf-vim-do)")
+../pack/shell/start/fzf.vim/autoload/fzf/vim.vim:        \ '<Plug>', s:blue('<Plug>', 'SpecialKey'), 'g')
+../pack/shell/start/fzf.vim/autoload/fzf/vim.vim:inoremap <silent> <Plug>(-fzf-complete-trigger) <c-o>:call <sid>complete_trigger()<cr>
+../pack/shell/start/fzf.vim/autoload/fzf/vim.vim:  call feedkeys("\<Plug>(-fzf-complete-trigger)")
+../pack/shell/start/fzf.vim/autoload/fzf/vim/complete.vim:" <plug>(fzf-complete-path)
+../pack/shell/start/fzf.vim/autoload/fzf/vim/complete.vim:" <plug>(fzf-complete-file)
+../pack/shell/start/fzf.vim/autoload/fzf/vim/complete.vim:" <plug>(fzf-complete-file-ag)
+../pack/shell/start/fzf.vim/autoload/fzf/vim/complete.vim:" <plug>(fzf-complete-line)
+../pack/shell/start/fzf.vim/autoload/fzf/vim/complete.vim:" <plug>(fzf-complete-buffer-line)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-maps-n)               | Normal mode mappings
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-maps-i)               | Insert mode mappings
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-maps-x)               | Visual mode mappings
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-maps-o)               | Operator-pending mappings
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-complete-word)        |  `cat /usr/share/dict/words`
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-complete-path)        | Path completion using  `find`  (file + dir)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-complete-file)        | File completion using  `find`
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-complete-file-ag)     | File completion using  `ag`
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-complete-line)        | Line completion (all open buffers)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt: <plug>(fzf-complete-buffer-line) | Line completion (current buffer only)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt:    nmap <leader><tab> <plug>(fzf-maps-n)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt:    xmap <leader><tab> <plug>(fzf-maps-x)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt:    omap <leader><tab> <plug>(fzf-maps-o)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt:    imap <c-x><c-k> <plug>(fzf-complete-word)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt:    imap <c-x><c-f> <plug>(fzf-complete-path)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt:    imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+../pack/shell/start/fzf.vim/doc/fzf-vim.txt:    imap <c-x><c-l> <plug>(fzf-complete-line)
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-maps-n)`               | Normal mode mappings                      |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-maps-i)`               | Insert mode mappings                      |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-maps-x)`               | Visual mode mappings                      |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-maps-o)`               | Operator-pending mappings                 |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-complete-word)`        | `cat /usr/share/dict/words`               |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-complete-path)`        | Path completion using `find` (file + dir) |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-complete-file)`        | File completion using `find`              |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-complete-file-ag)`     | File completion using `ag`                |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-complete-line)`        | Line completion (all open buffers)        |
+../pack/shell/start/fzf.vim/README.md:| `<plug>(fzf-complete-buffer-line)` | Line completion (current buffer only)     |
+../pack/shell/start/fzf.vim/README.md:nmap <leader><tab> <plug>(fzf-maps-n)
+../pack/shell/start/fzf.vim/README.md:xmap <leader><tab> <plug>(fzf-maps-x)
+../pack/shell/start/fzf.vim/README.md:omap <leader><tab> <plug>(fzf-maps-o)
+../pack/shell/start/fzf.vim/README.md:imap <c-x><c-k> <plug>(fzf-complete-word)
+../pack/shell/start/fzf.vim/README.md:imap <c-x><c-f> <plug>(fzf-complete-path)
+../pack/shell/start/fzf.vim/README.md:imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+../pack/shell/start/fzf.vim/README.md:imap <c-x><c-l> <plug>(fzf-complete-line)
+../pack/shell/start/vim-open-url/plugin/open_url.vim:nnoremap <Plug>(open-url-browser) :OpenURL <cfile><CR>
+../pack/shell/start/vim-open-url/plugin/open_url.vim:xnoremap <Plug>(open-url-browser) :<C-U>OpenURL <C-R>=open_url#get_selection()<CR><CR>
+../pack/shell/start/vim-open-url/plugin/open_url.vim:nnoremap <Plug>(open-url-wiki-search) :OpenURL http://en.wikipedia.org/wiki/Special:Search?search=<cword><CR>
+../pack/shell/start/vim-open-url/plugin/open_url.vim:xnoremap <Plug>(open-url-wiki-search) :<C-U>OpenURL http://en.wikipedia.org/wiki/Special:Search?search=<C-R>=open_url#get_selection()<CR><CR>
+../pack/shell/start/vim-open-url/plugin/open_url.vim:nnoremap <Plug>(open-url-google-search) :OpenURL http://www.google.com/search?q=<cword><CR>
+../pack/shell/start/vim-open-url/plugin/open_url.vim:xnoremap <Plug>(open-url-google-search) :<C-U>OpenURL http://www.google.com/search?q=<C-R>=open_url#get_selection()<CR><CR>
+../pack/shell/start/vim-open-url/plugin/open_url.vim:  if !hasmapto('<Plug>(open-url-browser)', 'n')
+../pack/shell/start/vim-open-url/plugin/open_url.vim:    nmap gB <Plug>(open-url-browser)
+../pack/shell/start/vim-open-url/plugin/open_url.vim:  if !hasmapto('<Plug>(open-url-browser)', 'x')
+../pack/shell/start/vim-open-url/plugin/open_url.vim:    xmap gB <Plug>(open-url-browser)
+../pack/shell/start/vim-open-url/plugin/open_url.vim:  if !hasmapto('<Plug>(open-url-wiki-search)', 'n')
+../pack/shell/start/vim-open-url/plugin/open_url.vim:    nmap gW <Plug>(open-url-wiki-search)
+../pack/shell/start/vim-open-url/plugin/open_url.vim:  if !hasmapto('<Plug>(open-url-wiki-search)', 'x')
+../pack/shell/start/vim-open-url/plugin/open_url.vim:    xmap gW <Plug>(open-url-wiki-search)
+../pack/shell/start/vim-open-url/plugin/open_url.vim:  if !hasmapto('<Plug>(open-url-google-search)', 'n')
+../pack/shell/start/vim-open-url/plugin/open_url.vim:    nmap gG <Plug>(open-url-google-search)
+../pack/shell/start/vim-open-url/plugin/open_url.vim:  if !hasmapto('<Plug>(open-url-google-search)', 'x')
+../pack/shell/start/vim-open-url/plugin/open_url.vim:    xmap gG <Plug>(open-url-google-search)
+../pack/shell/start/vim-open-url/README.md:* `<Plug>(open-url-browser)`
+../pack/shell/start/vim-open-url/README.md:* `<Plug>(open-url-wiki-search)`
+../pack/shell/start/vim-open-url/README.md:* `<Plug>(open-url-google-search)`
+../pack/shell/start/vim-open-url/README.md:remapping `<Plug>` mappings (Default: `1`)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap <silent><expr> <Plug>(incsearch-forward)  incsearch#go({'command': '/'})
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap <silent><expr> <Plug>(incsearch-backward) incsearch#go({'command': '?'})
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap <silent><expr> <Plug>(incsearch-stay)     incsearch#go({'command': '/', 'is_stay': 1})
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:"     e.g. `<Plug>(incsearch-nohl)n` works but `n<Plug>(incsearch-nohl)` doesn't
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap <expr> <Plug>(incsearch-nohl)  incsearch#autocmd#auto_nohlsearch(1)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap <expr> <Plug>(incsearch-nohl0) incsearch#autocmd#auto_nohlsearch(0)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap <expr> <Plug>(incsearch-nohl2) incsearch#autocmd#auto_nohlsearch(2)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:map <Plug>(incsearch-nohl-n)  <Plug>(incsearch-nohl)<Plug>(_incsearch-n)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:map <Plug>(incsearch-nohl-N)  <Plug>(incsearch-nohl)<Plug>(_incsearch-N)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:map <Plug>(incsearch-nohl-*)  <Plug>(incsearch-nohl)<Plug>(_incsearch-*)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:map <Plug>(incsearch-nohl-#)  <Plug>(incsearch-nohl)<Plug>(_incsearch-#)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:map <Plug>(incsearch-nohl-g*) <Plug>(incsearch-nohl)<Plug>(_incsearch-g*)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:map <Plug>(incsearch-nohl-g#) <Plug>(incsearch-nohl)<Plug>(_incsearch-g#)
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap <expr> <Plug>(_incsearch-n)  g:incsearch#consistent_n_direction && !v:searchforward ? 'N' : 'n'
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap <expr> <Plug>(_incsearch-N)  g:incsearch#consistent_n_direction && !v:searchforward ? 'n' : 'N'
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap        <Plug>(_incsearch-*)  *
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap        <Plug>(_incsearch-#)  #
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap        <Plug>(_incsearch-g*) g*
+../pack/other/start/incsearch.vim/plugin/incsearch.vim:noremap        <Plug>(_incsearch-g#) g#
+../pack/other/start/incsearch.vim/autoload/vital/_incsearch/Over/String.vim:	return s:_split_keystring(a:str, "\\%(\<Plug>\\|<Over>\\)(.\\{-})\\zs\\|")
+../pack/other/start/incsearch.vim/autoload/vital/_incsearch/Over/Commandline/Modules/Execute.vim:	let map = printf("<Plug>(%s)", a:name)
+../pack/other/start/incsearch.vim/autoload/vital/_incsearch/Over/Commandline/Modules/Execute.vim:	call feedkeys(printf("\<Plug>(%s)", a:name))
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:"   :noremap <silent><expr> <Plug>(incsearch-forward)  incsearch#go({'command': '/'})
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:"" To handle recursive mapping, map command to <Plug>(_incsearch-dotrepeat)
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:  execute 'noremap' '<Plug>(_incsearch-dotrepeat)' a:cmd
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:  silent! call repeat#set("\<Plug>(_incsearch-dotrepeat)")
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap  <silent> <Plug>(_incsearch-winrestview) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap! <silent> <Plug>(_incsearch-winrestview) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:nnoremap <silent> <Plug>(_incsearch-winrestview) :<C-u>call winrestview(g:incsearch#_view)<CR>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:xnoremap <silent> <Plug>(_incsearch-winrestview) :<C-u>call winrestview(g:incsearch#_view)<CR>gv
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:    call feedkeys("\<Plug>(_incsearch-winrestview)", 'm')
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:      call feedkeys("\<Plug>(_incsearch-searchforward)", 'm')
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:    \   (s:U.is_visual(m) ? "\<Plug>(_incsearch-esc)" : ''),
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:    \   "\<Plug>(_incsearch-hlsearch)",
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:    \   "\<Plug>(_incsearch-searchforward)",
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:    \   (s:U.is_visual(m) ? "\<Plug>(_incsearch-gv)" : '')
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap  <silent> <Plug>(_incsearch-gv) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap! <silent> <Plug>(_incsearch-gv) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:nnoremap <silent> <Plug>(_incsearch-gv) gv
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap  <silent> <Plug>(_incsearch-esc) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap! <silent> <Plug>(_incsearch-esc) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:xnoremap <silent> <Plug>(_incsearch-esc) <Esc>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap  <silent> <Plug>(_incsearch-hlsearch) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap! <silent> <Plug>(_incsearch-hlsearch) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:nnoremap <silent> <Plug>(_incsearch-hlsearch) :<C-u>let &hlsearch=&hlsearch<CR>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:xnoremap <silent> <Plug>(_incsearch-hlsearch) :<C-u>let &hlsearch=&hlsearch<CR>gv
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap  <silent>       <Plug>(_incsearch-searchforward) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:noremap! <silent>       <Plug>(_incsearch-searchforward) <Nop>
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:nnoremap <silent><expr> <Plug>(_incsearch-searchforward) <SID>_searchforward_cmd()
+../pack/other/start/incsearch.vim/autoload/incsearch.vim:xnoremap <silent><expr> <Plug>(_incsearch-searchforward) <SID>_searchforward_cmd()
+../pack/other/start/incsearch.vim/autoload/incsearch/autocmd.vim:noremap  <silent><expr> <Plug>(_incsearch-nohlsearch) incsearch#autocmd#auto_nohlsearch(0)
+../pack/other/start/incsearch.vim/autoload/incsearch/autocmd.vim:noremap! <silent><expr> <Plug>(_incsearch-nohlsearch) incsearch#autocmd#auto_nohlsearch(0)
+../pack/other/start/incsearch.vim/autoload/incsearch/autocmd.vim:nnoremap <silent>       <Plug>(_incsearch-nohlsearch) :<C-u>nohlsearch<CR>
+../pack/other/start/incsearch.vim/autoload/incsearch/autocmd.vim:xnoremap <silent>       <Plug>(_incsearch-nohlsearch) :<C-u>nohlsearch<CR>gv
+../pack/other/start/incsearch.vim/autoload/incsearch/autocmd.vim:    \ , 'call feedkeys("\<Plug>(_incsearch-nohlsearch)", "m")'
+../pack/other/start/incsearch.vim/autoload/incsearch/util.vim:  let map = printf('<Plug>(%s)', name)
+../pack/other/start/incsearch.vim/autoload/incsearch/util.vim:    call feedkeys(printf("\<Plug>(%s)", name))
+../pack/other/start/incsearch.vim/test/question_pattern.vimspec:    map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/question_pattern.vimspec:    map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/question_pattern.vimspec:    map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/highlight.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/highlight.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/highlight.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/error_warning_emulation.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/error_warning_emulation.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/error_warning_emulation.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/default_behaviors.vim:map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/default_behaviors.vim:map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/default_behaviors.vim:map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/default_behaviors.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/default_behaviors.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/default_behaviors.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/cancel.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/cancel.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/cancel.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/n_and_N.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/n_and_N.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/n_and_N.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/scroll.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/scroll.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/scroll.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map n  <Plug>(incsearch-nohl-n)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map N  <Plug>(incsearch-nohl-N)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map *  <Plug>(incsearch-nohl-*)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map #  <Plug>(incsearch-nohl-#)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map g* <Plug>(incsearch-nohl-g*)
+../pack/other/start/incsearch.vim/test/autonohlsearch.vim:  map g# <Plug>(incsearch-nohl-g#)
+../pack/other/start/incsearch.vim/test/operator_pending_behavior.vim:map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/operator_pending_behavior.vim:map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/operator_pending_behavior.vim:map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/operator_pending_behavior.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/operator_pending_behavior.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/operator_pending_behavior.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/magic_option.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/magic_option.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/magic_option.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/history.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/history.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/history.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/register.vim:map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/register.vim:map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/register.vim:map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-forward)' , 'nvo'), "incsearch#go({'command': '/'})")
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-backward)', 'nvo'), "incsearch#go({'command': '?'})")
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-stay)'    , 'nvo'), "incsearch#go({'command': '/', 'is_stay': 1})")
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-nohl)', 'nvo'), 'incsearch#autocmd#auto_nohlsearch(1)')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-nohl0)', 'nvo'), 'incsearch#autocmd#auto_nohlsearch(0)')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-nohl-n)' , 'nvo'), '<Plug>(incsearch-nohl)<Plug>(_incsearch-n)')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-nohl-N)' , 'nvo'), '<Plug>(incsearch-nohl)<Plug>(_incsearch-N)')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-nohl-*)' , 'nvo'), '<Plug>(incsearch-nohl)<Plug>(_incsearch-*)')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-nohl-#)' , 'nvo'), '<Plug>(incsearch-nohl)<Plug>(_incsearch-#)')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-nohl-g*)', 'nvo'), '<Plug>(incsearch-nohl)<Plug>(_incsearch-g*)')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(incsearch-nohl-g#)', 'nvo'), '<Plug>(incsearch-nohl)<Plug>(_incsearch-g#)')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(_incsearch-n)' , 'nvo'), 'g:incsearch#consistent_n_direction && !v:searchforward ? ''N'' : ''n''')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(_incsearch-N)' , 'nvo'), 'g:incsearch#consistent_n_direction && !v:searchforward ? ''n'' : ''N''')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(_incsearch-*)' , 'nvo'), '*')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(_incsearch-#)' , 'nvo'), '#')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(_incsearch-g*)', 'nvo'), 'g*')
+../pack/other/start/incsearch.vim/test/default_settings.vim:  call s:assert.equals(maparg('<Plug>(_incsearch-g#)', 'nvo'), 'g#')
+../pack/other/start/incsearch.vim/test/nomagic.vim:map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/nomagic.vim:map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/nomagic.vim:map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/nomagic.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/nomagic.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/nomagic.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/lastpattern.vimspec:    map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/lastpattern.vimspec:    map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/lastpattern.vimspec:    map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/incremental_next_prev.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/incremental_next_prev.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/incremental_next_prev.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/visual_behavior.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/visual_behavior.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/visual_behavior.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/module.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/module.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/module.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/autocmd.vimspec:    map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/autocmd.vimspec:    map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/autocmd.vimspec:    map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/fold.vim:map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/fold.vim:map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/fold.vim:map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/fold.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/fold.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/fold.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/count.vim:map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/count.vim:map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/count.vim:map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/test.vimrc:map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/test.vimrc:map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/test.vimrc:map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/jumplist.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/jumplist.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/jumplist.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/insert_register.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/insert_register.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/insert_register.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/test/repetition.vim:  map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/test/repetition.vim:  map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/test/repetition.vim:  map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-backward)	incsearch.txt	/*<Plug>(incsearch-backward)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-forward)	incsearch.txt	/*<Plug>(incsearch-forward)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-nohl)	incsearch.txt	/*<Plug>(incsearch-nohl)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-nohl-#)	incsearch.txt	/*<Plug>(incsearch-nohl-#)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-nohl-N)	incsearch.txt	/*<Plug>(incsearch-nohl-N)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-nohl-g#)	incsearch.txt	/*<Plug>(incsearch-nohl-g#)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-nohl-gstar)	incsearch.txt	/*<Plug>(incsearch-nohl-gstar)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-nohl-n)	incsearch.txt	/*<Plug>(incsearch-nohl-n)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-nohl-star)	incsearch.txt	/*<Plug>(incsearch-nohl-star)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-nohl0)	incsearch.txt	/*<Plug>(incsearch-nohl0)*
+../pack/other/start/incsearch.vim/doc/tags:<Plug>(incsearch-stay)	incsearch.txt	/*<Plug>(incsearch-stay)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:						*<Plug>(incsearch-forward)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:						*<Plug>(incsearch-backward)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:						*<Plug>(incsearch-stay)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:		map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:		map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:		map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:    <Plug>(incsearch-forward):   Incremental searching forward
+../pack/other/start/incsearch.vim/doc/incsearch.txt:    <Plug>(incsearch-backward):  Incremental searching backward
+../pack/other/start/incsearch.vim/doc/incsearch.txt:    <Plug>(incsearch-stay):      It doesn't move the cursor unless you
+../pack/other/start/incsearch.vim/doc/incsearch.txt:<Plug>(incsearch-nohl)				*<Plug>(incsearch-nohl)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:<Plug>(incsearch-nohl0)				*<Plug>(incsearch-nohl0)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:<Plug>(incsearch-nohl-n)			*<Plug>(incsearch-nohl-n)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:<Plug>(incsearch-nohl-N)			*<Plug>(incsearch-nohl-N)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:<Plug>(incsearch-nohl-*)			*<Plug>(incsearch-nohl-star)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:<Plug>(incsearch-nohl-#)			*<Plug>(incsearch-nohl-#)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:<Plug>(incsearch-nohl-g*)			*<Plug>(incsearch-nohl-gstar)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:<Plug>(incsearch-nohl-g#)			*<Plug>(incsearch-nohl-g#)*
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map n  <Plug>(incsearch-nohl-n)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map N  <Plug>(incsearch-nohl-N)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map *  <Plug>(incsearch-nohl-*)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map #  <Plug>(incsearch-nohl-#)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map g* <Plug>(incsearch-nohl-g*)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map g# <Plug>(incsearch-nohl-g#)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	NOTE: |<Plug>(incsearch-nohl-n)| stuff are just aliases to
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	`<Plug>(incsearch-nohl)n` except |n| doesn't get remapped, so the
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	|<Plug>(incsearch-nohl)|.
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	Please make sure to place |<Plug>(incsearch-nohl)| before the cursor
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	moving mappings. |<Plug>(incsearch-nohl0)| handles search enhancement
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map n <Plug>(incsearch-nohl)<Plug>(anzu-n-with-echo)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map N <Plug>(incsearch-nohl)<Plug>(anzu-N-with-echo)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map *   <Plug>(incsearch-nohl)<Plug>(asterisk-*)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map g*  <Plug>(incsearch-nohl)<Plug>(asterisk-g*)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map #   <Plug>(incsearch-nohl)<Plug>(asterisk-#)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map g#  <Plug>(incsearch-nohl)<Plug>(asterisk-g#)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map z*  <Plug>(incsearch-nohl0)<Plug>(asterisk-z*)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map gz* <Plug>(incsearch-nohl0)<Plug>(asterisk-gz*)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map z#  <Plug>(incsearch-nohl0)<Plug>(asterisk-z#)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    map gz# <Plug>(incsearch-nohl0)<Plug>(asterisk-gz#)
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	|<Plug>(incsearch-backward)| which is improved motion of |?|.
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	Boolean option for stay feature |<Plug>(incsearch-stay)|.
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	2. Avoid Unneeded loading for mappings like |<Plug>(incsearch-nohl)|
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	2. Minor fix: history emulation with |<Plug>(incsearch-stay)|
+../pack/other/start/incsearch.vim/doc/incsearch.txt:	    - Enable cursor moving while |<Plug>(incsearch-stay)|
+../pack/other/start/incsearch.vim/README.md:map /  <Plug>(incsearch-forward)
+../pack/other/start/incsearch.vim/README.md:map ?  <Plug>(incsearch-backward)
+../pack/other/start/incsearch.vim/README.md:map g/ <Plug>(incsearch-stay)
+../pack/other/start/incsearch.vim/README.md:`<Plug>(incsearch-stay)` doesn't move the cursor.
+../pack/other/start/incsearch.vim/README.md:map n  <Plug>(incsearch-nohl-n)
+../pack/other/start/incsearch.vim/README.md:map N  <Plug>(incsearch-nohl-N)
+../pack/other/start/incsearch.vim/README.md:map *  <Plug>(incsearch-nohl-*)
+../pack/other/start/incsearch.vim/README.md:map #  <Plug>(incsearch-nohl-#)
+../pack/other/start/incsearch.vim/README.md:map g* <Plug>(incsearch-nohl-g*)
+../pack/other/start/incsearch.vim/README.md:map g# <Plug>(incsearch-nohl-g#)
+../pack/other/start/quick-scope/plugin/quick_scope.vim:nnoremap <silent> <plug>(QuickScopeToggle) :call quick_scope#Toggle()<cr>
+../pack/other/start/quick-scope/plugin/quick_scope.vim:xnoremap <silent> <plug>(QuickScopeToggle) :<c-u>call quick_scope#Toggle()<cr>
+../pack/other/start/quick-scope/doc/tags:<plug>(QuickScopeToggle)	quick-scope.txt	/*<plug>(QuickScopeToggle)*
+../pack/other/start/quick-scope/doc/quick-scope.txt:                                                    *<plug>(QuickScopeToggle)*
+../pack/other/start/quick-scope/doc/quick-scope.txt:  nmap <leader>q <plug>(QuickScopeToggle)
+../pack/other/start/quick-scope/doc/quick-scope.txt:  xmap <leader>q <plug>(QuickScopeToggle)
+../pack/other/start/quick-scope/README.md:nmap <leader>q <plug>(QuickScopeToggle)
+../pack/other/start/quick-scope/README.md:xmap <leader>q <plug>(QuickScopeToggle)
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzy-/) incsearch#go(<SID>config_fuzzy())
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzy-?) incsearch#go(<SID>config_fuzzy({'command': '?'}))
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzy-stay) incsearch#go(<SID>config_fuzzy({'is_stay': 1}))
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzyword-/) incsearch#go(<SID>config_fuzzyword())
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzyword-?) incsearch#go(<SID>config_fuzzyword({'command': '?'}))
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzyword-stay) incsearch#go(<SID>config_fuzzyword({'is_stay': 1}))
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzyspell-/) incsearch#go(<SID>config_fuzzyspell())
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzyspell-?) incsearch#go(<SID>config_fuzzyspell({'command': '?'}))
+../pack/other/start/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzyspell-stay) incsearch#go(<SID>config_fuzzyspell({'is_stay': 1}))
+../pack/other/start/incsearch-fuzzy.vim/README.md:map z/ <Plug>(incsearch-fuzzy-/)
+../pack/other/start/incsearch-fuzzy.vim/README.md:map z? <Plug>(incsearch-fuzzy-?)
+../pack/other/start/incsearch-fuzzy.vim/README.md:map zg/ <Plug>(incsearch-fuzzy-stay)
+../pack/other/start/incsearch-fuzzy.vim/README.md:map z/ <Plug>(incsearch-fuzzyspell-/)
+../pack/other/start/incsearch-fuzzy.vim/README.md:map z? <Plug>(incsearch-fuzzyspell-?)
+../pack/other/start/incsearch-fuzzy.vim/README.md:map zg/ <Plug>(incsearch-fuzzyspell-stay)
+../pack/git/start/vim-fugitive/plugin/fugitive.vim:    let flags = (a:0 ? a:1 : '') . (a:rhs =~# '<Plug>' ? '' : '<script>')
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:    let flags = (a:0 ? a:1 : '') . (a:rhs =~# '<Plug>' ? '' : '<script>')
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:    let browsex = maparg('<Plug>NetrwBrowseX', 'n')
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:      exe 'nnoremap <silent> <buffer> <Plug>NetrwBrowseX' substitute(browsex, remote_check, '0', 'g')
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:  exe 'cnoremap <buffer> <expr> <Plug><cfile>' (a:0 ? a:1 : 'fugitive#Cfile()')
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:  let b:undo_ftplugin = get(b:, 'undo_ftplugin', 'exe') . '|sil! exe "cunmap <buffer> <Plug><cfile>"'
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', 'gf',          '<SID>:find <Plug><cfile><CR>', '<silent><unique>', 1)
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<C-W>f',     '<SID>:sfind <Plug><cfile><CR>', '<silent><unique>', 1)
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<C-W><C-F>', '<SID>:sfind <Plug><cfile><CR>', '<silent><unique>', 1)
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<C-W>gf',  '<SID>:tabfind <Plug><cfile><CR>', '<silent><unique>', 1)
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:    call s:Map('c', '<C-R><C-F>', '<Plug><cfile>', '<silent><unique>', 1)
+../pack/layout/opt/colorizer/plugin/colorizer.vim:" 	nmap ,tc <Plug>Colorizer
+../pack/layout/opt/colorizer/plugin/colorizer.vim:nnoremap <silent> <Plug>Colorizer :ColorToggle<CR>
+../pack/layout/opt/colorizer/plugin/colorizer.vim:if !hasmapto("<Plug>Colorizer") && (!exists("g:colorizer_nomap") || g:colorizer_nomap == 0)
+../pack/layout/opt/colorizer/plugin/colorizer.vim:  nmap <unique> <Leader>tc <Plug>Colorizer
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:nnoremap <Plug>Colorizer        :<C-U>ColorToggle<CR>
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:xnoremap <Plug>Colorizer        :ColorHighlight<CR>
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:nnoremap <Plug>ColorContrast    :<C-U>ColorContrast<CR>
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:xnoremap <Plug>ColorContrast    :<C-U>ColorContrast<CR>
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:nnoremap <Plug>ColorFgBg        :<C-U>ColorSwapFgBg<CR>
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:xnoremap <Plug>ColorFgBg        :<C-U>ColorSwapFgBg<CR>
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:    if empty(maparg('<Leader>cC', 'n')) && empty(hasmapto('<Plug>Colorizer', 'n'))
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:        nmap <silent> <Leader>cC <Plug>Colorizer
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:    if empty(maparg('<Leader>cC', 'x')) && empty(hasmapto('<Plug>Colorizer', 'x'))
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:        xmap <silent> <Leader>cC <Plug>Colorizer
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:    if empty(maparg('<Leader>cT', 'n')) && empty(hasmapto('<Plug>ColorContrast', 'n'))
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:        nmap <silent> <Leader>cT <Plug>ColorContrast
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:    if empty(maparg('<Leader>cT', 'x')) && empty(hasmapto('<Plug>ColorContrast', 'n'))
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:        xmap <silent> <Leader>cT <Plug>ColorContrast
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:    if empty(maparg('<Leader>cF', 'n')) && empty(hasmapto('<Plug>ColorFgBg', 'n'))
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:        nmap <silent> <Leader>cF <Plug>ColorFgBg
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:    if empty(maparg('<Leader>cF', 'x')) && empty(hasmapto('<Plug>ColorFgBg', 'x'))
+../pack/layout/opt/Colorizer/plugin/ColorizerPlugin.vim:        xmap <silent> <Leader>cF <Plug>ColorFgBg
+../pack/layout/opt/Colorizer/Colorizer.vmb:nnoremap <Plug>Colorizer        :<C-U>ColorToggle<CR>
+../pack/layout/opt/Colorizer/Colorizer.vmb:xnoremap <Plug>Colorizer        :ColorHighlight<CR>
+../pack/layout/opt/Colorizer/Colorizer.vmb:nnoremap <Plug>ColorContrast    :<C-U>ColorContrast<CR>
+../pack/layout/opt/Colorizer/Colorizer.vmb:xnoremap <Plug>ColorContrast    :<C-U>ColorContrast<CR>
+../pack/layout/opt/Colorizer/Colorizer.vmb:nnoremap <Plug>ColorFgBg        :<C-U>ColorSwapFgBg<CR>
+../pack/layout/opt/Colorizer/Colorizer.vmb:xnoremap <Plug>ColorFgBg        :<C-U>ColorSwapFgBg<CR>
+../pack/layout/opt/Colorizer/Colorizer.vmb:    if empty(maparg('<Leader>cC', 'n')) && empty(hasmapto('<Plug>Colorizer', 'n'))
+../pack/layout/opt/Colorizer/Colorizer.vmb:        nmap <silent> <Leader>cC <Plug>Colorizer
+../pack/layout/opt/Colorizer/Colorizer.vmb:    if empty(maparg('<Leader>cC', 'x')) && empty(hasmapto('<Plug>Colorizer', 'x'))
+../pack/layout/opt/Colorizer/Colorizer.vmb:        xmap <silent> <Leader>cC <Plug>Colorizer
+../pack/layout/opt/Colorizer/Colorizer.vmb:    if empty(maparg('<Leader>cT', 'n')) && empty(hasmapto('<Plug>ColorContrast', 'n'))
+../pack/layout/opt/Colorizer/Colorizer.vmb:        nmap <silent> <Leader>cT <Plug>ColorContrast
+../pack/layout/opt/Colorizer/Colorizer.vmb:    if empty(maparg('<Leader>cT', 'x')) && empty(hasmapto('<Plug>ColorContrast', 'n'))
+../pack/layout/opt/Colorizer/Colorizer.vmb:        xmap <silent> <Leader>cT <Plug>ColorContrast
+../pack/layout/opt/Colorizer/Colorizer.vmb:    if empty(maparg('<Leader>cF', 'n')) && empty(hasmapto('<Plug>ColorFgBg', 'n'))
+../pack/layout/opt/Colorizer/Colorizer.vmb:        nmap <silent> <Leader>cF <Plug>ColorFgBg
+../pack/layout/opt/Colorizer/Colorizer.vmb:    if empty(maparg('<Leader>cF', 'x')) && empty(hasmapto('<Plug>ColorFgBg', 'x'))
+../pack/layout/opt/Colorizer/Colorizer.vmb:        xmap <silent> <Leader>cF <Plug>ColorFgBg
+../pack/layout/opt/Colorizer/Colorizer.vmb:<Leader>cC      <Plug>Colorizer     Toggle highlighting of Colors. In visual
+../pack/layout/opt/Colorizer/Colorizer.vmb:<Leader>cT      <Plug>ColorContrast Cycle through contrast setting
+../pack/layout/opt/Colorizer/Colorizer.vmb:<Leader>cF      <Plug>ColorFgBg     Toggle foreground and background color
+../pack/layout/opt/Colorizer/doc/Colorizer.txt:<Leader>cC      <Plug>Colorizer     Toggle highlighting of Colors. In visual
+../pack/layout/opt/Colorizer/doc/Colorizer.txt:<Leader>cT      <Plug>ColorContrast Cycle through contrast setting
+../pack/layout/opt/Colorizer/doc/Colorizer.txt:<Leader>cF      <Plug>ColorFgBg     Toggle foreground and background color
+../pack/layout/opt/limelight.vim/plugin/limelight.vim:nnoremap <silent> <Plug>(Limelight) :set opfunc=limelight#operator<CR>g@
+../pack/layout/opt/limelight.vim/plugin/limelight.vim:xnoremap <silent> <Plug>(Limelight) :Limelight<CR>
+../pack/layout/opt/limelight.vim/README.md:You can invoke `:Limelight` for a visual range. There are also `<Plug>`
+../pack/layout/opt/limelight.vim/README.md:nmap <Leader>l <Plug>(Limelight)
+../pack/layout/opt/limelight.vim/README.md:xmap <Leader>l <Plug>(Limelight)
+../pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim:nnoremap <unique> <script> <Plug>ToggleBackground <SID>TogBG
+../pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim:inoremap <unique> <script> <Plug>ToggleBackground <ESC><SID>TogBG<ESC>a
+../pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim:vnoremap <unique> <script> <Plug>ToggleBackground <ESC><SID>TogBG<ESC>gv
+../pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim:        exe "silent! nmap <unique> ".a:mapActivation." <Plug>ToggleBackground"
+../pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim:        exe "silent! imap <unique> ".a:mapActivation." <Plug>ToggleBackground"
+../pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim:        exe "silent! vmap <unique> ".a:mapActivation." <Plug>ToggleBackground"
+../pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim:if !exists("no_plugin_maps") && !hasmapto('<Plug>ToggleBackground')
+../pack/layout/start/vim-easy-align/plugin/easy_align.vim:  silent! call repeat#set("\<Plug>(EasyAlignRepeat)")
+../pack/layout/start/vim-easy-align/plugin/easy_align.vim:nnoremap <silent> <Plug>(EasyAlign) :set opfunc=<SID>easy_align_op<Enter>g@
+../pack/layout/start/vim-easy-align/plugin/easy_align.vim:vnoremap <silent> <Plug>(EasyAlign) :<C-U>call <SID>easy_align_op(visualmode(), 1)<Enter>
+../pack/layout/start/vim-easy-align/plugin/easy_align.vim:nnoremap <silent> <Plug>(LiveEasyAlign) :set opfunc=<SID>live_easy_align_op<Enter>g@
+../pack/layout/start/vim-easy-align/plugin/easy_align.vim:vnoremap <silent> <Plug>(LiveEasyAlign) :<C-U>call <SID>live_easy_align_op(visualmode(), 1)<Enter>
+../pack/layout/start/vim-easy-align/plugin/easy_align.vim:nnoremap <silent> <Plug>(EasyAlignRepeat) :call <SID>easy_align_repeat()<Enter>
+../pack/layout/start/vim-easy-align/plugin/easy_align.vim:vnoremap <silent> <Plug>(EasyAlignRepeat) :<C-U>call <SID>repeat_in_visual()<Enter>
+../pack/layout/start/vim-easy-align/plugin/easy_align.vim:nnoremap <silent> <Plug>(EasyAlignOperator) :set opfunc=<SID>easy_align_op<Enter>g@
+../pack/layout/start/vim-easy-align/EXAMPLES.md:xmap ga <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/EXAMPLES.md:nmap ga <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/test/fixed.vader:* #51 Repeat of visual <Plug>(LiveEasyAlign) broken
+../pack/layout/start/vim-easy-align/test/fixed.vader:Do (#51/#52 <Plug>(EasyAlignRepeat) in visual mode):
+../pack/layout/start/vim-easy-align/test/include/setup.vader:  " nmap <leader>A <Plug>(EasyAlignOperator)
+../pack/layout/start/vim-easy-align/test/include/setup.vader:  vmap <Enter>         <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/test/include/setup.vader:  vmap <leader><Enter> <Plug>(LiveEasyAlign)
+../pack/layout/start/vim-easy-align/test/include/setup.vader:  nmap <leader>A       <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/test/include/setup.vader:  vmap <leader>.       <Plug>(EasyAlignRepeat)
+../pack/layout/start/vim-easy-align/doc/tags:<Plug>(EasyAlign)	easy_align.txt	/*<Plug>(EasyAlign)*
+../pack/layout/start/vim-easy-align/doc/tags:<Plug>(LiveEasyAlign)	easy_align.txt	/*<Plug>(LiveEasyAlign)*
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:        1. Using <Plug> mappings                            |easy-align-5-2-1|
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:                                                             *<Plug>(EasyAlign)*
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:    vmap <Enter> <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:    nmap ga <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:1. Using <Plug> mappings~
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:The recommended method is to use <Plug> mappings as described earlier.
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:                                                         *<Plug>(LiveEasyAlign)*
+../pack/layout/start/vim-easy-align/doc/easy_align.txt: <Plug>(EasyAlign)     | normal | Start interactive mode for a motion/text object
+../pack/layout/start/vim-easy-align/doc/easy_align.txt: <Plug>(EasyAlign)     | visual | Start interactive mode for the selection
+../pack/layout/start/vim-easy-align/doc/easy_align.txt: <Plug>(LiveEasyAlign) | normal | Start live-interactive mode for a motion/text object
+../pack/layout/start/vim-easy-align/doc/easy_align.txt: <Plug>(LiveEasyAlign) | visual | Start live-interactive mode for the selection
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:The following sections will assume that you have <Plug>(EasyAlign) mappings in
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:    vmap <Enter> <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:    nmap ga <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/doc/easy_align.txt:Live interactive mode can be started with either <Plug>(LiveEasyAlign) map or
+../pack/layout/start/vim-easy-align/README.md:xmap ga <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/README.md:nmap ga <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/README.md:#### 1. `<Plug>` mappings (interactive mode)
+../pack/layout/start/vim-easy-align/README.md:The recommended method is to use `<Plug>(EasyAlign)` mapping in normal and
+../pack/layout/start/vim-easy-align/README.md:nmap ga <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/README.md:xmap ga <Plug>(EasyAlign)
+../pack/layout/start/vim-easy-align/README.md:Interactive mode is started either with `<Plug>(EasyAlign)` mapping or with
+../pack/layout/start/vim-easy-align/README.md:Live interactive mode can be started with either `<Plug>(LiveEasyAlign)` map
+../pack/layout/start/vim-startify/plugin/startify.vim:nnoremap <silent><plug>(startify-open-buffers) :<c-u>call startify#open_buffers()<cr>
+../pack/layout/start/vim-startify/doc/startify.txt:    autocmd User Startified nmap <buffer> o <plug>(startify-open-buffers)
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:if !hasmapto("<Plug>FontsizeBegin")
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:    nmap <silent> <Leader><Leader>=  <Plug>FontsizeBegin
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:if !hasmapto("<Plug>FontsizeInc", "n")
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:    nmap <silent> <Leader><Leader>+  <Plug>FontsizeInc
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:if !hasmapto("<Plug>FontsizeDec", "n")
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:    nmap <silent> <Leader><Leader>-  <Plug>FontsizeDec
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:if !hasmapto("<Plug>FontsizeDefault", "n")
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:    nmap <silent> <Leader><Leader>0  <Plug>FontsizeDefault
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:nmap <silent> <Plug>FontsizeBegin       <SID>begin<SID>(fontsize)
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:nmap <silent> <Plug>FontsizeInc         <SID>inc<SID>(fontsize)
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:nmap <silent> <Plug>FontsizeDec         <SID>dec<SID>(fontsize)
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:nmap <silent> <Plug>FontsizeDefault     <SID>default<SID>(fontsize)
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:nmap <silent> <Plug>FontsizeSetDefault  <SID>setDefault<SID>(fontsize)
+../pack/layout/start/vim-fontsize/plugin/fontsize.vim:nmap <silent> <Plug>FontsizeQuit        <SID>quit
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <Leader>=  <Plug>FontsizeBegin
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <Leader>+  <Plug>FontsizeInc
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <Leader>-  <Plug>FontsizeDec
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <Leader>0  <Plug>FontsizeDefault
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <F8>                        <Plug>FontsizeBegin
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <SID>DisableFontsizeInc     <Plug>FontsizeInc
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <SID>DisableFontsizeDec     <Plug>FontsizeDec
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <SID>DisableFontsizeDefault <Plug>FontsizeDefault
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:Any mapping to <Plug>FontsizeXxx overrides the default mappings, even if that
+../plugin/grabOutputs.vim:  v/<Plug>/d
+../plugin/grabOutputs.vim:  silent! exe 'g/<Plug>/d'
+../plugin/textSearch.vim:map g/ <Plug>(incsearch-fuzzy-stay)
+../plugin/textSearch.vim:map z/ <Plug>(incsearch-fuzzy-/)
+../plugin/textSearch.vim:map  <Leader><Leader>f <Plug>(easymotion-bd-f)
+../plugin/textSearch.vim:nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
+../plugin/textSearch.vim:map  <Leader><Leader>w <Plug>(easymotion-bd-w)
+../plugin/textSearch.vim:nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
+../plugin/textSearch.vim:autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
+../plugin/textSearch.vim:        map / <Plug>(easymotion-sn)
+../plugin/textSearch.vim:        map n <Plug>(easymotion-next)
+../plugin/textSearch.vim:        map N <Plug>(easymotion-prev)
+../plugin/textFormat.vim:nmap gA <Plug>(EasyAlign)
+../plugin/textFormat.vim:xmap gA <Plug>(EasyAlign)
+../plugin/shell.vim:nmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/shell.vim:vmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/buffers.vim:nmap <unique> <leader>pe <Plug>(PickerEdit)
+../plugin/buffers.vim:nmap <unique> <leader>pb <Plug>(PickerBuffer)
+../tags:<Plug>(EasyAlign)	pack/layout/start/vim-easy-align/doc/easy_align.txt	/*<Plug>(EasyAlign)*
+../tags:<Plug>(LiveEasyAlign)	pack/layout/start/vim-easy-align/doc/easy_align.txt	/*<Plug>(LiveEasyAlign)*
+../tags:<Plug>(incsearch-backward)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-backward)*
+../tags:<Plug>(incsearch-forward)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-forward)*
+../tags:<Plug>(incsearch-nohl)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-nohl)*
+../tags:<Plug>(incsearch-nohl-#)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-nohl-#)*
+../tags:<Plug>(incsearch-nohl-N)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-nohl-N)*
+../tags:<Plug>(incsearch-nohl-g#)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-nohl-g#)*
+../tags:<Plug>(incsearch-nohl-gstar)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-nohl-gstar)*
+../tags:<Plug>(incsearch-nohl-n)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-nohl-n)*
+../tags:<Plug>(incsearch-nohl-star)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-nohl-star)*
+../tags:<Plug>(incsearch-nohl0)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-nohl0)*
+../tags:<Plug>(incsearch-stay)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-stay)*
+../tags:<Plug>(openbrowser-open)	pack/shell/start/open-browser.vim/doc/openbrowser.txt	/*<Plug>(openbrowser-open)*
+../tags:<Plug>(openbrowser-search)	pack/shell/start/open-browser.vim/doc/openbrowser.txt	/*<Plug>(openbrowser-search)*
+../tags:<Plug>(openbrowser-smart-search)	pack/shell/start/open-browser.vim/doc/openbrowser.txt	/*<Plug>(openbrowser-smart-search)*
+../tags:<plug>(QuickScopeToggle)	pack/other/start/quick-scope/doc/quick-scope.txt	/*<plug>(QuickScopeToggle)*

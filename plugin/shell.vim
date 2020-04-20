@@ -12,7 +12,7 @@
 nnoremap <leader>f :let@f=@%<CR>
 
 " LanguageTool - for my Scratch files:
-nnoremap <C-F3> 3GVG:LanguageToolCheck <CR>
+nnoremap <leader>lt 3GVG:LanguageToolCheck <CR>
 
 " netrw:
 let g:netrw_banner = 0

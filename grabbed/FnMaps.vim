@@ -1,3 +1,3 @@
 ,cd ..
-,GrabFnmaps
+,call GrabFnMaps()
 ,wq

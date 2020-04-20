@@ -1,16 +1,18 @@
 
-" Joseph Harriott - http://momentary.eu/
-" --------------------------------------
-" Dates.
-"
+" Joseph Harriott
+" ---------------
+
+" -----
+" Dates
+" -----
+
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
-noremap <F8> :CalendarH<CR>
-inoremap <F8> <Esc>:CalendarH<CR>
+noremap <leader>yy :CalendarH<CR>
 if has('unix')
-  noremap <C-F8> :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
+  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
 elseif has('win32')
-  noremap <C-F8> :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
+  noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
 endif
 
 " abbreviation for current date

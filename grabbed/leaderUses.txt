@@ -10,8 +10,7 @@
 ../ftplugin/email.vim:nnoremap <leader>=- 0xx<Esc>$xx<Esc>
 ../ftplugin/tex.vim:vnoremap <leader>b c\textbf{}<Esc>P
 ../ftplugin/fugitive.vim:nnoremap <leader>gp :Git push<cr>
-../grabbed/grabMaps.sh:# Grab uses of <leader>
-../grabbed/grabMaps.sh:grep -ri --exclude=leaderUses.txt -E '<leader>' ../* > leaderUses.txt
+../gvimrc.vim:nnoremap <leader>8 :call EightyTwoColumns()<cr>
 ../keystrokes.md:	<leader>zz => (mapped in my vimrc to) toggle the value of 'scrolloff'
 ../keystrokes.md:	<leader>tc          => (mapped to) ColorToggle (by colorizer) and files open fast when off
 ../pack/shell/start/vim-picker/README.md:nmap <unique> <leader>pe <Plug>(PickerEdit)
@@ -141,6 +140,7 @@
 ../plugin/textFormat.vim:nnoremap <leader>9 :call PercentUnicode()<cr>
 ../plugin/textFormat.vim:nnoremap <leader>u :Underline
 ../plugin/shell.vim:nnoremap <leader>f :let@f=@%<CR>
+../plugin/shell.vim:nnoremap <leader>lt 3GVG:LanguageToolCheck <CR>
 ../plugin/shell.vim:nnoremap <leader>- :Texplore<cr>
 ../plugin/shell.vim:nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 ../plugin/buffers.vim:noremap <silent> <leader>be :BufExplorer<CR>
@@ -148,13 +148,16 @@
 ../plugin/buffers.vim:nmap <unique> <leader>pb <Plug>(PickerBuffer)
 ../plugin/buffers.vim:nnoremap <leader>s :buffers<CR>:sbuffer<Space>
 ../plugin/buffers.vim:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
-../plugin/buffers.vim:nnoremap <silent><leader>n :set rnu! rnu? <CR>
+../plugin/buffers.vim:nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 ../plugin/buffers.vim:"  <Leader>be - Opens BufExplorer
 ../plugin/buffers.vim:"  <Leader>bt - Toggles BufExplorer open or closed
 ../plugin/buffers.vim:"  <Leader>bs - Opens horizontally split window BufExplorer
 ../plugin/buffers.vim:"  <Leader>bv - Opens vertically split window BufExplorer
 ../plugin/buffers.vim:nnoremap <leader>bdd :Bdelete other<CR>
 ../plugin/buffers.vim:nnoremap <leader>bd  :Bdelete hidden<CR>
+../plugin/dates.vim:noremap <leader>yy :CalendarH<CR>
+../plugin/dates.vim:  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
+../plugin/dates.vim:  noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
 ../plugin/plugins.vim:noremap <leader>gg :GitGutterToggle<CR>
 ../tags:base64-<leader>-atob	grabbed/leaderUses.txt	/*base64-<leader>-atob*
 ../tags:base64-<leader>-atob	pack/ft/start/vim-base64/doc/base64.txt	/*base64-<leader>-atob*

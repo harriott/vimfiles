@@ -45,10 +45,11 @@ if has('unix') && g:monitor == '1680x1050'
   set lines=60
 endif
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
-" F3 toggles a better size for reading prose:
-nnoremap <F3> :call ColumnsToggle()<cr>
+
+" toggle a better size for reading prose
+nnoremap <leader>8 :call EightyTwoColumns()<cr>
 let g:columnsdefault = 1
-function! ColumnsToggle()
+function! EightyTwoColumns()
     if g:columnsdefault
         set columns=82
         let g:columnsdefault = 0

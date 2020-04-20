@@ -18,7 +18,7 @@ nnoremap <leader>s :buffers<CR>:sbuffer<Space>
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 " toggle relativenumber:
-nnoremap <silent><leader>n :set rnu! rnu? <CR>
+nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 
 " buffer save mappings
 " --------------------

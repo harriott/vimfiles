@@ -1,0 +1,3 @@
+,cd ..
+,call GrabPlugMaps()
+,wq

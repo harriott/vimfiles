@@ -137,29 +137,29 @@ n  <Plug>(QuickScopeToggle) * :call quick_scope#Toggle()<CR>
    <Plug>(incsearch-stay) * incsearch#go({'command': '/', 'is_stay': 1})
    <Plug>(incsearch-backward) * incsearch#go({'command': '?'})
    <Plug>(incsearch-forward) * incsearch#go({'command': '/'})
-   <Plug>(incsearch-fuzzyspell-stay) * incsearch#go(<SNR>102_config_fuzzyspell({'is_stay': 1}))
-   <Plug>(incsearch-fuzzyspell-?) * incsearch#go(<SNR>102_config_fuzzyspell({'command': '?'}))
-   <Plug>(incsearch-fuzzyspell-/) * incsearch#go(<SNR>102_config_fuzzyspell())
-   <Plug>(incsearch-fuzzyword-stay) * incsearch#go(<SNR>102_config_fuzzyword({'is_stay': 1}))
-   <Plug>(incsearch-fuzzyword-?) * incsearch#go(<SNR>102_config_fuzzyword({'command': '?'}))
-   <Plug>(incsearch-fuzzyword-/) * incsearch#go(<SNR>102_config_fuzzyword())
-   <Plug>(incsearch-fuzzy-stay) * incsearch#go(<SNR>102_config_fuzzy({'is_stay': 1}))
-   <Plug>(incsearch-fuzzy-?) * incsearch#go(<SNR>102_config_fuzzy({'command': '?'}))
-   <Plug>(incsearch-fuzzy-/) * incsearch#go(<SNR>102_config_fuzzy())
+   <Plug>(incsearch-fuzzyspell-stay) * incsearch#go(<SNR>97_config_fuzzyspell({'is_stay': 1}))
+   <Plug>(incsearch-fuzzyspell-?) * incsearch#go(<SNR>97_config_fuzzyspell({'command': '?'}))
+   <Plug>(incsearch-fuzzyspell-/) * incsearch#go(<SNR>97_config_fuzzyspell())
+   <Plug>(incsearch-fuzzyword-stay) * incsearch#go(<SNR>97_config_fuzzyword({'is_stay': 1}))
+   <Plug>(incsearch-fuzzyword-?) * incsearch#go(<SNR>97_config_fuzzyword({'command': '?'}))
+   <Plug>(incsearch-fuzzyword-/) * incsearch#go(<SNR>97_config_fuzzyword())
+   <Plug>(incsearch-fuzzy-stay) * incsearch#go(<SNR>97_config_fuzzy({'is_stay': 1}))
+   <Plug>(incsearch-fuzzy-?) * incsearch#go(<SNR>97_config_fuzzy({'command': '?'}))
+   <Plug>(incsearch-fuzzy-/) * incsearch#go(<SNR>97_config_fuzzy())
 n  <Plug>(startify-open-buffers) * :<C-U>call startify#open_buffers()<CR>
-n  <Plug>FontsizeQuit   <SNR>97_quit
-n  <Plug>FontsizeSetDefault   <SNR>97_setDefault<SNR>97_(fontsize)
-n  <Plug>FontsizeDefault   <SNR>97_default<SNR>97_(fontsize)
-n  <Plug>FontsizeDec   <SNR>97_dec<SNR>97_(fontsize)
-n  <Plug>FontsizeInc   <SNR>97_inc<SNR>97_(fontsize)
-n  <Plug>FontsizeBegin   <SNR>97_begin<SNR>97_(fontsize)
-n  <Plug>(EasyAlignOperator) * :set opfunc=<SNR>96_easy_align_op<CR>g@
-v  <Plug>(EasyAlignRepeat) * :<C-U>call <SNR>96_repeat_in_visual()<CR>
-n  <Plug>(EasyAlignRepeat) * :call <SNR>96_easy_align_repeat()<CR>
-v  <Plug>(LiveEasyAlign) * :<C-U>call <SNR>96_live_easy_align_op(visualmode(), 1)<CR>
-n  <Plug>(LiveEasyAlign) * :set opfunc=<SNR>96_live_easy_align_op<CR>g@
-v  <Plug>(EasyAlign) * :<C-U>call <SNR>96_easy_align_op(visualmode(), 1)<CR>
-n  <Plug>(EasyAlign) * :set opfunc=<SNR>96_easy_align_op<CR>g@
+n  <Plug>FontsizeQuit   <SNR>92_quit
+n  <Plug>FontsizeSetDefault   <SNR>92_setDefault<SNR>92_(fontsize)
+n  <Plug>FontsizeDefault   <SNR>92_default<SNR>92_(fontsize)
+n  <Plug>FontsizeDec   <SNR>92_dec<SNR>92_(fontsize)
+n  <Plug>FontsizeInc   <SNR>92_inc<SNR>92_(fontsize)
+n  <Plug>FontsizeBegin   <SNR>92_begin<SNR>92_(fontsize)
+n  <Plug>(EasyAlignOperator) * :set opfunc=<SNR>91_easy_align_op<CR>g@
+v  <Plug>(EasyAlignRepeat) * :<C-U>call <SNR>91_repeat_in_visual()<CR>
+n  <Plug>(EasyAlignRepeat) * :call <SNR>91_easy_align_repeat()<CR>
+v  <Plug>(LiveEasyAlign) * :<C-U>call <SNR>91_live_easy_align_op(visualmode(), 1)<CR>
+n  <Plug>(LiveEasyAlign) * :set opfunc=<SNR>91_live_easy_align_op<CR>g@
+v  <Plug>(EasyAlign) * :<C-U>call <SNR>91_easy_align_op(visualmode(), 1)<CR>
+n  <Plug>(EasyAlign) * :set opfunc=<SNR>91_easy_align_op<CR>g@
 x  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
 o  <Plug>(MatchitOperationMultiForward) * :<C-U>call matchit#MultiMatch("W",  "o")<CR>
 o  <Plug>(MatchitOperationMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "o")<CR>
@@ -175,11 +175,10 @@ n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR
 n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
 v  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
 n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
-v  <F5>          <Plug>ToggleBackground
-v  <Plug>ToggleBackground & <Esc><SNR>70_TogBG<Esc>gv
-n  <Plug>ToggleBackground & <SNR>70_TogBG
+v  <Plug>ToggleBackground & <Esc><SNR>65_TogBG<Esc>gv
+n  <Plug>ToggleBackground & <SNR>65_TogBG
 n  <Plug>(table-mode-sort) * :call tablemode#spreadsheet#Sort('')<CR>
-n  <Plug>(table-mode-echo-cell) * :call <SNR>69_TableEchoCell()<CR>
+n  <Plug>(table-mode-echo-cell) * :call <SNR>64_TableEchoCell()<CR>
 n  <Plug>(table-mode-eval-formula) * :call tablemode#spreadsheet#formula#EvaluateFormulaLine()<CR>
 n  <Plug>(table-mode-add-formula) * :call tablemode#spreadsheet#formula#Add()<CR>
 n  <Plug>(table-mode-delete-column) * :call tablemode#spreadsheet#DeleteColumn()<CR>
@@ -196,15 +195,15 @@ n  <Plug>(table-mode-realign) * :call tablemode#table#Realign('.')<CR>
 x  <Plug>(table-mode-tableize-delimiter) * :<C-U>call tablemode#TableizeByDelimiter()<CR>
 x  <Plug>(table-mode-tableize) * :Tableize<CR>
 n  <Plug>(table-mode-tableize) * :Tableize<CR>
-v  <Plug>VgSurround * :<C-U>call <SNR>56_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
-v  <Plug>VSurround * :<C-U>call <SNR>56_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
-n  <Plug>YSurround * :<C-U>set opfunc=<SNR>56_opfunc2<CR>g@
-n  <Plug>Ysurround * :<C-U>set opfunc=<SNR>56_opfunc<CR>g@
-n  <Plug>YSsurround * :<C-U>call <SNR>56_opfunc2(v:count1)<CR>
-n  <Plug>Yssurround * :<C-U>call <SNR>56_opfunc(v:count1)<CR>
-n  <Plug>CSurround * :<C-U>call <SNR>56_changesurround(1)<CR>
-n  <Plug>Csurround * :<C-U>call <SNR>56_changesurround()<CR>
-n  <Plug>Dsurround * :<C-U>call <SNR>56_dosurround(<SNR>56_inputtarget())<CR>
+v  <Plug>VgSurround * :<C-U>call <SNR>51_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
+v  <Plug>VSurround * :<C-U>call <SNR>51_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
+n  <Plug>YSurround * :<C-U>set opfunc=<SNR>51_opfunc2<CR>g@
+n  <Plug>Ysurround * :<C-U>set opfunc=<SNR>51_opfunc<CR>g@
+n  <Plug>YSsurround * :<C-U>call <SNR>51_opfunc2(v:count1)<CR>
+n  <Plug>Yssurround * :<C-U>call <SNR>51_opfunc(v:count1)<CR>
+n  <Plug>CSurround * :<C-U>call <SNR>51_changesurround(1)<CR>
+n  <Plug>Csurround * :<C-U>call <SNR>51_changesurround()<CR>
+n  <Plug>Dsurround * :<C-U>call <SNR>51_dosurround(<SNR>51_inputtarget())<CR>
 n  <Plug>SurroundRepeat * .
 n  <Plug>GitGutterPreviewHunk * :call gitgutter#utility#warn('please change your map <Plug>GitGutterPreviewHunk to <Plug>(GitGutterPreviewHunk)')<CR>
 n  <Plug>(GitGutterPreviewHunk) * :GitGutterPreviewHunk<CR>
@@ -264,7 +263,7 @@ n  <Plug>(ale_previous_wrap_error) * :ALEPrevious -wrap -error<CR>
 n  <Plug>(ale_previous_error) * :ALEPrevious -error<CR>
 n  <Plug>(ale_previous_wrap) * :ALEPreviousWrap<CR>
 n  <Plug>(ale_previous) * :ALEPrevious<CR>
-n  <Plug>NERDCommenterAltDelims * :call <SNR>36_SwitchToAlternativeDelimiters(1)<CR>
+n  <Plug>NERDCommenterAltDelims * :call <SNR>32_SwitchToAlternativeDelimiters(1)<CR>
 x  <Plug>NERDCommenterUncomment * :call NERDComment("x", "Uncomment")<CR>
 n  <Plug>NERDCommenterUncomment * :call NERDComment("n", "Uncomment")<CR>
 x  <Plug>NERDCommenterAlignBoth * :call NERDComment("x", "AlignBoth")<CR>
@@ -478,13 +477,13 @@ i  <Plug>(fzf-complete-file) * fzf#vim#complete#path("find . -path '*/\.*' -prun
 i  <Plug>(fzf-complete-path) * fzf#vim#complete#path("find . -path '*/\.*' -prune -o -print | sed '1d;s:^..::'")
 i  <Plug>(fzf-complete-word) * fzf#vim#complete#word()
 i  <F5>          <Plug>ToggleBackground
-i  <Plug>ToggleBackground & <Esc><SNR>70_TogBG<Esc>a
+i  <Plug>ToggleBackground & <Esc><SNR>65_TogBG<Esc>a
 i  <Plug>(table-mode-tableize) * |<Esc>:call tablemode#TableizeInsertMode()<CR>a
 i  <C-G>S        <Plug>ISurround
 i  <C-G>s        <Plug>Isurround
 i  <C-S>         <Plug>Isurround
-i  <Plug>ISurround * <C-R>=<SNR>56_insert(1)<CR>
-i  <Plug>Isurround * <C-R>=<SNR>56_insert()<CR>
+i  <Plug>ISurround * <C-R>=<SNR>51_insert(1)<CR>
+i  <Plug>Isurround * <C-R>=<SNR>51_insert()<CR>
 i  <S-Tab>       <Plug>SuperTabBackward
 i  <Plug>SuperTabBackward & <C-R>=SuperTab('p')<CR>
 i  <Plug>SuperTabForward & <C-R>=SuperTab('n')<CR>

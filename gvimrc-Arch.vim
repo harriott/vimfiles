@@ -21,23 +21,5 @@ call UpdateTWSDark()
 set cul
 
 " colour scheme toggle
-nnoremap <C-F5> :call TomorrowSolarizedToggle()<cr>
-" assume starting with Solarized:
-let g:SolarizedScheme = 0
-" toggle with Solarized
-function! TomorrowSolarizedToggle()
-  if g:SolarizedScheme
-    colorscheme tomorrow
-    set background=dark
-    let g:SolarizedScheme = 0
-    call UpdateTWSDark()
-  else
-    colorscheme solarized
-    set background=light
-    let g:SolarizedScheme = 1
-    highlight ShowTrailingWhitespace ctermbg=grey guibg=white
-  endif
-  redraw
-  colorscheme
-endfunction
+call togglebg#map("<C-F5>")
 
