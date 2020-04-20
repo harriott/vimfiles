@@ -1,0 +1,71 @@
+../ftplugin/gitconfig.vim:nnoremap <F7> :s#https://github.com/#git@github.com:#g <CR>
+../ftplugin/php/phpfolding.vim:"       map <F5> <Esc>:EnableFastPHPFolds<Cr>
+../ftplugin/php/phpfolding.vim:"       map <F6> <Esc>:EnablePHPFolds<Cr>
+../ftplugin/php/phpfolding.vim:"       map <F7> <Esc>:DisablePHPFolds<Cr>
+../ftplugin/markdown.vim:  nnoremap <S-F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/markdown.vim:  nnoremap <S-F7> :execute "silent !perl D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/markdown.vim:nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
+../ftplugin/markdown.vim:vnoremap <buffer> <F12> :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
+../ftplugin/markdown.vim:vnoremap <buffer> <S-F12> :s#^\v(.+)  $\n^$#\1\r#g <CR>
+../ftplugin/tex.vim:nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
+../ftplugin/tex.vim:nnoremap <buffer> <F7> :setlocal fdm=manual<cr>
+../ftplugin/tex.vim:inoremap <buffer> <F7> <Esc>:setlocal fdm=manual<cr>
+../ftplugin/tex.vim:nnoremap <buffer> <S-F7> :setlocal fdm=syntax<cr>
+../ftplugin/tex.vim:vnoremap <buffer> <F12> :s#^\v(.+)$#\1 \\\\#g <bar> nohlsearch <CR>
+../ftplugin/tex.vim:vnoremap <buffer> <S-F12> :s#^\v(.+) \\\\$\n^$#\1\r#g <CR>
+../ftplugin/muttaliases.vim:nnoremap <buffer> <F12> gg2jVG:sort u <cr>
+../grabbed/FnMaps.txt:v  <F5>          <Plug>ToggleBackground
+../grabbed/FnMaps.txt:n  <F5>          <Plug>ToggleBackground
+../grabbed/FnMaps.txt:v  <F6>          <Plug>(openbrowser-smart-search)
+../grabbed/FnMaps.txt:n  <F6>          <Plug>(openbrowser-smart-search)
+../grabbed/FnMaps.txt:   <F10>       * :cd %:p:h<CR>:NERDTreeCWD<CR>
+../grabbed/FnMaps.txt:n  <F9>        * :CSinS<CR>:Ggrep -i "<C-R>s" |cw
+../grabbed/FnMaps.txt:   <F8>        * :CalendarH<CR>
+../grabbed/FnMaps.txt:n  <M-F2>      * :wa<CR>:bd<CR>
+../grabbed/FnMaps.txt:n  <F3>        * :wa<CR>:e<CR>
+../grabbed/FnMaps.txt:n  <F2>        * :wa<CR>
+../grabbed/FnMaps.txt:   <F11>       * :cd %:p:h<CR>|:!pcmanfm &<CR><CR>
+../grabbed/FnMaps.txt:n  <F1>        * <C-W><C-W>
+../grabbed/FnMaps.txt:i  <F5>          <Plug>ToggleBackground
+../grabbed/FnMaps.txt:i  <F8>        * <Esc>:CalendarH<CR>
+../grabbed/FnMaps.txt:i  <M-F2>      * <Esc>:wa<CR>:bd<CR>
+../grabbed/FnMaps.txt:i  <F2>        * <Esc>:wa<CR>
+../grabbed/FnMaps.txt:i  <F11>         <Esc><F11>
+../grabbed/PlugMaps.txt:v  <F5>          <Plug>ToggleBackground
+../grabbed/PlugMaps.txt:v  <F6>          <Plug>(openbrowser-smart-search)
+../grabbed/PlugMaps.txt:n  <F6>          <Plug>(openbrowser-smart-search)
+../grabbed/PlugMaps.txt:i  <F5>          <Plug>ToggleBackground
+../gvimrc.vim:nnoremap <S-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
+../gvimrc.vim:nnoremap <F3> :call ColumnsToggle()<cr>
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:  call s:Map('n', '<F1>', ':help :Git_blame<CR>', '<silent>')
+../pack/git/start/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<F1>',  ":<C-U>help fugitive-map<CR>", '<silent>')
+../pack/layout/start/vim-colors-tomorrow/autoload/togglebg.vim:    call togglebg#map("<F5>")
+../pack/layout/start/vim-colors-tomorrow/README.mkd:<F5> if that mapping is available. If it is not available you will need to
+../pack/layout/start/vim-colors-tomorrow/README.mkd:either map the function manually or change your current <F5> mapping to
+../pack/layout/start/vim-colors-tomorrow/README.mkd:support normal, insert and visual mode usage, changing the "<F5>" value to the
+../pack/layout/start/vim-colors-tomorrow/README.mkd:    call togglebg#map("<F5>")
+../pack/layout/start/vim-colors-tomorrow/doc/tomorrow.txt:    * the default mapping of <F5>
+../pack/layout/start/vim-colors-tomorrow/doc/tomorrow.txt:Toggle Background starts with a default mapping to function key <F5>. If you 
+../pack/layout/start/vim-colors-tomorrow/doc/tomorrow.txt:remove/change your existing <F5> mapping to another value. To customize the 
+../pack/layout/start/vim-colors-tomorrow/doc/tomorrow.txt:"<F5>" value to the key or key combination you wish to use:
+../pack/layout/start/vim-colors-tomorrow/doc/tomorrow.txt:	call togglebg#map("<F5>")
+../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <F8>                        <Plug>FontsizeBegin
+../plugin/shell.vim:nmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/shell.vim:vmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/buffers.vim:nnoremap <F2> :wa<CR>
+../plugin/buffers.vim:inoremap <F2> <Esc>:wa<CR>
+../plugin/buffers.vim:nnoremap <F3> :wa<CR>:e<CR>
+../plugin/buffers.vim:autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
+../plugin/buffers.vim:autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
+../plugin/dates.vim:noremap <F8> :CalendarH<CR>
+../plugin/dates.vim:inoremap <F8> <Esc>:CalendarH<CR>
+../plugin/grepping.vim:nnoremap <F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
+../plugin/plugins.vim:  noremap <S-F10> :call QuitNoName() <CR>
+../plugin/plugins.vim:  noremap <S-F22> :call QuitNoName() <CR>
+../plugin/plugins.vim:  " noremap <S-F10> :GitGutterToggle<CR>
+../plugin/plugins.vim:noremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+../vimrc-Arch.vim:noremap <F11> :cd %:p:h<CR><bar>:!pcmanfm &<CR><CR>
+../vimrc-Arch.vim:imap <F11> <Esc><F11>
+../vimrc.vim:nnoremap <F1> <C-W><C-W>
+../vimrc-Win10.vim:nmap <F11> :!start explorer /select,%:p<CR>
+../vimrc-Win10.vim:imap <F11> <Esc><F11>

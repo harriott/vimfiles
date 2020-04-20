@@ -6,18 +6,13 @@
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
 
-noremap <silent> <F4> :BufExplorer<CR>
+noremap <silent> <leader>be :BufExplorer<CR>
 
 nmap <unique> <leader>pe <Plug>(PickerEdit)
 nmap <unique> <leader>pb <Plug>(PickerBuffer)
 
-" quickly close all but current buffer:
-nnoremap <S-F4> :Bdelete other<CR>
-" quickly close all but visible buffers:
-nnoremap <C-F4> :Bdelete hidden<CR>
-
 " Split window to a buffer number:
-nnoremap <F5> :buffers<CR>:sbuffer<Space>
+nnoremap <leader>s :buffers<CR>:sbuffer<Space>
 
 " toggle centering line in window:
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
@@ -31,14 +26,26 @@ nnoremap <silent><leader>n :set rnu! rnu? <CR>
 nnoremap <F2> :wa<CR>
 inoremap <F2> <Esc>:wa<CR>
 
-" Shift+F2 to write all changed buffers and reload the current one:
-nnoremap <S-F2> :wa<CR>:e<CR>
-inoremap <S-F2> <Esc>:wa<CR>:e<CR>
+" write all changed buffers and reload the current one:
+nnoremap <F3> :wa<CR>:e<CR>
 
 " Alt+F2 to write all changed buffers and close the current one:
 nnoremap <A-F2> :wa<CR>:bd<CR>
 inoremap <A-F2> <Esc>:wa<CR>:bd<CR>
 " (only right-Ctrl+F2 works in Arch)
+
+" BufExplorer's mappings
+" ----------------------
+"  <Leader>be - Opens BufExplorer
+"  <Leader>bt - Toggles BufExplorer open or closed
+"  <Leader>bs - Opens horizontally split window BufExplorer
+"  <Leader>bv - Opens vertically split window BufExplorer
+
+" my additions:
+"  quickly close all but current buffer
+nnoremap <leader>bdd :Bdelete other<CR>
+"  quickly close all but visible buffers
+nnoremap <leader>bd  :Bdelete hidden<CR>
 
 " mutt file treatments:
 " ------------------------

@@ -5,6 +5,8 @@
 "
 " My plugin configurations are sourced automatically in the likes of  plugin\plugins.vim.
 
+nnoremap <F1> <C-W><C-W>
+
 set encoding=utf-8  " get this done early
 
 " clear the registers b-z

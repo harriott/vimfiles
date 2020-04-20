@@ -1,7 +1,14 @@
 
-" Joseph Harriott - http://momentary.eu/ - Tue 24 Dec 2019
-" --------------------------------------------------------
+" Joseph Harriott
+
+" Functions for grabbing some settings.
+" -------------------------------------
+
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
+
+" I've switched to using  bufferize.vim  here, which makes life simpler
+" but with the disadvantage that it can only safely be run once for each instance of vim.
+" To avoid trouble, I sometimes run these functions via  ~/.vim/grabbed/grabMaps.sh
 
 " g:vimfiles  should be set to your vim runtime folder
 
@@ -21,16 +28,6 @@ function! GrabFnmaps()
   write
 endfunction
 command! GrabFnmaps call GrabFnmaps()
-
-if has('unix')
-  function! GrabLeaderUses()
-    exe 'edit' g:vimfiles.'/grabbed/leaderUses.txt'
-    normal! ggVGd
-    exe 'cd' g:vimfiles
-    call GrabWrite("!grep -ri '<leader>'")
-  endfunction
-  command! GrabLeaderUses call GrabLeaderUses()
-endif
 
 function! GrabPlugMaps()
   exe 'edit' g:vimfiles.'/grabbed/PlugMaps.txt'
@@ -77,8 +74,6 @@ function! GrabWrite(toGrab)
   " only to be called from within a parent function that has just before opened an empty buffer
   silent execute 'Bufferize ' . a:toGrab
   blast
-  " remove spurious CRs
-  silent! exe '%s/\+$//'
   normal! ggVGd
   bdelete
   blast
