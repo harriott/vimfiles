@@ -159,7 +159,7 @@
 ../plugin/dates.vim:noremap <leader>yy :CalendarH<CR>
 ../plugin/dates.vim:  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
 ../plugin/dates.vim:  noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
-../plugin/grepping.vim:noremap <leader>v :cd %:p:h<CR> :CSinS<CR> :vimgrep #<c-r>s#j **/*.md **/*.txt <bar> cw <cr>
+../plugin/grepping.vim:" noremap <leader>v :cd %:p:h<CR> :CSinS<CR> :vimgrep #<c-r>s#j **/*.md **/*.txt <bar> cw
 ../plugin/plugins.vim:noremap <leader>gg :GitGutterToggle<CR>
 ../tags:base64-<leader>-atob	grabbed/leaderUses.txt	/*base64-<leader>-atob*
 ../tags:base64-<leader>-atob	pack/ft/start/vim-base64/doc/base64.txt	/*base64-<leader>-atob*
@@ -177,3 +177,4 @@
 ../vimrc.vim:nnoremap <leader>pt :call ParenthsToggle()<cr>
 ../vimrc.vim:nmap <leader>nh :nohlsearch<CR>
 ../vimrc.vim:noremap <leader>q :copen<CR>
+../vimrc.vim:  nnoremap <leader>v v$hy

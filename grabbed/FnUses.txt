@@ -6,7 +6,7 @@
 ../ftplugin/markdown.vim:nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 ../ftplugin/markdown.vim:vnoremap <buffer> <F12> :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
 ../ftplugin/markdown.vim:vnoremap <buffer> <S-F12> :s#^\v(.+)  $\n^$#\1\r#g <CR>
-../ftplugin/tex.vim:nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
+../ftplugin/tex.vim:nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 ../ftplugin/tex.vim:nnoremap <silent><buffer> <F7> :call LaTeXsyntaxFolding()<cr>
 ../ftplugin/tex.vim:inoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
 ../ftplugin/tex.vim:vnoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
@@ -40,7 +40,7 @@
 ../plugin/buffers.vim:vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 ../plugin/buffers.vim:autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
 ../plugin/buffers.vim:autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
-../plugin/grepping.vim:nnoremap <F3> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
+../plugin/grepping.vim:nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 ../plugin/plugins.vim:  noremap <S-F10> :call QuitNoName() <CR>
 ../plugin/plugins.vim:  noremap <S-F22> :call QuitNoName() <CR>
 ../plugin/plugins.vim:  " noremap <S-F10> :GitGutterToggle<CR>

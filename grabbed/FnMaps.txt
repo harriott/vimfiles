@@ -5,7 +5,7 @@ v  <F9>        * <Esc>:History/<CR>
 n  <F9>        * :History/<CR>
 v  <F8>        * <Esc>:History:<CR>
 n  <F8>        * :History:<CR>
-n  <F3>        * :CSinS<CR>:Ggrep -i "<C-R>s" |cw
+n  <F3>        * :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" |cw
 v  <F4>        * <Esc>:wa<CR>:bd<CR>
 n  <F4>        * :wa<CR>:bd<CR>
 v  <F5>        * <Esc>:wa<CR>:e<CR>

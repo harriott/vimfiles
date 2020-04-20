@@ -102,5 +102,10 @@ nmap <leader>nh :nohlsearch<CR>
 " re-open the quickfix-window, eg to look again at results of vimgrep
 noremap <leader>q :copen<CR>
 
+" select to end of line in unix
+if has('unix')
+  nnoremap <leader>v v$hy
+endif
+
 set ignorecase incsearch smartcase
 

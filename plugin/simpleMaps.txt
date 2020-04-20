@@ -44,6 +44,7 @@ n  \-          * :Texplore<CR>
 n  \lt         * 3GVG:LanguageToolCheck <CR>
 n  \f          * :let@f=@%<CR>
    \gg         * :GitGutterToggle<CR>
+   \v          * :cd %:p:h<CR> :CSinS<CR> :vimgrep #<C-R>s#j **/*.md **/*.txt | cw <CR>
    \yp         * :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
    \yy         * :CalendarH<CR>
 n  \bd         * :Bdelete hidden<CR>
@@ -52,7 +53,6 @@ n  \rn         * :set rnu! rnu? <CR>
 n  \zz         * :let &scrolloff=999-&scrolloff<CR>
 n  \s          * :buffers<CR>:sbuffer<Space>
    \be         * :BufExplorer<CR>
-n  \v          * v$hy
    \q          * :copen<CR>
 n  \nh           :nohlsearch<CR>
 n  \pt         * :call ParenthsToggle()<CR>

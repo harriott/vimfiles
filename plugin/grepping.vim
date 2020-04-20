@@ -19,12 +19,13 @@ function! StripStoreCurSel()
   " convert '\<lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
   let @s = substitute(@h, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
 endfunction
-command! -nargs=? CSinS call StripStoreCurSel()
 
 " cd to file's and vimgrep for last search
-noremap <leader>v :cd %:p:h<CR> :CSinS<CR> :vimgrep #<c-r>s#j **/*.md **/*.txt <bar> cw
+nnoremap <leader>vg :call SearchSelection()<CR>
 function! SearchSelection()
   cd %:p:h
   call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@s.'#j *.{md,txt,vim} **/*.{md,txt,vim}'
+  copen
 endfunction
 
