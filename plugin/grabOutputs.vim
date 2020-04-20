@@ -8,7 +8,10 @@
 
 " I've switched to using  bufferize.vim  here, which makes life simpler
 " but with the disadvantage that it can only safely be run once for each instance of vim.
-" To avoid trouble, I sometimes run these functions via  ~/.vim/grabbed/grabMaps.sh
+
+" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+" To avoid trouble, run these functions via  ~/.vim/grabbed/grabMaps.sh "
+" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
 
 " g:vimfiles  should be set to your vim runtime folder
 

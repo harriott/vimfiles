@@ -30,9 +30,7 @@ inoremap <F2> <Esc>:wa<CR>
 nnoremap <F3> :wa<CR>:e<CR>
 
 " Alt+F2 to write all changed buffers and close the current one:
-nnoremap <A-F2> :wa<CR>:bd<CR>
-inoremap <A-F2> <Esc>:wa<CR>:bd<CR>
-" (only right-Ctrl+F2 works in Arch)
+nnoremap <F4> :wa<CR>:bd<CR>
 
 " BufExplorer's mappings
 " ----------------------
