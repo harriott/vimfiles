@@ -1,13 +1,23 @@
 v  <F6>          <Plug>(openbrowser-smart-search)
 n  <F6>          <Plug>(openbrowser-smart-search)
-   <F5>        * :cd %:p:h<CR>:NERDTreeCWD<CR>
-   <C-F9>      * :cd %:p:h<CR> :CSinS<CR> :vimgrep #<C-R>s#j **/*.md **/*.txt | cw <CR>
-n  <F9>        * :CSinS<CR>:Ggrep -i "<C-R>s" |cw
+n  <F10>       * :cd %:p:h<CR>:NERDTreeCWD<CR>
+v  <F9>        * <Esc>:History/<CR>
+n  <F9>        * :History/<CR>
+v  <F8>        * <Esc>:History:<CR>
+n  <F8>        * :History:<CR>
+n  <F3>        * :CSinS<CR>:Ggrep -i "<C-R>s" |cw
+v  <F4>        * <Esc>:wa<CR>:bd<CR>
 n  <F4>        * :wa<CR>:bd<CR>
-n  <F3>        * :wa<CR>:e<CR>
+v  <F5>        * <Esc>:wa<CR>:e<CR>
+n  <F5>        * :wa<CR>:e<CR>
+v  <F2>        * <Esc>:wa<CR>
 n  <F2>        * :wa<CR>
    <F11>       * :cd %:p:h<CR>|:!pcmanfm &<CR><CR>
 n  <F1>        * <C-W><C-W>
-i  <F5>          <Plug>ToggleBackground
+i  <F10>       * <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+i  <F9>        * <Esc>:History/<CR>
+i  <F8>        * <Esc>:History:<CR>
+i  <F4>        * <Esc>:wa<CR>:bd<CR>
+i  <F5>        * <Esc>:wa<CR>:e<CR>
 i  <F2>        * <Esc>:wa<CR>
 i  <F11>         <Esc><F11>

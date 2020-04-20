@@ -1,3 +1,3 @@
 ,cd ..
-,call simpleMaps()
+,call GrabSimpleMaps()
 ,wq

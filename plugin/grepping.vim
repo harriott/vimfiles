@@ -7,7 +7,7 @@
 " ------------------------------------------------------------------------------------
 
 " Ggrep with the contents of s register:
-nnoremap <F9> :CSinS<CR>:Ggrep -i "<C-R>s" <bar>cw
+nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 
 " Strip the current selection & store it in the l then s register:
 function! StripStoreCurSel()
@@ -22,4 +22,9 @@ endfunction
 command! -nargs=? CSinS call StripStoreCurSel()
 
 " cd to file's and vimgrep for last search
-noremap <C-F9> :cd %:p:h<CR> :CSinS<CR> :vimgrep #<c-r>s#j **/*.md **/*.txt <bar> cw <cr>
+noremap <leader>v :cd %:p:h<CR> :CSinS<CR> :vimgrep #<c-r>s#j **/*.md **/*.txt <bar> cw
+function! SearchSelection()
+  cd %:p:h
+  call StripStoreCurSel()
+endfunction
+

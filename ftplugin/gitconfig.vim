@@ -7,4 +7,4 @@
 " :%s/origin/gh/g
 "
 " Convert remote url fur SSH access:
-nnoremap <F7> :s#https://github.com/#git@github.com:#g <CR>
+nnoremap <leader>u :s#https://github.com/#git@github.com:#g <CR>

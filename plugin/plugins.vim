@@ -44,6 +44,14 @@ set wildignore+=NTUSER.DAT*,*.lnk
 " - helps when in my Win7 %USERPROFILE%
 let g:ctrlp_cmd = 'CtrlPMRU'
 
+" for fzf:
+nnoremap <F8> :History:<CR>
+inoremap <F8> <Esc>:History:<CR>
+vnoremap <F8> <Esc>:History:<CR>
+nnoremap <F9> :History/<CR>
+inoremap <F9> <Esc>:History/<CR>
+vnoremap <F9> <Esc>:History/<CR>
+
 " for mru.vim:
 let MRU_Max_Entries = 1000
 let MRU_Window_Height = 15
@@ -53,5 +61,6 @@ let MRU_Use_Current_Window = 1
 " for NERDTree:
 noremap <C-n> :NERDTreeToggle<CR>
 " Open it on buffer's directory:
-noremap <F5> :cd %:p:h<CR>:NERDTreeCWD<CR>
+nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
 

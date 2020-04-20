@@ -23,7 +23,6 @@ o  I             targets#e('o', 'I', 'I')
 x  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
 o  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
 n  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
-n  \pt         * :call ParenthsToggle()<CR>
 v  \*          * :<C-U>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 n  \*          * :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
 n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
@@ -42,12 +41,21 @@ n  \[          * :s/\m\[.\{-}]//g<CR>
 n  \2          * :%s//"/g|:%s//"/g<CR>
 n  \d          * :cd %:p:h<CR>:pwd<CR>
 n  \-          * :Texplore<CR>
+n  \lt         * 3GVG:LanguageToolCheck <CR>
 n  \f          * :let@f=@%<CR>
    \gg         * :GitGutterToggle<CR>
-n  \n          * :set rnu! rnu? <CR>
+   \v          * :cd %:p:h<CR> :CSinS<CR> :vimgrep #<C-R>s#j **/*.md **/*.txt | cw <CR>
+   \yp         * :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
+   \yy         * :CalendarH<CR>
+n  \bd         * :Bdelete hidden<CR>
+n  \bdd        * :Bdelete other<CR>
+n  \rn         * :set rnu! rnu? <CR>
 n  \zz         * :let &scrolloff=999-&scrolloff<CR>
+n  \s          * :buffers<CR>:sbuffer<Space>
+   \be         * :BufExplorer<CR>
    \q          * :copen<CR>
 n  \nh           :nohlsearch<CR>
+n  \pt         * :call ParenthsToggle()<CR>
 n  \x          * <C-W>c
    \ll         * :set list! list? <CR>
 x  a             targets#e('o', 'a', 'a')
@@ -69,10 +77,8 @@ n  t           * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload
 n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
    <C-N>       * :NERDTreeToggle<CR>
 n  <Insert>    * :CapsLockOff <CR>
-   <S-Insert>    <MiddleMouse>
 
 c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
 i  <C-Tab>     * <Tab>
 i  <Insert>    * <Esc> :CapsLockOff <CR>
 i  <C-U>       * <C-G>u<C-U>
-!  <S-Insert>    <MiddleMouse>

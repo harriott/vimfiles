@@ -20,24 +20,29 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 " toggle relativenumber:
 nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 
-" buffer save mappings
-" --------------------
-" F2 to write all changed buffers:
-nnoremap <F2> :wa<CR>
-inoremap <F2> <Esc>:wa<CR>
-
-" write all changed buffers and reload the current one:
-nnoremap <F3> :wa<CR>:e<CR>
-
-" Alt+F2 to write all changed buffers and close the current one:
-nnoremap <F4> :wa<CR>:bd<CR>
-
 " BufExplorer's mappings
 " ----------------------
 "  <Leader>be - Opens BufExplorer
 "  <Leader>bt - Toggles BufExplorer open or closed
 "  <Leader>bs - Opens horizontally split window BufExplorer
 "  <Leader>bv - Opens vertically split window BufExplorer
+
+" buffer save mappings
+" --------------------
+" F2 to write all changed buffers:
+nnoremap <F2> :wa<CR>
+inoremap <F2> <Esc>:wa<CR>
+vnoremap <F2> <Esc>:wa<CR>
+
+" write all changed buffers and reload ("refresh") the current one:
+nnoremap <F5> :wa<CR>:e<CR>
+inoremap <F5> <Esc>:wa<CR>:e<CR>
+vnoremap <F5> <Esc>:wa<CR>:e<CR>
+
+" Alt+F2 to write all changed buffers and close the current one:
+nnoremap <F4> :wa<CR>:bd<CR>
+inoremap <F4> <Esc>:wa<CR>:bd<CR>
+vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 
 " my additions:
 "  quickly close all but current buffer

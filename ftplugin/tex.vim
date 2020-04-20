@@ -7,7 +7,7 @@
 " convert from markdown hyperlink references
 
 " open compiled pdf:
-nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
+nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 
 " Folding
 " -------
@@ -17,12 +17,22 @@ nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
 
 setlocal fdc=1 fdl=1 tw=0
 
-" As Vim's LaTeX syntax folding is slow, need a means to turn it off.
-" Turn off gVim's default syntax folding:
-nnoremap <buffer> <F7> :setlocal fdm=manual<cr>
-inoremap <buffer> <F7> <Esc>:setlocal fdm=manual<cr>
-" and turn it back on:
-nnoremap <buffer> <S-F7> :setlocal fdm=syntax<cr>
+" toggle it on and off for the buffer
+nnoremap <silent><buffer> <F7> :call LaTeXsyntaxFolding()<cr>
+inoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
+vnoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
+let b:LaTeXsyntaxFolding = 1
+function! LaTeXsyntaxFolding()
+  if b:LaTeXsyntaxFolding
+    setlocal fdm=manual
+    let b:LaTeXsyntaxFolding = 0
+    echo 'fdm=manual'
+  else
+    setlocal fdm=syntax
+    let b:LaTeXsyntaxFolding = 1
+    echo 'fdm=syntax'
+  endif
+endfunction
 
 " Tabbing
 " -------

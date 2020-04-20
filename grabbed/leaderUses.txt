@@ -1,3 +1,4 @@
+../ftplugin/gitconfig.vim:nnoremap <leader>u :s#https://github.com/#git@github.com:#g <CR>
 ../ftplugin/dokuwiki.vim:nnoremap <leader>= I=<Esc>A=<Esc>
 ../ftplugin/dokuwiki.vim:nnoremap <leader><leader>= I=== <Esc>A ===<Esc>
 ../ftplugin/dokuwiki.vim:nnoremap <leader>' viwc''''<Esc>hP
@@ -158,6 +159,7 @@
 ../plugin/dates.vim:noremap <leader>yy :CalendarH<CR>
 ../plugin/dates.vim:  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
 ../plugin/dates.vim:  noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
+../plugin/grepping.vim:noremap <leader>v :cd %:p:h<CR> :CSinS<CR> :vimgrep #<c-r>s#j **/*.md **/*.txt <bar> cw <cr>
 ../plugin/plugins.vim:noremap <leader>gg :GitGutterToggle<CR>
 ../tags:base64-<leader>-atob	grabbed/leaderUses.txt	/*base64-<leader>-atob*
 ../tags:base64-<leader>-atob	pack/ft/start/vim-base64/doc/base64.txt	/*base64-<leader>-atob*
