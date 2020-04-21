@@ -7,7 +7,6 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 
 ( see also https://vimhelp.org/quickref.txt.html )
 
-    :Bufferize scriptnames   => vimfile load order at start
     :Bufferize version       => Vim version etc
     :helpt ALL               => generate all tags
     :helptags $HOME\vimfiles => set tags
@@ -94,8 +93,8 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	#                     => over a word highlights all exact instances, and jumps to last
 	%                     => find opposing bracket in a line
 	*                     => highlight all instances of exactly the word under the cursor
-	,/                    => (mapping for) clearing yellow searched highlights
-	/n                    => (mapping for) toggle relativenumber
+	/n                    => (my mapping for) clearing yellow searched highlights
+	/rn                   => (my mapping for) toggle relativenumber
     :Bufferize il <word>  => grab list of lines containing <word> in a new buffer
 	[I or ]I              => list lines containing word under cursor
     g/                    => incsearch-stay

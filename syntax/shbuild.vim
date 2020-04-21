@@ -11,12 +11,12 @@ endif
 
 runtime! syntax/sh.vim
 
-syntax region buildH start=/^ *#=\+/ end=/$/
+syntax match buildY '#=.*$'
+syntax match buildN '.\+#=.*$'
 
-" hi def link buildH term=bold cterm=bold gui=bold guifg=LightGreen
-" hi def link buildH Identifier
-" hi buildH Identifier
-hi def buildH term=bold cterm=bold gui=bold guifg=Orange
+hi def buildY term=bold cterm=bold gui=bold guifg=LightGreen
+hi def buildN term=bold cterm=bold gui=bold guifg=LightGray
+" see  cterm-colors  in  ../keystrokes.md
 
 let b:current_syntax = "shbuild"
 

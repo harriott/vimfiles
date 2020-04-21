@@ -14,7 +14,7 @@
 
 setlocal tw=0 fdc=1 fde=EF() fdl=0 fdm=expr
 
-" create a heading:
+" create a heading around text:
 nnoremap <leader><leader>= I== <Esc>A ==<Esc>
 " boost up a heading:
 nnoremap <leader>== I==<Esc>A==<Esc>
