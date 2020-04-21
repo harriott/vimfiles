@@ -17,7 +17,7 @@ runtime! ftplugin/sh.vim
 
 " (adapted from my markdown.vim)
 function! BuildFile()
-  let l:foldMark = matchstr(getline(v:lnum), '^ \=#=\+') "defined l:foldMark, even in no match
+  let l:foldMark = matchstr(getline(v:lnum), '#=\+') "defined l:foldMark, even in no match
   " if there's a heading set an equivalent fold start
   if empty(l:foldMark)
     return "="
@@ -28,4 +28,28 @@ function! BuildFile()
 endfunction
 
 set fde=BuildFile()
+
+" turn off or on a fold of Bash commands
+" --------------------------------------
+" firmly comment out a whole fold
+function! FirmComment()
+  " definitely close the current fold, and select it
+  normal! zozckjV
+  " firmly comment it out
+  s/^\(.\)/# \1/
+  " definitely close the current fold, then delete and restore to get out of visual line
+  normal! zozckjdP
+endfunction
+nnoremap <leader><right> :call FirmComment()<cr>
+
+" remove firm comments from a whole fold
+function! FirmUnComment()
+  " definitely close the current fold, and select it
+  normal! zozckjV
+  " firmly uncomment it (suppressing any error messages if there're uncommented lines)
+  sil! exec 's/^# //'
+  " definitely close the current fold, then delete and restore to get out of visual line
+  normal! zozckjdP
+endfunction
+nnoremap <leader><left> :call FirmUnComment()<cr>
 

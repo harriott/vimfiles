@@ -11,9 +11,12 @@ endif
 
 runtime! syntax/sh.vim
 
-syntax region buildH start=/^ \=#=/ end=/$/
+syntax region buildH start=/^ *#=\+/ end=/$/
 
-hi def link buildH Folded
+" hi def link buildH term=bold cterm=bold gui=bold guifg=LightGreen
+" hi def link buildH Identifier
+" hi buildH Identifier
+hi def buildH term=bold cterm=bold gui=bold guifg=Orange
 
 let b:current_syntax = "shbuild"
 
