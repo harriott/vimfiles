@@ -5,7 +5,10 @@
 "
 " My plugin configurations are sourced automatically in the likes of  plugin\plugins.vim.
 
+" <F1> switches windows
 nnoremap <F1> <C-W><C-W>
+inoremap <F1> <Esc><C-W><C-W>
+vnoremap <F1> <Esc><C-W><C-W>
 
 set encoding=utf-8  " get this done early
 

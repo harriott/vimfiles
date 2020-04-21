@@ -50,7 +50,7 @@ vnoremap <leader>b c\textbf{}<Esc>P
 " for Verse
 " ---------
 " append  \\:
-vnoremap <buffer> <F12> :s#^\v(.+)$#\1 \\\\#g <bar> nohlsearch <CR>
+vnoremap <buffer> <leader>v1 :s#^\v(.+)$#\1 \\\\#g <bar> nohlsearch <CR>
 " remove  \\ from the last line of a stanza:
-vnoremap <buffer> <S-F12> :s#^\v(.+) \\\\$\n^$#\1\r#g <CR>
+vnoremap <buffer> <leader>v2 :s#^\v(.+) \\\\$\n^$#\1\r#g <CR>
 

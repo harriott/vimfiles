@@ -44,6 +44,7 @@ n  \-          * :Texplore<CR>
 n  \lt         * 3GVG:LanguageToolCheck <CR>
 n  \f          * :let@f=@%<CR>
    \gg         * :GitGutterToggle<CR>
+n  \vg         * :call SearchSelection()<CR>
    \yp         * :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
    \yy         * :CalendarH<CR>
 n  \bd         * :Bdelete hidden<CR>

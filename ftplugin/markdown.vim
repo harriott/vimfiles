@@ -13,17 +13,17 @@ let b:ale_enabled = 0
 
 " convert mysms screen scrape to markdown
 if has('unix') " should really be asking if Perl is available
-  nnoremap <S-F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
+  nnoremap <buffer> <F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
 else
-  nnoremap <S-F7> :execute "silent !perl D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
+  nnoremap <buffer> <F7> :execute "silent !perl D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
   " fails - try with fileformat dos
 endif
 
 " open Pandoc'd pdf
-nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
+nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 
 " wrap the inner word under cursor with backticks
-nnoremap <leader>` viwc``<Esc>P
+nnoremap <buffer> <leader>` viwc``<Esc>P
 
 " Markdown folding by header marks
 " --------------------------------------
@@ -39,7 +39,7 @@ set fde=MdF() fdl=0 fdc=1
 " for Verse
 " ---------
 " prepend >  & append  :
-vnoremap <buffer> <F12> :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
+vnoremap <buffer> <leader>v1 :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
 " remove   from the last line of a stanza:
-vnoremap <buffer> <S-F12> :s#^\v(.+)  $\n^$#\1\r#g <CR>
+vnoremap <buffer> <leader>v2 :s#^\v(.+)  $\n^$#\1\r#g <CR>
 

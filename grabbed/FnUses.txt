@@ -1,18 +1,14 @@
 ../ftplugin/php/phpfolding.vim:"       map <F5> <Esc>:EnableFastPHPFolds<Cr>
 ../ftplugin/php/phpfolding.vim:"       map <F6> <Esc>:EnablePHPFolds<Cr>
 ../ftplugin/php/phpfolding.vim:"       map <F7> <Esc>:DisablePHPFolds<Cr>
-../ftplugin/markdown.vim:  nnoremap <S-F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
-../ftplugin/markdown.vim:  nnoremap <S-F7> :execute "silent !perl D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
-../ftplugin/markdown.vim:nnoremap <buffer> <S-F11> :call CompiledPDF()<CR>
-../ftplugin/markdown.vim:vnoremap <buffer> <F12> :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
-../ftplugin/markdown.vim:vnoremap <buffer> <S-F12> :s#^\v(.+)  $\n^$#\1\r#g <CR>
+../ftplugin/markdown.vim:  nnoremap <buffer> <F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/markdown.vim:  nnoremap <buffer> <F7> :execute "silent !perl D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/markdown.vim:nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 ../ftplugin/tex.vim:nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 ../ftplugin/tex.vim:nnoremap <silent><buffer> <F7> :call LaTeXsyntaxFolding()<cr>
 ../ftplugin/tex.vim:inoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
 ../ftplugin/tex.vim:vnoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
-../ftplugin/tex.vim:vnoremap <buffer> <F12> :s#^\v(.+)$#\1 \\\\#g <bar> nohlsearch <CR>
-../ftplugin/tex.vim:vnoremap <buffer> <S-F12> :s#^\v(.+) \\\\$\n^$#\1\r#g <CR>
-../ftplugin/muttaliases.vim:nnoremap <buffer> <F12> gg2jVG:sort u <cr>
+../ftplugin/muttaliases.vim:nnoremap <buffer> <F7> gg2jVG:sort u <cr>
 ../gvimrc.vim:nnoremap <S-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 ../pack/git/start/vim-fugitive/autoload/fugitive.vim:  call s:Map('n', '<F1>', ':help :Git_blame<CR>', '<silent>')
 ../pack/git/start/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<F1>',  ":<C-U>help fugitive-map<CR>", '<silent>')

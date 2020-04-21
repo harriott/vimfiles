@@ -7,5 +7,11 @@
 unmap <buffer> X
 " (bizarrely it doesn't disable the X mapping made by vim-buffing-wheel)
 
-nnoremap <leader>gp :Git push<cr>
+nnoremap <buffer><leader>gp :Git push<cr>
+
+" <F1> gets remapped by  vim-fugitive  to  :h fugitive
+" I prefer to keep my mapping:
+nnoremap <buffer><F1> <C-W><C-W>
+inoremap <buffer><F1> <Esc><C-W><C-W>
+vnoremap <buffer><F1> <Esc><C-W><C-W>
 
