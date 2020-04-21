@@ -5,5 +5,15 @@
 " This file should be in your vimfiles\ftplugin folder.
 " You need to specify ft=sh in a modeline in the file that you want to affect.
 
-setlocal expandtab shiftwidth=2 textwidth=0
+if exists("b:current_syntax")
+  finish
+endif
+
+runtime! syntax/sh.vim
+
+syntax region buildH start=/^ \=#=/ end=/$/
+
+hi def link buildH Folded
+
+let b:current_syntax = "shbuild"
 

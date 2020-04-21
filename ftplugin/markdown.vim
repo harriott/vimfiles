@@ -29,9 +29,9 @@ nnoremap <buffer> <leader>` viwc``<Esc>P
 " --------------------------------------
 " (based on http://stackoverflow.com/questions/3828606/vim-markdown-folding)
 function! MdF()
-	let j = matchstr(getline(v:lnum), '^#\+') "defined j, even in no match
+	let l:hashcount = matchstr(getline(v:lnum), '^#\+') "defined l:hashcount, even in no match
 	" if there's a heading set an equivalent fold start
-	if empty(j) | return "=" | else | return ">".len(j) | endif
+	if empty(l:hashcount) | return "=" | else | return ">".len(l:hashcount) | endif
 endfunction
 
 set fde=MdF() fdl=0 fdc=1
