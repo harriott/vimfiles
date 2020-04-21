@@ -100,7 +100,8 @@ function! ParenthsToggle()
 endfunction
 
 " clear search highlights
-nmap <leader>nh :nohlsearch<CR>
+nnoremap <leader>n :nohlsearch<CR>
+vnoremap <leader>n <Esc>:nohlsearch<CR>
 
 " re-open the quickfix-window, eg to look again at results of vimgrep
 noremap <leader>q :copen<CR>
