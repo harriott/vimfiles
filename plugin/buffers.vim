@@ -1,7 +1,12 @@
 
-" Joseph Harriott - http://momentary.eu/
-" --------------------------------------
+" Joseph Harriott - Thu 23 Apr 2020
+" ---------------------------------
+
+" ------------------
+" ------------------
 " More buffer stuff.
+" ------------------
+" ------------------
 "
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
@@ -31,16 +36,6 @@ vnoremap <F5> <Esc>:wa<CR>:e<CR>
 nnoremap <F4> :wa<CR>:bd<CR>
 inoremap <F4> <Esc>:wa<CR>:bd<CR>
 vnoremap <F4> <Esc>:wa<CR>:bd<CR>
-
-" mutt file treatments:
-" ------------------------
-" required for muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
-autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
-
-" neomutt temporary files (eg mail) finish
-autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <A-F2> :wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <A-F2> <Esc>:wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal tw=0
 
 " nnn temporary file treatments
 " -----------------------------
@@ -72,4 +67,19 @@ autocmd BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 
 " XML syntax folding on:
 let g:xml_syntax_folding = 1
+
+" ------------------------
+" mutt file treatments:
+" ------------------------
+" required for muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
+autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
+
+" neomutt temporary files (eg mail)
+" ---------------------------------
+autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal tw=0
+" swap out any non-breaking whitespaces (and go back to top):
+autocmd BufRead,BufNewFile /tmp/neomutt-* %s/ / /g | go
+" quit when done:
+autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
 

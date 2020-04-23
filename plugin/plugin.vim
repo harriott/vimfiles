@@ -1,8 +1,13 @@
+
+" Joseph Harriott - Thu 23 Apr 2020
+" ---------------------------------
+
 "----------------------
 "----------------------
 " Extra configurations
 " ---------------------
 "----------------------
+"
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
 " clear the registers b-z
@@ -12,14 +17,13 @@ command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | 
 nnoremap <leader>f :let@f=@%<CR>
 
 if has('nvim')
+  " for some edge cases
   function! QuitNoName()
     if len(getbufinfo({'buflisted':1})) == 1
       q!
     endif
   endfunction
-  noremap <S-F10> :call QuitNoName() <CR>
-  noremap <S-F22> :call QuitNoName() <CR>
-  " noremap <S-F10> :GitGutterToggle<CR>
+  " noremap <F12> :call QuitNoName() <CR>
 endif
 
 " switch on DokuWiki comment highlighting (read by ./syntax/dokuwiki.vim)
@@ -60,9 +64,9 @@ iab <expr> d8p strftime("%Y-%m-%d %H:%M")
 iab <expr> d8s strftime("%d/%m/%y")
 iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
-----------
+" --------
 " Grepping
-----------
+" --------
 " Strip the current selection & store it in the l then s register:
 function! StripStoreCurSel()
   let l:lastvimsearch = getreg('/')
