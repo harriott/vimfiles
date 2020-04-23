@@ -136,7 +136,6 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	:exe ":normal i" . strftime("%c")  => put date-time at cursor
     :\c                                => toggle cursor column
     :\l                                => toggle cursor line
-    Ctrl+w =                           -> equalise window sizes
 
 ## colour codes
     HexokinaseTurnOn
@@ -203,4 +202,8 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	gv => reselect the last block
 	j  => in Visual mode, selects line and moves cursor down (k for up)
 	v  => character-based visual selection
+
+# Windows
+    Ctrl+w = -> equalise window sizes
+    Ctrl+W _ => maximizes a window
 

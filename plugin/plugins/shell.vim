@@ -5,12 +5,6 @@
 "
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
-" fugitive
-
-
-" get filepath into register f
-nnoremap <leader>f :let@f=@%<CR>
-
 " LanguageTool - for my Scratch files:
 nnoremap <leader>lt 3GVG:LanguageToolCheck <CR>
 
@@ -27,4 +21,21 @@ vmap <F6> <Plug>(openbrowser-smart-search)
 
 " set working directory to that of the currently loaded file's
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
+
+" --------------------
+" searching externally
+" --------------------
+" for CtrlP:
+set wildignore+=NTUSER.DAT*,*.lnk
+" - helps when in my Win7 %USERPROFILE%
+let g:ctrlp_cmd = 'CtrlPMRU'
+
+" Ggrep with the contents of s register:
+nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
+
+" for NERDTree:
+noremap <C-n> :NERDTreeToggle<CR>
+" Open it on buffer's directory:
+nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
 

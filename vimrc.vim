@@ -1,9 +1,13 @@
 
-" My portable vimrc - Joseph Harriott - http://momentary.eu/
-" ----------------------------------------------------------
+" My portable vimrc - Joseph Harriott
+" -----------------------------------
 " True vimrc should source this file, which has settings that work in both MSWin & GNU+Linux.
-"
-" My plugin configurations are sourced automatically in the likes of  plugin\plugins.vim.
+
+" ------------------------------------------------------------------
+" ------------------------------------------------------------------
+" typically basic Vim settings here - look in plugin folder for more
+" ------------------------------------------------------------------
+" ------------------------------------------------------------------
 
 " <F1> switches windows
 nnoremap <F1> <C-W><C-W>
@@ -11,9 +15,6 @@ inoremap <F1> <Esc><C-W><C-W>
 vnoremap <F1> <Esc><C-W><C-W>
 
 set encoding=utf-8  " get this done early
-
-" clear the registers b-z
-command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
 
 " ---------
 " interface
@@ -31,6 +32,9 @@ set modelines=4
 
 " close window, including quickfix-window and NerdTree navigation
 nnoremap <leader>x <C-W>c
+
+" split wider
+nnoremap <leader>> 10<C-W>>
 
 " toggle cursorcolumn:
 nnoremap <silent><leader>cc :set cuc! cuc? <CR>
@@ -79,37 +83,4 @@ if 1
   xnoremap q: <NOP>
 
 endif
-
-" ---------
-" searching
-" ---------
-if !exists("g:loaded_matchparen")
-  autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
-endif
-" and <leader>pt toggles it:
-nnoremap <leader>pt :call ParenthsToggle()<cr>
-let g:parenthesismatch = 0
-function! ParenthsToggle()
-  if g:parenthesismatch
-    NoMatchParen
-    let g:parenthesismatch = 0
-  else
-    DoMatchParen
-    let g:parenthesismatch = 1
-  endif
-endfunction
-
-" clear search highlights
-nnoremap <leader>n :nohlsearch<CR>
-vnoremap <leader>n <Esc>:nohlsearch<CR>
-
-" re-open the quickfix-window, eg to look again at results of vimgrep
-noremap <leader>q :copen<CR>
-
-" select to end of line in unix
-if has('unix')
-  nnoremap <leader>v v$hy
-endif
-
-set ignorecase incsearch smartcase
 

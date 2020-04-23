@@ -6,11 +6,6 @@
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
 
-noremap <silent> <leader>be :BufExplorer<CR>
-
-nmap <unique> <leader>pe <Plug>(PickerEdit)
-nmap <unique> <leader>pb <Plug>(PickerBuffer)
-
 " Split window to a buffer number:
 nnoremap <leader>s :buffers<CR>:sbuffer<Space>
 
@@ -19,13 +14,6 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 " toggle relativenumber:
 nnoremap <silent><leader>rn :set rnu! rnu? <CR>
-
-" BufExplorer's mappings
-" ----------------------
-"  <Leader>be - Opens BufExplorer
-"  <Leader>bt - Toggles BufExplorer open or closed
-"  <Leader>bs - Opens horizontally split window BufExplorer
-"  <Leader>bv - Opens vertically split window BufExplorer
 
 " buffer save mappings
 " --------------------
@@ -44,12 +32,6 @@ nnoremap <F4> :wa<CR>:bd<CR>
 inoremap <F4> <Esc>:wa<CR>:bd<CR>
 vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 
-" my additions:
-"  quickly close all but current buffer
-nnoremap <leader>bdd :Bdelete other<CR>
-"  quickly close all but visible buffers
-nnoremap <leader>bd  :Bdelete hidden<CR>
-
 " mutt file treatments:
 " ------------------------
 " required for muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
@@ -66,11 +48,8 @@ autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal tw=0
 autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
 
 " finish an nnn file rename:
-autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <A-F2> :wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <A-F2> <Esc>:wa<CR>:q<CR>
-
-" turn off Hexokinase colouring:
-autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
+autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <F4> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <F4> <Esc>:wa<CR>:q<CR>
 
 " Other special file treatments
 " -----------------------------

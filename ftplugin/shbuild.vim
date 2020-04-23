@@ -40,7 +40,7 @@ function! FirmComment()
   " definitely close the current fold, then delete and restore to get out of visual line
   normal! zozckjdP
 endfunction
-nnoremap <leader><right> :call FirmComment()<cr>
+nnoremap <buffer><leader>> :call FirmComment()<cr>
 
 " remove firm comments from a whole fold
 function! FirmUnComment()
@@ -51,5 +51,5 @@ function! FirmUnComment()
   " definitely close the current fold, then delete and restore to get out of visual line
   normal! zozckjdP
 endfunction
-nnoremap <leader><left> :call FirmUnComment()<cr>
+nnoremap <buffer><leader>> :call FirmUnComment()<cr>
 

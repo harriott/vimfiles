@@ -4,10 +4,6 @@
 " --------------------------------------------------------
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
-"----------------
-" Text Formatting
-" ---------------
-
 set shiftwidth=4
 set tabstop=4
 set tw=99
@@ -15,21 +11,8 @@ set tw=99
 " Clear left & right double quotes (as these aren't mapped to a keyboard key):
 nnoremap <leader>2 :%s/“/"/g<bar>:%s/”/"/g<cr>
 
-" EasyAlign
-nmap gA <Plug>(EasyAlign)
-xmap gA <Plug>(EasyAlign)
-" the following are just as easily entered as regex's
-let g:easy_align_delimiters = {
-    \ 'b': { 'pattern': '∙' },
-    \ 'm': { 'pattern': ' - ' },
-    \ '>': { 'pattern': '>>\|=>\|>' }
-    \ }
-
 " lesser indentation of vimscript continuation line:
 let g:vim_indent_cont = &sw
-
-" The NERD Commenter
-let NERDSpaceDelims = 1
 
 " Remove all square bracketed text
 nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
@@ -102,29 +85,4 @@ function! PercentUnicode()
     :keepp s/%E2%80%94/—/eg
 endfunction
 " if you need to work on a range, use  :<selection>call PercentUnicode()
-
-" mysms
-" -----
-" format text messages scraped from screen
-function! MysmsReOrder()
-  :let s:mysmslist = @%
-  :1,3d
-  :e reOrdered.md
-  :put "
-  " :execute 'edit' s:mysmslist
-endfunction
-
-" Underline using dashes automatically
-" ------------------------------------
-" (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
-" eg :Underline ~+-  gives underlining like ~+-~+-~+-~+-~+-~+-
-function! s:Underline(chars)
-  let chars = empty(a:chars) ? '-' : a:chars
-  let nr_columns = virtcol('$') - 1
-  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
-  put =strpart(uline, 0, nr_columns)
-endfunction
-command! -nargs=? Underline call s:Underline(<q-args>)
-" map:
-nnoremap <leader>u :Underline
 
