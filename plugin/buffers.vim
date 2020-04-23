@@ -68,18 +68,3 @@ autocmd BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 " XML syntax folding on:
 let g:xml_syntax_folding = 1
 
-" ------------------------
-" mutt file treatments:
-" ------------------------
-" required for muttrc-gmx (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
-autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
-
-" neomutt temporary files (eg mail)
-" ---------------------------------
-autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal tw=0
-" swap out any non-breaking whitespaces (and go back to top):
-autocmd BufRead,BufNewFile /tmp/neomutt-* %s/ / /g | go
-" quit when done:
-autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
-

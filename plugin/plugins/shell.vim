@@ -8,6 +8,10 @@
 " LanguageTool - for my Scratch files:
 nnoremap <leader>lt 3GVG:LanguageToolCheck <CR>
 
+" moving to ALE errors in neomutt temporary files (eg mail)
+autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-j> <Plug>(ale_next_wrap)
+autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+
 " netrw:
 let g:netrw_banner = 0
 let g:netrw_liststyle = 2
