@@ -48,6 +48,7 @@ function! UnicodePercent()
     :keepp s/ı/%C4%B1/eg
     :keepp s/Ł/%C5%81/eg
     :keepp s/ń/%C5%84/eg
+    :keepp s/œ/%C5%93/eg
     :keepp s/ū/%C5%AB/eg
     :keepp s/–/%E2%80%93/eg
     :keepp s/—/%E2%80%94/eg
@@ -80,6 +81,7 @@ function! PercentUnicode()
     :keepp s/%C4%B1/ı/eg
     :keepp s/%C5%81/Ł/eg
     :keepp s/%C5%84/ń/eg
+    :keepp s/%C5%93/œ/eg
     :keepp s/%C5%AB/ū/eg
     :keepp s/%E2%80%93/–/eg
     :keepp s/%E2%80%94/—/eg
