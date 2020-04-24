@@ -53,8 +53,8 @@ endfunction
 " this function is only needed for markdown and TeX files
 
 " Open Windows Explorer showing directory of current buffer
-nmap <F11> :!start explorer /select,%:p<CR>
-imap <F11> <Esc><F11>
+nnoremap <F11> :!start explorer /select,%:p<CR>
+inoremap <F11> <Esc><F11>
 
 " Colorscheme
 " -----------
