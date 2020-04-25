@@ -16,8 +16,15 @@ autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 " ---------------------------------
 autocmd BufRead,BufNewFile /tmp/neomutt-* setlocal tw=0
 " quit when done:
-autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
+function! BackupQuit()
+  wa
+  exec 'sav' $HOME.'/.cache/mutt/sends/'.strftime('%Y-%m-%d-%H:%M:%S').'.txt'
+  q
+endfunction
+" autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :wa<CR>:q<CR>
+" autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()
+autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call BackupQuit()
 
 " swap out any crap
 " -----------------
