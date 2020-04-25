@@ -16,6 +16,9 @@ vnoremap <F1> <Esc><C-W><C-W>
 
 set encoding=utf-8  " get this done early
 
+" turn off some unused Fn keys in insert mode
+inoremap <F3> <Esc>
+
 " ---------
 " interface
 " ---------
