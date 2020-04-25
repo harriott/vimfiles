@@ -23,8 +23,8 @@ function! BackupQuit()
 endfunction
 " autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :wa<CR>:q<CR>
 " autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()
-autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call BackupQuit()
+autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
+autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
 
 " swap out any crap
 " -----------------
