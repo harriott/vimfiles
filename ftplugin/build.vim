@@ -9,6 +9,9 @@
 
 setlocal expandtab shiftwidth=2 textwidth=0
 
+" demote a heading
+vnoremap <buffer><leader>> :s/^#/##/<CR>
+
 " folding by header marks
 " -----------------------
 " copied from my ftplugin/markdown.vim

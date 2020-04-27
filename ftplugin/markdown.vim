@@ -11,6 +11,9 @@ setlocal expandtab tw=0
 " ALE
 let b:ale_enabled = 0
 
+" demote a heading
+vnoremap <buffer><leader>> s/^#/##/<CR>
+
 " convert mysms screen scrape to markdown
 if has('unix') " should really be asking if Perl is available
   nnoremap <buffer> <F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>

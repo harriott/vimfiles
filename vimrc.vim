@@ -37,7 +37,7 @@ set modelines=4
 nnoremap <leader>x <C-W>c
 
 " split wider
-nnoremap <leader>> 10<C-W>>
+nnoremap <leader><right> 10<C-W>>
 
 " toggle cursorcolumn:
 nnoremap <silent><leader>cc :set cuc! cuc? <CR>
