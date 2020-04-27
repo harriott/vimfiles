@@ -26,6 +26,12 @@ if has('nvim')
   " noremap <F12> :call QuitNoName() <CR>
 endif
 
+" fcrontab
+if has('nvim')
+  autocmd BufRead,BufNewFile fcr-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
+  autocmd BufRead,BufNewFile fcr-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
+endif
+
 " switch on DokuWiki comment highlighting (read by ./syntax/dokuwiki.vim)
 let dokuwiki_comment=1
 
