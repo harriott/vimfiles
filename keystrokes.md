@@ -25,7 +25,6 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	C-6       => edit the alternate file (usually = the previous buffer)
 	C-Wgf     => open the file under the cursor in a new tab
 	C-Wo      => closes all other windows
-	C-Wv      => vertical split
 	C-i       => jump forward (to where you've been)
 	C-o       => jump back (to where you've been)
     g-        => revert to previous change
@@ -61,8 +60,8 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	'k         => move to mark k
 	0          => start of line
 	#G         => go to line #
-    Ctrl+e     => scroll up the window, without displacing the cursor
-    Ctrl+y     => scroll down the window, without displacing the cursor
+    C-e        => scroll up the window, without displacing the cursor
+    C-y        => scroll down the window, without displacing the cursor
 	H          => go Home (top line of current window display)
 	M          => go Middle line (of current window display)
 	L          => go Last line (of current window display)
@@ -203,7 +202,11 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	j  => in Visual mode, selects line and moves cursor down (k for up)
 	v  => character-based visual selection
 
-# Windows
-    Ctrl+w = -> equalise window sizes
-    Ctrl+W _ => maximizes a window
+# Windows Splits
+    C-w=         => equalise window sizes
+    C-w[H|J|K|L] => move split
+    C-w[h|j|k|l] => move focus to neighbouring split
+    C-w_         => maximizes a window
+    C-wr         => rotate split to right
+	C-wv         => vertical split
 
