@@ -33,6 +33,7 @@ nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 set wildignore+=NTUSER.DAT*,*.lnk
 " - helps when in my Win7 %USERPROFILE%
 let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_mruf_max = 500
 
 " Ggrep with the contents of s register:
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
