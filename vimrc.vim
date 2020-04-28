@@ -36,9 +36,6 @@ set modelines=4
 " close window, including quickfix-window and NerdTree navigation
 nnoremap <leader>x <C-W>c
 
-" split wider
-nnoremap <leader><right> 10<C-W>>
-
 " toggle cursorcolumn:
 nnoremap <silent><leader>cc :set cuc! cuc? <CR>
 " toggle cursorline:
@@ -46,6 +43,17 @@ nnoremap <silent><leader>cl :set cul! cul? <CR>
 
 " toggle folds open/closed
 nnoremap <Space> za
+
+" resize vim windows (:h window-resize)
+" -------------------------------------
+" decrease window height
+nnoremap <leader><down> 5<C-W>-
+" increase window height
+nnoremap <leader><up> 5<C-W>+
+" decrease window width
+nnoremap <leader><left> 10<C-W><
+" increase window width
+nnoremap <leader><right> 10<C-W>>
 
 " ------------
 " buffer stuff
