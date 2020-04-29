@@ -42,18 +42,19 @@ nnoremap <leader>= I=<Esc>A=<Esc>
 " create a heading:
 nnoremap <leader><leader>= I=== <Esc>A ===<Esc>
 
-" wrap the inner word under cursor with ''
-nnoremap <leader>' viwc''''<Esc>hP
-
-" wrap a selection with ''
-vnoremap <leader>' c''''<Esc>hP
-
+" having just selected a web-page heading, format it into a DokuWiki hyperling
 function! PageTitleToHyperlink()
   let l:pagetitle = getreg('"')
   execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
 endfunction
 vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 " (I'm using two h's because  gitgutter.vim  binds some \hx's)
+
+" wrap the inner word under cursor with ''
+nnoremap <leader>' viwc''''<Esc>hP
+
+" wrap a selection with ''
+vnoremap <leader>' c''''<Esc>hP
 
 " Mapping to add wrap indent tags around quotes
 " ---------------------------------------------
