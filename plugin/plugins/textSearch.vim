@@ -20,7 +20,7 @@ map  <Leader><Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 " s{char}{char}{label}
 autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
-" (in an autocmd to be sure it works with Arch vim-colors-solarized)
+"  (in an autocmd to be sure it works with Arch vim-colors-solarized)
 
 " toggle searching functionality
 nnoremap <leader>e :call EasyMotionSearchToggle()<cr>
