@@ -27,6 +27,11 @@ function! BuildFile()
   endif
 endfunction
 
+" demote a heading
+vnoremap <buffer><leader>> :s/#=/#==/<CR>
+" promote a heading
+vnoremap <buffer><leader>< :s/#==/#=/<CR>
+
 set fde=BuildFile()
 
 " turn off or on a fold of Bash commands

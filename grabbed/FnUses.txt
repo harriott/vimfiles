@@ -9,6 +9,10 @@
 ../ftplugin/tex.vim:inoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
 ../ftplugin/tex.vim:vnoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
 ../ftplugin/muttaliases.vim:nnoremap <buffer> <F7> gg2jVG:sort u <cr>
+../ftplugin/fugitive.vim:" <F1> gets remapped by  vim-fugitive  to  :h fugitive
+../ftplugin/fugitive.vim:nnoremap <buffer><F1> <C-W><C-W>
+../ftplugin/fugitive.vim:inoremap <buffer><F1> <Esc><C-W><C-W>
+../ftplugin/fugitive.vim:vnoremap <buffer><F1> <Esc><C-W><C-W>
 ../gvimrc.vim:nnoremap <S-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 ../pack/git/start/vim-fugitive/autoload/fugitive.vim:  call s:Map('n', '<F1>', ':help :Git_blame<CR>', '<silent>')
 ../pack/git/start/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<F1>',  ":<C-U>help fugitive-map<CR>", '<silent>')
@@ -23,8 +27,9 @@
 ../pack/layout/start/vim-colors-tomorrow/doc/tomorrow.txt:"<F5>" value to the key or key combination you wish to use:
 ../pack/layout/start/vim-colors-tomorrow/doc/tomorrow.txt:	call togglebg#map("<F5>")
 ../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <F8>                        <Plug>FontsizeBegin
-../plugin/shell.vim:nmap <F6> <Plug>(openbrowser-smart-search)
-../plugin/shell.vim:vmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/plugin.vim:  " noremap <F12> :call QuitNoName() <CR>
+../plugin/plugin.vim:  autocmd BufRead,BufNewFile fcr-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
+../plugin/plugin.vim:  autocmd BufRead,BufNewFile fcr-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
 ../plugin/buffers.vim:nnoremap <F2> :wa<CR>
 ../plugin/buffers.vim:inoremap <F2> <Esc>:wa<CR>
 ../plugin/buffers.vim:vnoremap <F2> <Esc>:wa<CR>
@@ -34,22 +39,29 @@
 ../plugin/buffers.vim:nnoremap <F4> :wa<CR>:bd<CR>
 ../plugin/buffers.vim:inoremap <F4> <Esc>:wa<CR>:bd<CR>
 ../plugin/buffers.vim:vnoremap <F4> <Esc>:wa<CR>:bd<CR>
+../plugin/buffers.vim:autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <F4> :wa<CR>:q<CR>
+../plugin/buffers.vim:autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <F4> <Esc>:wa<CR>:q<CR>
 ../plugin/buffers.vim:autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
 ../plugin/buffers.vim:autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
-../plugin/grepping.vim:nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
-../plugin/plugins.vim:  noremap <S-F10> :call QuitNoName() <CR>
-../plugin/plugins.vim:  noremap <S-F22> :call QuitNoName() <CR>
-../plugin/plugins.vim:  " noremap <S-F10> :GitGutterToggle<CR>
-../plugin/plugins.vim:nnoremap <F8> :History:<CR>
-../plugin/plugins.vim:inoremap <F8> <Esc>:History:<CR>
-../plugin/plugins.vim:vnoremap <F8> <Esc>:History:<CR>
-../plugin/plugins.vim:nnoremap <F9> :History/<CR>
-../plugin/plugins.vim:inoremap <F9> <Esc>:History/<CR>
-../plugin/plugins.vim:vnoremap <F9> <Esc>:History/<CR>
-../plugin/plugins.vim:nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
-../plugin/plugins.vim:inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+../plugin/plugins/shell.vim:nmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/plugins/shell.vim:vmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/plugins/shell.vim:nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
+../plugin/plugins/shell.vim:nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+../plugin/plugins/shell.vim:inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+../plugin/plugins/plugins.vim:nnoremap <F8> :History:<CR>
+../plugin/plugins/plugins.vim:inoremap <F8> <Esc>:History:<CR>
+../plugin/plugins/plugins.vim:vnoremap <F8> <Esc>:History:<CR>
+../plugin/plugins/plugins.vim:nnoremap <F9> :History/<CR>
+../plugin/plugins/plugins.vim:inoremap <F9> <Esc>:History/<CR>
+../plugin/plugins/plugins.vim:vnoremap <F9> <Esc>:History/<CR>
+../plugin/muttFiles.vim:autocmd BufRead,BufNewFile /tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
+../plugin/muttFiles.vim:autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
 ../vimrc-Arch.vim:noremap <F11> :cd %:p:h<CR><bar>:!pcmanfm &<CR><CR>
 ../vimrc-Arch.vim:imap <F11> <Esc><F11>
+../vimrc.vim:" <F1> switches windows
 ../vimrc.vim:nnoremap <F1> <C-W><C-W>
-../vimrc-Win10.vim:nmap <F11> :!start explorer /select,%:p<CR>
-../vimrc-Win10.vim:imap <F11> <Esc><F11>
+../vimrc.vim:inoremap <F1> <Esc><C-W><C-W>
+../vimrc.vim:vnoremap <F1> <Esc><C-W><C-W>
+../vimrc.vim:inoremap <F3> <Esc>
+../vimrc-Win10.vim:nnoremap <F11> :!start explorer /select,%:p<CR>
+../vimrc-Win10.vim:inoremap <F11> <Esc><F11>

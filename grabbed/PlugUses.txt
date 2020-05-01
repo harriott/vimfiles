@@ -562,24 +562,26 @@
 ../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <SID>DisableFontsizeDec     <Plug>FontsizeDec
 ../pack/layout/start/vim-fontsize/doc/fontsize.txt:  nmap <silent> <SID>DisableFontsizeDefault <Plug>FontsizeDefault
 ../pack/layout/start/vim-fontsize/doc/fontsize.txt:Any mapping to <Plug>FontsizeXxx overrides the default mappings, even if that
-../plugin/grabOutputs.vim:  v/<Plug>/d
-../plugin/grabOutputs.vim:  silent! exe 'g/<Plug>/d'
-../plugin/textSearch.vim:map g/ <Plug>(incsearch-fuzzy-stay)
-../plugin/textSearch.vim:map z/ <Plug>(incsearch-fuzzy-/)
-../plugin/textSearch.vim:map  <Leader><Leader>f <Plug>(easymotion-bd-f)
-../plugin/textSearch.vim:nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
-../plugin/textSearch.vim:map  <Leader><Leader>w <Plug>(easymotion-bd-w)
-../plugin/textSearch.vim:nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
-../plugin/textSearch.vim:autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
-../plugin/textSearch.vim:        map / <Plug>(easymotion-sn)
-../plugin/textSearch.vim:        map n <Plug>(easymotion-next)
-../plugin/textSearch.vim:        map N <Plug>(easymotion-prev)
-../plugin/textFormat.vim:nmap gA <Plug>(EasyAlign)
-../plugin/textFormat.vim:xmap gA <Plug>(EasyAlign)
-../plugin/shell.vim:nmap <F6> <Plug>(openbrowser-smart-search)
-../plugin/shell.vim:vmap <F6> <Plug>(openbrowser-smart-search)
-../plugin/buffers.vim:nmap <unique> <leader>pe <Plug>(PickerEdit)
-../plugin/buffers.vim:nmap <unique> <leader>pb <Plug>(PickerBuffer)
+../plugin/plugins/grabOutputs.vim:  v/<Plug>/d
+../plugin/plugins/grabOutputs.vim:  silent! exe 'g/<Plug>/d'
+../plugin/plugins/textSearch.vim:map g/ <Plug>(incsearch-fuzzy-stay)
+../plugin/plugins/textSearch.vim:map z/ <Plug>(incsearch-fuzzy-/)
+../plugin/plugins/textSearch.vim:map  <Leader><Leader>f <Plug>(easymotion-bd-f)
+../plugin/plugins/textSearch.vim:nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
+../plugin/plugins/textSearch.vim:map  <Leader><Leader>w <Plug>(easymotion-bd-w)
+../plugin/plugins/textSearch.vim:nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
+../plugin/plugins/textSearch.vim:autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
+../plugin/plugins/textSearch.vim:        map / <Plug>(easymotion-sn)
+../plugin/plugins/textSearch.vim:        map n <Plug>(easymotion-next)
+../plugin/plugins/textSearch.vim:        map N <Plug>(easymotion-prev)
+../plugin/plugins/shell.vim:autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-j> <Plug>(ale_next_wrap)
+../plugin/plugins/shell.vim:autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+../plugin/plugins/shell.vim:nmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/plugins/shell.vim:vmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/plugins/plugins.vim:nmap <unique> <leader>pe <Plug>(PickerEdit)
+../plugin/plugins/plugins.vim:nmap <unique> <leader>pb <Plug>(PickerBuffer)
+../plugin/plugins/plugins.vim:nmap gA <Plug>(EasyAlign)
+../plugin/plugins/plugins.vim:xmap gA <Plug>(EasyAlign)
 ../tags:<Plug>(EasyAlign)	pack/layout/start/vim-easy-align/doc/easy_align.txt	/*<Plug>(EasyAlign)*
 ../tags:<Plug>(LiveEasyAlign)	pack/layout/start/vim-easy-align/doc/easy_align.txt	/*<Plug>(LiveEasyAlign)*
 ../tags:<Plug>(incsearch-backward)	pack/other/start/incsearch.vim/doc/incsearch.txt	/*<Plug>(incsearch-backward)*

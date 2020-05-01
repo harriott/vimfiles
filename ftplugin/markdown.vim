@@ -14,11 +14,12 @@ let b:ale_enabled = 0
 " demote a heading
 vnoremap <buffer><leader>> s/^#/##/<CR>
 
-" convert mysms screen scrape to markdown
+" Convert mysms screen scrape to markdown:
+"  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available
-  nnoremap <buffer> <F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
+  nnoremap <buffer><leader><F7> :execute "silent !perl $DROPBOX/JH/IT_stack/onGitHub/miscUtils/mysmsMD.pl ".expand('%:p')<CR>
 else
-  nnoremap <buffer> <F7> :execute "silent !perl D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
+  nnoremap <buffer><leader><F7> :execute "silent !perl D:\Dropbox\JH\IT_stack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
   " fails - try with fileformat dos
 endif
 

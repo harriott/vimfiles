@@ -263,7 +263,7 @@ n  <Plug>(ale_previous_wrap_error) * :ALEPrevious -wrap -error<CR>
 n  <Plug>(ale_previous_error) * :ALEPrevious -error<CR>
 n  <Plug>(ale_previous_wrap) * :ALEPreviousWrap<CR>
 n  <Plug>(ale_previous) * :ALEPrevious<CR>
-n  <Plug>NERDCommenterAltDelims * :call <SNR>32_SwitchToAlternativeDelimiters(1)<CR>
+n  <Plug>NERDCommenterAltDelims * :call <SNR>33_SwitchToAlternativeDelimiters(1)<CR>
 x  <Plug>NERDCommenterUncomment * :call NERDComment("x", "Uncomment")<CR>
 n  <Plug>NERDCommenterUncomment * :call NERDComment("n", "Uncomment")<CR>
 x  <Plug>NERDCommenterAlignBoth * :call NERDComment("x", "AlignBoth")<CR>

@@ -1,15 +1,11 @@
-v  <F12>       * :exe ":normal EasyAlign -/[ ]/ { 'ignore_groups':[] }"
-v  <C-F5>        <Plug>ToggleBackground
-n  <C-F5>        <Plug>ToggleBackground
-n  <S-F1>      * :if &go=~#'m'|set go-=m|else|set go+=m|endif<CR>
+n  <F10>       * :cd %:p:h<CR>:NERDTreeCWD<CR>
+n  <F3>        * :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" |cw
 v  <F6>          <Plug>(openbrowser-smart-search)
 n  <F6>          <Plug>(openbrowser-smart-search)
-n  <F10>       * :cd %:p:h<CR>:NERDTreeCWD<CR>
 v  <F9>        * <Esc>:History/<CR>
 n  <F9>        * :History/<CR>
 v  <F8>        * <Esc>:History:<CR>
 n  <F8>        * :History:<CR>
-n  <F3>        * :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" |cw
 v  <F4>        * <Esc>:wa<CR>:bd<CR>
 n  <F4>        * :wa<CR>:bd<CR>
 v  <F5>        * <Esc>:wa<CR>:e<CR>
@@ -19,7 +15,6 @@ n  <F2>        * :wa<CR>
    <F11>       * :cd %:p:h<CR>|:!pcmanfm &<CR><CR>
 v  <F1>        * <Esc><C-W><C-W>
 n  <F1>        * <C-W><C-W>
-i  <C-F5>        <Plug>ToggleBackground
 i  <F10>       * <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
 i  <F9>        * <Esc>:History/<CR>
 i  <F8>        * <Esc>:History:<CR>
@@ -27,4 +22,5 @@ i  <F4>        * <Esc>:wa<CR>:bd<CR>
 i  <F5>        * <Esc>:wa<CR>:e<CR>
 i  <F2>        * <Esc>:wa<CR>
 i  <F11>         <Esc><F11>
+i  <F3>        * <Esc>
 i  <F1>        * <Esc><C-W><C-W>
