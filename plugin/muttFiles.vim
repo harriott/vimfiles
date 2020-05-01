@@ -27,6 +27,8 @@ autocmd BufRead,BufNewFile /tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call Back
 " swap out any crap
 " -----------------
 " (and go back to top):
+"  next line
+autocmd BufRead,BufNewFile /tmp/neomutt-* silent! %s///g | go
 "  non-breaking whitespaces
 autocmd BufRead,BufNewFile /tmp/neomutt-* silent! %s/ / /g | go
 "  'private use one'
