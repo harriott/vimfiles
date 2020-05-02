@@ -30,6 +30,11 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     g-        => revert to previous change
     g+        => advance to next change
 
+# deletions
+    d0     => delete back to start of line
+    :1,.d  => delete to beginning of file
+    :.,$d  => delete to end of file
+
 # Folds
     :packadd SimpylFold  => load the plugin from an opt directory
 	:set fdl?            => reports the current foldlevel

@@ -12,7 +12,7 @@ setlocal expandtab tw=0
 let b:ale_enabled = 0
 
 " demote a heading
-vnoremap <buffer><leader>> s/^#/##/<CR>
+vnoremap <buffer><leader>> :s/^#/##/<CR>
 
 " Convert mysms screen scrape to markdown:
 "  (I'm using <leader> here to avoid accidentally running this)
