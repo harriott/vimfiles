@@ -37,9 +37,9 @@ set modelines=4
 nnoremap <leader>x <C-W>c
 
 " toggle cursorcolumn:
-nnoremap <silent><leader>cc :set cuc! cuc? <CR>
+nnoremap <silent><leader><leader>c :set cuc! cuc? <CR>
 " toggle cursorline:
-nnoremap <silent><leader>cl :set cul! cul? <CR>
+nnoremap <silent><leader><leader>l :set cul! cul? <CR>
 
 " toggle folds open/closed
 nnoremap <Space> za

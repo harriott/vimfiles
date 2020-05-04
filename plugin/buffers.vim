@@ -37,6 +37,10 @@ nnoremap <F4> :wa<CR>:bd<CR>
 inoremap <F4> <Esc>:wa<CR>:bd<CR>
 vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 
+" finish a Git commit message:
+autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ nnoremap <F4> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ inoremap <F4> <Esc>:wa<CR>:q<CR>
+
 " nnn temporary file treatments
 " -----------------------------
 " clear nnn selections:
