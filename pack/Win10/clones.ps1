@@ -154,6 +154,6 @@ if ( $goodPath ){
 
   cd ..\.. }
 
-cd $PSScriptRoot
-gci ..\*\*\* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all.txt
+# cd $PSScriptRoot
+gci ..\*\*\* | where { $_.PSIsContainer } | select -ExpandProperty FullName > Win10\all.txt
 
