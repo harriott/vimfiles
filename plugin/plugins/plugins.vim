@@ -51,6 +51,7 @@ nmap <unique> <leader>pb <Plug>(PickerBuffer)
 
 " turn off Hexokinase colouring:
 autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
+" (optional package Hexokinase is enabled in my ~/.config/nvim/init.vim)
 
 " BufExplorer's mappings
 " ----------------------
