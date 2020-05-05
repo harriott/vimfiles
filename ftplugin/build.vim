@@ -1,7 +1,7 @@
 " Couple of adjustments.
 " Language:	build - text files of my system builds, nicely folded up
 " Maintainer: Joseph Harriott
-" Last Change: Fri 24 May 2019
+" Last Change: Tue 05 May 2020
 " This file should be in your .vim/ftplugin folder.
 " You need to add this modeline in the file that you want to affect:
 " vim: ft=build fdm=expr:
@@ -11,6 +11,8 @@ setlocal expandtab shiftwidth=2 textwidth=0
 
 " demote a heading
 vnoremap <buffer><leader>> :s/^#/##/<CR>
+" promote a heading
+vnoremap <buffer><leader>< :s/^#//<CR>
 
 " folding by header marks
 " -----------------------

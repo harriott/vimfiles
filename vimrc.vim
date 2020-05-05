@@ -11,7 +11,7 @@
 
 if v:lang == 'fr_FR.UTF-8'
   let mapleader = 'é'  " (equates to è)
-fi
+endif
 
 " <F1> switches windows
 nnoremap <F1> <C-W><C-W>
