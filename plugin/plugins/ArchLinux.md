@@ -4,8 +4,7 @@ vim: ft=ghmarkdown fdl=1 fdm=expr:
 
 # Arch packages
     built-in packages
-        /usr/share/vim/vim81/pack/dist/opt/matchit/plugin/matchit.vim
-        /usr/share/vim/vimfiles/autoload/repeat.vim
+        /usr/share/vim/vim82/pack/dist/opt/matchit/plugin/matchit.vim
 
     vim-ale
         /usr/share/vim/vimfiles/plugin/ale.vim
