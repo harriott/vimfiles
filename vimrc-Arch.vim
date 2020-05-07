@@ -14,9 +14,16 @@ function! CompiledPDF()
 endfunction
 " this function is only needed for markdown and TeX files
 
-" Open PCManFM on directory of current buffer
-noremap <F11> :cd %:p:h<CR><bar>:!pcmanfm &<CR><CR>
-imap <F11> <Esc><F11>
+" Open file manager on directory of current buffer
+if $XDG_CURRENT_DESKTOP == 'KDE'
+  " Dolphin
+  noremap <F11> :cd %:p:h<CR><bar>:!dolphin &<CR><CR>
+  imap <F11> <Esc><F11>
+else " assume Openbox
+  " PCManFM
+  noremap <F11> :cd %:p:h<CR><bar>:!pcmanfm &<CR><CR>
+  imap <F11> <Esc><F11>
+endif
 
 " loads the matchit plugin if the required features are available
 if has('syntax') && has('eval')
