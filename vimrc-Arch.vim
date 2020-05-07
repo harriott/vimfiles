@@ -17,11 +17,11 @@ endfunction
 " Open file manager on directory of current buffer
 if $XDG_CURRENT_DESKTOP == 'KDE'
   " Dolphin
-  noremap <F11> :cd %:p:h<CR><bar>:!dolphin &<CR><CR>
+  noremap <F11> :silent !dolphin %:p:h &<CR>
   imap <F11> <Esc><F11>
 else " assume Openbox
   " PCManFM
-  noremap <F11> :cd %:p:h<CR><bar>:!pcmanfm &<CR><CR>
+  noremap <F11> :cd %:p:h<CR><bar>:silent !pcmanfm &<CR>
   imap <F11> <Esc><F11>
 endif
 
