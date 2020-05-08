@@ -80,11 +80,13 @@ cd ..
 echo; $cdp; gd other
 
 gd start; ls
+
   # $gc https://github.com/AndrewRadev/bufferize.vim
   # $gc https://github.com/Asheq/close-buffers.vim
   # $gc https://github.com/bronson/vim-visual-star-search
   # $gc https://github.com/haya14busa/incsearch-fuzzy.vim
   # $gc https://github.com/haya14busa/incsearch.vim
+  # $gc https://github.com/triglav/vim-visual-increment
   # $gc https://github.com/unblevable/quick-scope
   # $gc https://github.com/wellle/targets.vim
 

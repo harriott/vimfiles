@@ -13,6 +13,7 @@
 ./other/start/quick-scope
 ./other/start/bufferize.vim
 ./other/start/incsearch-fuzzy.vim
+./other/start/vim-visual-increment
 ./git/start/vim-fugitive
 ./git/start/vim-rhubarb
 ./layout/opt/colorizer

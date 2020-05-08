@@ -20,3 +20,5 @@ hi def buildN term=bold cterm=bold gui=bold guifg=LightGray
 
 let b:current_syntax = "shbuild"
 
+syntax sync fromstart  " for longer build scripts
+
