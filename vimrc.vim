@@ -22,6 +22,7 @@ set encoding=utf-8  " get this done early
 
 " turn off some unused Fn keys in insert mode
 inoremap <F3> <Esc>
+inoremap <S-F2> <Esc>
 
 " ---------
 " interface
