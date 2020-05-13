@@ -40,7 +40,8 @@ let g:solarized_contrast="high"    "default value is normal, for solarized & tom
 
 " window sizes
 " ------------
-set lines=34  "gVim with tabs just fits in my N130 at 600pixel height
+" set lines=34  " gVim with tabs just fits in my N130 at 600 pixel height
+set lines=44  " good for my HP Pavilion 11-n012na x360 with 768 pixel height
 if has('unix') && g:monitor == '1680x1050'
   set lines=60
 endif

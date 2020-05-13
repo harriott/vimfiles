@@ -127,6 +127,14 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	:r!<shell command>    => reads shell command output into the buffer
 	:tabe $HOME/_vimrc    => bring up my vimrc in a new tab
 
+## open webpages
+    F6 => open a uURL using open-browser.vim
+
+### vim-open-url
+    gB => open URL
+    gS => search word
+    gW => search Wikipedia
+
 # Tab views
 	gT  gt    => move around tabs
 	:tab ball => all buffers into tabs
