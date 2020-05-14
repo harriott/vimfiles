@@ -8,20 +8,17 @@
 # strip down just to filenames in gVim: %s#\S\{-}\\##g
 #
 # PS> packs
+# gci -Directory -path ..\*\* -exclude ArchLinux | select-object FullName
 
-gci ..\*\*\* |
+gci -Directory ..\*\*\* |
 foreach{
-  $dn=$_.basename
-  if ($dn -ne (Split-Path $PSScriptRoot)) {
-    "$dn"
-    # [System.Console]::BackgroundColor = 'DarkCyan'
-    # [System.Console]::ForegroundColor = 'White'
-    # echo $dn
-    # [System.Console]::ResetColor()
-    # cd $_
-    # git pull origin master
-    # cd ..
-  }
+  [System.Console]::BackgroundColor = 'DarkCyan'
+  [System.Console]::ForegroundColor = 'White'
+    echo $_.basename
+  [System.Console]::ResetColor()
+  cd $_
+  git pull origin master
+  cd ..
 }
 cd ..\
 
