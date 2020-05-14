@@ -7,13 +7,13 @@
 ./shell/start/vim-open-url
 ./neovim/opt/vim-hexokinase
 ./other/start/close-buffers.vim
+./other/start/linediff.vim
 ./other/start/vim-visual-star-search
 ./other/start/targets.vim
 ./other/start/incsearch.vim
 ./other/start/quick-scope
 ./other/start/bufferize.vim
 ./other/start/incsearch-fuzzy.vim
-./other/start/vim-visual-increment
 ./git/start/vim-fugitive
 ./git/start/vim-rhubarb
 ./layout/opt/colorizer

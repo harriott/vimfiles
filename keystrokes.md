@@ -15,7 +15,6 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	:bd!(n)   => buffer delete
 	:ls       => buffer list
 	:marks    => list all the current marks
-	:sp       => split current window
 	:unh      => unhides all buffers (into windows)
 	:wa       => write all changed buffers
 	:wq       => write buffer in window to file and quit vim window
@@ -211,6 +210,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	v  => character-based visual selection
 
 # Windows Splits
+	:sp          => split current window
     C-w=         => equalise window sizes
     C-w[H|J|K|L] => move split
     C-w[h|j|k|l] => move focus to neighbouring split
