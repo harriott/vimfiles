@@ -40,9 +40,11 @@ let g:solarized_contrast="high"    "default value is normal, for solarized & tom
 
 " window sizes
 " ------------
-" set lines=34  " gVim with tabs just fits in my N130 at 600 pixel height
-set lines=44  " good for my HP Pavilion 11-n012na x360 with 768 pixel height
-if has('unix') && g:monitor == '1680x1050'
+" set lines=34  " good for screen with 600 pixel height
+set lines=44  " good for screen with 768 pixel height
+if has('unix') && g:monitorheight == '900'
+  set lines=50
+elseif has('unix') && g:monitorheight == '1050'
   set lines=60
 endif
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
