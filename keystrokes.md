@@ -146,6 +146,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     &                                  => repeat last substitute
 	:exe ":normal i" . strftime("%c")  => put date-time at cursor
     :g/^/m 0                           => reverse the entire buffer
+    :h v_g_CTRL-A                      => create a series of numbers,
     \\c                                => toggle cursor column
     \\l                                => toggle cursor line
 
