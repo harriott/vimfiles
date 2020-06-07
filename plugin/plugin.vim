@@ -80,16 +80,16 @@ function! StripStoreCurSel()
   let @l = substitute(l:lastvimsearch, "^\\\\V", "", "")
   " remove any leading hyphens that somehow cause chaos in Ggrep:
   let @h = substitute(@l, "^-\\+", "", "")
-  " convert '\<l:lastvimsearch\>' too (:s#\(^\\<\|\\>$\)##g):
+  " remove '\<' & '\>' (:s#\(^\\<\|\\>$\)##g):
   let @s = substitute(@h, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
 endfunction
 
-" cd to file's and vimgrep for l:last search
+" cd to file's and vimgrep for last search
 nnoremap <leader>vg :call VimgrepSelection()<CR>
 function! VimgrepSelection()
   cd %:p:h
   call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@s.'#j *.{md,txt,vim} **/*.{md,txt,vim}'
+  execute 'silent! vimgrep #'.@l.'#j *.{md,txt,vim} **/*.{md,txt,vim}'
   copen
 endfunction
 

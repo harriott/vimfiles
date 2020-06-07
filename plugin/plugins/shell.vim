@@ -35,7 +35,7 @@ set wildignore+=NTUSER.DAT*,*.lnk
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_mruf_max = 500
 
-" Ggrep with the contents of s register:
+" Ggrep for last search
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 
 " for NERDTree:

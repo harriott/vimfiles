@@ -114,6 +114,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 
 # Shell
 	C-g                   => display relative path of current file
+    F3                    => Ggrep for last search
 	<shellcmd>|gvim -     => pipes shell command output into gvim
 	gf                    => open file under cursor
 	gx                    => open url under cursor
@@ -125,6 +126,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :packadd vim-rhubarb  => load the plugin from an opt directory, for :Gbrowse to work
 	:r!<shell command>    => reads shell command output into the buffer
 	:tabe $HOME/_vimrc    => bring up my vimrc in a new tab
+    \vg                   => cd to file's and vimgrep for last search
 
 ## open webpages
     F6 => open a uURL using open-browser.vim
