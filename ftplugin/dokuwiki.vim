@@ -27,6 +27,7 @@ iab </f </file>
 iab <a <code awk>
 iab <b <code bash>
 iab <d <code dos>
+iab <j <code javascript>
 iab <e <code perl>
 iab <f <file>
 iab <h <code html>

@@ -89,7 +89,9 @@ nnoremap <leader>vg :call VimgrepSelection()<CR>
 function! VimgrepSelection()
   cd %:p:h
   call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j *.{md,txt,vim} **/*.{md,txt,vim}'
+  " execute 'silent! vimgrep #'.@l.'#j *.{md,txt,vim} **/*.{md,txt,vim}'
+  let l:filetypes = '*.{md,sh,txt,vim}'
+  execute 'silent! vimgrep #'.@l.'#j '.l:filetypes' **/'.l:filetypes
   copen
 endfunction
 

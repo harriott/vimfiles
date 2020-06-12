@@ -153,18 +153,22 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     \\c                                => toggle cursor column
     \\l                                => toggle cursor line
 
-### Colorizer
+## base64
+    <leader>atob => base64 to a string
+    <leader>btoa => a string to base64
+
+## Colorizer
     :ColorHighlight     => impressive syntax colourizing, but then can't be truly turned off
     :packadd Colorizer  => load the plugin from an opt directory
 
-### colorizer
+## colorizer
 	<leader>tc          => (mapped to) ColorToggle (by colorizer) and files open fast when off
     :packadd colorizer  => load the plugin from an opt directory
 
-### colour test
+## colour test
     pack/neovim/opt/vim-hexokinase/test_colours.txt
 
-#### cterm-colors
+### cterm-colors
     NR-16   NR-8    COLOR NAME
     0       0       Black
     1       4       DarkBlue
@@ -183,7 +187,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     14      3*      Yellow, LightYellow
     15      7*      White
 
-#### gui-colors
+### gui-colors
     Red         LightRed        DarkRed
     Green       LightGreen      DarkGreen       SeaGreen
     Blue        LightBlue       DarkBlue        SlateBlue
@@ -195,7 +199,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     Orange      Purple          Violet
 
 
-### Hexokinase
+## Hexokinase
     HexokinaseTurnOn
     packadd vim-hexokinase
 
