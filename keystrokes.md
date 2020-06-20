@@ -115,7 +115,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 # Shell
 	C-g                   => display relative path of current file
     F3                    => Ggrep for last search
-	<shellcmd>|gvim -     => pipes shell command output into gvim
+	<shellcmd> | gvim -   => pipes shell command output into gvim
 	gf                    => open file under cursor
 	gx                    => open url under cursor
 	:!<shellcmd>          => runs the external shell command
@@ -200,8 +200,8 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 
 
 ## Hexokinase
-    HexokinaseTurnOn
-    packadd vim-hexokinase
+    :HexokinaseTurnOn
+    :packadd vim-hexokinase
 
 # Vim
 	@:  => repeat last command-line
