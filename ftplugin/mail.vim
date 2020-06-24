@@ -2,6 +2,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Sat 20 Jun 2020
 
+" for some reason  :set ft mail  is required
+
 " folding by message date
 " -----------------------
 function! DateFold()
