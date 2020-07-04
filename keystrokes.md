@@ -153,6 +153,10 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     \\c                                => toggle cursor column
     \\l                                => toggle cursor line
 
+## number lists
+   :for i in range(1,11) | put =i.'. ' | endfor  => markdown list
+   :put =range(1964,2020)
+
 ## base64
     <leader>atob => base64 to a string
     <leader>btoa => a string to base64
@@ -210,6 +214,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	gQ  => enter Ex mode
 	q:  => brings up an interactive history of :commands (in an editable window)
 	vi  => exit Ex mode
+    \ll => list mode
 
 	C-k<non-text-key>  => enters the Vim value of a non-text-key
 	C-r"               => (in command line) insert the unnamed register

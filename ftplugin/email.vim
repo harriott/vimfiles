@@ -10,9 +10,9 @@
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
 " vim: set ft=email:
-" Preferable to also have my  ../syntax/email.vim
+" Preferable to also have my  ../syntax/email.vim, then can see $ITstack/onGitHub/misc/email.txt
 
-setlocal tw=0 fdc=1 fde=EF() fdl=0 fdm=expr
+setlocal tw=0 fdc=1 fde=EF() fdm=expr
 
 " create a heading around text:
 nnoremap <leader><leader>= I== <Esc>A ==<Esc>
