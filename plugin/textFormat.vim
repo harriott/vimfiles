@@ -9,7 +9,7 @@ set tabstop=4
 set tw=99
 
 " Clear left & right double & single quotes (as these aren't mapped to a keyboard key):
-nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:%s/‘/'/g<bar>:%s/’/'/g<cr>
+nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
 
 " lesser indentation of vimscript continuation line:
 let g:vim_indent_cont = &sw

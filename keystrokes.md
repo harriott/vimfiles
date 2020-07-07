@@ -123,7 +123,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 # Shell
 	C-g                   => display relative path of current file
     F3                    => Ggrep for last search
-	<shellcmd>|gvim -     => pipes shell command output into gvim
+	<shellcmd> | gvim -   => pipes shell command output into gvim
 	gf                    => open file under cursor
 	gx                    => open url under cursor
 	:!<shellcmd>          => runs the external shell command
@@ -160,6 +160,10 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     \yy                                => CalendarH
     \\c                                => toggle cursor column
     \\l                                => toggle cursor line
+
+## number lists
+   :for i in range(1,11) | put =i.'. ' | endfor  => markdown list
+   :put =range(1964,2020)
 
 ## base64
     <leader>atob => base64 to a string
@@ -208,8 +212,8 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 
 
 ## Hexokinase
-    HexokinaseTurnOn
-    packadd vim-hexokinase
+    :HexokinaseTurnOn
+    :packadd vim-hexokinase
 
 # Vim
 	@:  => repeat last command-line
@@ -218,6 +222,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 	gQ  => enter Ex mode
 	q:  => brings up an interactive history of :commands (in an editable window)
 	vi  => exit Ex mode
+    \ll => list mode
 
 	C-k<non-text-key>  => enters the Vim value of a non-text-key
 	C-r"               => (in command line) insert the unnamed register
