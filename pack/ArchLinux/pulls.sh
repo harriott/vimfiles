@@ -8,7 +8,7 @@ cd ..
 find . -maxdepth 3 -mindepth 3 -type d | while read pluginName; do
   echo -e "\e[1m $pluginName \e[0m"
   cd "$pluginName"
-  git pull origin master
+  git pull --no-rebase origin master
   cd ~/.vim/pack
 done
 
