@@ -4,6 +4,7 @@
 
 # make lists of cloned plugins
 # normally called from a parent script
+#  or can be called from ~/.vim/pack:  bash ArchLinux/lists.sh
 
 find . -type d -name '*.git' > ArchLinux/$machineName/gits.txt
 find . -mindepth 3 -maxdepth 3 -type d > ArchLinux/$machineName/all.txt

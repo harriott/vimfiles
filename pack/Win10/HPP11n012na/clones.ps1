@@ -6,8 +6,6 @@
 
 # use my PowerShell function  packs  to list folders two down
 
-# gci -r -force .git |?{$_.PSIsContainer} | select -ExpandProperty fullname > gits-MSW10.txt
-
 Function gicl { git clone $args[0] }
 Function rirf { ri -recurse -force $args[0] }
 Function tryPath {
@@ -17,7 +15,8 @@ Function tryPath {
   else { "Sorry, $($args[0]) ain't there..." }
   }
 
-cd ..
+cd ..\..
+
 tryPath ft\opt
 if ( $goodPath ){
 
@@ -154,6 +153,8 @@ if ( $goodPath ){
 
   cd ..\.. }
 
-# cd $PSScriptRoot
-gci ..\*\*\* | where { $_.PSIsContainer } | select -ExpandProperty FullName > Win10\all.txt
+cd Win10
+PowerShell .\lists.ps1  # passing $machineName
+
+cd $PSScriptRoot
 

@@ -1,14 +1,7 @@
 # vim: set et tw=0:
 
-# Joseph Harriott http://momentary.eu/
+# Joseph Harriott
 # run this when you want to update your remote plugins
-
-# List the plugins:
-#
-# strip down just to filenames in gVim: %s#\S\{-}\\##g
-#
-# PS> packs
-# gci -Directory -path ..\*\* -exclude ArchLinux | select-object FullName
 
 gci -Directory ..\*\*\* |
 foreach{
@@ -23,5 +16,5 @@ foreach{
 cd ..\
 
 cd $PSScriptRoot
-gci ..\*\*\* | where { $_.PSIsContainer } | select -ExpandProperty FullName > all.txt
+PowerShell .\lists.ps1  # passing $machineName
 
