@@ -97,6 +97,11 @@ if ( $goodPath ){
   # gicl https://github.com/ntpeters/vim-better-whitespace
   # rirf vim-better-whitespace
 
+  # reinstall ShowTrailingWhitespace
+    ri -force -recurse vim-ShowTrailingWhitespace
+    gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
+    & "${Env:ProgramFiles(x86)}\Vim\vim82\gvim.exe" -c "/^c" vim-ShowTrailingWhitespace\ftplugin\markdown_ShowTrailingWhitespace.vim  # comment out the call
+
   cd ..\.. }
 
 tryPath other\opt
