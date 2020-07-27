@@ -22,12 +22,20 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     ZQ        => :q!
     ZZ        => :wq
     C-6       => edit the alternate file (usually = the previous buffer)
-    C-Wgf     => open the file under the cursor in a new tab
-    C-Wo      => closes all other windows
+    C-wgf     => open the file under the cursor in a new tab
+    C-wo      => closes all other windows
     C-i       => jump forward (to where you've been)
     C-o       => jump back (to where you've been)
     g-        => revert to previous change
     g+        => advance to next change
+
+## BufExplorer
+    \bd  => close all but visible buffers
+    \bdd => close all but current buffer
+    \be  => Opens BufExplorer
+    \bs  => Opens horizontally split window BufExplorer
+    \bt  => Toggles BufExplorer open or closed
+    \bv  => Opens vertically split window BufExplorer
 
 # deletions
     d0     => delete back to start of line
