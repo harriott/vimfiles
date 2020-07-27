@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=shbuild:
+# vim: fdm=expr fdc=1 ft=shbuild shiftwidth=2:
 
 # Joseph Harriott
 # grab repositories
@@ -40,9 +40,10 @@ gd opt; ls
   # $gc https://github.com/ntpeters/vim-better-whitespace
   # $gc https://github.com/chrisbra/Colorizer
 
-  # sudo rm -r vim-ShowTrailingWhitespace
-  # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
-  # sudo sed -i 's/^c/" c/' vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
+  # reinstall ShowTrailingWhitespace
+    # sudo rm -r vim-ShowTrailingWhitespace
+    # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
+    # sudo sed -i 's/^c/" c/' vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
 
 cd ..
 
