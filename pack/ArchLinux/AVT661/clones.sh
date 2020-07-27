@@ -34,10 +34,16 @@ cd ..
 echo; $cdp; gd layout
 
 gd opt; ls
+
   # $gc https://github.com/junegunn/limelight.vim
   # $gc https://github.com/lilydjwg/colorizer
   # $gc https://github.com/ntpeters/vim-better-whitespace
   # $gc https://github.com/chrisbra/Colorizer
+
+  # sudo rm -r vim-ShowTrailingWhitespace
+  # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
+  # sudo sed -i 's/^c/" c/' vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
+
 cd ..
 
 gd start; ls
@@ -45,7 +51,6 @@ gd start; ls
   # $gc https://github.com/chunkhang/vim-mbsync
   # $gc https://github.com/dracula/vim dracula
   # $gc https://github.com/drmikehenry/vim-fontsize
-  # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/mhinz/vim-startify
