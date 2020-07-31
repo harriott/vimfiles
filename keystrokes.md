@@ -136,6 +136,9 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :tabe $HOME/_vimrc    => bring up my vimrc in a new tab
     \vg                   => cd to file's and vimgrep for last search
 
+## fugitive
+    ce => amend the last commit without editing the message
+
 ## open webpages
     F6 => open a uURL using open-browser.vim
 
