@@ -131,9 +131,10 @@ set ignorecase incsearch smartcase
 " Search within a visual selection.
 " ---------------------------------
 "  before calling this you need to search for something, then
-"   either before or any number of times after, you need to visually select an area, then <Esc>
-"   the search will appear highlighted only within your visual selection
-"   next search is as normal
+"   either before or any number of times after calling this function,
+"     you need to visually select an area, then <Esc>
+"   the search will appear highlighted only within your visual selections
+"   next search returns to normal
 function! ConvertSearchForVisualSelection()
   let @/ = '\%V'.getreg('/')
   echo 'last search is now active only in your escaped visual selection'
