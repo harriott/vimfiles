@@ -31,6 +31,6 @@
 ./layout/start/vim-fontsize/.git
 ./ft/start/python_match.vim/.git
 ./ft/start/vim-pandoc-syntax/.git
-./ft/start/vim-flavored-markdown/.git
 ./ft/start/vim-base64/.git
 ./ft/start/vim-ps1/.git
+./ft/start/vim-gfm-syntax/.git

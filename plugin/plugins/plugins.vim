@@ -33,13 +33,18 @@ let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 " Colorizer
 let g:colorizer_disable_bufleave = 1
 
+let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
+let g:syntastic_python_checkers = ['flake8']
+
 " vim-gitgutter:
 let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
 noremap <leader>gg :GitGutterToggle<CR>
 
-let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
-let g:syntastic_python_checkers = ['flake8']
+" vim-gfm-syntax
+let g:gfm_syntax_enable_always = 0
+let g:gfm_syntax_enable_filetypes = ['markdown.gfm'] " a subtype of markdown filetype
+let g:gfm_syntax_emoji_conceal = 1
 
 " --------------------------
 " buffer stuff using plugins
