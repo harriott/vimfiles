@@ -3,8 +3,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Fri 21 Aug 2020
 " This file should be in your vimfiles\ftplugin folder.
-" VIMRUNTIME/filetype.vim determines which files are automatically detected as markdown
-" for folding to work, you'll need this modeling:  vim: fdm=expr:
+" $VIMRUNTIME/filetype.vim determines which files are automatically detected as markdown
+" for folding to work, you'll need this modeline:  vim: fdm=expr:
 
 setlocal expandtab tw=0
 

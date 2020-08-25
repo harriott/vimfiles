@@ -8,5 +8,5 @@ if exists("did_load_filetypes")
 endif
 augroup filetypedetect
     autocmd! BufRead,BufNewFile *.gfm setfiletype markdown.gfm
-    autocmd! BufRead,BufNewFile *.md setfiletype markdown.md
+    autocmd! BufRead,BufNewFile *.md setfiletype markdown.md " overrides $VIMRUNTIME/filetype.vim
 augroup END

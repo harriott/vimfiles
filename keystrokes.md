@@ -42,6 +42,14 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :1,.d  => delete to beginning of file
     :.,$d  => delete to end of file
 
+# diff
+    :dif         => diffupdate
+    :diffo       => diffoff the window
+    :diffo!      => diffoff the windows
+    :windo difft => diff the windows
+    ]c           => next diff
+    [c           => previous diff
+
 # Folds
     :packadd SimpylFold  => load the plugin from an opt directory
     :set fdl?            => reports the current foldlevel
@@ -113,12 +121,14 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     n                     => find next highlighted search result
 
 ## following /
-    \M        => nomagic (for what follows), eg returning . & * to themselves
-    \V        => very nomagic (for what follows), eg (also) returning $ to itself
-    \v        => very magic (for what follows), eg making | separate alternatives
-    text      => searches for text
-    text\|alt => searches for text & alt
-    C-rC-w    => searches for the word under cursor - allowing skipping thru with n
+    \C (anywhere) => force case
+    \c (anywhere) => ignore case
+    \M            => nomagic (for what follows), eg returning . & * to themselves
+    \V            => very nomagic (for what follows), eg (also) returning $ to itself
+    \v            => very magic (for what follows), eg making | separate alternatives
+    text          => searches for text
+    text\|alt     => searches for text & alt
+    C-rC-w        => searches for the word under cursor - allowing skipping thru with n
 
 # Shell
     C-g                   => display relative path of current file
