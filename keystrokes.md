@@ -11,7 +11,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :helpt ALL               => generate all tags
     :helptags $HOME\vimfiles => set tags
 
-# Buffers
+# buffers
     :bd!(n)   => buffer delete
     :ls       => buffer list
     :marks    => list all the current marks
