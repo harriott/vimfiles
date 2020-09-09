@@ -10,7 +10,7 @@ set linespace=2
 
 " open equivalent LaTeX compiled PDF:
 function! CompiledPDF()
-  execute 'silent !zathura '.expand('%:p:r').".pdf & disown"
+  execute 'silent !zathura '.expand('%:p:r').'.pdf & disown'
 endfunction
 " this function is only needed for markdown and TeX files
 
