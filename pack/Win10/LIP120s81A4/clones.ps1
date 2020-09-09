@@ -32,7 +32,7 @@ if ( $goodPath ){
   gicl https://github.com/christianrondeau/vim-base64
   gicl https://github.com/ervandew/supertab
   gicl https://github.com/PProvost/vim-ps1
-  $gc https://github.com/rhysd/vim-gfm-syntax
+  gicl https://github.com/rhysd/vim-gfm-syntax
   gicl https://github.com/scrooloose/nerdcommenter
   gicl https://github.com/vim-pandoc/vim-pandoc-syntax
   gicl https://github.com/vim-scripts/gitignore.vim
@@ -59,7 +59,6 @@ tryPath layout\opt
 if ( $goodPath ){
 
   gicl https://github.com/godlygeek/tabular
-  # gicl https://github.com/dhruvasagar/vim-table-mode
   gicl https://github.com/lilydjwg/colorizer
   gicl https://github.com/tmhedberg/SimpylFold
   gicl https://github.com/junegunn/limelight.vim
@@ -72,82 +71,52 @@ if ( $goodPath ){
   gicl https://github.com/altercation/vim-colors-solarized
   gicl https://github.com/bling/vim-airline
   gicl https://github.com/drmikehenry/vim-fontsize
+  gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
+    $file = 'vim-ShowTrailingWhitespace\ftplugin\markdown_ShowTrailingWhitespace.vim'
+    (Get-Content $file) -replace '^c', '" c' | Set-Content $file
   gicl https://github.com/junegunn/vim-easy-align
   gicl https://github.com/mattn/calendar-vim
-  # gicl https://github.com/mhinz/vim-startify
+  gicl https://github.com/mhinz/vim-startify
   gicl https://github.com/svermeulen/vim-colors-tomorrow
   gicl https://github.com/unblevable/quick-scope
   gicl https://github.com/vim-airline/vim-airline-themes
-
-  # gicl https://github.com/arcticicestudio/nord-vim
-  # rirf nord-vim
-
-  # gicl https://github.com/mhinz/vim-janah
-  # rirf vim-janah
-
-  # gicl https://github.com/morhetz/gruvbox
-  # rirf gruvbox
-
-  # gicl https://github.com/ntpeters/vim-better-whitespace
-  # rirf vim-better-whitespace
-
-  gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
-  $file = vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
-  (Get-Content $file) -replace ^c, '" c' | Set-Content $file
 
   cd ..\.. }
 
 tryPath other\opt
 if ( $goodPath ){
 
-  # rirf vim-LanguageTool
-
-  # gicl https://github.com/tpope/vim-surround
+  gicl https://github.com/tpope/vim-surround
 
   cd ..\.. }
 
 tryPath other\start
 if ( $goodPath ){
 
-  # gicl https://github.com/chrisbra/Recover.vim
-  # gicl https://github.com/AndrewRadev/bufferize.vim
-  # gicl https://github.com/easymotion/vim-easymotion
-  # gicl https://github.com/tpope/vim-repeat
-  # gicl https://github.com/bronson/vim-visual-star-search
-  # gicl https://github.com/svermeulen/vim-cutlass
-  # gicl https://github.com/wellle/targets.vim
-  # gicl https://github.com/adelarsq/vim-matchit
-
-  # rirf close-buffers.vim
-  # gicl https://github.com/Asheq/close-buffers.vim
-
-  # rirf vim-LanguageTool
-  # gicl https://github.com/dpelle/vim-LanguageTool
+  gicl https://github.com/adelarsq/vim-matchit
+  gicl https://github.com/AndrewRadev/bufferize.vim
+  gicl https://github.com/Asheq/close-buffers.vim
+  gicl https://github.com/bronson/vim-visual-star-search
+  gicl https://github.com/chrisbra/Recover.vim
+  gicl https://github.com/dpelle/vim-LanguageTool
+  gicl https://github.com/easymotion/vim-easymotion
+  gicl https://github.com/haya14busa/incsearch-fuzzy.vim
+  gicl https://github.com/haya14busa/incsearch.vim
+  gicl https://github.com/tpope/vim-repeat
+  gicl https://github.com/wellle/targets.vim
 
   cd ..\.. }
 
 tryPath shell\start
 if ( $goodPath ){
 
-  # rirf bufexplorer
-  # gicl https://github.com/jlanzarotta/bufexplorer
-
-  # rirf ctrlp.vim
-  # gicl https://github.com/ctrlpvim/ctrlp.vim
-
-  # rirf mru
-  # gicl https://github.com/yegappan/mru
-
-  # rirf nerdtree
-  # gicl https://github.com/scrooloose/nerdtree
-
-  # rirf open-browser.vim
-  # gicl https://github.com/tyru/open-browser.vim
-
-  # gicl https://github.com/harriott/vim-buffing-wheel
-  # mine
-
-  # gicl https://github.com/dhruvasagar/vim-open-url
+  gicl https://github.com/ctrlpvim/ctrlp.vim
+  gicl https://github.com/dhruvasagar/vim-open-url
+  gicl https://github.com/harriott/vim-buffing-wheel
+  gicl https://github.com/jlanzarotta/bufexplorer
+  gicl https://github.com/scrooloose/nerdtree
+  gicl https://github.com/tyru/open-browser.vim
+  gicl https://github.com/yegappan/mru
 
   cd ..\.. }
 
