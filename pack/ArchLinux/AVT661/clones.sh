@@ -17,14 +17,9 @@ echo; $cdp; gd ft
 gd start; ls
   # $gc https://github.com/christianrondeau/vim-base64
   # $gc https://github.com/PProvost/vim-ps1
+  # $gc https://github.com/rhysd/vim-gfm-syntax
   # $gc https://github.com/vim-pandoc/vim-pandoc-syntax
   # $gc https://github.com/vim-scripts/python_match.vim
-
-  # $gc https://github.com/jtratner/vim-flavored-markdown
-  # sudo rm -r vim-flavored-markdown
-
-  # $gc https://github.com/rhysd/vim-gfm-syntax
-  # sudo rm -r vim-gfm-syntax
 cd ..
 
 #==> git

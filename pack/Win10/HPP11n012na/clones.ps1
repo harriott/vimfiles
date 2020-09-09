@@ -32,8 +32,11 @@ if ( $goodPath ){
   # gicl https://github.com/christianrondeau/vim-base64
   # gicl https://github.com/ervandew/supertab
   # gicl https://github.com/PProvost/vim-ps1
+  gicl https://github.com/rhysd/vim-gfm-syntax
   # gicl https://github.com/scrooloose/nerdcommenter
+
   # gicl https://github.com/jtratner/vim-flavored-markdown
+  sudo rm -r vim-flavored-markdown
 
   # gicl https://github.com/vim-pandoc/vim-pandoc-syntax
   # rirf vim-pandoc-syntax

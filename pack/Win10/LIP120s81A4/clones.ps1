@@ -20,20 +20,21 @@ cd ..\..
 tryPath ft\opt
 if ( $goodPath ){
 
-  # gicl https://github.com/vim-syntastic/syntastic
-  # gicl https://github.com/dense-analysis/ale
+  gicl https://github.com/vim-syntastic/syntastic
+  gicl https://github.com/dense-analysis/ale
 
   cd ..\.. }
 
 tryPath ft\start
 if ( $goodPath ){
 
-  # gicl https://github.com/chikamichi/mediawiki.vim
-  # gicl https://github.com/christianrondeau/vim-base64
-  # gicl https://github.com/ervandew/supertab
+  gicl https://github.com/chikamichi/mediawiki.vim
+  gicl https://github.com/christianrondeau/vim-base64
+  gicl https://github.com/ervandew/supertab
   # gicl https://github.com/PProvost/vim-ps1
-  # gicl https://github.com/scrooloose/nerdcommenter
-  # gicl https://github.com/jtratner/vim-flavored-markdown
+  $gc https://github.com/rhysd/vim-gfm-syntax
+  gicl https://github.com/scrooloose/nerdcommenter
+  gicl https://github.com/vim-scripts/gitignore.vim
 
   # gicl https://github.com/vim-pandoc/vim-pandoc-syntax
   # rirf vim-pandoc-syntax
@@ -79,7 +80,6 @@ if ( $goodPath ){
   # gicl https://github.com/svermeulen/vim-colors-tomorrow
   # gicl https://github.com/unblevable/quick-scope
   # gicl https://github.com/vim-airline/vim-airline-themes
-  # gicl https://github.com/vim-scripts/gitignore.vim
 
   # gicl https://github.com/altercation/vim-colors-solarized
   # rirf vim-colors-solarized
