@@ -31,58 +31,53 @@ if ( $goodPath ){
   gicl https://github.com/chikamichi/mediawiki.vim
   gicl https://github.com/christianrondeau/vim-base64
   gicl https://github.com/ervandew/supertab
-  # gicl https://github.com/PProvost/vim-ps1
+  gicl https://github.com/PProvost/vim-ps1
   $gc https://github.com/rhysd/vim-gfm-syntax
   gicl https://github.com/scrooloose/nerdcommenter
+  gicl https://github.com/vim-pandoc/vim-pandoc-syntax
   gicl https://github.com/vim-scripts/gitignore.vim
-
-  # gicl https://github.com/vim-pandoc/vim-pandoc-syntax
-  # rirf vim-pandoc-syntax
 
   cd ..\.. }
 
 tryPath git\opt
 if ( $goodPath ){
 
-  # gicl https://github.com/airblade/vim-gitgutter
-  # rirf vim-rhubarb
+  gicl https://github.com/airblade/vim-gitgutter
 
   cd ..\.. }
 
 tryPath git\start
 if ( $goodPath ){
 
-  # gicl https://github.com/mbbill/undotree
-  # gicl https://github.com/tpope/vim-fugitive
-  # gicl https://github.com/tpope/vim-rhubarb
+  gicl https://github.com/mbbill/undotree
+  gicl https://github.com/tpope/vim-fugitive
+  gicl https://github.com/tpope/vim-rhubarb
 
   cd ..\.. }
 
 tryPath layout\opt
 if ( $goodPath ){
 
-  # gicl https://github.com/godlygeek/tabular
+  gicl https://github.com/godlygeek/tabular
   # gicl https://github.com/dhruvasagar/vim-table-mode
-  # gicl https://github.com/lilydjwg/colorizer
-  # gicl https://github.com/tmhedberg/SimpylFold
-  # gicl https://github.com/junegunn/limelight.vim
+  gicl https://github.com/lilydjwg/colorizer
+  gicl https://github.com/tmhedberg/SimpylFold
+  gicl https://github.com/junegunn/limelight.vim
 
   cd ..\.. }
 
 tryPath layout\start
 if ( $goodPath ){
 
-  # gicl https://github.com/bling/vim-airline
-  # gicl https://github.com/drmikehenry/vim-fontsize
-  # gicl https://github.com/junegunn/vim-easy-align
-  # gicl https://github.com/mattn/calendar-vim
+  gicl https://github.com/altercation/vim-colors-solarized
+  gicl https://github.com/bling/vim-airline
+  gicl https://github.com/drmikehenry/vim-fontsize
+  gicl https://github.com/junegunn/vim-easy-align
+  gicl https://github.com/mattn/calendar-vim
   # gicl https://github.com/mhinz/vim-startify
-  # gicl https://github.com/svermeulen/vim-colors-tomorrow
-  # gicl https://github.com/unblevable/quick-scope
-  # gicl https://github.com/vim-airline/vim-airline-themes
-
-  # gicl https://github.com/altercation/vim-colors-solarized
-  # rirf vim-colors-solarized
+  gicl https://github.com/svermeulen/vim-colors-tomorrow
+  gicl https://github.com/unblevable/quick-scope
+  gicl https://github.com/vim-airline/vim-airline-themes
 
   # gicl https://github.com/arcticicestudio/nord-vim
   # rirf nord-vim
@@ -95,6 +90,10 @@ if ( $goodPath ){
 
   # gicl https://github.com/ntpeters/vim-better-whitespace
   # rirf vim-better-whitespace
+
+  gicl https://github.com/inkarkat/vim-ShowTrailingWhitespace
+  $file = vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
+  (Get-Content $file) -replace ^c, '" c' | Set-Content $file
 
   cd ..\.. }
 
