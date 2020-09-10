@@ -1,10 +1,9 @@
 # vim: set et tw=0:
+# #region & #endregion create folding blocks if Peter Provost's vim-ps1 is installed
 
 # Joseph Harriott
-#
-# grab repositories
 
-# use my PowerShell function  packs  to list folders two down
+# grab repositories
 
 function ensurePath {
   if ( ! ( test-path $args[0] ) ) { New-Item -name $args[0] -type directory }
@@ -13,8 +12,9 @@ function ensurePath {
 Function gicl { git clone $args[0] }
 Function rirf { ri -recurse -force $args[0] }
 
-{ # ft
+cd ..\..
 
+#region - ft
 ensurePath ft\opt
 
   gicl https://github.com/vim-syntastic/syntastic
@@ -34,9 +34,9 @@ ensurePath ft\start
   gicl https://github.com/vim-scripts/gitignore.vim
 
 cd ..\..
+#endregion
 
-}
-
+#region - git
 ensurePath git\opt
 
   gicl https://github.com/airblade/vim-gitgutter
@@ -50,7 +50,9 @@ ensurePath git\start
   gicl https://github.com/tpope/vim-rhubarb
 
 cd ..\..
+#endregion
 
+#region - layout
 ensurePath layout\opt
 
   gicl https://github.com/godlygeek/tabular
@@ -76,7 +78,9 @@ ensurePath layout\start
   gicl https://github.com/vim-airline/vim-airline-themes
 
 cd ..\..
+#endregion
 
+#region - other
 ensurePath other\opt
 
   gicl https://github.com/tpope/vim-surround
@@ -98,7 +102,9 @@ ensurePath other\start
   gicl https://github.com/wellle/targets.vim
 
 cd ..\..
+#endregion
 
+#region - shell
 ensurePath shell\start
 
   gicl https://github.com/ctrlpvim/ctrlp.vim
@@ -110,6 +116,7 @@ ensurePath shell\start
   gicl https://github.com/yegappan/mru
 
 cd ..\..
+#endregion
 
 cd Win10
 PowerShell .\lists.ps1  # passing $machineName

@@ -1,10 +1,7 @@
 # vim: set et tw=0:
 
 # Joseph Harriott
-#
 # grab repositories
-
-# use my PowerShell function  packs  to list folders two down
 
 function ensurePath {
   if ( ! ( test-path $args[0] ) ) { New-Item -name $args[0] -type directory }
