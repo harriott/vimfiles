@@ -6,27 +6,23 @@
 
 # use my PowerShell function  packs  to list folders two down
 
+function ensurePath {
+  if ( ! ( test-path $args[0] ) ) { New-Item -name $args[0] -type directory }
+  "cd $($args[0])"; cd $($args[0])
+  }
 Function gicl { git clone $args[0] }
 Function rirf { ri -recurse -force $args[0] }
-Function tryPath {
-  $script:goodPath = ""
-  if ( $(Try { Test-Path $args[0] } Catch { $false }) )
-    { "cd $($args[0])"; cd $($args[0]); $script:goodPath = "yes" }
-  else { "Sorry, $($args[0]) ain't there..." }
-  }
 
-cd ..\..
+{ # ft
 
-tryPath ft\opt
-if ( $goodPath ){
+ensurePath ft\opt
 
   gicl https://github.com/vim-syntastic/syntastic
   gicl https://github.com/dense-analysis/ale
 
-  cd ..\.. }
+cd ..\..
 
-tryPath ft\start
-if ( $goodPath ){
+ensurePath ft\start
 
   gicl https://github.com/chikamichi/mediawiki.vim
   gicl https://github.com/christianrondeau/vim-base64
@@ -37,36 +33,34 @@ if ( $goodPath ){
   gicl https://github.com/vim-pandoc/vim-pandoc-syntax
   gicl https://github.com/vim-scripts/gitignore.vim
 
-  cd ..\.. }
+cd ..\..
 
-tryPath git\opt
-if ( $goodPath ){
+}
+
+ensurePath git\opt
 
   gicl https://github.com/airblade/vim-gitgutter
 
-  cd ..\.. }
+cd ..\..
 
-tryPath git\start
-if ( $goodPath ){
+ensurePath git\start
 
   gicl https://github.com/mbbill/undotree
   gicl https://github.com/tpope/vim-fugitive
   gicl https://github.com/tpope/vim-rhubarb
 
-  cd ..\.. }
+cd ..\..
 
-tryPath layout\opt
-if ( $goodPath ){
+ensurePath layout\opt
 
   gicl https://github.com/godlygeek/tabular
   gicl https://github.com/lilydjwg/colorizer
   gicl https://github.com/tmhedberg/SimpylFold
   gicl https://github.com/junegunn/limelight.vim
 
-  cd ..\.. }
+cd ..\..
 
-tryPath layout\start
-if ( $goodPath ){
+ensurePath layout\start
 
   gicl https://github.com/altercation/vim-colors-solarized
   gicl https://github.com/bling/vim-airline
@@ -81,17 +75,15 @@ if ( $goodPath ){
   gicl https://github.com/unblevable/quick-scope
   gicl https://github.com/vim-airline/vim-airline-themes
 
-  cd ..\.. }
+cd ..\..
 
-tryPath other\opt
-if ( $goodPath ){
+ensurePath other\opt
 
   gicl https://github.com/tpope/vim-surround
 
-  cd ..\.. }
+cd ..\..
 
-tryPath other\start
-if ( $goodPath ){
+ensurePath other\start
 
   gicl https://github.com/adelarsq/vim-matchit
   gicl https://github.com/AndrewRadev/bufferize.vim
@@ -105,10 +97,9 @@ if ( $goodPath ){
   gicl https://github.com/tpope/vim-repeat
   gicl https://github.com/wellle/targets.vim
 
-  cd ..\.. }
+cd ..\..
 
-tryPath shell\start
-if ( $goodPath ){
+ensurePath shell\start
 
   gicl https://github.com/ctrlpvim/ctrlp.vim
   gicl https://github.com/dhruvasagar/vim-open-url
@@ -118,7 +109,7 @@ if ( $goodPath ){
   gicl https://github.com/tyru/open-browser.vim
   gicl https://github.com/yegappan/mru
 
-  cd ..\.. }
+cd ..\..
 
 cd Win10
 PowerShell .\lists.ps1  # passing $machineName

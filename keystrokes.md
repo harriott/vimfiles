@@ -2,14 +2,15 @@ vim: set fdm=expr:
 
 Joseph's useful (g)Vim commands - http://momentary.eu/
 
-    vim-easy-align: Sip=
-    :Tabularize/ =>     aligns these lists
-
 ( see also https://vimhelp.org/quickref.txt.html )
 
     :Bufferize version       => Vim version etc
     :helpt ALL               => generate all tags
     :helptags $HOME\vimfiles => set tags
+
+# aligns the lists in this file
+    vim-easy-align: vip=
+    :Tabularize/ =>
 
 # buffers
     :bd!(n)   => buffer delete
@@ -38,9 +39,10 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     \bv  => Opens vertically split window BufExplorer
 
 # deletions
-    d0     => delete back to start of line
-    :1,.d  => delete to beginning of file
-    :.,$d  => delete to end of file
+    d0           => delete back to start of line
+    :1,.d        => delete to beginning of file
+    :.,$d        => delete to end of file
+    :g/pattern/d => delete lines containing "pattern"
 
 # diff
     :dif         => diffupdate
@@ -115,6 +117,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     /n                    => (my mapping for) clearing yellow searched highlights
     /rn                   => (my mapping for) toggle relativenumber
     :Bufferize il <word>  => grab list of lines containing <word> in a new buffer
+    :g/pattern            => list of lines containing "pattern"
     [I or ]I              => list lines containing word under cursor
     g/                    => incsearch-stay
     z/                    => incsearch-fuzzy

@@ -6,6 +6,10 @@
 
 # use my PowerShell function  packs  to list folders two down
 
+function ensurePath {
+  if ( ! ( test-path $args[0] ) ) { New-Item -name $args[0] -type directory }
+  "cd $($args[0])"; cd $($args[0])
+  }
 Function gicl { git clone $args[0] }
 Function rirf { ri -recurse -force $args[0] }
 Function tryPath {
@@ -15,6 +19,9 @@ Function tryPath {
   else { "Sorry, $($args[0]) ain't there..." }
   }
 
+cd ..\..
+
+ensurePath empty\opt
 cd ..\..
 
 tryPath ft\opt
