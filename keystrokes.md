@@ -186,12 +186,12 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     <leader>btoa => a string to base64
 
 ## Colorizer
-    :ColorHighlight     => impressive syntax colourizing, but then can't be truly turned off
+    :ColorHighlight     => impressive colourizing, but then can't be truly turned off
     :packadd Colorizer  => load the plugin from an opt directory
 
 ## colorizer
     <leader>tc          => (mapped to) ColorToggle (by colorizer) and files open fast when off
-    :packadd colorizer  => load the plugin from an opt directory
+    :packadd colorizer  => load the plugin from an opt directory. Only interprets codes.
 
 ## colour test
     pack/neovim/opt/vim-hexokinase/test_colours.txt
@@ -225,7 +225,6 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     Gray        LightGray       DarkGray
     Black       White
     Orange      Purple          Violet
-
 
 ## Hexokinase
     :HexokinaseTurnOn

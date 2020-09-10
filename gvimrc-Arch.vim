@@ -12,6 +12,7 @@ source $HOME/.vim/gvimrc.vim
 " ------------
 function! UpdateTWSDark()
   highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
+  highlight SignColumn guibg=black ctermbg=black " less distracting ALE
 endfunction
 
 " start with Tomorrow dark

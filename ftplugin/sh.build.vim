@@ -5,7 +5,9 @@
 " This file should be in your vimfiles\ftplugin folder.
 " You need to specify ft=sh in a modeline in the file that you want to affect.
 
-runtime! ftplugin/sh.vim
+" runtime! ftplugin/sh.vim
+" let b:ale_linters = [ 'shellcheck' ]
+" let g:ale_linters = { 'shbuild': ['shellcheck'] }
 
 " Build-file folding by lines that start with [space(s)]#=...
 " -----------------------------------------------------------
