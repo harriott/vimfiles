@@ -5,7 +5,11 @@
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
 
-if 1 | noremap <leader>yy :CalendarH<CR> | endif
+" calendar-vim
+if 1
+  if has('win32') | packadd calendar-vim | endif
+  noremap <leader>yy :CalendarH<CR>
+endif
 
 " for fzf:
 nnoremap <F8> :History:<CR>
