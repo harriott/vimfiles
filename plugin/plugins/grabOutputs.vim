@@ -14,11 +14,11 @@
 " If you call one of these functions to find conditional mappings, relaunch vim.
 " * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
 
-" get vimfiles location:
+" get g:vimfiles location:
 if empty(matchstr($HOME, '/home/'))
-  vimfiles = $HOME.'\vimfiles'
+  let g:vimfiles = $HOME.'\vimfiles'
 else
-  vimfiles = $HOME.'/.vim'
+  let g:vimfiles = $HOME.'/.vim'
 endif
 
 function! GrabCommands()
@@ -28,7 +28,7 @@ function! GrabCommands()
 endfunction
 
 function! GrabFnMaps()
-  exe 'edit' vimfiles.'/grabbed/FnMaps.txt'
+  exe 'edit '.g:vimfiles.'/grabbed/FnMaps.txt'
   normal! ggVGd
   call GrabWrite("map|map!")
   v/<.\=.\=F.*>/d
@@ -37,7 +37,7 @@ function! GrabFnMaps()
 endfunction
 
 function! GrabPlugMaps()
-  exe 'edit' vimfiles.'/grabbed/PlugMaps.txt'
+  exe 'edit '.g:vimfiles.'/grabbed/PlugMaps.txt'
   normal! ggVGd
   call GrabWrite("map|map!")
   v/<Plug>/d
@@ -47,7 +47,7 @@ endfunction
 
 " grab runtimepath
 function! GrabRtp()
-  exe 'edit' vimfiles.'/grabbed/runtimepath.txt'
+  exe 'edit '.g:vimfiles.'/grabbed/runtimepath.txt'
   normal! ggVGd
   call GrabWrite("echo &runtimepath")
   %s/,/\r/g
@@ -56,13 +56,13 @@ function! GrabRtp()
 endfunction
 
 function! GrabScriptnames()
-  exe 'edit' vimfiles.'/grabbed/'.hostname().'scriptnames.txt'
+  exe 'edit '.g:vimfiles.'/grabbed/'.hostname().'-scriptnames.txt'
   normal! ggVGd
   call GrabWrite("scriptnames")
 endfunction
 
 function! GrabSimpleMaps()
-  exe 'edit' vimfiles.'/grabbed/simpleMaps.txt'
+  exe 'edit '.g:vimfiles.'/grabbed/simpleMaps.txt'
   normal! ggVGd
   call GrabWrite("map|map!")
   silent! exe 'g/<.\=.\=F.*>/d'
