@@ -239,13 +239,15 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     vi  => exit Ex mode
     \ll => list mode
 
-    C-k<non-text-key>  => enters the Vim value of a non-text-key
-    C-r"               => (in command line) insert the unnamed register
-    :X                 => prompts for an encryption key
-    :help index        => lists the all of the commands
-    :his               => Display command-line history
-    :his s             => Display search string history
-    :so %              => source the current file
+    C-k<non-text-key>                                                  => enters the Vim value of a non-text-key
+    C-r"                                                               => (in command line) insert the unnamed register
+    :X                                                                 => prompts for an encryption key
+    :help index                                                        => lists the all of the commands
+    :his                                                               => Display command-line history
+    :his s                                                             => Display search string history
+    :redir @m | silent messages | redir END | new | exe "normal! \"mp" => buffer listing your recent messages
+    :scriptnames                                                       => list of files sourced, in order
+    :so %                                                              => source the current file
 
 # Visual mode commands
     V  => line-based visual selection

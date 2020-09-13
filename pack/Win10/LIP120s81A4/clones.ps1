@@ -3,6 +3,8 @@
 
 # Joseph Harriott
 
+$machineName = 
+
 # grab repositories
 
 function ensurePath {

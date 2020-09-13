@@ -17,9 +17,6 @@ source $HOME/.vim/vimrc.vim
 " Set keywordprg empty, to make K invoke vim's internal help:
 set kp=
 
-" for my  plugin/grabOutputs.vim
-let g:vimfiles=$HOME.'/.vim'
-
 " Getting rid of Caps Lock
 " ------------------------
 "

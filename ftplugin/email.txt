@@ -1,0 +1,17 @@
+vim: set et fdl=3 ft=email tw=0: \lt for LanguageTool
+
+sample showing heading syntax highlighting - see ~/.vim/ftplugin/email.vim
+
+== level2 ==
+
+==== level1 ====
+
+====== level0 ======
+▓ dark shade
+▒
+░
+
+==== level1 ====
+
+== level2 ==
+
