@@ -28,12 +28,12 @@ unmap <C-F>
 " More of my preferences for MSWin:
 
 " undofiles:
-if isdirectory($HOME . '/.vimundo') == 0
+if isdirectory($HOME.'/.vimundo') == 0
   :silent !md \%UserProfile\%\\.vimundo
 endif
 
 " swapfiles:
-if isdirectory($HOME . '/.vimswap') == 0
+if isdirectory($HOME.'/.vimswap') == 0
   :silent !md \%UserProfile\%\\.vimswap
 endif
 

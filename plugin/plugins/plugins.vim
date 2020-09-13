@@ -5,7 +5,7 @@
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
 
-noremap <leader>yy :CalendarH<CR>
+if 1 | noremap <leader>yy :CalendarH<CR> | endif
 
 " for fzf:
 nnoremap <F8> :History:<CR>
