@@ -1,8 +1,12 @@
 
 vim pack           | Arch package adapted name
                    |
+ale                | vim-ale
+bufexplorer        | vim-bufexplorer
 calendar-vim       | vim-calendar-vim
+nerdcommenter      | vim-nerdcommenter
+syntastic          | vim-syntastic
 vim-airline        |
 vim-airline-themes |
-vim-ale            |
+vim-gitgutter      |
 

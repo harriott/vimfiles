@@ -1,16 +1,13 @@
+" vim: fdm=expr ft=vim.vimbuild:
 
-" Joseph Harriott - http://momentary.eu/
-" --------------------------------------
+" Joseph Harriott
+" ---------------
 " Shell interaction.
 "
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 
 " LanguageTool - for my Scratch files:
 nnoremap <leader>lt 3GVG:LanguageToolCheck <CR>
-
-" moving to ALE errors in neomutt temporary files (eg mail)
-autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-j> <Plug>(ale_next_wrap)
-autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 " netrw:
 let g:netrw_banner = 0
@@ -38,9 +35,18 @@ let g:ctrlp_mruf_max = 500
 " Ggrep for last search
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 
-" for NERDTree:
+""> nerdtree
 noremap <C-n> :NERDTreeToggle<CR>
+packadd nerdtree
+
 " Open it on buffer's directory:
 nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
 inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+
+""> ale
+let g:ale_sign_column_always = 1
+
+" moving to ALE errors in neomutt temporary files (eg mail)
+autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-j> <Plug>(ale_next_wrap)
+autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 

@@ -188,7 +188,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 
 ## Colorizer
     :ColorHighlight     => impressive colourizing, but then can't be truly turned off
-    :packadd Colorizer  => load the plugin from an opt directory
+    :packadd Colorizer
 
 ## colorizer
     <leader>tc          => (mapped to) ColorToggle (by colorizer) and files open fast when off
