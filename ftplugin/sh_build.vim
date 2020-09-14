@@ -5,10 +5,6 @@
 " This file should be in your vimfiles\ftplugin folder.
 " You should at least have this in your modeline: # vim: fdm=expr ft=sh.shbuild:
 
-" runtime! ftplugin/sh.vim
-" let b:ale_linters = [ 'shellcheck' ]
-" let g:ale_linters = { 'shbuild': ['shellcheck'] }
-
 " Build-file folding by lines that start with [space(s)]#=...
 " -----------------------------------------------------------
 "  #= first level fold
@@ -19,7 +15,7 @@
 
 " (adapted from my markdown.vim)
 function! BuildFile()
-  let l:foldMark = matchstr(getline(v:lnum), '#=\+') "defined l:foldMark, even in no match
+  let l:foldMark = matchstr(getline(v:lnum), '#=\+') " defined l:foldMark, even in no match
   " if there's a heading set an equivalent fold start
   if empty(l:foldMark)
     return "="
@@ -29,12 +25,12 @@ function! BuildFile()
   endif
 endfunction
 
+setlocal fde=BuildFile()
+
 " demote a heading
 vnoremap <buffer><leader>> :s/#=/#==/<CR>
 " promote a heading
 vnoremap <buffer><leader>< :s/#==/#=/<CR>
-
-setlocal fde=BuildFile()
 
 " turn off or on a fold of Bash commands
 " --------------------------------------

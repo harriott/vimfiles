@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr fdc=1 ft=sh.sh_build sw=2:
+# vim: fdm=expr fdc=1 ft=sh.shbuild sw=2:
 
 # Joseph Harriott
 # grab repositories

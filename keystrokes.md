@@ -242,6 +242,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 
     C-k<non-text-key>                                                  => enters the Vim value of a non-text-key
     C-r"                                                               => (in command line) insert the unnamed register
+    :Bufferize: messages
     :X                                                                 => prompts for an encryption key
     :help index                                                        => lists the all of the commands
     :his                                                               => Display command-line history

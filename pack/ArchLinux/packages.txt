@@ -1,6 +1,8 @@
 
-vim pack     | Arch package
-             |
-calendar-vim | vim-calendar-vim
-vim-ale      |
+vim pack           | Arch package adapted name
+                   |
+calendar-vim       | vim-calendar-vim
+vim-airline        |
+vim-airline-themes |
+vim-ale            |
 
