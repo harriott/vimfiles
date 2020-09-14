@@ -1,9 +1,9 @@
 "
 " Language:	sh
 " Maintainer: Joseph Harriott
-" Last Change: Tue 21 Apr 2020
+" Last Change: Mon 14 Sep 2020
 " This file should be in your vimfiles\ftplugin folder.
-" You need to specify ft=sh in a modeline in the file that you want to affect.
+" You should at least have this in your modeline: # vim: fdm=expr ft=sh.shbuild:
 
 " runtime! ftplugin/sh.vim
 " let b:ale_linters = [ 'shellcheck' ]
@@ -34,7 +34,7 @@ vnoremap <buffer><leader>> :s/#=/#==/<CR>
 " promote a heading
 vnoremap <buffer><leader>< :s/#==/#=/<CR>
 
-set fde=BuildFile()
+setlocal fde=BuildFile()
 
 " turn off or on a fold of Bash commands
 " --------------------------------------

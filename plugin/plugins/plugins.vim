@@ -11,10 +11,10 @@ if 1
   noremap <leader>yy :CalendarH<CR>
 endif
 
-" for fzf:
+" fzf.vim:
 if 1
   if has('unix')
-    packadd fzf
+    packadd fzf.vim
     nnoremap <F8> :History:<CR>
     inoremap <F8> <Esc>:History:<CR>
     vnoremap <F8> <Esc>:History:<CR>
@@ -24,14 +24,17 @@ if 1
   endif
 endif
 
-" for mru.vim:
-let MRU_Max_Entries = 1000
-let MRU_Window_Height = 15
-" which is overriden by this:
-let MRU_Use_Current_Window = 1
-nnoremap <leader>m :MRU
-inoremap <leader>m :MRU
-vnoremap <leader>m :MRU
+" mru:
+if 1
+  packadd mru
+  let MRU_Max_Entries = 1000
+  let MRU_Window_Height = 15
+  " which is overriden by this:
+  let MRU_Use_Current_Window = 1
+  nnoremap <leader>m :MRU
+  inoremap <leader>m :MRU
+  vnoremap <leader>m :MRU
+endif
 
 " Appearance
 " ----------

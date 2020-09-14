@@ -114,8 +114,9 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     #                     => over a word highlights all exact instances, and jumps to last
     %                     => find opposing bracket in a line
     *                     => highlight all instances of exactly the word under the cursor
-    /n                    => (my mapping for) clearing yellow searched highlights
-    /rn                   => (my mapping for) toggle relativenumber
+    \n                    => (my mapping for) clearing yellow searched highlights
+    \rn                   => (my mapping for) toggle relativenumber
+    \vs                   => last search in escaped visual selection
     :Bufferize il <word>  => grab list of lines containing <word> in a new buffer
     :g/pattern            => list of lines containing "pattern"
     [I or ]I              => list lines containing word under cursor
