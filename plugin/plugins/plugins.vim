@@ -12,12 +12,17 @@ if 1
 endif
 
 " for fzf:
-nnoremap <F8> :History:<CR>
-inoremap <F8> <Esc>:History:<CR>
-vnoremap <F8> <Esc>:History:<CR>
-nnoremap <F9> :History/<CR>
-inoremap <F9> <Esc>:History/<CR>
-vnoremap <F9> <Esc>:History/<CR>
+if 1
+  if has('unix')
+    packadd fzf
+    nnoremap <F8> :History:<CR>
+    inoremap <F8> <Esc>:History:<CR>
+    vnoremap <F8> <Esc>:History:<CR>
+    nnoremap <F9> :History/<CR>
+    inoremap <F9> <Esc>:History/<CR>
+    vnoremap <F9> <Esc>:History/<CR>
+  endif
+endif
 
 " for mru.vim:
 let MRU_Max_Entries = 1000
