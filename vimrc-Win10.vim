@@ -48,7 +48,7 @@ set linespace=4
 
 " open equivalent LaTeX compiled PDF:
 function! CompiledPDF()
-  execute 'silent !start "C:\Program Files\SumatraPDF\SumatraPDF.exe" '.expand('%:p:r').".pdf"
+  execute 'silent !start '.expand('%:p:r').".pdf"
 endfunction
 " this function is only needed for markdown and TeX files
 
