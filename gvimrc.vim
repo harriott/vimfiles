@@ -1,11 +1,11 @@
+" vim: fdm=expr ft=vim.vimbuild:
+
 " -----------------------------------------------------------------------
 " source this file in _gvimrc like this: source $HOME/vimfiles/gvimrc.vim
 " -----------------------------------------------------------------------
 
+""> 0 preliminaries
 " adapted directly from gvim's $VIM/vim74/gvimrc_example.vim:
-" -----------------------------------------------------------
-set cmdheight=2		" Make command line two lines high
-set mousehide		" Hide the mouse when typing text
 
 " Only do this for Vim version 5.0 and later.
 if version >= 500
@@ -24,32 +24,23 @@ if version >= 500
 
 endif
 
-" --------------------
-" my (JH) additions follow:
-" --------------------
-set go-=m  "removes menubar
-" and Shift+F1 can toggle it:
-nnoremap <S-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
+set cmdheight=2		" Make command line two lines high
+set mousehide		" Hide the mouse when typing text
 
+""> 1 my additional initial settings
 set go-=T  "removes toolbar
 
-" have two installed DokuWiki files open ready configured:
-autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
+"">> high contrast
+let g:solarized_contrast="high"  "default value is normal, for solarized & tomorrow
 
-let g:solarized_contrast="high"    "default value is normal, for solarized & tomorrow
+"">> menubar
+" Shift+F1 can toggle it:
+nnoremap <S-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
 
-" window sizes
-" ------------
-" set lines=34  " good for screen with 600 pixel height
-set lines=44  " good for screen with 768 pixel height
-if has('unix') && g:monitorheight == '900'
-  set lines=50
-elseif has('unix') && g:monitorheight == '1050'
-  set lines=60
-endif
-set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
+set go-=m  " removes it by default
 
-" toggle a better size for reading prose
+"">> toggle window width
+" possibly a better size for reading prose
 nnoremap <leader>8 :call EightyTwoColumns()<cr>
 let g:columnsdefault = 1
 function! EightyTwoColumns()
@@ -61,4 +52,18 @@ function! EightyTwoColumns()
         let g:columnsdefault = 1
     endif
 endfunction
+
+"">> wiki/dokuwiki
+" have two pre-installed DokuWiki files open ready configured
+autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
+
+"">> window sizes
+" set lines=34  " good for screen with 600 pixel height
+set lines=44  " good for screen with 768 pixel height
+if has('unix') && g:monitorheight == '900'
+  set lines=50
+elseif has('unix') && g:monitorheight == '1050'
+  set lines=60
+endif
+set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
 

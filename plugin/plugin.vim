@@ -1,42 +1,145 @@
+" vim: fdm=expr ft=vim.vimbuild:
 
-" Joseph Harriott - Thu 23 Apr 2020
+" Joseph Harriott - Mon 14 Sep 2020
 " ---------------------------------
 
-"----------------------
-"----------------------
-" Extra configurations
-" ---------------------
-"----------------------
-"
-" (keep this file in your plugin directory so's it's automatically sourced at startup)
+" keep this file in your plugin directory so's it's automatically sourced at startup
 
-" clear the registers b-z
+""> buffer - finish a Git commit message
+autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ nnoremap <F4> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ inoremap <F4> <Esc>:wa<CR>:q<CR>
+
+""> buffer - nnn temporary files
+" clear nnn selections:
+autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
+
+" finish an nnn file rename:
+autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <F4> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <F4> <Esc>:wa<CR>:q<CR>
+
+""> buffer - packing msgFilterRules.dat
+" pack msgFilterRules.dat "name" lines:
+autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
+
+" unpack msgFilterRules.dat "name" lines:
+autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
+"
+" These hooks aren't in an  ftplugin/dat.vim  because there's no such default filetype.
+
+""> buffer - refresh
+" writes all changed buffers and reloads the current one
+nnoremap <F5> :wa<CR>:e<CR>
+inoremap <F5> <Esc>:wa<CR>:e<CR>
+vnoremap <F5> <Esc>:wa<CR>:e<CR>
+
+""> buffer - split window to a buffer
+nnoremap <leader>s :buffers<CR>:sbuffer<Space>
+
+""> clear registers b-z
 command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
 
-" get filepath into register f
-nnoremap <leader>f :let@f=@%<CR>
+""> format - clear fancy quotes
+" - left & right double & single quotes (as these aren't mapped to a keyboard key):
+nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
 
-if has('nvim')
-  " for some edge cases
-  function! QuitNoName()
-    if len(getbufinfo({'buflisted':1})) == 1
-      q!
-    endif
-  endfunction
-  " noremap <F12> :call QuitNoName() <CR>
+""> format - date abbreviations
+iab <expr> d8- strftime("%y-%m-%d")
+iab <expr> d8a strftime("%Y-%m-%d-%a")
+iab <expr> d8c strftime("%y%m%d")
+iab <expr> d8d strftime("%a %d %b %Y")
+iab <expr> d8l strftime("%Hh%M %a %d %b %Y")
+iab <expr> d8m strftime("%y%m%d-%Hh%Mm")
+iab <expr> d8p strftime("%Y-%m-%d %H:%M")
+iab <expr> d8s strftime("%d/%m/%y")
+iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
+
+""> format - date in French
+if has('unix')
+  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
+elseif has('win32')
+  noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
 endif
 
-" fcrontab
-if has('nvim')
-  autocmd BufRead,BufNewFile fcr-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
-  autocmd BufRead,BufNewFile fcr-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
-endif
+""> format - percent code
+" convert url parenthesis, and various diacritics to percent code
+" to switch the order of these substitutions, use  s#/\(.\{-}\)/\(.\{-}\)/#/\2/\1/#g
 
-" switch on DokuWiki comment highlighting (read by ./syntax/dokuwiki.vim)
-let dokuwiki_comment=1
+"">> from
+" 9 here means convert back to parentheses (eg for a quoted url in tex):
+nnoremap <leader>9 :call PercentUnicode()<cr>
+function! PercentUnicode()
+    :keepp s/%27/'/e
+    :keepp s/%28/(/e
+    :keepp s/%29/)/e
+    :keepp s/%C3%82/Â/eg
+    :keepp s/%C3%A0/à/eg
+    :keepp s/%C3%A2/â/eg
+    :keepp s/%C3%A4/ä/eg
+    :keepp s/%C3%A3/ã/eg
+    :keepp s/%C4%81/ā/eg
+    :keepp s/%C2%BA/º/eg
+    :keepp s/%C3%98/Ø/eg
+    :keepp s/%C3%A7/ç/eg
+    :keepp s/%C3%A8/è/eg
+    :keepp s/%C3%A9/é/eg
+    :keepp s/%C3%AA/ê/eg
+    :keepp s/%C3%8E/Î/eg
+    :keepp s/%C3%AE/î/eg
+    :keepp s/%C3%B3/ó/eg
+    :keepp s/%C3%B4/ô/eg
+    :keepp s/%C3%B6/ö/eg
+    :keepp s/%C3%BB/û/eg
+    :keepp s/%C3%BC/ü/eg
+    :keepp s/%C4%B1/ı/eg
+    :keepp s/%C5%81/Ł/eg
+    :keepp s/%C5%84/ń/eg
+    :keepp s/%C5%93/œ/eg
+    :keepp s/%C5%AB/ū/eg
+    :keepp s/%E2%80%93/–/eg
+    :keepp s/%E2%80%94/—/eg
+endfunction
+" if you need to work on a range, use  :<selection>call PercentUnicode()
 
-" Underline using dashes automatically
-" ------------------------------------
+"">> to
+" 5 here means convert to % code (my general preference):
+nnoremap <leader>5 :call UnicodePercent()<cr>
+function! UnicodePercent()
+    :keepp s/'/%27/eg
+    :keepp s/(/%28/e
+    :keepp s/)/%29/e
+    :keepp s/Â/%C3%82/eg
+    :keepp s/à/%C3%A0/eg
+    :keepp s/â/%C3%A2/eg
+    :keepp s/ä/%C3%A4/eg
+    :keepp s/ã/%C3%A3/eg
+    :keepp s/ā/%C4%81/eg
+    :keepp s/º/%C2%BA/eg
+    :keepp s/Ø/%C3%98/eg
+    :keepp s/ç/%C3%A7/eg
+    :keepp s/è/%C3%A8/eg
+    :keepp s/é/%C3%A9/eg
+    :keepp s/ê/%C3%AA/eg
+    :keepp s/Î/%C3%8E/eg
+    :keepp s/î/%C3%AE/eg
+    :keepp s/ó/%C3%B3/eg
+    :keepp s/ô/%C3%B4/eg
+    :keepp s/ö/%C3%B6/eg
+    :keepp s/û/%C3%BB/eg
+    :keepp s/ü/%C3%BC/eg
+    :keepp s/ı/%C4%B1/eg
+    :keepp s/Ł/%C5%81/eg
+    :keepp s/ń/%C5%84/eg
+    :keepp s/œ/%C5%93/eg
+    :keepp s/ū/%C5%AB/eg
+    :keepp s/–/%E2%80%93/eg
+    :keepp s/—/%E2%80%94/eg
+endfunction
+
+""> format - remove square bracketed text
+" as in Wikipedia articles
+nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
+
+""> format - underline
 " (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
 " eg :Underline ~+-  gives underlining like ~+-~+-~+-~+-~+-~+-
 function! s:Underline(chars)
@@ -49,30 +152,88 @@ command! -nargs=? Underline call s:Underline(<q-args>)
 " map:
 nnoremap <leader>u :Underline
 
-" -----
-" Dates
-" -----
-if has('unix')
-  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
-elseif has('win32')
-  noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
+""> ft aesl - Thymio's Aseba code
+" I suppose that sgml filetype might be more appropriate,
+" but I use xml filetype because it has folding
+autocmd BufNewFile,BufRead *.aesl setlocal filetype=xml
+
+""> ft defaults
+set shiftwidth=4
+set tabstop=4
+set tw=99
+
+""> ft dokuwiki
+" comment highlighting on - ../syntax/dokuwiki.vim
+let dokuwiki_comment=1
+
+""> ft LaTeX syntax folding
+" on before opening a buffer:
+let g:tex_fold_enabled=1
+
+"">> md4pdfLog.tex
+" turn off syntax folding for the long log files from md4pdf.ps1
+autocmd BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
+
+""> ft vimscript
+" lesser indentation of continuation line
+let g:vim_indent_cont = &sw
+
+""> ftplugin/xml.vim
+" XML syntax folding on:
+let g:xml_syntax_folding = 1
+
+""> neomutt
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal tw=0
+
+"">> quit safely when written
+function! BackupQuit()
+  wa
+  " precautionary save, incase something goes wrong with the send:
+  exec 'sav' $HOME.'/.cache/mutt/sends/'.strftime('%Y-%m-%d-%H:%M:%S').'.txt'
+  q
+endfunction
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
+
+"">> required for muttrc-gmx
+" (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
+autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
+
+"">> tidy an inmail
+" swap out any crap (and go back to top):
+"  next line
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s///g | go
+"  non-breaking whitespaces
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/ / /g | go
+"  'private use one'
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
+"  'private use two'
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
+"  unneeded blanks
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/^> */>/g | go
+
+""> neovim - quit fcrontab
+if has('nvim')
+  autocmd BufRead,BufNewFile fcr-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
+  autocmd BufRead,BufNewFile fcr-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
 endif
 
-" abbreviation for current date
-" -----------------------------
-iab <expr> d8- strftime("%y-%m-%d")
-iab <expr> d8a strftime("%Y-%m-%d-%a")
-iab <expr> d8c strftime("%y%m%d")
-iab <expr> d8d strftime("%a %d %b %Y")
-iab <expr> d8l strftime("%Hh%M %a %d %b %Y")
-iab <expr> d8m strftime("%y%m%d-%Hh%Mm")
-iab <expr> d8p strftime("%Y-%m-%d %H:%M")
-iab <expr> d8s strftime("%d/%m/%y")
-iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
+""> neovim - quit noname
+if has('nvim')
+  " for some edge cases
+  function! QuitNoName()
+    if len(getbufinfo({'buflisted':1})) == 1
+      q!
+    endif
+  endfunction
+  " noremap <F12> :call QuitNoName() <CR>
+endif
 
-" --------
-" Grepping
-" --------
+""> searching - clear search highlights
+nnoremap <leader>n :nohlsearch<CR>
+vnoremap <leader>n <Esc>:nohlsearch<CR>
+
+""> searching - grepping
 " Strip the current selection & store it in the l then s register:
 function! StripStoreCurSel()
   let l:lastvimsearch = getreg('/')
@@ -95,9 +256,7 @@ function! VimgrepSelection()
   copen
 endfunction
 
-" ---------
-" searching
-" ---------
+""> searching - parenthesis matching
 if !exists("g:loaded_matchparen")
   autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
 endif
@@ -114,22 +273,11 @@ function! ParenthsToggle()
   endif
 endfunction
 
-" clear search highlights
-nnoremap <leader>n :nohlsearch<CR>
-vnoremap <leader>n <Esc>:nohlsearch<CR>
-
-" re-open the quickfix-window, eg to look again at results of vimgrep
+""> searching - re-open the quickfix-window
+" eg to look again at results of vimgrep
 noremap <leader>q :copen<CR>
 
-" select to end of line in unix
-if has('unix')
-  nnoremap <leader>v v$hy
-endif
-
-set ignorecase incsearch smartcase
-
-" Search within a visual selection.
-" ---------------------------------
+""> searching - Search within a visual selection.
 "  before calling this you need to search for something, then
 "   either before or any number of times after calling this function,
 "     you need to visually select an area, then <Esc>
@@ -140,4 +288,42 @@ function! ConvertSearchForVisualSelection()
   echo 'last search is now active only in your escaped visual selection'
 endfunction
 nnoremap <leader>vs :call ConvertSearchForVisualSelection()<CR>
+
+""> searching - select to end of line in unix
+if has('unix')
+  nnoremap <leader>v v$hy
+endif
+
+set ignorecase incsearch smartcase
+
+""> shell - filepath into register f
+nnoremap <leader>f :let@f=@%<CR>
+
+""> shell - LanguageTool
+" for my Scratch files
+nnoremap <leader>lt 3GVG:LanguageToolCheck <CR>
+
+""> shell - netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 2
+nnoremap <leader>- :Texplore<cr>
+
+""> shell - working directory to file's
+nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
+
+""> shell - write all changed buffers
+nnoremap <F2> :wa<CR>
+inoremap <F2> <Esc>:wa<CR>
+vnoremap <F2> <Esc>:wa<CR>
+
+""> shell - write & close buffer
+nnoremap <F4> :wa<CR>:bd<CR>
+inoremap <F4> <Esc>:wa<CR>:bd<CR>
+vnoremap <F4> <Esc>:wa<CR>:bd<CR>
+
+""> toggle centering current line
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+""> toggle relativenumber
+nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 

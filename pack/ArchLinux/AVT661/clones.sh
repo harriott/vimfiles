@@ -11,6 +11,15 @@ cdp="cd $HOME/.vim/pack"
 gc='git clone'
 gd(){ echo $1; [[ -d $1 ]] || mkdir $1; cd $1; }
 
+#==> cp
+echo; $cdp; gd cp
+
+gd opt; ls
+
+  $gc https://github.com/vim-scripts/python_match.vim
+
+cd ..
+
 #==> ft
 echo; $cdp; gd ft
 
@@ -19,7 +28,6 @@ gd start; ls
   # $gc https://github.com/PProvost/vim-ps1
   # $gc https://github.com/rhysd/vim-gfm-syntax
   # $gc https://github.com/vim-pandoc/vim-pandoc-syntax
-  # $gc https://github.com/vim-scripts/python_match.vim
 cd ..
 
 #==> git

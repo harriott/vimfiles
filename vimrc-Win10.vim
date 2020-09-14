@@ -1,63 +1,31 @@
-" -------------------------------------------------------------
-" This is a wrapper vimrc for use on a MS Windows 10 system.
-" Joseph Harriott - http://momentary.eu/ - Mon 07 Oct 2019
-" this should be sourced by  C:\Users\jnbh\_vimrc
-" --------------------------------------------------------------
+" vim: fdm=expr ft=vim.vimbuild:
 
-" quit if called from Git's vim (adapted for Git-2.8.1-64-bit.exe on Windows 10):
+" -------------------------------------------------
+" a wrapper vimrc for use on a MS Windows 10 system
+" Joseph Harriott - Mon 14 Sep 2020
+" this should be sourced by $HOME\_vimrc
+" -------------------------------------------------
+
+""> 0 quit if called from Git's vim
+" (adapted for Git-2.8.1-64-bit.exe on Windows 10)
 if $VIM == '/usr/share/vim'
   finish
 endif
 
-" Debug:
-" set noloadplugins
-" source ~\vimfiles\pack\git\start\vim-fugitive\plugin\fugitive.vim
-" source ~\vimfiles\pack\git\start\vim-fugitive\ftdetect\fugitive.vim
-" source ~\vimfiles\pack\git\start\vim-fugitive\autoload\fugitive.vim
-
-" first, some general settings
+""> 1 vimrc_example.vim
 source $HOME/vimfiles/vimrc_example.vim
 
+""> 2 mswin.vim
 source $VIMRUNTIME/mswin.vim
 " but revert Ctrl-A back to number increment:
 unmap <C-A>
 " and Ctrl-F back to move forward:
 unmap <C-F>
 
-" ---------------------------------
-" More of my preferences for MSWin:
+""> 3 my initial settings
+" set noloadplugins
 
-" undofiles:
-if isdirectory($HOME.'/.vimundo') == 0
-  :silent !md \%UserProfile\%\\.vimundo
-endif
-
-" swapfiles:
-if isdirectory($HOME.'/.vimswap') == 0
-  :silent !md \%UserProfile\%\\.vimswap
-endif
-
-let g:languagetool_jar='$HOME\LanguageTool-4.6\languagetool-commandline.jar'
-
-"  Point to my more portable vimrc:
-source $HOME/vimfiles/vimrc.vim
-
-" A nicer font for MSWin:
-set guifont=Lucida_Console:h9  "better to append size so that it's reported
-set linespace=4
-
-" open equivalent LaTeX compiled PDF:
-function! CompiledPDF()
-  execute 'silent !start '.expand('%:p:r').".pdf"
-endfunction
-" this function is only needed for markdown and TeX files
-
-" Open Windows Explorer showing directory of current buffer
-nnoremap <F11> :!start explorer /select,%:p<CR>
-inoremap <F11> <Esc><F11>
-
-" Colorscheme
-" -----------
+"">> colorscheme
 function! STWDG()
   highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
 endfunction
@@ -66,7 +34,7 @@ set background=dark
 call STWDG()
 let g:CSDark = 1
 
-" reliable light-dark toggle
+"">>> reliable light-dark toggle
 nnoremap <C-F5> :call ColorLightDark()<cr>
 function! ColorLightDark()
   if g:CSDark
@@ -82,4 +50,34 @@ function! ColorLightDark()
     let g:CSDark = 1
   endif
 endfunction
+
+"">> continue vimrc
+source $HOME/vimfiles/vimrc.vim
+
+"">> ensure vimswap
+if isdirectory($HOME.'/.vimswap') == 0
+  :silent !md \%UserProfile\%\\.vimswap
+endif
+
+"">> ensure vimundo
+if isdirectory($HOME.'/.vimundo') == 0
+  :silent !md \%UserProfile\%\\.vimundo
+endif
+
+"">> LanguageTool
+let g:languagetool_jar='$HOME\LanguageTool-4.6\languagetool-commandline.jar'
+
+"">> nicer font
+set guifont=Lucida_Console:h9  "better to append size so that it's reported
+set linespace=4
+
+"">> open equivalent LaTeX compiled PDF
+function! CompiledPDF()
+  execute 'silent !start '.expand('%:p:r').".pdf"
+endfunction
+" this function is only needed for markdown and TeX files
+
+"">> Windows Explorer on current file
+nnoremap <F11> :!start explorer /select,%:p<CR>
+inoremap <F11> <Esc><F11>
 

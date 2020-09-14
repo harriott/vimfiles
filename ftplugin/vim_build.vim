@@ -30,7 +30,7 @@ setlocal fde=VimFolds()
 " heading strength
 "  Bash: grep -rl '"=\+' # shows that this is a good unambiguous choice
 " demote a heading
-vnoremap <buffer><leader>> :s/"=>/"==>/<CR>
+vnoremap <buffer><leader>> :s/"">/"">>/<CR>
 " promote a heading
-vnoremap <buffer><leader>< :s/"==>/"=>/<CR>
+vnoremap <buffer><leader>< :s/"">>/"">/<CR>
 
