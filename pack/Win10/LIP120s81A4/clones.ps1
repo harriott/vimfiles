@@ -118,6 +118,6 @@ ensurePath shell\start
 cd ..\..
 #endregion
 
-cd $PSScriptRoot
-PowerShell ..\lists.ps1
+cd Win10
+PowerShell .\lists.ps1
 

@@ -99,7 +99,7 @@ inoremap <leader>m :MRU
 vnoremap <leader>m :MRU
 
 ""> nerdcommenter
-if has('win32') | packadd ctrlp.vim | endif " Arch package vim-nerdcommenter
+if has('win32') | packadd nerdcommenter | endif " Arch package vim-nerdcommenter
 let NERDSpaceDelims = 1
 
 ""> nerdtree

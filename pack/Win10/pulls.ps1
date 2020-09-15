@@ -11,10 +11,9 @@ foreach{
   [System.Console]::ResetColor()
   cd $_
   git pull origin master
-  cd ..
 }
-cd ..\
+cd ..\..\..
 
-cd $PSScriptRoot
-PowerShell .\lists.ps1  # passing $machineName
+cd Win10
+PowerShell .\lists.ps1
 
