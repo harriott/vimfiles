@@ -3,8 +3,11 @@
 ## vimfiles
 All of my vim files (except my .gvimrc &amp; .vimrc - which vary by machine)
 
-### the feel
-My gVim installation is setup for coding in Python and Perl, and for quick navigation around my personal notes, as described [here](http://momentary.eu/2013/12/super-charged-it-organisation-with-gvim/).
+### use cases
+My gVim installation is setup for scripting, and for quick navigation around my personal notes.
+
+### exploring
+Some of my configuraton files are long, but not for me, as I use my own `vim_build` sub-filetype, which folds by my headings nicely.
 
 ### prerequisites
 `gVim`, of course, and to point to these files, you'll need something like these:
