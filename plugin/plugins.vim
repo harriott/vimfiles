@@ -167,6 +167,9 @@ packadd vim-base64
 ""> vim-better-whitespace
 " added for neovim
 
+""> vim-buffing-wheel
+packadd vim-buffing-wheel
+
 ""> vim-colors-solarized
 " if has('win32') | packadd vim-colors-solarized | endif " Arch package vim-colors-solarized-git
 
@@ -253,6 +256,9 @@ if has('win32') | packadd vim-matchit | endif " Arch package vim-matchit
 ""> vim-mbsync
 packadd vim-mbsync
 
+""> vim-open-url
+packadd vim-open-url
+
 ""> vim-pandoc-syntax
 packadd vim-pandoc-syntax
 
@@ -281,7 +287,7 @@ packadd vim-startify
 ""> vim-surround
 if has('win32') | packadd vim-surround | endif " Arch package vim-surround
 
-"">  vim-visual-star-search
+""> vim-visual-star-search
 packadd vim-visual-star-search
 
 ""> vim-wombat-scheme

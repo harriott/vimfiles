@@ -2,15 +2,9 @@
 # These are the files that I want to ignore:
 .directory
 .netrwhist
-pack/cp
-pack/ft
-pack/git
-pack/layout
-pack/neovim
-pack/other
-pack/shell
-pack/unix
-pack/win32
+pack/packs-cp
+pack/packs-unix
+pack/packs-win32
 spell/
 tags
 tags-cn
