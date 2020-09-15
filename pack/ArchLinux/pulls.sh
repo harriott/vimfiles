@@ -13,7 +13,7 @@ find . -maxdepth 3 -mindepth 3 -type d | while read pluginName; do
 done
 
 echo -e "\e[1m make hexokinase \e[0m"
-cd neovim/opt/vim-hexokinase
+cd packs-unix/opt/vim-hexokinase
 make hexokinase
 cd ~/.vim/pack
 
