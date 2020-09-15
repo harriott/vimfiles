@@ -121,6 +121,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     \rn                   => (my mapping for) toggle relativenumber
     \vs                   => last search in escaped visual selection
     :Bufferize il <word>  => grab list of lines containing <word> in a new buffer
+    :g/^#####\+           => shows lines that begin with 5 or more #'s
     :g/pattern            => list of lines containing "pattern"
     [I or ]I              => list lines containing word under cursor
     g/                    => incsearch-stay
