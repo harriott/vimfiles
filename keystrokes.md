@@ -10,6 +10,9 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
 
 # aligns the lists in this file
     vim-easy-align: vip=
+
+## tabular
+    :packadd tabular
     :Tabularize/ =>
 
 # buffers

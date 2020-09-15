@@ -24,6 +24,9 @@ noremap <silent> <leader>be :BufExplorer<CR>
 "  <Leader>bs - Opens horizontally split window BufExplorer
 "  <Leader>bv - Opens vertically split window BufExplorer
 
+""> bufferize.vim
+packadd bufferize.vim
+
 ""> calendar-vim
 if has('win32') | packadd calendar-vim | endif " Arch package vim-calendar-vim
 noremap <leader>yy :CalendarH<CR>
@@ -38,6 +41,9 @@ packadd close-buffers.vim
 
 ""> Colorizer
 let g:colorizer_disable_bufleave = 1
+
+""> colorizer
+" optionally availabe
 
 ""> ctrlp.vim
 if has('win32') | packadd ctrlp.vim | endif " Arch package vim-ctrlp
@@ -67,6 +73,15 @@ packadd gitignore.vim
 map g/ <Plug>(incsearch-fuzzy-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 packadd incsearch-fuzzy.vim
+
+""> incsearch.vim
+packadd incsearch.vim
+
+""> jellybeans.vim
+" added for neovim
+
+""> limelight.vim
+" not yet used
 
 ""> mediawiki.vim
 if has('win32') | packadd mediawiki.vim | endif " Arch package vim-mediawiki
@@ -111,6 +126,10 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 packadd quick-scope
 
+""> SimpylFold
+" Arch package vim-simpylfold
+" optionally added in win32
+
 ""> supertab
 if has('win32') | packadd supertab | endif " Arch package vim-supertab
 
@@ -124,6 +143,13 @@ else
 endif
 let g:syntastic_python_checkers = ['flake8']
 
+""> tabular
+" Arch package vim-tabular
+" optionally added in win32
+
+""> targets.vim
+packadd targets.vim
+
 ""> undotree
 if has('win32') | packadd undotree | endif " Arch package vim-undotree
 
@@ -136,6 +162,15 @@ if has('win32') | packadd vim-airline-themes | endif " Arch package vim-airline-
 
 ""> vim-base64
 packadd vim-base64
+
+""> vim-better-whitespace
+" added for neovim
+
+""> vim-colors-solarized
+" if has('win32') | packadd vim-colors-solarized | endif " Arch package vim-colors-solarized-git
+
+""> vim-colors-tomorrow
+packadd vim-colors-tomorrow
 
 ""> vim-easy-align
 packadd vim-easy-align
@@ -182,6 +217,9 @@ function! EasyMotionSearchToggle()
     endif
 endfunction
 
+""> vim-fontsize
+packadd vim-fontsize
+
 ""> vim-fugitive
 " Ggrep for last search
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
@@ -205,6 +243,15 @@ autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
 
 " enabled in my ~/.config/nvim/init.vim
 
+""> vim-LanguageTool
+if has('win32') | packadd vim-LanguageTool | endif " Arch package vim-LanguageTool
+
+""> vim-matchit
+if has('win32') | packadd vim-matchit | endif " Arch package vim-matchit
+
+""> vim-mbsync
+packadd vim-mbsync
+
 ""> vim-pandoc-syntax
 packadd vim-pandoc-syntax
 
@@ -218,6 +265,24 @@ endif
 ""> vim-ps1
 packadd vim-ps1
 
+""> vim-repeat
+if has('win32') | packadd vim-repeat | endif " Arch package vim-repeat
+
 ""> vim-rhubarb
 packadd vim-rhubarb
+
+""> vim-ShowTrailingWhitespace
+if has('win32') | packadd vim-ShowTrailingWhitespace | endif " unix only added in terminal
+
+""> vim-startify
+packadd vim-startify
+
+""> vim-surround
+if has('win32') | packadd vim-surround | endif " Arch package vim-surround
+
+"">  vim-visual-star-search
+packadd vim-visual-star-search
+
+""> vim-wombat-scheme
+" optionally added for neovim
 
