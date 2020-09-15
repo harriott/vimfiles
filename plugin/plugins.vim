@@ -46,14 +46,15 @@ let g:colorizer_disable_bufleave = 1
 " optionally availabe
 
 ""> ctrlp.vim
-if has('win32') | packadd ctrlp.vim | endif " Arch package vim-ctrlp
+set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
 
-" for CtrlP:
-set wildignore+=NTUSER.DAT*,*.lnk
-" - helps when in my Win7 %USERPROFILE%
-"
+"">> 0 configure
+" need to be defined before it's loaded
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_mruf_max = 500
+
+"">> 1 invoke
+if has('win32') | packadd ctrlp.vim | endif " Arch package vim-ctrlp
 
 ""> fzf.vim
 if has('unix')
