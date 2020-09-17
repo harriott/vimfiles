@@ -58,13 +58,21 @@ if has('win32') | packadd ctrlp.vim | endif " Arch package vim-ctrlp
 
 ""> fzf.vim
 if has('unix')
+
+  " in ~/.vim: rg '>j' --no-ignore
+  if hostname() == 'avt661'
+    nnoremap <leader>j :Files /mnt/SDSSDA240G/Dropbox/JH<CR>
+  endif
+
   packadd fzf.vim
+
   nnoremap <F8> :History:<CR>
   inoremap <F8> <Esc>:History:<CR>
   vnoremap <F8> <Esc>:History:<CR>
   nnoremap <F9> :History/<CR>
   inoremap <F9> <Esc>:History/<CR>
   vnoremap <F9> <Esc>:History/<CR>
+
 endif
 
 ""> gitignore.vim

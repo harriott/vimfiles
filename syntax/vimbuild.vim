@@ -2,7 +2,7 @@
 " Language:	sh
 " Maintainer: Joseph Harriott
 " Last Change: Mon 14 Sep 2020
-" this file should be in your vimfiles\ftplugin folder
+" this file should be in your vimfiles\syntax folder
 " you should at least have this in your modeline: " vim: fdm=expr ft=vim.vimbuild:
 
 syntax match buildY '"">.*$'

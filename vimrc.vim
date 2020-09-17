@@ -56,6 +56,8 @@ noremap <leader>ll :set list! list? <CR>
 set history=400
 set modelines=4
 
+set shortmess-=S " display count of matches
+
 " close window, including quickfix-window and NerdTree navigation
 nnoremap <leader>x <C-W>c
 

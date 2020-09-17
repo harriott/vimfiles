@@ -117,12 +117,14 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     #                     => over a word highlights all exact instances, and jumps to last
     %                     => find opposing bracket in a line
     *                     => highlight all instances of exactly the word under the cursor
+    \.*pat1\&.*pat2        => finds lines containing both patterns, in either order
     \n                    => (my mapping for) clearing yellow searched highlights
     \rn                   => (my mapping for) toggle relativenumber
     \vs                   => last search in escaped visual selection
     :Bufferize il <word>  => grab list of lines containing <word> in a new buffer
     :g/^#####\+           => shows lines that begin with 5 or more #'s
     :g/pattern            => list of lines containing "pattern"
+    :%s/pattern//ng       => reports number of occurances
     [I or ]I              => list lines containing word under cursor
     g/                    => incsearch-stay
     z/                    => incsearch-fuzzy
@@ -146,13 +148,16 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     gx                    => open url under cursor
     :!<shellcmd>          => runs the external shell command
     :Vexplore             => opens a netrw vertical directory browsing window
-    :packadd ale          => load the plugin from an opt directory
     :packadd LanguageTool => load the plugin from an opt directory
     :packadd syntastic    => load the plugin from an opt directory
     :packadd vim-rhubarb  => load the plugin from an opt directory, for :Gbrowse to work
     :r!<shell command>    => reads shell command output into the buffer
     :tabe $HOME/_vimrc    => bring up my vimrc in a new tab
     \vg                   => cd to file's and vimgrep for last search
+
+## ALE
+    :ALEToggle
+    :packadd ale
 
 ## fugitive
     ce => amend the last commit without editing the message
@@ -254,6 +259,11 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :redir @m | silent messages | redir END | new | exe "normal! \"mp" => buffer listing your recent messages
     :scriptnames                                                       => list of files sourced, in order
     :so %                                                              => source the current file
+
+## syntax highlighting
+$VIMRUNTIME/syntax/syncolor.vim
+:h syn-region
+:so $VIMRUNTIME/syntax/hitest.vim
 
 # Visual mode commands
     V  => line-based visual selection
