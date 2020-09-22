@@ -1,6 +1,6 @@
-" vim: fdm=expr ft=vim.vimbuild:
+" vim: fdm=expr ft=vim.vimconfig:
 
-" Joseph Harriott - Mon 14 Sep 2020
+" Joseph Harriott - Tue 22 Sep 2020
 " ---------------------------------
 
 " keep this file in your plugin directory so's it's automatically sourced at startup
@@ -182,6 +182,82 @@ let g:vim_indent_cont = &sw
 " XML syntax folding on:
 let g:xml_syntax_folding = 1
 
+""> get g:vimfiles location
+if empty(matchstr($HOME, '/home/'))
+  let g:vimfiles = $HOME.'\vimfiles'
+else
+  let g:vimfiles = $HOME.'/.vim'
+endif
+
+""> grab my settings
+" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+" As these functions are relying on Bufferize, relaunch vim after calling one.
+" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
+" See also ~/.vim/grabbed/grabMaps.sh
+
+function! GrabCommands()
+  edit $HOME/vim-commands.txt
+  normal! VGd
+  call GrabWrite("command")
+endfunction
+
+function! GrabFnMaps()
+  exe 'edit '.g:vimfiles.'/grabbed/FnMaps.txt'
+  normal! ggVGd
+  call GrabWrite("map|map!")
+  v/<.\=.\=F.*>/d
+  nohlsearch
+  write
+endfunction
+
+function! GrabPlugMaps()
+  exe 'edit '.g:vimfiles.'/grabbed/PlugMaps.txt'
+  normal! ggVGd
+  call GrabWrite("map|map!")
+  v/<Plug>/d
+  nohlsearch
+  write
+endfunction
+
+" grab runtimepath
+function! GrabRtp()
+  exe 'edit '.g:vimfiles.'/grabbed/runtimepath.txt'
+  normal! ggVGd
+  call GrabWrite("echo &runtimepath")
+  %s/,/\r/g
+  nohlsearch
+  write
+endfunction
+
+function! GrabScriptnames()
+  exe 'edit '.g:vimfiles.'/grabbed/'.hostname().'-scriptnames.txt'
+  normal! ggVGd
+  call GrabWrite("scriptnames")
+endfunction
+
+function! GrabSimpleMaps()
+  exe 'edit '.g:vimfiles.'/grabbed/simpleMaps.txt'
+  normal! ggVGd
+  call GrabWrite("map|map!")
+  silent! exe 'g/<.\=.\=F.*>/d'
+  silent! exe 'g/<Plug>/d'
+  silent! exe 'g/<SNR>/d'
+  g/ /d " non-breaking space
+  nohlsearch
+  write
+endfunction
+
+function! GrabWrite(toGrab)
+  " only to be called from within a parent function that has just before opened an empty buffer
+  silent execute 'Bufferize ' . a:toGrab
+  blast
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
+
 ""> neomutt
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal tw=0
 
@@ -306,7 +382,7 @@ nnoremap <leader>lt 3GVG:LanguageToolCheck <CR>
 ""> shell - netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 2
-nnoremap <leader>- :Texplore<cr>
+nnoremap <leader>- :Hexplore<cr>
 
 ""> shell - working directory to file's
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>

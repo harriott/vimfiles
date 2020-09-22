@@ -2,10 +2,12 @@
 " Language:	vim
 " Maintainer: Joseph Harriott
 " Last Change: Mon 14 Sep 2020
-" adapted from my ftplugin/sh_build.vim
-" you should at least have this in your modeline: " vim: fdm=expr ft=vim.vimbuild:
+" this file was previously named  vim_build.vim
 
-" build-file folding by lines that start with [space(s)]"=>...
+" adapted from my ftplugin/sh_config.vim
+" you should at least have this in your modeline: " vim: fdm=expr ft=vim.vimconfig:
+
+" config-file folding by lines that start with [space(s)]"=>...
 " ------------------------------------------------------------
 "  ""= first level fold
 "  Bash: grep -rl '^ *""=' # shows that this is a good unambiguous choice

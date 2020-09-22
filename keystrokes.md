@@ -147,6 +147,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     gf                    => open file under cursor
     gx                    => open url under cursor
     :!<shellcmd>          => runs the external shell command
+	:h netrw-quickmap
     :Vexplore             => opens a netrw vertical directory browsing window
     :packadd LanguageTool => load the plugin from an opt directory
     :packadd syntastic    => load the plugin from an opt directory
@@ -254,6 +255,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :Bufferize: messages
     :X                                                                 => prompts for an encryption key
     :help index                                                        => lists the all of the commands
+    :help 'shiftwidth'                                                 => autoindentation
     :his                                                               => Display command-line history
     :his s                                                             => Display search string history
     :redir @m | silent messages | redir END | new | exe "normal! \"mp" => buffer listing your recent messages
