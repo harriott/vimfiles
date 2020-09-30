@@ -6,14 +6,14 @@
 # normally called from a parent script
 #  or can be called from ~/.vim/pack:  bash ArchLinux/lists.sh
 
-find . -type d -name '*.git' > ArchLinux/$machineName/gits.txt
+find . -type d -name '*.git' | sort > ArchLinux/$machineName/gits.txt
 cd=`pwd`
 for file in `cat ArchLinux/$machineName/gits.txt`; do cd $file;
     git config core.ignorecase true
     git config core.symlinks false
 cd $cd; done
 
-find . -mindepth 3 -maxdepth 3 -type d > ArchLinux/$machineName/all.txt
+find . -mindepth 3 -maxdepth 3 -type d |sort > ArchLinux/$machineName/all.txt
 
 echo -e "don't forget to \e[1m\e[95m :helptags ALL \e[0m"
 
