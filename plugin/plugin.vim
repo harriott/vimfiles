@@ -343,9 +343,11 @@ function! ParenthsToggle()
   if g:parenthesismatch
     NoMatchParen
     let g:parenthesismatch = 0
+    let g:parenthesismatch
   else
     DoMatchParen
     let g:parenthesismatch = 1
+    let g:parenthesismatch
   endif
 endfunction
 

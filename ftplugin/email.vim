@@ -5,12 +5,9 @@
 " The intention here is to have a simple means for writing headings in emails,
 " and with the bonus of highlighting hyperlinks.
 
-" This file should be in your vimfiles\ftplugin folder,
-" and you'll need to (autocmd BufRead,BufNewFile) setlocal ft=email.
-
 " If you want to trigger these adjustments from the modeline in a file, it's:
 " vim: set ft=email:
-" Preferable to also have my  ../syntax/email.vim, then can see $ITstack/onGitHub/misc/email.txt
+" Preferable to also have my  ../syntax/email.vim, then can see ./email.txt
 
 setlocal tw=0 fdc=1 fde=EF() fdm=expr
 

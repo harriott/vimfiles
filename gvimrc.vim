@@ -1,4 +1,4 @@
-" vim: fdm=expr ft=vim.vimbuild:
+" vim: fdm=expr ft=vim.vimconfig:
 
 " -----------------------------------------------------------------------
 " source this file in _gvimrc like this: source $HOME/vimfiles/gvimrc.vim

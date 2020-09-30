@@ -113,11 +113,11 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :m-2       => That is, the current line is moved up one line
     :m+        => the current line is moved down one line
 
-# Search
+# search
     #                     => over a word highlights all exact instances, and jumps to last
     %                     => find opposing bracket in a line
     *                     => highlight all instances of exactly the word under the cursor
-    \.*pat1\&.*pat2        => finds lines containing both patterns, in either order
+    \.*pat1\&.*pat2       => finds lines containing both patterns, in either order
     \n                    => (my mapping for) clearing yellow searched highlights
     \rn                   => (my mapping for) toggle relativenumber
     \vs                   => last search in escaped visual selection
@@ -140,7 +140,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     text\|alt     => searches for text & alt
     C-rC-w        => searches for the word under cursor - allowing skipping thru with n
 
-# Shell
+# shell
     C-g                   => display relative path of current file
     F3                    => Ggrep for last search
     <shellcmd> | gvim -   => pipes shell command output into gvim
@@ -154,6 +154,7 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :packadd vim-rhubarb  => load the plugin from an opt directory, for :Gbrowse to work
     :r!<shell command>    => reads shell command output into the buffer
     :tabe $HOME/_vimrc    => bring up my vimrc in a new tab
+    \j                    => fuzzy search in JH
     \vg                   => cd to file's and vimgrep for last search
 
 ## ALE
@@ -183,14 +184,11 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     &                                  => repeat last substitute
     :exe ":normal i" . strftime("%c")  => put date-time at cursor
     :g/^/m 0                           => reverse the entire buffer
+    :h g_CTRL-G                        => position and word info, works on a range too
     :h v_g_CTRL-A                      => create a series of numbers,
     \yy                                => CalendarH
     \\c                                => toggle cursor column
     \\l                                => toggle cursor line
-
-## number lists
-   :for i in range(1,11) | put =i.'. ' | endfor  => markdown list
-   :put =range(1964,2020)
 
 ## base64
     <leader>atob => base64 to a string
@@ -241,6 +239,12 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     :HexokinaseTurnOn
     :packadd vim-hexokinase
 
+## number lists
+   :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
+   :let i=1 | g#/# s##\='/'.i# | let i+=1        " prefix-number all files in nnn's neovim window
+   :let i=2 | g#.# s#1#\=i#g | let i+=1          " g-> working down through the entire buffer, s-> increase counts
+   :put =range(1964,2020)
+
 # Vim
     @:  => repeat last command-line
     K   => brings up a man page (if there is one) for word under cursor
@@ -250,17 +254,19 @@ Joseph's useful (g)Vim commands - http://momentary.eu/
     vi  => exit Ex mode
     \ll => list mode
 
-    C-k<non-text-key>                                                  => enters the Vim value of a non-text-key
-    C-r"                                                               => (in command line) insert the unnamed register
+    C-k<non-text-key>    => enters the Vim value of a non-text-key
+    C-r"                 => (in command line) insert the unnamed register
     :Bufferize: messages
-    :X                                                                 => prompts for an encryption key
-    :help index                                                        => lists the all of the commands
-    :help 'shiftwidth'                                                 => autoindentation
-    :his                                                               => Display command-line history
-    :his s                                                             => Display search string history
-    :redir @m | silent messages | redir END | new | exe "normal! \"mp" => buffer listing your recent messages
-    :scriptnames                                                       => list of files sourced, in order
-    :so %                                                              => source the current file
+    :X                   => prompts for an encryption key
+    :help index          => lists the all of the commands
+    :help 'sw'           => autoindentation - shiftwidth
+    :his                 => Display command-line history
+    :his s               => Display search string history
+    :scriptnames         => list of files sourced, in order
+    :so %                => source the current file
+
+## buffer listing your recent messages
+    :redir @m | silent messages | redir END | new | exe "normal! \"mp"
 
 ## syntax highlighting
 $VIMRUNTIME/syntax/syncolor.vim

@@ -1,4 +1,4 @@
-" vim: fdm=expr ft=vim.vimbuild:
+" vim: fdm=expr ft=vim.vimconfig:
 
 " Joseph Harriott
 " ---------------
@@ -52,6 +52,7 @@ set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
 " need to be defined before it's loaded
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_mruf_max = 500
+nnoremap <leader>bb  :CtrlPBuffer<CR>
 
 "">> 1 invoke
 if has('win32') | packadd ctrlp.vim | endif " Arch package vim-ctrlp
