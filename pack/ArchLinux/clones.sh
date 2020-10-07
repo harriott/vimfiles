@@ -60,7 +60,6 @@ gd opt; ls
   $gc https://github.com/srstevenson/vim-picker
   $gc https://github.com/sheerun/vim-wombat-scheme
 
-  $gc https://github.com/tpope/vim-rhubarb
 cd ..
 
 #==> win32

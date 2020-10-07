@@ -138,7 +138,7 @@ packadd quick-scope
 
 ""> SimpylFold
 " Arch package vim-simpylfold
-" optionally added in win32
+" win32 :packadd SimpylFold
 
 ""> supertab
 if has('win32') | packadd supertab | endif " Arch package vim-supertab
@@ -155,7 +155,7 @@ let g:syntastic_python_checkers = ['flake8']
 
 ""> tabular
 " Arch package vim-tabular
-" optionally added in win32
+" win32 :packadd tabular
 
 ""> targets.vim
 packadd targets.vim
