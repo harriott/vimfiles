@@ -61,12 +61,15 @@ if has('win32') | packadd ctrlp.vim | endif " Arch package vim-ctrlp
 if has('unix')
 
   " in ~/.vim: rg '>j' --no-ignore
+
   if hostname() == 'avt661'
     nnoremap <leader>j :Files /mnt/SDSSDA240G/Dropbox/JH<CR>
   endif
 
   packadd fzf.vim
 
+  nnoremap <leader>B :BLines<CR>
+  nnoremap <leader>L :Lines<CR>
   nnoremap <F8> :History:<CR>
   inoremap <F8> <Esc>:History:<CR>
   vnoremap <F8> <Esc>:History:<CR>

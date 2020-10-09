@@ -14,22 +14,24 @@ Joseph's useful (g)Vim commands
 :Tabularize/ "
 
 # buffers
-    :bd!(n)     " buffer delete
-    :ls         " buffer list
-    :marks      " list all the current marks
-    :unh        " unhides all buffers (into windows)
-    :wa         " write all changed buffers
-    :wq         " write buffer in window to file and quit vim window
-    g-          " revert to previous change
-    g+          " advance to next change
-    'J    " bring up file marked with J (as saved in viminfo) into buffer
-    ZQ    " :q!
-    ZZ    " :wq
-    C-6   " edit the alternate file (usually = the previous buffer)
-    C-wgf " open the file under the cursor in a new tab
-    C-wo  " closes all other windows
-    C-i   " jump forward (to where you've been)
-    C-o   " jump back (to where you've been)
+    'J      " bring up file marked with J (as saved in viminfo) into buffer
+    :bd!(n) " buffer delete
+    :ls     " buffer list
+    :marks  " list all the current marks
+    :unh    " unhides all buffers (into windows)
+    :wa     " write all changed buffers
+    :wq     " write buffer in window to file and quit vim window
+    \bb     " :CtrlPBuffer
+    \bf     " :Buffers
+    g-      " revert to previous change
+    g+      " advance to next change
+    ZQ      " :q!
+    ZZ      " :wq
+    C-6     " edit the alternate file (usually = the previous buffer)
+    C-wgf   " open the file under the cursor in a new tab
+    C-wo    " closes all other windows
+    C-i     " jump forward (to where you've been)
+    C-o     " jump back (to where you've been)
 
 ## BufExplorer
     \bd  " close all but visible buffers
@@ -115,6 +117,8 @@ Joseph's useful (g)Vim commands
     %                     " find opposing bracket in a line
     *                     " highlight all instances of exactly the word under the cursor
     \.*pat1\&.*pat2       " finds lines containing both patterns, in either order
+    \B                    " :BLines
+    \L                    " :Lines
     \n                    " (my mapping for) clearing yellow searched highlights
     \rn                   " (my mapping for) toggle relativenumber
     \vs                   " last search in escaped visual selection
@@ -127,10 +131,17 @@ Joseph's useful (g)Vim commands
     z/                    " incsearch-fuzzy
     n                     " find next highlighted search result
 
+## fzf.vim
+    /j          " :Files /mnt/SDSSDA240G/Dropbox/JH
+    :Rg <regex> " in the cwd
+    F8          " :History:
+    F9          " :History/
+
 ## following /
 \C (anywhere) " force case
 \c (anywhere) " ignore case
 \M            " nomagic (for what follows), eg returning . & * to themselves
+\S            " non-whitespace character
 \V            " very nomagic (for what follows), eg (also) returning $ to itself
 \v            " very magic (for what follows), eg making | separate alternatives
 text          " searches for text
@@ -138,21 +149,22 @@ text\|alt     " searches for text & alt
 C-rC-w        " searches for the word under cursor - allowing skipping thru with n
 
 # shell
-    C-g                   " display relative path of current file
-    F3                    " Ggrep for last search
-    <shellcmd> | gvim -   " pipes shell command output into gvim
-    gf                    " open file under cursor
-    gx                    " open url under cursor
     :!<shellcmd>          " runs the external shell command
     :h netrw-quickmap
-    :Vexplore             " opens a netrw vertical directory browsing window
+    :Locate <pattern>
     :packadd LanguageTool " load the plugin from an opt directory
     :packadd syntastic    " load the plugin from an opt directory
     :packadd vim-rhubarb  " load the plugin from an opt directory, for :Gbrowse to work
     :r!<shell command>    " reads shell command output into the buffer
     :tabe $HOME/_vimrc    " bring up my vimrc in a new tab
+    :Vexplore             " opens a netrw vertical directory browsing window
     \j                    " fuzzy search in JH
     \vg                   " cd to file's and vimgrep for last search
+    C-g                   " display relative path of current file
+    F3                    " Ggrep for last search
+    <shellcmd> | gvim -   " pipes shell command output into gvim
+    gf                    " open file under cursor
+    gx                    " open url under cursor
 
 ## ALE
 :ALEToggle
