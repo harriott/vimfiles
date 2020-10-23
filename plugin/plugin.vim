@@ -39,8 +39,17 @@ nnoremap <leader>s :buffers<CR>:sbuffer<Space>
 command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
 
 ""> format - clear fancy quotes
-" - left & right double & single quotes (as these aren't mapped to a keyboard key):
-nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
+" - left & right double & single quotes (as these aren't mapped to a keyboard key)
+" en dash, which can be copied from websites
+" nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
+nnoremap <leader>2 :call ClearFancyText()<cr>
+function! ClearFancyText()
+  :sil!%s/“/"/g
+  :sil!%s/”/"/g
+  :sil!%s/‘/'/g
+  :sil!%s/’/'/g
+  :sil!%s/–/-/g
+endfunction
 
 ""> format - date abbreviations
 iab <expr> d8- strftime("%y-%m-%d")

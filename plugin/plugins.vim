@@ -70,6 +70,7 @@ if has('unix')
 
   nnoremap <leader>B :BLines<CR>
   nnoremap <leader>L :Lines<CR>
+  nnoremap <leader>bf :Buffers<CR>
   nnoremap <F8> :History:<CR>
   inoremap <F8> <Esc>:History:<CR>
   vnoremap <F8> <Esc>:History:<CR>
@@ -255,9 +256,10 @@ let g:gitgutter_enabled = 0
 noremap <leader>gg :GitGutterToggle<CR>
 
 ""> vim-hexokinase
-autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
-
 " enabled in my ~/.config/nvim/init.vim
+  autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
+
+let g:Hexokinase_highlighters = ['foregroundfull']
 
 ""> vim-LanguageTool
 if has('win32') | packadd vim-LanguageTool | endif " Arch package vim-LanguageTool

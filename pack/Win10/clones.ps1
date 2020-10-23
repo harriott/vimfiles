@@ -13,7 +13,7 @@ function ensurePath {
 Function gicl { git clone $args[0] }
 Function rirf { ri -recurse -force $args[0] }
 
-cd ..\..
+function pack {cd "$Env:UserProfile\vimfiles\pack"}
 
 #region --- cp
 ensurePath cp
@@ -46,14 +46,14 @@ ensurePath cp
   # gicl https://github.com/wellle/targets.vim
   # gicl https://github.com/yegappan/mru
 
-cd ..\..
+pack
 #endregion
 
 #region --- unix
 ensurePath unix
 
 
-cd ..\..
+pack
 #endregion
 
 #region --- win32
@@ -81,7 +81,7 @@ ensurePath win32
   # gicl https://github.com/vim-airline/vim-airline-themes
   # gicl https://github.com/vim-syntastic/syntastic
 
-cd ..\..
+pack
 #endregion
 
 cd Win10
