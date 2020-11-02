@@ -55,7 +55,7 @@ Joseph's useful (g)Vim commands
     [c     " previous diff
     :windo difft " diff the windows
 
-# Folds
+# folds
     zC             " close current fold & subfolds
     zM             " close all folds
     zO             " expand current fold & subfolds
@@ -147,7 +147,7 @@ text          " searches for text
 text\|alt     " searches for text & alt
 C-rC-w        " searches for the word under cursor - allowing skipping thru with n
 
-### regex
+## regex
 \(alt1\|alt2\|alt3\)
 \S            " non-whitespace character
 \s            " whitespace character

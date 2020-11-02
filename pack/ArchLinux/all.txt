@@ -1,4 +1,5 @@
 ./packs-cp/opt/bufferize.vim
+./packs-cp/opt/calendar-vim
 ./packs-cp/opt/close-buffers.vim
 ./packs-cp/opt/colorizer
 ./packs-cp/opt/gitignore.vim
@@ -34,7 +35,6 @@
 ./packs-unix/opt/vim-wombat-scheme
 ./packs-win32/opt/ale
 ./packs-win32/opt/bufexplorer
-./packs-win32/opt/calendar-vim
 ./packs-win32/opt/ctrlp.vim
 ./packs-win32/opt/mediawiki.vim
 ./packs-win32/opt/nerdcommenter
@@ -53,3 +53,4 @@
 ./packs-win32/opt/vim-repeat
 ./packs-win32/opt/vim-rhubarb
 ./packs-win32/opt/vim-surround
+./Win10/packs-cp/opt

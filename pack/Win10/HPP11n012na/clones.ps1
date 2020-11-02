@@ -1,7 +1,7 @@
 # vim: set et tw=0:
 
 # Joseph Harriott
-# grab repositories
+# grab repositories - needs updating!
 
 function ensurePath {
   if ( ! ( test-path $args[0] ) ) { New-Item -name $args[0] -type directory }

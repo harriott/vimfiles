@@ -1,4 +1,5 @@
 ./packs-cp/opt/bufferize.vim/.git
+./packs-cp/opt/calendar-vim/.git
 ./packs-cp/opt/close-buffers.vim/.git
 ./packs-cp/opt/colorizer/.git
 ./packs-cp/opt/gitignore.vim/.git
@@ -34,7 +35,6 @@
 ./packs-unix/opt/vim-wombat-scheme/.git
 ./packs-win32/opt/ale/.git
 ./packs-win32/opt/bufexplorer/.git
-./packs-win32/opt/calendar-vim/.git
 ./packs-win32/opt/ctrlp.vim/.git
 ./packs-win32/opt/mediawiki.vim/.git
 ./packs-win32/opt/nerdcommenter/.git

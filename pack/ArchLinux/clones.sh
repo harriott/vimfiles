@@ -17,6 +17,7 @@ echo; $cdp; gd cp
 gd opt; ls
 
   # $gc https://github.com/AndrewRadev/bufferize.vim
+  # $gc https://github.com/mattn/calendar-vim
   # $gc https://github.com/Asheq/close-buffers.vim
   # $gc https://github.com/lilydjwg/colorizer
   # $gc https://github.com/vim-scripts/gitignore.vim
