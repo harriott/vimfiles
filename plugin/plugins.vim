@@ -28,7 +28,7 @@ noremap <silent> <leader>be :BufExplorer<CR>
 packadd bufferize.vim
 
 ""> calendar-vim
-if has('win32') | packadd calendar-vim | endif " Arch package vim-calendar-vim
+packadd calendar-vim
 noremap <leader>yy :CalendarH<CR>
 
 ""> close-buffers.vim

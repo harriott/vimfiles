@@ -53,4 +53,3 @@
 ./packs-win32/opt/vim-repeat
 ./packs-win32/opt/vim-rhubarb
 ./packs-win32/opt/vim-surround
-./Win10/packs-cp/opt
