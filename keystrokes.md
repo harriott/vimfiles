@@ -149,8 +149,10 @@ C-rC-w        " searches for the word under cursor - allowing skipping thru with
 
 ## regex
 \(alt1\|alt2\|alt3\)
-\S            " non-whitespace character
-\s            " whitespace character
+\d  " digit
+\S  " non-whitespace character
+\s  " whitespace character
+\u  " uppercase character
 
 # shell
     :!<shellcmd>          " runs the external shell command

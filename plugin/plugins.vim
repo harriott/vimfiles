@@ -98,7 +98,7 @@ packadd incsearch.vim
 " not yet used
 
 ""> mediawiki.vim
-if has('win32') | packadd mediawiki.vim | endif " Arch package vim-mediawiki
+packadd mediawiki.vim
 
 ""> mru
 let MRU_Max_Entries = 1000
@@ -141,8 +141,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 packadd quick-scope
 
 ""> SimpylFold
-" Arch package vim-simpylfold
-" win32 :packadd SimpylFold
+" packadd SimpylFold
 
 ""> supertab
 if has('win32') | packadd supertab | endif " Arch package vim-supertab
@@ -165,7 +164,7 @@ let g:syntastic_python_checkers = ['flake8']
 packadd targets.vim
 
 ""> undotree
-if has('win32') | packadd undotree | endif " Arch package vim-undotree
+packadd undotree
 
 ""> vim-airline
 if has('win32') | packadd vim-airline | endif " Arch package vim-airline
@@ -184,7 +183,7 @@ packadd vim-base64
 packadd vim-buffing-wheel
 
 ""> vim-colors-solarized
-" if has('win32') | packadd vim-colors-solarized | endif " Arch package vim-colors-solarized-git
+" packadd vim-colors-solarized
 
 ""> vim-colors-tomorrow
 packadd vim-colors-tomorrow
@@ -262,7 +261,7 @@ noremap <leader>gg :GitGutterToggle<CR>
 let g:Hexokinase_highlighters = ['foregroundfull']
 
 ""> vim-LanguageTool
-if has('win32') | packadd vim-LanguageTool | endif " Arch package vim-LanguageTool
+packadd vim-LanguageTool
 
 ""> vim-matchit
 if has('win32') | packadd vim-matchit | endif " Arch package vim-matchit
