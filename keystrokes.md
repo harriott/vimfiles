@@ -210,7 +210,7 @@ gW " search Wikipedia
 <leader>btoa " a string to base64
 
 ## Colorizer
-:ColorHighlight     " impressive colourizing, but then can't be truly turned off
+:ColorHighlight  " impressive colourizing, but then can't be truly turned off
 :packadd Colorizer
 
 ## colorizer

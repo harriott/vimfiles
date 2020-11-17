@@ -1,6 +1,6 @@
 " Language:	email
 " Maintainer: Joseph Harriott
-" Last Change: Thu 09 Apr 2020
+" Last Change: Tue 17 Nov 2020
 
 " The intention here is to have a simple means for writing headings in emails,
 " and with the bonus of highlighting hyperlinks.
@@ -12,11 +12,11 @@
 setlocal tw=0 fdc=1 fde=EF() fdm=expr
 
 " create a heading around text:
-nnoremap <leader><leader>= I== <Esc>A ==<Esc>
+nnoremap <buffer> <leader><leader>= I== <Esc>A ==<Esc>
 " boost up a heading:
-nnoremap <leader>== I==<Esc>A==<Esc>
+nnoremap <buffer> <leader>== I==<Esc>A==<Esc>
 " demote a heading:
-nnoremap <leader>=- 0xx<Esc>$xx<Esc>
+nnoremap <buffer> <leader>=- 0xx<Esc>$xx<Esc>
 
 " folding by header marks
 " -----------------------

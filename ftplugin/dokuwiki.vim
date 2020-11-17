@@ -38,10 +38,10 @@ iab <v <code vim>
 iab <y <code yaml>
 
 " boost up a heading:
-nnoremap <leader>= I=<Esc>A=<Esc>
+nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
 
 " create a heading:
-nnoremap <leader><leader>= I=== <Esc>A ===<Esc>
+nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
 
 " having just selected a web-page heading, format it into a DokuWiki hyperling
 function! PageTitleToHyperlink()
@@ -52,10 +52,10 @@ vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 " (I'm using two h's because  gitgutter.vim  binds some \hx's)
 
 " wrap the inner word under cursor with ''
-nnoremap <leader>' viwc''''<Esc>hP
+nnoremap <buffer> <leader>' viwc''''<Esc>hP
 
 " wrap a selection with ''
-vnoremap <leader>' c''''<Esc>hP
+vnoremap <buffer> <leader>' c''''<Esc>hP
 
 " Mapping to add wrap indent tags around quotes
 " ---------------------------------------------
