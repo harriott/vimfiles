@@ -25,7 +25,7 @@ endif
 
 """ Settings {{{
 " Use syntax-based folding
-setlocal foldmethod=syntax
+" setlocal foldmethod=syntax
 setlocal foldtext=DokuFoldText()
 " Set shift width for indent
 setlocal shiftwidth=2

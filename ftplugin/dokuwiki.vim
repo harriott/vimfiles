@@ -1,19 +1,21 @@
 " My adjustments
 " Language:	dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Mon 30 Dec 2019
+" Last Change: Thu 19 Nov 2020
 " This file should be in your vimfiles\ftplugin folder,
-" and you'll need to (autocmd BufRead,BufNewFile) setlocal ft=dokuwiki.
+" and you might want to (autocmd BufRead,BufNewFile) setlocal ft=dokuwiki.
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
-" /* vim: set ft=dokuwiki: */
+"  /* vim: set ft=dokuwiki: */
 " You should also have  https://github.com/nblock/vim-dokuwiki/blob/master/syntax/dokuwiki.vim
-" installed at  $HOME/vimfiles/syntax/dokuwiki.vim
+"  installed at  $HOME/vimfiles/syntax/dokuwiki.vim
+"  with this line commented out:  setlocal foldmethod=syntax
 
 " While developing this plugin, I used
 " :source $HOME/vimfiles/ftplugin/dokuwiki.vim
 
-setlocal tw=0 fdc=1 fde=DWF() fdl=0 fdm=expr
+setlocal tw=0 fde=DWF() fdl=0 fdm=expr
+setlocal fdc=2 " slightly better distinction from line numbers
 
 " for the syntax plugin:
 let dokuwiki_comment=1 " can't see what this achieves...
@@ -43,7 +45,7 @@ nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
 " create a heading:
 nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
 
-" having just selected a web-page heading, format it into a DokuWiki hyperling
+" having just selected a web-page heading, format it into a DokuWiki hyperlink
 function! PageTitleToHyperlink()
   let l:pagetitle = getreg('"')
   execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
@@ -87,7 +89,7 @@ function! DWF()
     return "="
 endfunction
 " - requires this:  foldmethod=expr foldexpr=DWF()
-"   and this helps visually:        foldcolumns=1
+"   and this helps visually:        foldcolumns=2
 
 " - notes for this (adapted from
 "     http://jeromyanglim.blogspot.fr/2011/04/case-study-in-customising-syntax.html)
