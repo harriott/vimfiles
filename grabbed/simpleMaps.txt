@@ -23,48 +23,55 @@ o  I             targets#e('o', 'I', 'I')
 x  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
 o  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
 n  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  U           * :CapsLockOff<CR> | U
+n  \bv         & :BufExplorerVerticalSplit<CR>
+n  \bs         & :BufExplorerHorizontalSplit<CR>
+n  \bt         & :ToggleBufExplorer<CR>
 v  \*          * :<C-U>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 n  \*          * :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
+   \gg         * :GitGutterToggle<CR>
+n  \e          * :call EasyMotionSearchToggle()<CR>
 n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
 n  \btoa/      * :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
 v  \btoa       * :<C-U>call base64#v_btoa()<CR>
 v  \atob       * :<C-U>call base64#v_atob()<CR>
-n  \tm         * :<C-U>call tablemode#Toggle()<CR>
-n  \bv         & :BufExplorerVerticalSplit<CR>
-n  \bs         & :BufExplorerHorizontalSplit<CR>
-n  \bt         & :ToggleBufExplorer<CR>
-n  \9          * :call PercentUnicode()<CR>
-n  \5          * :call UnicodePercent()<CR>
-n  \[          * :s/\m\[.\{-}]//g<CR>
-n  \2          * :%s//"/g|:%s//"/g<CR>
-n  \e          * :call EasyMotionSearchToggle()<CR>
-n  \d          * :cd %:p:h<CR>:pwd<CR>
-n  \-          * :Texplore<CR>
-n  \lt         * 3GVG:LanguageToolCheck <CR>
-n  \bd         * :Bdelete hidden<CR>
-n  \bdd        * :Bdelete other<CR>
-   \be         * :BufExplorer<CR>
-   \gg         * :GitGutterToggle<CR>
 v  \m          * :MRU
 n  \m          * :MRU
+n  \bf         * :Buffers<CR>
+n  \L          * :Lines<CR>
+n  \B          * :BLines<CR>
+n  \j          * :Files /mnt/SDSSDA240G/Dropbox/JH<CR>
+n  \bb         * :CtrlPBuffer<CR>
+n  \bd         * :Bdelete hidden<CR>
+n  \bdd        * :Bdelete other<CR>
    \yy         * :CalendarH<CR>
-n  \vs         * :call ConvertSearchForVisualSelection()<CR>
-n  \v          * v$hy
-   \q          * :copen<CR>
-v  \n          * <Esc>:nohlsearch<CR>
-n  \n          * :nohlsearch<CR>
-n  \pt         * :call ParenthsToggle()<CR>
-n  \vg         * :call VimgrepSelection()<CR>
-   \yp         * :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
-n  \u          * :Underline
-n  \f          * :let@f=@%<CR>
+   \be         * :BufExplorer<CR>
 n  \rn         * :set rnu! rnu? <CR>
 n  \zz         * :let &scrolloff=999-&scrolloff<CR>
+n  \d          * :cd %:p:h<CR>:pwd<CR>
+n  \-          * :Hexplore<CR>
+n  \lt         * 3GVG:LanguageToolCheck <CR>
+n  \f          * :let@f=@%<CR>
+n  \v          * v$hy
+n  \vs         * :call ConvertSearchForVisualSelection()<CR>
+   \q          * :copen<CR>
+n  \pt         * :call ParenthsToggle()<CR>
+n  \vg         * :call VimgrepSelection()<CR>
+v  \n          * <Esc>:nohlsearch<CR>
+n  \n          * :nohlsearch<CR>
+n  \u          * :Underline
+n  \[          * :s/\m\[.\{-}]//g<CR>
+n  \5          * :call UnicodePercent()<CR>
+n  \9          * :call PercentUnicode()<CR>
+   \yp         * :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
+n  \2          * :call ClearFancyText()<CR>
 n  \s          * :buffers<CR>:sbuffer<Space>
 n  \<Right>    * 10<C-W>>
 n  \<Left>     * 10<C-W><
 n  \<Up>       * 5<C-W>+
 n  \<Down>     * 5<C-W>-
+n  \\l         * :set cul! cul? <CR>
+n  \\c         * :set cuc! cuc? <CR>
 n  \x          * <C-W>c
    \ll         * :set list! list? <CR>
 x  a             targets#e('o', 'a', 'a')
@@ -87,8 +94,8 @@ n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
    <C-N>       * :NERDTreeToggle<CR>
 n  <Insert>    * :CapsLockOff <CR>
 
-c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
 i  <C-Tab>     * <Tab>
+c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
 i  <Insert>    * <Esc> :CapsLockOff <CR>
 i  <C-U>       * <C-G>u<C-U>
 i  \m          * :MRU

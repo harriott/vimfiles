@@ -73,7 +73,7 @@ Joseph's useful (g)Vim commands
 
 # Insert mode commands
     C-ke'    " digraph code for é
-    C-O      " moves to normal mode for just one command
+    C-o      " moves to normal mode for just one command
     C-p      " keyword completion
     C-r%     " insert relative path of current file
     C-qu201c " unicode codepoint for “
@@ -187,6 +187,13 @@ gB " open URL
 gS " search word
 gW " search Wikipedia
 
+# spell
+    (count)]s => move to next misspelled word after the cursor
+    (count)[s => like  ]s  but search backwards
+    echo &spelllang
+    z= => suggest corrections
+    zg => add good word
+
 # Tab views
     gT  gt    " move around tabs
     :tab ball " all buffers into tabs
@@ -201,6 +208,7 @@ gW " search Wikipedia
     :g/^/m 0                           " reverse the entire buffer
     :h g_CTRL-G                        " position and word info, works on a range too
     :h v_g_CTRL-A                      " create a series of numbers,
+    :ni<somecharacter><Enter>          " inserts <somecharacters> n time
     \yy                                " CalendarH
     \\c                                " toggle cursor column
     \\l                                " toggle cursor line
@@ -268,11 +276,13 @@ Orange      Purple          Violet
     gQ  " enter Ex mode
     q:  " brings up an interactive history of :commands (in an editable window)
     vi  " exit Ex mode
+    \8  " toggle 82/106 columns
     \ll " list mode
 
     C-k<non-text-key>    " enters the Vim value of a non-text-key
     C-r"                 " (in command line) insert the unnamed register
     :Bufferize: messages
+    :colo                " show color scheme
     :X                   " prompts for an encryption key
     :help index          " lists the all of the commands
     :help 'sw'           " autoindentation - shiftwidth
@@ -305,4 +315,5 @@ $VIMRUNTIME/syntax/syncolor.vim
     C-w_         " maximizes a window
     C-wr         " rotate split to right
     C-wv         " vertical split
+    Resize Splits with mouse
 

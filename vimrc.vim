@@ -58,6 +58,8 @@ set modelines=4
 
 set shortmess-=S " display count of matches
 
+nnoremap zr :exe ':spellra  '.expand('<cWORD>')<CR>
+
 " close window, including quickfix-window and NerdTree navigation
 nnoremap <leader>x <C-W>c
 
