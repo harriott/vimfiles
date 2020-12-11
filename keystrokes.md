@@ -1,4 +1,3 @@
-" vim: fdm=expr:
 
 Joseph's useful (g)Vim commands
 
@@ -291,6 +290,7 @@ Orange      Purple          Violet
     :scriptnames         " list of files sourced, in order
     ;set gfn             " show font
     :so %                " source the current file
+    :DiffOrig  " brings the Recover version up left
 
 ## buffer listing your recent messages
 :redir @m | silent messages | redir END | new | exe "normal! \"mp"

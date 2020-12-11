@@ -286,7 +286,7 @@ endif
 packadd vim-ps1
 
 ""> vim-repeat
-if has('win32') | packadd vim-repeat | endif " Arch package vim-repeat
+packadd vim-repeat
 
 ""> vim-rhubarb
 packadd vim-rhubarb

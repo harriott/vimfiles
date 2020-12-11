@@ -7,5 +7,5 @@
 " You should at least have this in your modeline: # vim: fdm=expr ft=sh.shfold:
 
 execute 'source 'g:vimfiles.'/ftplugin/HashEqualsFolding.vim'
-setlocal fdc=1
+setlocal fdc=1 fdm=expr
 

@@ -5,6 +5,7 @@
 pack/packs-cp
 pack/packs-unix
 pack/packs-win32
+profile.log
 spell/
 tags
 tags-cn
