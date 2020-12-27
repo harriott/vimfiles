@@ -1,3 +1,4 @@
+./packs-cp/opt/ale
 ./packs-cp/opt/bufferize.vim
 ./packs-cp/opt/calendar-vim
 ./packs-cp/opt/close-buffers.vim
@@ -15,6 +16,7 @@
 ./packs-cp/opt/SimpylFold
 ./packs-cp/opt/targets.vim
 ./packs-cp/opt/undotree
+./packs-cp/opt/vim-airline
 ./packs-cp/opt/vim-base64
 ./packs-cp/opt/vim-buffing-wheel
 ./packs-cp/opt/vim-colors-solarized
@@ -28,6 +30,7 @@
 ./packs-cp/opt/vim-open-url
 ./packs-cp/opt/vim-pandoc-syntax
 ./packs-cp/opt/vim-ps1
+./packs-cp/opt/vim-repeat
 ./packs-cp/opt/vim-ShowTrailingWhitespace
 ./packs-cp/opt/vim-startify
 ./packs-cp/opt/vim-visual-star-search
@@ -38,18 +41,15 @@
 ./packs-unix/opt/vim-hexokinase
 ./packs-unix/opt/vim-picker
 ./packs-unix/opt/vim-wombat-scheme
-./packs-win32/opt/ale
 ./packs-win32/opt/bufexplorer
 ./packs-win32/opt/ctrlp.vim
 ./packs-win32/opt/nerdcommenter
 ./packs-win32/opt/supertab
 ./packs-win32/opt/syntastic
 ./packs-win32/opt/tabular
-./packs-win32/opt/vim-airline
 ./packs-win32/opt/vim-airline-themes
 ./packs-win32/opt/vim-easymotion
 ./packs-win32/opt/vim-gitgutter
 ./packs-win32/opt/vim-matchit
-./packs-win32/opt/vim-repeat
 ./packs-win32/opt/vim-rhubarb
 ./packs-win32/opt/vim-surround

@@ -9,6 +9,8 @@
 " ------------------------------------------------------------------
 
 set encoding=utf-8  " get this done early
+set ssop-=blank ssop-=help
+set ssop+=winpos
 
 ""> buffer stuff
 set autoread  " catch external changes to files

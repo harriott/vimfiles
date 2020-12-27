@@ -111,7 +111,7 @@ Joseph's useful (g)Vim commands
     :m-2             " That is, the current line is moved up one line
     :m+              " the current line is moved down one line
 
-# search
+# Search
     #                     " over a word highlights all exact instances, and jumps to last
     %                     " find opposing bracket in a line
     *                     " highlight all instances of exactly the word under the cursor
@@ -149,6 +149,7 @@ C-rC-w        " searches for the word under cursor - allowing skipping thru with
 ## regex
 \(alt1\|alt2\|alt3\)
 \d  " digit
+\D  " non-digit
 \S  " non-whitespace character
 \s  " whitespace character
 \u  " uppercase character
@@ -166,7 +167,6 @@ C-rC-w        " searches for the word under cursor - allowing skipping thru with
     \j                    " fuzzy search in JH
     \vg                   " cd to file's and vimgrep for last search
     C-g                   " display relative path of current file
-    F3                    " Ggrep for last search
     <shellcmd> | gvim -   " pipes shell command output into gvim
     gf                    " open file under cursor
     gx                    " open url under cursor
@@ -176,7 +176,8 @@ C-rC-w        " searches for the word under cursor - allowing skipping thru with
 :packadd ale
 
 ## fugitive
-ce " amend the last commit without editing the message
+    ce " amend the last commit without editing the message
+    F3                    " Ggrep for last search
 
 ## open webpages
 F6 " open a uURL using open-browser.vim

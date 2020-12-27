@@ -1,3 +1,4 @@
+./packs-cp/opt/ale/.git
 ./packs-cp/opt/bufferize.vim/.git
 ./packs-cp/opt/calendar-vim/.git
 ./packs-cp/opt/close-buffers.vim/.git
@@ -15,6 +16,7 @@
 ./packs-cp/opt/SimpylFold/.git
 ./packs-cp/opt/targets.vim/.git
 ./packs-cp/opt/undotree/.git
+./packs-cp/opt/vim-airline/.git
 ./packs-cp/opt/vim-base64/.git
 ./packs-cp/opt/vim-buffing-wheel/.git
 ./packs-cp/opt/vim-colors-solarized/.git
@@ -28,6 +30,7 @@
 ./packs-cp/opt/vim-open-url/.git
 ./packs-cp/opt/vim-pandoc-syntax/.git
 ./packs-cp/opt/vim-ps1/.git
+./packs-cp/opt/vim-repeat/.git
 ./packs-cp/opt/vim-ShowTrailingWhitespace/.git
 ./packs-cp/opt/vim-startify/.git
 ./packs-cp/opt/vim-visual-star-search/.git
@@ -38,18 +41,15 @@
 ./packs-unix/opt/vim-hexokinase/.git
 ./packs-unix/opt/vim-picker/.git
 ./packs-unix/opt/vim-wombat-scheme/.git
-./packs-win32/opt/ale/.git
 ./packs-win32/opt/bufexplorer/.git
 ./packs-win32/opt/ctrlp.vim/.git
 ./packs-win32/opt/nerdcommenter/.git
 ./packs-win32/opt/supertab/.git
 ./packs-win32/opt/syntastic/.git
 ./packs-win32/opt/tabular/.git
-./packs-win32/opt/vim-airline/.git
 ./packs-win32/opt/vim-airline-themes/.git
 ./packs-win32/opt/vim-easymotion/.git
 ./packs-win32/opt/vim-gitgutter/.git
 ./packs-win32/opt/vim-matchit/.git
-./packs-win32/opt/vim-repeat/.git
 ./packs-win32/opt/vim-rhubarb/.git
 ./packs-win32/opt/vim-surround/.git

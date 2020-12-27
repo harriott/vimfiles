@@ -15,7 +15,7 @@ autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-j> <Plug>(ale_next_wr
 autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 ""> bufexplorer
-if has('win32') | packadd bufexplorer | endif " Arch package vim-bufexplorer
+packadd bufexplorer
 noremap <silent> <leader>be :BufExplorer<CR>
 
 "">> default mappings
@@ -55,7 +55,7 @@ let g:ctrlp_mruf_max = 500
 nnoremap <leader>bb  :CtrlPBuffer<CR>
 
 "">> 1 invoke
-if has('win32') | packadd ctrlp.vim | endif " Arch package vim-ctrlp
+packadd ctrlp.vim
 
 ""> fzf.vim
 if has('unix')
@@ -167,11 +167,11 @@ packadd targets.vim
 packadd undotree
 
 ""> vim-airline
-if has('win32') | packadd vim-airline | endif " Arch package vim-airline
+packadd vim-airline
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
-if has('win32') | packadd vim-airline-themes | endif " Arch package vim-airline-themes
+packadd vim-airline-themes
 
 ""> vim-base64
 packadd vim-base64
@@ -201,7 +201,7 @@ let g:easy_align_delimiters = {
     \ }
 
 ""> vim-easymotion
-if has('win32') | packadd vim-easymotion | endif " Arch package vim-easymotion
+packadd vim-easymotion
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 " <Leader>f{char} to move to {char}
