@@ -46,6 +46,8 @@ let g:colorizer_disable_bufleave = 1
 " optionally availabe
 
 ""> ctrlp.vim
+" $HOME/.cache/ctrlp/mru/cache.txt
+" <c-f> and <c-b> to cycle between modes
 set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
 
 "">> 0 configure
@@ -62,8 +64,10 @@ if has('unix')
 
   " in ~/.vim: rg '>j' --no-ignore
 
-  if hostname() == 'avt661'
+  if hostname() == 'ltcm58'
     nnoremap <leader>j :Files /mnt/SDSSDA240G/Dropbox/JH<CR>
+  elseif hostname() == 'sbMb'
+    nnoremap <leader>j :Files /mnt/SD480GSSDPlus/Dropbox/JH<CR>
   endif
 
   packadd fzf.vim
@@ -101,6 +105,7 @@ packadd incsearch.vim
 packadd mediawiki.vim
 
 ""> mru
+" $HOME/.vim_mru_files
 let MRU_Max_Entries = 1000
 let MRU_Window_Height = 15
 " which is overriden by this:

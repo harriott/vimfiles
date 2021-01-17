@@ -164,7 +164,6 @@ C-rC-w        " searches for the word under cursor - allowing skipping thru with
     :r!<shell command>    " reads shell command output into the buffer
     :tabe $HOME/_vimrc    " bring up my vimrc in a new tab
     :Vexplore             " opens a netrw vertical directory browsing window
-    \j                    " fuzzy search in JH
     \vg                   " cd to file's and vimgrep for last search
     C-g                   " display relative path of current file
     <shellcmd> | gvim -   " pipes shell command output into gvim

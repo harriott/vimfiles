@@ -1,10 +1,9 @@
 " Couple of adjustments.
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Fri 21 Aug 2020
+" Last Change: Sun 17 Jan 2021
 " This file should be in your vimfiles\ftplugin folder.
 " $VIMRUNTIME/filetype.vim determines which files are automatically detected as markdown
-" for folding to work, you'll need this modeline:  vim: fdm=expr:
 
 setlocal expandtab tw=0
 
@@ -33,4 +32,8 @@ endfunction
 
 setlocal fde=MdF() fdc=1 fdm=expr
 setlocal fdc=2 " slightly better distinction from line numbers
+
+" Get highlighting working for
+"  # low-carb  in  $DROPBOX/JH/core/TextNotes/JH-DailyLife/Health/Ingest/Regimes.md
+let g:markdown_minlines = 40
 
