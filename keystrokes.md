@@ -131,8 +131,8 @@ Joseph's useful (g)Vim commands
     n                     " find next highlighted search result
 
 ## fzf.vim
-    /j          " :Files /mnt/SDSSDA240G/Dropbox/JH
     :Rg <regex> " in the cwd
+    \j          " :Files /mnt/SDSSDA240G/Dropbox/JH
     F8          " :History:
     F9          " :History/
 
@@ -189,9 +189,12 @@ gW " search Wikipedia
 # spell
     (count)]s => move to next misspelled word after the cursor
     (count)[s => like  ]s  but search backwards
-    echo &spelllang
     z= => suggest corrections
     zg => add good word
+
+## spelllang
+    :set spl
+    echo &spelllang
 
 # Tab views
     gT  gt    " move around tabs

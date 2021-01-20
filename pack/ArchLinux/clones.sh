@@ -12,7 +12,7 @@ gc='git clone'
 gd(){ echo $1; [[ -d $1 ]] || mkdir $1; cd $1; }
 
 #==> cp
-echo; $cdp; gd cp
+echo; $cdp; gd packs-cp
 
 gd opt; ls
 
@@ -52,7 +52,7 @@ gd opt; ls
   # $gc https://github.com/bronson/vim-visual-star-search
 
 #==> unix
-echo; $cdp; gd unix
+echo; $cdp; gd packs-unix
 
 gd opt; ls
 
@@ -61,11 +61,11 @@ gd opt; ls
   # $gc https://github.com/nanotech/jellybeans.vim
   # $gc https://github.com/ntpeters/vim-better-whitespace
   # $gc https://github.com/RRethy/vim-hexokinase; cd vim-hexokinase; make hexokinase; cd ..
-  # $gc https://github.com/srstevenson/vim-picker
+  $gc https://github.com/srstevenson/vim-picker
   # $gc https://github.com/sheerun/vim-wombat-scheme
 
 #==> win32
-echo; $cdp; gd win32
+echo; $cdp; gd packs-win32
 
 gd opt; ls
 
