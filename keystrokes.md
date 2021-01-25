@@ -78,38 +78,38 @@ Joseph's useful (g)Vim commands
     C-qu201c " unicode codepoint for “
 
 # Movements
-    $          " end of line
-    '.         " jump to position where last change occurred in current buffer
-    'k         " move to mark k
-    0          " start of line
-    #G         " go to line #
-    C-e        " scroll up the window, without displacing the cursor
-    C-y        " scroll down the window, without displacing the cursor
-    H          " go Home (top line of current window display)
-    M          " go Middle line (of current window display)
-    L          " go Last line (of current window display)
-    ^          " first non-blank char of line
-    ``         " jump back (to position in current buffer where jumped from)
-    `a         " jump to position (line and column) of mark a
-    g$         " jump to last character of screen line
-    g,         " jump forward to position of a newer change
-    g;         " jump back to position of an older change
-    g^         " jump to first character of screen line
-    ge         " go backwards to end of word
-    mJ         " put a file-specific mark in current file (can use a-z)
-    zz         " centre window on cursor
-    { or }     " move cursor to start or end of paragraph
-    ( or )     " move cursor to start or end of sentence
-    ~          " toggle case of selection
-    <leader>zz " (mapped in my vimrc to) toggle the value of 'scrolloff'
-    C-b        " back (=up) a page
-    C-d        " down half a screen
-    C-f        " forward (=down) a page
-    C-u        " up half a screen
-    :(5,7)m0         " move line(s 5-7) to start
-    :#               " go to line #
-    :m-2             " That is, the current line is moved up one line
-    :m+              " the current line is moved down one line
+    $         " end of line
+    '.        " jump to position where last change occurred in current buffer
+    'k        " move to mark k
+    0         " start of line
+    #G        " go to line #
+    C-e       " scroll up the window, without displacing the cursor
+    C-y       " scroll down the window, without displacing the cursor
+    H         " go Home (top line of current window display)
+    M         " go Middle line (of current window display)
+    L         " go Last line (of current window display)
+    ^         " first non-blank char of line
+    ``        " jump back (to position in current buffer where jumped from)
+    `a        " jump to position (line and column) of mark a
+    g$        " jump to last character of screen line
+    g,        " jump forward to position of a newer change
+    g;        " jump back to position of an older change
+    g^        " jump to first character of screen line
+    ge        " go backwards to end of word
+    mJ        " put a file-specific mark in current file (can use a-z)
+    zz        " centre window on cursor
+    { or }    " move cursor to start or end of paragraph
+    ( or )    " move cursor to start or end of sentence
+    ~         " toggle case of selection
+    \zz       " (mapped in my vimrc to) toggle the value of 'scrolloff'
+    C-b       " back (=up) a page
+    C-d       " down half a screen
+    C-f       " forward (=down) a page
+    C-u       " up half a screen
+    :(5,7)m0  " move line(s 5-7) to start
+    :#        " go to line #
+    :m-2      " That is, the current line is moved up one line
+    :m+       " the current line is moved down one line
 
 # Search
     #                     " over a word highlights all exact instances, and jumps to last
@@ -209,28 +209,30 @@ gW " search Wikipedia
     :exe ":normal i" . strftime("%c")  " put date-time at cursor
     :g/^/m 0                           " reverse the entire buffer
     :h g_CTRL-G                        " position and word info, works on a range too
-    :h v_g_CTRL-A                      " create a series of numbers,
     :ni<somecharacter><Enter>          " inserts <somecharacters> n time
     \yy                                " CalendarH
-    \\c                                " toggle cursor column
-    \\l                                " toggle cursor line
 
 ## base64
 <leader>atob " base64 to a string
 <leader>btoa " a string to base64
 
-## Colorizer
+## layout
+    :%le  " remove all indents
+    \\c   " toggle cursor column
+    \\l   " toggle cursor line
+
+### Colorizer
 :ColorHighlight  " impressive colourizing, but then can't be truly turned off
 :packadd Colorizer
 
-## colorizer
+### colorizer
 <leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
 :packadd colorizer  " load the plugin from an opt directory. Only interprets codes.
 
-## colour test
+### colour test
 pack/packs-unix/opt/vim-hexokinase/test_colours.txt
 
-### cterm-colors
+#### cterm-colors
     NR-16   NR-8    COLOR NAME
     0       0       Black
     1       4       DarkBlue
@@ -249,7 +251,7 @@ pack/packs-unix/opt/vim-hexokinase/test_colours.txt
     14      3*      Yellow, LightYellow
     15      7*      White
 
-### gui-colors
+#### gui-colors
 Red         LightRed        DarkRed
 Green       LightGreen      DarkGreen       SeaGreen
 Blue        LightBlue       DarkBlue        SlateBlue
@@ -260,15 +262,16 @@ Gray        LightGray       DarkGray
 Black       White
 Orange      Purple          Violet
 
-## Hexokinase
+### Hexokinase
 :HexokinaseTurnOn
 :packadd vim-hexokinase
 
 ## number lists
-   :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
-   :let i=1 | g#/# s##\='/'.i# | let i+=1        " prefix-number all files in nnn's neovim window
-   :let i=2 | g#.# s#1#\=i#g | let i+=1          " g-> working down through the entire buffer, s-> increase counts
-   :put =range(1964,2020)
+    :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
+    :h v_g_CTRL-A                                 " create a series of numbers,
+    :let i=1 | g#/# s##\='/'.i# | let i+=1        " prefix-number all files in nnn's neovim window
+    :let i=2 | g#.# s#1#\=i#g | let i+=1          " g-> working down through the entire buffer, s-> increase counts
+    :put =range(1964,2020)
 
 # Vim
     :Bufferize version       " Vim version etc

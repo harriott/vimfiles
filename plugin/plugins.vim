@@ -48,6 +48,10 @@ let g:colorizer_disable_bufleave = 1
 ""> ctrlp.vim
 " $HOME/.cache/ctrlp/mru/cache.txt
 " <c-f> and <c-b> to cycle between modes
+" open selected entry in a new
+"  split horizontal <c-v>
+"  split vertical   <c-v>
+"  tab              <c-t>
 set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
 
 "">> 0 configure

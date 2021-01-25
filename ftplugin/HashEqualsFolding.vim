@@ -1,22 +1,20 @@
-" vim: fdm=expr ft=vim.vimconfig:
 
 " Language:	sh
 " Maintainer: Joseph Harriott
 " Last Change: Thu 17 Sep 2020
-" This file should be sourced by a vimfiles\ftplugin.
+  " This file  HashEqualsFolding.vim  should be sourced by a vimfiles\ftplugin.
 
-" Folding by lines that start with [space(s)]#=...
-" ------------------------------------------------
-"  #= first level fold
+  " Folding by lines that start with [space(s)]#=...
+  " ------------------------------------------------
+  "  #= first level fold
 "  <some code>
 "    #== second level fold (with optional offset)
 "    ...
 "  (I'd've preferred #~, but couldn't get matchstr detecting it...)
 
-" demote a heading
-vnoremap <buffer><leader>> :s/#=/#==/<CR>
-" promote a heading
-vnoremap <buffer><leader>< :s/#==/#=/<CR>
+" select one or more headings, then
+vnoremap <buffer><leader>> :s/#=/#==/<CR>  " demote
+vnoremap <buffer><leader>< :s/#==/#=/<CR>  " promote
 
 ""> foldexpr'
 
