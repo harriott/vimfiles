@@ -178,6 +178,9 @@ let dokuwiki_comment=1
 ""> ft LaTeX syntax folding
 " on before opening a buffer:
 let g:tex_fold_enabled=1
+" check for Pandoc template
+autocmd BufReadPre *.cls,*tex let b:PandocLaTeX = 0
+autocmd BufReadPre */pandoc-templates/*.latex let b:PandocLaTeX = 1
 
 "">> md4pdfLog.tex
 " turn off syntax folding for the long log files from md4pdf.ps1
