@@ -4,7 +4,7 @@
 " Last Change: Sat 17 Oct 2020
 
 " You need to add this modeline in the file that you want to affect:
-"  vim: fdm=expr ft=RClog:
+"  vim: ft=RClog:
 
 " folding by folder name
 " ----------------------
@@ -13,4 +13,4 @@ function! RCF()
 	if empty(j) | return "=" | else | return ">1" | endif
 endfunction
 
-setlocal fde=RCF() fdc=1 nowrap tw=0
+setlocal fde=RCF() fdc=1 fdm=expr nowrap tw=0

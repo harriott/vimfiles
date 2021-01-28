@@ -50,8 +50,9 @@ Joseph's useful (g)Vim commands
     :dif         " diffupdate
     :diffo       " diffoff the window
     :diffo!      " diffoff the windows
-    ]c     " next diff
-    [c     " previous diff
+    ]c           " next diff
+    [c           " previous diff
+    :set diffopt+=iwhiteall
     :windo difft " diff the windows
 
 # folds
@@ -206,6 +207,7 @@ gW " search Wikipedia
 
 # Tricks
     &                                  " repeat last substitute
+    Entering special characters
     :exe ":normal i" . strftime("%c")  " put date-time at cursor
     :g/^/m 0                           " reverse the entire buffer
     :h g_CTRL-G                        " position and word info, works on a range too

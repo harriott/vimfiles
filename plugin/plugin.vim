@@ -179,7 +179,7 @@ let dokuwiki_comment=1
 " on before opening a buffer:
 let g:tex_fold_enabled=1
 " check for Pandoc template
-autocmd BufReadPre *.cls,*tex let b:PandocLaTeX = 0
+autocmd BufReadPre *.cls,*.sty,*.tex let b:PandocLaTeX = 0
 autocmd BufReadPre */pandoc-templates/*.latex let b:PandocLaTeX = 1
 
 "">> md4pdfLog.tex

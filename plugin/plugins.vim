@@ -273,7 +273,7 @@ let g:Hexokinase_highlighters = ['foregroundfull']
 packadd vim-LanguageTool
 
 ""> vim-matchit
-if has('win32') | packadd vim-matchit | endif " Arch package vim-matchit
+packadd vim-matchit
 
 ""> vim-mbsync
 packadd vim-mbsync
