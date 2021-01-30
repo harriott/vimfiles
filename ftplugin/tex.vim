@@ -8,8 +8,9 @@
 " $VIMRUNTIME/filetype.vim > TeX  to see detections
 " see also  $vimfiles/after/ftplugin/tex.vim
 
-nnoremap <buffer><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
 nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
+nnoremap <buffer><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
+vnoremap <buffer><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
 
 ""> Folding
 if b:PandocLaTeX

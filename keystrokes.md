@@ -271,9 +271,11 @@ Orange      Purple          Violet
 ## number lists
     :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
     :h v_g_CTRL-A                                 " create a series of numbers,
-    :let i=1 | g#/# s##\='/'.i# | let i+=1        " prefix-number all files in nnn's neovim window
-    :let i=2 | g#.# s#1#\=i#g | let i+=1          " g-> working down through the entire buffer, s-> increase counts
     :put =range(1964,2020)
+
+### working down buffer
+    :let i=1 | g#/# s##\='/'.i# | let i+=1  " prefix-number all files in nnn's neovim window
+    :let i=2 | g#.# s#1#\=i#g | let i+=1    " g-> working down through the entire buffer, s-> increase counts
 
 # Vim
     :Bufferize version       " Vim version etc
