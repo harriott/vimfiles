@@ -1,14 +1,12 @@
 
 " Language:	sh
 " Maintainer: Joseph Harriott
-" Last Change: Mon 25 Jan 2021
+" Last Change: Mon 01 Feb 2021
 " Syntax highlighting for folding my Bash scripts.
 
 " this file should be in your  after/vimfiles/syntax  folder
-" put this in your modeline: # vim: ft=shfold:
 
-" shell syntax
-" source $VIMRUNTIME/syntax/sh.vim
+" put this in your script's modeline:  # vim: fdm=expr:
 
 syntax sync fromstart  " for longer build scripts
 
