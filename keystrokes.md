@@ -212,6 +212,7 @@ gW " search Wikipedia
     :g/^/m 0                           " reverse the entire buffer
     :h g_CTRL-G                        " position and word info, works on a range too
     :ni<somecharacter><Enter>          " inserts <somecharacters> n time
+    :%s/\v^.*$/\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
     \yy                                " CalendarH
 
 ## base64

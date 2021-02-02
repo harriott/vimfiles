@@ -270,6 +270,9 @@ function! GrabWrite(toGrab)
   write
 endfunction
 
+""> maxmempattern
+set mmp=24000
+
 ""> neomutt
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal tw=0
 
