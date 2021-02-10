@@ -185,6 +185,9 @@ packadd vim-airline-themes
 ""> vim-base64
 packadd vim-base64
 
+""> vim-bbcode
+packadd vim-bbcode
+
 ""> vim-better-whitespace
 " added for neovim
 

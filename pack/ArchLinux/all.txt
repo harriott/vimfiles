@@ -21,6 +21,7 @@
 ./packs-cp/opt/vim-airline
 ./packs-cp/opt/vim-airline-themes
 ./packs-cp/opt/vim-base64
+./packs-cp/opt/vim-bbcode
 ./packs-cp/opt/vim-buffing-wheel
 ./packs-cp/opt/vim-colors-solarized
 ./packs-cp/opt/vim-colors-tomorrow
