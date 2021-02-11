@@ -108,13 +108,22 @@ packadd incsearch.vim
 ""> mediawiki.vim
 packadd mediawiki.vim
 
-""> mru
+""> MRU
 " $HOME/.vim_mru_files
 let MRU_Max_Entries = 1000
-let MRU_Window_Height = 15
-" which is overriden by this:
-let MRU_Use_Current_Window = 1
+let MRU_Window_Height = 20
+" - which is overriden by this:
+" let MRU_Use_Current_Window = 1
 packadd mru
+
+" :FZFMru
+
+" :MRU \.md
+" in the normal MRU window
+"  Enter = open over current window
+"  O = open split right
+"  o = open split below
+"  u = update
 
 nnoremap <leader>m :MRU
 inoremap <leader>m :MRU

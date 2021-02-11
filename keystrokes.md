@@ -279,7 +279,8 @@ Orange      Purple          Violet
     :let i=2 | g#.# s#1#\=i#g | let i+=1    " g-> working down through the entire buffer, s-> increase counts
 
 # Vim
-    :Bufferize version       " Vim version etc
+    :Bufferize let
+    :Bufferize version  " Vim version etc
     @:  " repeat last command-line
     K   " brings up a man page (if there is one) for word under cursor
     ga  " returns code values for character under cursor
@@ -291,7 +292,7 @@ Orange      Purple          Violet
 
     C-k<non-text-key>    " enters the Vim value of a non-text-key
     C-r"                 " (in command line) insert the unnamed register
-    :Bufferize: messages
+    :Bufferize messages
     :colo                " show color scheme
     :X                   " prompts for an encryption key
     :help index          " lists the all of the commands
