@@ -1,13 +1,13 @@
 " Language:	email
 " Maintainer: Joseph Harriott
-" Last Change: Tue 17 Nov 2020
+" Last Change: Thu 11 Feb 2021
 
 " The intention here is to have a simple means for writing headings in emails,
 " and with the bonus of highlighting hyperlinks.
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
 " vim: set ft=email:
-" Preferable to also have my  ../syntax/email.vim, then can see ./email.txt
+" Preferable to also have my  ../syntax/email.vim, then can see  $vimfiles/ftplugin/email.txt
 
 setlocal tw=0 fdc=1 fde=EF() fdm=expr
 
@@ -17,6 +17,8 @@ nnoremap <buffer> <leader><leader>= I== <Esc>A ==<Esc>
 nnoremap <buffer> <leader>== I==<Esc>A==<Esc>
 " demote a heading:
 nnoremap <buffer> <leader>=- 0xx<Esc>$xx<Esc>
+" insert a wavy line:
+nnoremap <buffer> <leader># 099i~<Esc>
 
 " folding by header marks
 " -----------------------
