@@ -206,14 +206,17 @@ gW " search Wikipedia
     ci} " change inside curly braces
 
 # Tricks
+    :%s/\v^.*$/\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
+
     &                                  " repeat last substitute
-    Entering special characters
     :exe ":normal i" . strftime("%c")  " put date-time at cursor
     :g/^/m 0                           " reverse the entire buffer
     :h g_CTRL-G                        " position and word info, works on a range too
     :ni<somecharacter><Enter>          " inserts <somecharacters> n time
-    :%s/\v^.*$/\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
+    :s/./&/gn|noh                      " show number of characters in a long line
     \yy                                " CalendarH
+
+Entering special characters
 
 ## base64
 <leader>atob " base64 to a string
