@@ -38,6 +38,14 @@ nnoremap <leader>s :buffers<CR>:sbuffer<Space>
 ""> clear registers b-z
 command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
 
+""> easy q macro
+noremap Q @q
+
+" qq  starts recording
+" end recording in normal/visual with q
+" (:reg q  shows what's been saved)
+" [count]Q plays back
+
 ""> format - clear fancy quotes
 " - left & right double & single quotes (as these aren't mapped to a keyboard key)
 " en dash, which can be copied from websites
@@ -179,7 +187,7 @@ let dokuwiki_comment=1
 " on before opening a buffer:
 let g:tex_fold_enabled=1
 " check for Pandoc template
-autocmd BufReadPre *.cls,*.sty,*.tex let b:PandocLaTeX = 0
+autocmd BufReadPre *.cls,*.dtx,*.sty,*.tex let b:PandocLaTeX = 0
 autocmd BufReadPre */pandoc-templates/*.latex let b:PandocLaTeX = 1
 
 "">> md4pdfLog.tex
@@ -391,10 +399,6 @@ set ignorecase incsearch smartcase
 
 ""> shell - filepath into register f
 nnoremap <leader>f :let@f=@%<CR>
-
-""> shell - LanguageTool
-" for my Scratch files
-nnoremap <leader>lt 3GVG:LanguageToolCheck <CR>
 
 ""> shell - netrw
 let g:netrw_banner = 0

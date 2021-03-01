@@ -1,18 +1,23 @@
-" vim: fdm=expr ft=vim.vimconfig:
 
 " Joseph Harriott
 " ---------------
-"
+
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
 
-""> ale
-" Arch package vim-ale
-let g:ale_sign_column_always = 1
+""> ALE
+" :Bufferize ALEInfo  " shows settings for the filetype
+" :h ale-languagetool-options
+" ALEToggleBuffer
+" ale_enabled
 
-" moving to ALE errors in neomutt temporary files (eg mail)
-autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-j> <Plug>(ale_next_wrap)
-autocmd BufRead,BufNewFile /tmp/neomutt-* nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+let g:ale_linters = {'text': ['languagetool']}
+let g:ale_sign_column_always = 1
+packadd ale
+
+" moving to ALE errors
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 ""> bufexplorer
 packadd bufexplorer
@@ -282,7 +287,21 @@ noremap <leader>gg :GitGutterToggle<CR>
 let g:Hexokinase_highlighters = ['foregroundfull']
 
 ""> vim-LanguageTool
+nnoremap <leader>LT :call LanguageTool_lopen() <CR>
+function! LanguageTool_lopen()
+  LanguageToolCheck
+  lopen
+endfunction
+
+" :LanguageToolClear
+let g:languagetool_win_height = -1
+" needs a  g:languagetool_*  defined
 packadd vim-LanguageTool
+
+""> vim-langtool
+" needs  g:langtool_jar  defined
+nnoremap <leader>lt :LangTool <bar> lopen <CR>
+packadd vim-langtool
 
 ""> vim-matchit
 packadd vim-matchit

@@ -31,6 +31,7 @@
 ./packs-cp/opt/vim-fugitive/.git
 ./packs-cp/opt/vim-gfm-syntax/.git
 ./packs-cp/opt/vim-gitgutter/.git
+./packs-cp/opt/vim-langtool/.git
 ./packs-cp/opt/vim-LanguageTool/.git
 ./packs-cp/opt/vim-mbsync/.git
 ./packs-cp/opt/vim-open-url/.git

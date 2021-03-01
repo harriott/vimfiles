@@ -1,11 +1,12 @@
 " Couple of adjustments.
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Sun 17 Jan 2021
-" This file should be in your vimfiles\ftplugin folder.
+" Last Change: Fri 26 Feb 2021
+" this file is supplementary to  $VIMRUNTIME/ftplugin/markdown.vim
+"  and should be in your vimfiles\ftplugin folder
 " $VIMRUNTIME/filetype.vim determines which files are automatically detected as markdown
 
-setlocal expandtab tw=0
+" setlocal expandtab textwidth=0
 
 " ALE
 let b:ale_enabled = 0

@@ -159,21 +159,17 @@ C-rC-w        " searches for the word under cursor - allowing skipping thru with
     :!<shellcmd>          " runs the external shell command
     :h netrw-quickmap
     :Locate <pattern>
-    :packadd LanguageTool " load the plugin from an opt directory
     :packadd syntastic    " load the plugin from an opt directory
     :packadd vim-rhubarb  " load the plugin from an opt directory, for :Gbrowse to work
     :r!<shell command>    " reads shell command output into the buffer
     :tabe $HOME/_vimrc    " bring up my vimrc in a new tab
+    :ALEToggle
     :Vexplore             " opens a netrw vertical directory browsing window
     \vg                   " cd to file's and vimgrep for last search
     C-g                   " display relative path of current file
     <shellcmd> | gvim -   " pipes shell command output into gvim
     gf                    " open file under cursor
     gx                    " open url under cursor
-
-## ALE
-:ALEToggle
-:packadd ale
 
 ## fugitive
     ce " amend the last commit without editing the message
@@ -190,6 +186,7 @@ gW " search Wikipedia
 # spell
     (count)]s => move to next misspelled word after the cursor
     (count)[s => like  ]s  but search backwards
+    :spellrare <rareword>
     z= => suggest corrections
     zg => add good word
 

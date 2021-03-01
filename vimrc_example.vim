@@ -1,15 +1,20 @@
+" vim: fdl=2:
 " ----------------------------------------------
 " Joseph Harriott - Thu 18 Feb 2021
 " this should be sourced first by an entry point
 " ----------------------------------------------
 
-" Some recommended defaults, with adjustments:
+""> 0 some recommended defaults, with adjustments
 source $VIMRUNTIME/vimrc_example.vim
-" revert a few things:
+
+""> 1 revert a few things
 set nobackup
 set noundofile
 set scrolloff=0
-autocmd FileType text setlocal textwidth=99
+autocmd FileType text setlocal textwidth=0
 " autocmd FileType fugitive unmap! X
-unmap Q  " $VIMRUNTIME/defaults.vim
+"
+"">> Q
+" as suggested in $VIMRUNTIME/defaults.vim
+unmap Q
 

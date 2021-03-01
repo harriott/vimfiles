@@ -36,7 +36,7 @@ onoremap , :
 nnoremap g: g,
 nnoremap g, <NOP>
 
-nnoremap @, @:
+nnoremap @@ @:
 nnoremap @: <NOP>
 
 "  causes a slight lag in starting and ending macros, and in quitting NerdTree navigation

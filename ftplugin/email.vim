@@ -1,6 +1,6 @@
 " Language:	email
 " Maintainer: Joseph Harriott
-" Last Change: Thu 11 Feb 2021
+" Last Change: Mon 01 Mar 2021
 
 " The intention here is to have a simple means for writing headings in emails,
 " and with the bonus of highlighting hyperlinks.
@@ -9,7 +9,7 @@
 " vim: set ft=email:
 " Preferable to also have my  ../syntax/email.vim, then can see  $vimfiles/ftplugin/email.txt
 
-setlocal tw=0 fdc=1 fde=EF() fdm=expr
+setlocal et tw=0 fdc=1 fde=EF() fdm=expr spell
 
 " create a heading around text:
 nnoremap <buffer> <leader><leader>= I== <Esc>A ==<Esc>

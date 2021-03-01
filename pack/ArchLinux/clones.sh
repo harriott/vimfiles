@@ -42,6 +42,7 @@ gd opt; ls
   # $gc https://github.com/drmikehenry/vim-fontsize
   # $gc https://github.com/tpope/vim-fugitive
   # $gc https://github.com/rhysd/vim-gfm-syntax
+  $gc https://github.com/Konfekt/vim-langtool
   # $gc https://github.com/dpelle/vim-LanguageTool
   # $gc https://github.com/chunkhang/vim-mbsync
   # $gc https://github.com/dhruvasagar/vim-open-url
@@ -62,7 +63,7 @@ gd opt; ls
   # $gc https://github.com/nanotech/jellybeans.vim
   # $gc https://github.com/ntpeters/vim-better-whitespace
   # $gc https://github.com/RRethy/vim-hexokinase; cd vim-hexokinase; make hexokinase; cd ..
-  $gc https://github.com/srstevenson/vim-picker
+  # $gc https://github.com/srstevenson/vim-picker
   # $gc https://github.com/sheerun/vim-wombat-scheme
 
 #==> win32

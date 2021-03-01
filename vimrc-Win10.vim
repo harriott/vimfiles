@@ -1,4 +1,3 @@
-" vim: fdm=expr ft=vim.vimbuild:
 
 " -------------------------------------------------
 " a wrapper vimrc for use on a MS Windows 10 system
