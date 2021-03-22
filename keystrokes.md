@@ -171,10 +171,6 @@ C-rC-w        " searches for the word under cursor - allowing skipping thru with
     gf                    " open file under cursor
     gx                    " open url under cursor
 
-## fugitive
-    ce " amend the last commit without editing the message
-    F3                    " Ggrep for last search
-
 ## open webpages
 F6 " open a uURL using open-browser.vim
 
@@ -223,6 +219,7 @@ Entering special characters
     :%le  " remove all indents
     \\c   " toggle cursor column
     \\l   " toggle cursor line
+    gg=G  " indent a file
 
 ### Colorizer
 :ColorHighlight  " impressive colourizing, but then can't be truly turned off

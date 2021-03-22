@@ -46,7 +46,7 @@ noremap Q @q
 " (:reg q  shows what's been saved)
 " [count]Q plays back
 
-""> format - clear fancy quotes
+""> format - clear fancy punctuation
 " - left & right double & single quotes (as these aren't mapped to a keyboard key)
 " en dash, which can be copied from websites
 " nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
@@ -57,6 +57,7 @@ function! ClearFancyText()
   :sil!%s/‘/'/g
   :sil!%s/’/'/g
   :sil!%s/–/-/g
+  :sil!%s/，/,/g
 endfunction
 
 ""> format - date abbreviations
@@ -278,6 +279,14 @@ function! GrabWrite(toGrab)
   write
 endfunction
 
+""> layout - toggle relativenumber
+nnoremap <silent><leader>rn :set rnu! rnu? <CR>
+
+""> layout - tabline
+" set showtabline=1
+" because it's somehow sometimes set to 2
+" overriden by  vim-airline  extension  tabline
+
 ""> maxmempattern
 set mmp=24000
 
@@ -420,7 +429,4 @@ vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 
 ""> toggle centering current line
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
-
-""> toggle relativenumber
-nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 

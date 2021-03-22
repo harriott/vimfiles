@@ -48,7 +48,7 @@ packadd close-buffers.vim
 let g:colorizer_disable_bufleave = 1
 
 ""> colorizer
-" optionally availabe
+" optionally available
 
 ""> ctrlp.vim
 " $HOME/.cache/ctrlp/mru/cache.txt
@@ -135,7 +135,7 @@ inoremap <leader>m :MRU
 vnoremap <leader>m :MRU
 
 ""> nerdcommenter
-if has('win32') | packadd nerdcommenter | endif " Arch package vim-nerdcommenter
+packadd nerdcommenter
 let NERDSpaceDelims = 1
 
 ""> nerdtree
@@ -167,21 +167,19 @@ packadd quick-scope
 " packadd SimpylFold
 
 ""> supertab
-if has('win32') | packadd supertab | endif " Arch package vim-supertab
+packadd supertab
 
 ""> syntastic
 if has('unix')
   let g:syntastic_mode_map = { "mode": "passive" } " will only run on :SyntasticCheck
 else
-  " Arch package vim-syntastic
   let g:syntastic_mode_map = { "passive_filetypes": ["tex"] }
   " packadd syntastic
 endif
 let g:syntastic_python_checkers = ['flake8']
 
 ""> tabular
-" Arch package vim-tabular
-" win32 :packadd tabular
+" packadd tabular
 
 ""> targets.vim
 packadd targets.vim
@@ -192,6 +190,7 @@ packadd undotree
 ""> vim-airline
 packadd vim-airline
 let g:airline#extensions#ale#enabled = 1
+" let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 packadd vim-airline-themes
@@ -263,11 +262,14 @@ endfunction
 packadd vim-fontsize
 
 ""> vim-fugitive
+" ce  " amend the last commit without editing the message
+" F3  " Ggrep for last search
+
 " Ggrep for last search
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 
 packadd vim-fugitive
-"
+
 ""> vim-gfm-syntax
 let g:gfm_syntax_enable_always = 0
 let g:gfm_syntax_enable_filetypes = ['markdown.gfm'] " a subtype of markdown filetype
@@ -275,7 +277,6 @@ let g:gfm_syntax_emoji_conceal = 1
 packadd vim-gfm-syntax
 
 ""> vim-gitgutter
-" Arch package vim-gitgutter
 let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
 noremap <leader>gg :GitGutterToggle<CR>
@@ -285,6 +286,9 @@ noremap <leader>gg :GitGutterToggle<CR>
   autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
 
 let g:Hexokinase_highlighters = ['foregroundfull']
+
+""> vim-hjson
+packadd vim-hjson
 
 ""> vim-LanguageTool
 nnoremap <leader>LT :call LanguageTool_lopen() <CR>
@@ -338,7 +342,7 @@ if has('win32') | packadd vim-ShowTrailingWhitespace | endif " unix only added i
 packadd vim-startify
 
 ""> vim-surround
-if has('win32') | packadd vim-surround | endif " Arch package vim-surround
+packadd vim-surround
 
 ""> vim-visual-star-search
 packadd vim-visual-star-search

@@ -15,5 +15,5 @@ cd $cd; done
 
 find . -mindepth 3 -maxdepth 3 -type d |sort > ArchLinux/all.txt
 
-echo -e "don't forget to \e[1m\e[95m :helptags ALL \e[0m"
+echo -e "don't forget to restart Vim &  \e[1m\e[95m :helptags ALL \e[0m"
 
