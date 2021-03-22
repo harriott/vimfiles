@@ -189,8 +189,7 @@ packadd undotree
 
 ""> vim-airline
 packadd vim-airline
-let g:airline#extensions#ale#enabled = 1
-" let g:airline#extensions#tabline#formatter = 'unique_tail'
+let airline#extensions#ale#show_line_numbers = 0
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 packadd vim-airline-themes
