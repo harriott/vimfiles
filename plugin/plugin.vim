@@ -57,6 +57,7 @@ function! ClearFancyText()
   :sil!%s/‘/'/g
   :sil!%s/’/'/g
   :sil!%s/–/-/g
+  :sil!%s/―/-/g
   :sil!%s/，/,/g
 endfunction
 

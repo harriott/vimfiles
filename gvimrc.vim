@@ -28,16 +28,16 @@ set cmdheight=2		" Make command line two lines high
 set mousehide		" Hide the mouse when typing text
 
 ""> 1 my additional initial settings
-set go-=T  "removes toolbar
+set guioptions-=T  "removes toolbar
 
 "">> high contrast
 let g:solarized_contrast="high"  "default value is normal, for solarized & tomorrow
 
 "">> menubar
 " Shift+F1 can toggle it:
-nnoremap <S-F1> :if &go=~#'m'<Bar>set go-=m<Bar>else<Bar>set go+=m<Bar>endif<CR>
+nnoremap <S-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
 
-set go-=m  " removes it by default
+set guioptions-=m  " removes it by default
 
 "">> toggle window width
 " possibly a better size for reading prose
