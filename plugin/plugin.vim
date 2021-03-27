@@ -158,6 +158,19 @@ endfunction
 " as in Wikipedia articles
 nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
 
+""> format - TwiddleCase
+function! TwiddleCase(str)
+  if a:str ==# toupper(a:str)
+    let result = tolower(a:str)
+  elseif a:str ==# tolower(a:str)
+    let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+  else
+    let result = toupper(a:str)
+  endif
+  return result
+endfunction
+vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
+
 ""> format - underline
 " (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
 " eg :Underline ~+-  gives underlining like ~+-~+-~+-~+-~+-~+-

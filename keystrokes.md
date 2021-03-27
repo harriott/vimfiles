@@ -138,14 +138,14 @@ Joseph's useful (g)Vim commands
     F9          " :History/
 
 ## following /
-\C (anywhere) " force case
-\c (anywhere) " ignore case
-\M            " nomagic (for what follows), eg returning . & * to themselves
-\V            " very nomagic (for what follows), eg (also) returning $ to itself
-\v            " very magic (for what follows), eg making | separate alternatives
-text          " searches for text
-text\|alt     " searches for text & alt
-C-rC-w        " searches for the word under cursor - allowing skipping thru with n
+	<ctrl-v>u0000 " (0000 is replaced by the hexadecimal code point value) for combining characters
+	\C (anywhere) " force case
+	\c (anywhere) " ignore case
+	\M            " nomagic (for what follows), eg returning . & * to themselves
+	\V            " very nomagic (for what follows), eg (also) returning $ to itself
+	\v            " very magic (for what follows), eg making | separate alternatives
+	text          " searches for text
+	text\|alt     " searches for text & alt
 
 ## regex
 \(alt1\|alt2\|alt3\)

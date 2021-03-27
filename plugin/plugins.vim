@@ -124,6 +124,7 @@ packadd mru
 " :FZFMru
 
 " :MRU \.md
+" :MruRefresh
 " in the normal MRU window
 "  Enter = open over current window
 "  O = open split right
