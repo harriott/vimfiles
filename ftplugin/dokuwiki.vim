@@ -1,7 +1,7 @@
 " My adjustments
 " Language:	dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Thu 19 Nov 2020
+" Last Change: Sun 28 Mar 2021
 " This file should be in your vimfiles\ftplugin folder,
 " and you might want to (autocmd BufRead,BufNewFile) setlocal ft=dokuwiki.
 
@@ -17,13 +17,7 @@
 setlocal tw=0 fde=DWF() fdl=0 fdm=expr
 setlocal fdc=2 " slightly better distinction from line numbers
 
-" for the syntax plugin:
-let dokuwiki_comment=1 " can't see what this achieves...
-let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
-" not available in $VIMRUNTIME\syntax: powershell
-
-" abbreviations for code tags
-" ---------------------------
+""> abbreviations for code tags
 iab </ </code>
 iab </f </file>
 iab <a <code awk>
@@ -39,28 +33,7 @@ iab <o <code python>
 iab <v <code vim>
 iab <y <code yaml>
 
-" boost up a heading:
-nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
-
-" create a heading:
-nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
-
-" having just selected a web-page heading, format it into a DokuWiki hyperlink
-function! PageTitleToHyperlink()
-  let l:pagetitle = getreg('"')
-  execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
-endfunction
-vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
-" (I'm using two h's because  gitgutter.vim  binds some \hx's)
-
-" wrap the inner word under cursor with ''
-nnoremap <buffer> <leader>' viwc''''<Esc>hP
-
-" wrap a selection with ''
-vnoremap <buffer> <leader>' c''''<Esc>hP
-
-" Mapping to add wrap indent tags around quotes
-" ---------------------------------------------
+""> add wrap indent tags around quotes
 " For use when Anika Henke's excellent Wrap Plugin is installed in DokuWiki.
 " While developing this I used
 "   :nmap \i
@@ -74,8 +47,7 @@ nnoremap <buffer> <leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A </wrap><
 "    you can add a count, eg 3\i to work on the next three lines,
 "    but only the last closing tag gets pasted, you have to do the other two manually.
 
-" DokuWiki folding by header marks
-" --------------------------------
+""> DokuWiki folding by header marks
 " (based on http://stackoverflow.com/questions/3828606/vim-markdown-folding)
 function! DWF()
 	let j = len(matchstr(getline(v:lnum), '^=\+'))
@@ -97,4 +69,31 @@ endfunction
 "     v:lnum  => used by expr fold method to indicate a particular line number.
 "     '^=\+'  => match from the start of the line (^) any number of contiguous '='s
 "     =~      => a logical operator
+
+""> for the syntax plugin
+let dokuwiki_comment=1 " can't see what this achieves...
+let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
+" not available in $VIMRUNTIME\syntax: powershell
+
+""> headings
+" boost up a heading:
+nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
+
+" create a heading:
+nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
+
+" having just selected a web-page heading, format it into a DokuWiki hyperlink
+function! PageTitleToHyperlink()
+  let l:pagetitle = getreg('"')
+  execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
+endfunction
+vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
+" (I'm using two h's because  gitgutter.vim  binds some \hx's)
+
+""> monospaced
+" wrap the inner word under cursor with ''
+nnoremap <buffer> <leader>' viwc''''<Esc>hP
+
+" wrap a selection with ''
+vnoremap <buffer> <leader>' c''''<Esc>hP
 

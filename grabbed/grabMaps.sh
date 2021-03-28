@@ -2,13 +2,10 @@
 
 # Joseph Harriott
 
-# -----------------------------
-# some scripts to grab settings
-# -----------------------------
-
-# grab uses of key-bindings
-# -------------------------
-# sometimes using my vimscript functions defined in  ~/.vim/plugin/grabOutputs.vim
+# ---------------------------------
+# some scripts to grab key-bindings
+# ---------------------------------
+# bash grabMaps.sh
 
 # Grab uses of Function keys
 #  this can be run as a vim command,  :execute "!grep -ri -E '<(m-|s-)?F[0-9]{1,2}>'"
@@ -25,7 +22,10 @@ grep -ri --exclude-dir=grabbed -E '<Plug>' ../* > PlugUses.txt
 # -------------
 # these won't catch conditional mappings
 
-vim -s FnMaps.vim FnMaps.txt
-vim -s PlugMaps.vim PlugMaps.txt
-vim -s simpleMaps.vim simpleMaps.txt
+vim -s commands.vim  # GrabCommands
+vim -s FnMaps.vim  # GrabFnMaps
+vim -s PlugMaps.vim  # GrabPlugMaps
+vim -s runtimepath.vim  # GrabRtp
+vim -s scriptnames.vim  # GrabScriptnames
+vim -s simpleMaps.vim  # GrabSimpleMaps
 

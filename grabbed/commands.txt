@@ -1,14 +1,6 @@
 
     Name              Args Address Complete    Definition
-|   ALEComplete       0                        :call ale#completion#GetCompletions('ale-manual')
-|   ALEDetail         0                        :call ale#cursor#ShowCursorDetail()
-|   ALEDisable        0                        :call ale#toggle#Disable()
-|   ALEDisableBuffer  0                        :call ale#toggle#DisableBuffer(bufnr(''))
-|   ALEDocumentation  0                        :call ale#hover#ShowDocumentationAtCursor()
-|   ALEEnable         0                        :call ale#toggle#Enable()
-|   ALEEnableBuffer   0                        :call ale#toggle#EnableBuffer(bufnr(''))
-|   ALEFindReferences *                        :call ale#references#Find(<f-args>)
-    Name              Args Address Complete    Definition
+|   ALECodeAction     0    .                   :call ale#codefix#Execute(<range>)
 |   ALEComplete       0                        :call ale#completion#GetCompletions('ale-manual')
 |   ALEDetail         0                        :call ale#cursor#ShowCursorDetail()
 |   ALEDisable        0                        :call ale#toggle#Disable()
@@ -18,28 +10,25 @@
 |   ALEEnableBuffer   0                        :call ale#toggle#EnableBuffer(bufnr(''))
 |   ALEFindReferences *                        :call ale#references#Find(<f-args>)
 |   ALEFirst          0                        :call ale#loclist_jumping#JumpToIndex(0)
-|   ALEFix            *            customlist  :call ale#fix#Fix(bufnr(''), '', <f-args>)
+!|  ALEFix            *            customlist  :call ale#fix#Fix(bufnr(''), '<bang>', <f-args>)
 |   ALEFixSuggest     0                        :call ale#fix#registry#Suggest(&filetype)
-|   ALEGoToDefinition 0                        :call ale#definition#GoTo({})
-|   ALEGoToDefinitionInSplit 0                 :call ale#definition#GoTo({'open_in': 'horizontal-split'})
-|   ALEGoToDefinitionInTab 0                   :call ale#definition#GoTo({'open_in': 'tab'})
-|   ALEGoToDefinitionInVSplit 0                :call ale#definition#GoTo({'open_in': 'vertical-split'})
-|   ALEGoToTypeDefinition 0                    :call ale#definition#GoToType({})
-|   ALEGoToTypeDefinitionInSplit 0             :call ale#definition#GoToType({'open_in': 'horizontal-spli
-|   ALEGoToTypeDefinitionInTab 0               :call ale#definition#GoToType({'open_in': 'tab'})
-|   ALEGoToTypeDefinitionInVSplit 0            :call ale#definition#GoToType({'open_in': 'vertical-split'
+|   ALEGoToDefinition *                        :call ale#definition#GoToCommandHandler('', <f-args>)
+|   ALEGoToTypeDefinition *                    :call ale#definition#GoToCommandHandler('type', <f-args>)
 |   ALEHover          0                        :call ale#hover#ShowAtCursor()
+|   ALEImport         0                        :call ale#completion#Import()
 |   ALEInfo           0                        :call ale#debugging#Info()
 |   ALEInfoToClipboard 0                       :call ale#debugging#InfoToClipboard()
 |   ALEInfoToFile     1                        :call ale#debugging#InfoToFile(<f-args>)
 |   ALELast           0                        :call ale#loclist_jumping#JumpToIndex(-1)
 |   ALELint           0                        :call ale#Queue(0, 'lint_file')
+|   ALELintStop       0                        :call ale#engine#Stop(bufnr(''))
 |   ALENext           *                        :call ale#loclist_jumping#WrapJump('after', <q-args>)
 |   ALENextWrap       0                        :call ale#loclist_jumping#Jump('after', 1)
 |   ALEOrganizeImports 0                       :call ale#organize_imports#Execute()
 |   ALEPrevious       *                        :call ale#loclist_jumping#WrapJump('before', <q-args>)
 |   ALEPreviousWrap   0                        :call ale#loclist_jumping#Jump('before', 1)
-|   ALERename         0                        :call ale#rename#Execute()
+!|  ALERename         0                        :call ale#rename#Execute()
+|   ALERepeatSelection 0                       :call ale#preview#RepeatSelection()
 |   ALEReset          0                        :call ale#toggle#Reset()
 |   ALEResetBuffer    0                        :call ale#toggle#ResetBuffer(bufnr(''))
 |   ALEStopAllLSPs    0                        :call ale#lsp#reset#StopAllLSPs()
@@ -48,17 +37,24 @@
 |   ALEToggleBuffer   0                        :call ale#toggle#ToggleBuffer(bufnr(''))
 !   AddTabularPattern +                        call AddTabularPattern(<q-args>, <bang>0)
 !   AddTabularPipeline +                       call AddTabularPipeline(<q-args>, <bang>0)
+!   Ag                *                        call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
     AirlineExtensions 0                        call s:airline_extensions()
-|   AirlineRefresh    0                        call s:airline_refresh()
-|   AirlineTheme      ?            customlist  call <SNR>38_airline_theme(<f-args>)
+!|  AirlineRefresh    0                        call s:airline_refresh(<q-bang>)
+|   AirlineTheme      ?            customlist  call <SNR>66_airline_theme(<f-args>)
 |   AirlineToggle     0                        call s:airline_toggle()
 |   AirlineToggleWhitespace 0                  call airline#extensions#whitespace#toggle()
+!|  BCommits          0                        call fzf#vim#buffer_commits(fzf#vim#with_preview({ "placeholder": "" }), <bang>0)
+!   BLines            *                        call fzf#vim#buffer_lines(<q-args>, <bang>0)
+!   BTags             *                        call fzf#vim#buffer_tags(<q-args>, fzf#vim#with_preview({ "placeholder": "{2}:{3}" }), <bang>0)
+!   Bdelete           1            customlist  call s:bclose("bdelete", <bang>0, <f-args>)
     BufExplorer       0                        :call BufExplorer()
     BufExplorerHorizontalSplit 0               :call BufExplorerHorizontalSplit()
     BufExplorerVerticalSplit 0                 :call BufExplorerVerticalSplit()
     Bufferize         *            command     call bufferize#Run(<q-args>)
+    BufferizeSystem   *            command     Bufferize echo system(<q-args>)
     BufferizeTimer    *            command     call bufferize#RunWithTimer(<q-args>)
-    CSinS             ?                        call StripStoreCurSel()
+!|  Buffers           ?            buffer      call fzf#vim#buffers(<q-args>, fzf#vim#with_preview({ "placeholder": "{1}" }), <bang>0)
+!   Bwipeout          1            customlist  call s:bclose("bwipeout", <bang>0, <f-args>)
     Calendar          *                        call calendar#show(0,<f-args>)
     CalendarH         *                        call calendar#show(1,<f-args>)
     CalendarT         *                        call calendar#show(2,<f-args>)
@@ -66,17 +62,20 @@
     CapsLockOff       0                        wa | silent !python $HOME/.vim/XkbLockModifiers.py
 |   ClearAllCtrlPCaches 0                      cal ctrlp#clra()
 |   ClearCtrlPCache   0                        cal ctrlp#clr()
-!   CloseAllBuffers   0                        call s:CloseAllBuffers(<bang>0)
-!   CloseBuffers      0                        call s:CloseBuffersMenu(<bang>0)
-!   CloseBuffersMenu  0                        call s:CloseBuffersMenu(<bang>0)
-!   CloseHiddenBuffers 0                       call s:CloseHiddenBuffers(<bang>0)
-!   CloseNamelessBuffers 0                     call s:CloseNamelessBuffers(<bang>0)
-!   CloseOtherBuffers 0                        call s:CloseOtherBuffers(<bang>0)
-!   CloseSelectedBuffers 0                     call s:CloseSelectedBuffers(<bang>0)
-!   CloseThisBuffer   0                        call s:CloseThisBuffer(<bang>0)
+!   CloseAllBuffers   0                        echoerr '":CloseAllBuffers" is obsolete. Use ":Bdelete all" instead.'
+!   CloseBuffers      0                        echoerr '":CloseBuffers" is obsolete. Use ":Bdelete menu" instead.'
+!   CloseBuffersMenu  0                        echoerr '":CloseBuffersMenu" is obsolete. Use ":Bdelete menu" instead.'
+!   CloseHiddenBuffers 0                       echoerr '":CloseHiddenBuffers" is obsolete. Use ":Bdelete hidden" instead.'
+!   CloseNamelessBuffers 0                     echoerr '":CloseNamelessBuffers" is obsolete. Use ":Bdelete nameless" instead.'
+!   CloseOtherBuffers 0                        echoerr '":CloseOtherBuffers" is obsolete. Use ":Bdelete other" instead.'
+!   CloseSelectedBuffers 0                     echoerr '":CloseSelectedBuffers" is obsolete. Use ":Bdelete select" instead.'
+!   CloseThisBuffer   0                        echoerr '":CloseThisBuffer" is obsolete. Use ":Bdelete this" instead.'
+!|  Colors            0                        call fzf#vim#colors(<bang>0)
+!|  Commands          0                        call fzf#vim#commands(<bang>0)
+!|  Commits           0                        call fzf#vim#commits(fzf#vim#with_preview({ "placeholder": "" }), <bang>0)
     CtrlP             ?            dir         cal ctrlp#init(0, { 'dir': <q-args> })
 |   CtrlPBookmarkDir  0                        cal ctrlp#init(ctrlp#bookmarkdir#id())
-!   CtrlPBookmarkDirAdd ?          dir         cal ctrlp#call('ctrlp#bookmarkdir#add', '<bang>', <q-args>
+!   CtrlPBookmarkDirAdd ?          dir         cal ctrlp#call('ctrlp#bookmarkdir#add', '<bang>', <q-args>)
     CtrlPBufTag       ?            buffer      cal ctrlp#init(ctrlp#buffertag#cmd(0, <q-args>))
 |   CtrlPBufTagAll    0                        cal ctrlp#init(ctrlp#buffertag#cmd(1))
 |   CtrlPBuffer       0                        cal ctrlp#init('buf')
@@ -96,96 +95,95 @@
 |   CtrlPRoot         0                        cal ctrlp#init('fil', { 'mode': 'r' })
 |   CtrlPTag          0                        cal ctrlp#init(ctrlp#tag#id())
 |   CtrlPUndo         0                        cal ctrlp#init(ctrlp#undo#id())
-    DiffOrig          0                        vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | w
+    DiffOrig          0                        vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
     DoMatchParen      0                        call s:DoMatchParen()
     EMCommandLineMap  *                        call EasyMotion#command_line#cmap([<f-args>])
     EMCommandLineNoreMap *                     call EasyMotion#command_line#cnoremap([<f-args>])
     EMCommandLineUnMap 1                       call EasyMotion#command_line#cunmap(<f-args>)
-!   EasyAlign         *    .                   <line1>,<line2>call easy_align#align(<bang>0, 0, 'command'
+!   EasyAlign         *    .                   <line1>,<line2>call easy_align#align(<bang>0, 0, 'command', <q-args>)
 |   Errors            0                        call SyntasticErrors()
 !|  Explore           *    0c ?    dir         call netrw#Explore(<count>,0,0+<bang>0,<q-args>)
-!   G                 ?    .  ?    customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0
+!   FZF               *            dir         call s:cmd(<bang>0, <f-args>)
+    FZFMru            0                        call s:MRU_FZF_Run()
+!   Files             ?            dir         call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+!|  Filetypes         0                        call fzf#vim#filetypes(<bang>0)
+!   G                 ?    .       customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
+!|  GBrowse           *    .       customlist  exe fugitive#BrowseCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  GDelete           0            customlist  exe fugitive#DeleteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   GFiles            ?                        call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(<q-args> == "?" ? { "placeholder": "" } : {}), <bang>0)
     GLVS              0                        call getscript#GetLatestVimScripts()
-    GTabularize       *    %       customlist  <line1>,<line2> call Tabularize(<q-args>, { 'mode': 'GTabu
-!|  Gbrowse           *    .       customlist  exe fugitive#BrowseCommand(<line1>, <count>, +"<range>", <
+!|  GMove             1            customlist  exe fugitive#MoveCommand(  <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  GRemove           0            customlist  exe fugitive#RemoveCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  GRename           1            customlist  exe fugitive#RenameCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+    GTabularize       *    %       customlist  <line1>,<line2> call Tabularize(<q-args>, { 'mode': 'GTabularize' } )
+!   Gblame            ?    .       customlist  echohl WarningMSG|echo ":Gblame is deprecated in favor of :Git blame\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", 
+!|  Gbrowse           *    .       customlist  exe fugitive#BrowseCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   GcLog             ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "c")
 !|  Gcd               ?            customlist  exe fugitive#Cd(<q-args>, 0)
-!   Gcgrep            ?    .  win  customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0
-!   Gclog             ?    .  ?    customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>
-!|  Gdelete           0            customlist  exe fugitive#DeleteCommand(<line1>, <count>, +"<range>", <
-!|  Gdiffsplit        *            customlist  exe fugitive#Diffsplit(1, <bang>0, "<mods>", <q-args>, [<f
-!|  Ge                *            customlist  exe fugitive#Open("edit<bang>", 0, "<mods>", <q-args>, [<f
-!|  Gedit             *            customlist  exe fugitive#Open("edit<bang>", 0, "<mods>", <q-args>, [<f
+!   Gcgrep            ?    .  win  customlist  exe fugitive#GrepCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
+!   Gclog             ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "c")
+!   Gcommit           ?    .       customlist  echohl WarningMSG|echo ":Gcommit is deprecated in favor of :Git commit\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>"
+!|  Gdelete           0            customlist  exe fugitive#DeleteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Gdiffsplit        *            customlist  exe fugitive#Diffsplit(1, <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Ge                *            customlist  exe fugitive#Open("edit<bang>", 0, "<mods>", <q-args>, [<f-args>])
+!|  Gedit             *            customlist  exe fugitive#Open("edit<bang>", 0, "<mods>", <q-args>, [<f-args>])
     GetLatestVimScripts 0                      call getscript#GetLatestVimScripts()
     GetScripts        0                        call getscript#GetLatestVimScripts()
-!   Ggrep             ?    .  win  customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0
-!|  Ghdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "<mods>", <q-args>, [<f
-!   Git               ?    .  ?    customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0
-|   GitGutter         0                        call gitgutter#process_buffer(bufnr(''), 1)
-|   GitGutterAll      0                        call gitgutter#all(1)
-|   GitGutterBufferDisable 0                   call gitgutter#buffer_disable()
-|   GitGutterBufferEnable 0                    call gitgutter#buffer_enable()
-|   GitGutterBufferToggle 0                    call gitgutter#buffer_toggle()
-|   GitGutterDebug    0                        call gitgutter#debug#debug()
-|   GitGutterDisable  0                        call gitgutter#disable()
-|   GitGutterEnable   0                        call gitgutter#enable()
-|   GitGutterFold     0                        call gitgutter#fold#toggle()
-|   GitGutterLineHighlightsDisable 0           call gitgutter#highlight#line_disable()
-|   GitGutterLineHighlightsEnable 0            call gitgutter#highlight#line_enable()
-|   GitGutterLineHighlightsToggle 0            call gitgutter#highlight#line_toggle()
-|   GitGutterLineNrHighlightsDisable 0         call gitgutter#highlight#linenr_disable()
-|   GitGutterLineNrHighlightsEnable 0          call gitgutter#highlight#linenr_enable()
-|   GitGutterLineNrHighlightsToggle 0          call gitgutter#highlight#linenr_toggle()
-|   GitGutterNextHunk 0    1c ?                call gitgutter#hunk#next_hunk(<count>)
-|   GitGutterPrevHunk 0    1c ?                call gitgutter#hunk#prev_hunk(<count>)
-|   GitGutterPreviewHunk 0                     call gitgutter#hunk#preview()
-|   GitGutterQuickFix 0                        call gitgutter#quickfix()
-|   GitGutterSignsDisable 0                    call gitgutter#sign#disable()
-|   GitGutterSignsEnable 0                     call gitgutter#sign#enable()
-|   GitGutterSignsToggle 0                     call gitgutter#sign#toggle()
-|   GitGutterStageHunk 0   %                   call gitgutter#hunk#stage(<line1>,<line2>)
-|   GitGutterToggle   0                        call gitgutter#toggle()
-|   GitGutterUndoHunk 0                        call gitgutter#hunk#undo()
+!   Gfetch            ?    .       customlist  echohl WarningMSG|echo ":Gfetch is deprecated in favor of :Git fetch\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", 
+!   Ggrep             ?    .  win  customlist  exe fugitive#GrepCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
+!|  Ghdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "<mods>", <q-args>, [<f-args>])
+!   Git               ?    .       customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
+!   GitFiles          ?                        call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(<q-args> == "?" ? { "placeholder": "" } : {}), <bang>0)
+!   GlLog             ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "l")
 !|  Glcd              ?            customlist  exe fugitive#Cd(<q-args>, 1)
-!   Glgrep            ?    .  win  customlist  exe fugitive#Command(0, <count> > 0 ? <count> : 0, +"<rang
-!   Gllog             ?    .  ?    customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>
-!   Glog              ?    .  ?    customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>
-!|  Gmove             1            customlist  exe fugitive#MoveCommand(  <line1>, <count>, +"<range>", <
-!|  Gpedit            *            customlist  exe fugitive#Open("pedit", <bang>0, "<mods>", <q-args>, [<
-!|  Gr                *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <ba
-    GrabCommands      0                        call GrabCommands()
-    GrabFmaps         0                        call GrabFmaps()
-    GrabPlugMaps      0                        call GrabPlugMaps()
-    GrabRtp           0                        call GrabRtp()
-    GrabScriptnames   0                        call GrabScriptnames()
-    Grabmaps          0                        call Grabmaps()
-!|  Gread             *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <ba
-!|  Gremove           0            customlist  exe fugitive#RemoveCommand(<line1>, <count>, +"<range>", <
-!|  Grename           1            customlist  exe fugitive#RenameCommand(<line1>, <count>, +"<range>", <
-!|  Gsplit            *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? 
-!|  Gtabedit          *    .  tab  customlist  exe fugitive#Open((<count> >= 0 ? <count> : "")."tabedit",
-!|  Gvdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "vert <mods>", <q-args>
-!|  Gvsplit           *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? 
-!|  Gw                *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <b
-!|  Gwq               *            customlist  exe fugitive#WqCommand(   <line1>, <count>, +"<range>", <b
-!|  Gwrite            *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <b
+!   Glgrep            ?    .  win  customlist  exe fugitive#GrepCommand(0, <count> > 0 ? <count> : 0, +"<range>", <bang>0, "<mods>", <q-args>)
+!   Gllog             ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "l")
+!   Glog              ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "")
+!   Gmerge            ?    .       customlist  echohl WarningMSG|echo ":Gmerge is deprecated in favor of :Git merge\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", 
+!|  Gmove             1            customlist  exe fugitive#MoveCommand(  <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Gpedit            *            customlist  exe fugitive#Open("pedit", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   Gpull             ?    .       customlist  echohl WarningMSG|echo ":Gpull is deprecated in favor of :Git pull\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", "p
+!   Gpush             ?    .       customlist  echohl WarningMSG|echo ":Gpush is deprecated in favor of :Git push\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", "p
+!|  Gr                *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Gread             *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   Grebase           ?    .       customlist  echohl WarningMSG|echo ":Grebase is deprecated in favor of :Git rebase\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>"
+!|  Gremove           0            customlist  exe fugitive#RemoveCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Grename           1            customlist  exe fugitive#RenameCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   Grevert           ?    .       customlist  echohl WarningMSG|echo ":Grevert is deprecated in favor of :Git revert\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>"
+!|  Gsplit            *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? "split" : "edit"), <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Gstatus           0    .  ?                exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
+!|  Gtabedit          *    .  tab  customlist  exe fugitive#Open((<count> >= 0 ? <count> : "")."tabedit", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Gvdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "vert <mods>", <q-args>, [<f-args>])
+!|  Gvsplit           *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? "vsplit" : "edit!"), <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Gw                *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Gwq               *            customlist  exe fugitive#WqCommand(   <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Gwrite            *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  Helptags          0                        call fzf#vim#helptags(<bang>0)
 !|  Hexplore          *    0c ?    dir         call netrw#Explore(<count>,1,2+<bang>0,<q-args>)
-    IncSearchMap      *                        call call('s:key_mapping', map([<f-args>], 's:as_keymappin
-    IncSearchNoreMap  *                        call call('s:key_mapping', map([<f-args>], 's:as_keymappin
+!   History           *                        call s:history(<q-args>, fzf#vim#with_preview(), <bang>0)
+    IncSearchMap      *                        call call('s:key_mapping', map([<f-args>], 's:as_keymapping(v:val)') + [0])
+    IncSearchNoreMap  *                        call call('s:key_mapping', map([<f-args>], 's:as_keymapping(v:val)') + [1])
     LP                *                        call   LogiPat(<q-args>,1)
     LPE               +                        echomsg LogiPat(<q-args>)
     LPF               +                        let  s:LogiPatFlags="<args>"
     LPR               *                        call   LogiPat(<q-args>,1,"r")
-    LanguageToolCheck 0    %                   :call s:LanguageToolCheck(<line1>, <line2>)
-    LanguageToolClear 0                        :call s:LanguageToolClear()
+!|  LangTool          0                        silent call langtool#langtool('<bang>')
+    LanguageToolCheck 0    %                   :call languagetool#Check(<line1>, <line2>)
+    LanguageToolClear 0                        :call languagetool#Clear()
 !|  Lexplore          *    0c ?    dir         call netrw#Lexplore(<count>,<bang>0,<q-args>)
-!   LiveEasyAlign     *    .                   <line1>,<line2>call easy_align#align(<bang>0, 1, 'command'
+!   Lines             *                        call fzf#vim#lines(<q-args>, <bang>0)
+!   LiveEasyAlign     *    .                   <line1>,<line2>call easy_align#align(<bang>0, 1, 'command', <q-args>)
+!   Locate            +            dir         call fzf#vim#locate(<q-args>, fzf#vim#with_preview(), <bang>0)
     LogiPat           *                        call   LogiPat(<q-args>,1)
     LogiPatFlags      +                        let  s:LogiPatFlags="<args>"
     MANPAGER          0                        call s:ManPager() | delcommand MANPAGER
-    MRU               ?            customlist  call s:MRU_Cmd(<q-args>)
+    MRU               ?    0c ?    customlist  call s:MRU_Cmd(<q-args>, <q-mods>, <count>)
+!|  Maps              0                        call fzf#vim#maps("n", <bang>0)
+!|  Marks             0                        call fzf#vim#marks(<bang>0)
     MatchDebug        0                        call matchit#Match_debug()
 !   MkVimball         +    .       file        call vimball#MkVimball(<line1>,<line2>,<bang>0,<f-args>)
-    Mru               ?            customlist  call s:MRU_Cmd(<q-args>)
+    Mru               ?    0c ?    customlist  call s:MRU_Cmd(<q-args>, <q-mods>, <count>)
+    MruRefresh        0                        call s:MRU_Refresh()
 |   NERDTree          ?            dir         :call g:NERDTreeCreator.CreateTabTree('<args>')
 |   NERDTreeCWD       0                        call NERDTreeCWD()
 |   NERDTreeClose     0                        :call g:NERDTree.Close()
@@ -195,58 +193,51 @@
 |   NERDTreeMirror    0                        call g:NERDTreeCreator.CreateMirror()
 |   NERDTreeRefreshRoot 0                      call s:refreshRoot()
 |   NERDTreeToggle    ?            dir         :call g:NERDTreeCreator.ToggleTabTree('<args>')
-|   NERDTreeVCS       ?            dir         :call <SNR>123_CreateTabTreeVCS('<args>')
+|   NERDTreeToggleVCS ?            dir         :call <SNR>60_ToggleTabTreeVCS('<args>')
+|   NERDTreeVCS       ?            dir         :call <SNR>60_CreateTabTreeVCS('<args>')
     NetUserPass       *                        call NetUserPass(<f-args>)
 !   NetrwClean        0                        call netrw#Clean(<bang>0)
     NetrwSettings     0                        call netrwSettings#NetrwSettings()
 !|  Nexplore          *                        call netrw#Explore(-1,0,0,<q-args>)
     NoMatchParen      0                        call s:NoMatchParen()
-    Nread             *    1c ?                let s:svpos= winsaveview()|call netrw#NetRead(<count>,<f-a
-    Nsource           *                        let s:svpos= winsaveview()|call netrw#NetSource(<f-args>)|
+    Nread             *    1c ?                let s:svpos= winsaveview()|call netrw#NetRead(<count>,<f-args>)|call winrestview(s:svpos)
+    Nsource           *                        let s:svpos= winsaveview()|call netrw#NetSource(<f-args>)|call winrestview(s:svpos)
     Ntree             ?                        call netrw#SetTreetop(1,<q-args>)
-    Nwrite            *    %                   let s:svpos= winsaveview()|<line1>,<line2>call netrw#NetWr
+    Nwrite            *    %                   let s:svpos= winsaveview()|<line1>,<line2>call netrw#NetWrite(<f-args>)|call winrestview(s:svpos)
     OpenBrowser       +                        call openbrowser#_cmd_open(<q-args>)
     OpenBrowserSearch +            customlist  call openbrowser#_cmd_search(<q-args>)
     OpenBrowserSmartSearch +       customlist  call openbrowser#_cmd_smart_search(<q-args>)
     OpenIn            +            file        call open_url#open_in(<f-args>)
     OpenInChrome      1            file        OpenIn Google\ Chrome <q-args>
+    OpenInFirefox     1            file        OpenIn Firefox <q-args>
+    OpenSearchURL     +            custom      call open_url#engines#search(<f-args>)
     OpenURL           1                        call open_url#open(<q-args>)
 !|  Pexplore          *                        call netrw#Explore(-2,0,0,<q-args>)
-    RecoverPluginDisable 0                     :call s:Recover(0)
-    RecoverPluginEnable 0                      :call s:Recover(1)
-    RecoverPluginHelp 0                        :call recover#Help()
-    RmVimball         *            dir         call vimball#SaveSettings()|call vimball#RmVimball(<f-args
+    QuickScopeToggle  0                        call quick_scope#Toggle()
+!   Rg                *                        call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
+    RmVimball         *            dir         call vimball#SaveSettings()|call vimball#RmVimball(<f-args>)|call vimball#RestoreSettings()
 |   SClose            0                        call startify#session_close()
 !|  SDelete           ?            customlist  call startify#session_delete(<bang>0, <f-args>)
 !|  SLoad             ?            customlist  call startify#session_load(<bang>0, <f-args>)
 !|  SSave             ?            customlist  call startify#session_save(<bang>0, <f-args>)
 !|  Sexplore          *    0c ?    dir         call netrw#Explore(<count>,1,0+<bang>0,<q-args>)
-    SolarizedOptions  0                        :call s:SolarizedOptions()
+!|  Snippets          0                        call fzf#vim#snippets(<bang>0)
 |   Startify          0                        call startify#insane_in_the_membrane(0)
 |   StartifyDebug     0                        call startify#debug()
-    SuperTabHelp      0                        :call <SNR>53_SuperTabHelp()
+    SuperTabHelp      0                        :call <SNR>63_SuperTabHelp()
 |   SyntasticCheck    *            custom      call SyntasticCheck(<f-args>)
 |   SyntasticInfo     ?            custom      call SyntasticInfo(<f-args>)
-    SyntasticJavacEditClasspath 0              runtime! syntax_checkers/java/*.vim | SyntasticJavacEditCl
-    SyntasticJavacEditConfig 0                 runtime! syntax_checkers/java/*.vim | SyntasticJavacEditCo
+    SyntasticJavacEditClasspath 0              runtime! syntax_checkers/java/*.vim | SyntasticJavacEditClasspath
+    SyntasticJavacEditConfig 0                 runtime! syntax_checkers/java/*.vim | SyntasticJavacEditConfig
 |   SyntasticReset    0                        call SyntasticReset()
 |   SyntasticSetLoclist 0                      call SyntasticSetLoclist()
 |   SyntasticToggleMode 0                      call SyntasticToggleMode()
 |   TOhtml            0    %                   :call tohtml#Convert2HTML(<line1>, <line2>)
-    TableAddFormula   0                        call tablemode#spreadsheet#formula#Add()
-    TableEvalFormulaLine 0                     call tablemode#spreadsheet#formula#EvaluateFormulaLine()
-    TableModeDisable  0                        call tablemode#Disable()
-    TableModeEnable   0                        call tablemode#Enable()
-    TableModeRealign  0                        call tablemode#table#Realign('.')
-    TableModeToggle   0                        call tablemode#Toggle()
-!   TableSort         ?                        call tablemode#spreadsheet#Sort(<bang>0, <q-args>)
-    Tableize          ?    .                   <line1>,<line2>call tablemode#TableizeRange(<q-args>)
     Tabularize        *    .       customlist  <line1>,<line2>call Tabularize(<q-args>)
+!   Tags              *                        call fzf#vim#tags(<q-args>, fzf#vim#with_preview({ "placeholder": "--tag {2}:{-1}:{3}" }), <bang>0)
 |   Texplore          *    0c ?    dir         call netrw#Explore(<count>,0,6        ,<q-args>)
-    ToggleBG          0                        :call s:TogBG()
     ToggleBufExplorer 0                        :call ToggleBufExplorer()
     TomorrowOptions   0                        :call s:TomorrowOptions()
-    TryCNB            0                        call TryCNB()
     Underline         ?                        call s:Underline(<q-args>)
 |   UndotreeFocus     0                        :call undotree#UndotreeFocus()
 |   UndotreeHide      0                        :call undotree#UndotreeHide()
@@ -254,8 +245,7 @@
 |   UndotreeToggle    0                        :call undotree#UndotreeToggle()
     UseVimball        ?            dir         call vimball#Vimball(1,<f-args>)
 !|  Vexplore          *    0c ?    dir         call netrw#Explore(<count>,1,4+<bang>0,<q-args>)
-    VimFoldh          *                        <args>
     VimballList       0                        call vimball#Vimball(0)
     Vimuntar          ?            file        call tar#Vimuntar(<q-args>)
-    Vitalize          *            customlist  call vitalizer#command([<f-args>])
-    WipeReg           0                        for i in range(98,122) | silent! call setreg(nr2char(i), [
+!|  Windows           0                        call fzf#vim#windows(<bang>0)
+    WipeReg           0                        for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor

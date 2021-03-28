@@ -11,24 +11,17 @@ n  :           * ,
 x  @(targets)  * :<C-U>call targets#do()<CR>
 o  @(targets)  * :<C-U>call targets#do()<CR>
 n  @:          * <Nop>
-n  @,          * @:
+n  @@          * @:
 x  A             targets#e('o', 'A', 'A')
 o  A             targets#e('o', 'A', 'A')
-x  F           * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
-o  F           * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
-n  F           * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
 x  I             targets#e('o', 'I', 'I')
 o  I             targets#e('o', 'I', 'I')
-   Q             gq
-x  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
-o  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
-n  T           * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+   Q           * @q
 n  U           * :CapsLockOff<CR> | U
-n  \bv         & :BufExplorerVerticalSplit<CR>
-n  \bs         & :BufExplorerHorizontalSplit<CR>
-n  \bt         & :ToggleBufExplorer<CR>
 v  \*          * :<C-U>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 n  \*          * :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
+n  \lt         * :LangTool | lopen <CR>
+n  \LT         * :call LanguageTool_lopen() <CR>
    \gg         * :GitGutterToggle<CR>
 n  \e          * :call EasyMotionSearchToggle()<CR>
 n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
@@ -40,17 +33,18 @@ n  \m          * :MRU
 n  \bf         * :Buffers<CR>
 n  \L          * :Lines<CR>
 n  \B          * :BLines<CR>
-n  \j          * :Files /mnt/SDSSDA240G/Dropbox/JH<CR>
+n  \j          * :Files /mnt/SD480GSSDPlus/Dropbox/JH<CR>
 n  \bb         * :CtrlPBuffer<CR>
 n  \bd         * :Bdelete hidden<CR>
 n  \bdd        * :Bdelete other<CR>
    \yy         * :CalendarH<CR>
+n  \bv         & :BufExplorerVerticalSplit<CR>
+n  \bs         & :BufExplorerHorizontalSplit<CR>
+n  \bt         & :ToggleBufExplorer<CR>
    \be         * :BufExplorer<CR>
-n  \rn         * :set rnu! rnu? <CR>
 n  \zz         * :let &scrolloff=999-&scrolloff<CR>
 n  \d          * :cd %:p:h<CR>:pwd<CR>
 n  \-          * :Hexplore<CR>
-n  \lt         * 3GVG:LanguageToolCheck <CR>
 n  \f          * :let@f=@%<CR>
 n  \v          * v$hy
 n  \vs         * :call ConvertSearchForVisualSelection()<CR>
@@ -59,6 +53,7 @@ n  \pt         * :call ParenthsToggle()<CR>
 n  \vg         * :call VimgrepSelection()<CR>
 v  \n          * <Esc>:nohlsearch<CR>
 n  \n          * :nohlsearch<CR>
+n  \rn         * :set rnu! rnu? <CR>
 n  \u          * :Underline
 n  \[          * :s/\m\[.\{-}]//g<CR>
 n  \5          * :call UnicodePercent()<CR>
@@ -76,9 +71,6 @@ n  \x          * <C-W>c
    \ll         * :set list! list? <CR>
 x  a             targets#e('o', 'a', 'a')
 o  a             targets#e('o', 'a', 'a')
-x  f           * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
-o  f           * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
-n  f           * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
 n  g,          * <Nop>
 n  g:          * g,
 x  i             targets#e('o', 'i', 'i')
@@ -87,15 +79,14 @@ x  q:          * <Nop>
 n  q:          * <Nop>
 x  q,          * q:
 n  q,          * q:
-x  t           * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
-o  t           * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
-n  t           * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
 n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+n  zr          * :exe ':spellra  '.expand('<cWORD>')<CR>
+v  ~           * y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
    <C-N>       * :NERDTreeToggle<CR>
 n  <Insert>    * :CapsLockOff <CR>
 
-i  <C-Tab>     * <Tab>
 c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
+i  <C-Tab>     * <Tab>
 i  <Insert>    * <Esc> :CapsLockOff <CR>
 i  <C-U>       * <C-G>u<C-U>
 i  \m          * :MRU

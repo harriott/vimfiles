@@ -1,35 +1,34 @@
-n  [c           @<Plug>(GitGutterPrevHunk)
-n  \hp          @<Plug>(GitGutterPreviewHunk)
-n  \hu          @<Plug>(GitGutterUndoHunk)
-n  \hs          @<Plug>(GitGutterStageHunk)
-x  \hs          @<Plug>(GitGutterStageHunk)
-n  ]c           @<Plug>(GitGutterNextHunk)
-x  ac           @<Plug>(GitGutterTextObjectOuterVisual)
-o  ac           @<Plug>(GitGutterTextObjectOuterPending)
-x  ic           @<Plug>(GitGutterTextObjectInnerVisual)
-o  ic           @<Plug>(GitGutterTextObjectInnerPending)
 o  %             <Plug>(MatchitOperationForward)
 x  %             <Plug>(MatchitVisualForward)
 n  %             <Plug>(MatchitNormalForward)
+x  F             <Plug>(QuickScopeF)
+o  F             <Plug>(QuickScopeF)
+n  F             <Plug>(QuickScopeF)
 x  S             <Plug>VSurround
+x  T             <Plug>(QuickScopeT)
+o  T             <Plug>(QuickScopeT)
+n  T             <Plug>(QuickScopeT)
 o  [%            <Plug>(MatchitOperationMultiBackward)
 x  [%            <Plug>(MatchitVisualMultiBackward)
 n  [%            <Plug>(MatchitNormalMultiBackward)
+n  \pb           <Plug>(PickerBuffer)
+n  \pe           <Plug>(PickerEdit)
 n  \\0           <Plug>FontsizeDefault
 n  \\-           <Plug>FontsizeDec
 n  \\+           <Plug>FontsizeInc
 n  \\=           <Plug>FontsizeBegin
-x  \T            <Plug>(table-mode-tableize-delimiter)
-x  \tt           <Plug>(table-mode-tableize)
-n  \tt           <Plug>(table-mode-tableize)
-n  \caL          <Plug>CalendarH
-n  \cal          <Plug>CalendarV
+n  \\w           <Plug>(easymotion-overwin-w)
+ov \\w           <Plug>(easymotion-bd-w)
+n  \\f           <Plug>(easymotion-overwin-f)
+ov \\f           <Plug>(easymotion-bd-f)
+   \\            <Plug>(easymotion-prefix)
 n  \ca           <Plug>NERDCommenterAltDelims
 x  \cu           <Plug>NERDCommenterUncomment
 n  \cu           <Plug>NERDCommenterUncomment
 x  \cb           <Plug>NERDCommenterAlignBoth
 n  \cb           <Plug>NERDCommenterAlignBoth
 x  \cl           <Plug>NERDCommenterAlignLeft
+n  \cl           <Plug>NERDCommenterAlignLeft
 n  \cA           <Plug>NERDCommenterAppend
 x  \cy           <Plug>NERDCommenterYank
 n  \cy           <Plug>NERDCommenterYank
@@ -45,14 +44,9 @@ n  \cm           <Plug>NERDCommenterMinimal
 x  \c<Space>     <Plug>NERDCommenterToggle
 n  \c<Space>     <Plug>NERDCommenterToggle
 x  \cc           <Plug>NERDCommenterComment
-n  \\w           <Plug>(easymotion-overwin-w)
-ov \\w           <Plug>(easymotion-bd-w)
-n  \\f           <Plug>(easymotion-overwin-f)
-ov \\f           <Plug>(easymotion-bd-f)
-n  \pb           <Plug>(PickerBuffer)
-n  \pe           <Plug>(PickerEdit)
-n  \cl           <Plug>NERDCommenterAlignLeft
 n  \cc           <Plug>NERDCommenterComment
+n  \caL          <Plug>CalendarH
+n  \cal          <Plug>CalendarV
 o  ]%            <Plug>(MatchitOperationMultiForward)
 x  ]%            <Plug>(MatchitVisualMultiForward)
 n  ]%            <Plug>(MatchitNormalMultiForward)
@@ -60,106 +54,61 @@ x  a%            <Plug>(MatchitVisualTextObject)
 n  cS            <Plug>CSurround
 n  cs            <Plug>Csurround
 n  ds            <Plug>Dsurround
-x  gG            <Plug>(open-url-google-search)
-n  gG            <Plug>(open-url-google-search)
-x  gW            <Plug>(open-url-wiki-search)
-n  gW            <Plug>(open-url-wiki-search)
+x  f             <Plug>(QuickScopef)
+o  f             <Plug>(QuickScopef)
+n  f             <Plug>(QuickScopef)
+v  gx            <Plug>NetrwBrowseXVis
+n  gx            <Plug>NetrwBrowseX
+x  gS            <Plug>VgSurround
+x  gG            <Plug>(open-url-search-google)
+n  gG            <Plug>(open-url-search-google)
+x  gW            <Plug>(open-url-search-wikipedia)
+n  gW            <Plug>(open-url-search-wikipedia)
+x  g<CR>         <Plug>(open-url-search)
+n  g<CR>         <Plug>(open-url-search)
 x  gB            <Plug>(open-url-browser)
 n  gB            <Plug>(open-url-browser)
 o  g%            <Plug>(MatchitOperationBackward)
 x  g%            <Plug>(MatchitVisualBackward)
 n  g%            <Plug>(MatchitNormalBackward)
-v  gx            <Plug>NetrwBrowseXVis
-n  gx            <Plug>NetrwBrowseX
-x  gS            <Plug>VgSurround
-   g/            <Plug>(incsearch-fuzzy-stay)
 x  gA            <Plug>(EasyAlign)
 n  gA            <Plug>(EasyAlign)
+   g/            <Plug>(incsearch-fuzzy-stay)
 n  s             <Plug>(easymotion-overwin-f2)
+x  t             <Plug>(QuickScopet)
+o  t             <Plug>(QuickScopet)
+n  t             <Plug>(QuickScopet)
 n  ySS           <Plug>YSsurround
 n  ySs           <Plug>YSsurround
 n  yss           <Plug>Yssurround
 n  yS            <Plug>YSurround
 n  ys            <Plug>Ysurround
    z/            <Plug>(incsearch-fuzzy-/)
-n  <Plug>PickerListUserCommands * :PickerListUserCommands<CR>
-n  <Plug>PickerHelp * :PickerHelp<CR>
-n  <Plug>PickerBufferTag * :PickerBufferTag<CR>
-n  <Plug>PickerStag * :PickerStag<CR>
-n  <Plug>PickerTag * :PickerTag<CR>
-n  <Plug>PickerBuffer * :PickerBuffer<CR>
-n  <Plug>PickerVsplit * :PickerVsplit<CR>
-n  <Plug>PickerTabedit * :PickerTabedit<CR>
-n  <Plug>PickerSplit * :PickerSplit<CR>
-n  <Plug>PickerEdit * :PickerEdit<CR>
-n  <Plug>(PickerListUserCommands) * :PickerListUserCommands<CR>
-n  <Plug>(PickerHelp) * :PickerHelp<CR>
-n  <Plug>(PickerBufferTag) * :PickerBufferTag<CR>
-n  <Plug>(PickerStag) * :PickerStag<CR>
-n  <Plug>(PickerTag) * :PickerTag<CR>
-n  <Plug>(PickerBuffer) * :PickerBuffer<CR>
-n  <Plug>(PickerVsplit) * :PickerVsplit<CR>
-n  <Plug>(PickerTabedit) * :PickerTabedit<CR>
-n  <Plug>(PickerSplit) * :PickerSplit<CR>
-n  <Plug>(PickerEdit) * :PickerEdit<CR>
-x  <Plug>(open-url-google-search) * :<C-U>OpenURL http://www.google.com/search?q=<C-R>=open_url#get_selection()<CR><CR>
-n  <Plug>(open-url-google-search) * :OpenURL http://www.google.com/search?q=<cword><CR>
-x  <Plug>(open-url-wiki-search) * :<C-U>OpenURL http://en.wikipedia.org/wiki/Special:Search?search=<C-R>=open_url#get_selection()<CR><CR>
-n  <Plug>(open-url-wiki-search) * :OpenURL http://en.wikipedia.org/wiki/Special:Search?search=<cword><CR>
+v  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
+n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
+n  <Plug>(fzf-normal) * <Nop>
+n  <Plug>(fzf-insert) * i
+v  <Plug>VgSurround * :<C-U>call <SNR>93_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
+v  <Plug>VSurround * :<C-U>call <SNR>93_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
+n  <Plug>YSurround * <SNR>93_opfunc2('setup')
+n  <Plug>Ysurround * <SNR>93_opfunc('setup')
+n  <Plug>YSsurround * <SNR>93_opfunc2('setup').'_'
+n  <Plug>Yssurround * '^'.v:count1.<SNR>93_opfunc('setup').'g_'
+n  <Plug>CSurround * :<C-U>call <SNR>93_changesurround(1)<CR>
+n  <Plug>Csurround * :<C-U>call <SNR>93_changesurround()<CR>
+n  <Plug>Dsurround * :<C-U>call <SNR>93_dosurround(<SNR>93_inputtarget())<CR>
+n  <Plug>SurroundRepeat * .
+n  <Plug>(startify-open-buffers) * :<C-U>call startify#open_buffers()<CR>
+x  <Plug>(open-url-search-wikipedia) * :<C-U>OpenSearchURL wikipedia <C-R>=open_url#get_selection()<CR><CR>
+n  <Plug>(open-url-search-wikipedia) * :OpenSearchURL wikipedia <cword><CR>
+x  <Plug>(open-url-search-google) * :<C-U>OpenSearchURL google <C-R>=open_url#get_selection()<CR><CR>
+n  <Plug>(open-url-search-google) * :OpenSearchURL google <cword><CR>
+x  <Plug>(open-url-search-so) * :<C-U>OpenSearchURL so <C-R>=open_url#get_selection()<CR><CR>
+n  <Plug>(open-url-search-so) * :OpenSearchURL so <cword><CR>
+x  <Plug>(open-url-search) * :<C-U>OpenSearchURL <C-R>=open_url#get_selection()<CR><CR>
+n  <Plug>(open-url-search) * :OpenSearchURL <cword><CR>
 x  <Plug>(open-url-browser) * :<C-U>OpenURL <C-R>=open_url#get_selection()<CR><CR>
 n  <Plug>(open-url-browser) * :OpenURL <cfile><CR>
-x  <Plug>(openbrowser-smart-search) * :<C-U>call openbrowser#_keymap_smart_search('v')<CR>
-n  <Plug>(openbrowser-smart-search) * :<C-U>call openbrowser#_keymap_smart_search('n')<CR>
-x  <Plug>(openbrowser-search) * :<C-U>call openbrowser#_keymap_search('v')<CR>
-n  <Plug>(openbrowser-search) * :<C-U>call openbrowser#_keymap_search('n')<CR>
-x  <Plug>(openbrowser-open) * :<C-U>call openbrowser#_keymap_open('v')<CR>
-n  <Plug>(openbrowser-open) * :<C-U>call openbrowser#_keymap_open('n')<CR>
-o  <Plug>(fzf-maps-o) * <C-C>:<C-U>call fzf#vim#maps('o', 0)<CR>
-x  <Plug>(fzf-maps-x) * :<C-U>call fzf#vim#maps('x', 0)<CR>
-n  <Plug>(fzf-maps-n) * :<C-U>call fzf#vim#maps('n', 0)<CR>
-x  <Plug>(QuickScopeToggle) * :<C-U>call quick_scope#Toggle()<CR>
-n  <Plug>(QuickScopeToggle) * :call quick_scope#Toggle()<CR>
-   <Plug>(_incsearch-g#) * g#
-   <Plug>(_incsearch-g*) * g*
-   <Plug>(_incsearch-#) * #
-   <Plug>(_incsearch-*) * *
-   <Plug>(_incsearch-N) * g:incsearch#consistent_n_direction && !v:searchforward ? 'n' : 'N'
-   <Plug>(_incsearch-n) * g:incsearch#consistent_n_direction && !v:searchforward ? 'N' : 'n'
-   <Plug>(incsearch-nohl-g#)   <Plug>(incsearch-nohl)<Plug>(_incsearch-g#)
-   <Plug>(incsearch-nohl-g*)   <Plug>(incsearch-nohl)<Plug>(_incsearch-g*)
-   <Plug>(incsearch-nohl-#)   <Plug>(incsearch-nohl)<Plug>(_incsearch-#)
-   <Plug>(incsearch-nohl-*)   <Plug>(incsearch-nohl)<Plug>(_incsearch-*)
-   <Plug>(incsearch-nohl-N)   <Plug>(incsearch-nohl)<Plug>(_incsearch-N)
-   <Plug>(incsearch-nohl-n)   <Plug>(incsearch-nohl)<Plug>(_incsearch-n)
-   <Plug>(incsearch-nohl2) * incsearch#autocmd#auto_nohlsearch(2)
-   <Plug>(incsearch-nohl0) * incsearch#autocmd#auto_nohlsearch(0)
-   <Plug>(incsearch-nohl) * incsearch#autocmd#auto_nohlsearch(1)
-   <Plug>(incsearch-stay) * incsearch#go({'command': '/', 'is_stay': 1})
-   <Plug>(incsearch-backward) * incsearch#go({'command': '?'})
-   <Plug>(incsearch-forward) * incsearch#go({'command': '/'})
-   <Plug>(incsearch-fuzzyspell-stay) * incsearch#go(<SNR>97_config_fuzzyspell({'is_stay': 1}))
-   <Plug>(incsearch-fuzzyspell-?) * incsearch#go(<SNR>97_config_fuzzyspell({'command': '?'}))
-   <Plug>(incsearch-fuzzyspell-/) * incsearch#go(<SNR>97_config_fuzzyspell())
-   <Plug>(incsearch-fuzzyword-stay) * incsearch#go(<SNR>97_config_fuzzyword({'is_stay': 1}))
-   <Plug>(incsearch-fuzzyword-?) * incsearch#go(<SNR>97_config_fuzzyword({'command': '?'}))
-   <Plug>(incsearch-fuzzyword-/) * incsearch#go(<SNR>97_config_fuzzyword())
-   <Plug>(incsearch-fuzzy-stay) * incsearch#go(<SNR>97_config_fuzzy({'is_stay': 1}))
-   <Plug>(incsearch-fuzzy-?) * incsearch#go(<SNR>97_config_fuzzy({'command': '?'}))
-   <Plug>(incsearch-fuzzy-/) * incsearch#go(<SNR>97_config_fuzzy())
-n  <Plug>(startify-open-buffers) * :<C-U>call startify#open_buffers()<CR>
-n  <Plug>FontsizeQuit   <SNR>92_quit
-n  <Plug>FontsizeSetDefault   <SNR>92_setDefault<SNR>92_(fontsize)
-n  <Plug>FontsizeDefault   <SNR>92_default<SNR>92_(fontsize)
-n  <Plug>FontsizeDec   <SNR>92_dec<SNR>92_(fontsize)
-n  <Plug>FontsizeInc   <SNR>92_inc<SNR>92_(fontsize)
-n  <Plug>FontsizeBegin   <SNR>92_begin<SNR>92_(fontsize)
-n  <Plug>(EasyAlignOperator) * :set opfunc=<SNR>91_easy_align_op<CR>g@
-v  <Plug>(EasyAlignRepeat) * :<C-U>call <SNR>91_repeat_in_visual()<CR>
-n  <Plug>(EasyAlignRepeat) * :call <SNR>91_easy_align_repeat()<CR>
-v  <Plug>(LiveEasyAlign) * :<C-U>call <SNR>91_live_easy_align_op(visualmode(), 1)<CR>
-n  <Plug>(LiveEasyAlign) * :set opfunc=<SNR>91_live_easy_align_op<CR>g@
-v  <Plug>(EasyAlign) * :<C-U>call <SNR>91_easy_align_op(visualmode(), 1)<CR>
-n  <Plug>(EasyAlign) * :set opfunc=<SNR>91_easy_align_op<CR>g@
 x  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
 o  <Plug>(MatchitOperationMultiForward) * :<C-U>call matchit#MultiMatch("W",  "o")<CR>
 o  <Plug>(MatchitOperationMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "o")<CR>
@@ -173,119 +122,29 @@ x  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR
 x  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>m'gv``
 n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
 n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
-v  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
-n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
-v  <Plug>ToggleBackground & <Esc><SNR>65_TogBG<Esc>gv
-n  <Plug>ToggleBackground & <SNR>65_TogBG
-n  <Plug>(table-mode-sort) * :call tablemode#spreadsheet#Sort('')<CR>
-n  <Plug>(table-mode-echo-cell) * :call <SNR>64_TableEchoCell()<CR>
-n  <Plug>(table-mode-eval-formula) * :call tablemode#spreadsheet#formula#EvaluateFormulaLine()<CR>
-n  <Plug>(table-mode-add-formula) * :call tablemode#spreadsheet#formula#Add()<CR>
-n  <Plug>(table-mode-delete-column) * :call tablemode#spreadsheet#DeleteColumn()<CR>
-n  <Plug>(table-mode-delete-row) * :call tablemode#spreadsheet#DeleteRow()<CR>
-x  <Plug>(table-mode-cell-text-object-i) * :<C-U>call tablemode#spreadsheet#cell#TextObject(1)<CR>
-x  <Plug>(table-mode-cell-text-object-a) * :<C-U>call tablemode#spreadsheet#cell#TextObject(0)<CR>
-o  <Plug>(table-mode-cell-text-object-i) * :<C-U>call tablemode#spreadsheet#cell#TextObject(1)<CR>
-o  <Plug>(table-mode-cell-text-object-a) * :<C-U>call tablemode#spreadsheet#cell#TextObject(0)<CR>
-n  <Plug>(table-mode-motion-right) * :<C-U>call tablemode#spreadsheet#cell#Motion('l')<CR>
-n  <Plug>(table-mode-motion-left) * :<C-U>call tablemode#spreadsheet#cell#Motion('h')<CR>
-n  <Plug>(table-mode-motion-down) * :<C-U>call tablemode#spreadsheet#cell#Motion('j')<CR>
-n  <Plug>(table-mode-motion-up) * :<C-U>call tablemode#spreadsheet#cell#Motion('k')<CR>
-n  <Plug>(table-mode-realign) * :call tablemode#table#Realign('.')<CR>
-x  <Plug>(table-mode-tableize-delimiter) * :<C-U>call tablemode#TableizeByDelimiter()<CR>
-x  <Plug>(table-mode-tableize) * :Tableize<CR>
-n  <Plug>(table-mode-tableize) * :Tableize<CR>
-v  <Plug>VgSurround * :<C-U>call <SNR>51_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
-v  <Plug>VSurround * :<C-U>call <SNR>51_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
-n  <Plug>YSurround * :<C-U>set opfunc=<SNR>51_opfunc2<CR>g@
-n  <Plug>Ysurround * :<C-U>set opfunc=<SNR>51_opfunc<CR>g@
-n  <Plug>YSsurround * :<C-U>call <SNR>51_opfunc2(v:count1)<CR>
-n  <Plug>Yssurround * :<C-U>call <SNR>51_opfunc(v:count1)<CR>
-n  <Plug>CSurround * :<C-U>call <SNR>51_changesurround(1)<CR>
-n  <Plug>Csurround * :<C-U>call <SNR>51_changesurround()<CR>
-n  <Plug>Dsurround * :<C-U>call <SNR>51_dosurround(<SNR>51_inputtarget())<CR>
-n  <Plug>SurroundRepeat * .
-n  <Plug>GitGutterPreviewHunk * :call gitgutter#utility#warn('please change your map <Plug>GitGutterPreviewHunk to <Plug>(GitGutterPreviewHunk)')<CR>
-n  <Plug>(GitGutterPreviewHunk) * :GitGutterPreviewHunk<CR>
-n  <Plug>GitGutterUndoHunk * :call gitgutter#utility#warn('please change your map <Plug>GitGutterUndoHunk to <Plug>(GitGutterUndoHunk)')<CR>
-n  <Plug>(GitGutterUndoHunk) * :GitGutterUndoHunk<CR>
-n  <Plug>GitGutterStageHunk * :call gitgutter#utility#warn('please change your map <Plug>GitGutterStageHunk to <Plug>(GitGutterStageHunk)')<CR>
-n  <Plug>(GitGutterStageHunk) * :GitGutterStageHunk<CR>
-x  <Plug>GitGutterStageHunk * :call gitgutter#utility#warn('please change your map <Plug>GitGutterStageHunk to <Plug>(GitGutterStageHunk)')<CR>
-x  <Plug>(GitGutterStageHunk) * :GitGutterStageHunk<CR>
-n  <Plug>GitGutterPrevHunk * &diff ? '[c' : ":\<C-U>call gitgutter#utility#warn('please change your map \<Plug>GitGutterPrevHunk to \<Plug>(GitGutterPrevHunk)')\<CR>"
-n  <Plug>(GitGutterPrevHunk) * &diff ? '[c' : ":\<C-U>execute v:count1 . 'GitGutterPrevHunk'\<CR>"
-n  <Plug>GitGutterNextHunk * &diff ? ']c' : ":\<C-U>call gitgutter#utility#warn('please change your map \<Plug>GitGutterNextHunk to \<Plug>(GitGutterNextHunk)')\<CR>"
-n  <Plug>(GitGutterNextHunk) * &diff ? ']c' : ":\<C-U>execute v:count1 . 'GitGutterNextHunk'\<CR>"
-x  <Plug>(GitGutterTextObjectOuterVisual) * :<C-U>call gitgutter#hunk#text_object(0)<CR>
-x  <Plug>(GitGutterTextObjectInnerVisual) * :<C-U>call gitgutter#hunk#text_object(1)<CR>
-o  <Plug>(GitGutterTextObjectOuterPending) * :<C-U>call gitgutter#hunk#text_object(0)<CR>
-o  <Plug>(GitGutterTextObjectInnerPending) * :<C-U>call gitgutter#hunk#text_object(1)<CR>
-   <C-P>         <Plug>(ctrlp)
-n  <Plug>(ctrlp) * :<C-U>CtrlPMRU<CR>
-n  <Plug>CalendarT * :cal calendar#show(2)<CR>
-n  <Plug>CalendarH * :cal calendar#show(1)<CR>
-n  <Plug>CalendarV * :cal calendar#show(0)<CR>
-n  <Plug>(ale_rename) * :ALERename<CR>
-n  <Plug>(ale_documentation) * :ALEDocumentation<CR>
-n  <Plug>(ale_hover) * :ALEHover<CR>
-n  <Plug>(ale_find_references) * :ALEFindReferences<CR>
-n  <Plug>(ale_go_to_type_definition_in_vsplit) * :ALEGoToTypeDefinitionInVSplit<CR>
-n  <Plug>(ale_go_to_type_definition_in_split) * :ALEGoToTypeDefinitionInSplit<CR>
-n  <Plug>(ale_go_to_type_definition_in_tab) * :ALEGoToTypeDefinitionInTab<CR>
-n  <Plug>(ale_go_to_type_definition) * :ALEGoToTypeDefinition<CR>
-n  <Plug>(ale_go_to_definition_in_vsplit) * :ALEGoToDefinitionInVSplit<CR>
-n  <Plug>(ale_go_to_definition_in_split) * :ALEGoToDefinitionInSplit<CR>
-n  <Plug>(ale_go_to_definition_in_tab) * :ALEGoToDefinitionInTab<CR>
-n  <Plug>(ale_go_to_definition) * :ALEGoToDefinition<CR>
-n  <Plug>(ale_fix) * :ALEFix<CR>
-n  <Plug>(ale_detail) * :ALEDetail<CR>
-n  <Plug>(ale_lint) * :ALELint<CR>
-n  <Plug>(ale_reset_buffer) * :ALEResetBuffer<CR>
-n  <Plug>(ale_disable_buffer) * :ALEDisableBuffer<CR>
-n  <Plug>(ale_enable_buffer) * :ALEEnableBuffer<CR>
-n  <Plug>(ale_toggle_buffer) * :ALEToggleBuffer<CR>
-n  <Plug>(ale_reset) * :ALEReset<CR>
-n  <Plug>(ale_disable) * :ALEDisable<CR>
-n  <Plug>(ale_enable) * :ALEEnable<CR>
-n  <Plug>(ale_toggle) * :ALEToggle<CR>
-n  <Plug>(ale_last) * :ALELast<CR>
-n  <Plug>(ale_first) * :ALEFirst<CR>
-n  <Plug>(ale_next_wrap_warning) * :ALENext -wrap -warning<CR>
-n  <Plug>(ale_next_warning) * :ALENext -warning<CR>
-n  <Plug>(ale_next_wrap_error) * :ALENext -wrap -error<CR>
-n  <Plug>(ale_next_error) * :ALENext -error<CR>
-n  <Plug>(ale_next_wrap) * :ALENextWrap<CR>
-n  <Plug>(ale_next) * :ALENext<CR>
-n  <Plug>(ale_previous_wrap_warning) * :ALEPrevious -wrap -warning<CR>
-n  <Plug>(ale_previous_warning) * :ALEPrevious -warning<CR>
-n  <Plug>(ale_previous_wrap_error) * :ALEPrevious -wrap -error<CR>
-n  <Plug>(ale_previous_error) * :ALEPrevious -error<CR>
-n  <Plug>(ale_previous_wrap) * :ALEPreviousWrap<CR>
-n  <Plug>(ale_previous) * :ALEPrevious<CR>
-n  <Plug>NERDCommenterAltDelims * :call <SNR>33_SwitchToAlternativeDelimiters(1)<CR>
-x  <Plug>NERDCommenterUncomment * :call NERDComment("x", "Uncomment")<CR>
-n  <Plug>NERDCommenterUncomment * :call NERDComment("n", "Uncomment")<CR>
-x  <Plug>NERDCommenterAlignBoth * :call NERDComment("x", "AlignBoth")<CR>
-n  <Plug>NERDCommenterAlignBoth * :call NERDComment("n", "AlignBoth")<CR>
-x  <Plug>NERDCommenterAlignLeft * :call NERDComment("x", "AlignLeft")<CR>
-n  <Plug>NERDCommenterAlignLeft * :call NERDComment("n", "AlignLeft")<CR>
-n  <Plug>NERDCommenterAppend * :call NERDComment("n", "Append")<CR>
-x  <Plug>NERDCommenterYank * :call NERDComment("x", "Yank")<CR>
-n  <Plug>NERDCommenterYank * :call NERDComment("n", "Yank")<CR>
-x  <Plug>NERDCommenterSexy * :call NERDComment("x", "Sexy")<CR>
-n  <Plug>NERDCommenterSexy * :call NERDComment("n", "Sexy")<CR>
-x  <Plug>NERDCommenterInvert * :call NERDComment("x", "Invert")<CR>
-n  <Plug>NERDCommenterInvert * :call NERDComment("n", "Invert")<CR>
-n  <Plug>NERDCommenterToEOL * :call NERDComment("n", "ToEOL")<CR>
-x  <Plug>NERDCommenterNested * :call NERDComment("x", "Nested")<CR>
-n  <Plug>NERDCommenterNested * :call NERDComment("n", "Nested")<CR>
-x  <Plug>NERDCommenterMinimal * :call NERDComment("x", "Minimal")<CR>
-n  <Plug>NERDCommenterMinimal * :call NERDComment("n", "Minimal")<CR>
-x  <Plug>NERDCommenterToggle * :call NERDComment("x", "Toggle")<CR>
-n  <Plug>NERDCommenterToggle * :call NERDComment("n", "Toggle")<CR>
-x  <Plug>NERDCommenterComment * :call NERDComment("x", "Comment")<CR>
-n  <Plug>NERDCommenterComment * :call NERDComment("n", "Comment")<CR>
+n  <Plug>FontsizeQuit   <SNR>77_quit
+n  <Plug>FontsizeSetDefault   <SNR>77_setDefault<SNR>77_(fontsize)
+n  <Plug>FontsizeDefault   <SNR>77_default<SNR>77_(fontsize)
+n  <Plug>FontsizeDec   <SNR>77_dec<SNR>77_(fontsize)
+n  <Plug>FontsizeInc   <SNR>77_inc<SNR>77_(fontsize)
+n  <Plug>FontsizeBegin   <SNR>77_begin<SNR>77_(fontsize)
+   <Plug>(easymotion-prefix)N   <Plug>(easymotion-N)
+   <Plug>(easymotion-prefix)n   <Plug>(easymotion-n)
+   <Plug>(easymotion-prefix)k   <Plug>(easymotion-k)
+   <Plug>(easymotion-prefix)j   <Plug>(easymotion-j)
+   <Plug>(easymotion-prefix)gE   <Plug>(easymotion-gE)
+   <Plug>(easymotion-prefix)ge   <Plug>(easymotion-ge)
+   <Plug>(easymotion-prefix)E   <Plug>(easymotion-E)
+   <Plug>(easymotion-prefix)e   <Plug>(easymotion-e)
+   <Plug>(easymotion-prefix)B   <Plug>(easymotion-B)
+   <Plug>(easymotion-prefix)b   <Plug>(easymotion-b)
+   <Plug>(easymotion-prefix)W   <Plug>(easymotion-W)
+   <Plug>(easymotion-prefix)w   <Plug>(easymotion-w)
+   <Plug>(easymotion-prefix)T   <Plug>(easymotion-T)
+   <Plug>(easymotion-prefix)t   <Plug>(easymotion-t)
+   <Plug>(easymotion-prefix)s   <Plug>(easymotion-s)
+   <Plug>(easymotion-prefix)F   <Plug>(easymotion-F)
+   <Plug>(easymotion-prefix)f   <Plug>(easymotion-f)
 x  <Plug>(easymotion-activate) * :<C-U>call EasyMotion#activate(1)<CR>
 nos<Plug>(easymotion-activate) * :<C-U>call EasyMotion#activate(0)<CR>
    <Plug>(easymotion-dotrepeat) * :<C-U>call EasyMotion#DotRepeat()<CR>
@@ -467,8 +326,146 @@ x  <Plug>(easymotion-Tl2) * <Esc>:<C-U>call EasyMotion#TL(2,1,1)<CR>
 nos<Plug>(easymotion-Tl2) * :<C-U>call EasyMotion#TL(2,0,1)<CR>
 x  <Plug>(easymotion-fln) * <Esc>:<C-U>call EasyMotion#SL(-1,1,0)<CR>
 nos<Plug>(easymotion-fln) * :<C-U>call EasyMotion#SL(-1,0,0)<CR>
+n  <Plug>(EasyAlignOperator) * :set opfunc=<SNR>75_easy_align_op<CR>g@
+v  <Plug>(EasyAlignRepeat) * :<C-U>call <SNR>75_repeat_in_visual()<CR>
+n  <Plug>(EasyAlignRepeat) * :call <SNR>75_easy_align_repeat()<CR>
+v  <Plug>(LiveEasyAlign) * :<C-U>call <SNR>75_live_easy_align_op(visualmode(), 1)<CR>
+n  <Plug>(LiveEasyAlign) * :set opfunc=<SNR>75_live_easy_align_op<CR>g@
+v  <Plug>(EasyAlign) * :<C-U>call <SNR>75_easy_align_op(visualmode(), 1)<CR>
+n  <Plug>(EasyAlign) * :set opfunc=<SNR>75_easy_align_op<CR>g@
+x  <Plug>(QuickScopeToggle) * :<C-U>call quick_scope#Toggle()<CR>
+n  <Plug>(QuickScopeToggle) * :call quick_scope#Toggle()<CR>
+x  <Plug>(QuickScopeT) * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+o  <Plug>(QuickScopeT) * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  <Plug>(QuickScopeT) * quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+x  <Plug>(QuickScopet) * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
+o  <Plug>(QuickScopet) * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  <Plug>(QuickScopet) * quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
+x  <Plug>(QuickScopeF) * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
+o  <Plug>(QuickScopeF) * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  <Plug>(QuickScopeF) * quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
+x  <Plug>(QuickScopef) * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+o  <Plug>(QuickScopef) * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+n  <Plug>(QuickScopef) * quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+x  <Plug>(openbrowser-smart-search) * :<C-U>call openbrowser#_keymap_smart_search('v')<CR>
+n  <Plug>(openbrowser-smart-search) * :<C-U>call openbrowser#_keymap_smart_search('n')<CR>
+x  <Plug>(openbrowser-search) * :<C-U>call openbrowser#_keymap_search('v')<CR>
+n  <Plug>(openbrowser-search) * :<C-U>call openbrowser#_keymap_search('n')<CR>
+x  <Plug>(openbrowser-open-incognito) * :<C-U>call openbrowser#_keymap_open('v', 0, ['--incognito'])<CR>
+n  <Plug>(openbrowser-open-incognito) * :<C-U>call openbrowser#_keymap_open('n', 0, ['--incognito'])<CR>
+x  <Plug>(openbrowser-open) * :<C-U>call openbrowser#_keymap_open('v')<CR>
+n  <Plug>(openbrowser-open) * :<C-U>call openbrowser#_keymap_open('n')<CR>
 v  <F6>          <Plug>(openbrowser-smart-search)
 n  <F6>          <Plug>(openbrowser-smart-search)
+n  <Plug>NERDCommenterAltDelims * :call <SNR>40_SwitchToAlternativeDelimiters(1)<CR>
+x  <Plug>NERDCommenterUncomment * :call NERDComment("x", "Uncomment")<CR>
+n  <Plug>NERDCommenterUncomment * :call NERDComment("n", "Uncomment")<CR>
+x  <Plug>NERDCommenterAlignBoth * :call NERDComment("x", "AlignBoth")<CR>
+n  <Plug>NERDCommenterAlignBoth * :call NERDComment("n", "AlignBoth")<CR>
+x  <Plug>NERDCommenterAlignLeft * :call NERDComment("x", "AlignLeft")<CR>
+n  <Plug>NERDCommenterAlignLeft * :call NERDComment("n", "AlignLeft")<CR>
+n  <Plug>NERDCommenterAppend * :call NERDComment("n", "Append")<CR>
+x  <Plug>NERDCommenterYank * :call NERDComment("x", "Yank")<CR>
+n  <Plug>NERDCommenterYank * :call NERDComment("n", "Yank")<CR>
+x  <Plug>NERDCommenterSexy * :call NERDComment("x", "Sexy")<CR>
+n  <Plug>NERDCommenterSexy * :call NERDComment("n", "Sexy")<CR>
+x  <Plug>NERDCommenterInvert * :call NERDComment("x", "Invert")<CR>
+n  <Plug>NERDCommenterInvert * :call NERDComment("n", "Invert")<CR>
+n  <Plug>NERDCommenterToEOL * :call NERDComment("n", "ToEOL")<CR>
+x  <Plug>NERDCommenterNested * :call NERDComment("x", "Nested")<CR>
+n  <Plug>NERDCommenterNested * :call NERDComment("n", "Nested")<CR>
+x  <Plug>NERDCommenterMinimal * :call NERDComment("x", "Minimal")<CR>
+n  <Plug>NERDCommenterMinimal * :call NERDComment("n", "Minimal")<CR>
+x  <Plug>NERDCommenterToggle * :call NERDComment("x", "Toggle")<CR>
+n  <Plug>NERDCommenterToggle * :call NERDComment("n", "Toggle")<CR>
+x  <Plug>NERDCommenterComment * :call NERDComment("x", "Comment")<CR>
+n  <Plug>NERDCommenterComment * :call NERDComment("n", "Comment")<CR>
+   <Plug>(_incsearch-g#) * g#
+   <Plug>(_incsearch-g*) * g*
+   <Plug>(_incsearch-#) * #
+   <Plug>(_incsearch-*) * *
+   <Plug>(_incsearch-N) * g:incsearch#consistent_n_direction && !v:searchforward ? 'n' : 'N'
+   <Plug>(_incsearch-n) * g:incsearch#consistent_n_direction && !v:searchforward ? 'N' : 'n'
+   <Plug>(incsearch-nohl-g#)   <Plug>(incsearch-nohl)<Plug>(_incsearch-g#)
+   <Plug>(incsearch-nohl-g*)   <Plug>(incsearch-nohl)<Plug>(_incsearch-g*)
+   <Plug>(incsearch-nohl-#)   <Plug>(incsearch-nohl)<Plug>(_incsearch-#)
+   <Plug>(incsearch-nohl-*)   <Plug>(incsearch-nohl)<Plug>(_incsearch-*)
+   <Plug>(incsearch-nohl-N)   <Plug>(incsearch-nohl)<Plug>(_incsearch-N)
+   <Plug>(incsearch-nohl-n)   <Plug>(incsearch-nohl)<Plug>(_incsearch-n)
+   <Plug>(incsearch-nohl2) * incsearch#autocmd#auto_nohlsearch(2)
+   <Plug>(incsearch-nohl0) * incsearch#autocmd#auto_nohlsearch(0)
+   <Plug>(incsearch-nohl) * incsearch#autocmd#auto_nohlsearch(1)
+   <Plug>(incsearch-stay) * incsearch#go({'command': '/', 'is_stay': 1})
+   <Plug>(incsearch-backward) * incsearch#go({'command': '?'})
+   <Plug>(incsearch-forward) * incsearch#go({'command': '/'})
+   <Plug>(incsearch-fuzzyspell-stay) * incsearch#go(<SNR>36_config_fuzzyspell({'is_stay': 1}))
+   <Plug>(incsearch-fuzzyspell-?) * incsearch#go(<SNR>36_config_fuzzyspell({'command': '?'}))
+   <Plug>(incsearch-fuzzyspell-/) * incsearch#go(<SNR>36_config_fuzzyspell())
+   <Plug>(incsearch-fuzzyword-stay) * incsearch#go(<SNR>36_config_fuzzyword({'is_stay': 1}))
+   <Plug>(incsearch-fuzzyword-?) * incsearch#go(<SNR>36_config_fuzzyword({'command': '?'}))
+   <Plug>(incsearch-fuzzyword-/) * incsearch#go(<SNR>36_config_fuzzyword())
+   <Plug>(incsearch-fuzzy-stay) * incsearch#go(<SNR>36_config_fuzzy({'is_stay': 1}))
+   <Plug>(incsearch-fuzzy-?) * incsearch#go(<SNR>36_config_fuzzy({'command': '?'}))
+   <Plug>(incsearch-fuzzy-/) * incsearch#go(<SNR>36_config_fuzzy())
+o  <Plug>(fzf-maps-o) * <C-C>:<C-U>call fzf#vim#maps('o', 0)<CR>
+x  <Plug>(fzf-maps-x) * :<C-U>call fzf#vim#maps('x', 0)<CR>
+n  <Plug>(fzf-maps-n) * :<C-U>call fzf#vim#maps('n', 0)<CR>
+   <C-P>         <Plug>(ctrlp)
+n  <Plug>(ctrlp) * :<C-U>CtrlPMRU<CR>
+n  <Plug>CalendarT * :cal calendar#show(2)<CR>
+n  <Plug>CalendarH * :cal calendar#show(1)<CR>
+n  <Plug>CalendarV * :cal calendar#show(0)<CR>
+n  <C-K>         <Plug>(ale_previous_wrap)
+n  <C-J>         <Plug>(ale_next_wrap)
+n  <Plug>(ale_repeat_selection) * :ALERepeatSelection<CR>
+n  <Plug>(ale_code_action) * :ALECodeAction<CR>
+n  <Plug>(ale_rename) * :ALERename<CR>
+n  <Plug>(ale_import) * :ALEImport<CR>
+n  <Plug>(ale_documentation) * :ALEDocumentation<CR>
+n  <Plug>(ale_hover) * :ALEHover<CR>
+n  <Plug>(ale_find_references) * :ALEFindReferences<CR>
+n  <Plug>(ale_go_to_type_definition_in_vsplit) * :ALEGoToTypeDefinitionIn -vsplit<CR>
+n  <Plug>(ale_go_to_type_definition_in_split) * :ALEGoToTypeDefinition -split<CR>
+n  <Plug>(ale_go_to_type_definition_in_tab) * :ALEGoToTypeDefinition -tab<CR>
+n  <Plug>(ale_go_to_type_definition) * :ALEGoToTypeDefinition<CR>
+n  <Plug>(ale_go_to_definition_in_vsplit) * :ALEGoToDefinition -vsplit<CR>
+n  <Plug>(ale_go_to_definition_in_split) * :ALEGoToDefinition -split<CR>
+n  <Plug>(ale_go_to_definition_in_tab) * :ALEGoToDefinition -tab<CR>
+n  <Plug>(ale_go_to_definition) * :ALEGoToDefinition<CR>
+n  <Plug>(ale_fix) * :ALEFix<CR>
+n  <Plug>(ale_detail) * :ALEDetail<CR>
+n  <Plug>(ale_lint) * :ALELint<CR>
+n  <Plug>(ale_reset_buffer) * :ALEResetBuffer<CR>
+n  <Plug>(ale_disable_buffer) * :ALEDisableBuffer<CR>
+n  <Plug>(ale_enable_buffer) * :ALEEnableBuffer<CR>
+n  <Plug>(ale_toggle_buffer) * :ALEToggleBuffer<CR>
+n  <Plug>(ale_reset) * :ALEReset<CR>
+n  <Plug>(ale_disable) * :ALEDisable<CR>
+n  <Plug>(ale_enable) * :ALEEnable<CR>
+n  <Plug>(ale_toggle) * :ALEToggle<CR>
+n  <Plug>(ale_last) * :ALELast<CR>
+n  <Plug>(ale_first) * :ALEFirst<CR>
+n  <Plug>(ale_next_wrap_warning) * :ALENext -wrap -warning<CR>
+n  <Plug>(ale_next_warning) * :ALENext -warning<CR>
+n  <Plug>(ale_next_wrap_error) * :ALENext -wrap -error<CR>
+n  <Plug>(ale_next_error) * :ALENext -error<CR>
+n  <Plug>(ale_next_wrap) * :ALENextWrap<CR>
+n  <Plug>(ale_next) * :ALENext<CR>
+n  <Plug>(ale_previous_wrap_warning) * :ALEPrevious -wrap -warning<CR>
+n  <Plug>(ale_previous_warning) * :ALEPrevious -warning<CR>
+n  <Plug>(ale_previous_wrap_error) * :ALEPrevious -wrap -error<CR>
+n  <Plug>(ale_previous_error) * :ALEPrevious -error<CR>
+n  <Plug>(ale_previous_wrap) * :ALEPreviousWrap<CR>
+n  <Plug>(ale_previous) * :ALEPrevious<CR>
+i  <C-G>S        <Plug>ISurround
+i  <C-G>s        <Plug>Isurround
+i  <C-S>         <Plug>Isurround
+i  <Plug>ISurround * <C-R>=<SNR>93_insert(1)<CR>
+i  <Plug>Isurround * <C-R>=<SNR>93_insert()<CR>
+i  <S-Tab>       <Plug>SuperTabBackward
+i  <Plug>SuperTabBackward & <C-R>=SuperTab('p')<CR>
+i  <Plug>SuperTabForward & <C-R>=SuperTab('n')<CR>
+i  <Plug>NERDCommenterInsert * <Space><BS><Esc>:call NERDComment('i', 'insert')<CR>
 i  <Plug>(fzf-maps-i) * <C-O>:call fzf#vim#maps('i', 0)<CR>
 i  <Plug>(fzf-complete-buffer-line) * fzf#vim#complete#buffer_line()
 i  <Plug>(fzf-complete-line) * fzf#vim#complete#line()
@@ -476,16 +473,5 @@ i  <Plug>(fzf-complete-file-ag) * fzf#vim#complete#path('ag -l -g ""')
 i  <Plug>(fzf-complete-file) * fzf#vim#complete#path("find . -path '*/\.*' -prune -o -type f -print -o -type l -print | sed 's:^..::'")
 i  <Plug>(fzf-complete-path) * fzf#vim#complete#path("find . -path '*/\.*' -prune -o -print | sed '1d;s:^..::'")
 i  <Plug>(fzf-complete-word) * fzf#vim#complete#word()
-i  <Plug>ToggleBackground & <Esc><SNR>65_TogBG<Esc>a
-i  <Plug>(table-mode-tableize) * |<Esc>:call tablemode#TableizeInsertMode()<CR>a
-i  <C-G>S        <Plug>ISurround
-i  <C-G>s        <Plug>Isurround
-i  <C-S>         <Plug>Isurround
-i  <Plug>ISurround * <C-R>=<SNR>51_insert(1)<CR>
-i  <Plug>Isurround * <C-R>=<SNR>51_insert()<CR>
-i  <S-Tab>       <Plug>SuperTabBackward
-i  <Plug>SuperTabBackward & <C-R>=SuperTab('p')<CR>
-i  <Plug>SuperTabForward & <C-R>=SuperTab('n')<CR>
 i  <Plug>(ale_complete) * <C-\><C-O>:ALEComplete<CR>
-i  <Plug>NERDCommenterInsert * <Space><BS><Esc>:call NERDComment('i', "insert")<CR>
 i  <Tab>         <Plug>SuperTabForward

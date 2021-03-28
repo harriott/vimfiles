@@ -1,6 +1,6 @@
-" vim: fdm=expr ft=vim.vimconfig:
+" vim: ft=vim:
 
-" Joseph Harriott - Tue 22 Sep 2020
+" Joseph Harriott - Sun 28 Mar 2021
 " ---------------------------------
 
 " keep this file in your plugin directory so's it's automatically sourced at startup
@@ -225,13 +225,20 @@ else
 endif
 
 ""> grab my settings
-" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
-" As these functions are relying on Bufferize, relaunch vim after calling one.
-" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * "
-" See also ~/.vim/grabbed/grabMaps.sh
+function! GrabWrite(toGrab)
+  " only to be called from within a parent function that has just before opened an empty buffer
+  silent execute 'Bufferize ' . a:toGrab
+  blast
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
 
+"">> called from grabbed/grabMaps.sh
 function! GrabCommands()
-  edit $HOME/vim-commands.txt
+  exe 'edit '.g:vimfiles.'/grabbed/commands.txt'
   normal! VGd
   call GrabWrite("command")
 endfunction
@@ -279,17 +286,6 @@ function! GrabSimpleMaps()
   silent! exe 'g/<SNR>/d'
   g/ /d " non-breaking space
   nohlsearch
-  write
-endfunction
-
-function! GrabWrite(toGrab)
-  " only to be called from within a parent function that has just before opened an empty buffer
-  silent execute 'Bufferize ' . a:toGrab
-  blast
-  normal! ggVGd
-  bdelete
-  blast
-  normal! p
   write
 endfunction
 

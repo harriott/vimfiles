@@ -11,7 +11,8 @@
 " ALEToggleBuffer
 " ale_enabled
 
-let g:ale_linters = {'text': ['languagetool']}
+" let g:ale_linters = {'text': ['languagetool']}
+let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
 let g:ale_sign_column_always = 1
 packadd ale
 

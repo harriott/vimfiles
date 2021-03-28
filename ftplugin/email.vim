@@ -36,3 +36,6 @@ endfunction
 " - requires this:  foldmethod=expr foldexpr=EF()
 "   and this helps visually:        foldcolumns=1
 
+" turn on ALE
+let b:ale_enabled = 1
+

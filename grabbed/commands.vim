@@ -1,5 +1,5 @@
 ,cd ..
-,call GrabPlugMaps()
+,call GrabCommands()
 ,wq
 
 " see  ~/.vim/grabbed/grabMaps.sh
