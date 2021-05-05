@@ -76,6 +76,11 @@ function! CompiledPDF()
 endfunction
 " this function is only needed for markdown and TeX files
 
+"">> TeX locations
+let $MD4PDF = $onGH.'/md4pdf'
+let $MiKTeX = $HOME.'/AppData/Roaming/MiKTeX/tex'
+let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'
+
 "">> Windows Explorer on current file
 nnoremap <F11> :!start explorer /select,%:p<CR>
 inoremap <F11> <Esc><F11>

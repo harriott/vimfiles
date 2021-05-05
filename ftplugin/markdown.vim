@@ -31,6 +31,7 @@ function! MdF()
 	if empty(l:hashcount) | return "=" | else | return ">".len(l:hashcount) | endif
 endfunction
 
+setlocal fillchars=fold:\  " cleaner folds
 setlocal fde=MdF() fdc=1 fdm=expr
 setlocal fdc=2 " slightly better distinction from line numbers
 

@@ -112,7 +112,7 @@ Joseph's useful (g)Vim commands
     :m-2      " That is, the current line is moved up one line
     :m+       " the current line is moved down one line
 
-# Search
+# search
     #                     " over a word highlights all exact instances, and jumps to last
     %                     " find opposing bracket in a line
     *                     " highlight all instances of exactly the word under the cursor

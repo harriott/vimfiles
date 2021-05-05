@@ -1,7 +1,7 @@
 
 " Language:	TeX
 " Maintainer: Joseph Harriott
-" Last Change: Thu 28 Jan 2021
+" Last Change: Wed 05 May 2021
 " Useful adjustments for working with LaTeX documents.
 "  supplemental to  $VIMRUNTIME/ftplugin/tex.vim
 " This file should be in your vimfiles\ftplugin folder.
@@ -11,6 +11,21 @@
 nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
 nnoremap <buffer><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
 vnoremap <buffer><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
+
+""> demote or promote sections
+" select a region, then
+function! PromoteSubSections()
+  silent normal! gv"sy
+  let VS = getreg('s')
+  if match(VS, '\\section{') >= 0
+    echo 'can''t promote a section'
+  else
+    :%s/subsection{/section{/
+    echo 'promoted'
+  endif
+endfunction
+nnoremap <buffer><leader>< :call PromoteSubSections()<CR>
+vnoremap <buffer><leader>< <Esc>:call PromoteSubSections()<CR>
 
 ""> Folding
 if b:PandocLaTeX

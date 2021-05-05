@@ -52,12 +52,18 @@ noremap Q @q
 " nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
 nnoremap <leader>2 :call ClearFancyText()<cr>
 function! ClearFancyText()
+  :sil!%s/​//g
+  :sil!%s/‌//g
+  :sil!%s/‍//g
+  :sil!%s/‎//g
+  :sil!%s/‏//g
   :sil!%s/“/"/g
   :sil!%s/”/"/g
   :sil!%s/‘/'/g
   :sil!%s/’/'/g
   :sil!%s/–/-/g
   :sil!%s/―/-/g
+  :sil!%s/…/.../g
   :sil!%s/，/,/g
 endfunction
 
@@ -203,7 +209,7 @@ let dokuwiki_comment=1
 let g:tex_fold_enabled=1
 " check for Pandoc template
 autocmd BufReadPre *.cls,*.dtx,*.sty,*.tex let b:PandocLaTeX = 0
-autocmd BufReadPre */pandoc-templates/*.latex let b:PandocLaTeX = 1
+autocmd BufReadPre *templates/*.latex let b:PandocLaTeX = 1
 
 "">> md4pdfLog.tex
 " turn off syntax folding for the long log files from md4pdf.ps1
@@ -298,7 +304,7 @@ nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 " overriden by  vim-airline  extension  tabline
 
 ""> maxmempattern
-set mmp=24000
+set mmp=25000
 
 ""> neomutt
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal tw=0
@@ -400,7 +406,7 @@ noremap <leader>q :copen<CR>
 ""> searching - Search within a visual selection.
 "  before calling this you need to search for something, then
 "   either before or any number of times after calling this function,
-"     you need to visually select an area, then <Esc>
+"     you need to visually select an area
 "   the search will appear highlighted only within your visual selections
 "   next search returns to normal
 function! ConvertSearchForVisualSelection()
@@ -408,6 +414,7 @@ function! ConvertSearchForVisualSelection()
   echo 'last search is now active only in your escaped visual selection'
 endfunction
 nnoremap <leader>vs :call ConvertSearchForVisualSelection()<CR>
+vnoremap <leader>vs <Esc>:call ConvertSearchForVisualSelection()<CR>
 
 ""> searching - select to end of line in unix
 if has('unix')

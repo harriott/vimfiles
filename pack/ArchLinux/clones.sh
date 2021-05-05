@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdm=expr ft=sh.shfold sw=2:
+# vim: sw=2:
 
 # Joseph Harriott
 # grab repositories
@@ -42,7 +42,8 @@ gd opt; ls
   # $gc https://github.com/drmikehenry/vim-fontsize
   # $gc https://github.com/tpope/vim-fugitive
   # $gc https://github.com/rhysd/vim-gfm-syntax
-  $gc https://github.com/hjson/vim-hjson
+  # $gc https://github.com/hjson/vim-hjson
+  $gc https://github.com/smancill/conky-syntax.vim
   # $gc https://github.com/Konfekt/vim-langtool
   # $gc https://github.com/dpelle/vim-LanguageTool
   # $gc https://github.com/chunkhang/vim-mbsync

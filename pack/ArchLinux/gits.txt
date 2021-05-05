@@ -4,6 +4,7 @@
 ./packs-cp/opt/calendar-vim/.git
 ./packs-cp/opt/close-buffers.vim/.git
 ./packs-cp/opt/colorizer/.git
+./packs-cp/opt/conky-syntax.vim/.git
 ./packs-cp/opt/ctrlp.vim/.git
 ./packs-cp/opt/gitignore.vim/.git
 ./packs-cp/opt/incsearch-fuzzy.vim/.git

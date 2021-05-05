@@ -12,6 +12,7 @@ else
   nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
   " fails - try with fileformat dos
 endif
+" check with  :map <leader><F7>
 
 " open Pandoc'd pdf
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>
