@@ -90,7 +90,7 @@ endfunction
 vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 " (I'm using two h's because  gitgutter.vim  binds some \hx's)
 
-""> monospaced
+""> monospace
 " wrap the inner word under cursor with ''
 nnoremap <buffer> <leader>' viwc''''<Esc>hP
 

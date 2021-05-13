@@ -4,7 +4,7 @@
 " Last Change: Fri 26 Feb 2021
 " this file is supplementary to  $VIMRUNTIME/ftplugin/markdown.vim
 "  and should be in your vimfiles\ftplugin folder
-" $VIMRUNTIME/filetype.vim determines which files are automatically detected as markdown
+" $VIMRUNTIME/filetype.vim  determines which files are automatically detected as markdown
 
 " setlocal expandtab textwidth=0
 

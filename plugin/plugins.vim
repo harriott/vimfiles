@@ -200,6 +200,7 @@ packadd vim-airline-themes
 packadd vim-base64
 
 ""> vim-bbcode
+" $vimfiles/pack/packs-cp/opt/vim-bbcode/example.bbcode
 packadd vim-bbcode
 
 ""> vim-better-whitespace

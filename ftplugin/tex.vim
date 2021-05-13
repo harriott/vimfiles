@@ -1,7 +1,7 @@
 
 " Language:	TeX
 " Maintainer: Joseph Harriott
-" Last Change: Wed 05 May 2021
+" Last Change: Fri 07 May 2021
 " Useful adjustments for working with LaTeX documents.
 "  supplemental to  $VIMRUNTIME/ftplugin/tex.vim
 " This file should be in your vimfiles\ftplugin folder.
@@ -9,18 +9,30 @@
 " see also  $vimfiles/after/ftplugin/tex.vim
 
 nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
-nnoremap <buffer><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
+nnoremap <buffer><leader><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
 vnoremap <buffer><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
 
 ""> demote or promote sections
 " select a region, then
+function! DemoteSubSections()
+  silent normal! gv"sy
+  let VS = getreg('s')
+  if match(VS, '\\subsubsection{') >= 0
+    echo 'can''t demote a subsubsection'
+  else
+    :%s/\%Vsection{/subsection{/
+    echo 'demoted'
+  endif
+endfunction
+nnoremap <buffer><leader>> :call DemoteSubSections()<CR>
+vnoremap <buffer><leader>> <Esc>:call DemoteSubSections()<CR>
 function! PromoteSubSections()
   silent normal! gv"sy
   let VS = getreg('s')
   if match(VS, '\\section{') >= 0
     echo 'can''t promote a section'
   else
-    :%s/subsection{/section{/
+    :%s/\%Vsubsection{/section{/
     echo 'promoted'
   endif
 endfunction
