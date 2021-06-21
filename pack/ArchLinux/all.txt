@@ -37,6 +37,7 @@
 ./packs-cp/opt/vim-gfm-syntax
 ./packs-cp/opt/vim-gitgutter
 ./packs-cp/opt/vim-hjson
+./packs-cp/opt/vim-ingo-library
 ./packs-cp/opt/vim-langtool
 ./packs-cp/opt/vim-LanguageTool
 ./packs-cp/opt/vim-matchit

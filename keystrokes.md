@@ -97,6 +97,8 @@ Joseph's useful (g)Vim commands
     g;        " jump back to position of an older change
     g^        " jump to first character of screen line
     ge        " go backwards to end of word
+    gj/k      " go down/up a visual line
+    gqq
     mJ        " put a file-specific mark in current file (can use a-z)
     zz        " centre window on cursor
     { or }    " move cursor to start or end of paragraph
@@ -202,6 +204,8 @@ gW " search Wikipedia
     :%s/\v^.*$/\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
 
     &                                  " repeat last substitute
+    g~<movement>                       " invert case
+    g&                                 " repeat last command over the whole document
     :exe ":normal i" . strftime("%c")  " put date-time at cursor
     :g/^/m 0                           " reverse the entire buffer
     :h g_CTRL-G                        " position and word info, works on a range too

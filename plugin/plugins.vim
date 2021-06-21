@@ -55,7 +55,7 @@ let g:colorizer_disable_bufleave = 1
 " $HOME/.cache/ctrlp/mru/cache.txt
 " <c-f> and <c-b> to cycle between modes
 " open selected entry in a new
-"  split horizontal <c-v>
+"  split horizontal <c-x>
 "  split vertical   <c-v>
 "  tab              <c-t>
 set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
@@ -338,7 +338,7 @@ packadd vim-repeat
 packadd vim-rhubarb
 
 ""> vim-ShowTrailingWhitespace
-if has('win32') | packadd vim-ShowTrailingWhitespace | endif " unix only added in terminal
+if has('win32') | packadd vim-ingo-library | packadd vim-ShowTrailingWhitespace | endif " unix only added in terminal
 
 ""> vim-startify
 packadd vim-startify

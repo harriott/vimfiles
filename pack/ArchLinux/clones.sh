@@ -43,13 +43,14 @@ gd opt; ls
   # $gc https://github.com/tpope/vim-fugitive
   # $gc https://github.com/rhysd/vim-gfm-syntax
   # $gc https://github.com/hjson/vim-hjson
-  $gc https://github.com/smancill/conky-syntax.vim
+  # $gc https://github.com/smancill/conky-syntax.vim
   # $gc https://github.com/Konfekt/vim-langtool
   # $gc https://github.com/dpelle/vim-LanguageTool
   # $gc https://github.com/chunkhang/vim-mbsync
   # $gc https://github.com/dhruvasagar/vim-open-url
   # $gc https://github.com/vim-pandoc/vim-pandoc-syntax
   # $gc https://github.com/PProvost/vim-ps1
+  $gc https://github.com/inkarkat/vim-ingo-library
   # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
     # sudo sed -i 's/^c/" c/' vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
   # $gc https://github.com/mhinz/vim-startify

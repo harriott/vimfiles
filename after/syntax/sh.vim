@@ -10,13 +10,7 @@
 
 syntax sync fromstart  " for longer build scripts
 
-" my syntax for folding
-syntax match foldY '#=.*$'
-syntax match foldN '.\+#=.*$'
-
-hi def foldY term=bold cterm=bold gui=bold guifg=LightGreen
-hi def foldN term=bold cterm=bold gui=bold guifg=LightGray
-" see  cterm-colors  in  ../keystrokes.md
+execute 'source 'g:vimfiles.'/after/syntax/HashEqualsFolding.vim'
 
 let b:current_syntax = "bash"  " because I'm always in Bash
 

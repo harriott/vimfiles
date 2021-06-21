@@ -47,6 +47,7 @@ if has('nvim')
   let g:better_whitespace_operator=''
 else
   colorscheme tomorrow " good for terminal Vim
+  packadd vim-ingo-library
   packadd vim-ShowTrailingWhitespace
 endif
 

@@ -8,13 +8,7 @@
 " this file should be in  after/vimfiles/syntax  folder
 "  it is supplementary to  $vimfiles/pack/packs-cp/opt/vim-bbcode/syntax/bbcode.vim
 
-" my syntax for folding
-syntax match foldY '#=.*$'
-syntax match foldN '.\+#=.*$'
-
-hi def foldY term=bold cterm=bold gui=bold guifg=LightGreen
-hi def foldN term=bold cterm=bold gui=bold guifg=LightGray
-" see  cterm-colors  in  ../keystrokes.md
+execute 'source 'g:vimfiles.'/after/syntax/HashEqualsFolding.vim'
 
 let b:current_syntax = "bbcode"
 

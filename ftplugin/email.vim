@@ -12,7 +12,7 @@
 setlocal et tw=0 fdc=1 fde=EF() fdm=expr spell
 
 " create a heading around text:
-nnoremap <buffer> <leader><leader>= I== <Esc>A ==<Esc>
+nnoremap <buffer> <leader><leader>= I==  <Esc>A  ==<Esc>
 " boost up a heading:
 nnoremap <buffer> <leader>== I==<Esc>A==<Esc>
 " demote a heading:
