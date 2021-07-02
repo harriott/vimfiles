@@ -162,7 +162,7 @@ Joseph's useful (g)Vim commands
     :h netrw-quickmap
     :Locate <pattern>
     :packadd syntastic    " load the plugin from an opt directory
-    :packadd vim-rhubarb  " load the plugin from an opt directory, for :Gbrowse to work
+    :packadd vim-rhubarb  " load the plugin from an opt directory, for :GBrowse to work
     :r!<shell command>    " reads shell command output into the buffer
     :tabe $HOME/_vimrc    " bring up my vimrc in a new tab
     :ALEToggle

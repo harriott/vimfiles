@@ -1,7 +1,7 @@
 
 " -------------------------------------------------
 " a wrapper vimrc for use on a MS Windows 10 system
-" Joseph Harriott - Mon 14 Sep 2020
+" Joseph Harriott - Mon 28 Jun 2021
 " this should be sourced by $HOME\_vimrc
 " -------------------------------------------------
 
@@ -76,7 +76,11 @@ function! CompiledPDF()
 endfunction
 " this function is only needed for markdown and TeX files
 
-"">> TeX locations
+"">> paths
+let $IT1 = $DROPBOX.'/JH/Technos/IT1'
+let $SPD = $onGH.'/SyncPortableDrives\RoboCopy\T430i73520M'
+
+"">>> TeX locations
 let $MD4PDF = $onGH.'/md4pdf'
 let $MiKTeX = $HOME.'/AppData/Roaming/MiKTeX/tex'
 let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'

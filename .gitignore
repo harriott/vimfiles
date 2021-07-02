@@ -6,6 +6,7 @@ pack/packs-cp
 pack/packs-unix
 pack/packs-win32
 profile.log
+scratch.vim
 spell/
 tags
 tags-cn

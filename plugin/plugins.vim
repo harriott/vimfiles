@@ -117,14 +117,18 @@ packadd mediawiki.vim
 ""> MRU
 " $HOME/.vim_mru_files
 let MRU_Max_Entries = 1000
-let MRU_Window_Height = 20
+if has('unix')
+  let MRU_Window_Height = 20
+else
+  let MRU_Window_Height = 30
+endif
 " - which is overriden by this:
 " let MRU_Use_Current_Window = 1
 packadd mru
 
-" :FZFMru
-
-" :MRU \.md
+" in GNU/Linux
+"   :FZFMru
+"   :MRU \.md
 " :MruRefresh
 " in the normal MRU window
 "  Enter = open over current window
@@ -132,13 +136,17 @@ packadd mru
 "  o = open split below
 "  u = update
 
-nnoremap <leader>m :MRU
-inoremap <leader>m :MRU
-vnoremap <leader>m :MRU
+if has('unix')
+  nnoremap <leader>m :MRU
+  " - allowing for a qualifying regex
+else
+  nnoremap <leader>m :MRU<CR>
+endif
 
 ""> nerdcommenter
 packadd nerdcommenter
 let NERDSpaceDelims = 1
+" <leader>c<space> -> NERDCommenterToggle
 
 ""> nerdtree
 noremap <C-n> :NERDTreeToggle<CR>
@@ -266,6 +274,7 @@ packadd vim-fontsize
 ""> vim-fugitive
 " ce  " amend the last commit without editing the message
 " F3  " Ggrep for last search
+" :GBrowse
 
 " Ggrep for last search
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
