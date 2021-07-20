@@ -141,6 +141,13 @@ if has('unix')
   " - allowing for a qualifying regex
 else
   nnoremap <leader>m :MRU<CR>
+  " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
+  nnoremap <leader>mt :call MRU_highlighted('\.tex')<CR>:se hls<CR>
+  nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
+  function! MRU_highlighted(filetype)
+    let @/ = a:filetype
+    MRU
+  endfunction
 endif
 
 ""> nerdcommenter

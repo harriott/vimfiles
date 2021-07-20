@@ -82,8 +82,8 @@ let $SPD = $onGH.'/SyncPortableDrives\RoboCopy\T430i73520M'
 
 "">>> TeX locations
 let $MD4PDF = $onGH.'/md4pdf'
-let $MiKTeX = $HOME.'/AppData/Roaming/MiKTeX/tex'
 let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'
+let $tex = $HOME.'/AppData/Roaming/MiKTeX/tex'
 
 "">> Windows Explorer on current file
 nnoremap <F11> :!start explorer /select,%:p<CR>
