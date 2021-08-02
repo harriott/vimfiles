@@ -124,7 +124,7 @@ syn match dokuwikiEntities "---\ze\([^-]\|$\)" conceal cchar=—
 syn match dokuwikiEntities "(c)" conceal cchar=©
 syn match dokuwikiEntities "(tm)" conceal cchar=™
 syn match dokuwikiEntities "(r)" conceal cchar=®
-syn match dokuwikiEntities "\.\.\." conceal cchar=…
+" syn match dokuwikiEntities "\.\.\." conceal cchar=… " JH
 
 " Links: implicit, or [[target|optional link text]] or [[target|{{image file|optional caption}}]]
 " http://github.com/splitbrain/dokuwiki/blob/master/conf/scheme.conf

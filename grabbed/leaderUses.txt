@@ -6,19 +6,25 @@
 ../ftplugin/dokuwiki.vim:nnoremap <buffer> <leader>' viwc''''<Esc>hP
 ../ftplugin/dokuwiki.vim:vnoremap <buffer> <leader>' c''''<Esc>hP
 ../ftplugin/fugitive.vim:nnoremap <buffer><leader>gp :Git push<cr>
-../ftplugin/email.vim:nnoremap <buffer> <leader><leader>= I== <Esc>A ==<Esc>
+../ftplugin/email.vim:nnoremap <buffer> <leader><leader>= I==  <Esc>A  ==<Esc>
 ../ftplugin/email.vim:nnoremap <buffer> <leader>== I==<Esc>A==<Esc>
 ../ftplugin/email.vim:nnoremap <buffer> <leader>=- 0xx<Esc>$xx<Esc>
 ../ftplugin/email.vim:nnoremap <buffer> <leader># 099i~<Esc>
 ../ftplugin/vim.vim:vnoremap <buffer><leader>> :s/"">/"">>/<CR>
 ../ftplugin/vim.vim:vnoremap <buffer><leader>< :s/"">>/"">/<CR>
 ../ftplugin/md.vim:"  (I'm using <leader> here to avoid accidentally running this)
-../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack/onGitHub/misc/tools/mysmsMD.pl ".expand('%:p')<CR>
-../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack/onGitHub/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\misc\PerlTools\mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:" check with  :map <leader><F7>
 ../ftplugin/md.vim:vnoremap <buffer> <leader>v1 :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
 ../ftplugin/md.vim:vnoremap <buffer> <leader>v2 :s#^\v(.+)  $\n^$#\1\r#g <CR>
-../ftplugin/tex.vim:nnoremap <buffer><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
-../ftplugin/tex.vim:vnoremap <buffer><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
+../ftplugin/tex.vim:nnoremap <buffer><leader><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
+../ftplugin/tex.vim:vnoremap <buffer><leader><leader>b c\textbf{<Esc>pa}<Esc>  " enbolden a selection
+../ftplugin/tex.vim:vnoremap <buffer><leader><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
+../ftplugin/tex.vim:nnoremap <buffer><leader>> :call DemoteSubSections()<CR>
+../ftplugin/tex.vim:vnoremap <buffer><leader>> <Esc>:call DemoteSubSections()<CR>
+../ftplugin/tex.vim:nnoremap <buffer><leader>< :call PromoteSubSections()<CR>
+../ftplugin/tex.vim:vnoremap <buffer><leader>< <Esc>:call PromoteSubSections()<CR>
 ../ftplugin/tex.vim:vnoremap <leader>b c\textbf{}<Esc>P
 ../ftplugin/tex.vim:vnoremap <buffer> <leader>v1 :s#^\v(.+)$#\1 \\\\#g <bar> nohlsearch <CR>
 ../ftplugin/tex.vim:vnoremap <buffer> <leader>v2 :s#^\v(.+) \\\\$\n^$#\1\r#g <CR>
@@ -33,12 +39,16 @@
 ../ftplugin/markdown.vim:vnoremap <buffer><leader>< :s/^#//<CR>
 ../ftplugin/markdown.vim:nnoremap <buffer> <leader>` viwc``<Esc>P
 ../ftplugin/markdown.vim:vnoremap <leader>` c``<Esc>P
-../ftplugin/bbcode.vim:nnoremap <buffer> <leader>[ viwc[b][/b]<Esc>hhhP
-../ftplugin/bbcode.vim:vnoremap <buffer> <leader>[ c[b][/b]<Esc>hhhP
+../ftplugin/bbcode.vim:nnoremap <buffer> <leader>] viwc[b][/b]<Esc>hhhP
+../ftplugin/bbcode.vim:vnoremap <buffer> <leader>] c[b][/b]<Esc>hhhP
+../.git/logs/HEAD:40ff2236a485c77c6cc498ff554b5407e3f2ba6b 9e721571293ed211855cb2f579b65f3ea3725195 Joseph Harriott <trohib@gmail.com> 1587388326 +0200	commit: Grab uses of <leader>
+../.git/logs/HEAD:a5d36e25c2289208b44350329fe1043e4993b45c 9bca56807cbf1065f68c9d832b76304fc205da11 Joseph Harriott <trohib@gmail.com> 1587415135 +0200	commit: <leader>vg
+../.git/logs/refs/heads/master:40ff2236a485c77c6cc498ff554b5407e3f2ba6b 9e721571293ed211855cb2f579b65f3ea3725195 Joseph Harriott <trohib@gmail.com> 1587388326 +0200	commit: Grab uses of <leader>
+../.git/logs/refs/heads/master:a5d36e25c2289208b44350329fe1043e4993b45c 9bca56807cbf1065f68c9d832b76304fc205da11 Joseph Harriott <trohib@gmail.com> 1587415135 +0200	commit: <leader>vg
 ../gvimrc.vim:nnoremap <leader>8 :call EightyTwoColumns()<cr>
-../keystrokes.md:<leader>atob " base64 to a string
-../keystrokes.md:<leader>btoa " a string to base64
-../keystrokes.md:<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
+../keystrokes.md:	<leader>atob " base64 to a string
+../keystrokes.md:	<leader>btoa " a string to base64
+../keystrokes.md:	<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
 ../pack/packs-cp/opt/vim-easy-align/test/include/setup.vader:  vnoremap <silent> <Leader>r<Enter> :LiveEasyAlign!<Enter>
 ../pack/packs-cp/opt/vim-easy-align/test/include/setup.vader:  " vnoremap <silent> <Leader><Enter>  :LiveEasyAlign<Enter>
 ../pack/packs-cp/opt/vim-easy-align/test/include/setup.vader:  " nmap <leader>A <Plug>(EasyAlignOperator)
@@ -249,7 +259,14 @@
 ../pack/packs-cp/opt/vim-base64/doc/tags:base64-<leader>-atob/	base64.txt	/*base64-<leader>-atob\/*
 ../pack/packs-cp/opt/vim-base64/doc/tags:base64-<leader>-btoa/	base64.txt	/*base64-<leader>-btoa\/*
 ../pack/packs-cp/opt/vim-base64/doc/tags:debase64-<leader>-btoa	base64.txt	/*debase64-<leader>-btoa*
-../pack/packs-cp/opt/nerdcommenter/plugin/NERD_commenter.vim:                execute mode . 'map <leader>' . a:combo . ' ' . plug
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/cmdrangeconverter.vim:"   You want to invoke a command :Foo in a line-wise mapping <Leader>foo; the
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/cmdrangeconverter.vim:"	nnoremap <Leader>foo :<C-u>.Foo<CR>
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/cmdrangeconverter.vim:"	nnoremap <Leader>foo :Foo<CR>
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/cmdrangeconverter.vim:"	:nnoremap <Leader>foo :call ingo#cmdrangeconverter#BufferToLineRange('Foo')<Bar>if ingo#err#IsSet()<Bar>echoerr ingo#err#Get()<Bar>endif<CR>
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/cmdrangeconverter.vim:"   a mapping <Leader>foo that defaults to the whole buffer, unless [count] is
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/cmdrangeconverter.vim:"	:nnoremap <Leader>foo :<C-u>if ! ingo#cmdrangeconverter#LineToBufferRange('s///g')<Bar>echoerr ingo#err#Get()<Bar>endif<CR>
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/err.vim:"	nnoremap <Leader>f :call Foo#Bar()<Bar>if ingo#err#IsSet()<Bar>echoerr ingo#err#Get()<Bar>endif<CR>
+../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:                execute mode . 'map <leader>' . a:combo . ' ' . plug
 ../pack/packs-cp/opt/nerdcommenter/README.md:  * `[count]<leader>cc` **|NERDCommenterComment|**
 ../pack/packs-cp/opt/nerdcommenter/README.md:  * `[count]<leader>cn` **|NERDCommenterNested|**
 ../pack/packs-cp/opt/nerdcommenter/README.md:    Same as <leader>cc but forces nesting.
@@ -269,45 +286,45 @@
 ../pack/packs-cp/opt/nerdcommenter/README.md:nnoremap <silent> <leader>c} V}:call NERDComment('x', 'toggle')<CR>
 ../pack/packs-cp/opt/nerdcommenter/README.md:nnoremap <silent> <leader>c{ V{:call NERDComment('x', 'toggle')<CR>
 ../pack/packs-cp/opt/nerdcommenter/CHANGELOG.md:*  use |<Leader>| instead of comma to start the default mappings
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Most NERD commenter commands are executed using the |<Leader>| key. In Vim
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:In the definition of custom commands |<Leader>| is the placeholder for the 
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:leader key. To see the current mapping for |<Leader>| type :echo mapleader.
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|cc |NERDCommenterComment|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|cn |NERDCommenterNested|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Same as |<Leader>|cc but forces nesting.
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|c<space> |NERDCommenterToggle|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|cm |NERDCommenterMinimal|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|ci |NERDCommenterInvert|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|cs |NERDCommenterSexy|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|cy |NERDCommenterYank|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Same as |<Leader>|cc except that the commented line(s) are yanked first.
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:|<Leader>|c$ |NERDCommenterToEOL|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:|<Leader>|cA |NERDCommenterAppend|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:|<Leader>|ca |NERDCommenterAltDelims|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|cl    |NERDCommenterAlignLeft|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|cb    |NERDCommenterAlignBoth|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:left side (|<Leader>|cl) or both sides (|<Leader>|cb).
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:[count]|<Leader>|cu |NERDCommenterUncomment|
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: [count]|<Leader>|cc
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: [count]|<Leader>|cn
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Performs nested commenting.  Works the same as |<Leader>|cc except that if a line
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: [count]|<Leader>|c<space>
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: [count]|<Leader>|cm
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:|<Leader>|cm then a '/*' will be placed at the start of the top line and a '*/'
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: |<Leader>|ci
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: [count]|<Leader>|cs
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: [count]|<Leader>|cy
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Same as |<Leader>|cc except that it yanks the line(s) that are commented first.
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: |<Leader>|c$
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: |<Leader>|cA
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: |<Leader>|ca
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:if the user is editing a c++ file using // comments and they hit |<Leader>|ca
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mappings: [count]|<Leader>|cl   [count]|<Leader>|cb
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Same as |<Leader>|cc except that the comment delimiters are aligned on the left
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Default mapping: [count]|<Leader>|cu
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:|<Leader>|cu on this line: >
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:and we comment it with |<Leader>|cn it will be changed to: >
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:you hit |<Leader>|cc on a line that is already commented it will be commented
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Most NERD commenter commands are executed using the |<Leader>| key. In Vim
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:In the definition of custom commands |<Leader>| is the placeholder for the 
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:leader key. To see the current mapping for |<Leader>| type :echo mapleader.
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|cc |NERDCommenterComment|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|cn |NERDCommenterNested|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Same as |<Leader>|cc but forces nesting.
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|c<space> |NERDCommenterToggle|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|cm |NERDCommenterMinimal|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|ci |NERDCommenterInvert|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|cs |NERDCommenterSexy|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|cy |NERDCommenterYank|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Same as |<Leader>|cc except that the commented line(s) are yanked first.
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:|<Leader>|c$ |NERDCommenterToEOL|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:|<Leader>|cA |NERDCommenterAppend|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:|<Leader>|ca |NERDCommenterAltDelims|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|cl    |NERDCommenterAlignLeft|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|cb    |NERDCommenterAlignBoth|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:left side (|<Leader>|cl) or both sides (|<Leader>|cb).
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:[count]|<Leader>|cu |NERDCommenterUncomment|
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: [count]|<Leader>|cc
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: [count]|<Leader>|cn
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Performs nested commenting.  Works the same as |<Leader>|cc except that if a line
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: [count]|<Leader>|c<space>
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: [count]|<Leader>|cm
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:|<Leader>|cm then a '/*' will be placed at the start of the top line and a '*/'
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: |<Leader>|ci
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: [count]|<Leader>|cs
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: [count]|<Leader>|cy
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Same as |<Leader>|cc except that it yanks the line(s) that are commented first.
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: |<Leader>|c$
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: |<Leader>|cA
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: |<Leader>|ca
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:if the user is editing a c++ file using // comments and they hit |<Leader>|ca
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mappings: [count]|<Leader>|cl   [count]|<Leader>|cb
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Same as |<Leader>|cc except that the comment delimiters are aligned on the left
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Default mapping: [count]|<Leader>|cu
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:|<Leader>|cu on this line: >
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:and we comment it with |<Leader>|cn it will be changed to: >
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:you hit |<Leader>|cc on a line that is already commented it will be commented
 ../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                 <Leader>be  - Opens BufExplorer
 ../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                 <Leader>bt  - Toggles BufExplorer open or closed
 ../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                 <Leader>bs  - Opens horizontally split window BufExplorer
@@ -352,6 +369,7 @@
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pe <Plug>(PickerEdit)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>ps <Plug>(PickerSplit)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pt <Plug>(PickerTabedit)
+../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pd <Plug>(PickerTabdrop)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pv <Plug>(PickerVsplit)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pb <Plug>(PickerBuffer)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>p] <Plug>(PickerTag)
@@ -416,16 +434,23 @@
 ../plugin/plugins.vim:  nnoremap <leader>B :BLines<CR>
 ../plugin/plugins.vim:  nnoremap <leader>L :Lines<CR>
 ../plugin/plugins.vim:  nnoremap <leader>bf :Buffers<CR>
-../plugin/plugins.vim:nnoremap <leader>m :MRU
-../plugin/plugins.vim:inoremap <leader>m :MRU
-../plugin/plugins.vim:vnoremap <leader>m :MRU
+../plugin/plugins.vim:  nnoremap <leader>m :MRU
+../plugin/plugins.vim:  nnoremap <leader>m :MRU<CR>
+../plugin/plugins.vim:  " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
+../plugin/plugins.vim:  nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>me :call MRU_highlighted('\.pl')<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>mx :call MRU_highlighted('\.tex')<CR>:se hls<CR>
+../plugin/plugins.vim:" <leader>c<space> -> NERDCommenterToggle
 ../plugin/plugins.vim:" <Leader>f{char} to move to {char}
 ../plugin/plugins.vim:map  <Leader><Leader>f <Plug>(easymotion-bd-f)
 ../plugin/plugins.vim:nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
 ../plugin/plugins.vim:map  <Leader><Leader>w <Plug>(easymotion-bd-w)
 ../plugin/plugins.vim:nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 ../plugin/plugins.vim:nnoremap <leader>e :call EasyMotionSearchToggle()<cr>
-../plugin/plugins.vim:noremap <leader>gg :GitGutterToggle<CR>
+../plugin/plugins.vim:noremap <leader>gg :GitGutterBufferToggle<CR>
 ../plugin/plugins.vim:nnoremap <leader>LT :call LanguageTool_lopen() <CR>
 ../plugin/plugins.vim:nnoremap <leader>lt :LangTool <bar> lopen <CR>
 ../plugin/plugins.vim:  nmap <unique> <leader>pe <Plug>(PickerEdit)
@@ -447,11 +472,13 @@
 ../plugin/plugin.vim:nnoremap <leader>pt :call ParenthsToggle()<cr>
 ../plugin/plugin.vim:noremap <leader>q :copen<CR>
 ../plugin/plugin.vim:nnoremap <leader>vs :call ConvertSearchForVisualSelection()<CR>
+../plugin/plugin.vim:vnoremap <leader>vs <Esc>:call ConvertSearchForVisualSelection()<CR>
 ../plugin/plugin.vim:  nnoremap <leader>v v$hy
 ../plugin/plugin.vim:nnoremap <leader>f :let@f=@%<CR>
 ../plugin/plugin.vim:nnoremap <leader>- :Hexplore<cr>
 ../plugin/plugin.vim:nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 ../plugin/plugin.vim:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+../scratch.vim:nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\misc\PerlTools\mysmsMD.pl ".expand('%:p')<CR>
 ../vimrc.vim:noremap <leader>ll :set list! list? <CR>
 ../vimrc.vim:nnoremap <leader>x <C-W>c
 ../vimrc.vim:nnoremap <silent><leader><leader>c :set cuc! cuc? <CR>

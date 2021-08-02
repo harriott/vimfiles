@@ -46,7 +46,7 @@ if has('nvim')
   highlight ExtraWhitespace ctermbg=blue
   let g:better_whitespace_operator=''
 else
-  colorscheme tomorrow " good for terminal Vim
+  colorscheme tomorrow
   packadd vim-ingo-library
   packadd vim-ShowTrailingWhitespace
 endif

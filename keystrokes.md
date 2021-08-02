@@ -78,10 +78,14 @@ Joseph's useful (g)Vim commands
     C-r%     " insert relative path of current file
     C-qu201c " unicode codepoint for “
 
-# Movements
+# movements
     $         " end of line
     '.        " jump to position where last change occurred in current buffer
     'k        " move to mark k
+    :(5,7)m0  " move line(s 5-7) to start
+    :#        " go to line #
+    :m-2      " That is, the current line is moved up one line
+    :m+       " the current line is moved down one line
     0         " start of line
     #G        " go to line #
     C-e       " scroll up the window, without displacing the cursor
@@ -90,8 +94,6 @@ Joseph's useful (g)Vim commands
     M         " go Middle line (of current window display)
     L         " go Last line (of current window display)
     ^         " first non-blank char of line
-    ``        " jump back (to position in current buffer where jumped from)
-    `a        " jump to position (line and column) of mark a
     g$        " jump to last character of screen line
     g,        " jump forward to position of a newer change
     g;        " jump back to position of an older change
@@ -103,16 +105,14 @@ Joseph's useful (g)Vim commands
     zz        " centre window on cursor
     { or }    " move cursor to start or end of paragraph
     ( or )    " move cursor to start or end of sentence
-    ~         " toggle case of selection
-    \zz       " (mapped in my vimrc to) toggle the value of 'scrolloff'
     C-b       " back (=up) a page
     C-d       " down half a screen
     C-f       " forward (=down) a page
     C-u       " up half a screen
-    :(5,7)m0  " move line(s 5-7) to start
-    :#        " go to line #
-    :m-2      " That is, the current line is moved up one line
-    :m+       " the current line is moved down one line
+    \zz       " (mapped in my vimrc to) toggle the value of 'scrolloff'
+    ^         " jumps to first non-blank character
+    ``        " jump back (to position in current buffer where jumped from)
+    `a        " jump to position (line and column) of mark a
 
 # search
     #                     " over a word highlights all exact instances, and jumps to last
@@ -150,12 +150,12 @@ Joseph's useful (g)Vim commands
 	text\|alt     " searches for text & alt
 
 ## regex
-\(alt1\|alt2\|alt3\)
-\d  " digit
-\D  " non-digit
-\S  " non-whitespace character
-\s  " whitespace character
-\u  " uppercase character
+	\(alt1\|alt2\|alt3\)
+	\d  " digit
+	\D  " non-digit
+	\S  " non-whitespace character
+	\s  " whitespace character
+	\u  " uppercase character
 
 # shell
     :!<shellcmd>          " runs the external shell command
@@ -170,16 +170,16 @@ Joseph's useful (g)Vim commands
     \vg                   " cd to file's and vimgrep for last search
     C-g                   " display relative path of current file
     <shellcmd> | gvim -   " pipes shell command output into gvim
-    gf                    " open file under cursor
+    gf                    " open file under cursor - :h gF
     gx                    " open url under cursor
 
 ## open webpages
-F6 " open a uURL using open-browser.vim
+	F6 " open a uURL using open-browser.vim
 
 ### vim-open-url
-gB " open URL
-gS " search word
-gW " search Wikipedia
+	gB " open URL
+	gS " search word
+	gW " search Wikipedia
 
 # spell
     (count)]s => move to next misspelled word after the cursor
@@ -212,12 +212,13 @@ gW " search Wikipedia
     :ni<somecharacter><Enter>          " inserts <somecharacters> n time
     :s/./&/gn|noh                      " show number of characters in a long line
     \yy                                " CalendarH
+    ~                                  " toggle case of selection
 
 Entering special characters
 
 ## base64
-<leader>atob " base64 to a string
-<leader>btoa " a string to base64
+	<leader>atob " base64 to a string
+	<leader>btoa " a string to base64
 
 ## layout
     :%le  " remove all indents
@@ -226,15 +227,15 @@ Entering special characters
     gg=G  " indent a file
 
 ### Colorizer
-:ColorHighlight  " impressive colourizing, but then can't be truly turned off
-:packadd Colorizer
+	:ColorHighlight  " impressive colourizing, but then can't be truly turned off
+	:packadd Colorizer
 
 ### colorizer
-<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
-:packadd colorizer  " load the plugin from an opt directory. Only interprets codes.
+	<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
+	:packadd colorizer  " load the plugin from an opt directory. Only interprets codes.
 
 ### colour test
-pack/packs-unix/opt/vim-hexokinase/test_colours.txt
+	pack/packs-unix/opt/vim-hexokinase/test_colours.txt
 
 #### cterm-colors
     NR-16   NR-8    COLOR NAME
@@ -256,19 +257,19 @@ pack/packs-unix/opt/vim-hexokinase/test_colours.txt
     15      7*      White
 
 #### gui-colors
-Red         LightRed        DarkRed
-Green       LightGreen      DarkGreen       SeaGreen
-Blue        LightBlue       DarkBlue        SlateBlue
-Cyan        LightCyan       DarkCyan
-Magenta     LightMagenta    DarkMagenta
-Yellow      LightYellow     Brown           DarkYellow
-Gray        LightGray       DarkGray
-Black       White
-Orange      Purple          Violet
+	Red         LightRed        DarkRed
+	Green       LightGreen      DarkGreen       SeaGreen
+	Blue        LightBlue       DarkBlue        SlateBlue
+	Cyan        LightCyan       DarkCyan
+	Magenta     LightMagenta    DarkMagenta
+	Yellow      LightYellow     Brown           DarkYellow
+	Gray        LightGray       DarkGray
+	Black       White
+	Orange      Purple          Violet
 
 ### Hexokinase
-:HexokinaseTurnOn
-:packadd vim-hexokinase
+	:HexokinaseTurnOn
+	:packadd vim-hexokinase
 
 ## number lists
     :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
@@ -282,6 +283,7 @@ Orange      Purple          Violet
 # Vim
     :Bufferize let
     :Bufferize version  " Vim version etc
+    :colo  " see current colorscheme
     @:  " repeat last command-line
     K   " brings up a man page (if there is one) for word under cursor
     ga  " returns code values for character under cursor
@@ -306,13 +308,13 @@ Orange      Purple          Violet
     :DiffOrig  " brings the Recover version up left
 
 ## buffer listing your recent messages
-:redir @m | silent messages | redir END | new | exe "normal! \"mp"
+	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
 
 ## syntax highlighting
-:h syn-region
-:so $VIMRUNTIME/syntax/hitest.vim
+	:h syn-region
+	:so $VIMRUNTIME/syntax/hitest.vim
 
-$VIMRUNTIME/syntax/syncolor.vim
+	$VIMRUNTIME/syntax/syncolor.vim
 
 # Visual mode commands
     V  " line-based visual selection

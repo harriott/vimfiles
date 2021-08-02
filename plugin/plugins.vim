@@ -8,17 +8,17 @@
 ""> ALE
 " :Bufferize ALEInfo  " shows settings for the filetype
 " :h ale-languagetool-options
-" ALEToggleBuffer
-" ale_enabled
+" :let ale_enabled
 
-" let g:ale_linters = {'text': ['languagetool']}
 let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
 let g:ale_sign_column_always = 1
 packadd ale
 
 " moving to ALE errors
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+noremap <silent> <C-j> <Plug>(ale_next_wrap)
+noremap <silent> <C-k> <Plug>(ale_previous_wrap)
+
+noremap <leader>aa :ALEToggleBuffer<CR>
 
 ""> bufexplorer
 packadd bufexplorer
@@ -142,8 +142,12 @@ if has('unix')
 else
   nnoremap <leader>m :MRU<CR>
   " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
-  nnoremap <leader>mt :call MRU_highlighted('\.tex')<CR>:se hls<CR>
+  nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
+  nnoremap <leader>me :call MRU_highlighted('\.pl')<CR>:se hls<CR>
   nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
+  nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
+  nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
+  nnoremap <leader>mx :call MRU_highlighted('\.tex')<CR>:se hls<CR>
   function! MRU_highlighted(filetype)
     let @/ = a:filetype
     MRU
@@ -182,6 +186,7 @@ packadd quick-scope
 
 ""> SimpylFold
 " packadd SimpylFold
+" Python folding
 
 ""> supertab
 packadd supertab
@@ -297,7 +302,11 @@ packadd vim-gfm-syntax
 ""> vim-gitgutter
 let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
-noremap <leader>gg :GitGutterToggle<CR>
+packadd vim-gitgutter
+
+"">> toggle
+let g:GGF = 0
+" $vimfiles/after/plugin/plugins.vim
 
 ""> vim-hexokinase
 " enabled in my ~/.config/nvim/init.vim
@@ -354,7 +363,8 @@ packadd vim-repeat
 packadd vim-rhubarb
 
 ""> vim-ShowTrailingWhitespace
-if has('win32') | packadd vim-ingo-library | packadd vim-ShowTrailingWhitespace | endif " unix only added in terminal
+if has('win32') | packadd vim-ingo-library | packadd vim-ShowTrailingWhitespace | endif
+" unix only added in terminal
 
 ""> vim-startify
 packadd vim-startify

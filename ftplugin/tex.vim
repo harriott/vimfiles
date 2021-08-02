@@ -8,9 +8,15 @@
 " $VIMRUNTIME/filetype.vim > TeX  to see detections
 " see also  $vimfiles/after/ftplugin/tex.vim
 
+" ALE
+let b:ale_enabled = 0 " and toggle it as defined in $vimfiles/plugin/plugins.vim
+
 nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
 nnoremap <buffer><leader><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
-vnoremap <buffer><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
+vnoremap <buffer><leader><leader>b c\textbf{<Esc>pa}<Esc>  " enbolden a selection
+vnoremap <buffer><leader><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
+
+nnoremap <buffer> gT :normal gAip*&<CR> " over-mapping - h gT
 
 ""> demote or promote sections
 " select a region, then
@@ -39,7 +45,7 @@ endfunction
 nnoremap <buffer><leader>< :call PromoteSubSections()<CR>
 vnoremap <buffer><leader>< <Esc>:call PromoteSubSections()<CR>
 
-""> Folding
+""> folding
 if b:PandocLaTeX
   " I've made this case for easier management of $onGH/pandoc-templates/default-jh-3.latex
   setlocal fde=LTXF() fdl=0 fdm=expr

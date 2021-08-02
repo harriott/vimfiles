@@ -8,7 +8,8 @@
 " If you want to trigger these adjustments from the modeline in a file, it's:
 "  /* vim: set ft=dokuwiki: */
 " You should also have  https://github.com/nblock/vim-dokuwiki/blob/master/syntax/dokuwiki.vim
-"  installed at  $HOME/vimfiles/syntax/dokuwiki.vim
+"  installed at  $vimfiles/syntax/dokuwiki.vim
+"  I prefer to comment out conceal to '…'.
 "  with this line commented out:  setlocal foldmethod=syntax
 
 " While developing this plugin, I used

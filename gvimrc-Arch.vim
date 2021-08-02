@@ -3,24 +3,39 @@
 " ----------------------------------------------------------------------
 
 " disable beeps:
-set vb t_vb=
+set visualbell t_vb=
 
 " move on ot the more portable configuration:
 source $HOME/.vim/gvimrc.vim
 
 " Colour Scheme
 " ------------
-function! UpdateTWSDark()
-  highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
-  highlight SignColumn guibg=black ctermbg=black " less distracting ALE
+function! TWSDark()
+  set background=dark
+    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
+    highlight SignColumn guibg=black ctermbg=black " less distracting ALE
+  let g:CSDark = 1
 endfunction
 
 " start with Tomorrow dark
-colorscheme tomorrow
-set background=dark
-call UpdateTWSDark()
-set cul
+" colorscheme solarized
+let g:gitgutter_set_sign_backgrounds = 1
+call TWSDark()
 
-" colour scheme toggle
-call togglebg#map("<C-F5>")
+" reliable light-dark toggle
+nnoremap <C-F5> :call ColorLightDark()<cr>
+function! ColorLightDark()
+  if g:CSDark
+    colorscheme default
+    set background=light
+    " " if Solarized
+    " highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
+    " if Tomorrow
+    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Grey
+    let g:CSDark = 0
+  else
+    colorscheme tomorrow
+    call TWSDark()
+  endif
+endfunction
 

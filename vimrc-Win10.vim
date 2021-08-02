@@ -26,12 +26,13 @@ unmap <C-F>
 
 "">> colorscheme
 function! STWDG()
-  highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
+  set background=dark
+    highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
+  let g:CSDark = 1
 endfunction
 colorscheme tomorrow
 set background=dark
 call STWDG()
-let g:CSDark = 1
 
 "">>> reliable light-dark toggle
 nnoremap <C-F5> :call ColorLightDark()<cr>
@@ -44,9 +45,7 @@ function! ColorLightDark()
     highlight ShowTrailingWhitespace ctermbg=Grey guibg=Grey
     let g:CSDark = 0
   else
-    set background=dark
     call STWDG()
-    let g:CSDark = 1
   endif
 endfunction
 

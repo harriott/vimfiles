@@ -9,10 +9,13 @@
 if has('unix') " should really be asking if Perl is available
   nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack/onGitHub/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
 else
-  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
-  " fails - try with fileformat dos
+  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\misc\PerlTools\mysmsMD.pl ".expand('%:p')<CR>
 endif
 " check with  :map <leader><F7>
+function! MysmsMD()
+  " silent !perl $ITstack\onGitHub\misc\PerlTools\mysmsMD.pl ".expand('%:p')
+  execute "!perl ".$ITstack."\\onGitHub\\misc\\PerlTools\\mysmsMD.pl ".expand('%:p')
+endfunction
 
 " open Pandoc'd pdf
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>

@@ -1,4 +1,3 @@
-" vim: fdm=expr ft=vim.vimconfig:
 
 " -----------------------------------------------------------------------
 " source this file in _gvimrc like this: source $HOME/vimfiles/gvimrc.vim
@@ -28,9 +27,10 @@ set cmdheight=2		" Make command line two lines high
 set mousehide		" Hide the mouse when typing text
 
 ""> 1 my additional initial settings
+set cul
 set guioptions-=T  "removes toolbar
 
-"">> high contrast
+"">> high contrast Solarized
 let g:solarized_contrast="high"  "default value is normal, for solarized & tomorrow
 
 "">> menubar
