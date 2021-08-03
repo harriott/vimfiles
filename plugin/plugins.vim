@@ -143,7 +143,8 @@ else
   nnoremap <leader>m :MRU<CR>
   " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
   nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
-  nnoremap <leader>me :call MRU_highlighted('\.pl')<CR>:se hls<CR>
+  nnoremap <leader>md :call MRU_highlighted('\.md' )<CR>:se hls<CR>
+  nnoremap <leader>me :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
   nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
   nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
   nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
@@ -317,22 +318,22 @@ let g:Hexokinase_highlighters = ['foregroundfull']
 ""> vim-hjson
 packadd vim-hjson
 
-""> vim-LanguageTool
-nnoremap <leader>LT :call LanguageTool_lopen() <CR>
-function! LanguageTool_lopen()
-  LanguageToolCheck
-  lopen
-endfunction
+" ""> vim-LanguageTool
+" nnoremap <leader>LT :call LanguageTool_lopen() <CR>
+" function! LanguageTool_lopen()
+"   LanguageToolCheck
+"   lopen
+" endfunction
 
-" :LanguageToolClear
-let g:languagetool_win_height = -1
-" needs a  g:languagetool_*  defined
-packadd vim-LanguageTool
+" " :LanguageToolClear
+" let g:languagetool_win_height = -1
+" " needs a  g:languagetool_*  defined
+" packadd vim-LanguageTool " then can  :h LanguageTool
 
 ""> vim-langtool
 " needs  g:langtool_jar  defined
 nnoremap <leader>lt :LangTool <bar> lopen <CR>
-packadd vim-langtool
+packadd vim-langtool  " can then  :h langtool
 
 ""> vim-matchit
 packadd vim-matchit
@@ -368,6 +369,7 @@ if has('win32') | packadd vim-ingo-library | packadd vim-ShowTrailingWhitespace 
 
 ""> vim-startify
 packadd vim-startify
+" Startify
 
 ""> vim-surround
 packadd vim-surround

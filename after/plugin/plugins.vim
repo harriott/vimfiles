@@ -1,11 +1,15 @@
+" vim: fdl=2:
 
 " Joseph Harriott
 " ---------------
 
-" (keep this file in your after directory so's it's sourced after the plugins)
-" ----------------------------------------------------------------------------
+" keep this file in your  after/plugin  directory so's it's sourced after the plugins
+" -----------------------------------------------------------------------------------
 
-" vim-gitgutter toggle
+""> vim-gitgutter
+" $vimfiles/plugin/plugins.vim
+
+"">> toggle
 function! GitGutterFocus()
   if g:GGF
     GitGutterDisable

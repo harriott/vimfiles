@@ -32,7 +32,7 @@ endfunction
 
 setlocal fde=BuildFile()
 
-""> turn off or on a fold of Bash commands
+""> turn off or on a fold of commands
 
 " firmly comment out a whole fold
 function! FirmComment()

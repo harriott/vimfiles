@@ -27,7 +27,8 @@ unmap <C-F>
 "">> colorscheme
 function! STWDG()
   set background=dark
-    highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
+    " highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
+    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
   let g:CSDark = 1
 endfunction
 colorscheme tomorrow
@@ -62,9 +63,6 @@ if isdirectory($HOME.'/.vimundo') == 0
   :silent !md \%UserProfile\%\\.vimundo
 endif
 
-"">> LanguageTool
-let g:languagetool_jar='$HOME\LanguageTool-4.6\languagetool-commandline.jar'
-
 "">> nicer font
 set guifont=Lucida_Console:h9  "better to append size so that it's reported
 set linespace=4
@@ -78,11 +76,16 @@ endfunction
 "">> paths
 let $IT1 = $DROPBOX.'/JH/Technos/IT1'
 let $SPD = $onGH.'/SyncPortableDrives\RoboCopy\T430i73520M'
+let $vimfiles = $HOME.'/vimfiles'
 
 "">>> TeX locations
 let $MD4PDF = $onGH.'/md4pdf'
 let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'
 let $tex = $HOME.'/AppData/Roaming/MiKTeX/tex'
+
+"">> vim-langtool
+" let g:languagetool_jar=$HOME.'\tools\LanguageTool-5.4\languagetool-commandline.jar'
+let g:langtool_jar=$HOME.'\tools\LanguageTool-5.4\languagetool-commandline.jar'
 
 "">> Windows Explorer on current file
 nnoremap <F11> :!start explorer /select,%:p<CR>

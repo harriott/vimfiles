@@ -23,6 +23,7 @@ ensurePath cp
   # gicl https://github.com/bronson/vim-visual-star-search
   # gicl https://github.com/christianrondeau/vim-base64
   # gicl https://github.com/dhruvasagar/vim-open-url
+  # gicl https://github.com/dpelle/vim-LanguageTool
   # gicl https://github.com/drmikehenry/vim-fontsize
   # gicl https://github.com/harriott/vim-buffing-wheel
   # gicl https://github.com/haya14busa/incsearch-fuzzy.vim
@@ -66,7 +67,6 @@ ensurePath win32
   # gicl https://github.com/chikamichi/mediawiki.vim
   # gicl https://github.com/ctrlpvim/ctrlp.vim
   # gicl https://github.com/dense-analysis/ale
-  # gicl https://github.com/dpelle/vim-LanguageTool
   # gicl https://github.com/easymotion/vim-easymotion
   # gicl https://github.com/ervandew/supertab
   # gicl https://github.com/godlygeek/tabular

@@ -1,7 +1,7 @@
 " Couple of adjustments.
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Fri 21 Aug 2020
+" Last Change: Tue 03 Aug 2021
 " this is for extra funtionality that I like for my *.md files
 
 " Convert mysms screen scrape to markdown:
@@ -9,13 +9,10 @@
 if has('unix') " should really be asking if Perl is available
   nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack/onGitHub/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
 else
-  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\misc\PerlTools\mysmsMD.pl ".expand('%:p')<CR>
+  nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
+    " defined in  $vimfiles/after/ftplugin/md.vim
 endif
 " check with  :map <leader><F7>
-function! MysmsMD()
-  " silent !perl $ITstack\onGitHub\misc\PerlTools\mysmsMD.pl ".expand('%:p')
-  execute "!perl ".$ITstack."\\onGitHub\\misc\\PerlTools\\mysmsMD.pl ".expand('%:p')
-endfunction
 
 " open Pandoc'd pdf
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>

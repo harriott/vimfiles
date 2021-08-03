@@ -164,6 +164,7 @@ Joseph's useful (g)Vim commands
     :packadd syntastic    " load the plugin from an opt directory
     :packadd vim-rhubarb  " load the plugin from an opt directory, for :GBrowse to work
     :r!<shell command>    " reads shell command output into the buffer
+    :set shell?           " returns the path to the shell
     :tabe $HOME/_vimrc    " bring up my vimrc in a new tab
     :ALEToggle
     :Vexplore             " opens a netrw vertical directory browsing window
