@@ -283,6 +283,9 @@ endfunction
 
 ""> vim-fontsize
 packadd vim-fontsize
+" <Leader><Leader>+ -> bigger font
+" <Leader><Leader>- -> smaller font
+" <Leader><Leader>0 -> default font size
 
 ""> vim-fugitive
 " ce  " amend the last commit without editing the message

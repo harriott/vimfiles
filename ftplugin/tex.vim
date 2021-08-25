@@ -16,7 +16,7 @@ nnoremap <buffer><leader><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
 vnoremap <buffer><leader><leader>b c\textbf{<Esc>pa}<Esc>  " enbolden a selection
 vnoremap <buffer><leader><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
 
-nnoremap <buffer> gT :normal gAip*&<CR> " over-mapping - h gT
+nnoremap <buffer> gT :normal gAip*&<CR><Bar> :update<CR> " over-mapping - h gT
 
 ""> demote or promote sections
 " select a region, then

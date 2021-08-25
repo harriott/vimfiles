@@ -9,7 +9,7 @@
 " vim: set ft=email:
 " Preferable to also have my  ../syntax/email.vim, then can see  $vimfiles/ftplugin/email.txt
 
-setlocal et tw=0 foldcolumn=1 fde=EF() fdm=expr spell
+setlocal et tw=0 foldcolumn=1 fde=EF() fdm=expr shiftwidth=2 spell
 
 " create a heading around text:
 nnoremap <buffer> <leader><leader>= I==  <Esc>A  ==<Esc>
