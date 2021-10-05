@@ -143,7 +143,7 @@ else
   nnoremap <leader>m :MRU<CR>
   " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
   nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
-  nnoremap <leader>md :call MRU_highlighted('\.md' )<CR>:se hls<CR>
+  nnoremap <leader>mm :call MRU_highlighted('\.md' )<CR>:se hls<CR>
   nnoremap <leader>me :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
   nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
   nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
@@ -289,7 +289,6 @@ packadd vim-fontsize
 
 ""> vim-fugitive
 " ce  " amend the last commit without editing the message
-" F3  " Ggrep for last search
 " :GBrowse
 
 " Ggrep for last search

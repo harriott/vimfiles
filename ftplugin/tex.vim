@@ -1,7 +1,7 @@
 
 " Language:	TeX
 " Maintainer: Joseph Harriott
-" Last Change: Fri 07 May 2021
+" Last Change: Tue 31 Aug 2021
 " Useful adjustments for working with LaTeX documents.
 "  supplemental to  $VIMRUNTIME/ftplugin/tex.vim
 " This file should be in your vimfiles\ftplugin folder.
@@ -16,7 +16,10 @@ nnoremap <buffer><leader><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
 vnoremap <buffer><leader><leader>b c\textbf{<Esc>pa}<Esc>  " enbolden a selection
 vnoremap <buffer><leader><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
 
+" EasyAlign
 nnoremap <buffer> gT :normal gAip*&<CR><Bar> :update<CR> " over-mapping - h gT
+inoremap <buffer><S-F7> <Esc>:normal gAip*&<CR><Bar> :update<CR>
+" - might not work in some invocations of vim
 
 ""> demote or promote sections
 " select a region, then

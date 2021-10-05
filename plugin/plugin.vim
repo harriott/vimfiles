@@ -18,13 +18,12 @@ autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <F4> :wa<CR>:q<CR>
 autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <F4> <Esc>:wa<CR>:q<CR>
 
 ""> buffer - packing msgFilterRules.dat
+" These hooks aren't in an  ftplugin/dat.vim  because there's no such default filetype.
+
 " pack msgFilterRules.dat "name" lines:
 autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
-
 " unpack msgFilterRules.dat "name" lines:
 autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
-"
-" These hooks aren't in an  ftplugin/dat.vim  because there's no such default filetype.
 
 ""> buffer - refresh
 " writes all changed buffers and reloads the current one

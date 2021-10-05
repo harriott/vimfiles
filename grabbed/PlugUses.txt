@@ -1049,6 +1049,8 @@
 ../pack/packs-cp/opt/supertab/plugin/supertab.vim:    elseif maparg('<CR>', 'i') =~ '<Plug>delimitMateCR'
 ../pack/packs-cp/opt/vim-fugitive/plugin/fugitive.vim:    let flags = (a:0 ? a:1 : '') . (a:rhs =~# '<Plug>' ? '' : '<script>')
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    let flags = (a:0 ? a:1 : '') . (a:rhs =~# '<Plug>' ? '' : '<script>')
+../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    if v:version >= 704 && get(maparg('<Plug><cfile>', 'c', 0, 1), 'expr')
+../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:        let bufnames = [eval(maparg('<Plug><cfile>', 'c'))]
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:  exe 'cnoremap <buffer> <expr> <Plug><cfile>' (a:0 ? a:1 : 'fugitive#Cfile()')
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:  let b:undo_ftplugin = get(b:, 'undo_ftplugin', 'exe') . '|sil! exe "cunmap <buffer> <Plug><cfile>"'
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', 'gf',          '<SID>:find <Plug><cfile><CR>', '<silent><unique>', 1)
@@ -1400,48 +1402,63 @@
 ../pack/packs-cp/opt/incsearch.vim/doc/tags:<Plug>(incsearch-nohl-star)	incsearch.txt	/*<Plug>(incsearch-nohl-star)*
 ../pack/packs-cp/opt/incsearch.vim/doc/tags:<Plug>(incsearch-nohl0)	incsearch.txt	/*<Plug>(incsearch-nohl0)*
 ../pack/packs-cp/opt/incsearch.vim/doc/tags:<Plug>(incsearch-stay)	incsearch.txt	/*<Plug>(incsearch-stay)*
-../pack/packs-cp/opt/nerdcommenter/plugin/NERD_commenter.vim:        silent! call repeat#set('V' . nlines . 'jo' . "\<Plug>NERDCommenter". a:type)
-../pack/packs-cp/opt/nerdcommenter/plugin/NERD_commenter.vim:        silent! call repeat#set("\<Plug>NERDCommenter". a:type)
-../pack/packs-cp/opt/nerdcommenter/plugin/NERD_commenter.vim:    " 'noremap <silent> <plug>NERDCommenterComment :call NERDComment("n", "Comment")'
-../pack/packs-cp/opt/nerdcommenter/plugin/NERD_commenter.vim:    let plug = '<plug>NERDCommenter' . a:target
-../pack/packs-cp/opt/nerdcommenter/plugin/NERD_commenter.vim:    " 'menu <silent> comment.Comment<Tab>\\cc <plug>NERDCommenterComment'
-../pack/packs-cp/opt/nerdcommenter/plugin/NERD_commenter.vim:inoremap <silent> <plug>NERDCommenterInsert <SPACE><BS><ESC>:call NERDComment('i', 'insert')<CR>
-../pack/packs-cp/opt/nerdcommenter/plugin/NERD_commenter.vim:nnoremap <plug>NERDCommenterAltDelims :call <SID>SwitchToAlternativeDelimiters(1)<cr>
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:nnoremap <Plug>TestEasy simple
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:call IsCompatible('maparg', 'simple mapping', '<Plug>TestEasy')
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:nnoremap <Plug>TestKeyNotation :<C-U>echo<CR>
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:call IsCompatible('maparg', 'key notation', '<Plug>TestKeyNotation')
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:nnoremap <Plug>TestBar :echo "<Bar><Bar>foo"<Bar>version <Bar> quit<CR>
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:call IsCompatible('maparg', 'bar', '<Plug>TestBar')
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:nnoremap <Plug>TestLt echo "\<lt>Plug><lt>NONO"
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:call IsCompatible('maparg', '<lt>', '<Plug>TestLt')
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:nnoremap <Plug>TestSID :<CR><SID>(JustATest):<CR>
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:call vimtap#Is(maparg('<Plug>TestSID', '', 0, 1).rhs, ':<CR><SID>(JustATest):<CR>', 'original does not resolve <SID>')
+../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:call vimtap#Like(ingo#compat#maparg('<Plug>TestSID'), '^:<CR><SNR>\d\+_(JustATest):<CR>$', 'compatibility wrapper resolves <SID> to <SNR>')
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/view.vim:" Use <Plug>(WinSaveView) from any mode at the beginning of a mapping to save
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/view.vim:" At the end of the mapping, use <Plug>(WinRestView) from normal mode to restore
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/motion/omap.vim:    \   (a:operator ==# 'c' ? "\<Plug>(IngoLibraryOmapRepeatReinsert)" : ''),
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/motion/omap.vim:inoremap <Plug>(IngoLibraryOmapRepeatReinsert) <C-r>.<Esc>
+../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:    " 'noremap <silent> <Plug>NERDCommenterComment :call nerdcommenter#Comment("n", "Comment")'
+../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:    let plug = '<Plug>NERDCommenter' . a:target
+../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:    " 'menu <silent> comment.Comment<Tab>\\cc <Plug>NERDCommenterComment'
+../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:inoremap <silent> <Plug>NERDCommenterInsert <Space><BS><Esc>:call nerdcommenter#Comment('i', "insert")<CR>
+../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:nnoremap <Plug>NERDCommenterAltDelims :call nerdcommenter#SwitchToAlternativeDelimiters(1)<CR>
 ../pack/packs-cp/opt/nerdcommenter/CHANGELOG.md:*  removed all the mapping options. Now, mappings to <plug> mappings are used
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterComment
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterNested
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterToggle
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterMinimal
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterInvert
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterSexy
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterYank
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterToEOL
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterAppend
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Map it to: <plug>NERDCommenterInsert
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:    imap <C-c> <plug>NERDCommenterInsert
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterAltDelims
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterAlignLeft
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:           <plug>NERDCommenterAlignBoth
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:Mapped to: <plug>NERDCommenterUncomment
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:To change a mapping just map another key combo to the internal <plug> mapping.
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:    map ,omg <plug>NERDCommenterComment
-../pack/packs-cp/opt/nerdcommenter/doc/NERD_commenter.txt:See the help for the mapping in question to see which <plug> mapping to
+../pack/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim:        silent! call repeat#set('V' . nlines . 'jo' . "\<Plug>NERDCommenter". a:type)
+../pack/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim:        silent! call repeat#set("\<Plug>NERDCommenter". a:type)
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterComment
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterNested
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterToggle
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterMinimal
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterInvert
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterSexy
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterYank
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterToEOL
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterAppend
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Map it to: <plug>NERDCommenterInsert
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:    imap <C-c> <plug>NERDCommenterInsert
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterAltDelims
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterAlignLeft
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:           <plug>NERDCommenterAlignBoth
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterUncomment
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:To change a mapping just map another key combo to the internal <plug> mapping.
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:    map ,omg <plug>NERDCommenterComment
+../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:See the help for the mapping in question to see which <plug> mapping to
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:onoremap <silent> <Plug>(GitGutterTextObjectInnerPending) :<C-U>call gitgutter#hunk#text_object(1)<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:onoremap <silent> <Plug>(GitGutterTextObjectOuterPending) :<C-U>call gitgutter#hunk#text_object(0)<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:xnoremap <silent> <Plug>(GitGutterTextObjectInnerVisual)  :<C-U>call gitgutter#hunk#text_object(1)<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:xnoremap <silent> <Plug>(GitGutterTextObjectOuterVisual)  :<C-U>call gitgutter#hunk#text_object(0)<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <expr> <Plug>(GitGutterNextHunk) &diff ? ']c' : ":\<C-U>execute v:count1 . 'GitGutterNextHunk'\<CR>"
-../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <expr> <Plug>GitGutterNextHunk   &diff ? ']c' : ":\<C-U>call gitgutter#utility#warn('please change your map \<lt>Plug>GitGutterNextHunk to \<lt>Plug>(GitGutterNextHunk)')\<CR>"
+../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <expr> <Plug>GitGutterNextHunk   &diff ? ']c' : ":\<C-U>call gitgutter#utility#warn('Please change your map \<lt>Plug>GitGutterNextHunk to \<lt>Plug>(GitGutterNextHunk)')\<CR>"
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <expr> <Plug>(GitGutterPrevHunk) &diff ? '[c' : ":\<C-U>execute v:count1 . 'GitGutterPrevHunk'\<CR>"
-../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <expr> <Plug>GitGutterPrevHunk   &diff ? '[c' : ":\<C-U>call gitgutter#utility#warn('please change your map \<lt>Plug>GitGutterPrevHunk to \<lt>Plug>(GitGutterPrevHunk)')\<CR>"
+../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <expr> <Plug>GitGutterPrevHunk   &diff ? '[c' : ":\<C-U>call gitgutter#utility#warn('Please change your map \<lt>Plug>GitGutterPrevHunk to \<lt>Plug>(GitGutterPrevHunk)')\<CR>"
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:xnoremap <silent> <Plug>(GitGutterStageHunk)   :GitGutterStageHunk<CR>
-../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:xnoremap <silent> <Plug>GitGutterStageHunk     :call gitgutter#utility#warn('please change your map <lt>Plug>GitGutterStageHunk to <lt>Plug>(GitGutterStageHunk)')<CR>
+../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:xnoremap <silent> <Plug>GitGutterStageHunk     :call gitgutter#utility#warn('Please change your map <lt>Plug>GitGutterStageHunk to <lt>Plug>(GitGutterStageHunk)')<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>(GitGutterStageHunk)   :GitGutterStageHunk<CR>
-../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>GitGutterStageHunk     :call gitgutter#utility#warn('please change your map <lt>Plug>GitGutterStageHunk to <lt>Plug>(GitGutterStageHunk)')<CR>
+../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>GitGutterStageHunk     :call gitgutter#utility#warn('Please change your map <lt>Plug>GitGutterStageHunk to <lt>Plug>(GitGutterStageHunk)')<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>(GitGutterUndoHunk)    :GitGutterUndoHunk<CR>
-../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>GitGutterUndoHunk      :call gitgutter#utility#warn('please change your map <lt>Plug>GitGutterUndoHunk to <lt>Plug>(GitGutterUndoHunk)')<CR>
+../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>GitGutterUndoHunk      :call gitgutter#utility#warn('Please change your map <lt>Plug>GitGutterUndoHunk to <lt>Plug>(GitGutterUndoHunk)')<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>(GitGutterPreviewHunk) :GitGutterPreviewHunk<CR>
-../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>GitGutterPreviewHunk   :call gitgutter#utility#warn('please change your map <lt>Plug>GitGutterPreviewHunk to <lt>Plug>(GitGutterPreviewHunk)')<CR>
+../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:nnoremap <silent> <Plug>GitGutterPreviewHunk   :call gitgutter#utility#warn('Please change your map <lt>Plug>GitGutterPreviewHunk to <lt>Plug>(GitGutterPreviewHunk)')<CR>
 ../pack/packs-cp/opt/vim-gitgutter/README.mkd:nmap ]h <Plug>(GitGutterNextHunk)
 ../pack/packs-cp/opt/vim-gitgutter/README.mkd:nmap [h <Plug>(GitGutterPrevHunk)
 ../pack/packs-cp/opt/vim-gitgutter/README.mkd:nmap ghs <Plug>(GitGutterStageHunk)
@@ -1535,8 +1552,11 @@
 ../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerEdit) :PickerEdit<CR>
 ../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerSplit) :PickerSplit<CR>
 ../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerTabedit) :PickerTabedit<CR>
+../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerTabdrop) :PickerTabdrop<CR>
 ../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerVsplit) :PickerVsplit<CR>
 ../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerBuffer) :PickerBuffer<CR>
+../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerBufferSplit) :PickerBufferSplit<CR>
+../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerBufferVsplit) :PickerBufferVsplit<CR>
 ../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerTag) :PickerTag<CR>
 ../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerStag) :PickerStag<CR>
 ../pack/packs-unix/opt/vim-picker/plugin/picker.vim:nnoremap <silent> <Plug>(PickerBufferTag) :PickerBufferTag<CR>
@@ -1546,8 +1566,11 @@
 ../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerEdit)`: Execute `:PickerEdit`.
 ../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerSplit)`: Execute `:PickerSplit`.
 ../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerTabedit)`: Execute `:PickerTabedit`.
+../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerTabdrop)`: Execute `:PickerTabdrop`.
 ../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerVsplit)`: Execute `:PickerVsplit`.
 ../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerBuffer)`: Execute `:PickerBuffer`.
+../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerBufferSplit)`: Execute `:PickerBufferSplit`.
+../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerBufferVsplit)`: Execute `:PickerBufferVsplit`.
 ../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerTag)`: Execute `:PickerTag`.
 ../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerStag)`: Execute `:PickerStag`.
 ../pack/packs-unix/opt/vim-picker/README.md:- `<Plug>(PickerBufferTag)`: Execute `:PickerBufferTag`.
@@ -1555,6 +1578,7 @@
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pe <Plug>(PickerEdit)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>ps <Plug>(PickerSplit)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pt <Plug>(PickerTabedit)
+../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pd <Plug>(PickerTabdrop)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pv <Plug>(PickerVsplit)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pb <Plug>(PickerBuffer)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>p] <Plug>(PickerTag)
@@ -1567,6 +1591,8 @@
 ../pack/packs-unix/opt/vim-picker/doc/picker.txt:<Plug>(PickerTabedit)               Execute :PickerTabedit
 ../pack/packs-unix/opt/vim-picker/doc/picker.txt:<Plug>(PickerVsplit)                Execute :PickerVsplit
 ../pack/packs-unix/opt/vim-picker/doc/picker.txt:<Plug>(PickerBuffer)                Execute :PickerBuffer
+../pack/packs-unix/opt/vim-picker/doc/picker.txt:<Plug>(PickerBufferSplit)           Execute :PickerBufferSplit
+../pack/packs-unix/opt/vim-picker/doc/picker.txt:<Plug>(PickerBufferVsplit)          Execute :PickerBufferVsplit
 ../pack/packs-unix/opt/vim-picker/doc/picker.txt:<Plug>(PickerTag)                   Execute :PickerTag
 ../pack/packs-unix/opt/vim-picker/doc/picker.txt:<Plug>(PickerStag)                  Execute :PickerStag
 ../pack/packs-unix/opt/vim-picker/doc/picker.txt:<Plug>(PickerBufferTag)             Execute :PickerBufferTag
@@ -1671,8 +1697,8 @@
 ../pack/packs-unix/opt/fzf.vim/doc/fzf-vim.txt:    imap <c-x><c-k> <plug>(fzf-complete-word)
 ../pack/packs-unix/opt/fzf.vim/doc/fzf-vim.txt:    imap <c-x><c-f> <plug>(fzf-complete-path)
 ../pack/packs-unix/opt/fzf.vim/doc/fzf-vim.txt:    imap <c-x><c-l> <plug>(fzf-complete-line)
-../plugin/plugins.vim:nmap <silent> <C-j> <Plug>(ale_next_wrap)
-../plugin/plugins.vim:nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+../plugin/plugins.vim:noremap <silent> <C-j> <Plug>(ale_next_wrap)
+../plugin/plugins.vim:noremap <silent> <C-k> <Plug>(ale_previous_wrap)
 ../plugin/plugins.vim:map g/ <Plug>(incsearch-fuzzy-stay)
 ../plugin/plugins.vim:map z/ <Plug>(incsearch-fuzzy-/)
 ../plugin/plugins.vim:nmap <F6> <Plug>(openbrowser-smart-search)

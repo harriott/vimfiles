@@ -11,8 +11,8 @@
 /home/jo/.vim/pack/packs-cp/opt/vim-mbsync
 /home/jo/.vim/pack/packs-cp/opt/vim-matchit
 /home/jo/.vim/pack/packs-cp/opt/vim-langtool
-/home/jo/.vim/pack/packs-cp/opt/vim-LanguageTool
 /home/jo/.vim/pack/packs-cp/opt/vim-hjson
+/home/jo/.vim/pack/packs-cp/opt/vim-gitgutter
 /home/jo/.vim/pack/packs-cp/opt/vim-gfm-syntax
 /home/jo/.vim/pack/packs-cp/opt/vim-fugitive
 /home/jo/.vim/pack/packs-cp/opt/vim-fontsize
@@ -45,6 +45,7 @@
 /home/jo/.vim/pack/packs-cp/opt/bufexplorer
 /home/jo/.vim/pack/packs-cp/opt/ale
 /home/jo/.vim/pack/packs-cp/opt/vim-ShowTrailingWhitespace
+/home/jo/.vim/pack/packs-cp/opt/vim-ingo-library
 /usr/share/vim/vimfiles
 /usr/share/vim/vim82
 /usr/share/vim/vim82/pack/dist/opt/matchit

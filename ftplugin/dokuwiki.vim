@@ -9,7 +9,6 @@
 "  /* vim: set ft=dokuwiki: */
 " You should also have  https://github.com/nblock/vim-dokuwiki/blob/master/syntax/dokuwiki.vim
 "  installed at  $vimfiles/syntax/dokuwiki.vim
-"  I prefer to comment out conceal to '…'.
 "  with this line commented out:  setlocal foldmethod=syntax
 
 " While developing this plugin, I used
@@ -71,11 +70,6 @@ endfunction
 "     '^=\+'  => match from the start of the line (^) any number of contiguous '='s
 "     =~      => a logical operator
 
-""> for the syntax plugin
-let dokuwiki_comment=1 " can't see what this achieves...
-let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
-" not available in $VIMRUNTIME\syntax: powershell
-
 ""> headings
 " boost up a heading:
 nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
@@ -97,4 +91,10 @@ nnoremap <buffer> <leader>' viwc''''<Esc>hP
 
 " wrap a selection with ''
 vnoremap <buffer> <leader>' c''''<Esc>hP
+
+""> the syntax plugin
+" I prefer to comment out conceal of '->', '--', and '…'
+let dokuwiki_comment=1 " can't see what this achieves...
+let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
+" not available in $VIMRUNTIME\syntax: powershell
 

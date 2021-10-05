@@ -1,3 +1,4 @@
+n  <F7>        *@:ALEToggleBuffer<CR>
 n  <F3>        * :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" |cw
 v  <F6>          <Plug>(openbrowser-smart-search)
 n  <F6>          <Plug>(openbrowser-smart-search)

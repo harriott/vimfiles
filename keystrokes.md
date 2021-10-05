@@ -71,7 +71,7 @@ Joseph's useful (g)Vim commands
     zx             " set folds back to foldlevel
     :set fdl?            " reports the current foldlevel
 
-# Insert mode commands
+# insert mode commands
     C-ke'    " digraph code for é
     C-o      " moves to normal mode for just one command
     C-p      " keyword completion
@@ -123,7 +123,6 @@ Joseph's useful (g)Vim commands
     \L                    " :Lines
     \n                    " (my mapping for) clearing yellow searched highlights
     \rn                   " (my mapping for) toggle relativenumber
-    \vs                   " last search in escaped visual selection
     :Bufferize il <word>  " grab list of lines containing <word> in a new buffer
     :g/^#####\+           " shows lines that begin with 5 or more #'s
     :g/pattern            " list of lines containing "pattern"
@@ -146,6 +145,7 @@ Joseph's useful (g)Vim commands
 	\M            " nomagic (for what follows), eg returning . & * to themselves
 	\V            " very nomagic (for what follows), eg (also) returning $ to itself
 	\v            " very magic (for what follows), eg making | separate alternatives
+    \vs           " last search in escaped visual selection
 	text          " searches for text
 	text\|alt     " searches for text & alt
 
@@ -197,23 +197,24 @@ Joseph's useful (g)Vim commands
     gT  gt    " move around tabs
     :tab ball " all buffers into tabs
 
-# Text Objects
+# text objects
     ci> " change inside angle brackets
     ci} " change inside curly braces
 
-# Tricks
+# tricks
     :%s/\v^.*$/\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
 
-    &                                  " repeat last substitute
-    g~<movement>                       " invert case
-    g&                                 " repeat last command over the whole document
-    :exe ":normal i" . strftime("%c")  " put date-time at cursor
-    :g/^/m 0                           " reverse the entire buffer
-    :h g_CTRL-G                        " position and word info, works on a range too
-    :ni<somecharacter><Enter>          " inserts <somecharacters> n time
-    :s/./&/gn|noh                      " show number of characters in a long line
-    \yy                                " CalendarH
-    ~                                  " toggle case of selection
+    &                         " repeat last substitute
+    ctrl-q ctrl-m             " inserts ^M (carriage return)
+    g~<movement>              " invert case
+    g&                        " repeat last command over the whole document
+    :exe                      " :normal i" . strftime("%c")  " put date-time at cursor
+    :g/^/m 0                  " reverse the entire buffer
+    :h g_CTRL-G               " position and word info, works on a range too
+    :ni<somecharacter><Enter> " inserts <somecharacters> n time
+    :s/./&/gn|noh             " show number of characters in a long line
+    \yy                       " CalendarH
+    ~                         " toggle case of selection
 
 Entering special characters
 
@@ -225,6 +226,7 @@ Entering special characters
     :%le  " remove all indents
     \\c   " toggle cursor column
     \\l   " toggle cursor line
+    \ll   " toggle listchars
     gg=G  " indent a file
 
 ### Colorizer

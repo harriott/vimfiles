@@ -3,8 +3,9 @@
 ../ftplugin/fugitive.vim:nnoremap <buffer><F1> <C-W><C-W>
 ../ftplugin/fugitive.vim:inoremap <buffer><F1> <Esc><C-W><C-W>
 ../ftplugin/fugitive.vim:vnoremap <buffer><F1> <Esc><C-W><C-W>
-../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack/onGitHub/misc/tools/mysmsMD.pl ".expand('%:p')<CR>
-../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\miscUtils\mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack/onGitHub/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
+../ftplugin/md.vim:" check with  :map <leader><F7>
 ../ftplugin/md.vim:nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 ../ftplugin/tex.vim:nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
 ../ftplugin/tex.vim:  nnoremap <silent> <F7> :call PHMatch()<cr>
@@ -16,6 +17,7 @@
 ../ftplugin/php/phpfolding.vim:"       map <F5> <Esc>:EnableFastPHPFolds<Cr>
 ../ftplugin/php/phpfolding.vim:"       map <F6> <Esc>:EnablePHPFolds<Cr>
 ../ftplugin/php/phpfolding.vim:"       map <F7> <Esc>:DisablePHPFolds<Cr>
+../ftplugin/text.vim:nnoremap <buffer><F7> :ALEToggleBuffer<cr>
 ../gvimrc.vim:nnoremap <S-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
 ../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:<F5> if that mapping is available. If it is not available you will need to
 ../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:either map the function manually or change your current <F5> mapping to

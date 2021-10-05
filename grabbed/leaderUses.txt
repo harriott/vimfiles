@@ -1,3 +1,4 @@
+../after/plugin/plugins.vim:noremap <leader>gg :call GitGutterFocus()<cr>
 ../ftplugin/dokuwiki.vim:"   :unmap <leader>i
 ../ftplugin/dokuwiki.vim:nnoremap <buffer> <leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A </wrap><Esc>
 ../ftplugin/dokuwiki.vim:nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
@@ -12,9 +13,11 @@
 ../ftplugin/email.vim:nnoremap <buffer> <leader># 099i~<Esc>
 ../ftplugin/vim.vim:vnoremap <buffer><leader>> :s/"">/"">>/<CR>
 ../ftplugin/vim.vim:vnoremap <buffer><leader>< :s/"">>/"">/<CR>
+../ftplugin/vim.vim:nnoremap <buffer><leader><leader>> :call FirmComment()<cr>
+../ftplugin/vim.vim:nnoremap <buffer><leader><leader>< :call FirmUnComment()<cr>
 ../ftplugin/md.vim:"  (I'm using <leader> here to avoid accidentally running this)
 ../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack/onGitHub/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
-../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\misc\PerlTools\mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
 ../ftplugin/md.vim:" check with  :map <leader><F7>
 ../ftplugin/md.vim:vnoremap <buffer> <leader>v1 :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
 ../ftplugin/md.vim:vnoremap <buffer> <leader>v2 :s#^\v(.+)  $\n^$#\1\r#g <CR>
@@ -41,10 +44,6 @@
 ../ftplugin/markdown.vim:vnoremap <leader>` c``<Esc>P
 ../ftplugin/bbcode.vim:nnoremap <buffer> <leader>] viwc[b][/b]<Esc>hhhP
 ../ftplugin/bbcode.vim:vnoremap <buffer> <leader>] c[b][/b]<Esc>hhhP
-../.git/logs/HEAD:40ff2236a485c77c6cc498ff554b5407e3f2ba6b 9e721571293ed211855cb2f579b65f3ea3725195 Joseph Harriott <trohib@gmail.com> 1587388326 +0200	commit: Grab uses of <leader>
-../.git/logs/HEAD:a5d36e25c2289208b44350329fe1043e4993b45c 9bca56807cbf1065f68c9d832b76304fc205da11 Joseph Harriott <trohib@gmail.com> 1587415135 +0200	commit: <leader>vg
-../.git/logs/refs/heads/master:40ff2236a485c77c6cc498ff554b5407e3f2ba6b 9e721571293ed211855cb2f579b65f3ea3725195 Joseph Harriott <trohib@gmail.com> 1587388326 +0200	commit: Grab uses of <leader>
-../.git/logs/refs/heads/master:a5d36e25c2289208b44350329fe1043e4993b45c 9bca56807cbf1065f68c9d832b76304fc205da11 Joseph Harriott <trohib@gmail.com> 1587415135 +0200	commit: <leader>vg
 ../gvimrc.vim:nnoremap <leader>8 :call EightyTwoColumns()<cr>
 ../keystrokes.md:	<leader>atob " base64 to a string
 ../keystrokes.md:	<leader>btoa " a string to base64
@@ -366,6 +365,9 @@
 ../pack/packs-cp/opt/vim-gitgutter/doc/gitgutter.txt:<Leader>hs              Stage the hunk under the cursor.
 ../pack/packs-cp/opt/vim-gitgutter/doc/gitgutter.txt:                                                         *gitgutter-<Leader>hu*
 ../pack/packs-cp/opt/vim-gitgutter/doc/gitgutter.txt:<Leader>hu              Undo the hunk under the cursor.
+../pack/packs-cp/opt/vim-gitgutter/doc/tags:gitgutter-<Leader>hp	gitgutter.txt	/*gitgutter-<Leader>hp*
+../pack/packs-cp/opt/vim-gitgutter/doc/tags:gitgutter-<Leader>hs	gitgutter.txt	/*gitgutter-<Leader>hs*
+../pack/packs-cp/opt/vim-gitgutter/doc/tags:gitgutter-<Leader>hu	gitgutter.txt	/*gitgutter-<Leader>hu*
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pe <Plug>(PickerEdit)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>ps <Plug>(PickerSplit)
 ../pack/packs-unix/opt/vim-picker/README.md:nmap <unique> <leader>pt <Plug>(PickerTabedit)
@@ -420,6 +422,7 @@
 ../pack/packs-unix/opt/fzf.vim/doc/fzf-vim.txt:    nmap <leader><tab> <plug>(fzf-maps-n)
 ../pack/packs-unix/opt/fzf.vim/doc/fzf-vim.txt:    xmap <leader><tab> <plug>(fzf-maps-x)
 ../pack/packs-unix/opt/fzf.vim/doc/fzf-vim.txt:    omap <leader><tab> <plug>(fzf-maps-o)
+../plugin/plugins.vim:noremap <leader>aa :ALEToggleBuffer<CR>
 ../plugin/plugins.vim:noremap <silent> <leader>be :BufExplorer<CR>
 ../plugin/plugins.vim:"  <Leader>be - Opens BufExplorer
 ../plugin/plugins.vim:"  <Leader>bt - Toggles BufExplorer open or closed
@@ -438,7 +441,8 @@
 ../plugin/plugins.vim:  nnoremap <leader>m :MRU<CR>
 ../plugin/plugins.vim:  " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
-../plugin/plugins.vim:  nnoremap <leader>me :call MRU_highlighted('\.pl')<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>md :call MRU_highlighted('\.md' )<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>me :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
@@ -450,8 +454,10 @@
 ../plugin/plugins.vim:map  <Leader><Leader>w <Plug>(easymotion-bd-w)
 ../plugin/plugins.vim:nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
 ../plugin/plugins.vim:nnoremap <leader>e :call EasyMotionSearchToggle()<cr>
-../plugin/plugins.vim:noremap <leader>gg :GitGutterBufferToggle<CR>
-../plugin/plugins.vim:nnoremap <leader>LT :call LanguageTool_lopen() <CR>
+../plugin/plugins.vim:" <Leader><Leader>+ -> bigger font
+../plugin/plugins.vim:" <Leader><Leader>- -> smaller font
+../plugin/plugins.vim:" <Leader><Leader>0 -> default font size
+../plugin/plugins.vim:" nnoremap <leader>LT :call LanguageTool_lopen() <CR>
 ../plugin/plugins.vim:nnoremap <leader>lt :LangTool <bar> lopen <CR>
 ../plugin/plugins.vim:  nmap <unique> <leader>pe <Plug>(PickerEdit)
 ../plugin/plugins.vim:  nmap <unique> <leader>pb <Plug>(PickerBuffer)
@@ -478,7 +484,6 @@
 ../plugin/plugin.vim:nnoremap <leader>- :Hexplore<cr>
 ../plugin/plugin.vim:nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 ../plugin/plugin.vim:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
-../scratch.vim:nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack\onGitHub\misc\PerlTools\mysmsMD.pl ".expand('%:p')<CR>
 ../vimrc.vim:noremap <leader>ll :set list! list? <CR>
 ../vimrc.vim:nnoremap <leader>x <C-W>c
 ../vimrc.vim:nnoremap <silent><leader><leader>c :set cuc! cuc? <CR>

@@ -40,12 +40,12 @@
 !   Ag                *                        call fzf#vim#ag(<q-args>, fzf#vim#with_preview(), <bang>0)
     AirlineExtensions 0                        call s:airline_extensions()
 !|  AirlineRefresh    0                        call s:airline_refresh(<q-bang>)
-|   AirlineTheme      ?            customlist  call <SNR>66_airline_theme(<f-args>)
+|   AirlineTheme      ?            customlist  call <SNR>67_airline_theme(<f-args>)
 |   AirlineToggle     0                        call s:airline_toggle()
 |   AirlineToggleWhitespace 0                  call airline#extensions#whitespace#toggle()
-!|  BCommits          0                        call fzf#vim#buffer_commits(fzf#vim#with_preview({ "placeholder": "" }), <bang>0)
+!|  BCommits          0    %                   let b:fzf_winview = winsaveview() | <line1>,<line2>call fzf#vim#buffer_commits(fzf#vim#
 !   BLines            *                        call fzf#vim#buffer_lines(<q-args>, <bang>0)
-!   BTags             *                        call fzf#vim#buffer_tags(<q-args>, fzf#vim#with_preview({ "placeholder": "{2}:{3}" }), <bang>0)
+!   BTags             *                        call fzf#vim#buffer_tags(<q-args>, fzf#vim#with_preview({ "placeholder": "{2}:{3..}" })
 !   Bdelete           1            customlist  call s:bclose("bdelete", <bang>0, <f-args>)
     BufExplorer       0                        :call BufExplorer()
     BufExplorerHorizontalSplit 0               :call BufExplorerHorizontalSplit()
@@ -72,7 +72,7 @@
 !   CloseThisBuffer   0                        echoerr '":CloseThisBuffer" is obsolete. Use ":Bdelete this" instead.'
 !|  Colors            0                        call fzf#vim#colors(<bang>0)
 !|  Commands          0                        call fzf#vim#commands(<bang>0)
-!|  Commits           0                        call fzf#vim#commits(fzf#vim#with_preview({ "placeholder": "" }), <bang>0)
+!|  Commits           0    %                   let b:fzf_winview = winsaveview() | <line1>,<line2>call fzf#vim#commits(fzf#vim#with_pr
     CtrlP             ?            dir         cal ctrlp#init(0, { 'dir': <q-args> })
 |   CtrlPBookmarkDir  0                        cal ctrlp#init(ctrlp#bookmarkdir#id())
 !   CtrlPBookmarkDirAdd ?          dir         cal ctrlp#call('ctrlp#bookmarkdir#add', '<bang>', <q-args>)
@@ -108,56 +108,82 @@
 !   Files             ?            dir         call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 !|  Filetypes         0                        call fzf#vim#filetypes(<bang>0)
 !   G                 ?    .       customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
-!|  GBrowse           *    .       customlist  exe fugitive#BrowseCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  GDelete           0            customlist  exe fugitive#DeleteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!   GFiles            ?                        call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(<q-args> == "?" ? { "placeholder": "" } : {}), <bang>0)
+!|  GBrowse           *    .       customlist  exe fugitive#BrowseCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
+!|  GDelete           0                        exe fugitive#DeleteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
+!   GFiles            ?                        call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(<q-args> == "?" ? { "placeholder":
     GLVS              0                        call getscript#GetLatestVimScripts()
-!|  GMove             1            customlist  exe fugitive#MoveCommand(  <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  GRemove           0            customlist  exe fugitive#RemoveCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  GRename           1            customlist  exe fugitive#RenameCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!|  GMove             1            customlist  exe fugitive#MoveCommand(  <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
+!|  GRemove           0                        exe fugitive#RemoveCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
+!|  GRename           1            customlist  exe fugitive#RenameCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
     GTabularize       *    %       customlist  <line1>,<line2> call Tabularize(<q-args>, { 'mode': 'GTabularize' } )
-!   Gblame            ?    .       customlist  echohl WarningMSG|echo ":Gblame is deprecated in favor of :Git blame\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", 
-!|  Gbrowse           *    .       customlist  exe fugitive#BrowseCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   Gblame            ?    .       customlist  echohl WarningMSG|echomsg ":Gblame is deprecated in favor of :Git blame"|echohl NONE| e
+!|  Gbrowse           *    .       customlist  exe fugitive#BrowseCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
 !   GcLog             ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "c")
 !|  Gcd               ?            customlist  exe fugitive#Cd(<q-args>, 0)
 !   Gcgrep            ?    .  win  customlist  exe fugitive#GrepCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
 !   Gclog             ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "c")
-!   Gcommit           ?    .       customlist  echohl WarningMSG|echo ":Gcommit is deprecated in favor of :Git commit\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>"
-!|  Gdelete           0            customlist  exe fugitive#DeleteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   Gcommit           ?    .       customlist  echohl WarningMSG|echomsg ":Gcommit is deprecated in favor of :Git commit"|echohl NONE|
+!|  Gdelete           0                        exe fugitive#DeleteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
 !|  Gdiffsplit        *            customlist  exe fugitive#Diffsplit(1, <bang>0, "<mods>", <q-args>, [<f-args>])
 !|  Ge                *            customlist  exe fugitive#Open("edit<bang>", 0, "<mods>", <q-args>, [<f-args>])
 !|  Gedit             *            customlist  exe fugitive#Open("edit<bang>", 0, "<mods>", <q-args>, [<f-args>])
     GetLatestVimScripts 0                      call getscript#GetLatestVimScripts()
     GetScripts        0                        call getscript#GetLatestVimScripts()
-!   Gfetch            ?    .       customlist  echohl WarningMSG|echo ":Gfetch is deprecated in favor of :Git fetch\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", 
+!   Gfetch            ?    .       customlist  echohl WarningMSG|echomsg ":Gfetch is deprecated in favor of :Git fetch"|echohl NONE| e
 !   Ggrep             ?    .  win  customlist  exe fugitive#GrepCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
 !|  Ghdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "<mods>", <q-args>, [<f-args>])
 !   Git               ?    .       customlist  exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
-!   GitFiles          ?                        call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(<q-args> == "?" ? { "placeholder": "" } : {}), <bang>0)
+!   GitFiles          ?                        call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(<q-args> == "?" ? { "placeholder":
+|   GitGutter         0                        call gitgutter#process_buffer(bufnr(''), 1)
+|   GitGutterAll      0                        call gitgutter#all(1)
+|   GitGutterBufferDisable 0                   call gitgutter#buffer_disable()
+|   GitGutterBufferEnable 0                    call gitgutter#buffer_enable()
+|   GitGutterBufferToggle 0                    call gitgutter#buffer_toggle()
+|   GitGutterDebug    0                        call gitgutter#debug#debug()
+|   GitGutterDisable  0                        call gitgutter#disable()
+|   GitGutterEnable   0                        call gitgutter#enable()
+|   GitGutterFold     0                        call gitgutter#fold#toggle()
+|   GitGutterLineHighlightsDisable 0           call gitgutter#highlight#line_disable()
+|   GitGutterLineHighlightsEnable 0            call gitgutter#highlight#line_enable()
+|   GitGutterLineHighlightsToggle 0            call gitgutter#highlight#line_toggle()
+|   GitGutterLineNrHighlightsDisable 0         call gitgutter#highlight#linenr_disable()
+|   GitGutterLineNrHighlightsEnable 0          call gitgutter#highlight#linenr_enable()
+|   GitGutterLineNrHighlightsToggle 0          call gitgutter#highlight#linenr_toggle()
+|   GitGutterNextHunk 0    1c ?                call gitgutter#hunk#next_hunk(<count>)
+|   GitGutterPrevHunk 0    1c ?                call gitgutter#hunk#prev_hunk(<count>)
+|   GitGutterPreviewHunk 0                     call gitgutter#hunk#preview()
+|   GitGutterQuickFix 0                        call gitgutter#quickfix(0)
+|   GitGutterQuickFixCurrentFile 0             call gitgutter#quickfix(1)
+|   GitGutterSignsDisable 0                    call gitgutter#sign#disable()
+|   GitGutterSignsEnable 0                     call gitgutter#sign#enable()
+|   GitGutterSignsToggle 0                     call gitgutter#sign#toggle()
+|   GitGutterStageHunk 0   %                   call gitgutter#hunk#stage(<line1>,<line2>)
+|   GitGutterToggle   0                        call gitgutter#toggle()
+|   GitGutterUndoHunk 0                        call gitgutter#hunk#undo()
 !   GlLog             ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "l")
 !|  Glcd              ?            customlist  exe fugitive#Cd(<q-args>, 1)
-!   Glgrep            ?    .  win  customlist  exe fugitive#GrepCommand(0, <count> > 0 ? <count> : 0, +"<range>", <bang>0, "<mods>", <q-args>)
+!   Glgrep            ?    .  win  customlist  exe fugitive#GrepCommand(0, <count> > 0 ? <count> : 0, +"<range>", <bang>0, "<mods>", <
 !   Gllog             ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "l")
-!   Glog              ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "")
-!   Gmerge            ?    .       customlist  echohl WarningMSG|echo ":Gmerge is deprecated in favor of :Git merge\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", 
-!|  Gmove             1            customlist  exe fugitive#MoveCommand(  <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   Glog              ?    .       customlist  :exe fugitive#LogCommand(<line1>,<count>,+"<range>",<bang>0,"<mods>",<q-args>, "") |ech
+!   Gmerge            ?    .       customlist  echohl WarningMSG|echomsg ":Gmerge is deprecated in favor of :Git merge"|echohl NONE| e
+!|  Gmove             1            customlist  exe fugitive#MoveCommand(  <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
 !|  Gpedit            *            customlist  exe fugitive#Open("pedit", <bang>0, "<mods>", <q-args>, [<f-args>])
-!   Gpull             ?    .       customlist  echohl WarningMSG|echo ":Gpull is deprecated in favor of :Git pull\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", "p
-!   Gpush             ?    .       customlist  echohl WarningMSG|echo ":Gpush is deprecated in favor of :Git push\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", "p
-!|  Gr                *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  Gread             *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!   Grebase           ?    .       customlist  echohl WarningMSG|echo ":Grebase is deprecated in favor of :Git rebase\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>"
-!|  Gremove           0            customlist  exe fugitive#RemoveCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  Grename           1            customlist  exe fugitive#RenameCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!   Grevert           ?    .       customlist  echohl WarningMSG|echo ":Grevert is deprecated in favor of :Git revert\n"|echohl NONE| exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>"
-!|  Gsplit            *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? "split" : "edit"), <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  Gstatus           0    .  ?                exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>)
-!|  Gtabedit          *    .  tab  customlist  exe fugitive#Open((<count> >= 0 ? <count> : "")."tabedit", <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  Gvdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "vert <mods>", <q-args>, [<f-args>])
-!|  Gvsplit           *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? "vsplit" : "edit!"), <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  Gw                *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  Gwq               *            customlist  exe fugitive#WqCommand(   <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
-!|  Gwrite            *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f-args>])
+!   Gpull             ?    .       customlist  echohl WarningMSG|echomsg ":Gpull is deprecated in favor of :Git pull"|echohl NONE| exe
+!   Gpush             ?    .       customlist  echohl WarningMSG|echomsg ":Gpush is deprecated in favor of :Git push"|echohl NONE| exe
+!|  Gr                *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f
+!|  Gread             *    .       customlist  exe fugitive#ReadCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<f
+!   Grebase           ?    .       customlist  echohl WarningMSG|echomsg ":Grebase is deprecated in favor of :Git rebase"|echohl NONE|
+!|  Gremove           0                        exe fugitive#RemoveCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
+!|  Grename           1            customlist  exe fugitive#RenameCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [
+!   Grevert           ?    .       customlist  echohl WarningMSG|echomsg ":Grevert is deprecated in favor of :Git revert"|echohl NONE|
+!|  Gsplit            *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? "split" : "edit"), <bang>0, "
+!|  Gstatus           0    .  ?                exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>) |echohl
+!|  Gtabedit          *    .  tab  customlist  exe fugitive#Open((<count> >= 0 ? <count> : "")."tabedit", <bang>0, "<mods>", <q-args>,
+!|  Gvdiffsplit       *            customlist  exe fugitive#Diffsplit(0, <bang>0, "vertical <mods>", <q-args>, [<f-args>])
+!|  Gvsplit           *    .  ?    customlist  exe fugitive#Open((<count> > 0 ? <count> : "").(<count> ? "vsplit" : "edit!"), <bang>0,
+!|  Gw                *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<
+!|  Gwq               *            customlist  exe fugitive#WqCommand(   <line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<
+!|  Gwrite            *            customlist  exe fugitive#WriteCommand(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>, [<
 !|  Helptags          0                        call fzf#vim#helptags(<bang>0)
 !|  Hexplore          *    0c ?    dir         call netrw#Explore(<count>,1,2+<bang>0,<q-args>)
 !   History           *                        call s:history(<q-args>, fzf#vim#with_preview(), <bang>0)
@@ -168,8 +194,6 @@
     LPF               +                        let  s:LogiPatFlags="<args>"
     LPR               *                        call   LogiPat(<q-args>,1,"r")
 !|  LangTool          0                        silent call langtool#langtool('<bang>')
-    LanguageToolCheck 0    %                   :call languagetool#Check(<line1>, <line2>)
-    LanguageToolClear 0                        :call languagetool#Clear()
 !|  Lexplore          *    0c ?    dir         call netrw#Lexplore(<count>,<bang>0,<q-args>)
 !   Lines             *                        call fzf#vim#lines(<q-args>, <bang>0)
 !   LiveEasyAlign     *    .                   <line1>,<line2>call easy_align#align(<bang>0, 1, 'command', <q-args>)
@@ -193,17 +217,17 @@
 |   NERDTreeMirror    0                        call g:NERDTreeCreator.CreateMirror()
 |   NERDTreeRefreshRoot 0                      call s:refreshRoot()
 |   NERDTreeToggle    ?            dir         :call g:NERDTreeCreator.ToggleTabTree('<args>')
-|   NERDTreeToggleVCS ?            dir         :call <SNR>60_ToggleTabTreeVCS('<args>')
-|   NERDTreeVCS       ?            dir         :call <SNR>60_CreateTabTreeVCS('<args>')
+|   NERDTreeToggleVCS ?            dir         :call <SNR>61_ToggleTabTreeVCS('<args>')
+|   NERDTreeVCS       ?            dir         :call <SNR>61_CreateTabTreeVCS('<args>')
     NetUserPass       *                        call NetUserPass(<f-args>)
 !   NetrwClean        0                        call netrw#Clean(<bang>0)
     NetrwSettings     0                        call netrwSettings#NetrwSettings()
 !|  Nexplore          *                        call netrw#Explore(-1,0,0,<q-args>)
     NoMatchParen      0                        call s:NoMatchParen()
-    Nread             *    1c ?                let s:svpos= winsaveview()|call netrw#NetRead(<count>,<f-args>)|call winrestview(s:svpos)
+    Nread             *    1c ?                let s:svpos= winsaveview()|call netrw#NetRead(<count>,<f-args>)|call winrestview(s:svpo
     Nsource           *                        let s:svpos= winsaveview()|call netrw#NetSource(<f-args>)|call winrestview(s:svpos)
     Ntree             ?                        call netrw#SetTreetop(1,<q-args>)
-    Nwrite            *    %                   let s:svpos= winsaveview()|<line1>,<line2>call netrw#NetWrite(<f-args>)|call winrestview(s:svpos)
+    Nwrite            *    %                   let s:svpos= winsaveview()|<line1>,<line2>call netrw#NetWrite(<f-args>)|call winrestvie
     OpenBrowser       +                        call openbrowser#_cmd_open(<q-args>)
     OpenBrowserSearch +            customlist  call openbrowser#_cmd_search(<q-args>)
     OpenBrowserSmartSearch +       customlist  call openbrowser#_cmd_smart_search(<q-args>)
@@ -214,8 +238,8 @@
     OpenURL           1                        call open_url#open(<q-args>)
 !|  Pexplore          *                        call netrw#Explore(-2,0,0,<q-args>)
     QuickScopeToggle  0                        call quick_scope#Toggle()
-!   Rg                *                        call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -- ".shellescape(<q-args>), 1, fzf#vim#with_preview(), <bang>0)
-    RmVimball         *            dir         call vimball#SaveSettings()|call vimball#RmVimball(<f-args>)|call vimball#RestoreSettings()
+!   Rg                *                        call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case -
+    RmVimball         *            dir         call vimball#SaveSettings()|call vimball#RmVimball(<f-args>)|call vimball#RestoreSettin
 |   SClose            0                        call startify#session_close()
 !|  SDelete           ?            customlist  call startify#session_delete(<bang>0, <f-args>)
 !|  SLoad             ?            customlist  call startify#session_load(<bang>0, <f-args>)
@@ -224,7 +248,7 @@
 !|  Snippets          0                        call fzf#vim#snippets(<bang>0)
 |   Startify          0                        call startify#insane_in_the_membrane(0)
 |   StartifyDebug     0                        call startify#debug()
-    SuperTabHelp      0                        :call <SNR>63_SuperTabHelp()
+    SuperTabHelp      0                        :call <SNR>64_SuperTabHelp()
 |   SyntasticCheck    *            custom      call SyntasticCheck(<f-args>)
 |   SyntasticInfo     ?            custom      call SyntasticInfo(<f-args>)
     SyntasticJavacEditClasspath 0              runtime! syntax_checkers/java/*.vim | SyntasticJavacEditClasspath
@@ -234,7 +258,7 @@
 |   SyntasticToggleMode 0                      call SyntasticToggleMode()
 |   TOhtml            0    %                   :call tohtml#Convert2HTML(<line1>, <line2>)
     Tabularize        *    .       customlist  <line1>,<line2>call Tabularize(<q-args>)
-!   Tags              *                        call fzf#vim#tags(<q-args>, fzf#vim#with_preview({ "placeholder": "--tag {2}:{-1}:{3}" }), <bang>0)
+!   Tags              *                        call fzf#vim#tags(<q-args>, fzf#vim#with_preview({ "placeholder": "--tag {2}:{-1}:{3..}
 |   Texplore          *    0c ?    dir         call netrw#Explore(<count>,0,6        ,<q-args>)
     ToggleBufExplorer 0                        :call ToggleBufExplorer()
     TomorrowOptions   0                        :call s:TomorrowOptions()

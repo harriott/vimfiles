@@ -18,17 +18,15 @@ x  I             targets#e('o', 'I', 'I')
 o  I             targets#e('o', 'I', 'I')
    Q           * @q
 n  U           * :CapsLockOff<CR> | U
+   \gg         * :call GitGutterFocus()<CR>
 v  \*          * :<C-U>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
 n  \*          * :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
 n  \lt         * :LangTool | lopen <CR>
-n  \LT         * :call LanguageTool_lopen() <CR>
-   \gg         * :GitGutterToggle<CR>
 n  \e          * :call EasyMotionSearchToggle()<CR>
 n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
 n  \btoa/      * :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
 v  \btoa       * :<C-U>call base64#v_btoa()<CR>
 v  \atob       * :<C-U>call base64#v_atob()<CR>
-v  \m          * :MRU
 n  \m          * :MRU
 n  \bf         * :Buffers<CR>
 n  \L          * :Lines<CR>
@@ -42,11 +40,13 @@ n  \bv         & :BufExplorerVerticalSplit<CR>
 n  \bs         & :BufExplorerHorizontalSplit<CR>
 n  \bt         & :ToggleBufExplorer<CR>
    \be         * :BufExplorer<CR>
+   \aa         * :ALEToggleBuffer<CR>
 n  \zz         * :let &scrolloff=999-&scrolloff<CR>
 n  \d          * :cd %:p:h<CR>:pwd<CR>
 n  \-          * :Hexplore<CR>
 n  \f          * :let@f=@%<CR>
 n  \v          * v$hy
+v  \vs         * <Esc>:call ConvertSearchForVisualSelection()<CR>
 n  \vs         * :call ConvertSearchForVisualSelection()<CR>
    \q          * :copen<CR>
 n  \pt         * :call ParenthsToggle()<CR>
@@ -89,4 +89,3 @@ c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
 i  <C-Tab>     * <Tab>
 i  <Insert>    * <Esc> :CapsLockOff <CR>
 i  <C-U>       * <C-G>u<C-U>
-i  \m          * :MRU
