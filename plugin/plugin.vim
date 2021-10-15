@@ -1,6 +1,6 @@
 " vim: ft=vim:
 
-" Joseph Harriott - Sun 28 Mar 2021
+" Joseph Harriott - Fri 15 Oct 2021
 " ---------------------------------
 
 " keep this file in your plugin directory so's it's automatically sourced at startup
@@ -32,7 +32,7 @@ inoremap <F5> <Esc>:wa<CR>:e<CR>
 vnoremap <F5> <Esc>:wa<CR>:e<CR>
 
 ""> buffer - split window to a buffer
-nnoremap <leader>s :buffers<CR>:sbuffer<Space>
+nnoremap <leader>sb :buffers<CR>:sbuffer<Space>
 
 ""> clear registers b-z
 command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
@@ -401,14 +401,22 @@ endfunction
 " eg to look again at results of vimgrep
 noremap <leader>q :copen<CR>
 
-""> searching - Search within a visual selection.
+""> searching - search again as word
+" convert the last search into a case-free word
+" useful in quickfix-window after F3
+function! SearchCFW()
+  let @/ = '\<'.getreg('/').'\>' " reasssign the current search
+endfunction
+nnoremap <leader>sw :call SearchCFW()<CR>
+
+""> searching - search within a visual selection
 "  before calling this you need to search for something, then
 "   either before or any number of times after calling this function,
 "     you need to visually select an area
 "   the search will appear highlighted only within your visual selections
 "   next search returns to normal
 function! ConvertSearchForVisualSelection()
-  let @/ = '\%V'.getreg('/')
+  let @/ = '\%V'.getreg('/') " reasssign the current search
   echo 'last search is now active only in your escaped visual selection'
 endfunction
 nnoremap <leader>vs :call ConvertSearchForVisualSelection()<CR>

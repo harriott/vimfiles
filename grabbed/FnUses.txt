@@ -8,6 +8,7 @@
 ../ftplugin/md.vim:" check with  :map <leader><F7>
 ../ftplugin/md.vim:nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 ../ftplugin/tex.vim:nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
+../ftplugin/tex.vim:inoremap <buffer><S-F7> <Esc>:normal gAip*&<CR><Bar> :update<CR>
 ../ftplugin/tex.vim:  nnoremap <silent> <F7> :call PHMatch()<cr>
 ../ftplugin/tex.vim:  inoremap <silent> <F7> <Esc>:call PHMatch()<cr>
 ../ftplugin/tex.vim:  vnoremap <silent> <F7> <Esc>:call PHMatch()<cr>

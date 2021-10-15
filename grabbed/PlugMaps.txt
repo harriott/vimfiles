@@ -67,7 +67,7 @@ n  ds            <Plug>Dsurround
 x  f             <Plug>(QuickScopef)
 o  f             <Plug>(QuickScopef)
 n  f             <Plug>(QuickScopef)
-v  gx            <Plug>NetrwBrowseXVis
+x  gx            <Plug>NetrwBrowseXVis
 n  gx            <Plug>NetrwBrowseX
 x  gS            <Plug>VgSurround
 x  gG            <Plug>(open-url-search-google)
@@ -94,7 +94,7 @@ n  yss           <Plug>Yssurround
 n  yS            <Plug>YSurround
 n  ys            <Plug>Ysurround
    z/            <Plug>(incsearch-fuzzy-/)
-v  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
+x  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
 n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
 n  <Plug>(fzf-normal) * <Nop>
 n  <Plug>(fzf-insert) * i

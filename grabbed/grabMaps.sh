@@ -13,7 +13,9 @@
 grep -ri --exclude-dir=grabbed -E '<(m-|s-)?F[0-9]{1,2}>' ../* > FnUses.txt
 
 # Grab uses of <leader>
-grep -ri --exclude-dir=grabbed -E '<leader>' ../* > leaderUses.txt
+echo 'vim: ft=leader:' > leaderUses.txt
+echo >> leaderUses.txt
+grep -ri --exclude-dir=grabbed -E '<leader>' ../* >> leaderUses.txt
 
 # Grab uses of <Plug>
 grep -ri --exclude-dir=grabbed -E '<Plug>' ../* > PlugUses.txt

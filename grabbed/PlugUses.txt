@@ -45,6 +45,11 @@
 ../pack/packs-cp/opt/vim-open-url/README.md:* `<Plug>(open-url-search-google)`
 ../pack/packs-cp/opt/vim-open-url/README.md:* `<Plug>(open-url-search-wikipedia)`
 ../pack/packs-cp/opt/vim-open-url/README.md:remapping `<Plug>` mappings (Default: `1`)
+../pack/packs-cp/opt/vim-open-url/doc/open-url.txt:    `<Plug>(open-url-browser)`
+../pack/packs-cp/opt/vim-open-url/doc/open-url.txt:    `<Plug>(open-url-search)`
+../pack/packs-cp/opt/vim-open-url/doc/open-url.txt:    `<Plug>(open-url-search-so)`        " Unmapped by default
+../pack/packs-cp/opt/vim-open-url/doc/open-url.txt:    `<Plug>(open-url-search-google)`
+../pack/packs-cp/opt/vim-open-url/doc/open-url.txt:    `<Plug>(open-url-search-wikipedia)`
 ../pack/packs-cp/opt/vim-colors-tomorrow/autoload/togglebg.vim:nnoremap <unique> <script> <Plug>ToggleBackground <SID>TogBG
 ../pack/packs-cp/opt/vim-colors-tomorrow/autoload/togglebg.vim:inoremap <unique> <script> <Plug>ToggleBackground <ESC><SID>TogBG<ESC>a
 ../pack/packs-cp/opt/vim-colors-tomorrow/autoload/togglebg.vim:vnoremap <unique> <script> <Plug>ToggleBackground <ESC><SID>TogBG<ESC>gv
@@ -1047,7 +1052,7 @@
 ../pack/packs-cp/opt/supertab/plugin/supertab.vim:  exec 'imap ' . g:SuperTabMappingForward . ' <Plug>SuperTabForward'
 ../pack/packs-cp/opt/supertab/plugin/supertab.vim:  exec 'imap ' . g:SuperTabMappingBackward . ' <Plug>SuperTabBackward'
 ../pack/packs-cp/opt/supertab/plugin/supertab.vim:    elseif maparg('<CR>', 'i') =~ '<Plug>delimitMateCR'
-../pack/packs-cp/opt/vim-fugitive/plugin/fugitive.vim:    let flags = (a:0 ? a:1 : '') . (a:rhs =~# '<Plug>' ? '' : '<script>')
+../pack/packs-cp/opt/vim-fugitive/plugin/fugitive.vim:  let flags = a:flags . (a:rhs =~# '<Plug>' ? '' : '<script>')
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    let flags = (a:0 ? a:1 : '') . (a:rhs =~# '<Plug>' ? '' : '<script>')
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    if v:version >= 704 && get(maparg('<Plug><cfile>', 'c', 0, 1), 'expr')
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:        let bufnames = [eval(maparg('<Plug><cfile>', 'c'))]

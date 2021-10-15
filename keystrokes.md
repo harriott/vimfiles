@@ -193,7 +193,7 @@ Joseph's useful (g)Vim commands
     :set spl
     echo &spelllang
 
-# Tab views
+# tab views
     gT  gt    " move around tabs
     :tab ball " all buffers into tabs
 
@@ -325,13 +325,20 @@ Entering special characters
     j  " in Visual mode, selects line and moves cursor down (k for up)
     v  " character-based visual selection
 
-# Windows Splits
-    :sp          " split current window
-    C-w=         " equalise window sizes
-    C-w[H|J|K|L] " move split
-    C-w[h|j|k|l] " move focus to neighbouring split
-    C-w_         " maximizes a window
-    C-wr         " rotate split to right
-    C-wv         " vertical split
+# windows splits
+    C-w+[h|j|k|l] " move focus to neighbouring split
+
+## move them around
+    C-w+[H|J|K|L] " move split (can get fiddly)
+    C-w+r         " rotate split to right
+
+## sizes
+    C-w+=         " equalise window sizes
+    C-w+_         " maximizes a window
     Resize Splits with mouse
+
+## split
+    :ba          " all horizontally
+    :sp          " current window
+    C-w+v         " vertical
 
