@@ -21,6 +21,7 @@
 ./packs-cp/opt/supertab/.git
 ./packs-cp/opt/syntastic/.git
 ./packs-cp/opt/tabular/.git
+./packs-cp/opt/tagbar/.git
 ./packs-cp/opt/targets.vim/.git
 ./packs-cp/opt/undotree/.git
 ./packs-cp/opt/vim-airline/.git

@@ -406,6 +406,7 @@ noremap <leader>q :copen<CR>
 " useful in quickfix-window after F3
 function! SearchCFW()
   let @/ = '\<'.getreg('/').'\>' " reasssign the current search
+  call histadd('/', @/)
 endfunction
 nnoremap <leader>sw :call SearchCFW()<CR>
 

@@ -21,6 +21,7 @@
 ./packs-cp/opt/supertab
 ./packs-cp/opt/syntastic
 ./packs-cp/opt/tabular
+./packs-cp/opt/tagbar
 ./packs-cp/opt/targets.vim
 ./packs-cp/opt/undotree
 ./packs-cp/opt/vim-airline

@@ -6,6 +6,7 @@
 # bash pulls.sh  when you want to update your remote plugins
 
 set -e  # quits on error
+
 # optionally declare a snagged plugin to start from:
 # snagged=vim-picker
 
@@ -25,7 +26,7 @@ find . -maxdepth 3 -mindepth 3 -type d | while read plugin; do
   echo -e "\e[1m $plugin \e[0m"
   cd "$plugin"
   branch=master
-  [[ $pluginName = 'vim-picker' ]] && branch=main
+  [[ $pluginName =~ (vim-fontsize|vim-picker) ]] && branch=main
   git pull --no-rebase origin $branch
   cd ~/.vim/pack
 done
