@@ -1,8 +1,11 @@
 
 " Language:	sh
 " Maintainer: Joseph Harriott
-" Last Change: Thu 17 Sep 2020
-  " This file  HashEqualsFolding.vim  should be sourced by a vimfiles\ftplugin.
+" Last Change: Mon 18 Oct 2021
+  " used by
+  "   $vimfiles/ftplugin/bbcode.vim
+  "   $vimfiles/ftplugin/sh.vim
+  "   $vimfiles/ftplugin/tmux.vim
 
   " Folding by lines that start with [space(s)]#=...
   " ------------------------------------------------

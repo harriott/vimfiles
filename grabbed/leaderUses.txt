@@ -471,7 +471,7 @@ vim: ft=leader:
 ../plugin/plugin.vim:nnoremap <leader>9 :call PercentUnicode()<cr>
 ../plugin/plugin.vim:nnoremap <leader>5 :call UnicodePercent()<cr>
 ../plugin/plugin.vim:nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
-../plugin/plugin.vim:nnoremap <leader>u :Underline
+../plugin/plugin.vim :nnoremap <leader>u :Underline
 ../plugin/plugin.vim:nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 ../plugin/plugin.vim:nnoremap <leader>n :nohlsearch<CR>
 ../plugin/plugin.vim:vnoremap <leader>n <Esc>:nohlsearch<CR>

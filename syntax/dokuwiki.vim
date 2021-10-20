@@ -12,6 +12,8 @@
 "   Vladimir Zhbanov <vzhbanov@gmail.com> -- a lot of patches
 "   Jonathan Beverley <jonathan.beverley@gmail.com> -- syntax, folding, etc
 
+" my tweaks - JH
+
 " initial checks. See `:help 44.12`
 if !exists('main_syntax')
 	if version < 600
@@ -84,11 +86,11 @@ syn region dokuwikiNowiki start=+%%+ end=+%%+
 syn region dokuwikiNowiki start=+<nowiki>+ end=+</nowiki>+
 
 " Heading: ==== title ====
-syn region dokuwikiHeading1 matchgroup=dokuwikiHeading1mg start="^=\{6}\s.\+\s=\{6}$" end="^\ze\(=\{6,6}\)\s.*\s\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4,dokuwikiHeading3,dokuwikiHeading2
-syn region dokuwikiHeading2 matchgroup=dokuwikiHeading2mg start="^=\{5}\s.\+\s=\{5}$" end="^\ze\(=\{5,6}\)\s.*\s\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4,dokuwikiHeading3
-syn region dokuwikiHeading3 matchgroup=dokuwikiHeading3mg start="^=\{4}\s.\+\s=\{4}$" end="^\ze\(=\{4,6}\)\s.*\s\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4
-syn region dokuwikiHeading4 matchgroup=dokuwikiHeading4mg start="^=\{3}\s.\+\s=\{3}$" end="^\ze\(=\{3,6}\)\s.*\s\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5
-syn region dokuwikiHeading5 matchgroup=dokuwikiHeading5mg start="^=\{2}\s.\+\s=\{2}$" end="^\ze\(=\{2,6}\)\s.*\s\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList
+syn region dokuwikiHeading1 matchgroup=dokuwikiHeading1mg start="^=\{6}.\+=\{6}$" end="^\ze\(=\{6,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4,dokuwikiHeading3,dokuwikiHeading2
+syn region dokuwikiHeading2 matchgroup=dokuwikiHeading2mg start="^=\{5}.\+=\{5}$" end="^\ze\(=\{5,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4,dokuwikiHeading3
+syn region dokuwikiHeading3 matchgroup=dokuwikiHeading3mg start="^=\{4}.\+=\{4}$" end="^\ze\(=\{4,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4
+syn region dokuwikiHeading4 matchgroup=dokuwikiHeading4mg start="^=\{3}.\+=\{3}$" end="^\ze\(=\{3,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5
+syn region dokuwikiHeading5 matchgroup=dokuwikiHeading5mg start="^=\{2}.\+=\{2}$" end="^\ze\(=\{2,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList
 
 " Basic Formatting: **bold**, //italic//, __underline__, ''monospace'', etc
 " A matchgroup is necessary to make concealends work with regions.
@@ -108,11 +110,11 @@ syn match dokuwikiSmiley "\(:-X\|:-|\|;-)\|m(\|\^_\^\|:?:\|:!:\)\|LOL\|FIXME\|DE
 
 " Entities: http://github.com/splitbrain/dokuwiki/blob/master/conf/entities.conf
 syn match dokuwikiEntities "<->" conceal cchar=↔
-" syn match dokuwikiEntities "->" conceal cchar=→  "JH
+" syn match dokuwikiEntities "->" conceal cchar=→  " JH
 syn match dokuwikiEntities "<-\ze\([^>]\|$\)" conceal cchar=←
 syn match dokuwikiEntities "<=>" conceal cchar=⇔
 syn match dokuwikiEntities "=>" conceal cchar=⇒
-syn match dokuwikiEntities "<=\ze\([^>]\|$\)" conceal cchar=⇐
+" syn match dokuwikiEntities "<=\ze\([^>]\|$\)" conceal cchar=⇐  " JH
 
 " syn match dokuwikiEntities "\( \|^\|\d\)\zsx\ze\d" conceal cchar=× " JH
 " syn match dokuwikiEntities "\C\d\zsx\ze\($\|\s\|[0-9A-Z]\)" conceal cchar=× " JH

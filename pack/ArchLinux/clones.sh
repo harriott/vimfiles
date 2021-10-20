@@ -39,7 +39,7 @@ gd opt; ls
   # $gc https://github.com/ervandew/supertab
   # $gc https://github.com/vim-syntastic/syntastic
   # $gc https://github.com/godlygeek/tabular
-  # $gc https://github.com/preservim/tagbar
+  $gc https://github.com/preservim/tagbar
   # $gc https://github.com/wellle/targets.vim
   # $gc https://github.com/mbbill/undotree
   # $gc https://github.com/bling/vim-airline
@@ -51,7 +51,7 @@ gd opt; ls
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/easymotion/vim-easymotion
-  $gc https://github.com/drmikehenry/vim-fontsize
+  # $gc https://github.com/drmikehenry/vim-fontsize
   # $gc https://github.com/tpope/vim-fugitive
   # $gc https://github.com/rhysd/vim-gfm-syntax
   # $gc https://github.com/airblade/vim-gitgutter
@@ -67,7 +67,6 @@ gd opt; ls
   # $gc https://github.com/tpope/vim-repeat
   # $gc https://github.com/tpope/vim-rhubarb
   # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
-    # sudo sed -i 's/^c/" c/' vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
   # $gc https://github.com/mhinz/vim-startify
   # $gc https://github.com/tpope/vim-surround
   # $gc https://github.com/bronson/vim-visual-star-search
@@ -81,7 +80,7 @@ gd opt; ls
   # $gc https://github.com/junegunn/fzf.vim
   # $gc https://github.com/nanotech/jellybeans.vim
   # $gc https://github.com/ntpeters/vim-better-whitespace
-  # $gc https://github.com/RRethy/vim-hexokinase; cd vim-hexokinase; make hexokinase; cd ..
+  # $gc https://github.com/RRethy/vim-hexokinase
   # $gc https://github.com/srstevenson/vim-picker
   # $gc https://github.com/sheerun/vim-wombat-scheme
 
@@ -93,5 +92,5 @@ gd opt; ls
 
 #=> 2 lists
 echo; $cdp
-. ArchLinux/lists.sh
+cd ArchLinux; . lists.sh
 

@@ -204,6 +204,9 @@ let g:syntastic_python_checkers = ['flake8']
 ""> tabular
 " packadd tabular
 
+""> Tagbar
+packadd tagbar
+
 ""> targets.vim
 packadd targets.vim
 

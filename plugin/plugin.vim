@@ -1,6 +1,6 @@
 " vim: ft=vim:
 
-" Joseph Harriott - Fri 15 Oct 2021
+" Joseph Harriott - Wed 20 Oct 2021
 " ---------------------------------
 
 " keep this file in your plugin directory so's it's automatically sourced at startup
@@ -187,7 +187,7 @@ function! s:Underline(chars)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 " map:
-nnoremap <leader>u :Underline
+nnoremap <leader>U :Underline
 
 ""> ft aesl - Thymio's Aseba code
 " I suppose that sgml filetype might be more appropriate,

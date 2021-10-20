@@ -1,7 +1,9 @@
 
 " Maintainer: Joseph Harriott
-" Last Change: Thu 13 May 2021
-  " this file  after/syntax/HashEqualsFolding.vim  should be sourced by a filetype's after syntax
+" Last Change: Mon 18 Oct 2021
+  " used by
+  "   $vimfiles/after/syntax/bbcode.vim
+  "   $vimfiles/after/syntax/sh.vim
 
 " my syntax for  #=>  folding
 syntax match foldY '#=.*$'

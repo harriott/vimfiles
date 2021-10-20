@@ -93,8 +93,6 @@ nnoremap <buffer> <leader>' viwc''''<Esc>hP
 vnoremap <buffer> <leader>' c''''<Esc>hP
 
 ""> the syntax plugin
-" I prefer to comment out conceal of '->', '--', and '…'
 let dokuwiki_comment=1 " can't see what this achieves...
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
-" not available in $VIMRUNTIME\syntax: powershell
 

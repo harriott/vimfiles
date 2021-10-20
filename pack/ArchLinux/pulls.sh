@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# Joseph Harriott, Wed 20 Jan 2021
+# Joseph Harriott, Mon 18 Oct 2021
 
 # bash pulls.sh  when you want to update your remote plugins
 
@@ -14,7 +14,7 @@ set -e  # quits on error
 
 cd ..
 find . -maxdepth 3 -mindepth 3 -type d | while read plugin; do
-  # if [ $check -ne 0 ]
+  continue
   pluginName=${plugin##*/}
   if [ $snagged ]; then
     if [ $pluginName = $snagged ]; then
@@ -31,14 +31,5 @@ find . -maxdepth 3 -mindepth 3 -type d | while read plugin; do
   cd ~/.vim/pack
 done
 
-if [ $tidyup ]; then
-
-  echo -e "\e[1m make hexokinase \e[0m"
-  cd packs-unix/opt/vim-hexokinase
-  make hexokinase
-  cd ~/.vim/pack
-
-  . ArchLinux/lists.sh
-
-fi
+cd ArchLinux; [ $tidyup ] && . after.sh
 
