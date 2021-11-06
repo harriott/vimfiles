@@ -7,7 +7,6 @@
 " folding by message date
 " -----------------------
 function! DateFold()
-  " if matchstr(getline(v:lnum), 'Date: ') return ">1"
   if getline(v:lnum) =~ '^Date: '
     return ">1"
   else

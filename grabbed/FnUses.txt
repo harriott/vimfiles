@@ -1,3 +1,5 @@
+vim: ft=Fn:
+
 ../ftplugin/muttaliases.vim:nnoremap <buffer> <F7> gg2jVG:sort u <cr>
 ../ftplugin/fugitive.vim:" <F1> gets remapped by  vim-fugitive  to  :h fugitive
 ../ftplugin/fugitive.vim:nnoremap <buffer><F1> <C-W><C-W>

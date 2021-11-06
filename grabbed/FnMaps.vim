@@ -2,4 +2,4 @@
 ,call GrabFnMaps()
 ,wq
 
-" see  ~/.vim/grabbed/grabMaps.sh
+" see  $vimfiles/grabbed/grabMaps.sh

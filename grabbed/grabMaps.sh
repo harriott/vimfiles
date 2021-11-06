@@ -10,7 +10,10 @@
 # Grab uses of Function keys
 #  this can be run as a vim command,  :execute "!grep -ri -E '<(m-|s-)?F[0-9]{1,2}>'"
 #  but that can't be passed to Bufferize...
-grep -ri --exclude-dir=grabbed -E '<(m-|s-)?F[0-9]{1,2}>' ../* > FnUses.txt
+echo 'vim: ft=Fn:' > FnUses.txt
+echo >> FnUses.txt
+grep -ri --exclude-dir=grabbed -E '<(m-|s-)?F[0-9]{1,2}>' ../* >> FnUses.txt
+# rg --no-ignore '<(F|S-F)\d\+>'
 
 # Grab uses of <leader>
 echo 'vim: ft=leader:' > leaderUses.txt

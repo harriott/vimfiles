@@ -55,7 +55,7 @@ set wildmenu
 set listchars=eol:│,trail:·,tab:»·  "nicer settings for list mode:
 noremap <leader>ll :set list! list? <CR>
 
-set history=400
+set history=500  " just guessing here...
 set modelines=4
 
 set shortmess-=S " display count of matches

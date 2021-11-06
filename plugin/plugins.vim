@@ -4,6 +4,7 @@
 
 " (keep this file in your plugin directory so's it's automatically sourced at startup)
 " ------------------------------------------------------------------------------------
+" find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
 ""> ALE
 " :Bufferize ALEInfo  " shows settings for the filetype
@@ -12,7 +13,7 @@
 
 let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
 let g:ale_sign_column_always = 1
-packadd ale
+" packadd ale
 
 " moving to ALE errors
 noremap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -144,7 +145,7 @@ else
   " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
   nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
   nnoremap <leader>mm :call MRU_highlighted('\.md' )<CR>:se hls<CR>
-  nnoremap <leader>me :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
+  nnoremap <leader>ml :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
   nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
   nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
   nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
@@ -205,6 +206,9 @@ let g:syntastic_python_checkers = ['flake8']
 " packadd tabular
 
 ""> Tagbar
+" add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
+" h tagbar-contents
+" h tagbar-ignore
 packadd tagbar
 
 ""> targets.vim

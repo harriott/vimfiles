@@ -112,8 +112,8 @@ syn match dokuwikiSmiley "\(:-X\|:-|\|;-)\|m(\|\^_\^\|:?:\|:!:\)\|LOL\|FIXME\|DE
 syn match dokuwikiEntities "<->" conceal cchar=↔
 " syn match dokuwikiEntities "->" conceal cchar=→  " JH
 syn match dokuwikiEntities "<-\ze\([^>]\|$\)" conceal cchar=←
-syn match dokuwikiEntities "<=>" conceal cchar=⇔
-syn match dokuwikiEntities "=>" conceal cchar=⇒
+" syn match dokuwikiEntities "<=>" conceal cchar=⇔  "JH
+" syn match dokuwikiEntities "=>" conceal cchar=⇒  " JH
 " syn match dokuwikiEntities "<=\ze\([^>]\|$\)" conceal cchar=⇐  " JH
 
 " syn match dokuwikiEntities "\( \|^\|\d\)\zsx\ze\d" conceal cchar=× " JH

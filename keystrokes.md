@@ -6,7 +6,7 @@ Joseph's useful (g)Vim commands
     :helpt ALL               " generate all tags
     :helptags $HOME\vimfiles " set tags
 
-# aligns the lists in this file
+# align the lists in this file
 " vim-easy-align on a selection: gA"
 
 ## tabular
@@ -157,6 +157,10 @@ Joseph's useful (g)Vim commands
 	\s  " whitespace character
 	\u  " uppercase character
 
+## replace - reuse matched pattern
+    :h s/\&
+    :s/<pattern>/<new1>&<new2>/ " wraps <pattern> in <new1> & <new2>
+
 # shell
     :!<shellcmd>          " runs the external shell command
     :h netrw-quickmap
@@ -206,7 +210,6 @@ Joseph's useful (g)Vim commands
 
     &                         " repeat last substitute
     ctrl-q ctrl-m             " inserts ^M (carriage return)
-    g~<movement>              " invert case
     g&                        " repeat last command over the whole document
     :exe                      " :normal i" . strftime("%c")  " put date-time at cursor
     :g/^/m 0                  " reverse the entire buffer
@@ -214,13 +217,18 @@ Joseph's useful (g)Vim commands
     :ni<somecharacter><Enter> " inserts <somecharacters> n time
     :s/./&/gn|noh             " show number of characters in a long line
     \yy                       " CalendarH
-    ~                         " toggle case of selection
 
 Entering special characters
 
 ## base64
 	<leader>atob " base64 to a string
 	<leader>btoa " a string to base64
+
+## case
+    g~<movement> " invert case
+    ~            " toggle case of selection
+    ~            " TwiddleCase of a selection
+    :s/\<./\u&/g " capitalise first letters
 
 ## layout
     :%le  " remove all indents
@@ -284,10 +292,11 @@ Entering special characters
     :let i=2 | g#.# s#1#\=i#g | let i+=1    " g-> working down through the entire buffer, s-> increase counts
 
 # Vim
+    :Bufferize dig!  " categorised digraphs
     :Bufferize let
     :Bufferize version  " Vim version etc
     :colo  " see current colorscheme
-    @:  " repeat last command-line
+    @@  " = @: = repeat last command-line
     K   " brings up a man page (if there is one) for word under cursor
     ga  " returns code values for character under cursor
     gQ  " enter Ex mode
@@ -296,25 +305,26 @@ Entering special characters
     \8  " toggle 82/106 columns
     \ll " list mode
 
-    C-k<non-text-key>    " enters the Vim value of a non-text-key
-    C-r"                 " (in command line) insert the unnamed register
-    :Bufferize messages
-    :colo                " show color scheme
-    :X                   " prompts for an encryption key
-    :help index          " lists the all of the commands
-    :help 'sw'           " autoindentation - shiftwidth
-    :his                 " Display command-line history
-    :his s               " Display search string history
-    :scriptnames         " list of files sourced, in order
-    ;set gfn             " show font
-    :so %                " source the current file
-    :DiffOrig  " brings the Recover version up left
+    C-k<non-text-key>      " enters the Vim value of a non-text-key
+    C-r                    " " (in command line) insert the unnamed register
+    :colo                  " show color scheme
+    :X                     " prompts for an encryption key
+    :help index            " lists the all of the commands
+    :help 'sw'             " autoindentation - shiftwidth
+    :his                   " Display command-line history
+    :his s                 " Display search string history
+    :Bufferize scriptnames " list of files sourced, in order
+    ;set gfn               " show font
+    :so %                  " source the current file
+    :DiffOrig              " brings the Recover version up left
 
 ## buffer listing your recent messages
+    :Bufferize messages
 	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
 
 ## syntax highlighting
 	:h syn-region
+	:hi
 	:so $VIMRUNTIME/syntax/hitest.vim
 
 	$VIMRUNTIME/syntax/syncolor.vim

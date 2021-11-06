@@ -1,6 +1,6 @@
 " vim: ft=vim:
 
-" Joseph Harriott - Wed 20 Oct 2021
+" Joseph Harriott - Sat 30 Oct 2021
 " ---------------------------------
 
 " keep this file in your plugin directory so's it's automatically sourced at startup
@@ -197,7 +197,7 @@ autocmd BufNewFile,BufRead *.aesl setlocal filetype=xml
 ""> ft defaults
 set shiftwidth=4
 set tabstop=4
-set tw=99
+set textwidth=99
 
 ""> ft dokuwiki
 " comment highlighting on - ../syntax/dokuwiki.vim
