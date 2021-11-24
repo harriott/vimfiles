@@ -26,6 +26,7 @@ iab <d <code dos>
 iab <j <code javascript>
 iab <e <code perl>
 iab <f <file>
+iab <g <code go>
 iab <h <code html>
 iab <l <code latex>
 iab <p <code powershell>
@@ -42,7 +43,7 @@ iab <y <code yaml>
 "     to clear global mappings.
 " Ensure magic is set, and make an atom of one or more occurences of > at start of line,
 " replace that with that atom plus opening tag, then add closing tag to end of line:
-nnoremap <buffer> <leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A </wrap><Esc>
+nnoremap <buffer> <leader><leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A </wrap><Esc>
 " Notes: the repeat operator . will only repeat the last action here;
 "    you can add a count, eg 3\i to work on the next three lines,
 "    but only the last closing tag gets pasted, you have to do the other two manually.

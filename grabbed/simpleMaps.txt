@@ -41,26 +41,28 @@ n  \bs         & :BufExplorerHorizontalSplit<CR>
 n  \bt         & :ToggleBufExplorer<CR>
    \be         * :BufExplorer<CR>
    \aa         * :ALEToggleBuffer<CR>
-n  \zz         * :let &scrolloff=999-&scrolloff<CR>
 n  \d          * :cd %:p:h<CR>:pwd<CR>
 n  \-          * :Hexplore<CR>
 n  \f          * :let@f=@%<CR>
 n  \v          * v$hy
 v  \vs         * <Esc>:call ConvertSearchForVisualSelection()<CR>
 n  \vs         * :call ConvertSearchForVisualSelection()<CR>
+n  \sw         * :call SearchCFW()<CR>
    \q          * :copen<CR>
 n  \pt         * :call ParenthsToggle()<CR>
 n  \vg         * :call VimgrepSelection()<CR>
 v  \n          * <Esc>:nohlsearch<CR>
 n  \n          * :nohlsearch<CR>
 n  \rn         * :set rnu! rnu? <CR>
-n  \u          * :Underline
+n  \zz         * :let &scrolloff=999-&scrolloff<CR>
+n  \U          * :Underline
 n  \[          * :s/\m\[.\{-}]//g<CR>
 n  \5          * :call UnicodePercent()<CR>
 n  \9          * :call PercentUnicode()<CR>
    \yp         * :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
 n  \2          * :call ClearFancyText()<CR>
-n  \s          * :buffers<CR>:sbuffer<Space>
+n  \sb         * :buffers<CR>:sbuffer<Space>
+n  \c=         * :windo set nowfh <CR>
 n  \<Right>    * 10<C-W>>
 n  \<Left>     * 10<C-W><
 n  \<Up>       * 5<C-W>+

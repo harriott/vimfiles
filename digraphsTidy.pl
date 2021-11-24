@@ -1,10 +1,18 @@
 #!/usr/bin/perl
 
 # --------------------------------------------------------------------
+# Better visualisation of digraphs.
+#
 # save digraphs in Vim:
 #  :redir @d | silent digraphs! | redir END | new | exe "normal! \"dp"
 #  :saveas! $vimfiles/digraphs.txt
+#
 # then  perl digraphsTidy.pl
+#
+# then  $vimfiles/digraphs.txt  is handled by
+#  $vimfiles/ftplugin/digraphs.vim
+#  $vimfiles/syntax/digraphs.vim
+#
 # --------------------------------------------------------------------
 
 use feature 'say';

@@ -70,6 +70,9 @@ nnoremap <F1> <C-W><C-W>
 inoremap <F1> <Esc><C-W><C-W>
 vnoremap <F1> <Esc><C-W><C-W>
 
+" better searching
+set ignorecase smartcase
+
 " toggle cursorcolumn:
 nnoremap <silent><leader><leader>c :set cuc! cuc? <CR>
 " toggle cursorline:
@@ -92,9 +95,11 @@ nnoremap <leader><up> 5<C-W>+
 nnoremap <leader><left> 10<C-W><
 " increase window width
 nnoremap <leader><right> 10<C-W>>
+" turn off winfixheight in all windows
+nnoremap <leader>c= :windo set nowfh <CR>
 
 " :h window-resize
-"
+
 "">> turn off some unused Fn keys in insert mode
 inoremap <F3> <Esc>
 inoremap <S-F2> <Esc>

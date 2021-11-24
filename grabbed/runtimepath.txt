@@ -26,6 +26,7 @@
 /home/jo/.vim/pack/packs-cp/opt/vim-airline
 /home/jo/.vim/pack/packs-cp/opt/undotree
 /home/jo/.vim/pack/packs-cp/opt/targets.vim
+/home/jo/.vim/pack/packs-cp/opt/tagbar
 /home/jo/.vim/pack/packs-cp/opt/supertab
 /home/jo/.vim/pack/packs-cp/opt/quick-scope
 /home/jo/.vim/pack/packs-cp/opt/python_match.vim
@@ -43,7 +44,6 @@
 /home/jo/.vim/pack/packs-cp/opt/calendar-vim
 /home/jo/.vim/pack/packs-cp/opt/bufferize.vim
 /home/jo/.vim/pack/packs-cp/opt/bufexplorer
-/home/jo/.vim/pack/packs-cp/opt/ale
 /home/jo/.vim/pack/packs-cp/opt/vim-ShowTrailingWhitespace
 /home/jo/.vim/pack/packs-cp/opt/vim-ingo-library
 /usr/share/vim/vimfiles

@@ -1,8 +1,9 @@
 " vim: ft=vim:
 
-" Joseph Harriott - Sat 30 Oct 2021
+" Joseph Harriott - Fri 12 Nov 2021
 " ---------------------------------
 
+" here I have things that I might, rarely, want to comment out
 " keep this file in your plugin directory so's it's automatically sourced at startup
 
 ""> buffer - finish a Git commit message
@@ -214,6 +215,9 @@ autocmd BufReadPre *templates/*.latex let b:PandocLaTeX = 1
 " turn off syntax folding for the long log files from md4pdf.ps1
 autocmd BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 
+""> ft rsnapshotlog
+autocmd BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
+
 ""> ft vimscript
 " lesser indentation of continuation line
 let g:vim_indent_cont = &sw
@@ -294,13 +298,16 @@ function! GrabSimpleMaps()
   write
 endfunction
 
-""> layout - toggle relativenumber
-nnoremap <silent><leader>rn :set rnu! rnu? <CR>
-
 ""> layout - tabline
 " set showtabline=1
 " because it's somehow sometimes set to 2
 " overriden by  vim-airline  extension  tabline
+
+""> layout - toggle centering current line
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
+""> layout - toggle relativenumber
+nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 
 ""> maxmempattern
 set mmp=25000
@@ -378,6 +385,22 @@ function! VimgrepSelection()
   copen
 endfunction
 
+""> searching - incsearch
+set incsearch
+nnoremap <leader>i :call IncSearchToggle()<cr>
+let g:incsearchSet = 1
+function! IncSearchToggle()
+  if g:incsearchSet
+    set noincsearch
+    let g:incsearchSet = 0
+    echo 'noincsearch'
+  else
+    set incsearch
+    let g:incsearchSet = 1
+    echo 'incsearch'
+  endif
+endfunction
+
 ""> searching - parenthesis matching
 if !exists("g:loaded_matchparen")
   autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
@@ -409,6 +432,7 @@ function! SearchCFW()
   call histadd('/', @/)
 endfunction
 nnoremap <leader>sw :call SearchCFW()<CR>
+" can also use  g#
 
 ""> searching - search within a visual selection
 "  before calling this you need to search for something, then
@@ -427,8 +451,6 @@ vnoremap <leader>vs <Esc>:call ConvertSearchForVisualSelection()<CR>
 if has('unix')
   nnoremap <leader>v v$hy
 endif
-
-set ignorecase incsearch smartcase
 
 ""> shell - filepath into register f
 nnoremap <leader>f :let@f=@%<CR>
@@ -450,7 +472,4 @@ vnoremap <F2> <Esc>:wa<CR>
 nnoremap <F4> :wa<CR>:bd<CR>
 inoremap <F4> <Esc>:wa<CR>:bd<CR>
 vnoremap <F4> <Esc>:wa<CR>:bd<CR>
-
-""> toggle centering current line
-nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 

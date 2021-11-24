@@ -39,7 +39,7 @@ gd opt; ls
   # $gc https://github.com/ervandew/supertab
   # $gc https://github.com/vim-syntastic/syntastic
   # $gc https://github.com/godlygeek/tabular
-  $gc https://github.com/preservim/tagbar
+  # $gc https://github.com/preservim/tagbar
   # $gc https://github.com/wellle/targets.vim
   # $gc https://github.com/mbbill/undotree
   # $gc https://github.com/bling/vim-airline

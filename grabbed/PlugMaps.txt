@@ -11,6 +11,8 @@ o  ic           @<Plug>(GitGutterTextObjectInnerPending)
 o  %             <Plug>(MatchitOperationForward)
 x  %             <Plug>(MatchitVisualForward)
 n  %             <Plug>(MatchitNormalForward)
+   /             <Plug>(incsearch-forward)
+   ?             <Plug>(incsearch-backward)
 x  F             <Plug>(QuickScopeF)
 o  F             <Plug>(QuickScopeF)
 n  F             <Plug>(QuickScopeF)
@@ -83,7 +85,7 @@ x  g%            <Plug>(MatchitVisualBackward)
 n  g%            <Plug>(MatchitNormalBackward)
 x  gA            <Plug>(EasyAlign)
 n  gA            <Plug>(EasyAlign)
-   g/            <Plug>(incsearch-fuzzy-stay)
+   g/            <Plug>(incsearch-stay)
 n  s             <Plug>(easymotion-overwin-f2)
 x  t             <Plug>(QuickScopet)
 o  t             <Plug>(QuickScopet)
@@ -93,7 +95,7 @@ n  ySs           <Plug>YSsurround
 n  yss           <Plug>Yssurround
 n  yS            <Plug>YSurround
 n  ys            <Plug>Ysurround
-   z/            <Plug>(incsearch-fuzzy-/)
+   z/            <Plug>(incsearch-fuzzy-stay)
 x  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
 n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
 n  <Plug>(fzf-normal) * <Nop>
@@ -424,15 +426,15 @@ n  <Plug>NERDCommenterComment * :call nerdcommenter#Comment("n", "Comment")<CR>
    <Plug>(incsearch-stay) * incsearch#go({'command': '/', 'is_stay': 1})
    <Plug>(incsearch-backward) * incsearch#go({'command': '?'})
    <Plug>(incsearch-forward) * incsearch#go({'command': '/'})
-   <Plug>(incsearch-fuzzyspell-stay) * incsearch#go(<SNR>37_config_fuzzyspell({'is_stay': 1}))
-   <Plug>(incsearch-fuzzyspell-?) * incsearch#go(<SNR>37_config_fuzzyspell({'command': '?'}))
-   <Plug>(incsearch-fuzzyspell-/) * incsearch#go(<SNR>37_config_fuzzyspell())
-   <Plug>(incsearch-fuzzyword-stay) * incsearch#go(<SNR>37_config_fuzzyword({'is_stay': 1}))
-   <Plug>(incsearch-fuzzyword-?) * incsearch#go(<SNR>37_config_fuzzyword({'command': '?'}))
-   <Plug>(incsearch-fuzzyword-/) * incsearch#go(<SNR>37_config_fuzzyword())
-   <Plug>(incsearch-fuzzy-stay) * incsearch#go(<SNR>37_config_fuzzy({'is_stay': 1}))
-   <Plug>(incsearch-fuzzy-?) * incsearch#go(<SNR>37_config_fuzzy({'command': '?'}))
-   <Plug>(incsearch-fuzzy-/) * incsearch#go(<SNR>37_config_fuzzy())
+   <Plug>(incsearch-fuzzyspell-stay) * incsearch#go(<SNR>36_config_fuzzyspell({'is_stay': 1}))
+   <Plug>(incsearch-fuzzyspell-?) * incsearch#go(<SNR>36_config_fuzzyspell({'command': '?'}))
+   <Plug>(incsearch-fuzzyspell-/) * incsearch#go(<SNR>36_config_fuzzyspell())
+   <Plug>(incsearch-fuzzyword-stay) * incsearch#go(<SNR>36_config_fuzzyword({'is_stay': 1}))
+   <Plug>(incsearch-fuzzyword-?) * incsearch#go(<SNR>36_config_fuzzyword({'command': '?'}))
+   <Plug>(incsearch-fuzzyword-/) * incsearch#go(<SNR>36_config_fuzzyword())
+   <Plug>(incsearch-fuzzy-stay) * incsearch#go(<SNR>36_config_fuzzy({'is_stay': 1}))
+   <Plug>(incsearch-fuzzy-?) * incsearch#go(<SNR>36_config_fuzzy({'command': '?'}))
+   <Plug>(incsearch-fuzzy-/) * incsearch#go(<SNR>36_config_fuzzy())
 o  <Plug>(fzf-maps-o) * <C-C>:<C-U>call fzf#vim#maps('o', 0)<CR>
 x  <Plug>(fzf-maps-x) * :<C-U>call fzf#vim#maps('x', 0)<CR>
 n  <Plug>(fzf-maps-n) * :<C-U>call fzf#vim#maps('n', 0)<CR>
@@ -443,46 +445,6 @@ n  <Plug>CalendarH * :cal calendar#show(1)<CR>
 n  <Plug>CalendarV * :cal calendar#show(0)<CR>
    <C-K>       * <Plug>(ale_previous_wrap)
    <C-J>       * <Plug>(ale_next_wrap)
-n  <Plug>(ale_repeat_selection) * :ALERepeatSelection<CR>
-n  <Plug>(ale_code_action) * :ALECodeAction<CR>
-n  <Plug>(ale_rename) * :ALERename<CR>
-n  <Plug>(ale_import) * :ALEImport<CR>
-n  <Plug>(ale_documentation) * :ALEDocumentation<CR>
-n  <Plug>(ale_hover) * :ALEHover<CR>
-n  <Plug>(ale_find_references) * :ALEFindReferences<CR>
-n  <Plug>(ale_go_to_type_definition_in_vsplit) * :ALEGoToTypeDefinitionIn -vsplit<CR>
-n  <Plug>(ale_go_to_type_definition_in_split) * :ALEGoToTypeDefinition -split<CR>
-n  <Plug>(ale_go_to_type_definition_in_tab) * :ALEGoToTypeDefinition -tab<CR>
-n  <Plug>(ale_go_to_type_definition) * :ALEGoToTypeDefinition<CR>
-n  <Plug>(ale_go_to_definition_in_vsplit) * :ALEGoToDefinition -vsplit<CR>
-n  <Plug>(ale_go_to_definition_in_split) * :ALEGoToDefinition -split<CR>
-n  <Plug>(ale_go_to_definition_in_tab) * :ALEGoToDefinition -tab<CR>
-n  <Plug>(ale_go_to_definition) * :ALEGoToDefinition<CR>
-n  <Plug>(ale_fix) * :ALEFix<CR>
-n  <Plug>(ale_detail) * :ALEDetail<CR>
-n  <Plug>(ale_lint) * :ALELint<CR>
-n  <Plug>(ale_reset_buffer) * :ALEResetBuffer<CR>
-n  <Plug>(ale_disable_buffer) * :ALEDisableBuffer<CR>
-n  <Plug>(ale_enable_buffer) * :ALEEnableBuffer<CR>
-n  <Plug>(ale_toggle_buffer) * :ALEToggleBuffer<CR>
-n  <Plug>(ale_reset) * :ALEReset<CR>
-n  <Plug>(ale_disable) * :ALEDisable<CR>
-n  <Plug>(ale_enable) * :ALEEnable<CR>
-n  <Plug>(ale_toggle) * :ALEToggle<CR>
-n  <Plug>(ale_last) * :ALELast<CR>
-n  <Plug>(ale_first) * :ALEFirst<CR>
-n  <Plug>(ale_next_wrap_warning) * :ALENext -wrap -warning<CR>
-n  <Plug>(ale_next_warning) * :ALENext -warning<CR>
-n  <Plug>(ale_next_wrap_error) * :ALENext -wrap -error<CR>
-n  <Plug>(ale_next_error) * :ALENext -error<CR>
-n  <Plug>(ale_next_wrap) * :ALENextWrap<CR>
-n  <Plug>(ale_next) * :ALENext<CR>
-n  <Plug>(ale_previous_wrap_warning) * :ALEPrevious -wrap -warning<CR>
-n  <Plug>(ale_previous_warning) * :ALEPrevious -warning<CR>
-n  <Plug>(ale_previous_wrap_error) * :ALEPrevious -wrap -error<CR>
-n  <Plug>(ale_previous_error) * :ALEPrevious -error<CR>
-n  <Plug>(ale_previous_wrap) * :ALEPreviousWrap<CR>
-n  <Plug>(ale_previous) * :ALEPrevious<CR>
 i  <C-G>S        <Plug>ISurround
 i  <C-G>s        <Plug>Isurround
 i  <C-S>         <Plug>Isurround
@@ -499,5 +461,4 @@ i  <Plug>(fzf-complete-file-ag) * fzf#vim#complete#path('ag -l -g ""')
 i  <Plug>(fzf-complete-file) * fzf#vim#complete#path("find . -path '*/\.*' -prune -o -type f -print -o -type l -print | sed 's:^..::'")
 i  <Plug>(fzf-complete-path) * fzf#vim#complete#path("find . -path '*/\.*' -prune -o -print | sed '1d;s:^..::'")
 i  <Plug>(fzf-complete-word) * fzf#vim#complete#word()
-i  <Plug>(ale_complete) * <C-\><C-O>:ALEComplete<CR>
 i  <Tab>         <Plug>SuperTabForward

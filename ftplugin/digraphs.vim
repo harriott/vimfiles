@@ -1,6 +1,7 @@
 " Vim ftplugin file
 
-" Language:	
+" Language:	digraphs
+"  for  $vimfiles/digraphs.txt  created by  $vimfiles/digraphsTidy.pl
 " Maintainer: Joseph Harriott
 " Last Change: Sat 06 Nov 2021
 "

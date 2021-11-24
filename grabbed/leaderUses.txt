@@ -2,13 +2,14 @@ vim: ft=leader:
 
 ../after/plugin/plugins.vim:noremap <leader>gg :call GitGutterFocus()<cr>
 ../ftplugin/dokuwiki.vim:"   :unmap <leader>i
-../ftplugin/dokuwiki.vim:nnoremap <buffer> <leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A </wrap><Esc>
+../ftplugin/dokuwiki.vim:nnoremap <buffer> <leader><leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A </wrap><Esc>
 ../ftplugin/dokuwiki.vim:nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
 ../ftplugin/dokuwiki.vim:nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
 ../ftplugin/dokuwiki.vim:vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 ../ftplugin/dokuwiki.vim:nnoremap <buffer> <leader>' viwc''''<Esc>hP
 ../ftplugin/dokuwiki.vim:vnoremap <buffer> <leader>' c''''<Esc>hP
 ../ftplugin/fugitive.vim:nnoremap <buffer><leader>gp :Git push<cr>
+../ftplugin/fugitive.vim:nnoremap <buffer><leader>gs 4j-<cr>
 ../ftplugin/email.vim:nnoremap <buffer> <leader><leader>= I==  <Esc>A  ==<Esc>
 ../ftplugin/email.vim:nnoremap <buffer> <leader>== I==<Esc>A==<Esc>
 ../ftplugin/email.vim:nnoremap <buffer> <leader>=- 0xx<Esc>$xx<Esc>
@@ -18,7 +19,7 @@ vim: ft=leader:
 ../ftplugin/vim.vim:nnoremap <buffer><leader><leader>> :call FirmComment()<cr>
 ../ftplugin/vim.vim:nnoremap <buffer><leader><leader>< :call FirmUnComment()<cr>
 ../ftplugin/md.vim:"  (I'm using <leader> here to avoid accidentally running this)
-../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $ITstack/onGitHub/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
 ../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
 ../ftplugin/md.vim:" check with  :map <leader><F7>
 ../ftplugin/md.vim:vnoremap <buffer> <leader>v1 :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
@@ -44,6 +45,8 @@ vim: ft=leader:
 ../ftplugin/markdown.vim:vnoremap <buffer><leader>< :s/^#//<CR>
 ../ftplugin/markdown.vim:nnoremap <buffer> <leader>` viwc``<Esc>P
 ../ftplugin/markdown.vim:vnoremap <leader>` c``<Esc>P
+../ftplugin/python.vim:nnoremap <leader>u :TagbarToggle<CR>
+../ftplugin/perl.vim:nnoremap <leader>u :TagbarToggle<CR>
 ../ftplugin/bbcode.vim:nnoremap <buffer> <leader>] viwc[b][/b]<Esc>hhhP
 ../ftplugin/bbcode.vim:vnoremap <buffer> <leader>] c[b][/b]<Esc>hhhP
 ../gvimrc.vim:nnoremap <leader>8 :call EightyTwoColumns()<cr>
@@ -444,12 +447,13 @@ vim: ft=leader:
 ../plugin/plugins.vim:  " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mm :call MRU_highlighted('\.md' )<CR>:se hls<CR>
-../plugin/plugins.vim:  nnoremap <leader>me :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>ml :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mx :call MRU_highlighted('\.tex')<CR>:se hls<CR>
 ../plugin/plugins.vim:" <leader>c<space> -> NERDCommenterToggle
+../plugin/plugins.vim:" add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
 ../plugin/plugins.vim:" <Leader>f{char} to move to {char}
 ../plugin/plugins.vim:map  <Leader><Leader>f <Plug>(easymotion-bd-f)
 ../plugin/plugins.vim:nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
@@ -463,7 +467,7 @@ vim: ft=leader:
 ../plugin/plugins.vim:nnoremap <leader>lt :LangTool <bar> lopen <CR>
 ../plugin/plugins.vim:  nmap <unique> <leader>pe <Plug>(PickerEdit)
 ../plugin/plugins.vim:  nmap <unique> <leader>pb <Plug>(PickerBuffer)
-../plugin/plugin.vim:nnoremap <leader>s :buffers<CR>:sbuffer<Space>
+../plugin/plugin.vim:nnoremap <leader>sb :buffers<CR>:sbuffer<Space>
 ../plugin/plugin.vim:" nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
 ../plugin/plugin.vim:nnoremap <leader>2 :call ClearFancyText()<cr>
 ../plugin/plugin.vim:  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
@@ -471,7 +475,8 @@ vim: ft=leader:
 ../plugin/plugin.vim:nnoremap <leader>9 :call PercentUnicode()<cr>
 ../plugin/plugin.vim:nnoremap <leader>5 :call UnicodePercent()<cr>
 ../plugin/plugin.vim:nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
-../plugin/plugin.vim :nnoremap <leader>u :Underline
+../plugin/plugin.vim:nnoremap <leader>U :Underline
+../plugin/plugin.vim:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 ../plugin/plugin.vim:nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 ../plugin/plugin.vim:nnoremap <leader>n :nohlsearch<CR>
 ../plugin/plugin.vim:vnoremap <leader>n <Esc>:nohlsearch<CR>
@@ -479,14 +484,13 @@ vim: ft=leader:
 ../plugin/plugin.vim:" and <leader>pt toggles it:
 ../plugin/plugin.vim:nnoremap <leader>pt :call ParenthsToggle()<cr>
 ../plugin/plugin.vim:noremap <leader>q :copen<CR>
+../plugin/plugin.vim:nnoremap <leader>sw :call SearchCFW()<CR>
 ../plugin/plugin.vim:nnoremap <leader>vs :call ConvertSearchForVisualSelection()<CR>
 ../plugin/plugin.vim:vnoremap <leader>vs <Esc>:call ConvertSearchForVisualSelection()<CR>
 ../plugin/plugin.vim:  nnoremap <leader>v v$hy
 ../plugin/plugin.vim:nnoremap <leader>f :let@f=@%<CR>
 ../plugin/plugin.vim:nnoremap <leader>- :Hexplore<cr>
 ../plugin/plugin.vim:nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
-../plugin/plugin.vim:nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
-../syntax/leader.vim:" syn keyword leader <leader> nextgroup=keystrokes
 ../syntax/leader.vim:syn match leader '<leader>\c' nextgroup=keystrokes
 ../vimrc.vim:noremap <leader>ll :set list! list? <CR>
 ../vimrc.vim:nnoremap <leader>x <C-W>c
@@ -496,3 +500,4 @@ vim: ft=leader:
 ../vimrc.vim:nnoremap <leader><up> 5<C-W>+
 ../vimrc.vim:nnoremap <leader><left> 10<C-W><
 ../vimrc.vim:nnoremap <leader><right> 10<C-W>>
+../vimrc.vim:nnoremap <leader>c= :windo set nowfh <CR>

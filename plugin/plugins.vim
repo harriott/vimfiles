@@ -99,12 +99,13 @@ endif
 packadd gitignore.vim
 
 ""> incsearch-fuzzy.vim
-map g/ <Plug>(incsearch-fuzzy-stay)
-map z/ <Plug>(incsearch-fuzzy-/)
+map z/ <Plug>(incsearch-fuzzy-stay)
 packadd incsearch-fuzzy.vim
 
 ""> incsearch.vim
-packadd incsearch.vim
+" :h incsearch.vim
+map g/ <Plug>(incsearch-stay)
+packadd incsearch.vim  " needed for  incsearch-fuzzy.vim
 
 ""> jellybeans.vim
 " added for neovim
@@ -296,7 +297,9 @@ packadd vim-fontsize
 
 ""> vim-fugitive
 " ce  " amend the last commit without editing the message
+" U   " unstages all
 " :GBrowse
+" :Git pull
 
 " Ggrep for last search
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
@@ -304,10 +307,13 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 packadd vim-fugitive
 
 ""> vim-gfm-syntax
+" $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/autoload/gfm_syntax/emoji.vim
 let g:gfm_syntax_enable_always = 0
 let g:gfm_syntax_enable_filetypes = ['markdown.gfm'] " a subtype of markdown filetype
 let g:gfm_syntax_emoji_conceal = 1
+autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm
 packadd vim-gfm-syntax
+" vim: ft=markdown.gfm:
 
 ""> vim-gitgutter
 let g:gitgutter_max_signs = 600

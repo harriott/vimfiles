@@ -15,6 +15,7 @@ Joseph's useful (g)Vim commands
 # buffers
     'J      " bring up file marked with J (as saved in viminfo) into buffer
     :bd!(n) " buffer delete
+    :bro w  " your system's Save As dialogue
     :ls     " buffer list
     :marks  " list all the current marks
     :unh    " unhides all buffers (into windows)
@@ -58,6 +59,7 @@ Joseph's useful (g)Vim commands
 # folds
     zC             " close current fold & subfolds
     zM             " close all folds
+    zMzv           " focus on just the current fold
     zO             " expand current fold & subfolds
     zR             " expand all folds
     za             " toggle current fold open/closed
@@ -118,7 +120,8 @@ Joseph's useful (g)Vim commands
     #                     " over a word highlights all exact instances, and jumps to last
     %                     " find opposing bracket in a line
     *                     " highlight all instances of exactly the word under the cursor
-    \.*pat1\&.*pat2       " finds lines containing both patterns, in either order
+    /pat1\|pat2\|pat3
+	g#                    " # without \< \>
     \B                    " :BLines
     \L                    " :Lines
     \n                    " (my mapping for) clearing yellow searched highlights
@@ -128,9 +131,8 @@ Joseph's useful (g)Vim commands
     :g/pattern            " list of lines containing "pattern"
     :%s/pattern//ng       " reports number of occurances
     [I or ]I              " list lines containing word under cursor
-    g/                    " incsearch-stay
-    z/                    " incsearch-fuzzy
     n                     " find next highlighted search result
+    z/                    " incsearch-fuzzy-stay
 
 ## fzf.vim
     :Rg <regex> " in the cwd
@@ -151,11 +153,12 @@ Joseph's useful (g)Vim commands
 
 ## regex
 	\(alt1\|alt2\|alt3\)
-	\d  " digit
-	\D  " non-digit
-	\S  " non-whitespace character
-	\s  " whitespace character
-	\u  " uppercase character
+	\d    " digit
+	\D    " non-digit
+	\S    " non-whitespace character
+	\s    " whitespace character
+	\u    " uppercase character
+    \{,m} " 0-m matches
 
 ## replace - reuse matched pattern
     :h s/\&
@@ -186,17 +189,6 @@ Joseph's useful (g)Vim commands
 	gS " search word
 	gW " search Wikipedia
 
-# spell
-    (count)]s => move to next misspelled word after the cursor
-    (count)[s => like  ]s  but search backwards
-    :spellrare <rareword>
-    z= => suggest corrections
-    zg => add good word
-
-## spelllang
-    :set spl
-    echo &spelllang
-
 # tab views
     gT  gt    " move around tabs
     :tab ball " all buffers into tabs
@@ -216,6 +208,7 @@ Joseph's useful (g)Vim commands
     :h g_CTRL-G               " position and word info, works on a range too
     :ni<somecharacter><Enter> " inserts <somecharacters> n time
     :s/./&/gn|noh             " show number of characters in a long line
+    :so /usr/share/vim/vim82/tools/emoji_list.vim
     \yy                       " CalendarH
 
 Entering special characters
@@ -314,7 +307,8 @@ Entering special characters
     :his                   " Display command-line history
     :his s                 " Display search string history
     :Bufferize scriptnames " list of files sourced, in order
-    ;set gfn               " show font
+    :se gfn                " show font
+    :se gfn=*              " pop-up selection
     :so %                  " source the current file
     :DiffOrig              " brings the Recover version up left
 
@@ -337,6 +331,7 @@ Entering special characters
 
 # windows splits
     C-w+[h|j|k|l] " move focus to neighbouring split
+    winfixheight
 
 ## move them around
     C-w+[H|J|K|L] " move split (can get fiddly)
@@ -351,4 +346,18 @@ Entering special characters
     :ba          " all horizontally
     :sp          " current window
     C-w+v         " vertical
+
+# words
+    g<Ctrl-G>  " statistics
+
+## spell
+    (count)]s => move to next misspelled word after the cursor
+    (count)[s => like  ]s  but search backwards
+    :spellrare <rareword>
+    z= => suggest corrections
+    zg => add good word
+
+### spelllang
+    :set spl
+    echo &spelllang
 
