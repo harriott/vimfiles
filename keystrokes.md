@@ -48,13 +48,14 @@ Joseph's useful (g)Vim commands
     :g/pattern/d  " delete lines containing "pattern"
 
 # diff
-    :dif         " diffupdate
-    :diffo       " diffoff the window
-    :diffo!      " diffoff the windows
-    ]c           " next diff
-    [c           " previous diff
+    :dif                    " diffupdate
+    :diffo                  " diffoff the window
+    :diffo!                 " diffoff the windows
+    2dp                     " diffput to buffer 2
+    ]c                      " next diff
+    [c                      " previous diff
     :set diffopt+=iwhiteall
-    :windo difft " diff the windows
+    :windo difft            " diff the windows
 
 # folds
     zC             " close current fold & subfolds
@@ -96,6 +97,7 @@ Joseph's useful (g)Vim commands
     M         " go Middle line (of current window display)
     L         " go Last line (of current window display)
     ^         " first non-blank char of line
+    easymotion-default-mappings
     g$        " jump to last character of screen line
     g,        " jump forward to position of a newer change
     g;        " jump back to position of an older change
@@ -144,6 +146,7 @@ Joseph's useful (g)Vim commands
 	<ctrl-v>u0000 " (0000 is replaced by the hexadecimal code point value) for combining characters
 	\C (anywhere) " force case
 	\c (anywhere) " ignore case
+    \sw           " search again as word
 	\M            " nomagic (for what follows), eg returning . & * to themselves
 	\V            " very nomagic (for what follows), eg (also) returning $ to itself
 	\v            " very magic (for what follows), eg making | separate alternatives

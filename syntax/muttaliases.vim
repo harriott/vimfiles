@@ -17,7 +17,7 @@ hi def link commentText Comment
 " the alias lines
 syntax match aliascommand '^alias' nextgroup=Alias skipwhite
 hi def link aliascommand Statement
-syntax match Alias '\i\+' contained
+syntax match Alias '.\{-}\(\ <\)\@=' contained
 hi def link Alias PreProc
 
 let b:current_syntax = "muttaliases"

@@ -13,7 +13,7 @@
 
 let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
 let g:ale_sign_column_always = 1
-" packadd ale
+packadd ale
 
 " moving to ALE errors
 noremap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -75,8 +75,10 @@ if has('unix')
 
   " in ~/.vim: rg '>j' --no-ignore
 
-  if hostname() == 'ltcm58'
-    nnoremap <leader>j :Files /mnt/SDSSDA240G/Dropbox/JH<CR>
+  if hostname() == 'i34G1TU02'
+    nnoremap <leader>j :Files /mnt/BX200/Dropbox/JH<CR>
+  elseif hostname() == 'LIP120s81A4'
+    nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
   elseif hostname() == 'sbMb'
     nnoremap <leader>j :Files /mnt/SD480GSSDPlus/Dropbox/JH<CR>
   endif
@@ -151,6 +153,7 @@ else
   nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
   nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
   nnoremap <leader>mx :call MRU_highlighted('\.tex')<CR>:se hls<CR>
+  nnoremap <leader>my :call MRU_highlighted('\.py')<CR>:se hls<CR>
   function! MRU_highlighted(filetype)
     let @/ = a:filetype
     MRU

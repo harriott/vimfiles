@@ -3,8 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 12 Oct 2020
 
-" You need to add this modeline in the file that you want to affect:
-"  vim: fdm=expr ft=rsynclog:
+" for logs from  $onGH/rsync-portabledrives/rsync.sh  (vim: fdm=expr ft=rsynclog:)
 
 setlocal expandtab textwidth=0
 
@@ -16,3 +15,4 @@ function! RsF()
 endfunction
 
 setlocal fde=RsF() fdc=1
+

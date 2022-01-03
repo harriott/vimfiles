@@ -74,9 +74,10 @@ endfunction
 " this function is only needed for markdown and TeX files
 
 "">> paths
-let $IT1 = $DROPBOX.'/JH/Technos/IT1'
-let $SPD = $onGH.'/SyncPortableDrives\RoboCopy\T430i73520M'
-let $vimfiles = $HOME.'/vimfiles'
+let $IT1 = $DROPBOX.'\JH\Technos\IT1'
+let $ITP = $DROPBOX.'\JH\Technos\IT0-Partitionable'  " $ITP\diskUsage.txt
+let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\T430i73520M'
+let $vimfiles = $HOME.'\vimfiles'
 
 "">>> TeX locations
 let $MD4PDF = $onGH.'/md4pdf'
