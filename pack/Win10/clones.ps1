@@ -6,6 +6,7 @@
 # grab repositories
 
 function ensurePath {
+  pack
   $packs = 'packs-'+$args[0]+'\opt'
   if ( ! ( test-path $packs ) ) { New-Item -name $packs -type directory }
   "cd $($packs)"; cd $($packs)
@@ -36,7 +37,9 @@ ensurePath cp
   # gicl https://github.com/lilydjwg/colorizer
   # gicl https://github.com/mhinz/vim-startify
   # gicl https://github.com/PProvost/vim-ps1
+  # gicl https://github.com/preservim/tagbar
   # gicl https://github.com/rhysd/vim-gfm-syntax
+  # gicl https://github.com/ryanoasis/vim-devicons
   # gicl https://github.com/scrooloose/nerdtree
   # gicl https://github.com/svermeulen/vim-colors-tomorrow
   # gicl https://github.com/tpope/vim-fugitive
@@ -85,6 +88,6 @@ pack
 #endregion
 
 cd Win10
-PowerShell .\lists.ps1
+.\lists.ps1
 cd $PSScriptRoot
 

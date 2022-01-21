@@ -306,6 +306,7 @@ packadd vim-fontsize
 
 " Ggrep for last search
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
+" gives bogus filenames if they contain accented characters
 
 packadd vim-fugitive
 

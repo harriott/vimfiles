@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# Joseph Harriott, Mon 18 Oct 2021
+# Joseph Harriott, Fri 21 Jan 2022
 
 # bash pulls.sh  when you want to update your remote plugins
 
@@ -25,9 +25,7 @@ find . -maxdepth 3 -mindepth 3 -type d | while read plugin; do
   fi
   echo -e "\e[1m $plugin \e[0m"
   cd "$plugin"
-  branch=master
-  [[ $pluginName =~ (vim-fontsize|vim-picker) ]] && branch=main
-  git pull --no-rebase origin $branch
+  git pull
   cd ~/.vim/pack
 done
 

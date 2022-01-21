@@ -9,7 +9,7 @@
 "  for the output of  $ARCHBUILDS/jo/Openbox/cmusqueue.sh
 " you need this modeline in the file that you want to affect:  vim: ft=cmusq:
 
-if exists('b:current_syntax') | finish |  endif
+if exists('b:current_syntax') | finish | endif
 
 " Highlight the tracknumber only:
 syn match filename '/\d\{1,2}'

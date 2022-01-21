@@ -1,16 +1,14 @@
 
 " -----------------------------------------------------------------------
-" source this file in _gvimrc like this: source $HOME/vimfiles/gvimrc.vim
+" sourced by  $vimfiles/gvimrc-Arch.vim
+" sourced by  $vimfiles/gvimrc-Win10.vim
 " -----------------------------------------------------------------------
 
 ""> 0 preliminaries
-" adapted directly from gvim's $VIM/vim74/gvimrc_example.vim:
+" adapted from  $VIMRUNTIME/gvimrc_example.vim
 
 " Only do this for Vim version 5.0 and later.
 if version >= 500
-
-  " I like highlighting strings inside C comments
-  let c_comment_strings=1
 
   " Switch on syntax highlighting if it wasn't on yet.
   if !exists("syntax_on")
@@ -18,17 +16,17 @@ if version >= 500
   endif
   " - somewhere, syntax_on has already been set to 1
 
-  " Switch on search pattern highlighting.
-  set hlsearch
-
 endif
 
-set cmdheight=2		" Make command line two lines high
-set mousehide		" Hide the mouse when typing text
+set cmdheight=2  " make command line two lines high
+set mousehide  " hide the mouse when typing text
 
 ""> 1 my additional initial settings
-set cul
+let c_comment_strings=1  " I like highlighting strings inside C comments
+set cursorline
 set guioptions-=T  "removes toolbar
+set hlsearch  " switch on search pattern highlighting
+set visualbell t_vb=  " disable beeps
 
 "">> high contrast Solarized
 let g:solarized_contrast="high"  "default value is normal, for solarized & tomorrow

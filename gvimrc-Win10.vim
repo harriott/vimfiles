@@ -1,5 +1,6 @@
+
 " ----------------------------------------------------------------------
-" source this file in ~/.gvimrc like this: source $HOME/.vim/<this file>
+" this is sourced by  $MSWin10\user\_gvimrc
 " ----------------------------------------------------------------------
 
 " move on ot the more portable configuration:
