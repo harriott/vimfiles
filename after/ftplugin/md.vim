@@ -3,6 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Tue 03 Aug 2021
 " this is extra to  $vimfiles/ftplugin/md.vim
+" can't recall why this is separated here
 
 function! MysmsMD()
   set fileformat=dos

@@ -1,5 +1,4 @@
 
-" Language:	sh
 " Maintainer: Joseph Harriott
 " Last Change: Mon 18 Oct 2021
   " used by
@@ -19,7 +18,7 @@
 vnoremap <buffer><leader>> :s/#=/#==/<CR>  " demote
 vnoremap <buffer><leader>< :s/#==/#=/<CR>  " promote
 
-""> foldexpr'
+""> foldexpr
 
 " (adapted from my markdown.vim)
 function! BuildFile()

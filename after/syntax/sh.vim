@@ -3,9 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Thu 13 May 2021
 " Syntax highlighting for folding my Bash scripts.
-
-" this file should be in your  after/vimfiles/syntax  folder
-"  it is supplementary to  $VIMRUNTIME/syntax/bash.vim
+" $vimfiles/after/syntax, supplementary to  $VIMRUNTIME/syntax/bash.vim
 " (I set  fdm=expr  in  $vimfiles/ftplugin/sh.vim)
 
 syntax sync fromstart  " for longer build scripts

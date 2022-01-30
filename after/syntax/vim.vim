@@ -1,10 +1,10 @@
-"
-" Language:	sh
-" Maintainer: Joseph Harriott
-" Last Change: Mon 25 Jan 2021
 
-" this file should be in your  after/vimfiles/syntax  folder
-" put this in your modeline: " vim: ft=vim.config:
+" Language:	vim
+" Maintainer: Joseph Harriott
+" Last Change: Sun 30 Jan 2022
+
+" $vimfiles/after/syntax/vim.vim
+" put this in your modeline: " vim: ft=vim:
 
 " my syntax for folding
 syntax match buildY '^"">.*$'

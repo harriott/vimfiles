@@ -3,8 +3,7 @@
 " Language:	markdown
 " Maintainer: Joseph Harriott
 " Last Change: Thu 04 Nov 2021
-" this file is supplementary to  $VIMRUNTIME/ftplugin/markdown.vim
-"  and should be in your  vimfiles\ftplugin  folder
+" $vimfiles/ftplugin/markdown.vim, supplementary to  $VIMRUNTIME/ftplugin/markdown.vim
 " $VIMRUNTIME/filetype.vim  determines which files are automatically detected as markdown
 
 " setlocal expandtab textwidth=0
@@ -24,15 +23,8 @@ nnoremap <buffer> <leader>` viwc``<Esc>P
 vnoremap <leader>` c``<Esc>P
 
 ""> folding by header marks
-" (based on http://stackoverflow.com/questions/3828606/vim-markdown-folding)
-function! MdF()
-	let l:hashcount = matchstr(getline(v:lnum), '^#\+') "defined l:hashcount, even in no match
-	" if there's a heading set an equivalent fold start
-	if empty(l:hashcount) | return "=" | else | return ">".len(l:hashcount) | endif
-endfunction
-
+execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
 setlocal fillchars=fold:\  " cleaner folds
-setlocal foldexpr=MdF() foldmethod=expr
 setlocal foldcolumn=2 " slightly better distinction from line numbers
 
 ""> Syntax highlighting
