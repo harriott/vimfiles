@@ -5,9 +5,9 @@ source $HOME/.vim/vimrc-GNULinux.vim
 set linespace=2
 
 ""> guifont
-" set gfn=DejaVu\ Sans\ Mono\ 10
-" set gfn=Droid\ Sans\ Mono\ 10
-set gfn=Ubuntu\ Mono\ 10
+" set guifont=DejaVu\ Sans\ Mono\ 10
+" set guifont=Droid\ Sans\ Mono\ 10
+set guifont=Ubuntu\ Mono\ 10
 
 ""> LanguageTool
 let g:langtool_jar = '/usr/share/java/LanguageTool-5.2/languagetool-commandline.jar'

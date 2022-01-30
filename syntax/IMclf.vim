@@ -10,9 +10,5 @@ if exists('b:current_syntax') | finish |  endif
 syntax region fontPath start=/^Path: \|^  Font: / end=/$/
 hi def link fontPath Folded  " for an unobtrusive heading
 
-" syn match fontPath 'Path: ' nextgroup=filename
-" syn match filename '[-_0-9a-zA-Z]\+' contained
-" hi def link filename DiffText
-
 let b:current_syntax = "IMclf"
 

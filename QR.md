@@ -1,5 +1,5 @@
 
-Joseph's useful (g)Vim commands
+Joseph's (g)Vim Quick Reference
 
 ( see also https://vimhelp.org/quickref.txt.html )
 
@@ -310,8 +310,8 @@ Entering special characters
     :his                   " Display command-line history
     :his s                 " Display search string history
     :Bufferize scriptnames " list of files sourced, in order
-    :se gfn                " show font
-    :se gfn=*              " pop-up selection
+    :Bufferize se gfn      " show font
+    :se gfn=*              " pop-up font selection
     :so %                  " source the current file
     :DiffOrig              " brings the Recover version up left
 
@@ -323,6 +323,7 @@ Entering special characters
 	:h syn-region
 	:hi
 	:so $VIMRUNTIME/syntax/hitest.vim
+    :set synmaxcol=0  " removes 3000 character limit
 
 	$VIMRUNTIME/syntax/syncolor.vim
 
