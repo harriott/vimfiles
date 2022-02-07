@@ -6,6 +6,10 @@
 ../packs-cp/opt/colorizer/.git
 ../packs-cp/opt/conky-syntax.vim/.git
 ../packs-cp/opt/ctrlp.vim/.git
+../packs-cp/opt/fern-git-status.vim/.git
+../packs-cp/opt/fern-preview.vim/.git
+../packs-cp/opt/fern-renderer-nerdfont.vim/.git
+../packs-cp/opt/fern.vim/.git
 ../packs-cp/opt/gitignore.vim/.git
 ../packs-cp/opt/incsearch-fuzzy.vim/.git
 ../packs-cp/opt/incsearch.vim/.git
@@ -13,7 +17,9 @@
 ../packs-cp/opt/mediawiki.vim/.git
 ../packs-cp/opt/mru/.git
 ../packs-cp/opt/nerdcommenter/.git
+../packs-cp/opt/nerdfont.vim/.git
 ../packs-cp/opt/nerdtree/.git
+../packs-cp/opt/nerdtree-git-plugin/.git
 ../packs-cp/opt/open-browser.vim/.git
 ../packs-cp/opt/python_match.vim/.git
 ../packs-cp/opt/quick-scope/.git
@@ -31,6 +37,7 @@
 ../packs-cp/opt/vim-buffing-wheel/.git
 ../packs-cp/opt/vim-colors-solarized/.git
 ../packs-cp/opt/vim-colors-tomorrow/.git
+../packs-cp/opt/vim-devicons/.git
 ../packs-cp/opt/vim-easy-align/.git
 ../packs-cp/opt/vim-easymotion/.git
 ../packs-cp/opt/vim-fontsize/.git

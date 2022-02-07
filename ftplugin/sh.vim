@@ -7,7 +7,7 @@
 "  (and see  $vimfiles/after/syntax/sh.vim)
 " ($VIMRUNTIME/filetype.vim  determines whether files are detected as bash or sh)
 
-setlocal expandtab fdc=1 fdm=expr shiftwidth=4 textwidth=0
+setlocal expandtab fdc=1 shiftwidth=4 textwidth=0
 
 " my folding tools:
 execute 'source 'g:vimfiles.'/ftplugin/HashEqualsFolding.vim'

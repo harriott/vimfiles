@@ -201,8 +201,9 @@ set tabstop=4
 set textwidth=99
 
 ""> ft dokuwiki
-" comment highlighting on - ../syntax/dokuwiki.vim
-let dokuwiki_comment=1
+" for $vimfiles/syntax/dokuwiki.vim
+let dokuwiki_comment=1  " comment highlighting on
+let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
 
 ""> ft LaTeX syntax folding
 " on before opening a buffer:
@@ -325,9 +326,10 @@ endfunction
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
 
-"">> required for muttrc-gmx
-" (see Dropbox/JH/Now/Technos/IT/Cross-platform/Vim/muttrc-123)
+"">> overcome $VIMRUNTIME/filetype.vim
 autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
+" required for  muttrc-gmx
+" (see $DROPBOX/JH/technos/IT1/cross-platform/Vim/muttrc-123)
 
 "">> tidy an inmail
 " swap out any crap (and go back to top):

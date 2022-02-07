@@ -6,6 +6,9 @@
 " keep this file in your  after/plugin  directory so's it's sourced after the plugins
 " -----------------------------------------------------------------------------------
 
+""> vim-devicons
+packadd vim-devicons
+
 ""> vim-gitgutter
 " $vimfiles/plugin/plugins.vim
 

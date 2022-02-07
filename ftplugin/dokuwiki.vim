@@ -14,7 +14,8 @@
 " While developing this plugin, I used
 " :source $HOME/vimfiles/ftplugin/dokuwiki.vim
 
-setlocal tw=0 fde=DWF() fdl=0 fdm=expr
+setlocal tw=0 fde=DWF() fdl=0
+setlocal foldmethod=expr
 setlocal fdc=2 " slightly better distinction from line numbers
 
 ""> abbreviations for code tags
@@ -48,7 +49,7 @@ nnoremap <buffer> <leader><leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A 
 "    you can add a count, eg 3\i to work on the next three lines,
 "    but only the last closing tag gets pasted, you have to do the other two manually.
 
-""> DokuWiki folding by header marks
+""> folding by header marks
 " (based on http://stackoverflow.com/questions/3828606/vim-markdown-folding)
 function! DWF()
 	let j = len(matchstr(getline(v:lnum), '^=\+'))
@@ -57,6 +58,7 @@ function! DWF()
 	elseif j =~ 5 | return ">2"
 	elseif j =~ 4 | return ">3"
 	elseif j =~ 3 | return ">4"
+	elseif j =~ 2 | return ">5"
 	endif
 	" if there was no heading detected, just use the fold level from the previous line
     return "="
@@ -71,12 +73,12 @@ endfunction
 "     '^=\+'  => match from the start of the line (^) any number of contiguous '='s
 "     =~      => a logical operator
 
-""> headings
+""> heading manipulation
 " boost up a heading:
 nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
 
 " create a heading:
-nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
+nnoremap <buffer> <leader><leader>= I== <Esc>A ==<Esc>
 
 " having just selected a web-page heading, format it into a DokuWiki hyperlink
 function! PageTitleToHyperlink()
@@ -86,14 +88,10 @@ endfunction
 vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 " (I'm using two h's because  gitgutter.vim  binds some \hx's)
 
-""> monospace
+""> monospacing
 " wrap the inner word under cursor with ''
 nnoremap <buffer> <leader>' viwc''''<Esc>hP
 
 " wrap a selection with ''
 vnoremap <buffer> <leader>' c''''<Esc>hP
-
-""> the syntax plugin
-let dokuwiki_comment=1 " can't see what this achieves...
-let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
 

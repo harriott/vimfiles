@@ -1,3 +1,4 @@
+" vim: set foldlevel=1:
 
 " ------------------------------
 " sourced by  $MACHINE/jo/gvimrc
@@ -6,8 +7,7 @@
 " move on ot the more portable configuration:
 source $HOME/.vim/gvimrc.vim
 
-" Colour Scheme
-" ------------
+""> Colour Scheme
 function! TWSDark()
   set background=dark
     highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
@@ -36,4 +36,12 @@ function! ColorLightDark()
     call TWSDark()
   endif
 endfunction
+
+""> guifont
+" set guifont=DejaVu\ Sans\ Mono\ 10
+" set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 9
+" set guifont=Droid\ Sans\ Mono\ 10
+set guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono\ 9
+" set guifont=MesloLGS\ Nerd\ Font\ Mono\ 9
+" set guifont=Ubuntu\ Mono\ 10
 

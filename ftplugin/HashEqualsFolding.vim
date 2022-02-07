@@ -19,9 +19,8 @@ vnoremap <buffer><leader>> :s/#=/#==/<CR>  " demote
 vnoremap <buffer><leader>< :s/#==/#=/<CR>  " promote
 
 ""> foldexpr
-
 " (adapted from my markdown.vim)
-function! BuildFile()
+function! HashEqualsFold()
   let l:foldMark = matchstr(getline(v:lnum), '#=\+') " defined l:foldMark, even in no match
   " if there's a heading set an equivalent fold start
   if empty(l:foldMark)
@@ -32,7 +31,8 @@ function! BuildFile()
   endif
 endfunction
 
-setlocal fde=BuildFile()
+setlocal foldexpr=HashEqualsFold()
+setlocal foldmethod=expr
 
 ""> turn off or on a fold of commands
 

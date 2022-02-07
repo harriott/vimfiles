@@ -24,6 +24,10 @@ gd opt; ls
   # $gc https://github.com/lilydjwg/colorizer
   # $gc https://github.com/smancill/conky-syntax.vim
   # $gc https://github.com/ctrlpvim/ctrlp.vim
+  # $gc https://github.com/lambdalisue/fern.vim
+  # $gc https://github.com/lambdalisue/fern-git-status.vim
+  $gc https://github.com/yuki-yano/fern-preview.vim
+  # $gc https://github.com/lambdalisue/fern-renderer-nerdfont.vim
   # $gc https://github.com/vim-scripts/gitignore.vim
   # $gc https://github.com/haya14busa/incsearch-fuzzy.vim
   # $gc https://github.com/haya14busa/incsearch.vim
@@ -31,7 +35,9 @@ gd opt; ls
   # $gc https://github.com/chikamichi/mediawiki.vim
   # $gc https://github.com/yegappan/mru
   # $gc https://github.com/scrooloose/nerdcommenter
+  # $gc https://github.com/lambdalisue/nerdfont.vim
   # $gc https://github.com/scrooloose/nerdtree
+  # $gc https://github.com/Xuyuanp/nerdtree-git-plugin
   # $gc https://github.com/tyru/open-browser.vim
   # $gc https://github.com/vim-scripts/python_match.vim
   # $gc https://github.com/unblevable/quick-scope
@@ -39,7 +45,7 @@ gd opt; ls
   # $gc https://github.com/ervandew/supertab
   # $gc https://github.com/vim-syntastic/syntastic
   # $gc https://github.com/godlygeek/tabular
-  # $gc https://github.com/preservim/tagbar
+  # [[ -d tagbar ]] && sudo rm -r tagbar; $gc https://github.com/preservim/tagbar
   # $gc https://github.com/wellle/targets.vim
   # $gc https://github.com/mbbill/undotree
   # $gc https://github.com/bling/vim-airline
@@ -49,6 +55,7 @@ gd opt; ls
   # $gc https://github.com/harriott/vim-buffing-wheel
   # $gc https://github.com/altercation/vim-colors-solarized
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
+  # $gc https://github.com/ryanoasis/vim-devicons
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/easymotion/vim-easymotion
   # $gc https://github.com/drmikehenry/vim-fontsize
@@ -88,7 +95,6 @@ gd opt; ls
 echo; $cdp; gd packs-win32
 
 gd opt; ls
-
 
 #=> 2 lists
 echo; $cdp

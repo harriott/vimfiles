@@ -162,6 +162,7 @@ Joseph's (g)Vim Quick Reference
 	\s    " whitespace character
 	\u    " uppercase character
     \{,m} " 0-m matches
+    \{-}  " as few as possible
 
 ## replace - reuse matched pattern
     :h s/\&

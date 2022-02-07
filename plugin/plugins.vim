@@ -70,6 +70,35 @@ nnoremap <leader>bb  :CtrlPBuffer<CR>
 "">> 1 invoke
 packadd ctrlp.vim
 
+""> Fern
+noremap <C-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
+packadd fern.vim
+" <c-h>  in
+" <c-m>  out
+" +  vim-buffing-wheel out
+" E  open:side
+" x  open:system
+" t  open:tabedit
+
+""> fern-git-status
+packadd fern-git-status.vim
+
+""> fern-preview.vim
+augroup fern-settings
+  autocmd!
+  autocmd FileType fern call s:fern_settings()
+augroup END
+function! s:fern_settings() abort
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+endfunction
+packadd fern-preview.vim
+
+""> fern-renderer-nerdfont.vim
+let g:fern#renderer = "nerdfont"
+packadd fern-renderer-nerdfont.vim
+
 ""> fzf.vim
 if has('unix')
 
@@ -160,18 +189,24 @@ else
   endfunction
 endif
 
+""> nerdfont.vim
+packadd nerdfont.vim
+
 ""> nerdcommenter
 packadd nerdcommenter
 let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
-""> nerdtree
+""> NERDTree
 noremap <C-n> :NERDTreeToggle<CR>
 packadd nerdtree
 
 " Open it on buffer's directory:
 nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
 inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+
+""> nerdtree-git-plugin
+packadd nerdtree-git-plugin
 
 ""> open-browser.vim
 " If it looks like URI, Open URI under cursor. Otherwise, Search word under cursor.
@@ -222,6 +257,7 @@ packadd targets.vim
 packadd undotree
 
 ""> vim-airline
+let g:airline_powerline_fonts = 1
 packadd vim-airline
 let airline#extensions#ale#show_line_numbers = 0
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
@@ -240,6 +276,7 @@ packadd vim-bbcode
 
 ""> vim-buffing-wheel
 packadd vim-buffing-wheel
+" - + X
 
 ""> vim-colors-solarized
 " packadd vim-colors-solarized

@@ -51,10 +51,6 @@ function! EightyTwoColumns()
     endif
 endfunction
 
-"">> wiki/dokuwiki
-" have two pre-installed DokuWiki files open ready configured
-autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
-
 "">> window sizes
 " set lines=34  " good for screen with 600 pixel height
 set lines=44  " good for screen with 768 pixel height

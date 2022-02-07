@@ -100,6 +100,12 @@ nnoremap <leader>c= :windo set nowfh <CR>
 
 " :h window-resize
 
+"">> special files
+" have two pre-installed DokuWiki files open ready configured
+autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
+
+autocmd BufRead,BufNewFile */sudoers setlocal ft=sudoers
+
 "">> turn off some unused Fn keys in insert mode
 inoremap <F3> <Esc>
 inoremap <S-F2> <Esc>

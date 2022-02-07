@@ -15,7 +15,7 @@ cd ../../../ArchLinux
 . lists.sh
 
 #=> tagbar
-# reduce  ['<F1>', '?']  to  ['?']  so that my  <F1>  still works
+# reduce help keystroke  ['<F1>', '?']  to  ['?']  so that my  <F1>  still works
 sed -i "s/'<F1>', //" ../packs-cp/opt/tagbar/plugin/tagbar.vim
 
 #=> vim-ShowTrailingWhitespace

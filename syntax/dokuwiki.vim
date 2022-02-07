@@ -12,9 +12,9 @@
 "   Vladimir Zhbanov <vzhbanov@gmail.com> -- a lot of patches
 "   Jonathan Beverley <jonathan.beverley@gmail.com> -- syntax, folding, etc
 
-" my tweaks - JH
+" my tweaks - JH, and headings
 
-" initial checks. See `:help 44.12`
+""> 0 initial checks. See `:help 44.12`
 if !exists('main_syntax')
 	if version < 600
 		syntax clear
@@ -24,8 +24,7 @@ if !exists('main_syntax')
 	let main_syntax = 'dokuwiki'
 endif
 
-
-""" Settings {{{
+""> 1 Settings {{{
 " Use syntax-based folding
 " setlocal foldmethod=syntax " JH
 setlocal foldtext=DokuFoldText()
@@ -37,6 +36,7 @@ setlocal softtabstop=2
 setlocal expandtab
 " Hide conceal text except when editing a line
 setlocal conceallevel=2
+" setl cole=0  " JH
 setlocal concealcursor=nc
 
 unlet! b:current_syntax
@@ -77,7 +77,7 @@ function! DokuFoldText()
 endfunction
 
 """ }}}
-""" Patterns {{{
+""> 2 Patterns {{{
 " Forced Linebreaks:
 syn match dokuwikiLinebreak /\(\\\\$\|\\\\ \)/
 
@@ -86,11 +86,11 @@ syn region dokuwikiNowiki start=+%%+ end=+%%+
 syn region dokuwikiNowiki start=+<nowiki>+ end=+</nowiki>+
 
 " Heading: ==== title ====
-syn region dokuwikiHeading1 matchgroup=dokuwikiHeading1mg start="^=\{6}.\+=\{6}$" end="^\ze\(=\{6,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4,dokuwikiHeading3,dokuwikiHeading2
-syn region dokuwikiHeading2 matchgroup=dokuwikiHeading2mg start="^=\{5}.\+=\{5}$" end="^\ze\(=\{5,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4,dokuwikiHeading3
-syn region dokuwikiHeading3 matchgroup=dokuwikiHeading3mg start="^=\{4}.\+=\{4}$" end="^\ze\(=\{4,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4
-syn region dokuwikiHeading4 matchgroup=dokuwikiHeading4mg start="^=\{3}.\+=\{3}$" end="^\ze\(=\{3,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5
-syn region dokuwikiHeading5 matchgroup=dokuwikiHeading5mg start="^=\{2}.\+=\{2}$" end="^\ze\(=\{2,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList
+syn region dokuwikiHeading1 matchgroup=dokuwikiHeading1mg start="^=\{6}[^=]\+=\{6}$" end="^\ze\(=\{6,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4,dokuwikiHeading3,dokuwikiHeading2
+syn region dokuwikiHeading2 matchgroup=dokuwikiHeading2mg start="^=\{5}[^=]\+=\{5}$" end="^\ze\(=\{5,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4,dokuwikiHeading3
+syn region dokuwikiHeading3 matchgroup=dokuwikiHeading3mg start="^=\{4}[^=]\+=\{4}$" end="^\ze\(=\{4,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5,dokuwikiHeading4
+syn region dokuwikiHeading4 matchgroup=dokuwikiHeading4mg start="^=\{3}[^=]\+=\{3}$" end="^\ze\(=\{3,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList,dokuwikiHeading5
+syn region dokuwikiHeading5 matchgroup=dokuwikiHeading5mg start="^=\{2}[^=]\+=\{2}$" end="^\ze\(=\{2,6}\).*\1$" fold contains=@Spell,@dokuwikiBlockItems,dokuwikiList
 
 " Basic Formatting: **bold**, //italic//, __underline__, ''monospace'', etc
 " A matchgroup is necessary to make concealends work with regions.
@@ -154,13 +154,13 @@ syn region dokuwikiCodeBlockEnd matchgroup=dokuwikiCodeMark start="\(<\z(code\|f
 syn cluster dokuwikiCodeBody contains=dokuwikiCodeBlockEnd
 
 " Imported Syntax: Imported and heavily modified from markdown.vim fenced languages code
-if main_syntax ==# 'dokuwiki'
-  for s:type in g:dokuwiki_fenced_languages
-    exec 'syn region dokuwikiCodeBlock'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','').' matchgroup=dokuwikiCodeMark start="\(<\z(code\|file\) '.matchstr(s:type,'[^=]*').'\( [^>]\+\)\?\)\@<=>" end="</\z1>" keepend contains=dokuwikiCodeLang,@dokuwikiCode'.substitute(matchstr(s:type,'[^=]*$'),'\.','','g')
-    exec 'syn cluster dokuwikiCodeBody add=dokuwikiCodeBlock'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','')
-  endfor
-  unlet! s:type
-endif
+" if main_syntax ==# 'dokuwiki'
+  " for s:type in g:dokuwiki_fenced_languages
+    " exec 'syn region dokuwikiCodeBlock'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','').' matchgroup=dokuwikiCodeMark start="\(<\z(code\|file\) '.matchstr(s:type,'[^=]*').'\( [^>]\+\)\?\)\@<=>" end="</\z1>" keepend contains=dokuwikiCodeLang,@dokuwikiCode'.substitute(matchstr(s:type,'[^=]*$'),'\.','','g')
+    " exec 'syn cluster dokuwikiCodeBody add=dokuwikiCodeBlock'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','')
+  " endfor
+  " unlet! s:type
+" endif
 
 " Lists: lines starting with * or -
 syn match dokuwikiList "^\(  \|\t\)\s*[*-]" contains=@dokuwikiTextItems
@@ -193,7 +193,7 @@ endif
 syn match dokuwikiHorizontalLine "^\s\?----\+\s*$"
 
 """ }}}
-""" Clusters {{{
+""> 3 Clusters {{{
 " @dokuwikiTextItems are those that work well in-line
 syn cluster dokuwikiTextItems contains=dokuwikiBold,dokuwikiItalic,dokuwikiUnderlined,dokuwikiMonospaced,dokuwikiStrikethrough
 syn cluster dokuwikiTextItems add=dokuwikiSubscript,dokuwikiSuperscript,dokuwikiSmiley,dokuwikiEntities
@@ -207,7 +207,7 @@ syn cluster dokuwikiBlockItems add=@dokuwikiTextItems,dokuwikiCodeBlockPlain,dok
 syn cluster dokuwikiNoneTextItem contains=ALLBUT,@dokuwikiTextItems
 
 """ }}}
-""" Highlighting {{{
+""> 4 Highlighting {{{
 hi link dokuwikiLinebreak Keyword
 
 hi link dokuwikiNowiki Exception
@@ -263,7 +263,7 @@ hi link dokuwikiHorizontalLine NonText
 
 """ }}}
 
-" other half of initial checks
+""> 5 other half of initial checks
 let b:current_syntax = "dokuwiki"
 if main_syntax ==# 'dokuwiki'
   unlet main_syntax
