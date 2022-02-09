@@ -1,3 +1,4 @@
+"
 " Language:	fugitive
 " Maintainer: Joseph Harriott
 " Last Change: Sun 19 Apr 2020

@@ -1,9 +1,9 @@
 "
 " Language:	html
 " Maintainer: Joseph Harriott
-" Last Change: Fri 24 May 2019
-" This file should be in your vimfiles\ftplugin folder.
-" You need to specify ft=html in a modeline in the file that you want to affect.
+" Last Change: Wed 09 Feb 2022
+" $vimfiles/ftplugin/html.vim, supplementary to  $VIMRUNTIME/ftplugin/html.vim
+" sourced by  $VIMRUNTIME/ftplugin/markdown.vim
 
 setlocal textwidth=0
 

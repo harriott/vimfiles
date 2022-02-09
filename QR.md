@@ -4,7 +4,7 @@ Joseph's (g)Vim Quick Reference
 ( see also https://vimhelp.org/quickref.txt.html )
 
     :helpt ALL               " generate all tags
-    :helptags $HOME\vimfiles " set tags
+    :helptags $HOME\vimfiles " se tags
 
 # align the lists in this file
 " vim-easy-align on a selection: gA"
@@ -54,7 +54,7 @@ Joseph's (g)Vim Quick Reference
     2dp                     " diffput to buffer 2
     ]c                      " next diff
     [c                      " previous diff
-    :set diffopt+=iwhiteall
+    :se diffopt+=iwhiteall
     :windo difft            " diff the windows
 
 # folds
@@ -72,7 +72,7 @@ Joseph's (g)Vim Quick Reference
     zr             " increase foldlevel (#zr -> foldlevel #)
     zv             " view cursor line (opening just enough folds)
     zx             " set folds back to foldlevel
-    :set fdl?            " reports the current foldlevel
+    :se fdl?       " reports the current foldlevel
 
 # insert mode commands
     C-ke'    " digraph code for é
@@ -175,7 +175,7 @@ Joseph's (g)Vim Quick Reference
     :packadd syntastic    " load the plugin from an opt directory
     :packadd vim-rhubarb  " load the plugin from an opt directory, for :GBrowse to work
     :r!<shell command>    " reads shell command output into the buffer
-    :set shell?           " returns the path to the shell
+    :se shell?            " returns the path to the shell
     :tabe $HOME/_vimrc    " bring up my vimrc in a new tab
     :ALEToggle
     :Vexplore             " opens a netrw vertical directory browsing window
@@ -291,6 +291,7 @@ Entering special characters
 # Vim
     :Bufferize dig!  " categorised digraphs
     :Bufferize let
+    :Bufferize se
     :Bufferize version  " Vim version etc
     :colo  " see current colorscheme
     @@  " = @: = repeat last command-line
@@ -315,6 +316,7 @@ Entering special characters
     :se gfn=*              " pop-up font selection
     :so %                  " source the current file
     :DiffOrig              " brings the Recover version up left
+    :verb se tw            " shows where textwidth was set
 
 ## buffer listing your recent messages
     :Bufferize messages
@@ -324,7 +326,7 @@ Entering special characters
 	:h syn-region
 	:hi
 	:so $VIMRUNTIME/syntax/hitest.vim
-    :set synmaxcol=0  " removes 3000 character limit
+    :se synmaxcol=0  " removes 3000 character limit
 
 	$VIMRUNTIME/syntax/syncolor.vim
 
@@ -363,6 +365,6 @@ Entering special characters
     zg => add good word
 
 ### spelllang
-    :set spl
+    :se spl
     echo &spelllang
 

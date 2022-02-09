@@ -1,9 +1,9 @@
 
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Tue 03 Aug 2021
+" Last Change: Wed 09 Feb 2022
 " this is extra to  $vimfiles/ftplugin/md.vim
-" can't recall why this is separated here
+" think I separated this here to ensure call to Startify is recognised
 
 function! MysmsMD()
   set fileformat=dos

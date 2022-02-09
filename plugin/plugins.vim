@@ -352,9 +352,8 @@ packadd vim-fugitive
 let g:gfm_syntax_enable_always = 0
 let g:gfm_syntax_enable_filetypes = ['markdown.gfm'] " a subtype of markdown filetype
 let g:gfm_syntax_emoji_conceal = 1
-autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm
+autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm  " or vim: ft=markdown.gfm:
 packadd vim-gfm-syntax
-" vim: ft=markdown.gfm:
 
 ""> vim-gitgutter
 let g:gitgutter_max_signs = 600

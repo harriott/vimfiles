@@ -12,7 +12,6 @@ set nobackup
 set noundofile
 set scrolloff=0
 autocmd FileType text setlocal textwidth=0
-" autocmd FileType fugitive unmap! X
 "
 "">> Q
 " as suggested in $VIMRUNTIME/defaults.vim

@@ -1,13 +1,14 @@
 
 " as per vim_faq.txt
 " Maintainer: Joseph Harriott
-" Last Change: Fri 21 Aug 2020
+" Last Change: Wed 09 Feb 2022
+" supplemental to  $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
 
 if exists("did_load_filetypes")
     finish
 endif
 augroup filetypedetect
-    " autocmd! BufRead,BufNewFile *.gfm setfiletype markdown.gfm
     autocmd! BufRead,BufNewFile *.md setfiletype markdown.md
-    " - overrides $VIMRUNTIME/filetype.vim & activates my md ftplugin
+    " - overrides  $VIMRUNTIME/filetype.vim  & activates  $vimfiles/ftplugin/md.vim
 augroup END
+

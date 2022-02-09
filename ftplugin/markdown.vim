@@ -2,11 +2,12 @@
 
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Thu 04 Nov 2021
-" $vimfiles/ftplugin/markdown.vim, supplementary to  $VIMRUNTIME/ftplugin/markdown.vim
+" Last Change: Wed 09 Feb 2022
+" $vimfiles/ftplugin/markdown.vim
+"  supplementary to  $VIMRUNTIME/ftplugin/markdown.vim  which includes  $vimfiles/ftplugin/html.vim
 " $VIMRUNTIME/filetype.vim  determines which files are automatically detected as markdown
 
-" setlocal expandtab textwidth=0
+setlocal expandtab
 
 " ALE
 let b:ale_enabled = 0 " and toggle it as defined in $vimfiles/plugin/plugins.vim

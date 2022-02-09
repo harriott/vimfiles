@@ -4,6 +4,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 01 Nov 2021
 " this is for extra funtionality that I like for my *.md files
+" supplemental to  $vimfiles/ftplugin/markdown.vim
+" requires  $vimfiles/filetype.vim
 
 " open Pandoc'd pdf
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>

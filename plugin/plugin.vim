@@ -314,7 +314,7 @@ nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 set mmp=25000
 
 ""> neomutt
-autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal tw=0
+autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal textwidth=0
 
 "">> quit safely when written
 function! BackupQuit()
