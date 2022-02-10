@@ -282,7 +282,7 @@ function! GrabRtp()
 endfunction
 
 function! GrabScriptnames()
-  exe 'edit '.g:vimfiles.'/grabbed/'.hostname().'-scriptnames.txt'
+  exe 'edit '.g:vimfiles.'/grabbed/scriptnames'.hostname().'-.txt'
   normal! ggVGd
   call GrabWrite("scriptnames")
 endfunction

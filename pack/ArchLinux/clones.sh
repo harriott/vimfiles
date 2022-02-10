@@ -23,10 +23,11 @@ gd opt; ls
   # $gc https://github.com/Asheq/close-buffers.vim
   # $gc https://github.com/lilydjwg/colorizer
   # $gc https://github.com/smancill/conky-syntax.vim
+  # $gc https://github.com/chrisbra/csv.vim
   # $gc https://github.com/ctrlpvim/ctrlp.vim
   # $gc https://github.com/lambdalisue/fern.vim
   # $gc https://github.com/lambdalisue/fern-git-status.vim
-  $gc https://github.com/yuki-yano/fern-preview.vim
+  # $gc https://github.com/yuki-yano/fern-preview.vim
   # $gc https://github.com/lambdalisue/fern-renderer-nerdfont.vim
   # $gc https://github.com/vim-scripts/gitignore.vim
   # $gc https://github.com/haya14busa/incsearch-fuzzy.vim
@@ -56,8 +57,11 @@ gd opt; ls
   # $gc https://github.com/altercation/vim-colors-solarized
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/ryanoasis/vim-devicons
+  # $gc https://github.com/justinmk/vim-dirvish
+  $gc https://github.com/kristijanhusak/vim-dirvish-git
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/easymotion/vim-easymotion
+  # $gc https://github.com/rbong/vim-flog
   # $gc https://github.com/drmikehenry/vim-fontsize
   # $gc https://github.com/tpope/vim-fugitive
   # $gc https://github.com/rhysd/vim-gfm-syntax

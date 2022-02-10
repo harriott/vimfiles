@@ -5,6 +5,7 @@
 ../packs-cp/opt/close-buffers.vim
 ../packs-cp/opt/colorizer
 ../packs-cp/opt/conky-syntax.vim
+../packs-cp/opt/csv.vim
 ../packs-cp/opt/ctrlp.vim
 ../packs-cp/opt/fern-git-status.vim
 ../packs-cp/opt/fern-preview.vim
@@ -38,8 +39,11 @@
 ../packs-cp/opt/vim-colors-solarized
 ../packs-cp/opt/vim-colors-tomorrow
 ../packs-cp/opt/vim-devicons
+../packs-cp/opt/vim-dirvish
+../packs-cp/opt/vim-dirvish-git
 ../packs-cp/opt/vim-easy-align
 ../packs-cp/opt/vim-easymotion
+../packs-cp/opt/vim-flog
 ../packs-cp/opt/vim-fontsize
 ../packs-cp/opt/vim-fugitive
 ../packs-cp/opt/vim-gfm-syntax

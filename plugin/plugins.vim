@@ -52,6 +52,19 @@ let g:colorizer_disable_bufleave = 1
 ""> colorizer
 " optionally available
 
+""> csv.vim
+" $vimfiles/pack/packs-cp/opt/csv.vim/ftdetect/csv.vim
+" H -> go left
+" L -> go right
+" column hiding
+"  :VertFold  " hides from left to current
+"  :VertFold!  " unhide
+" :CSVTabularize  " open as table in new buffer
+" line hiding
+"  <cr>  " unhide
+"  <enter>  " hides away non-matching
+packadd csv.vim
+
 ""> ctrlp.vim
 " $HOME/.cache/ctrlp/mru/cache.txt
 " <c-f> and <c-b> to cycle between modes
@@ -98,6 +111,11 @@ packadd fern-preview.vim
 ""> fern-renderer-nerdfont.vim
 let g:fern#renderer = "nerdfont"
 packadd fern-renderer-nerdfont.vim
+
+""> Flog
+" :Flog
+" :Floggit
+packadd vim-flog
 
 ""> fzf.vim
 if has('unix')
@@ -198,6 +216,8 @@ let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
 ""> NERDTree
+"h NERDTree
+let NERDTreeHijackNetrw = 0  " liberate  e.
 noremap <C-n> :NERDTreeToggle<CR>
 packadd nerdtree
 
@@ -260,6 +280,8 @@ packadd undotree
 let g:airline_powerline_fonts = 1
 packadd vim-airline
 let airline#extensions#ale#show_line_numbers = 0
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#fzf#enabled = 1  " adds line-number/total lines
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 packadd vim-airline-themes
@@ -283,6 +305,23 @@ packadd vim-buffing-wheel
 
 ""> vim-colors-tomorrow
 packadd vim-colors-tomorrow
+
+""> vim-dirvish
+" h dirvish
+" takes over :e.
+" in dirvish
+"  -       -> out
+"  <enter> -> in
+"  g?      -> dirvish-mappings
+"  gq      -> quit
+"  preview left
+"   p
+"    Ctrl-n -> next
+"    Ctrl-p -> previous
+packadd vim-dirvish
+
+""> vim-dirvish-git
+packadd vim-dirvish-git
 
 ""> vim-easy-align
 packadd vim-easy-align

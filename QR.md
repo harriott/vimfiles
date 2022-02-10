@@ -170,6 +170,8 @@ Joseph's (g)Vim Quick Reference
 
 # shell
     :!<shellcmd>          " runs the external shell command
+    :e.                   " netrw on current directory
+    :f                    " prints current filename
     :h netrw-quickmap
     :Locate <pattern>
     :packadd syntastic    " load the plugin from an opt directory
@@ -207,6 +209,7 @@ Joseph's (g)Vim Quick Reference
     &                         " repeat last substitute
     ctrl-q ctrl-m             " inserts ^M (carriage return)
     g&                        " repeat last command over the whole document
+    g Ctrl-g                  " prints the cursor position
     :exe                      " :normal i" . strftime("%c")  " put date-time at cursor
     :g/^/m 0                  " reverse the entire buffer
     :h g_CTRL-G               " position and word info, works on a range too
@@ -352,7 +355,9 @@ Entering special characters
 ## split
     :ba          " all horizontally
     :sp          " current window
-    C-w+v         " vertical
+    C-w+H        " rearrange horizontally
+    C-w+K        " rearrange vertically
+    C-w+v        " split vertical
 
 # words
     g<Ctrl-G>  " statistics
