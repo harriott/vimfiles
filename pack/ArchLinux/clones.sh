@@ -25,6 +25,7 @@ gd opt; ls
   # $gc https://github.com/smancill/conky-syntax.vim
   # $gc https://github.com/chrisbra/csv.vim
   # $gc https://github.com/ctrlpvim/ctrlp.vim
+  # $gc https://github.com/AndrewRadev/dsf.vim
   # $gc https://github.com/lambdalisue/fern.vim
   # $gc https://github.com/lambdalisue/fern-git-status.vim
   # $gc https://github.com/yuki-yano/fern-preview.vim
@@ -33,6 +34,9 @@ gd opt; ls
   # $gc https://github.com/haya14busa/incsearch-fuzzy.vim
   # $gc https://github.com/haya14busa/incsearch.vim
   # $gc https://github.com/junegunn/limelight.vim
+  # $gc https://github.com/valloric/listtoggle
+  # $gc https://github.com/Valloric/MatchTagAlways
+  # $gc https://github.com/andymass/vim-matchup
   # $gc https://github.com/chikamichi/mediawiki.vim
   # $gc https://github.com/yegappan/mru
   # $gc https://github.com/scrooloose/nerdcommenter
@@ -40,6 +44,7 @@ gd opt; ls
   # $gc https://github.com/scrooloose/nerdtree
   # $gc https://github.com/Xuyuanp/nerdtree-git-plugin
   # $gc https://github.com/tyru/open-browser.vim
+  $gc https://github.com/junegunn/vim-peekaboo
   # $gc https://github.com/vim-scripts/python_match.vim
   # $gc https://github.com/unblevable/quick-scope
   # $gc https://github.com/tmhedberg/SimpylFold
@@ -51,6 +56,7 @@ gd opt; ls
   # $gc https://github.com/mbbill/undotree
   # $gc https://github.com/bling/vim-airline
   # $gc https://github.com/vim-airline/vim-airline-themes
+  # $gc https://github.com/haya14busa/vim-asterisk
   # $gc https://github.com/christianrondeau/vim-base64
   # $gc https://github.com/Winseven4lyf/vim-bbcode
   # $gc https://github.com/harriott/vim-buffing-wheel
@@ -58,7 +64,8 @@ gd opt; ls
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/ryanoasis/vim-devicons
   # $gc https://github.com/justinmk/vim-dirvish
-  $gc https://github.com/qpkorr/vim-bufkill
+  # $gc https://github.com/qpkorr/vim-bufkill
+  # $gc https://github.com/tpope/vim-characterize
   # $gc https://github.com/kristijanhusak/vim-dirvish-git
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/easymotion/vim-easymotion
@@ -68,9 +75,12 @@ gd opt; ls
   # $gc https://github.com/rhysd/vim-gfm-syntax
   # $gc https://github.com/airblade/vim-gitgutter
   # $gc https://github.com/hjson/vim-hjson
+  # $gc https://github.com/RRethy/vim-illuminate
   # $gc https://github.com/inkarkat/vim-ingo-library
+  # $gc https://github.com/lfv89/vim-interestingwords
   # $gc https://github.com/Konfekt/vim-langtool
   # $gc https://github.com/dpelle/vim-LanguageTool
+  # $gc https://github.com/elbeardmorez/vim-loclist-follow
   # $gc https://github.com/adelarsq/vim-matchit
   # $gc https://github.com/chunkhang/vim-mbsync
   # $gc https://github.com/dhruvasagar/vim-open-url

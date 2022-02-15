@@ -40,6 +40,9 @@ noremap <leader>yy :CalendarH<CR>
 ""> cfilter
 packadd cfilter
 
+""> characterize.vim
+packadd vim-characterize
+
 ""> close-buffers.vim
 "  quickly close all but current buffer
 nnoremap <leader>bdd :Bdelete other<CR>
@@ -84,6 +87,14 @@ nnoremap <leader>bb :CtrlPBuffer<CR>
 
 "">> 1 invoke
 packadd ctrlp.vim
+
+""> dsf
+packadd dsf.vim
+" csf -> change surrounding function
+" daf -> delete a function call
+" dif -> delete inner function call
+" dsf -> delete surrounding function
+" dsnf -> delete next surrounding function
 
 ""> Fern
 noremap <C-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
@@ -149,6 +160,23 @@ endif
 ""> gitignore.vim
 packadd gitignore.vim
 
+""> illuminate
+packadd vim-illuminate
+
+" toggle illuminate more visible
+nnoremap <silent><leader>it :call IlluminateMoreToggle()<cr>
+let g:illuminatedWordMoreVisible = 0
+function! IlluminateMoreToggle()
+  if g:illuminatedWordMoreVisible
+    hi link illuminatedWord CursorLine
+    let g:illuminatedWordMoreVisible = 0
+  else
+    hi link illuminatedWord buildN
+    let g:illuminatedWordMoreVisible = 1
+  endif
+hi illuminatedWord
+endfunction
+
 ""> incsearch-fuzzy.vim
 map z/ <Plug>(incsearch-fuzzy-stay)
 packadd incsearch-fuzzy.vim
@@ -163,6 +191,11 @@ packadd incsearch.vim  " needed for  incsearch-fuzzy.vim
 
 ""> limelight.vim
 " not yet used
+
+""> ListToggle
+packadd listtoggle
+let g:lt_location_list_toggle_map = '<leader>ll'
+let g:lt_height = 15
 
 ""> mediawiki.vim
 packadd mediawiki.vim
@@ -208,6 +241,9 @@ else
     MRU
   endfunction
 endif
+
+""> MTA
+packadd MatchTagAlways
 
 ""> nerdfont.vim
 packadd nerdfont.vim
@@ -289,6 +325,16 @@ let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 packadd vim-airline-themes
 
+""> vim-asterisk
+packadd vim-asterisk
+map *  <Plug>(asterisk-*)
+map #  <Plug>(asterisk-#)
+map g* <Plug>(asterisk-g*)  " rg --no-ignore ' g\* '
+map g# <Plug>(asterisk-g#)  " rg --no-ignore ' g# '
+map z* <Plug>(asterisk-z*)  " rg --no-ignore ' z\* '
+" z*cgn  make change to this first match, escape, . does same on next match
+map z# <Plug>(asterisk-z#)  " rg --no-ignore ' z# '
+
 ""> vim-base64
 packadd vim-base64
 
@@ -304,6 +350,7 @@ packadd vim-buffing-wheel
 " - + X
 
 ""> vim-bufkill
+" :BD
 packadd vim-bufkill
 
 ""> vim-colors-solarized
@@ -431,6 +478,12 @@ let g:Hexokinase_highlighters = ['foregroundfull']
 ""> vim-hjson
 packadd vim-hjson
 
+" ""> vim-interestingwords
+" " \k -> new highlight
+" " \K -> all off
+" packadd vim-interestingwords
+" let g:interestingWordsRandomiseColors = 1
+
 " ""> vim-LanguageTool
 " nnoremap <leader>LT :call LanguageTool_lopen() <CR>
 " function! LanguageTool_lopen()
@@ -442,17 +495,22 @@ packadd vim-hjson
 " let g:languagetool_win_height = -1
 " " needs a  g:languagetool_*  defined
 " packadd vim-LanguageTool " then can  :h LanguageTool
+" " now preferring  vim-langtool
 
 ""> vim-langtool
-nnoremap <leader>lt :LangTool <bar> lopen <CR>
+nnoremap <leader>lt :LangTool <bar> lopen 15 <CR>
 packadd vim-langtool  " can then  :h langtool
 " needs  g:langtool_jar  defined
 
 " doesn't highlight anything
 " move to errors:  <cr>  :lne  :lpr
 
-""> vim-matchit
-packadd vim-matchit
+" ""> vim-loclist-follow
+" let g:loclist_follow = 1
+" packadd vim-loclist-follow
+
+""> vim match-up
+packadd vim-matchup
 
 ""> vim-mbsync
 packadd vim-mbsync
@@ -462,6 +520,9 @@ packadd vim-open-url
 
 ""> vim-pandoc-syntax
 packadd vim-pandoc-syntax
+
+""> vim-peekaboo
+packadd vim-peekaboo
 
 ""> vim-picker
 if has('unix')
@@ -490,8 +551,9 @@ packadd vim-startify
 ""> vim-surround
 packadd vim-surround
 
-""> vim-visual-star-search
-packadd vim-visual-star-search
+" ""> vim-visual-star-search
+" packadd vim-visual-star-search
+" " now preferring  vim-asterisk
 
 ""> vim-wombat-scheme
 " optionally added for neovim

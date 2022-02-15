@@ -35,12 +35,12 @@ vim: ft=leader:
 ../ftplugin/tex.vim:vnoremap <buffer> <leader>v1 :s#^\v(.+)$#\1 \\\\#g <bar> nohlsearch <CR>
 ../ftplugin/tex.vim:vnoremap <buffer> <leader>v2 :s#^\v(.+) \\\\$\n^$#\1\r#g <CR>
 ../ftplugin/gitconfig.vim:nnoremap <leader>u :s#https://github.com/#git@github.com:#g <CR>
+../ftplugin/HashFolding.vim:vnoremap <buffer><leader>> :s/^#/##/<CR>
+../ftplugin/HashFolding.vim:vnoremap <buffer><leader>< :s/^#//<CR>
 ../ftplugin/HashEqualsFolding.vim:vnoremap <buffer><leader>> :s/#=/#==/<CR>  " demote
 ../ftplugin/HashEqualsFolding.vim:vnoremap <buffer><leader>< :s/#==/#=/<CR>  " promote
 ../ftplugin/HashEqualsFolding.vim:nnoremap <buffer><leader><leader>> :call FirmComment()<cr>
 ../ftplugin/HashEqualsFolding.vim:nnoremap <buffer><leader><leader>< :call FirmUnComment()<cr>
-../ftplugin/build.vim:vnoremap <buffer><leader>> :s/^#/##/<CR>
-../ftplugin/build.vim:vnoremap <buffer><leader>< :s/^#//<CR>
 ../ftplugin/markdown.vim:vnoremap <buffer><leader>> :s/^#/##/<CR>
 ../ftplugin/markdown.vim:vnoremap <buffer><leader>< :s/^#//<CR>
 ../ftplugin/markdown.vim:nnoremap <buffer> <leader>` viwc``<Esc>P
@@ -50,9 +50,21 @@ vim: ft=leader:
 ../ftplugin/bbcode.vim:nnoremap <buffer> <leader>] viwc[b][/b]<Esc>hhhP
 ../ftplugin/bbcode.vim:vnoremap <buffer> <leader>] c[b][/b]<Esc>hhhP
 ../gvimrc.vim:nnoremap <leader>8 :call EightyTwoColumns()<cr>
-../keystrokes.md:	<leader>atob " base64 to a string
-../keystrokes.md:	<leader>btoa " a string to base64
-../keystrokes.md:	<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:noremap <Leader>*   *
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:noremap <Leader>#   #
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:noremap <Leader>g   g
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:noremap <Leader>g#  g#
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:noremap <Leader>z   z
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:noremap <Leader>gz  gz
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:noremap <Leader>z#  z#
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:noremap <Leader>gz# gz#
+../pack/packs-cp/opt/listtoggle/plugin/listtoggle.vim:      \ get( g:, 'lt_location_list_toggle_map', '<leader>l' )
+../pack/packs-cp/opt/listtoggle/plugin/listtoggle.vim:      \ get( g:, 'lt_quickfix_list_toggle_map', '<leader>q' )
+../pack/packs-cp/opt/listtoggle/plugin/listtoggle.vim:if g:lt_location_list_toggle_map != '<leader>l' ||
+../pack/packs-cp/opt/listtoggle/plugin/listtoggle.vim:      \ g:lt_quickfix_list_toggle_map != '<leader>q'
+../pack/packs-cp/opt/listtoggle/README.md:    let g:lt_location_list_toggle_map = '<leader>l'
+../pack/packs-cp/opt/listtoggle/README.md:    let g:lt_quickfix_list_toggle_map = '<leader>q'
+../pack/packs-cp/opt/listtoggle/README.md:By default, they are set to `<leader>l` and `<leader>q`, respectively.
 ../pack/packs-cp/opt/vim-easy-align/test/include/setup.vader:  vnoremap <silent> <Leader>r<Enter> :LiveEasyAlign!<Enter>
 ../pack/packs-cp/opt/vim-easy-align/test/include/setup.vader:  " vnoremap <silent> <Leader><Enter>  :LiveEasyAlign<Enter>
 ../pack/packs-cp/opt/vim-easy-align/test/include/setup.vader:  " nmap <leader>A <Plug>(EasyAlignOperator)
@@ -186,6 +198,16 @@ vim: ft=leader:
 ../pack/packs-cp/opt/limelight.vim/README.md:xmap <Leader>l <Plug>(Limelight)
 ../pack/packs-cp/opt/vim-ShowTrailingWhitespace/README.md:    nnoremap <silent> <Leader>t$ :<C-u>call ShowTrailingWhitespace#Toggle(0)<Bar>
 ../pack/packs-cp/opt/vim-ShowTrailingWhitespace/doc/ShowTrailingWhitespace.txt:    nnoremap <silent> <Leader>t$ :<C-u>call ShowTrailingWhitespace#Toggle(0)<Bar>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bb',   '<Plug>BufKillBack')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bf',   '<Plug>BufKillForward')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bun',  '<Plug>BufKillBun')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>!bun', '<Plug>BufKillBangBun')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bd',   '<Plug>BufKillBd')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>!bd',  '<Plug>BufKillBangBd')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bw',   '<Plug>BufKillBw')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>!bw',  '<Plug>BufKillBangBw')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bundo','<Plug>BufKillUndo')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>ba',   '<Plug>BufKillAlt')
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:"            changed a map CalendarV for <Leader>cal
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:"            changed a map CalendarH for <Leader>caL
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:"             make a map CalendarV for <Leader>ca
@@ -193,6 +215,9 @@ vim: ft=leader:
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:"     1.3e : added usage for <Leader>
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:    nmap <unique> <Leader>cal <Plug>CalendarV
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:    nmap <unique> <Leader>caL <Plug>CalendarH
+../pack/packs-cp/opt/csv.vim/csv.vmb:changed the |<Leader>| or |<LocalLeader>| variables, those the <Localleader>
+../pack/packs-cp/opt/csv.vim/README.md:changed the `<Leader>` or `<LocalLeader>` variables, those the `<Localleader>`
+../pack/packs-cp/opt/csv.vim/doc/ft-csv.txt:changed the |<Leader>| or |<LocalLeader>| variables, those the <Localleader>
 ../pack/packs-cp/opt/quick-scope/README.md:nmap <leader>q <plug>(QuickScopeToggle)
 ../pack/packs-cp/opt/quick-scope/README.md:xmap <leader>q <plug>(QuickScopeToggle)
 ../pack/packs-cp/opt/quick-scope/doc/quick-scope.txt:Create a custom mapping (<leader> + q in the example below):
@@ -270,6 +295,9 @@ vim: ft=leader:
 ../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/cmdrangeconverter.vim:"   a mapping <Leader>foo that defaults to the whole buffer, unless [count] is
 ../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/cmdrangeconverter.vim:"	:nnoremap <Leader>foo :<C-u>if ! ingo#cmdrangeconverter#LineToBufferRange('s///g')<Bar>echoerr ingo#err#Get()<Bar>endif<CR>
 ../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/err.vim:"	nnoremap <Leader>f :call Foo#Bar()<Bar>if ingo#err#IsSet()<Bar>echoerr ingo#err#Get()<Bar>endif<CR>
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/text/surroundings/Lines/Creator.vim:" [count]<Leader>??	Insert ??? around [count] lines.
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/text/surroundings/Lines/Creator.vim:" [count]<Leader>?{motion}
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/text/surroundings/Lines/Creator.vim:" {Visual}<Leader>?	Insert ??? around the selection.
 ../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:                execute mode . 'map <leader>' . a:combo . ' ' . plug
 ../pack/packs-cp/opt/nerdcommenter/README.md:  * `[count]<leader>cc` **|NERDCommenterComment|**
 ../pack/packs-cp/opt/nerdcommenter/README.md:  * `[count]<leader>cn` **|NERDCommenterNested|**
@@ -436,12 +464,14 @@ vim: ft=leader:
 ../plugin/plugins.vim:noremap <leader>yy :CalendarH<CR>
 ../plugin/plugins.vim:nnoremap <leader>bdd :Bdelete other<CR>
 ../plugin/plugins.vim:nnoremap <leader>bd  :Bdelete hidden<CR>
-../plugin/plugins.vim:nnoremap <leader>bb  :CtrlPBuffer<CR>
-../plugin/plugins.vim:    nnoremap <leader>j :Files /mnt/SDSSDA240G/Dropbox/JH<CR>
+../plugin/plugins.vim:nnoremap <leader>bb :CtrlPBuffer<CR>
+../plugin/plugins.vim:    nnoremap <leader>j :Files /mnt/BX200/Dropbox/JH<CR>
+../plugin/plugins.vim:    nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
 ../plugin/plugins.vim:    nnoremap <leader>j :Files /mnt/SD480GSSDPlus/Dropbox/JH<CR>
 ../plugin/plugins.vim:  nnoremap <leader>B :BLines<CR>
 ../plugin/plugins.vim:  nnoremap <leader>L :Lines<CR>
 ../plugin/plugins.vim:  nnoremap <leader>bf :Buffers<CR>
+../plugin/plugins.vim:let g:lt_location_list_toggle_map = '<leader>ll'
 ../plugin/plugins.vim:  nnoremap <leader>m :MRU
 ../plugin/plugins.vim:  nnoremap <leader>m :MRU<CR>
 ../plugin/plugins.vim:  " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
@@ -452,6 +482,7 @@ vim: ft=leader:
 ../plugin/plugins.vim:  nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
 ../plugin/plugins.vim:  nnoremap <leader>mx :call MRU_highlighted('\.tex')<CR>:se hls<CR>
+../plugin/plugins.vim:  nnoremap <leader>my :call MRU_highlighted('\.py')<CR>:se hls<CR>
 ../plugin/plugins.vim:" <leader>c<space> -> NERDCommenterToggle
 ../plugin/plugins.vim:" add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
 ../plugin/plugins.vim:" <Leader>f{char} to move to {char}
@@ -464,7 +495,7 @@ vim: ft=leader:
 ../plugin/plugins.vim:" <Leader><Leader>- -> smaller font
 ../plugin/plugins.vim:" <Leader><Leader>0 -> default font size
 ../plugin/plugins.vim:" nnoremap <leader>LT :call LanguageTool_lopen() <CR>
-../plugin/plugins.vim:nnoremap <leader>lt :LangTool <bar> lopen <CR>
+../plugin/plugins.vim:nnoremap <leader>lt :LangTool <bar> lopen 15 <CR>
 ../plugin/plugins.vim:  nmap <unique> <leader>pe <Plug>(PickerEdit)
 ../plugin/plugins.vim:  nmap <unique> <leader>pb <Plug>(PickerBuffer)
 ../plugin/plugin.vim:nnoremap <leader>sb :buffers<CR>:sbuffer<Space>
@@ -481,9 +512,10 @@ vim: ft=leader:
 ../plugin/plugin.vim:nnoremap <leader>n :nohlsearch<CR>
 ../plugin/plugin.vim:vnoremap <leader>n <Esc>:nohlsearch<CR>
 ../plugin/plugin.vim:nnoremap <leader>vg :call VimgrepSelection()<CR>
+../plugin/plugin.vim:nnoremap <leader>i :call IncSearchToggle()<cr>
 ../plugin/plugin.vim:" and <leader>pt toggles it:
 ../plugin/plugin.vim:nnoremap <leader>pt :call ParenthsToggle()<cr>
-../plugin/plugin.vim:noremap <leader>q :copen<CR>
+../plugin/plugin.vim:" noremap <leader>q :copen<CR>
 ../plugin/plugin.vim:nnoremap <leader>sw :call SearchCFW()<CR>
 ../plugin/plugin.vim:nnoremap <leader>vs :call ConvertSearchForVisualSelection()<CR>
 ../plugin/plugin.vim:vnoremap <leader>vs <Esc>:call ConvertSearchForVisualSelection()<CR>
@@ -491,8 +523,11 @@ vim: ft=leader:
 ../plugin/plugin.vim:nnoremap <leader>f :let@f=@%<CR>
 ../plugin/plugin.vim:nnoremap <leader>- :Hexplore<cr>
 ../plugin/plugin.vim:nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
+../QR.md:	<leader>atob " base64 to a string
+../QR.md:	<leader>btoa " a string to base64
+../QR.md:	<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
 ../syntax/leader.vim:syn match leader '<leader>\c' nextgroup=keystrokes
-../vimrc.vim:noremap <leader>ll :set list! list? <CR>
+../vimrc.vim:noremap <leader><leader>ll :set list! list? <CR>
 ../vimrc.vim:nnoremap <leader>x <C-W>c
 ../vimrc.vim:nnoremap <silent><leader><leader>c :set cuc! cuc? <CR>
 ../vimrc.vim:nnoremap <silent><leader><leader>l :set cul! cul? <CR>

@@ -53,7 +53,7 @@ set wildmode=longest,full
 set wildmenu
 
 set listchars=eol:│,trail:·,tab:»·  "nicer settings for list mode:
-noremap <leader>ll :set list! list? <CR>
+noremap <leader><leader>ll :set list! list? <CR>
 
 set history=500  " just guessing here...
 set modelines=4
@@ -109,4 +109,10 @@ autocmd BufRead,BufNewFile */sudoers setlocal ft=sudoers
 "">> turn off some unused Fn keys in insert mode
 inoremap <F3> <Esc>
 inoremap <S-F2> <Esc>
+
+" ""> matchit.vim
+" if has('syntax') && has('eval')
+"   packadd! matchit
+" endif  " the required features are available
+" " supplanted by  vim match-up
 

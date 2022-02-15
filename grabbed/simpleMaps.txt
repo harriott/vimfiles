@@ -1,7 +1,5 @@
 
 n  <Space>     * za
-x  #           * :<C-U>call VisualStarSearchSet('?')<CR>?<C-R>=@/<CR><CR>
-x  *           * :<C-U>call VisualStarSearchSet('/')<CR>/<C-R>=@/<CR><CR>
 o  ,           * :
 x  ,           * :
 n  ,           * :
@@ -19,15 +17,15 @@ o  I             targets#e('o', 'I', 'I')
    Q           * @q
 n  U           * :CapsLockOff<CR> | U
    \gg         * :call GitGutterFocus()<CR>
-v  \*          * :<C-U>call VisualStarSearchSet('/')<CR>:execute 'noautocmd vimgrep /' . @/ . '/ **'<CR>
-n  \*          * :execute 'noautocmd vimgrep /\V' . substitute(escape(expand("<cword>"), '\'), '\n', '\\n', 'g') . '/ **'<CR>
-n  \lt         * :LangTool | lopen <CR>
+n  \lt         * :LangTool | lopen 15 <CR>
 n  \e          * :call EasyMotionSearchToggle()<CR>
 n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
 n  \btoa/      * :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
 v  \btoa       * :<C-U>call base64#v_btoa()<CR>
 v  \atob       * :<C-U>call base64#v_atob()<CR>
 n  \m          * :MRU
+n  \q          * :QToggle<CR>
+n  \l          * :LToggle<CR>
 n  \bf         * :Buffers<CR>
 n  \L          * :Lines<CR>
 n  \B          * :BLines<CR>
@@ -48,8 +46,8 @@ n  \v          * v$hy
 v  \vs         * <Esc>:call ConvertSearchForVisualSelection()<CR>
 n  \vs         * :call ConvertSearchForVisualSelection()<CR>
 n  \sw         * :call SearchCFW()<CR>
-   \q          * :copen<CR>
 n  \pt         * :call ParenthsToggle()<CR>
+n  \i          * :call IncSearchToggle()<CR>
 n  \vg         * :call VimgrepSelection()<CR>
 v  \n          * <Esc>:nohlsearch<CR>
 n  \n          * :nohlsearch<CR>
@@ -70,7 +68,7 @@ n  \<Down>     * 5<C-W>-
 n  \\l         * :set cul! cul? <CR>
 n  \\c         * :set cuc! cuc? <CR>
 n  \x          * <C-W>c
-   \ll         * :set list! list? <CR>
+   \\ll        * :set list! list? <CR>
 x  a             targets#e('o', 'a', 'a')
 o  a             targets#e('o', 'a', 'a')
 n  g,          * <Nop>
@@ -85,6 +83,7 @@ n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
 n  zr          * :exe ':spellra  '.expand('<cWORD>')<CR>
 v  ~           * y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
    <C-N>       * :NERDTreeToggle<CR>
+   <C-E>       * :cd %:p:h<CR>:Fern . -reveal=%<CR>
 n  <Insert>    * :CapsLockOff <CR>
 
 c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))

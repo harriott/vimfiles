@@ -327,6 +327,8 @@ Entering special characters
 
 ## syntax highlighting
 	:h syn-region
+
+### settings
 	:hi
 	:so $VIMRUNTIME/syntax/hitest.vim
     :se synmaxcol=0  " removes 3000 character limit

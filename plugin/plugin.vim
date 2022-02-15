@@ -282,7 +282,7 @@ function! GrabRtp()
 endfunction
 
 function! GrabScriptnames()
-  exe 'edit '.g:vimfiles.'/grabbed/scriptnames'.hostname().'-.txt'
+  exe 'edit '.g:vimfiles.'/grabbed/scriptnames-'.hostname().'.txt'
   normal! ggVGd
   call GrabWrite("scriptnames")
 endfunction
@@ -389,7 +389,7 @@ endfunction
 
 ""> searching - incsearch
 set incsearch
-nnoremap <leader>i :call IncSearchToggle()<cr>
+nnoremap <leader>is :call IncSearchToggle()<cr>
 let g:incsearchSet = 1
 function! IncSearchToggle()
   if g:incsearchSet
@@ -424,7 +424,8 @@ endfunction
 
 ""> searching - re-open the quickfix-window
 " eg to look again at results of vimgrep
-noremap <leader>q :copen<CR>
+" noremap <leader>q :copen<CR>
+" now using  ListToggle
 
 ""> searching - search again as word
 " convert the last search into a case-free word
@@ -434,7 +435,7 @@ function! SearchCFW()
   call histadd('/', @/)
 endfunction
 nnoremap <leader>sw :call SearchCFW()<CR>
-" can also use  g#
+" can also use  g#  g*  on a selection
 
 ""> searching - search within a visual selection
 "  before calling this you need to search for something, then

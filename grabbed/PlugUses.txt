@@ -1,3 +1,60 @@
+../pack/packs-cp/opt/vim-asterisk/plugin/asterisk.vim:noremap <expr><silent> <Plug>(asterisk-*)   asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 1, 'is_whole' : 1})
+../pack/packs-cp/opt/vim-asterisk/plugin/asterisk.vim:noremap <expr><silent> <Plug>(asterisk-g*)  asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 1, 'is_whole' : 0})
+../pack/packs-cp/opt/vim-asterisk/plugin/asterisk.vim:noremap <expr><silent> <Plug>(asterisk-z*)  asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 0, 'is_whole' : 1})
+../pack/packs-cp/opt/vim-asterisk/plugin/asterisk.vim:noremap <expr><silent> <Plug>(asterisk-gz*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 0, 'is_whole' : 0})
+../pack/packs-cp/opt/vim-asterisk/plugin/asterisk.vim:noremap <expr><silent> <Plug>(asterisk-#)   asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 1, 'is_whole' : 1})
+../pack/packs-cp/opt/vim-asterisk/plugin/asterisk.vim:noremap <expr><silent> <Plug>(asterisk-g#)  asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 1, 'is_whole' : 0})
+../pack/packs-cp/opt/vim-asterisk/plugin/asterisk.vim:noremap <expr><silent> <Plug>(asterisk-z#)  asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 0, 'is_whole' : 1})
+../pack/packs-cp/opt/vim-asterisk/plugin/asterisk.vim:noremap <expr><silent> <Plug>(asterisk-gz#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 0, 'is_whole' : 0})
+../pack/packs-cp/opt/vim-asterisk/README.md:map *   <Plug>(asterisk-*)
+../pack/packs-cp/opt/vim-asterisk/README.md:map #   <Plug>(asterisk-#)
+../pack/packs-cp/opt/vim-asterisk/README.md:map g*  <Plug>(asterisk-g*)
+../pack/packs-cp/opt/vim-asterisk/README.md:map g#  <Plug>(asterisk-g#)
+../pack/packs-cp/opt/vim-asterisk/README.md:map z*  <Plug>(asterisk-z*)
+../pack/packs-cp/opt/vim-asterisk/README.md:map gz* <Plug>(asterisk-gz*)
+../pack/packs-cp/opt/vim-asterisk/README.md:map z#  <Plug>(asterisk-z#)
+../pack/packs-cp/opt/vim-asterisk/README.md:map gz# <Plug>(asterisk-gz#)
+../pack/packs-cp/opt/vim-asterisk/README.md:map *  <Plug>(asterisk-z*)
+../pack/packs-cp/opt/vim-asterisk/README.md:map #  <Plug>(asterisk-z#)
+../pack/packs-cp/opt/vim-asterisk/README.md:map g* <Plug>(asterisk-gz*)
+../pack/packs-cp/opt/vim-asterisk/README.md:map g# <Plug>(asterisk-gz#)
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:map *   <Plug>(asterisk-*)
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:map #   <Plug>(asterisk-#)
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:map g*  <Plug>(asterisk-g*)
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:map g#  <Plug>(asterisk-g#)
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:map z*  <Plug>(asterisk-z*)
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:map gz* <Plug>(asterisk-gz*)
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:map z#  <Plug>(asterisk-z#)
+../pack/packs-cp/opt/vim-asterisk/test/.themisrc:map gz# <Plug>(asterisk-gz#)
+../pack/packs-cp/opt/vim-asterisk/doc/tags:<Plug>(asterisk-#)	asterisk.txt	/*<Plug>(asterisk-#)*
+../pack/packs-cp/opt/vim-asterisk/doc/tags:<Plug>(asterisk-g#)	asterisk.txt	/*<Plug>(asterisk-g#)*
+../pack/packs-cp/opt/vim-asterisk/doc/tags:<Plug>(asterisk-gstar)	asterisk.txt	/*<Plug>(asterisk-gstar)*
+../pack/packs-cp/opt/vim-asterisk/doc/tags:<Plug>(asterisk-gz#)	asterisk.txt	/*<Plug>(asterisk-gz#)*
+../pack/packs-cp/opt/vim-asterisk/doc/tags:<Plug>(asterisk-gzstar)	asterisk.txt	/*<Plug>(asterisk-gzstar)*
+../pack/packs-cp/opt/vim-asterisk/doc/tags:<Plug>(asterisk-star)	asterisk.txt	/*<Plug>(asterisk-star)*
+../pack/packs-cp/opt/vim-asterisk/doc/tags:<Plug>(asterisk-z#)	asterisk.txt	/*<Plug>(asterisk-z#)*
+../pack/packs-cp/opt/vim-asterisk/doc/tags:<Plug>(asterisk-zstar)	asterisk.txt	/*<Plug>(asterisk-zstar)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		\     'mappings' : ['<Plug>(asterisk-']
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:<Plug>(asterisk-*)  					*<Plug>(asterisk-star)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:<Plug>(asterisk-#)     					*<Plug>(asterisk-#)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:<Plug>(asterisk-g*) 					*<Plug>(asterisk-gstar)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:<Plug>(asterisk-g#)    					*<Plug>(asterisk-g#)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:<Plug>(asterisk-z*) 					*<Plug>(asterisk-zstar)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:<Plug>(asterisk-z#)    					*<Plug>(asterisk-z#)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:<Plug>(asterisk-gz*) 					*<Plug>(asterisk-gzstar)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:<Plug>(asterisk-gz#)   					*<Plug>(asterisk-gz#)*
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map *   <Plug>(asterisk-*)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map #   <Plug>(asterisk-#)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map g*  <Plug>(asterisk-g*)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map g#  <Plug>(asterisk-g#)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map z*  <Plug>(asterisk-z*)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map gz* <Plug>(asterisk-gz*)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map z#  <Plug>(asterisk-z#)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map gz# <Plug>(asterisk-gz#)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map *  <Plug>(asterisk-z*)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map #  <Plug>(asterisk-z#)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map g* <Plug>(asterisk-gz*)
+../pack/packs-cp/opt/vim-asterisk/doc/asterisk.txt:		map g# <Plug>(asterisk-gz#)
 ../pack/packs-cp/opt/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzy-/) incsearch#go(<SID>config_fuzzy())
 ../pack/packs-cp/opt/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzy-?) incsearch#go(<SID>config_fuzzy({'command': '?'}))
 ../pack/packs-cp/opt/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim:noremap <silent><expr> <Plug>(incsearch-fuzzy-stay) incsearch#go(<SID>config_fuzzy({'is_stay': 1}))
@@ -50,6 +107,35 @@
 ../pack/packs-cp/opt/vim-open-url/doc/open-url.txt:    `<Plug>(open-url-search-so)`        " Unmapped by default
 ../pack/packs-cp/opt/vim-open-url/doc/open-url.txt:    `<Plug>(open-url-search-google)`
 ../pack/packs-cp/opt/vim-open-url/doc/open-url.txt:    `<Plug>(open-url-search-wikipedia)`
+../pack/packs-cp/opt/vim-dirvish/plugin/dirvish.vim:nnoremap <silent> <Plug>(dirvish_up) :<C-U>exe 'Dirvish %:p'.repeat(':h',v:count1)<CR>
+../pack/packs-cp/opt/vim-dirvish/plugin/dirvish.vim:nnoremap <silent> <Plug>(dirvish_split_up) :<C-U>exe 'split +Dirvish\ %:p'.repeat(':h',v:count1)<CR>
+../pack/packs-cp/opt/vim-dirvish/plugin/dirvish.vim:nnoremap <silent> <Plug>(dirvish_vsplit_up) :<C-U>exe 'vsplit +Dirvish\ %:p'.repeat(':h',v:count1)<CR>
+../pack/packs-cp/opt/vim-dirvish/plugin/dirvish.vim:if mapcheck('-', 'n') ==# '' && !hasmapto('<Plug>(dirvish_up)', 'n')
+../pack/packs-cp/opt/vim-dirvish/plugin/dirvish.vim:  nmap - <Plug>(dirvish_up)
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:if !hasmapto('<Plug>(dirvish_quit)', 'n')
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:  execute 'nmap '.s:nowait.'<buffer> gq <Plug>(dirvish_quit)'
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:if !hasmapto('<Plug>(dirvish_arg)', 'n')
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:  execute 'nmap '.s:nowait.'<buffer> x <Plug>(dirvish_arg)'
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:  execute 'xmap '.s:nowait.'<buffer> x <Plug>(dirvish_arg)'
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:if !hasmapto('<Plug>(dirvish_K)', 'n')
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:  execute 'nmap '.s:nowait.'<buffer> K <Plug>(dirvish_K)'
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:  execute 'xmap '.s:nowait.'<buffer> K <Plug>(dirvish_K)'
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:nnoremap <buffer><silent> <Plug>(dirvish_up) :<C-U>exe "Dirvish %:h".repeat(":h",v:count1)<CR>
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:nnoremap <buffer><silent> <Plug>(dirvish_split_up) :<C-U>exe 'split +Dirvish\ %:h'.repeat(':h',v:count1)<CR>
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:nnoremap <buffer><silent> <Plug>(dirvish_vsplit_up) :<C-U>exe 'vsplit +Dirvish\ %:h'.repeat(':h',v:count1)<CR>
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:if !hasmapto('<Plug>(dirvish_up)', 'n')
+../pack/packs-cp/opt/vim-dirvish/ftplugin/dirvish.vim:  execute 'nmap '.s:nowait.'<buffer> - <Plug>(dirvish_up)'
+../pack/packs-cp/opt/vim-dirvish/autoload/dirvish.vim:nnoremap <silent> <Plug>(dirvish_quit) :<C-U>call <SID>buf_close()<CR>
+../pack/packs-cp/opt/vim-dirvish/autoload/dirvish.vim:nnoremap <silent> <Plug>(dirvish_arg) :<C-U>call <SID>set_args([getline('.')])<CR>
+../pack/packs-cp/opt/vim-dirvish/autoload/dirvish.vim:xnoremap <silent> <Plug>(dirvish_arg) :<C-U>call <SID>set_args(getline("'<", "'>"))<CR>
+../pack/packs-cp/opt/vim-dirvish/autoload/dirvish.vim:nnoremap <silent> <Plug>(dirvish_K) :<C-U>call <SID>info([getline('.')],!!v:count)<CR>
+../pack/packs-cp/opt/vim-dirvish/autoload/dirvish.vim:xnoremap <silent> <Plug>(dirvish_K) :<C-U>call <SID>info(getline("'<", "'>"),!!v:count)<CR>
+../pack/packs-cp/opt/vim-dirvish/doc/dirvish.txt:    <Plug>(dirvish_up)
+../pack/packs-cp/opt/vim-dirvish/doc/dirvish.txt:    <Plug>(dirvish_quit)
+../pack/packs-cp/opt/vim-dirvish/doc/dirvish.txt:    <Plug>(dirvish_up)
+../pack/packs-cp/opt/vim-dirvish/doc/dirvish.txt:    <Plug>(dirvish_split_up)
+../pack/packs-cp/opt/vim-dirvish/doc/dirvish.txt:    <Plug>(dirvish_vsplit_up)
+../pack/packs-cp/opt/vim-dirvish/doc/dirvish.txt:    <Plug>(dirvish_arg)
 ../pack/packs-cp/opt/vim-colors-tomorrow/autoload/togglebg.vim:nnoremap <unique> <script> <Plug>ToggleBackground <SID>TogBG
 ../pack/packs-cp/opt/vim-colors-tomorrow/autoload/togglebg.vim:inoremap <unique> <script> <Plug>ToggleBackground <ESC><SID>TogBG<ESC>a
 ../pack/packs-cp/opt/vim-colors-tomorrow/autoload/togglebg.vim:vnoremap <unique> <script> <Plug>ToggleBackground <ESC><SID>TogBG<ESC>gv
@@ -64,6 +150,700 @@
 ../pack/packs-cp/opt/vim-colors-solarized/autoload/togglebg.vim:        exe "silent! imap <unique> ".a:mapActivation." <Plug>ToggleBackground"
 ../pack/packs-cp/opt/vim-colors-solarized/autoload/togglebg.vim:        exe "silent! vmap <unique> ".a:mapActivation." <Plug>ToggleBackground"
 ../pack/packs-cp/opt/vim-colors-solarized/autoload/togglebg.vim:if !exists("no_plugin_maps") && !hasmapto('<Plug>ToggleBackground')
+../pack/packs-cp/opt/fern.vim/README.md:  nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:select)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:select)   :<C-u>call <SID>call('diff', 'select', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:split)    :<C-u>call <SID>call('diff', 'split', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:vsplit)   :<C-u>call <SID>call('diff', 'vsplit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:tabedit)  :<C-u>call <SID>call('diff', 'tabedit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:above)    :<C-u>call <SID>call('diff', 'leftabove split', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:left)     :<C-u>call <SID>call('diff', 'leftabove vsplit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:below)    :<C-u>call <SID>call('diff', 'rightbelow split', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:right)    :<C-u>call <SID>call('diff', 'rightbelow vsplit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:top)      :<C-u>call <SID>call('diff', 'topleft split', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:leftest)  :<C-u>call <SID>call('diff', 'topleft vsplit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:bottom)   :<C-u>call <SID>call('diff', 'botright split', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:rightest) :<C-u>call <SID>call('diff', 'botright vsplit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:edit-or-error)   :<C-u>call <SID>call('diff', 'edit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:edit-or-split)   :<C-u>call <SID>call('diff', 'edit/split', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:edit-or-vsplit)  :<C-u>call <SID>call('diff', 'edit/vsplit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:edit-or-tabedit) :<C-u>call <SID>call('diff', 'edit/tabedit', v:false)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:select:vert)   :<C-u>call <SID>call('diff', 'select', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:split:vert)    :<C-u>call <SID>call('diff', 'split', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:vsplit:vert)   :<C-u>call <SID>call('diff', 'vsplit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:tabedit:vert)  :<C-u>call <SID>call('diff', 'tabedit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:above:vert)    :<C-u>call <SID>call('diff', 'leftabove split', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:left:vert)     :<C-u>call <SID>call('diff', 'leftabove vsplit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:below:vert)    :<C-u>call <SID>call('diff', 'rightbelow split', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:right:vert)    :<C-u>call <SID>call('diff', 'rightbelow vsplit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:top:vert)      :<C-u>call <SID>call('diff', 'topleft split', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:leftest:vert)  :<C-u>call <SID>call('diff', 'topleft vsplit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:bottom:vert)   :<C-u>call <SID>call('diff', 'botright split', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:rightest:vert) :<C-u>call <SID>call('diff', 'botright vsplit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:edit-or-error:vert)   :<C-u>call <SID>call('diff', 'edit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:edit-or-split:vert)   :<C-u>call <SID>call('diff', 'edit/split', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:edit-or-vsplit:vert)  :<C-u>call <SID>call('diff', 'edit/vsplit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nnoremap <buffer><silent> <Plug>(fern-action-diff:edit-or-tabedit:vert) :<C-u>call <SID>call('diff', 'edit/tabedit', v:true)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:        \ <Plug>(fern-action-diff:side)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:        \   "\<Plug>(fern-action-diff:left)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:        \   "\<Plug>(fern-action-diff:right)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:        \ <Plug>(fern-action-diff:side:vert)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:        \   "\<Plug>(fern-action-diff:left:vert)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:        \   "\<Plug>(fern-action-diff:right:vert)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nmap <buffer><silent> <Plug>(fern-action-diff:edit) <Plug>(fern-action-diff:edit-or-error)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nmap <buffer><silent> <Plug>(fern-action-diff:edit:vert) <Plug>(fern-action-diff:edit-or-error:vert)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nmap <buffer><silent> <Plug>(fern-action-diff) <Plug>(fern-action-diff:edit)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/diff.vim:  nmap <buffer><silent> <Plug>(fern-action-diff:vert) <Plug>(fern-action-diff:edit:vert)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:select)   :<C-u>call <SID>call('open', 'select')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:split)    :<C-u>call <SID>call('open', 'split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:vsplit)   :<C-u>call <SID>call('open', 'vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:tabedit)  :<C-u>call <SID>call('open', 'tabedit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:above)    :<C-u>call <SID>call('open', 'leftabove split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:left)     :<C-u>call <SID>call('open', 'leftabove vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:below)    :<C-u>call <SID>call('open', 'rightbelow split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:right)    :<C-u>call <SID>call('open', 'rightbelow vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:top)      :<C-u>call <SID>call('open', 'topleft split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:leftest)  :<C-u>call <SID>call('open', 'topleft vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:bottom)   :<C-u>call <SID>call('open', 'botright split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:rightest) :<C-u>call <SID>call('open', 'botright vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:edit-or-error)   :<C-u>call <SID>call('open', 'edit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:edit-or-split)   :<C-u>call <SID>call('open', 'edit/split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:edit-or-vsplit)  :<C-u>call <SID>call('open', 'edit/vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:edit-or-tabedit) :<C-u>call <SID>call('open', 'edit/tabedit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \ <Plug>(fern-action-open:side)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \   "\<Plug>(fern-action-open:left)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \   "\<Plug>(fern-action-open:right)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \   "\<Plug>(fern-action-open:right)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \ <Plug>(fern-action-open-or-enter)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \   "\<Plug>(fern-action-open)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \   "\<Plug>(fern-action-enter)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \ <Plug>(fern-action-open-or-expand)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \   "\<Plug>(fern-action-open)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:        \   "\<Plug>(fern-action-expand)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nmap <buffer><silent> <Plug>(fern-action-open:edit) <Plug>(fern-action-open:edit-or-error)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:  nmap <buffer><silent> <Plug>(fern-action-open) <Plug>(fern-action-open:edit)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:    nmap <buffer><nowait> <C-m> <Plug>(fern-action-open-or-enter)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:    nmap <buffer><nowait> l <Plug>(fern-action-open-or-expand)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:    nmap <buffer><nowait> s <Plug>(fern-action-open:select)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:    nmap <buffer><nowait> e <Plug>(fern-action-open)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:    nmap <buffer><nowait> E <Plug>(fern-action-open:side)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/open.vim:    nmap <buffer><nowait> t <Plug>(fern-action-open:tabedit)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-debug)         :<C-u>call <SID>call('debug')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-reload:all)    :<C-u>call <SID>call('reload_all')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-reload:cursor) :<C-u>call <SID>call('reload_cursor')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-expand:stay)   :<C-u>call <SID>call('expand_stay')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-expand:in)     :<C-u>call <SID>call('expand_in')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-collapse)      :<C-u>call <SID>call('collapse')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-reveal)        :<C-u>call <SID>call('reveal')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-reveal=)       :<C-u>call <SID>call_without_guard('reveal')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-focus:parent)  :<C-u>call <SID>call('focus_parent')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-enter)         :<C-u>call <SID>call('enter')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nnoremap <buffer><silent> <Plug>(fern-action-leave)         :<C-u>call <SID>call('leave')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nmap <buffer> <Plug>(fern-action-reload) <Plug>(fern-action-reload:all)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:  nmap <buffer> <Plug>(fern-action-expand) <Plug>(fern-action-expand:in)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> <F5> <Plug>(fern-action-reload)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> <C-m> <Plug>(fern-action-enter)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> <C-h> <Plug>(fern-action-leave)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> l <Plug>(fern-action-expand)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> h <Plug>(fern-action-collapse)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> i <Plug>(fern-action-reveal)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/tree.vim:  nnoremap <buffer><silent> <Plug>(fern-action-cancel) :<C-u>call <SID>call('cancel')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/tree.vim:  nnoremap <buffer><silent> <Plug>(fern-action-redraw) :<C-u>call <SID>call('redraw')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/tree.vim:    nmap <buffer><nowait> <C-c> <Plug>(fern-action-cancel)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/tree.vim:    nmap <buffer><nowait> <C-l> <Plug>(fern-action-redraw)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/yank.vim:  nnoremap <buffer><silent> <Plug>(fern-action-yank:label) :<C-u>call <SID>call('yank', 'label')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/yank.vim:  nnoremap <buffer><silent> <Plug>(fern-action-yank:badge) :<C-u>call <SID>call('yank', 'badge')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/yank.vim:  nnoremap <buffer><silent> <Plug>(fern-action-yank:bufname) :<C-u>call <SID>call('yank', 'bufname')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/yank.vim:  nmap <buffer> <Plug>(fern-action-yank) <Plug>(fern-action-yank:bufname)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/yank.vim:    nmap <buffer><nowait> y <Plug>(fern-action-yank)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/drawer.vim:  nnoremap <buffer><silent> <Plug>(fern-action-zoom) :<C-u>call <SID>call('zoom')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/drawer.vim:  nnoremap <buffer><silent> <Plug>(fern-action-zoom:reset) :<C-u>call <SID>call('zoom_reset')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/drawer.vim:  nmap <buffer><silent> <Plug>(fern-action-zoom:half) 4<Plug>(fern-action-zoom)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/drawer.vim:  nmap <buffer><silent> <Plug>(fern-action-zoom:full) 9<Plug>(fern-action-zoom)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/drawer.vim:    nmap <buffer><nowait> z <Plug>(fern-action-zoom)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/drawer.vim:    nmap <buffer><nowait> Z <Plug>(fern-action-zoom:reset)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:  nnoremap <buffer><silent> <Plug>(fern-action-hidden:set)    :<C-u>call <SID>call('hidden_set')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:  nnoremap <buffer><silent> <Plug>(fern-action-hidden:unset)  :<C-u>call <SID>call('hidden_unset')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:  nnoremap <buffer><silent> <Plug>(fern-action-hidden:toggle) :<C-u>call <SID>call('hidden_toggle')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:  nnoremap <buffer><silent> <Plug>(fern-action-include)       :<C-u>call <SID>call('include')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:  nnoremap <buffer><silent> <Plug>(fern-action-exclude)       :<C-u>call <SID>call('exclude')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:  nnoremap <buffer><silent> <Plug>(fern-action-include=)      :<C-u>call <SID>call_without_guard('include')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:  nnoremap <buffer><silent> <Plug>(fern-action-exclude=)      :<C-u>call <SID>call_without_guard('exclude')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:  nmap <buffer> <Plug>(fern-action-hidden) <Plug>(fern-action-hidden:toggle)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:    nmap <buffer><nowait> !  <Plug>(fern-action-hidden)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:    nmap <buffer><nowait> fi <Plug>(fern-action-include)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/filter.vim:    nmap <buffer><nowait> fe <Plug>(fern-action-exclude)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/wait.vim:        \ <Plug>(fern-wait-viewer:ready)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/wait.vim:  nmap <buffer> <Plug>(fern-wait) <Plug>(fern-wait-viewer:ready)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  nnoremap <buffer><silent> <Plug>(fern-action-mark:clear)  :<C-u>call <SID>call('mark_clear')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  nnoremap <buffer><silent> <Plug>(fern-action-mark:set)    :<C-u>call <SID>call('mark_set')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  nnoremap <buffer><silent> <Plug>(fern-action-mark:unset   :<C-u>call <SID>call('mark_unset')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  nnoremap <buffer><silent> <Plug>(fern-action-mark:toggle) :<C-u>call <SID>call('mark_toggle')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  vnoremap <buffer><silent> <Plug>(fern-action-mark:set)    :call <SID>call('mark_set')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  vnoremap <buffer><silent> <Plug>(fern-action-mark:unset)  :call <SID>call('mark_unset')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  vnoremap <buffer><silent> <Plug>(fern-action-mark:toggle) :call <SID>call('mark_toggle')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  nmap <buffer> <Plug>(fern-action-mark) <Plug>(fern-action-mark:toggle)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:  vmap <buffer> <Plug>(fern-action-mark) <Plug>(fern-action-mark:toggle)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:    nmap <buffer><nowait> <C-j> <Plug>(fern-action-mark)j
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:    nmap <buffer><nowait> <C-k> k<Plug>(fern-action-mark)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:    nmap <buffer><nowait> -     <Plug>(fern-action-mark)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/mark.vim:    vmap <buffer><nowait> -     <Plug>(fern-action-mark)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/clipboard.vim:  nnoremap <buffer><silent> <Plug>(fern-action-clipboard-copy)  :<C-u>call <SID>call('clipboard_copy')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/clipboard.vim:  nnoremap <buffer><silent> <Plug>(fern-action-clipboard-move)  :<C-u>call <SID>call('clipboard_move')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/clipboard.vim:  nnoremap <buffer><silent> <Plug>(fern-action-clipboard-paste) :<C-u>call <SID>call('clipboard_paste')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/clipboard.vim:  nnoremap <buffer><silent> <Plug>(fern-action-clipboard-clear) :<C-u>call <SID>call('clipboard_clear')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/clipboard.vim:    nmap <buffer><nowait> C <Plug>(fern-action-clipboard-copy)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/clipboard.vim:    nmap <buffer><nowait> M <Plug>(fern-action-clipboard-move)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/clipboard.vim:    nmap <buffer><nowait> P <Plug>(fern-action-clipboard-paste)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:select)   :<C-u>call <SID>call('rename', 'select')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:split)    :<C-u>call <SID>call('rename', 'split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:vsplit)   :<C-u>call <SID>call('rename', 'vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:tabedit)  :<C-u>call <SID>call('rename', 'tabedit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:above)    :<C-u>call <SID>call('rename', 'leftabove split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:left)     :<C-u>call <SID>call('rename', 'leftabove vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:below)    :<C-u>call <SID>call('rename', 'rightbelow split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:right)    :<C-u>call <SID>call('rename', 'rightbelow vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:top)      :<C-u>call <SID>call('rename', 'topleft split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:leftest)  :<C-u>call <SID>call('rename', 'topleft vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:bottom)   :<C-u>call <SID>call('rename', 'botright split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:rightest) :<C-u>call <SID>call('rename', 'botright vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:edit-or-error)   :<C-u>call <SID>call('rename', 'edit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:edit-or-split)   :<C-u>call <SID>call('rename', 'edit/split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:edit-or-vsplit)  :<C-u>call <SID>call('rename', 'edit/vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:edit-or-tabedit) :<C-u>call <SID>call('rename', 'edit/tabedit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nmap <buffer><silent> <Plug>(fern-action-rename:edit) <Plug>(fern-action-rename:edit-or-error)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:  nmap <buffer><silent> <Plug>(fern-action-rename) <Plug>(fern-action-rename:split)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping/rename.vim:    nmap <buffer><nowait> R <Plug>(fern-action-rename)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-new-leaf)   :<C-u>call <SID>call('new_leaf')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-new-branch) :<C-u>call <SID>call('new_branch')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-copy)       :<C-u>call <SID>call('copy')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-move)       :<C-u>call <SID>call('move')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-remove)     :<C-u>call <SID>call('remove')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-edit-leaf)  :<C-u>call <SID>call('edit_leaf')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:    nmap <buffer><nowait> N <Plug>(fern-action-new-leaf)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:    nmap <buffer><nowait> K <Plug>(fern-action-new-branch)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:    nmap <buffer><nowait> c <Plug>(fern-action-copy)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:    nmap <buffer><nowait> m <Plug>(fern-action-move)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:    nmap <buffer><nowait> D <Plug>(fern-action-remove)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/dict/mapping.vim:    nmap <buffer><nowait> e <Plug>(fern-action-edit-leaf)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/grep.vim:  nnoremap <buffer><silent> <Plug>(fern-action-grep)  :<C-u>call <SID>call('grep')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/grep.vim:  nnoremap <buffer><silent> <Plug>(fern-action-grep=) :<C-u>call <SID>call_without_guard('grep')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/ex.vim:  nnoremap <buffer><silent> <Plug>(fern-action-ex)  :<C-u>call <SID>call('ex')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/ex.vim:  nnoremap <buffer><silent> <Plug>(fern-action-ex=) :<C-u>call <SID>call_without_guard('ex')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nnoremap <buffer><silent> <Plug>(fern-action-cd:root)  :<C-u>call <SID>call('cd_root', 'cd')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nnoremap <buffer><silent> <Plug>(fern-action-lcd:root) :<C-u>call <SID>call('cd_root', 'lcd')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nnoremap <buffer><silent> <Plug>(fern-action-tcd:root) :<C-u>call <SID>call('cd_root', 'tcd')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nnoremap <buffer><silent> <Plug>(fern-action-cd:cursor)  :<C-u>call <SID>call('cd_cursor', 'cd')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nnoremap <buffer><silent> <Plug>(fern-action-lcd:cursor) :<C-u>call <SID>call('cd_cursor', 'lcd')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nnoremap <buffer><silent> <Plug>(fern-action-tcd:cursor) :<C-u>call <SID>call('cd_cursor', 'tcd')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nmap <buffer> <Plug>(fern-action-cd) <Plug>(fern-action-cd:cursor)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nmap <buffer> <Plug>(fern-action-lcd) <Plug>(fern-action-lcd:cursor)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/cd.vim:  nmap <buffer> <Plug>(fern-action-tcd) <Plug>(fern-action-tcd:cursor)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/yank.vim:  nnoremap <buffer><silent> <Plug>(fern-action-yank:path) :<C-u>call <SID>call('yank_path')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/yank.vim:  nmap <buffer> <Plug>(fern-action-yank) <Plug>(fern-action-yank:path)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/clipboard.vim:  nnoremap <buffer><silent> <Plug>(fern-action-clipboard-copy)  :<C-u>call <SID>call('clipboard_copy')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/clipboard.vim:  nnoremap <buffer><silent> <Plug>(fern-action-clipboard-move)  :<C-u>call <SID>call('clipboard_move')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/clipboard.vim:  nnoremap <buffer><silent> <Plug>(fern-action-clipboard-paste) :<C-u>call <SID>call('clipboard_paste')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/clipboard.vim:  nnoremap <buffer><silent> <Plug>(fern-action-clipboard-clear) :<C-u>call <SID>call('clipboard_clear')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/clipboard.vim:    nmap <buffer><nowait> C <Plug>(fern-action-clipboard-copy)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/clipboard.vim:    nmap <buffer><nowait> M <Plug>(fern-action-clipboard-move)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/clipboard.vim:    nmap <buffer><nowait> P <Plug>(fern-action-clipboard-paste)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/system.vim:  nnoremap <buffer><silent> <Plug>(fern-action-open:system) :<C-u>call <SID>call('open_system')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/system.vim:    nmap <buffer><nowait> x <Plug>(fern-action-open:system)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:select)   :<C-u>call <SID>call('rename', 'select')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:split)    :<C-u>call <SID>call('rename', 'split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:vsplit)   :<C-u>call <SID>call('rename', 'vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:tabedit)  :<C-u>call <SID>call('rename', 'tabedit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:above)    :<C-u>call <SID>call('rename', 'leftabove split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:left)     :<C-u>call <SID>call('rename', 'leftabove vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:below)    :<C-u>call <SID>call('rename', 'rightbelow split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:right)    :<C-u>call <SID>call('rename', 'rightbelow vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:top)      :<C-u>call <SID>call('rename', 'topleft split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:leftest)  :<C-u>call <SID>call('rename', 'topleft vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:bottom)   :<C-u>call <SID>call('rename', 'botright split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:rightest) :<C-u>call <SID>call('rename', 'botright vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:edit-or-error)   :<C-u>call <SID>call('rename', 'edit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:edit-or-split)   :<C-u>call <SID>call('rename', 'edit/split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:edit-or-vsplit)  :<C-u>call <SID>call('rename', 'edit/vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nnoremap <buffer><silent> <Plug>(fern-action-rename:edit-or-tabedit) :<C-u>call <SID>call('rename', 'edit/tabedit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nmap <buffer><silent> <Plug>(fern-action-rename:edit) <Plug>(fern-action-rename:edit-or-error)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:  nmap <buffer><silent> <Plug>(fern-action-rename) <Plug>(fern-action-rename:split)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/rename.vim:    nmap <buffer><nowait> R <Plug>(fern-action-rename)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:select)   :<C-u>call <SID>call('terminal', 'select')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:split)    :<C-u>call <SID>call('terminal', 'split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:vsplit)   :<C-u>call <SID>call('terminal', 'vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:tabedit)  :<C-u>call <SID>call('terminal', 'tabedit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:above)    :<C-u>call <SID>call('terminal', 'leftabove split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:left)     :<C-u>call <SID>call('terminal', 'leftabove vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:below)    :<C-u>call <SID>call('terminal', 'rightbelow split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:right)    :<C-u>call <SID>call('terminal', 'rightbelow vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:top)      :<C-u>call <SID>call('terminal', 'topleft split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:leftest)  :<C-u>call <SID>call('terminal', 'topleft vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:bottom)   :<C-u>call <SID>call('terminal', 'botright split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:rightest) :<C-u>call <SID>call('terminal', 'botright vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:edit-or-error)   :<C-u>call <SID>call('terminal', 'edit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:edit-or-split)   :<C-u>call <SID>call('terminal', 'edit/split')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:edit-or-vsplit)  :<C-u>call <SID>call('terminal', 'edit/vsplit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nnoremap <buffer><silent> <Plug>(fern-action-terminal:edit-or-tabedit) :<C-u>call <SID>call('terminal', 'edit/tabedit')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:        \ <Plug>(fern-action-terminal:side)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:        \   "\<Plug>(fern-action-terminal:left)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:        \   "\<Plug>(fern-action-terminal:right)",
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nmap <buffer><silent> <Plug>(fern-action-terminal:edit) <Plug>(fern-action-terminal:edit-or-error)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping/terminal.vim:  nmap <buffer><silent> <Plug>(fern-action-terminal) <Plug>(fern-action-terminal:edit)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-new-path)  :<C-u>call <SID>call('new_path')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-new-file)  :<C-u>call <SID>call('new_file')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-new-dir)   :<C-u>call <SID>call('new_dir')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-new-path=) :<C-u>call <SID>call_without_guard('new_path')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-new-file=) :<C-u>call <SID>call_without_guard('new_file')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-new-dir=)  :<C-u>call <SID>call_without_guard('new_dir')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-copy)      :<C-u>call <SID>call('copy')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-move)      :<C-u>call <SID>call('move')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-trash)     :<C-u>call <SID>call('trash')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-trash=)    :<C-u>call <SID>call_without_guard('trash')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-remove)    :<C-u>call <SID>call('remove')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:  nnoremap <buffer><silent> <Plug>(fern-action-remove=)   :<C-u>call <SID>call_without_guard('remove')<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:    nmap <buffer><nowait> N <Plug>(fern-action-new-file)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:    nmap <buffer><nowait> K <Plug>(fern-action-new-dir)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:    nmap <buffer><nowait> c <Plug>(fern-action-copy)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:    nmap <buffer><nowait> m <Plug>(fern-action-move)
+../pack/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim:    nmap <buffer><nowait> D <Plug>(fern-action-trash)
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  nnoremap <buffer><silent> <Plug>(fern-replacer-p) :<C-u>call <SID>map_paste(0)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  nnoremap <buffer><silent> <Plug>(fern-replacer-P) :<C-u>call <SID>map_paste(-1)<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  nnoremap <buffer><silent> <Plug>(fern-replacer-warn) :<C-u>call <SID>map_warn()<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  inoremap <buffer><silent><expr> <Plug>(fern-replacer-warn) <SID>map_warn()
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  nmap <buffer> p <Plug>(fern-replacer-p)
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  nmap <buffer> P <Plug>(fern-replacer-P)
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  nmap <buffer> o <Plug>(fern-replacer-warn)
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  nmap <buffer> O <Plug>(fern-replacer-warn)
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  imap <buffer> <C-m> <Plug>(fern-replacer-warn)
+../pack/packs-cp/opt/fern.vim/autoload/fern/internal/replacer.vim:  imap <buffer> <Return> <Plug>(fern-replacer-warn)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping.vim:        \ printf('<Plug>(%s)', a:old),
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping.vim:        \ printf('<Plug>(%s)', a:new),
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping.vim:  silent execute printf('nmap <buffer> <Plug>(%s) <Plug>(%s)', a:old, a:new)
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping.vim:  return printf("\<Plug>(%s)", a:new)
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:        \ 'nnoremap <buffer><silent> <Plug>(%s-action-choice) :<C-u>call <SID>_map_choice()<CR>',
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:        \ 'nnoremap <buffer><silent> <Plug>(%s-action-repeat) :<C-u>call <SID>_map_repeat()<CR>',
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:        \ 'nnoremap <buffer><silent> <Plug>(%s-action-help) :<C-u>call <SID>_map_help(0)<CR>',
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:        \ 'nnoremap <buffer><silent> <Plug>(%s-action-help:all) :<C-u>call <SID>_map_help(1)<CR>',
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:  if !hasmapto(printf('<Plug>(%s-action-choice)', s:prefix), 'n')
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:          \ 'nmap <buffer> a <Plug>(%s-action-choice)',
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:  if !hasmapto(printf('<Plug>(%s-action-repeat)', s:prefix), 'n')
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:          \ 'nmap <buffer> . <Plug>(%s-action-repeat)',
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:  if !hasmapto(printf('<Plug>(%s-action-help)', s:prefix), 'n')
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:          \ 'nmap <buffer> ? <Plug>(%s-action-help)',
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:  let pattern1 = printf('^<Plug>(%s-action-\zs.*\ze)$', s:prefix)
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:  let pattern2 = printf('^<Plug>(%s-action-', s:prefix)
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:  call filter(rs1, { _, v -> v[0] !~# '^<Plug>' || v[0] =~# pattern2 })
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:  let ms = split(execute(printf('nmap <Plug>(%s-action-', s:prefix)), '\n')
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:  call map(ms, { _, v -> matchstr(v, '^<Plug>(\zs.*\ze)$') })
+../pack/packs-cp/opt/fern.vim/autoload/vital/_fern/App/Action.vim:        \ "normal \<Plug>(%s-action-%s)",
+../pack/packs-cp/opt/fern.vim/test/util/test/test.vimspec:            \ <Plug>(test-input)
+../pack/packs-cp/opt/fern.vim/test/util/test/test.vimspec:      let value = execute("normal \<Plug>(test-input)")
+../pack/packs-cp/opt/fern.vim/test/behavior/test.vimspec:          \ <Plug>(test-input)
+../pack/packs-cp/opt/fern.vim/test/behavior/test.vimspec:    let value = execute("normal \<Plug>(test-input)")
+../pack/packs-cp/opt/fern.vim/test/behavior/buffer-rename.vimspec:    call feedkeys("ggj\<Plug>(fern-action-move)")
+../pack/packs-cp/opt/fern.vim/test/behavior/buffer-rename.vimspec:    call feedkeys("\<Plug>(fern-wait)", 'x')
+../pack/packs-cp/opt/fern.vim/test/behavior/buffer-rename.vimspec:    call feedkeys("ggj\<Plug>(fern-action-remove)")
+../pack/packs-cp/opt/fern.vim/test/behavior/buffer-rename.vimspec:    call feedkeys("\<Plug>(fern-wait)", 'x')
+../pack/packs-cp/opt/fern.vim/test/behavior/buffer-rename.vimspec:    call feedkeys("ggj\<Plug>(fern-action-remove)")
+../pack/packs-cp/opt/fern.vim/test/behavior/buffer-rename.vimspec:    call feedkeys("\<Plug>(fern-wait)", 'x')
+../pack/packs-cp/opt/fern.vim/test/behavior/jumplist.vimspec:    execute "normal G\<Plug>(fern-action-open:edit)"
+../pack/packs-cp/opt/fern.vim/test/behavior/jumplist.vimspec:    execute "normal G\<Plug>(fern-action-open:edit)"
+../pack/packs-cp/opt/fern.vim/test/behavior/alternate-file.vimspec:    execute "normal G\<Plug>(fern-action-open:edit)"
+../pack/packs-cp/opt/fern.vim/test/behavior/alternate-file.vimspec:    execute "normal G\<Plug>(fern-action-open:edit)"
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	<Plug>(fern-action-{name})
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	nmap <buffer> g? <Plug>(fern-action-help)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	e                         open       <Plug>(fern-action-open)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	<Plug>(fern-action-open)  open:edit  <Plug>(fern-action-open:edit)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	nmap <buffer> <Plug>(fern-action-open) <Plug>(fern-action-open:split)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:Fern provide |<Plug>(fern-wait)| mapping as a helper.
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	nmap <buffer> <Plug>(fern-my-leave-and-tcd)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-leave)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-wait)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-tcd:root)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:Without <Plug>(fern-wait), the "tcd:root" action will be invoked before actual
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	nmap <buffer><expr> <Plug>(fern-my-open-or-expand)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-open)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-expand)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-my-open-or-enter)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-open)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-enter)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-my-open-or-expand-or-collapse)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-open)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-expand)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-collapse)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-expand-or-enter)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-expand)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \   "<Plug>(fern-action-enter)",
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-zoom)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-zoom:reset)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-zoom:half)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	This is an alias of "4<Plug>(fern-action-zoom)"
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-zoom:full)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	This is an alias of "9<Plug>(fern-action-zoom)"
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-hidden:set)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-hidden:unset)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-hidden:toggle)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-hidden)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-include)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-include=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-include)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-include=)foo<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-exclude)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-exclude=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-exclude)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-exclude=)foo<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-mark:clear)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-mark:set)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-mark:unset)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-mark:toggle)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-mark)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-debug)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-reload:all)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-reload:cursor)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-reload)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-reload)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-reload:cursor)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-expand:stay)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-expand:in)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-expand)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-expand)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-expand:stay)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-collapse)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-reveal)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-reveal=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-reveal)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-reveal=)foo<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-focus:parent)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-enter)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-leave)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:select)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:split)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:edit-or-error)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:edit-or-split)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:edit-or-vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:edit-or-tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:above)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:left)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:below)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:right)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:top)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:leftest)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:bottom)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:rightest)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:side)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open-or-enter)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open-or-expand)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:edit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-open:edit)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-open:edit-or-tabedit)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-open)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-open:select)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:select)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:select:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:split)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:split:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:vsplit:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:tabedit:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit-or-error)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit-or-error:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit-or-split)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit-or-split:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit-or-vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit-or-vsplit:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit-or-tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit-or-tabedit:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:above)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:above:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:left)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:left:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:below)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:below:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:right)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:right:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:top)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:top:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:leftest)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:leftest:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:bottom)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:bottom:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:rightest)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:rightest:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:side)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:side:vert)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff:edit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-diff:edit)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-diff:edit-or-tabedit)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-diff)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-diff)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-diff:select)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-cancel)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-redraw)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-yank:label)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-yank:badge)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-yank:bufname)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-yank)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-yank)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-yank:label)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-wait)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-ex)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-ex=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-ex)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-ex=)foo<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-new-path)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-new-path=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-new-path)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-new-path=)foo<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-new-file)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-new-file=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-new-file)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-new-file=)foo<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-new-dir)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-new-dir=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-new-dir)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-new-dir=)foo<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-copy)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-move)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-trash)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-trash=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-trash)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-trash=)y<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-remove)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-remove=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-trash)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-trash=)y<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-cd:root)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-lcd:root)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-tcd:root)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-cd:cursor)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-lcd:cursor)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-tcd:cursor)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-cd)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-lcd)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-tcd)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-cd)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-cd:root)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-clipboard-copy)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-clipboard-move)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-clipboard-paste)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-clipboard-clear)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-grep)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-grep=)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(my-grep)
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	      \ <Plug>(fern-action-grep=)foo<CR>
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:select)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:split)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:above)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:left)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:below)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:right)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:top)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:leftest)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:bottom)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:rightest)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:edit-or-error)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:edit-or-split)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:edit-or-vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:edit-or-tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:edit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename:side)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-rename)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-open:system)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:select)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:split)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:above)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:left)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:below)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:right)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:top)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:leftest)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:bottom)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:rightest)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:edit-or-error)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:edit-or-split)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:edit-or-vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:edit-or-tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:edit)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal:side)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-terminal)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:*<Plug>(fern-action-yank:path)*
+../pack/packs-cp/opt/fern.vim/doc/fern.txt:	Yank the node path. In FILE scheme, |<Plug>(fern-action-yank)| is
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-cancel)	fern.txt	/*<Plug>(fern-action-cancel)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-cd)	fern.txt	/*<Plug>(fern-action-cd)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-cd:cursor)	fern.txt	/*<Plug>(fern-action-cd:cursor)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-cd:root)	fern.txt	/*<Plug>(fern-action-cd:root)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-clipboard-clear)	fern.txt	/*<Plug>(fern-action-clipboard-clear)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-clipboard-copy)	fern.txt	/*<Plug>(fern-action-clipboard-copy)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-clipboard-move)	fern.txt	/*<Plug>(fern-action-clipboard-move)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-clipboard-paste)	fern.txt	/*<Plug>(fern-action-clipboard-paste)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-collapse)	fern.txt	/*<Plug>(fern-action-collapse)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-copy)	fern.txt	/*<Plug>(fern-action-copy)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-debug)	fern.txt	/*<Plug>(fern-action-debug)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff)	fern.txt	/*<Plug>(fern-action-diff)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:above)	fern.txt	/*<Plug>(fern-action-diff:above)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:above:vert)	fern.txt	/*<Plug>(fern-action-diff:above:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:below)	fern.txt	/*<Plug>(fern-action-diff:below)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:below:vert)	fern.txt	/*<Plug>(fern-action-diff:below:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:bottom)	fern.txt	/*<Plug>(fern-action-diff:bottom)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:bottom:vert)	fern.txt	/*<Plug>(fern-action-diff:bottom:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit)	fern.txt	/*<Plug>(fern-action-diff:edit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit-or-error)	fern.txt	/*<Plug>(fern-action-diff:edit-or-error)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit-or-error:vert)	fern.txt	/*<Plug>(fern-action-diff:edit-or-error:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit-or-split)	fern.txt	/*<Plug>(fern-action-diff:edit-or-split)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit-or-split:vert)	fern.txt	/*<Plug>(fern-action-diff:edit-or-split:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit-or-tabedit)	fern.txt	/*<Plug>(fern-action-diff:edit-or-tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit-or-tabedit:vert)	fern.txt	/*<Plug>(fern-action-diff:edit-or-tabedit:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit-or-vsplit)	fern.txt	/*<Plug>(fern-action-diff:edit-or-vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:edit-or-vsplit:vert)	fern.txt	/*<Plug>(fern-action-diff:edit-or-vsplit:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:left)	fern.txt	/*<Plug>(fern-action-diff:left)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:left:vert)	fern.txt	/*<Plug>(fern-action-diff:left:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:leftest)	fern.txt	/*<Plug>(fern-action-diff:leftest)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:leftest:vert)	fern.txt	/*<Plug>(fern-action-diff:leftest:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:right)	fern.txt	/*<Plug>(fern-action-diff:right)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:right:vert)	fern.txt	/*<Plug>(fern-action-diff:right:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:rightest)	fern.txt	/*<Plug>(fern-action-diff:rightest)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:rightest:vert)	fern.txt	/*<Plug>(fern-action-diff:rightest:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:select)	fern.txt	/*<Plug>(fern-action-diff:select)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:select:vert)	fern.txt	/*<Plug>(fern-action-diff:select:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:side)	fern.txt	/*<Plug>(fern-action-diff:side)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:side:vert)	fern.txt	/*<Plug>(fern-action-diff:side:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:split)	fern.txt	/*<Plug>(fern-action-diff:split)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:split:vert)	fern.txt	/*<Plug>(fern-action-diff:split:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:tabedit)	fern.txt	/*<Plug>(fern-action-diff:tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:tabedit:vert)	fern.txt	/*<Plug>(fern-action-diff:tabedit:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:top)	fern.txt	/*<Plug>(fern-action-diff:top)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:top:vert)	fern.txt	/*<Plug>(fern-action-diff:top:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:vsplit)	fern.txt	/*<Plug>(fern-action-diff:vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-diff:vsplit:vert)	fern.txt	/*<Plug>(fern-action-diff:vsplit:vert)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-enter)	fern.txt	/*<Plug>(fern-action-enter)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-ex)	fern.txt	/*<Plug>(fern-action-ex)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-ex=)	fern.txt	/*<Plug>(fern-action-ex=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-exclude)	fern.txt	/*<Plug>(fern-action-exclude)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-exclude=)	fern.txt	/*<Plug>(fern-action-exclude=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-expand)	fern.txt	/*<Plug>(fern-action-expand)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-expand:in)	fern.txt	/*<Plug>(fern-action-expand:in)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-expand:stay)	fern.txt	/*<Plug>(fern-action-expand:stay)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-focus:parent)	fern.txt	/*<Plug>(fern-action-focus:parent)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-grep)	fern.txt	/*<Plug>(fern-action-grep)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-grep=)	fern.txt	/*<Plug>(fern-action-grep=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-hidden)	fern.txt	/*<Plug>(fern-action-hidden)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-hidden:set)	fern.txt	/*<Plug>(fern-action-hidden:set)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-hidden:toggle)	fern.txt	/*<Plug>(fern-action-hidden:toggle)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-hidden:unset)	fern.txt	/*<Plug>(fern-action-hidden:unset)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-include)	fern.txt	/*<Plug>(fern-action-include)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-include=)	fern.txt	/*<Plug>(fern-action-include=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-lcd)	fern.txt	/*<Plug>(fern-action-lcd)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-lcd:cursor)	fern.txt	/*<Plug>(fern-action-lcd:cursor)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-lcd:root)	fern.txt	/*<Plug>(fern-action-lcd:root)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-leave)	fern.txt	/*<Plug>(fern-action-leave)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-mark)	fern.txt	/*<Plug>(fern-action-mark)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-mark:clear)	fern.txt	/*<Plug>(fern-action-mark:clear)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-mark:set)	fern.txt	/*<Plug>(fern-action-mark:set)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-mark:toggle)	fern.txt	/*<Plug>(fern-action-mark:toggle)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-mark:unset)	fern.txt	/*<Plug>(fern-action-mark:unset)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-move)	fern.txt	/*<Plug>(fern-action-move)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-new-dir)	fern.txt	/*<Plug>(fern-action-new-dir)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-new-dir=)	fern.txt	/*<Plug>(fern-action-new-dir=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-new-file)	fern.txt	/*<Plug>(fern-action-new-file)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-new-file=)	fern.txt	/*<Plug>(fern-action-new-file=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-new-path)	fern.txt	/*<Plug>(fern-action-new-path)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-new-path=)	fern.txt	/*<Plug>(fern-action-new-path=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open)	fern.txt	/*<Plug>(fern-action-open)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open-or-enter)	fern.txt	/*<Plug>(fern-action-open-or-enter)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open-or-expand)	fern.txt	/*<Plug>(fern-action-open-or-expand)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:above)	fern.txt	/*<Plug>(fern-action-open:above)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:below)	fern.txt	/*<Plug>(fern-action-open:below)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:bottom)	fern.txt	/*<Plug>(fern-action-open:bottom)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:edit)	fern.txt	/*<Plug>(fern-action-open:edit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:edit-or-error)	fern.txt	/*<Plug>(fern-action-open:edit-or-error)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:edit-or-split)	fern.txt	/*<Plug>(fern-action-open:edit-or-split)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:edit-or-tabedit)	fern.txt	/*<Plug>(fern-action-open:edit-or-tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:edit-or-vsplit)	fern.txt	/*<Plug>(fern-action-open:edit-or-vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:left)	fern.txt	/*<Plug>(fern-action-open:left)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:leftest)	fern.txt	/*<Plug>(fern-action-open:leftest)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:right)	fern.txt	/*<Plug>(fern-action-open:right)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:rightest)	fern.txt	/*<Plug>(fern-action-open:rightest)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:select)	fern.txt	/*<Plug>(fern-action-open:select)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:side)	fern.txt	/*<Plug>(fern-action-open:side)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:split)	fern.txt	/*<Plug>(fern-action-open:split)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:system)	fern.txt	/*<Plug>(fern-action-open:system)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:tabedit)	fern.txt	/*<Plug>(fern-action-open:tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:top)	fern.txt	/*<Plug>(fern-action-open:top)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-open:vsplit)	fern.txt	/*<Plug>(fern-action-open:vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-redraw)	fern.txt	/*<Plug>(fern-action-redraw)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-reload)	fern.txt	/*<Plug>(fern-action-reload)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-reload:all)	fern.txt	/*<Plug>(fern-action-reload:all)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-reload:cursor)	fern.txt	/*<Plug>(fern-action-reload:cursor)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-remove)	fern.txt	/*<Plug>(fern-action-remove)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-remove=)	fern.txt	/*<Plug>(fern-action-remove=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename)	fern.txt	/*<Plug>(fern-action-rename)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:above)	fern.txt	/*<Plug>(fern-action-rename:above)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:below)	fern.txt	/*<Plug>(fern-action-rename:below)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:bottom)	fern.txt	/*<Plug>(fern-action-rename:bottom)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:edit)	fern.txt	/*<Plug>(fern-action-rename:edit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:edit-or-error)	fern.txt	/*<Plug>(fern-action-rename:edit-or-error)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:edit-or-split)	fern.txt	/*<Plug>(fern-action-rename:edit-or-split)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:edit-or-tabedit)	fern.txt	/*<Plug>(fern-action-rename:edit-or-tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:edit-or-vsplit)	fern.txt	/*<Plug>(fern-action-rename:edit-or-vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:left)	fern.txt	/*<Plug>(fern-action-rename:left)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:leftest)	fern.txt	/*<Plug>(fern-action-rename:leftest)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:right)	fern.txt	/*<Plug>(fern-action-rename:right)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:rightest)	fern.txt	/*<Plug>(fern-action-rename:rightest)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:select)	fern.txt	/*<Plug>(fern-action-rename:select)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:side)	fern.txt	/*<Plug>(fern-action-rename:side)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:split)	fern.txt	/*<Plug>(fern-action-rename:split)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:tabedit)	fern.txt	/*<Plug>(fern-action-rename:tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:top)	fern.txt	/*<Plug>(fern-action-rename:top)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-rename:vsplit)	fern.txt	/*<Plug>(fern-action-rename:vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-reveal)	fern.txt	/*<Plug>(fern-action-reveal)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-reveal=)	fern.txt	/*<Plug>(fern-action-reveal=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-tcd)	fern.txt	/*<Plug>(fern-action-tcd)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-tcd:cursor)	fern.txt	/*<Plug>(fern-action-tcd:cursor)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-tcd:root)	fern.txt	/*<Plug>(fern-action-tcd:root)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal)	fern.txt	/*<Plug>(fern-action-terminal)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:above)	fern.txt	/*<Plug>(fern-action-terminal:above)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:below)	fern.txt	/*<Plug>(fern-action-terminal:below)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:bottom)	fern.txt	/*<Plug>(fern-action-terminal:bottom)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:edit)	fern.txt	/*<Plug>(fern-action-terminal:edit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:edit-or-error)	fern.txt	/*<Plug>(fern-action-terminal:edit-or-error)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:edit-or-split)	fern.txt	/*<Plug>(fern-action-terminal:edit-or-split)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:edit-or-tabedit)	fern.txt	/*<Plug>(fern-action-terminal:edit-or-tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:edit-or-vsplit)	fern.txt	/*<Plug>(fern-action-terminal:edit-or-vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:left)	fern.txt	/*<Plug>(fern-action-terminal:left)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:leftest)	fern.txt	/*<Plug>(fern-action-terminal:leftest)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:right)	fern.txt	/*<Plug>(fern-action-terminal:right)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:rightest)	fern.txt	/*<Plug>(fern-action-terminal:rightest)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:select)	fern.txt	/*<Plug>(fern-action-terminal:select)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:side)	fern.txt	/*<Plug>(fern-action-terminal:side)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:split)	fern.txt	/*<Plug>(fern-action-terminal:split)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:tabedit)	fern.txt	/*<Plug>(fern-action-terminal:tabedit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:top)	fern.txt	/*<Plug>(fern-action-terminal:top)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-terminal:vsplit)	fern.txt	/*<Plug>(fern-action-terminal:vsplit)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-trash)	fern.txt	/*<Plug>(fern-action-trash)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-trash=)	fern.txt	/*<Plug>(fern-action-trash=)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-yank)	fern.txt	/*<Plug>(fern-action-yank)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-yank:badge)	fern.txt	/*<Plug>(fern-action-yank:badge)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-yank:bufname)	fern.txt	/*<Plug>(fern-action-yank:bufname)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-yank:label)	fern.txt	/*<Plug>(fern-action-yank:label)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-yank:path)	fern.txt	/*<Plug>(fern-action-yank:path)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-zoom)	fern.txt	/*<Plug>(fern-action-zoom)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-zoom:full)	fern.txt	/*<Plug>(fern-action-zoom:full)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-zoom:half)	fern.txt	/*<Plug>(fern-action-zoom:half)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-action-zoom:reset)	fern.txt	/*<Plug>(fern-action-zoom:reset)*
+../pack/packs-cp/opt/fern.vim/doc/tags:<Plug>(fern-wait)	fern.txt	/*<Plug>(fern-wait)*
+../pack/packs-cp/opt/fern.vim/doc/fern-develop.txt:	is an action name, and {rhs} is a <Plug> mapping like:
+../pack/packs-cp/opt/fern.vim/doc/fern-develop.txt:	      \ ['a', 'choice', '<Plug>(fern-action-choice)'],
+../pack/packs-cp/opt/fern.vim/doc/fern-develop.txt:	      \ ['.', 'repeat', '<Plug>(fern-action-repeat)'],
+../pack/packs-cp/opt/fern.vim/doc/fern-develop.txt:	      \ ['?', 'help', '<Plug>(fern-action-help)'],
+../pack/packs-cp/opt/fern.vim/doc/fern-develop.txt:	      \ ['', 'help:all', '<Plug>(fern-action-help:all)'],
 ../pack/packs-cp/opt/vim-easy-align/plugin/easy_align.vim:  silent! call repeat#set("\<Plug>(EasyAlignRepeat)")
 ../pack/packs-cp/opt/vim-easy-align/plugin/easy_align.vim:nnoremap <silent> <Plug>(EasyAlign) :set opfunc=<SID>easy_align_op<Enter>g@
 ../pack/packs-cp/opt/vim-easy-align/plugin/easy_align.vim:vnoremap <silent> <Plug>(EasyAlign) :<C-U>call <SID>easy_align_op(visualmode(), 1)<Enter>
@@ -845,6 +1625,41 @@
 ../pack/packs-cp/opt/limelight.vim/README.md:You can invoke `:Limelight` for a visual range. There are also `<Plug>`
 ../pack/packs-cp/opt/limelight.vim/README.md:nmap <Leader>l <Plug>(Limelight)
 ../pack/packs-cp/opt/limelight.vim/README.md:xmap <Leader>l <Plug>(Limelight)
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillAlt         :call <SID>GotoBuffer('#', '')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBangAlt     :call <SID>GotoBuffer('#', '!')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBack        :call <SID>GotoBuffer('bufback', '')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBangBack    :call <SID>GotoBuffer('bufback', '!')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillForward     :call <SID>GotoBuffer('bufforward', '')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBangForward :call <SID>GotoBuffer('bufforward', '!')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBun         :call <SID>BufKill('bun', '')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBangBun     :call <SID>BufKill('bun', '!')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBd          :call <SID>BufKill('bd', '')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBangBd      :call <SID>BufKill('bd', '!')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBw          :call <SID>BufKill('bw', '')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillBangBw      :call <SID>BufKill('bw', '!')<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:noremap <Plug>BufKillUndo        :call <SID>UndoKill()<CR>
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bb',   '<Plug>BufKillBack')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bf',   '<Plug>BufKillForward')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bun',  '<Plug>BufKillBun')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>!bun', '<Plug>BufKillBangBun')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bd',   '<Plug>BufKillBd')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>!bd',  '<Plug>BufKillBangBd')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bw',   '<Plug>BufKillBw')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>!bw',  '<Plug>BufKillBangBw')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>bundo','<Plug>BufKillUndo')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:  call <SID>CreateUniqueMapping('<Leader>ba',   '<Plug>BufKillAlt')
+../pack/packs-cp/opt/vim-bufkill/plugin/bufkill.vim:    call <SID>CreateUniqueMapping('<C-^>', '<Plug>BufKillAlt', 'AllowDuplicate')
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:if !hasmapto('<Plug>(dirvish_git_prev_file)') && maparg('[f', 'n') ==? ''
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:  silent! nmap <buffer> <unique> <silent> [f <Plug>(dirvish_git_prev_file)
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:if !hasmapto('<Plug>(dirvish_git_next_file)') && maparg(']f', 'n') ==? ''
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:  silent! nmap <buffer> <unique> <silent> ]f <Plug>(dirvish_git_next_file)
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:if maparg('X', 'n') ==? '<Plug>(dirvish_arg)'
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:  nmap <buffer><silent><expr> X "\<Plug>(dirvish_arg):<C-u>call dirvish_git#reload()<CR>"
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:  xmap <buffer><silent><expr> X "\<Plug>(dirvish_arg):<C-u>call dirvish_git#reload()<CR>"
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:nnoremap <Plug>(dirvish_git_next_file) :<C-u>call dirvish_git#jump_to_next_file()<CR>
+../pack/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim:nnoremap <Plug>(dirvish_git_prev_file) :<C-u>call dirvish_git#jump_to_prev_file()<CR>
+../pack/packs-cp/opt/vim-dirvish-git/README.md:autocmd vimrc FileType dirvish nmap <silent><buffer><C-n> <Plug>(dirvish_git_next_file)
+../pack/packs-cp/opt/vim-dirvish-git/README.md:autocmd vimrc FileType dirvish nmap <silent><buffer><C-p> <Plug>(dirvish_git_prev_file)
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:  if !hasmapto('<Plug>CalendarV')
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:    nmap <unique> <Leader>cal <Plug>CalendarV
 ../pack/packs-cp/opt/calendar-vim/plugin/calendar.vim:  if !hasmapto('<Plug>CalendarH')
@@ -873,6 +1688,7 @@
 ../pack/packs-cp/opt/calendar-vim/autoload/calendar.vim:  execute 'nmap <buffer> ' . s:calendar_keys['goto_next_year'] . ' <Plug>CalendarGotoNextYear'
 ../pack/packs-cp/opt/calendar-vim/autoload/calendar.vim:  execute 'nmap <buffer> ' . s:calendar_keys['goto_prev_year'] . ' <Plug>CalendarGotoPrevYear'
 ../pack/packs-cp/opt/quick-scope/plugin/quick_scope.vim:      execute printf(mapmode . ' <expr> <Plug>(QuickScope%s) quick_scope#Ready() . quick_scope#Aim("%s") . quick_scope#Reload() . quick_scope#DoubleTap()', motion, motion)
+../pack/packs-cp/opt/quick-scope/plugin/quick_scope.vim:    execute printf('nnoremap <silent> <Plug>(QuickScope%s) :<C-U>call quick_scope#Ready() \| execute "normal!" v:count1 . quick_scope#Aim("%s") \| call quick_scope#Reload() \| call quick_scope#DoubleTap()<CR>', motion, motion)
 ../pack/packs-cp/opt/quick-scope/plugin/quick_scope.vim:        execute printf(mapmode . ' <unique> %s <Plug>(QuickScope%s)', motion, motion)
 ../pack/packs-cp/opt/quick-scope/plugin/quick_scope.vim:nnoremap <silent> <plug>(QuickScopeToggle) :call quick_scope#Toggle()<cr>
 ../pack/packs-cp/opt/quick-scope/plugin/quick_scope.vim:xnoremap <silent> <plug>(QuickScopeToggle) :<c-u>call quick_scope#Toggle()<cr>
@@ -976,6 +1792,43 @@
 ../pack/packs-cp/opt/vim-matchit/plugin/matchit.vim:omap <silent> ]% <Plug>(MatchitOperationMultiForward)
 ../pack/packs-cp/opt/vim-matchit/plugin/matchit.vim:xmap <silent> <Plug>(MatchitVisualTextObject) <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
 ../pack/packs-cp/opt/vim-matchit/plugin/matchit.vim:xmap a% <Plug>(MatchitVisualTextObject)
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:nnoremap <silent> <Plug>DsfDelete :call <SID>DeleteSurroundingFunctionCall()<cr>
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  silent! call repeat#set("\<Plug>DsfDelete")
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:nnoremap <silent> <Plug>DsfNextDelete :call <SID>DeleteNextSurroundingFunctionCall()<cr>
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  silent! call repeat#set("\<Plug>DsfNextDelete")
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:nnoremap <silent> <Plug>DsfChange :call <SID>ChangeSurroundingFunctionCall()<cr>
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:nnoremap <silent> <Plug>DsfNextChange :call <SID>ChangeNextSurroundingFunctionCall()<cr>
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:onoremap <Plug>DsfTextObjectA :<c-u>call <SID>FunctionCallTextObject('a')<cr>
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:xnoremap <Plug>DsfTextObjectA :<c-u>call <SID>FunctionCallTextObject('a')<cr>
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:onoremap <Plug>DsfTextObjectI :<c-u>call <SID>FunctionCallTextObject('i')<cr>
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:xnoremap <Plug>DsfTextObjectI :<c-u>call <SID>FunctionCallTextObject('i')<cr>
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  nmap dsf <Plug>DsfDelete
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  nmap csf <Plug>DsfChange
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  nmap dsnf <Plug>DsfNextDelete
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  nmap csnf <Plug>DsfNextChange
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  omap af <Plug>DsfTextObjectA
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  xmap af <Plug>DsfTextObjectA
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  omap if <Plug>DsfTextObjectI
+../pack/packs-cp/opt/dsf.vim/plugin/dsf.vim:  xmap if <Plug>DsfTextObjectI
+../pack/packs-cp/opt/dsf.vim/README.md:If you'd like to set your own mappings, instead of using the built-ins, simply set the variable `g:dsf_no_mappings` to `1` and use the <Plug> mappings provided by the plugin:
+../pack/packs-cp/opt/dsf.vim/README.md:nmap dsf <Plug>DsfDelete
+../pack/packs-cp/opt/dsf.vim/README.md:nmap csf <Plug>DsfChange
+../pack/packs-cp/opt/dsf.vim/README.md:nmap dsnf <Plug>DsfNextDelete
+../pack/packs-cp/opt/dsf.vim/README.md:nmap csnf <Plug>DsfNextChange
+../pack/packs-cp/opt/dsf.vim/README.md:omap af <Plug>DsfTextObjectA
+../pack/packs-cp/opt/dsf.vim/README.md:xmap af <Plug>DsfTextObjectA
+../pack/packs-cp/opt/dsf.vim/README.md:omap if <Plug>DsfTextObjectI
+../pack/packs-cp/opt/dsf.vim/README.md:xmap if <Plug>DsfTextObjectI
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:set the variable `g:dsf_no_mappings` to `1` and use the <Plug> mappings
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:    nmap dsf <Plug>DsfDelete
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:    nmap csf <Plug>DsfChange
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:    nmap dsnf <Plug>DsfNextDelete
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:    nmap csnf <Plug>DsfNextChange
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:    omap af <Plug>DsfTextObjectA
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:    xmap af <Plug>DsfTextObjectA
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:    omap if <Plug>DsfTextObjectI
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:    xmap if <Plug>DsfTextObjectI
+../pack/packs-cp/opt/dsf.vim/doc/dsf.txt:mappings. You'll still have the <Plug> maps provided to you that you can map
 ../pack/packs-cp/opt/vim-airline/autoload/airline/extensions/tabline/tabs.vim:  if maparg('<Plug>AirlineSelectTab1', 'n') is# ':1tabn<CR>'
 ../pack/packs-cp/opt/vim-airline/autoload/airline/extensions/tabline/tabs.vim:      exe printf('noremap <silent> <Plug>AirlineSelectTab%d :%dtabn<CR>', i%10, i)
 ../pack/packs-cp/opt/vim-airline/autoload/airline/extensions/tabline/tabs.vim:        exe printf('noremap <silent> <Plug>AirlineSelectTab%d :%dtabn<CR>', i, i-10)
@@ -1065,6 +1918,20 @@
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    call s:Map('c', '<C-R><C-F>', '<Plug><cfile>', '<silent><unique>', 1)
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:  let old_browsex = maparg('<Plug>NetrwBrowseX', 'n')
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    exe 'nnoremap <silent> <buffer> <Plug>NetrwBrowseX' new_browsex
+../pack/packs-cp/opt/fern-preview.vim/README.md:  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+../pack/packs-cp/opt/fern-preview.vim/README.md:  nmap <silent> <buffer> <C-p> <Plug>(fern-action-preview:auto:toggle)
+../pack/packs-cp/opt/fern-preview.vim/README.md:  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+../pack/packs-cp/opt/fern-preview.vim/README.md:  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+../pack/packs-cp/opt/fern-preview.vim/README.md:  nmap <silent> <buffer> <expr> <Plug>(fern-quit-or-close-preview) fern_preview#smart_preview("\<Plug>(fern-action-preview:close)", ":q\<CR>")
+../pack/packs-cp/opt/fern-preview.vim/README.md:  nmap <silent> <buffer> q <Plug>(fern-quit-or-close-preview)
+../pack/packs-cp/opt/fern-preview.vim/autoload/fern/scheme/file/mapping/preview.vim:  nnoremap <silent> <buffer> <Plug>(fern-action-preview:open)   :<C-u>call fern_preview#open()<CR>
+../pack/packs-cp/opt/fern-preview.vim/autoload/fern/scheme/file/mapping/preview.vim:  nnoremap <silent> <buffer> <Plug>(fern-action-preview:close)  :<C-u>call fern_preview#close()<CR>
+../pack/packs-cp/opt/fern-preview.vim/autoload/fern/scheme/file/mapping/preview.vim:  nnoremap <silent> <buffer> <Plug>(fern-action-preview:toggle) :<C-u>call fern_preview#toggle()<CR>
+../pack/packs-cp/opt/fern-preview.vim/autoload/fern/scheme/file/mapping/preview.vim:  nnoremap <silent> <buffer> <Plug>(fern-action-preview:auto:enable)  :<C-u>call fern_preview#enable_auto_preview()<CR>
+../pack/packs-cp/opt/fern-preview.vim/autoload/fern/scheme/file/mapping/preview.vim:  nnoremap <silent> <buffer> <Plug>(fern-action-preview:auto:disable) :<C-u>call fern_preview#disable_auto_preview()<CR>
+../pack/packs-cp/opt/fern-preview.vim/autoload/fern/scheme/file/mapping/preview.vim:  nnoremap <silent> <buffer> <Plug>(fern-action-preview:auto:toggle)  :<C-u>call fern_preview#toggle_auto_preview()<CR>
+../pack/packs-cp/opt/fern-preview.vim/autoload/fern/scheme/file/mapping/preview.vim:  nnoremap <silent> <buffer> <Plug>(fern-action-preview:scroll:down:half) :<C-u>call fern_preview#half_down()<CR>
+../pack/packs-cp/opt/fern-preview.vim/autoload/fern/scheme/file/mapping/preview.vim:  nnoremap <silent> <buffer> <Plug>(fern-action-preview:scroll:up:half)   :<C-u>call fern_preview#half_up()<CR>
 ../pack/packs-cp/opt/colorizer/plugin/colorizer.vim:" 	nmap ,tc <Plug>Colorizer
 ../pack/packs-cp/opt/colorizer/plugin/colorizer.vim:nnoremap <silent> <Plug>Colorizer :ColorToggle<CR>
 ../pack/packs-cp/opt/colorizer/plugin/colorizer.vim:if !hasmapto("<Plug>Colorizer") && (!exists("g:colorizer_nomap") || g:colorizer_nomap == 0)
@@ -1111,6 +1978,7 @@
 ../pack/packs-cp/opt/ale/plugin/ale.vim:inoremap <silent> <Plug>(ale_complete) <C-\><C-O>:ALEComplete<Return>
 ../pack/packs-cp/opt/ale/plugin/ale.vim:nnoremap <silent> <Plug>(ale_import) :ALEImport<Return>
 ../pack/packs-cp/opt/ale/plugin/ale.vim:nnoremap <silent> <Plug>(ale_rename) :ALERename<Return>
+../pack/packs-cp/opt/ale/plugin/ale.vim:nnoremap <silent> <Plug>(ale_filerename) :ALEFileRename<Return>
 ../pack/packs-cp/opt/ale/plugin/ale.vim:nnoremap <silent> <Plug>(ale_code_action) :ALECodeAction<Return>
 ../pack/packs-cp/opt/ale/plugin/ale.vim:nnoremap <silent> <Plug>(ale_repeat_selection) :ALERepeatSelection<Return>
 ../pack/packs-cp/opt/ale/README.md:ALE offers some commands with `<Plug>` keybinds for moving between warnings and
@@ -1418,18 +2286,31 @@
 ../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:nnoremap <Plug>TestSID :<CR><SID>(JustATest):<CR>
 ../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:call vimtap#Is(maparg('<Plug>TestSID', '', 0, 1).rhs, ':<CR><SID>(JustATest):<CR>', 'original does not resolve <SID>')
 ../pack/packs-cp/opt/vim-ingo-library/tests/compat/t1300-maparg.vim:call vimtap#Like(ingo#compat#maparg('<Plug>TestSID'), '^:<CR><SNR>\d\+_(JustATest):<CR>$', 'compatibility wrapper resolves <SID> to <SNR>')
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"	silent! call repeat#set("\<Plug>(HistoryRecallWhatRepeat)", a:repeatCount)
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"	silent! call repeat#setreg("\<Plug>(HistoryRecallWhatRepeat)", a:register)
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"   nnoremap <silent> <Plug>(HistoryRecallWhat)
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"   if ! hasmapto('<Plug>(HistoryRecallWhat)', 'n')
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"       nmap qX <Plug>(HistoryRecallWhat)
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"   nnoremap <silent> <Plug>(HistoryRecallListWhat)
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"   if ! hasmapto('<Plug>(HistoryRecallListWhat)', 'n')
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"       nmap qx <Plug>(HistoryRecallListWhat)
+../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/plugin/historyrecall.vim:"   nnoremap <silent> <Plug>(HistoryRecallWhatRepeat)
 ../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/view.vim:" Use <Plug>(WinSaveView) from any mode at the beginning of a mapping to save
 ../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/view.vim:" At the end of the mapping, use <Plug>(WinRestView) from normal mode to restore
 ../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/motion/omap.vim:    \   (a:operator ==# 'c' ? "\<Plug>(IngoLibraryOmapRepeatReinsert)" : ''),
 ../pack/packs-cp/opt/vim-ingo-library/autoload/ingo/motion/omap.vim:inoremap <Plug>(IngoLibraryOmapRepeatReinsert) <C-r>.<Esc>
+../pack/packs-cp/opt/vim-characterize/plugin/characterize.vim:nnoremap <silent><script> <Plug>(characterize) :<C-U>echo <SID>info(matchstr(getline('.')[col('.')-1:-1],'.'))<CR>
+../pack/packs-cp/opt/vim-characterize/plugin/characterize.vim:if !hasmapto('<Plug>(characterize)', 'n') && mapcheck('ga', 'n') ==# ''
+../pack/packs-cp/opt/vim-characterize/plugin/characterize.vim:  nmap ga <Plug>(characterize)
 ../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:    " 'noremap <silent> <Plug>NERDCommenterComment :call nerdcommenter#Comment("n", "Comment")'
 ../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:    let plug = '<Plug>NERDCommenter' . a:target
 ../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:    " 'menu <silent> comment.Comment<Tab>\\cc <Plug>NERDCommenterComment'
-../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:inoremap <silent> <Plug>NERDCommenterInsert <Space><BS><Esc>:call nerdcommenter#Comment('i', "insert")<CR>
+../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:inoremap <silent> <Plug>NERDCommenterInsert <C-\><C-O>:call nerdcommenter#Comment('i', "Insert")<CR>
 ../pack/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim:nnoremap <Plug>NERDCommenterAltDelims :call nerdcommenter#SwitchToAlternativeDelimiters(1)<CR>
 ../pack/packs-cp/opt/nerdcommenter/CHANGELOG.md:*  removed all the mapping options. Now, mappings to <plug> mappings are used
 ../pack/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim:        silent! call repeat#set('V' . nlines . 'jo' . "\<Plug>NERDCommenter". a:type)
 ../pack/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim:        silent! call repeat#set("\<Plug>NERDCommenter". a:type)
+../pack/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim:    "    maintain the cursor position (from <Plug>NERDCommenterInsert).
 ../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterComment
 ../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterNested
 ../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:Mapped to: <plug>NERDCommenterToggle
@@ -1448,6 +2329,378 @@
 ../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:To change a mapping just map another key combo to the internal <plug> mapping.
 ../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:    map ,omg <plug>NERDCommenterComment
 ../pack/packs-cp/opt/nerdcommenter/doc/nerdcommenter.txt:See the help for the mapping in question to see which <plug> mapping to
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogHelp)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> g? <Plug>(FlogHelp)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogHelp) :help flog-mappings<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVSplitCommitRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> <CR> <Plug>(FlogVSplitCommitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVSplitCommitRight) :vertical belowright Flogsplitcommit<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVSplitCommitPathsRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> <Tab> <Plug>(FlogVSplitCommitPathsRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVSplitCommitPathsRight) :<C-U>call flog#run_tmp_command('vertical belowright Git show %h -- %p')<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVDiffSplitRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> dd <Plug>(FlogVDiffSplitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> dd <Plug>(FlogVDiffSplitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> dv <Plug>(FlogVDiffSplitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> dv <Plug>(FlogVDiffSplitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVDiffSplitPathsRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> dp <Plug>(FlogVDiffSplitPathsRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> dp <Plug>(FlogVDiffSplitPathsRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> DD <Plug>(FlogVDiffSplitPathsRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> DD <Plug>(FlogVDiffSplitPathsRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> DV <Plug>(FlogVDiffSplitPathsRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> DV <Plug>(FlogVDiffSplitPathsRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVDiffSplitRight) :<C-U>call flog#run_tmp_command('vertical belowright Git diff HEAD %h')<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <silent> <Plug>(FlogVDiffSplitRight) :<C-U>call flog#run_tmp_command("vertical belowright Git diff %(h'>) %(h'<)")<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVDiffSplitPathsRight) :<C-U>call flog#run_tmp_command('vertical belowright Git diff HEAD %h -- %p')<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <silent> <Plug>(FlogVDiffSplitPathsRight) :<C-U>call flog#run_tmp_command("vertical belowright Git diff HEAD %(h'<) %(h'>) -- %p")<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVDiffSplitLastCommitRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> d! <Plug>(FlogVDiffSplitLastCommitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVDiffSplitLastCommitPathsRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> D! <Plug>(FlogVDiffSplitLastCommitPathsRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVDiffSplitLastCommitRight) :<C-U> call flog#run_tmp_command("vertical belowright Git diff %(h'!) %H")<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVDiffSplitLastCommitPathsRight) :<C-U> call flog#run_tmp_command("vertical belowright Git diff %(h'!) %H -- %p")<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogCloseTmpWin)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> dq <Plug>(FlogCloseTmpWin)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogCloseTmpWin) :<C-U>call flog#close_tmp_win()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogYank)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> y<C-G> <Plug>(FlogYank)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> y<C-G> <Plug>(FlogYank)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogYank) :call flog#copy_commits()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <silent> <Plug>(FlogYank) :call flog#copy_commits(1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogGit)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> git <Plug>(FlogGit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> git <Plug>(FlogGit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogGit) :Floggit
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <Plug>(FlogGit) :Floggit
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogQuit)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ZZ <Plug>(FlogQuit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gq <Plug>(FlogQuit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogQuit) :call flog#quit()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVNextCommitRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> <C-N> <Plug>(FlogVNextCommitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ) <Plug>(FlogVNextCommitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVPrevCommitRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> <C-P> <Plug>(FlogVPrevCommitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ( <Plug>(FlogVPrevCommitRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVNextCommitRight) :<C-U>call flog#next_commit() \| vertical belowright Flogsplitcommit<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVPrevCommitRight) :<C-U>call flog#previous_commit() \| vertical belowright Flogsplitcommit<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVNextRefRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ]r <Plug>(FlogVNextRefRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogVPrevRefRight)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> [r <Plug>(FlogVPrevRefRight)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVNextRefRight) :<C-U>call flog#next_ref() \| vertical belowright Flogsplitcommit<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogVPrevRefRight) :<C-U>call flog#previous_ref() \| vertical belowright Flogsplitcommit<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSkipAhead)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ]] <Plug>(FlogSkipAhead)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSkipAhead) :<C-U>call flog#change_skip_by_max_count(1 * max([v:count, 1]))<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSkipBack)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> [[ <Plug>(FlogSkipBack)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSkipBack) :<C-U>call flog#change_skip_by_max_count(-1 * max([v:count, 1]))<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSetSkip)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> go <Plug>(FlogSetSkip)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSetSkip) :<C-U>call flog#set_skip_option(v:count)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogToggleAll)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> a <Plug>(FlogToggleAll)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogToggleAll) :call flog#toggle_all_refs_option()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogToggleBisect)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gb <Plug>(FlogToggleBisect)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogToggleBisect) :call flog#toggle_bisect_option()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogToggleNoMerges)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gm <Plug>(FlogToggleNoMerges)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogToggleNoMerges) :call flog#toggle_no_merges_option()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogToggleReflog)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gr <Plug>(FlogToggleReflog)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogToggleReflog) :call flog#toggle_reflog_option()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogToggleReverse)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gsr <Plug>(FlogToggleReverse)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogToggleReverse) :call flog#toggle_reverse_option()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogToggleNoGraph)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gx <Plug>(FlogToggleNoGraph)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogToggleNoGraph) :call flog#toggle_no_graph_option()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogToggleNoPatch)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gp <Plug>(FlogToggleNoPatch)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogToggleNoPatch) :call flog#toggle_no_patch_option()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogUpdate)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> u <Plug>(FlogUpdate)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogUpdate) :call flog#populate_graph_buffer()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSearch)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> g/ <Plug>(FlogSearch)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogSearch) :<C-U>Flogsetargs -search=
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogPatchSearch)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> g\ <Plug>(FlogPatchSearch)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogPatchSearch) :<C-U>Flogsetargs -patch-search=
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogCycleSort)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gss <Plug>(FlogCycleSort)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogCycleSort) :call flog#cycle_sort_option()<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSortDate)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gsd <Plug>(FlogSortDate)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSortDate) :call flog#set_sort_option('date')<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSortAuthor)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gsa <Plug>(FlogSortAuthor)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSortAuthor) :call flog#set_sort_option('author')<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSortTopo)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> gst <Plug>(FlogSortTopo)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSortTopo) :call flog#set_sort_option('topo')<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogFixup)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cf <Plug>(FlogFixup)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogFixupRebase)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cF <Plug>(FlogFixupRebase)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogFixup) :<C-U>call flog#run_command('Git commit --fixup=%H', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogFixupRebase) :<C-U>call flog#run_command('Git commit --fixup=%H \| Git -c sequence.editor=true rebase --interactive --autosquash %H^', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSquash)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cs <Plug>(FlogSquash)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSquashRebase)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cS <Plug>(FlogSquashRebase)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSquashEdit)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cA <Plug>(FlogSquashEdit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSquash) :<C-U>call flog#run_command('Git commit --no-edit --squash=%H', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSquashRebase) :<C-U>call flog#run_command('Git commit --no-edit --squash=%H \| Git -c sequence.editor=true rebase --interactive --autosquash %H^', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSquashEdit) :<C-U>call flog#run_command('Git commit --edit --squash=%H', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRevert)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> crc <Plug>(FlogRevert)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> crc <Plug>(FlogRevert)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRevertNoEdit)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> crn <Plug>(FlogRevertNoEdit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> crn <Plug>(FlogRevertNoEdit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRevert) :<C-U>call flog#run_command('Git revert %H', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <silent> <Plug>(FlogRevert) :<C-U>call flog#run_command("Git revert %(h'<)^..%(h'>)", 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRevertNoEdit) :<C-U>call flog#run_command('Git revert --no-edit %H', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <silent> <Plug>(FlogRevertNoEdit) :<C-U>call flog#run_command("Git revert --no-edit %(h'<)^..%(h'>)", 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogCheckout)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> coo <Plug>(FlogCheckout)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogCheckout) :<C-U>call flog#run_command('Git checkout %H', 0, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogCheckoutBranch)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cob <Plug>(FlogCheckoutBranch)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogCheckoutBranch) :<C-U>call flog#run_command('Git checkout %b', 0, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogCheckoutLocalBranch)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cot <Plug>(FlogCheckoutLocalBranch)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogCheckoutLocalBranch) :<C-U>call flog#run_command('Git checkout %l', 0, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogGitCommit)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> c<Space> <Plug>(FlogGitCommit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> c<Space> <Plug>(FlogGitCommit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogGitCommit) :Floggit commti<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <Plug>(FlogGitCommit) :Floggit commti<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogGitRevert)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cr<Space> <Plug>(FlogGitRevert)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> cr<Space> <Plug>(FlogGitRevert)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogGitRevert) :Floggit revert<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <Plug>(FlogGitRevert) :Floggit revert<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogGitMerge)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cm<Space> <Plug>(FlogGitMerge)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> cm<Space> <Plug>(FlogGitMerge)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogGitMerge) :Floggit merge<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <Plug>(FlogGitMerge) :Floggit merge<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogGitCheckout)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> co<Space> <Plug>(FlogGitCheckout)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> co<Space> <Plug>(FlogGitCheckout)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogGitCheckout) :Floggit checkout<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <Plug>(FlogGitCheckout) :Floggit checkout<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogGitBranch)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> cb<Space> <Plug>(FlogGitBranch)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> cb<Space> <Plug>(FlogGitBranch)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogGitBranch) :Floggit branch<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <Plug>(FlogGitBranch) :Floggit branch<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseInteractive)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ri <Plug>(FlogRebaseInteractive)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseInteractive) :<C-U>call flog#run_command('Git rebase --interactive %H^', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseInteractiveAutosquash)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> rf <Plug>(FlogRebaseInteractiveAutosquash)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseInteractiveAutosquash) :<C-U>call flog#run_command('Git -c sequence.editor=true rebase --interactive --autosquash %H^', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseInteractiveUpstream)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ru <Plug>(FlogRebaseInteractiveUpstream)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseInteractiveUpstream) :<C-U>call flog#run_command('Git rebase --interactive @{upstream}', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseInteractivePush)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> rp <Plug>(FlogRebaseInteractivePush)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseInteractivePush) :<C-U>call flog#run_command('Git rebase --interactive @{push}', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseContinue)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> rr <Plug>(FlogRebaseContinue)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseContinue) :<C-U>call flog#run_command('Git rebase --continue', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseSkip)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> rs <Plug>(FlogRebaseSkip)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseSkip) :<C-U>call flog#run_command('Git rebase --skip', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseAbort)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ra <Plug>(FlogRebaseAbort)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseAbort) :<C-U>call flog#run_command('Git rebase --abort', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseEditTodo)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> re <Plug>(FlogRebaseEditTodo)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseEditTodo) :<C-U>call flog#run_command('Git rebase --edit-todo', 1, 1)<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseInteractiveReword)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> rw <Plug>(FlogRebaseInteractiveReword)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseInteractiveReword) :<C-U>call flog#run_command('Git rebase --interactive %H^ \| s/^pick/reword/e', 1, 1)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseInteractiveEdit)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> rm <Plug>(FlogRebaseInteractiveEdit)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseInteractiveEdit) :<C-U>call flog#run_command('Git rebase --interactive %H^ \| s/^pick/edit/e', 1, 1)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogRebaseInteractiveDrop)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> rd <Plug>(FlogRebaseInteractiveDrop)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogRebaseInteractiveDrop) :<C-U>call flog#run_command('Git rebase --interactive %H^ \| s/^pick/drop/e', 1, 1)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogGitRebase)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> r<Space> <Plug>(FlogGitRebase)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> r<Space> <Plug>(FlogGitRebase)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <Plug>(FlogGitRebase) :Floggit rebase<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <Plug>(FlogGitRebase) :Floggit rebase<Space>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogSetCommitMark)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> m <Plug>(FlogSetCommitMark)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> m <Plug>(FlogSetCommitMark)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogSetCommitMark) :<C-U>call flog#set_commit_mark_at_line(nr2char(getchar()), '.')<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <silent> <Plug>(FlogSetCommitMark) :<C-U>call flog#set_commit_mark_at_line(nr2char(getchar()), '.')<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:if !hasmapto('<Plug>(FlogJumpToCommitMark)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  nmap <buffer> ' <Plug>(FlogJumpToCommitMark)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:  vmap <buffer> ' <Plug>(FlogJumpToCommitMark)
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:nnoremap <buffer> <silent> <Plug>(FlogJumpToCommitMark) :<C-U>call flog#jump_to_commit_mark(nr2char(getchar()))<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:vnoremap <buffer> <silent> <Plug>(FlogJumpToCommitMark) :<C-U>call flog#jump_to_commit_mark(nr2char(getchar()))<CR>
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogvsplitcommitright', '<Plug>(FlogVSplitCommitRight)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogVsplitcommitright', '<Plug>(FlogVSplitCommitRight)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogVnextcommitright', '<Plug>(FlogVNextCommitRight)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogvnextcommitright', '<Plug>(FlogVNextCommitRight)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogVprevcommitright', '<Plug>(FlogVPrevCommitRight)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogvprevcommitright', '<Plug>(FlogVPrevCommitRight)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogVnextrefright', '<Plug>(FlogVNextRefRight)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogVprevrefright', '<Plug>(FlogVPrevRefRight)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogToggleall', '<Plug>(FlogToggleAll)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogtoggleall', '<Plug>(FlogToggleAll)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogTogglebisect', '<Plug>(FlogToggleBisect)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogtogglebisect', '<Plug>(FlogToggleBisect)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogTogglenomerges', '<Plug>(FlogToggleNoMerges)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogtogglenomerges', '<Plug>(FlogToggleNoMerges)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogTogglereflog', '<Plug>(FlogToggleReflog)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogUpdate', '<Plug>(FlogUpdate)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogupdate', '<Plug>(FlogUpdate)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogGit', '<Plug>(FlogGit)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Floggit', '<Plug>(FlogGit)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogYank', '<Plug>(FlogYank)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogyank', '<Plug>(FlogYank)')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogSearch', '<Plug>(FlogSearch)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogPatchSearch', '<Plug>(FlogPatchSearch)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogQuit', '<Plug>(FlogQuit)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Flogquit', '<Plug>(FlogQuit)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogHelp', '<Plug>(FlogHelp)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>Floghelp', '<Plug>(FlogHelp)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogSetskip', '<Plug>(FlogSetSkip)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogSkipahead', '<Plug>(FlogSkipAhead)', 'nmap')
+../pack/packs-cp/opt/vim-flog/ftplugin/floggraph.vim:call flog#deprecate_plugin_mapping('<Plug>FlogSkipback', '<Plug>(FlogSkipBack)', 'nmap')
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                            *<Plug>(FlogHelp)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                               *<Plug>(FlogVSplitCommitRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                           *<Plug>(FlogVSplitCommitRightPath)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                 *<Plug>(FlogVDiffSplitRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                            *<Plug>(FlogVDiffSplitPathsRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                       *<Plug>(FlogVDiffSplitLastCommitRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                  *<Plug>(FlogVDiffSplitLastCommitPathsRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                     *<Plug>(FlogCloseTmpWin)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                            *<Plug>(FlogYank)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                             *<Plug>(FlogGit)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                            *<Plug>(FlogQuit)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                *<Plug>(FlogVNextCommitRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                *<Plug>(FlogVPrevCommitRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                   *<Plug>(FlogVNextRefRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                   *<Plug>(FlogVPrevRefRight)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                       *<Plug>(FlogSkipAhead)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                        *<Plug>(FlogSkipBack)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                         *<Plug>(FlogSetSkip)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                   *<Plug>(FlogSetCommitMark)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                *<Plug>(FlogJumpToCommitMark)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                       *<Plug>(FlogToggleAll)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                    *<Plug>(FlogToggleBisect)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                  *<Plug>(FlogToggleNoMerges)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                    *<Plug>(FlogToggleReflog)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                   *<Plug>(FlogToggleNoGraph)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                   *<Plug>(FlogToggleNoPatch)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:gss                                                    *<Plug>(FlogCycleSort)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:gsd                                                     *<Plug>(FlogSortDate)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:gsa                                                   *<Plug>(FlogSortAuthor)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:gst                                                     *<plug>(FlogSortTopo)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:gsr                                                *<Plug>(FlogToggleReverse)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                          *<Plug>(FlogUpdate)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                          *<Plug>(FlogSearch)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                     *<Plug>(FlogPatchSearch)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                           *<Plug>(FlogFixup)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                     *<Plug>(FlogFixupRebase)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                          *<Plug>(FlogSquash)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                    *<Plug>(FlogSquashRebase)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                      *<Plug>(FlogSquashEdit)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                          *<Plug>(FlogRevert)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                    *<Plug>(FlogRevertNoEdit)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                        *<Plug>(FlogCheckout)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                  *<Plug>(FlogCheckoutBranch)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                             *<Plug>(FlogCheckoutLocalBranch)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                       *<Plug>(FlogGitCommit)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                       *<Plug>(FlogGitRevert)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                        *<Plug>(FlogGitMerge)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                     *<Plug>(FlogGitCheckout)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                       *<Plug>(FlogGitBranch)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                               *<Plug>(FlogRebaseInteractive)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                     *<Plug>(FlogRebaseInteractiveAutosquash)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                       *<Plug>(FlogRebaseInteractiveUpstream)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                           *<Plug>(FlogRebaseInteractivePush)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                  *<Plug>(FlogRebaseContinue)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                      *<Plug>(FlogRebaseSkip)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                     *<Plug>(FlogRebaseAbort)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                  *<Plug>(FlogRebaseEditTodo)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                         *<Plug>(FlogRebaseInteractiveReword)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                           *<Plug>(FlogRebaseInteractiveEdit)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                           *<Plug>(FlogRebaseInteractiveDrop)*
+../pack/packs-cp/opt/vim-flog/doc/flog.txt:                                                       *<Plug>(FlogGitRebase)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogCheckout)	flog.txt	/*<Plug>(FlogCheckout)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogCheckoutBranch)	flog.txt	/*<Plug>(FlogCheckoutBranch)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogCheckoutLocalBranch)	flog.txt	/*<Plug>(FlogCheckoutLocalBranch)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogCloseTmpWin)	flog.txt	/*<Plug>(FlogCloseTmpWin)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogCycleSort)	flog.txt	/*<Plug>(FlogCycleSort)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogFixup)	flog.txt	/*<Plug>(FlogFixup)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogFixupRebase)	flog.txt	/*<Plug>(FlogFixupRebase)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogGit)	flog.txt	/*<Plug>(FlogGit)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogGitBranch)	flog.txt	/*<Plug>(FlogGitBranch)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogGitCheckout)	flog.txt	/*<Plug>(FlogGitCheckout)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogGitCommit)	flog.txt	/*<Plug>(FlogGitCommit)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogGitMerge)	flog.txt	/*<Plug>(FlogGitMerge)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogGitRebase)	flog.txt	/*<Plug>(FlogGitRebase)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogGitRevert)	flog.txt	/*<Plug>(FlogGitRevert)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogHelp)	flog.txt	/*<Plug>(FlogHelp)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogJumpToCommitMark)	flog.txt	/*<Plug>(FlogJumpToCommitMark)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogPatchSearch)	flog.txt	/*<Plug>(FlogPatchSearch)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogQuit)	flog.txt	/*<Plug>(FlogQuit)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseAbort)	flog.txt	/*<Plug>(FlogRebaseAbort)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseContinue)	flog.txt	/*<Plug>(FlogRebaseContinue)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseEditTodo)	flog.txt	/*<Plug>(FlogRebaseEditTodo)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseInteractive)	flog.txt	/*<Plug>(FlogRebaseInteractive)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseInteractiveAutosquash)	flog.txt	/*<Plug>(FlogRebaseInteractiveAutosquash)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseInteractiveDrop)	flog.txt	/*<Plug>(FlogRebaseInteractiveDrop)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseInteractiveEdit)	flog.txt	/*<Plug>(FlogRebaseInteractiveEdit)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseInteractivePush)	flog.txt	/*<Plug>(FlogRebaseInteractivePush)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseInteractiveReword)	flog.txt	/*<Plug>(FlogRebaseInteractiveReword)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseInteractiveUpstream)	flog.txt	/*<Plug>(FlogRebaseInteractiveUpstream)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRebaseSkip)	flog.txt	/*<Plug>(FlogRebaseSkip)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRevert)	flog.txt	/*<Plug>(FlogRevert)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogRevertNoEdit)	flog.txt	/*<Plug>(FlogRevertNoEdit)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSearch)	flog.txt	/*<Plug>(FlogSearch)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSetCommitMark)	flog.txt	/*<Plug>(FlogSetCommitMark)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSetSkip)	flog.txt	/*<Plug>(FlogSetSkip)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSkipAhead)	flog.txt	/*<Plug>(FlogSkipAhead)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSkipBack)	flog.txt	/*<Plug>(FlogSkipBack)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSortAuthor)	flog.txt	/*<Plug>(FlogSortAuthor)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSortDate)	flog.txt	/*<Plug>(FlogSortDate)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSquash)	flog.txt	/*<Plug>(FlogSquash)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSquashEdit)	flog.txt	/*<Plug>(FlogSquashEdit)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogSquashRebase)	flog.txt	/*<Plug>(FlogSquashRebase)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogToggleAll)	flog.txt	/*<Plug>(FlogToggleAll)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogToggleBisect)	flog.txt	/*<Plug>(FlogToggleBisect)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogToggleNoGraph)	flog.txt	/*<Plug>(FlogToggleNoGraph)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogToggleNoMerges)	flog.txt	/*<Plug>(FlogToggleNoMerges)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogToggleNoPatch)	flog.txt	/*<Plug>(FlogToggleNoPatch)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogToggleReflog)	flog.txt	/*<Plug>(FlogToggleReflog)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogToggleReverse)	flog.txt	/*<Plug>(FlogToggleReverse)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogUpdate)	flog.txt	/*<Plug>(FlogUpdate)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVDiffSplitLastCommitPathsRight)	flog.txt	/*<Plug>(FlogVDiffSplitLastCommitPathsRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVDiffSplitLastCommitRight)	flog.txt	/*<Plug>(FlogVDiffSplitLastCommitRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVDiffSplitPathsRight)	flog.txt	/*<Plug>(FlogVDiffSplitPathsRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVDiffSplitRight)	flog.txt	/*<Plug>(FlogVDiffSplitRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVNextCommitRight)	flog.txt	/*<Plug>(FlogVNextCommitRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVNextRefRight)	flog.txt	/*<Plug>(FlogVNextRefRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVPrevCommitRight)	flog.txt	/*<Plug>(FlogVPrevCommitRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVPrevRefRight)	flog.txt	/*<Plug>(FlogVPrevRefRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVSplitCommitRight)	flog.txt	/*<Plug>(FlogVSplitCommitRight)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogVSplitCommitRightPath)	flog.txt	/*<Plug>(FlogVSplitCommitRightPath)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<Plug>(FlogYank)	flog.txt	/*<Plug>(FlogYank)*
+../pack/packs-cp/opt/vim-flog/doc/tags:<plug>(FlogSortTopo)	flog.txt	/*<plug>(FlogSortTopo)*
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:onoremap <silent> <Plug>(GitGutterTextObjectInnerPending) :<C-U>call gitgutter#hunk#text_object(1)<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:onoremap <silent> <Plug>(GitGutterTextObjectOuterPending) :<C-U>call gitgutter#hunk#text_object(0)<CR>
 ../pack/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim:xnoremap <silent> <Plug>(GitGutterTextObjectInnerVisual)  :<C-U>call gitgutter#hunk#text_object(1)<CR>
@@ -1704,12 +2957,19 @@
 ../pack/packs-unix/opt/fzf.vim/doc/fzf-vim.txt:    imap <c-x><c-l> <plug>(fzf-complete-line)
 ../plugin/plugins.vim:noremap <silent> <C-j> <Plug>(ale_next_wrap)
 ../plugin/plugins.vim:noremap <silent> <C-k> <Plug>(ale_previous_wrap)
+../plugin/plugins.vim:  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+../plugin/plugins.vim:  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
+../plugin/plugins.vim:  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
 ../plugin/plugins.vim:map z/ <Plug>(incsearch-fuzzy-stay)
-../plugin/plugins.vim:map /  <Plug>(incsearch-forward)
-../plugin/plugins.vim:map ?  <Plug>(incsearch-backward)
 ../plugin/plugins.vim:map g/ <Plug>(incsearch-stay)
 ../plugin/plugins.vim:nmap <F6> <Plug>(openbrowser-smart-search)
 ../plugin/plugins.vim:vmap <F6> <Plug>(openbrowser-smart-search)
+../plugin/plugins.vim:map *  <Plug>(asterisk-*)
+../plugin/plugins.vim:map #  <Plug>(asterisk-#)
+../plugin/plugins.vim:map g* <Plug>(asterisk-g*)  " rg --no-ignore ' g\* '
+../plugin/plugins.vim:map g# <Plug>(asterisk-g#)  " rg --no-ignore ' g# '
+../plugin/plugins.vim:map z* <Plug>(asterisk-z*)  " rg --no-ignore ' z\* '
+../plugin/plugins.vim:map z# <Plug>(asterisk-z#)  " rg --no-ignore ' z# '
 ../plugin/plugins.vim:nmap gA <Plug>(EasyAlign)
 ../plugin/plugins.vim:xmap gA <Plug>(EasyAlign)
 ../plugin/plugins.vim:map  <Leader><Leader>f <Plug>(easymotion-bd-f)

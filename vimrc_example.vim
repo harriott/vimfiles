@@ -6,6 +6,7 @@
 
 ""> 0 some recommended defaults, with adjustments
 source $VIMRUNTIME/vimrc_example.vim
+" sources  $VIMRUNTIME/defaults.vim  which sets  filetype on
 
 ""> 1 revert a few things
 set nobackup

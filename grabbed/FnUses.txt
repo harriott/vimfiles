@@ -5,6 +5,7 @@ vim: ft=Fn:
 ../ftplugin/fugitive.vim:nnoremap <buffer><F1> <C-W><C-W>
 ../ftplugin/fugitive.vim:inoremap <buffer><F1> <Esc><C-W><C-W>
 ../ftplugin/fugitive.vim:vnoremap <buffer><F1> <Esc><C-W><C-W>
+../ftplugin/csv.vim:nnoremap <buffer><F7> :call CsvColumnToggle()<cr>
 ../ftplugin/md.vim:nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 ../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
 ../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
@@ -42,6 +43,7 @@ vim: ft=Fn:
 ../pack/packs-cp/opt/vim-colors-solarized/doc/solarized.txt:remove/change your existing <F5> mapping to another value. To customize the 
 ../pack/packs-cp/opt/vim-colors-solarized/doc/solarized.txt:"<F5>" value to the key or key combination you wish to use:
 ../pack/packs-cp/opt/vim-colors-solarized/doc/solarized.txt:	call togglebg#map("<F5>")
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> <F5> <Plug>(fern-action-reload)
 ../pack/packs-cp/opt/vim-fontsize/doc/fontsize.txt:  nmap <silent> <F8>                        <Plug>FontsizeBegin
 ../pack/packs-cp/opt/ctrlp.vim/readme.md:* Press `<F5>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
 ../pack/packs-cp/opt/ctrlp.vim/autoload/ctrlp.vim:	\ 'PrtClearCache()':      ['<F5>'],
@@ -78,7 +80,7 @@ vim: ft=Fn:
 ../pack/packs-cp/opt/vim-airline/doc/airline.txt:  nmap <leader><F5>  <Plug>XTablineToggleFiltering
 ../pack/packs-cp/opt/vim-airline/doc/airline.txt:be updated automatically. Either re-enter the tab or press <F5> two times.
 ../pack/packs-cp/opt/supertab/plugin/supertab.vim:  "   nmap <F6> :call SetSuperTabCompletionType("<c-p>")<cr>
-../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:  call s:Map('n', '<F1>', ':help :Git_blame<CR>', '<silent>')
+../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:  call s:Map('n', '<F1>', ':help :Git_blame<CR>', '<silent>', ft)
 ../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<F1>',  ":<C-U>help fugitive-map<CR>", '<silent>')
 ../pack/packs-cp/opt/ale/doc/ale.txt:  nmap <F8> <Plug>(ale_fix)
 ../pack/packs-cp/opt/tagbar/README.md:nmap <F8> :TagbarToggle<CR>
@@ -99,7 +101,7 @@ vim: ft=Fn:
 ../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:      * Changed the help key from '?' to <F1> to be more 'standard'.
 ../pack/packs-cp/opt/undotree/README.md:nnoremap <F5> :UndotreeToggle<CR>
 ../pack/packs-cp/opt/undotree/doc/undotree.txt:    nnoremap <F5> :UndotreeToggle<cr>
-../pack/ArchLinux/after.sh:# reduce  ['<F1>', '?']  to  ['?']  so that my  <F1>  still works
+../pack/ArchLinux/after.sh:# reduce help keystroke  ['<F1>', '?']  to  ['?']  so that my  <F1>  still works
 ../pack/ArchLinux/after.sh:sed -i "s/'<F1>', //" ../packs-cp/opt/tagbar/plugin/tagbar.vim
 ../plugin/plugins.vim:  nnoremap <F8> :History:<CR>
 ../plugin/plugins.vim:  inoremap <F8> <Esc>:History:<CR>

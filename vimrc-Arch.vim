@@ -9,11 +9,6 @@ set linespace=2
 let g:langtool_jar = '/usr/share/java/LanguageTool/languagetool-commandline.jar'
 " let g:languagetool_cmd = '/usr/bin/languagetool'
 
-""> load the matchit plugin if the required features are available
-if has('syntax') && has('eval')
-  packadd! matchit
-endif
-
 ""> open equivalent LaTeX compiled PDF
 function! CompiledPDF()
   execute 'silent !zathura '.expand('%:p:r').'.pdf & disown'

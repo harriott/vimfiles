@@ -9,14 +9,14 @@
 setlocal expandtab shiftwidth=2
 
 ""> config-file folding by lines that start with [space(s)]"=>...
-"  ""= first level fold
-"  Bash: grep -rl '^ *""=' # shows that this is a good unambiguous choice
-"  <some Bash code>
-"    ""== second level fold (with optional offset)
+"  ""=> first level fold
+"  grep -rl '^ *""='  # shows that this is a good unambiguous choice
+"  <some vim code>
+"    ""==> second level fold (with optional offset)
 "    ...
 
 function! VimFolds()
-  " Bash: grep -rl VimFolds # shows it's not been taken
+  " grep -rl VimFolds  # shows it's not been taken
   " define  l:foldMark, even in no match, and allowing for commented out headings
   let l:foldMark = matchstr(getline(v:lnum), '^\(" \)\{-}"">\+')
   " if there's a heading set an equivalent fold start
@@ -31,7 +31,7 @@ endfunction
 setlocal fde=VimFolds() fdm=expr
 
 " heading strength
-"  Bash: grep -rl '"=\+' # shows that this is a good unambiguous choice
+"  grep -rl '"=\+' # shows that this is a good unambiguous choice
 " demote a heading
 vnoremap <buffer><leader>> :s/"">/"">>/<CR>
 " promote a heading
