@@ -58,7 +58,8 @@ gd opt; ls
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/ryanoasis/vim-devicons
   # $gc https://github.com/justinmk/vim-dirvish
-  $gc https://github.com/kristijanhusak/vim-dirvish-git
+  $gc https://github.com/qpkorr/vim-bufkill
+  # $gc https://github.com/kristijanhusak/vim-dirvish-git
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/easymotion/vim-easymotion
   # $gc https://github.com/rbong/vim-flog

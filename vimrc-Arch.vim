@@ -1,12 +1,13 @@
-" Sourced from my Arch Linux installation's ~/.vimrc
+
+" sourced from my Arch Linux installation's ~/.vimrc
 
 source $HOME/.vim/vimrc-GNULinux.vim
 
 set linespace=2
 
 ""> LanguageTool
-let g:langtool_jar = '/usr/share/java/LanguageTool-5.2/languagetool-commandline.jar'
-let g:languagetool_cmd = '/usr/bin/languagetool'
+let g:langtool_jar = '/usr/share/java/LanguageTool/languagetool-commandline.jar'
+" let g:languagetool_cmd = '/usr/bin/languagetool'
 
 ""> load the matchit plugin if the required features are available
 if has('syntax') && has('eval')

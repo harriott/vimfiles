@@ -78,7 +78,7 @@ endfunction
 nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
 
 " create a heading:
-nnoremap <buffer> <leader><leader>= I== <Esc>A ==<Esc>
+nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
 
 " having just selected a web-page heading, format it into a DokuWiki hyperlink
 function! PageTitleToHyperlink()

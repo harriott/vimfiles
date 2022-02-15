@@ -1,13 +1,12 @@
 " vim: fdl=2:
 
-" Joseph Harriott
-" ---------------
+" Joseph Harriott - Tue 15 Feb 2022
 
-" keep this file in your  after/plugin  directory so's it's sourced after the plugins
-" -----------------------------------------------------------------------------------
+" $vimfiles/after/plugin/plugins.vim
 
 ""> vim-devicons
 packadd vim-devicons
+packadd nerdtree
 
 ""> vim-gitgutter
 " $vimfiles/plugin/plugins.vim

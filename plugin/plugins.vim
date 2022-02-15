@@ -1,9 +1,8 @@
 
-" Joseph Harriott
-" ---------------
+" Joseph Harriott - Tue 15 Feb 2022
 
-" (keep this file in your plugin directory so's it's automatically sourced at startup)
-" ------------------------------------------------------------------------------------
+" $vimfiles/plugin/plugins.vim
+
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
 ""> ALE
@@ -37,6 +36,9 @@ packadd bufferize.vim
 ""> calendar-vim
 packadd calendar-vim
 noremap <leader>yy :CalendarH<CR>
+
+""> cfilter
+packadd cfilter
 
 ""> close-buffers.vim
 "  quickly close all but current buffer
@@ -78,7 +80,7 @@ set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
 " need to be defined before it's loaded
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_mruf_max = 500
-nnoremap <leader>bb  :CtrlPBuffer<CR>
+nnoremap <leader>bb :CtrlPBuffer<CR>
 
 "">> 1 invoke
 packadd ctrlp.vim
@@ -219,7 +221,8 @@ let NERDSpaceDelims = 1
 "h NERDTree
 let NERDTreeHijackNetrw = 0  " liberate  e.
 noremap <C-n> :NERDTreeToggle<CR>
-packadd nerdtree
+
+" loaded in  $vimfiles/after/plugin/plugins.vim
 
 " Open it on buffer's directory:
 nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
@@ -300,6 +303,9 @@ packadd vim-bbcode
 packadd vim-buffing-wheel
 " - + X
 
+""> vim-bufkill
+packadd vim-bufkill
+
 ""> vim-colors-solarized
 " packadd vim-colors-solarized
 
@@ -309,6 +315,7 @@ packadd vim-colors-tomorrow
 ""> vim-dirvish
 " h dirvish
 " takes over :e.
+
 " in dirvish
 "  -       -> out
 "  <enter> -> in
@@ -318,10 +325,16 @@ packadd vim-colors-tomorrow
 "   p
 "    Ctrl-n -> next
 "    Ctrl-p -> previous
+
 packadd vim-dirvish
 
 ""> vim-dirvish-git
-packadd vim-dirvish-git
+if has('unix')
+  packadd vim-dirvish-git
+endif
+
+""> vim-dokuwiki
+" nvim -O $IThandy/encoding/vi/vim-dokuwiki/syntax/dokuwiki.vim $vimfiles/syntax/dokuwiki.vim
 
 ""> vim-easy-align
 packadd vim-easy-align
@@ -375,14 +388,20 @@ packadd vim-fontsize
 " <Leader><Leader>0 -> default font size
 
 ""> vim-fugitive
-" ce  " amend the last commit without editing the message
-" U   " unstages all
-" :GBrowse
-" :Git pull
+" configurations
+"  let g:airline_symbols.notexists
+"  let g:airline_symbols.dirty
+let g:airline#extensions#branch#vcs_checks = ['untracked'] " because 'dirty' isn't accurate...
 
 " Ggrep for last search
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 " gives bogus filenames if they contain accented characters
+
+" keystrokes
+"  ce  " amend the last commit without editing the message
+"  U   " unstages all
+"  :GBrowse
+"  :Git pull
 
 packadd vim-fugitive
 
@@ -425,9 +444,12 @@ packadd vim-hjson
 " packadd vim-LanguageTool " then can  :h LanguageTool
 
 ""> vim-langtool
-" needs  g:langtool_jar  defined
 nnoremap <leader>lt :LangTool <bar> lopen <CR>
 packadd vim-langtool  " can then  :h langtool
+" needs  g:langtool_jar  defined
+
+" doesn't highlight anything
+" move to errors:  <cr>  :lne  :lpr
 
 ""> vim-matchit
 packadd vim-matchit

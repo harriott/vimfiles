@@ -154,13 +154,13 @@ syn region dokuwikiCodeBlockEnd matchgroup=dokuwikiCodeMark start="\(<\z(code\|f
 syn cluster dokuwikiCodeBody contains=dokuwikiCodeBlockEnd
 
 " Imported Syntax: Imported and heavily modified from markdown.vim fenced languages code
-" if main_syntax ==# 'dokuwiki'
-  " for s:type in g:dokuwiki_fenced_languages
-    " exec 'syn region dokuwikiCodeBlock'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','').' matchgroup=dokuwikiCodeMark start="\(<\z(code\|file\) '.matchstr(s:type,'[^=]*').'\( [^>]\+\)\?\)\@<=>" end="</\z1>" keepend contains=dokuwikiCodeLang,@dokuwikiCode'.substitute(matchstr(s:type,'[^=]*$'),'\.','','g')
-    " exec 'syn cluster dokuwikiCodeBody add=dokuwikiCodeBlock'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','')
-  " endfor
-  " unlet! s:type
-" endif
+if main_syntax ==# 'dokuwiki'
+  for s:type in g:dokuwiki_fenced_languages
+    exec 'syn region dokuwikiCodeBlock'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','').' matchgroup=dokuwikiCodeMark start="\(<\z(code\|file\) '.matchstr(s:type,'[^=]*').'\( [^>]\+\)\?\)\@<=>" end="</\z1>" keepend contains=dokuwikiCodeLang,@dokuwikiCode'.substitute(matchstr(s:type,'[^=]*$'),'\.','','g')
+    exec 'syn cluster dokuwikiCodeBody add=dokuwikiCodeBlock'.substitute(matchstr(s:type,'[^=]*$'),'\..*','','')
+  endfor
+  unlet! s:type
+endif
 
 " Lists: lines starting with * or -
 syn match dokuwikiList "^\(  \|\t\)\s*[*-]" contains=@dokuwikiTextItems

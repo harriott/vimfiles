@@ -36,6 +36,7 @@
 ../packs-cp/opt/vim-base64/.git
 ../packs-cp/opt/vim-bbcode/.git
 ../packs-cp/opt/vim-buffing-wheel/.git
+../packs-cp/opt/vim-bufkill/.git
 ../packs-cp/opt/vim-colors-solarized/.git
 ../packs-cp/opt/vim-colors-tomorrow/.git
 ../packs-cp/opt/vim-devicons/.git
