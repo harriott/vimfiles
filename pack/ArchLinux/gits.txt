@@ -17,7 +17,6 @@
 ../packs-cp/opt/incsearch.vim/.git
 ../packs-cp/opt/limelight.vim/.git
 ../packs-cp/opt/listtoggle/.git
-../packs-cp/opt/MatchTagAlways/.git
 ../packs-cp/opt/mediawiki.vim/.git
 ../packs-cp/opt/mru/.git
 ../packs-cp/opt/nerdcommenter/.git
@@ -72,10 +71,12 @@
 ../packs-cp/opt/vim-ShowTrailingWhitespace/.git
 ../packs-cp/opt/vim-startify/.git
 ../packs-cp/opt/vim-surround/.git
+../packs-cp/opt/vim-textmanip/.git
 ../packs-cp/opt/vim-visual-star-search/.git
 ../packs-unix/opt/Colorizer/.git
 ../packs-unix/opt/fzf.vim/.git
 ../packs-unix/opt/jellybeans.vim/.git
+../packs-unix/opt/MatchTagAlways/.git
 ../packs-unix/opt/vim-better-whitespace/.git
 ../packs-unix/opt/vim-hexokinase/.git
 ../packs-unix/opt/vim-picker/.git

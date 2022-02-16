@@ -44,7 +44,6 @@ gd opt; ls
   # $gc https://github.com/scrooloose/nerdtree
   # $gc https://github.com/Xuyuanp/nerdtree-git-plugin
   # $gc https://github.com/tyru/open-browser.vim
-  $gc https://github.com/junegunn/vim-peekaboo
   # $gc https://github.com/vim-scripts/python_match.vim
   # $gc https://github.com/unblevable/quick-scope
   # $gc https://github.com/tmhedberg/SimpylFold
@@ -85,12 +84,14 @@ gd opt; ls
   # $gc https://github.com/chunkhang/vim-mbsync
   # $gc https://github.com/dhruvasagar/vim-open-url
   # $gc https://github.com/vim-pandoc/vim-pandoc-syntax
+  # $gc https://github.com/junegunn/vim-peekaboo
   # $gc https://github.com/PProvost/vim-ps1
   # $gc https://github.com/tpope/vim-repeat
   # $gc https://github.com/tpope/vim-rhubarb
   # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # $gc https://github.com/mhinz/vim-startify
   # $gc https://github.com/tpope/vim-surround
+  $gc https://github.com/t9md/vim-textmanip
   # $gc https://github.com/bronson/vim-visual-star-search
 
 #==> unix

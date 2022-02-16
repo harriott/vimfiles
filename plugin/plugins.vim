@@ -8,7 +8,10 @@
 ""> ALE
 " :Bufferize ALEInfo  " shows settings for the filetype
 " :h ale-languagetool-options
-" :let ale_enabled
+
+" Enabled?
+"  :let ale_enabled
+"  airline shows an orange category at right end when ALE is enabled
 
 let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
 let g:ale_sign_column_always = 1
@@ -18,7 +21,17 @@ packadd ale
 noremap <silent> <C-j> <Plug>(ale_next_wrap)
 noremap <silent> <C-k> <Plug>(ale_previous_wrap)
 
-noremap <leader>aa :ALEToggleBuffer<CR>
+"">> toggle ALE for buffer
+" noremap <leader>aa :ALEToggleBuffer<CR>  " doesn't report status
+noremap <leader>aa :call ALEToggleBufferShow()<cr>
+function! ALEToggleBufferShow()
+  if b:ale_enabled
+    ALEDisableBuffer
+  else
+    ALEEnableBuffer
+  endif
+let b:ale_enabled
+endfunction
 
 ""> bufexplorer
 packadd bufexplorer
@@ -243,7 +256,9 @@ else
 endif
 
 ""> MTA
-packadd MatchTagAlways
+if has('unix')
+  packadd MatchTagAlways
+endif  " because requires python
 
 ""> nerdfont.vim
 packadd nerdfont.vim
@@ -550,6 +565,13 @@ packadd vim-startify
 
 ""> vim-surround
 packadd vim-surround
+
+""> vim-textmanip
+packadd vim-textmanip
+xmap <c-down> <Plug>(textmanip-move-down)
+xmap <c-up> <Plug>(textmanip-move-up)
+xmap <c-left> <Plug>(textmanip-move-left)
+xmap <c-right> <Plug>(textmanip-move-right)
 
 " ""> vim-visual-star-search
 " packadd vim-visual-star-search

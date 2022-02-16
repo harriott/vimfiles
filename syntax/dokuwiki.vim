@@ -119,7 +119,7 @@ syn match dokuwikiEntities "<-\ze\([^>]\|$\)" conceal cchar=←
 " syn match dokuwikiEntities "\( \|^\|\d\)\zsx\ze\d" conceal cchar=× " JH
 " syn match dokuwikiEntities "\C\d\zsx\ze\($\|\s\|[0-9A-Z]\)" conceal cchar=× " JH
 
-syn match dokuwikiEntities "<<" conceal cchar=«
+" syn match dokuwikiEntities "<<" conceal cchar=«  " JH
 " syn match dokuwikiEntities ">>" conceal cchar=»  " JH
 " syn match dokuwikiEntities "--\ze\([^-]\|$\)" conceal cchar=– " JH
 syn match dokuwikiEntities "---\ze\([^-]\|$\)" conceal cchar=—

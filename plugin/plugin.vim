@@ -449,6 +449,7 @@ function! ConvertSearchForVisualSelection()
 endfunction
 nnoremap <leader>vs :call ConvertSearchForVisualSelection()<CR>
 vnoremap <leader>vs <Esc>:call ConvertSearchForVisualSelection()<CR>
+" maybe should leverage  vis.vim
 
 ""> searching - select to end of line in unix
 if has('unix')

@@ -1,8 +1,11 @@
 " Language:	email
 " Maintainer: Joseph Harriott
-" Last Change: Sat 20 Jun 2020
+" Last Change: Wed 16 Feb 2022
 
 " for some reason  :set ft mail  is required
+
+" turn off ALE - use \aa to toggle
+let b:ale_enabled = 0
 
 " folding by message date
 " -----------------------

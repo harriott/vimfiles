@@ -10,7 +10,7 @@
 setlocal expandtab
 
 " ALE
-let b:ale_enabled = 0 " and toggle it as defined in $vimfiles/plugin/plugins.vim
+let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/plugin/plugins.vim
 
 " demote a selected part
 vnoremap <buffer><leader>> :s/^#/##/<CR>
