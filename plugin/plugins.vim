@@ -223,11 +223,12 @@ else
 endif
 " - which is overriden by this:
 " let MRU_Use_Current_Window = 1
+nnoremap <leader>m :MRU
+" - allowing for a qualifying regex
 packadd mru
 
-" in GNU/Linux
-"   :FZFMru
-"   :MRU \.md
+" in GNU/Linux  :FZFMru
+" :MRU \.md
 " :MruRefresh
 " in the normal MRU window
 "  Enter = open over current window
@@ -235,30 +236,10 @@ packadd mru
 "  o = open split below
 "  u = update
 
-if has('unix')
-  nnoremap <leader>m :MRU
-  " - allowing for a qualifying regex
-else
-  nnoremap <leader>m :MRU<CR>
-  " nnoremap <silent> <leader>mt /\.tex<CR>:MRU<CR>
-  nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
-  nnoremap <leader>mm :call MRU_highlighted('\.md' )<CR>:se hls<CR>
-  nnoremap <leader>ml :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
-  nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
-  nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
-  nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
-  nnoremap <leader>mx :call MRU_highlighted('\.tex')<CR>:se hls<CR>
-  nnoremap <leader>my :call MRU_highlighted('\.py')<CR>:se hls<CR>
-  function! MRU_highlighted(filetype)
-    let @/ = a:filetype
-    MRU
-  endfunction
-endif
-
 ""> MTA
-if has('unix')
+" if has('unix')
   packadd MatchTagAlways
-endif  " because requires python
+" endif  " because requires python
 
 ""> nerdfont.vim
 packadd nerdfont.vim
@@ -541,7 +522,7 @@ packadd vim-peekaboo
 
 ""> vim-picker
 if has('unix')
-  packadd fzf.vim
+  packadd vim-picker
   nmap <unique> <leader>pe <Plug>(PickerEdit)
   nmap <unique> <leader>pb <Plug>(PickerBuffer)
 endif

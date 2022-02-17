@@ -1,6 +1,6 @@
 vim: set et fdl=3 ft=email tw=0:  \aa = ALEToggleBuffer  \lt = LanguageTool
 
-sample showing heading syntax highlighting - see ~/.vim/ftplugin/email.vim
+sample showing heading syntax highlighting - see  $vimfiles/ftplugin/email.vim
 
 ==  level2  ==
 

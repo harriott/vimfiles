@@ -2,12 +2,13 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 01 Mar 2021
 
+" $vimfiles/ftplugin/email.vim
 " The intention here is to have a simple means for writing headings in emails,
 " and with the bonus of highlighting hyperlinks.
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
 " vim: set ft=email:
-" Preferable to also have my  ../syntax/email.vim, then can see  $vimfiles/ftplugin/email.txt
+" preferable to also have my  $vimfiles/syntax/email.vim  then can see  $vimfiles/ftplugin/email.txt
 
 setlocal et tw=0 foldcolumn=1 fde=EF() fdm=expr shiftwidth=2 spell
 
