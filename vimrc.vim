@@ -23,26 +23,40 @@ set winminheight=0  " reduce minimized windows to zero lines shown
 " comma is colon (colon is comma)
 "  https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
 
+"">> 1 last l/r character search
+" semicolon repeats forward, default
+
+"">>> colon repeats backwards
 nnoremap : ,
 xnoremap : ,
 onoremap : ,
 "  these require use of noremap when trying to acces : generically
 
+"">> 2 comma enters command-line mode
 nnoremap , :
 xnoremap , :
 onoremap , :
 "  any other mappings starting with , will slow this down
 
-nnoremap g: g,
-nnoremap g, <NOP>
-
+"">> 3 more tweaks
+" double ampersand repeats last command
 nnoremap @@ @:
 nnoremap @: <NOP>
 
-"  causes a slight lag in starting and ending macros, and in quitting NerdTree navigation
+"">>> the change list
+" g colon  repositons cursor foward
+nnoremap g: g,
+nnoremap g, <NOP>
+
+" g semicolon  repostions cursor backward
+
+"">>> the command-line window
+" 1 q comma  enters
 nnoremap q, q:
 xnoremap q, q:
+"  causes a slight lag in starting and ending macros, and in quitting NerdTree navigation
 
+" 2 q semicolon  no longer required
 nnoremap q: <NOP>
 xnoremap q: <NOP>
 

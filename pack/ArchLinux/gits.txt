@@ -17,6 +17,7 @@
 ../packs-cp/opt/incsearch.vim/.git
 ../packs-cp/opt/limelight.vim/.git
 ../packs-cp/opt/listtoggle/.git
+../packs-cp/opt/MatchTagAlways/.git
 ../packs-cp/opt/mediawiki.vim/.git
 ../packs-cp/opt/mru/.git
 ../packs-cp/opt/nerdcommenter/.git
@@ -32,6 +33,7 @@
 ../packs-cp/opt/tabular/.git
 ../packs-cp/opt/tagbar/.git
 ../packs-cp/opt/targets.vim/.git
+../packs-cp/opt/thesaurus_query.vim/.git
 ../packs-cp/opt/undotree/.git
 ../packs-cp/opt/vim-airline/.git
 ../packs-cp/opt/vim-airline-themes/.git
@@ -76,7 +78,6 @@
 ../packs-unix/opt/Colorizer/.git
 ../packs-unix/opt/fzf.vim/.git
 ../packs-unix/opt/jellybeans.vim/.git
-../packs-unix/opt/MatchTagAlways/.git
 ../packs-unix/opt/vim-better-whitespace/.git
 ../packs-unix/opt/vim-hexokinase/.git
 ../packs-unix/opt/vim-picker/.git

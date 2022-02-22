@@ -1,15 +1,12 @@
+" vim: set fdl=1:
+
 " Language:	email
 " Maintainer: Joseph Harriott
-" Last Change: Sun 12 Apr 2020
+" Last Change: Tue 22 Feb 2022
 
-" The intention here is to have a simple means for writing headings in emails,
-" and with the bonus of highlighting hyperlinks.
+" $vimfiles/syntax/text.vim  (there is no  $VIMRUNTIME/syntax/text.vim)
 
-" This file should be in your vimfiles/syntax folder,
-" and you might want to (autocmd BufRead,BufNewFile) setlocal ft=email.
-
-" This syntax file is intended to work with my  ../ftplugin/email.vim
-"
+""> sectioning marks for emails
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
   finish
@@ -32,5 +29,5 @@ hi def heading3 term=bold cterm=bold gui=bold guifg=Orange
 syn match hyperlink '\(http\|https\|telnet\|gopher\|wais\|ftp\|ed2k\|irc\|ldap\):\/\/[a-zA-Z0-9~!@#%&_+=/.,?:;-]*'
 hi link hyperlink Underlined
 
-let b:current_syntax = "email"
+let b:current_syntax = "text"
 

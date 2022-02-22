@@ -12,8 +12,12 @@
 " Enabled?
 "  :let ale_enabled
 "  airline shows an orange category at right end when ALE is enabled
+"  filetypes might have  b:ale_enabled = 0
 
-let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
+" Arch's  languagetool  is found
+let g:ale_echo_msg_format = '%linter% %code% %s'
+" let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
+let g:ale_linters_explicit = 1  " turns off all except explicity defined linters
 let g:ale_sign_column_always = 1
 packadd ale
 
@@ -223,8 +227,27 @@ else
 endif
 " - which is overriden by this:
 " let MRU_Use_Current_Window = 1
-nnoremap <leader>m :MRU
-" - allowing for a qualifying regex
+
+if has('unix')
+  nnoremap <leader>m :MRU
+  " - allowing for a qualifying regex
+else
+  nnoremap <leader>m :MRU<CR>
+  nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
+  nnoremap <leader>mm :call MRU_highlighted('\.md' )<CR>:se hls<CR>
+  nnoremap <leader>ml :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
+  nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
+  nnoremap <leader>ms :call MRU_highlighted('\.sh')<CR>:se hls<CR>
+  nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
+  nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
+  nnoremap <leader>mx :call MRU_highlighted('\.tex')<CR>:se hls<CR>
+  nnoremap <leader>my :call MRU_highlighted('\.py')<CR>:se hls<CR>
+  function! MRU_highlighted(filetype)
+    let @/ = a:filetype
+    MRU
+  endfunction
+  " - because a qualified MRU fails to time-sort
+endif
 packadd mru
 
 " in GNU/Linux  :FZFMru
@@ -307,6 +330,21 @@ packadd tagbar
 
 ""> targets.vim
 packadd targets.vim
+
+""> thesaurus_query.vim
+let g:tq_map_keys=0
+" let g:tq_enabled_backends=["openoffice_en","mthesaur_txt","cnrtl_fr","synonymo_fr"]
+let g:tq_enabled_backends=["openoffice_en","mthesaur_txt"]
+if has('win32')
+  let g:tq_mthesaur_file="~/vimfiles/thesaurus/mthesaur.txt"
+  " These don't work:
+  " let g:tq_openoffice_en_file="c:\Program Files\LibreOffice\share\extensions\dict-en\th_en_US_v2"
+  " let g:tq_openoffice_en_file="~\vimfiles\thesaurus\MyThes-1.0\th_en_US_new"
+endif
+let g:tq_language=['en', 'fr']
+autocmd BufRead,BufNewFile */France/Scratch/* let b:tq_language=['fr']
+nnoremap <leader>th :ThesaurusQueryReplaceCurrentWord<CR>
+packadd thesaurus_query.vim
 
 ""> undotree
 packadd undotree

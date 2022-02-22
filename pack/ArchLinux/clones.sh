@@ -91,7 +91,8 @@ gd opt; ls
   # $gc https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # $gc https://github.com/mhinz/vim-startify
   # $gc https://github.com/tpope/vim-surround
-  $gc https://github.com/t9md/vim-textmanip
+  # $gc https://github.com/t9md/vim-textmanip
+  $gc https://github.com/ron89/thesaurus_query.vim
   # $gc https://github.com/bronson/vim-visual-star-search
 
 #==> unix
