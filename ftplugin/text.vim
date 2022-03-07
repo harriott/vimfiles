@@ -2,15 +2,15 @@
 
 " Language:	text
 " Maintainer: Joseph Harriott
-" Last Change: Tue 22 Feb 2022
+" Last Change: Wed 23 Feb 2022
 " $vimfiles/ftplugin/text.vim  - supplementary to  $VIMRUNTIME/ftplugin/text.vim
 
 setlocal expandtab
 " textwidth=0  is defined in  $vimfiles/vimrc_example.vim
 
 " ALE
-let b:ale_enabled = 0  " turn off
-let b:ale_linters = ['languagetool']
+let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/plugin/plugins.vim
+let b:ale_linters = ['cspell', 'languagetool']
 
 ""> sectioning marks for emails
 setlocal expandtab foldcolumn=1 foldexpr=EF() foldmethod=expr shiftwidth=2 spell

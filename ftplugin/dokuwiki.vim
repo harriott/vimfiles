@@ -14,7 +14,8 @@
 " While developing this plugin, I used
 " :source $HOME/vimfiles/ftplugin/dokuwiki.vim
 
-setlocal tw=0 fde=DWF() fdl=0
+set nospell
+setlocal textwidth=0 foldexpr=DWF() fdl=0
 setlocal foldmethod=expr
 setlocal fdc=2 " slightly better distinction from line numbers
 

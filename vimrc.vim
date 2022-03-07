@@ -51,12 +51,18 @@ nnoremap g, <NOP>
 " g semicolon  repostions cursor backward
 
 "">>> the command-line window
-" 1 q comma  enters
+augroup vimHints
+  autocmd!
+  autocmd CmdwinEnter * echo 'C-c C-c  to quit'
+augroup END
+set cmdwinheight=30
+
+"">>>> 1 remap to comma
 nnoremap q, q:
 xnoremap q, q:
-"  causes a slight lag in starting and ending macros, and in quitting NerdTree navigation
+ " causes a slight lag in starting and ending macros, and in quitting NerdTree navigation
 
-" 2 q semicolon  no longer required
+"">>>> 2 semicolon no longer required
 nnoremap q: <NOP>
 xnoremap q: <NOP>
 
@@ -74,7 +80,7 @@ set modelines=4
 
 set shortmess-=S " display count of matches
 
-nnoremap zr :exe ':spellra  '.expand('<cWORD>')<CR>
+nnoremap zr :exe ':spellrare  '.expand('<cWORD>')<CR>
 
 " close window, including quickfix-window and NerdTree navigation
 nnoremap <leader>x <C-W>c

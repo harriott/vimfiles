@@ -7,7 +7,7 @@ set linespace=2
 
 ""> LanguageTool
 let g:langtool_jar = '/usr/share/java/LanguageTool/languagetool-commandline.jar'
-" let g:languagetool_cmd = '/usr/bin/languagetool'
+let g:languagetool_jar = '/usr/share/java/LanguageTool/languagetool-commandline.jar'
 
 ""> open equivalent LaTeX compiled PDF
 function! CompiledPDF()

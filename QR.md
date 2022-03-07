@@ -229,6 +229,7 @@ Entering special characters
     ~            " toggle case of selection
     ~            " TwiddleCase of a selection
     :s/\<./\u&/g " capitalise first letters
+    u            " lowercase a visual block
 
 ## layout
     :%le  " remove all indents
@@ -321,6 +322,8 @@ Entering special characters
     :DiffOrig              " brings the Recover version up left
     :verb se tw            " shows where textwidth was set
 
+command-line window: C-c C-c  closes
+
 ## buffer listing your recent messages
     :Bufferize messages
 	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
@@ -367,7 +370,7 @@ Entering special characters
 ## spell
     (count)]s => move to next misspelled word after the cursor
     (count)[s => like  ]s  but search backwards
-    :spellrare <rareword>
+    :spellra <rareword>
     z= => suggest corrections
     zg => add good word
 

@@ -44,7 +44,6 @@ gd opt; ls
   # $gc https://github.com/scrooloose/nerdtree
   # $gc https://github.com/Xuyuanp/nerdtree-git-plugin
   # $gc https://github.com/tyru/open-browser.vim
-  # $gc https://github.com/vim-scripts/python_match.vim
   # $gc https://github.com/unblevable/quick-scope
   # $gc https://github.com/tmhedberg/SimpylFold
   # $gc https://github.com/ervandew/supertab

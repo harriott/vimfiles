@@ -1,9 +1,8 @@
 
-" -------------------------------------------------
-" a wrapper vimrc for use on a MS Windows 10 system
-" Joseph Harriott - Mon 28 Jun 2021
-" this should be sourced by $HOME\_vimrc
-" -------------------------------------------------
+" ---------------------------------
+" Joseph Harriott - Mon 07 Mar 2022
+" sourced by  $machine\troin\_vimrc
+" ---------------------------------
 
 ""> 0 quit if called from Git's vim
 " (adapted for Git-2.8.1-64-bit.exe on Windows 10)
@@ -85,8 +84,17 @@ let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'
 let $tex = $HOME.'/AppData/Roaming/MiKTeX/tex'
 
 "">> vim-langtool
-" let g:languagetool_jar=$HOME.'\tools\LanguageTool-5.4\languagetool-commandline.jar'
-let g:langtool_jar=$HOME.'\tools\LanguageTool-5.4\languagetool-commandline.jar'
+" let g:langtool_jar=$HOME.'\tools\LanguageTool\languagetool-commandline.jar'
+" let g:langtool_jar=$HOME.'/Dropbox/JH/copied/IT-handy/LanguageTool/languagetool-commandline.jar'
+" let g:langtool_jar = $HOME.'\Dropbox\JH\copied\IT-handy\LanguageTool\languagetool-commandline.jar'
+" let g:langtool_jar = 'C:\Users\troin/Dropbox/JH/copied/IT-handy/LanguageTool/languagetool-commandline.jar'
+" let g:langtool_jar = 'C:\Users\troin\Dropbox\JH\copied\IT-handy\LanguageTool\languagetool-commandline.jar'
+let g:langtool_jar = 'C:\LanguageTool\languagetool-commandline.jar'
+" let g:langtool_jar = 'C:/Users/troin/Dropbox/JH/copied/IT-handy/LanguageTool/languagetool-commandline.jar'
+" put =g:langtool_jar
+
+"">> vim-LanguageTool
+let g:languagetool_jar='C:\LanguageTool\languagetool-commandline.jar'
 
 "">> Windows Explorer on current file
 nnoremap <F11> :!start explorer /select,%:p<CR>
