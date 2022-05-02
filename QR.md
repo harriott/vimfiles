@@ -84,7 +84,6 @@ Joseph's (g)Vim Quick Reference
 # movements
     $         " end of line
     '.        " jump to position where last change occurred in current buffer
-    'k        " move to mark k
     :(5,7)m0  " move line(s 5-7) to start
     :#        " go to line #
     :m-2      " That is, the current line is moved up one line
@@ -105,7 +104,6 @@ Joseph's (g)Vim Quick Reference
     ge        " go backwards to end of word
     gj/k      " go down/up a visual line
     gqq
-    mJ        " put a file-specific mark in current file (can use a-z)
     zz        " centre window on cursor
     { or }    " move cursor to start or end of paragraph
     ( or )    " move cursor to start or end of sentence
@@ -116,7 +114,12 @@ Joseph's (g)Vim Quick Reference
     \zz       " (mapped in my vimrc to) toggle the value of 'scrolloff'
     ^         " jumps to first non-blank character
     ``        " jump back (to position in current buffer where jumped from)
-    `a        " jump to position (line and column) of mark a
+
+## marks
+    `z        " move to mark z
+    'z        " move to start of line of mark z
+    mz        " create mark z
+    mJ        " put a file-specific mark in current file (can use A-Z0-9)
 
 # search
     #                     " over a word highlights all exact instances, and jumps to last
@@ -170,6 +173,7 @@ Joseph's (g)Vim Quick Reference
 
 # shell
     :!<shellcmd>          " runs the external shell command
+    :Bufferize python3 print(sys.path)
     :e.                   " netrw on current directory
     :f                    " prints current filename
     :h netrw-quickmap
@@ -218,8 +222,6 @@ Joseph's (g)Vim Quick Reference
     :so /usr/share/vim/vim82/tools/emoji_list.vim
     \yy                       " CalendarH
 
-Entering special characters
-
 ## base64
 	<leader>atob " base64 to a string
 	<leader>btoa " a string to base64
@@ -230,6 +232,10 @@ Entering special characters
     ~            " TwiddleCase of a selection
     :s/\<./\u&/g " capitalise first letters
     u            " lowercase a visual block
+
+## entering specials
+    Entering special characters
+    ^Vu03b2  " gets β
 
 ## layout
     :%le  " remove all indents
@@ -370,6 +376,8 @@ command-line window: C-c C-c  closes
 ## spell
     (count)]s => move to next misspelled word after the cursor
     (count)[s => like  ]s  but search backwards
+    :h nospell
+    :se spell?
     :spellra <rareword>
     z= => suggest corrections
     zg => add good word

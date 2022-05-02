@@ -25,7 +25,7 @@
 ../packs-cp/opt/nerdtree/.git
 ../packs-cp/opt/nerdtree-git-plugin/.git
 ../packs-cp/opt/open-browser.vim/.git
-../packs-cp/opt/python_match.vim/.git
+../packs-cp/opt/org.vim/.git
 ../packs-cp/opt/quick-scope/.git
 ../packs-cp/opt/SimpylFold/.git
 ../packs-cp/opt/supertab/.git

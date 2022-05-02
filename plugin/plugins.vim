@@ -85,6 +85,9 @@ packadd mediawiki.vim
 packadd MatchTagAlways
 " requires a Python 3 that corresponds to vim's compilation
 
+"">>> Org.vim
+packadd org.vim
+
 "">>> SimpylFold
 " packadd SimpylFold
 " Python folding
@@ -208,8 +211,8 @@ endfunction
 
 "">> thesaurus_query.vim
 let g:tq_map_keys=0
-" let g:tq_enabled_backends=["openoffice_en","mthesaur_txt","cnrtl_fr","synonymo_fr"]
-let g:tq_enabled_backends=["openoffice_en","mthesaur_txt"]
+let g:tq_enabled_backends=["openoffice_en","mthesaur_txt","cnrtl_fr","synonymo_fr"]
+" let g:tq_enabled_backends=["openoffice_en","mthesaur_txt"]
 if has('win32')
   let g:tq_mthesaur_file="~/vimfiles/thesaurus/mthesaur.txt"
   let g:tq_openoffice_en_file="~/vimfiles/thesaurus/MyThes-1.0/th_en_US_new"
@@ -399,13 +402,14 @@ if has('unix')
 else
   nnoremap <leader>m :MRU<CR>
   nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
+  nnoremap <leader>me :call MRU_highlighted('\.tex')<CR>:se hls<CR>
   nnoremap <leader>mm :call MRU_highlighted('\.md' )<CR>:se hls<CR>
   nnoremap <leader>ml :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
   nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
   nnoremap <leader>ms :call MRU_highlighted('\.sh')<CR>:se hls<CR>
   nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
   nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
-  nnoremap <leader>mx :call MRU_highlighted('\.tex')<CR>:se hls<CR>
+  nnoremap <leader>mx :call MRU_highlighted('\.xml')<CR>:se hls<CR>
   nnoremap <leader>my :call MRU_highlighted('\.py')<CR>:se hls<CR>
   function! MRU_highlighted(filetype)
     let @/ = a:filetype
@@ -426,6 +430,7 @@ packadd mru
 
 "">> NERDTree
 "h NERDTree
+let NERDTreeWinSize = 40
 let NERDTreeHijackNetrw = 0  " liberate  e.
 noremap <C-n> :NERDTreeToggle<CR>
 

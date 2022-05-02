@@ -1,3 +1,4 @@
+" vim: se fdl=1:
 
 " Language:	bbcode
 " Maintainer: Joseph Harriott
@@ -11,8 +12,8 @@ execute 'source 'g:vimfiles.'/ftplugin/HashEqualsFolding.vim'
 
 ""> bold tags
 " wrap the inner word under cursor
-nnoremap <buffer> <leader>] viwc[b][/b]<Esc>hhhP
+nnoremap <buffer> <leader>] viwc[color=navy][/color]<Esc>bbp
 
 " wrap a selection
-vnoremap <buffer> <leader>] c[b][/b]<Esc>hhhP
+vnoremap <buffer> <leader>] c[color=navy][/color]<Esc>bbp
 

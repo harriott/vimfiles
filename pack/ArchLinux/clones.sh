@@ -44,6 +44,7 @@ gd opt; ls
   # $gc https://github.com/scrooloose/nerdtree
   # $gc https://github.com/Xuyuanp/nerdtree-git-plugin
   # $gc https://github.com/tyru/open-browser.vim
+  # $gc https://github.com/axvr/org.vim
   # $gc https://github.com/unblevable/quick-scope
   # $gc https://github.com/tmhedberg/SimpylFold
   # $gc https://github.com/ervandew/supertab
@@ -52,7 +53,7 @@ gd opt; ls
   # [[ -d tagbar ]] && sudo rm -r tagbar; $gc https://github.com/preservim/tagbar
   # $gc https://github.com/wellle/targets.vim
   # $gc https://github.com/mbbill/undotree
-  # $gc https://github.com/bling/vim-airline
+  $gc https://github.com/bling/vim-airline
   # $gc https://github.com/vim-airline/vim-airline-themes
   # $gc https://github.com/haya14busa/vim-asterisk
   # $gc https://github.com/christianrondeau/vim-base64
@@ -91,7 +92,7 @@ gd opt; ls
   # $gc https://github.com/mhinz/vim-startify
   # $gc https://github.com/tpope/vim-surround
   # $gc https://github.com/t9md/vim-textmanip
-  $gc https://github.com/ron89/thesaurus_query.vim
+  # $gc https://github.com/ron89/thesaurus_query.vim
   # $gc https://github.com/bronson/vim-visual-star-search
 
 #==> unix

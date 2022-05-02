@@ -30,9 +30,11 @@ iab <e <code perl>
 iab <f <file>
 iab <g <code go>
 iab <h <code html>
+iab <k <code haskell>
 iab <l <code latex>
 iab <p <code powershell>
 iab <o <code python>
+iab <u <code lua>
 iab <v <code vim>
 iab <y <code yaml>
 
@@ -90,6 +92,9 @@ vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 " (I'm using two h's because  gitgutter.vim  binds some \hx's)
 
 ""> monospacing
+" convert monospaced to unformatted
+nnoremap <leader><leader>5 mp?''<cr><bar>:s/''/%% /<cr>:s/''/ %%/<cr>
+
 " wrap the inner word under cursor with ''
 nnoremap <buffer> <leader>' viwc''''<Esc>hP
 

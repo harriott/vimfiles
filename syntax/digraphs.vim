@@ -14,5 +14,7 @@ if exists('b:current_syntax') | finish | endif
 syn match DigChar '`` \S\S'  " dimming out my separator characters and the digraph keystrokes
 hi def link DigChar LineNr
 
+set nospell
+
 let b:current_syntax = "digraphs"
 
