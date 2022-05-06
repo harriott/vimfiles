@@ -1,18 +1,22 @@
 
 " Language:	Lua
 " Maintainer: Joseph Harriott
-" Last Change: Wed 27 Apr 2022
+" Last Change: Fri 06 May 2022
 
-" folding
-" -------
+""> foldexpr
 function! LuaF()
-	let j = matchstr(getline(v:lnum), '^-- {{{ ') "defined j, even in no match
-	if ! empty(j)
-      return ">1"
-    else
-      return "="
-    endif
+" adapted from $vimfiles/ftplugin/HashEqualsFolding.vim
+  let l:foldMark = matchstr(getline(v:lnum), '^-- -\+') " defined l:foldMark, even in no match
+  " if there's a heading set an equivalent fold start
+  if empty(l:foldMark)
+    return "="
+  else
+    let l:foldCount = matchstr(l:foldMark, '-- -\+')
+    let l:headerLevel = len(l:foldCount) - 3
+    " return ">".len(l:foldCount)
+    return ">".l:headerLevel
+  endif
 endfunction
 
-setlocal fde=LuaF() fdc=1 fdm=expr
+setlocal foldcolumn=1 foldexpr=LuaF() foldmethod=expr
 

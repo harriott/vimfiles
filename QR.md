@@ -214,6 +214,8 @@ Joseph's (g)Vim Quick Reference
     ctrl-q ctrl-m             " inserts ^M (carriage return)
     g&                        " repeat last command over the whole document
     g Ctrl-g                  " prints the cursor position
+    q                         " end recording macro
+    qj                        " begin recording macro in j
     :exe                      " :normal i" . strftime("%c")  " put date-time at cursor
     :g/^/m 0                  " reverse the entire buffer
     :h g_CTRL-G               " position and word info, works on a range too
