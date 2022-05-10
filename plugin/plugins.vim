@@ -1,5 +1,5 @@
 
-" Joseph Harriott - Wed 23 Feb 2022
+" Joseph Harriott - Tue 10 May 2022
 
 " $vimfiles/plugin/plugins.vim
 
@@ -444,6 +444,12 @@ inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
 packadd nerdtree-git-plugin
 
 "">> open-browser.vim
+function! NotifyCallToFirefox()
+    !notify-send "Firefox!"
+    " !notify-send -i '/usr/share/icons/hicolor/16x16/apps/firefox.png' "Firefox!"
+    " !notify-send -i /usr/share/icons/hicolor/16x16/apps/firefox.png "Firefox!"
+endfunction
+
 " If it looks like URI, Open URI under cursor. Otherwise, Search word under cursor.
 nmap <F6> <Plug>(openbrowser-smart-search)
 " If it looks like URI, Open selected URI. Otherwise, Search selected word.

@@ -81,6 +81,59 @@ Joseph's (g)Vim Quick Reference
     C-r%     " insert relative path of current file
     C-qu201c " unicode codepoint for “
 
+# layout
+    :%le           " remove all indents
+    :set expandtab " allows  :retab
+    \\c            " toggle cursor column
+    \\l            " toggle cursor line
+    \ll            " toggle listchars
+    gg=G           " indent a file
+
+## Colorizer
+	:ColorHighlight  " impressive colourizing, but then can't be truly turned off
+	:packadd Colorizer
+
+## colorizer
+	<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
+	:packadd colorizer  " load the plugin from an opt directory. Only interprets codes.
+
+## colour test
+	pack/packs-unix/opt/vim-hexokinase/test_colours.txt
+
+### cterm-colors
+    NR-16   NR-8    COLOR NAME
+    0       0       Black
+    1       4       DarkBlue
+    2       2       DarkGreen
+    3       6       DarkCyan
+    4       1       DarkRed
+    5       5       DarkMagenta
+    6       3       Brown, DarkYellow
+    7       7       LightGray, LightGrey, Gray, Grey
+    8       0*      DarkGray, DarkGrey
+    9       4*      Blue, LightBlue
+    10      2*      Green, LightGreen
+    11      6*      Cyan, LightCyan
+    12      1*      Red, LightRed
+    13      5*      Magenta, LightMagenta
+    14      3*      Yellow, LightYellow
+    15      7*      White
+
+### gui-colors
+	Red         LightRed        DarkRed
+	Green       LightGreen      DarkGreen       SeaGreen
+	Blue        LightBlue       DarkBlue        SlateBlue
+	Cyan        LightCyan       DarkCyan
+	Magenta     LightMagenta    DarkMagenta
+	Yellow      LightYellow     Brown           DarkYellow
+	Gray        LightGray       DarkGray
+	Black       White
+	Orange      Purple          Violet
+
+## Hexokinase
+	:HexokinaseTurnOn
+	:packadd vim-hexokinase
+
 # movements
     $         " end of line
     '.        " jump to position where last change occurred in current buffer
@@ -238,58 +291,6 @@ Joseph's (g)Vim Quick Reference
 ## entering specials
     Entering special characters
     ^Vu03b2  " gets β
-
-## layout
-    :%le  " remove all indents
-    \\c   " toggle cursor column
-    \\l   " toggle cursor line
-    \ll   " toggle listchars
-    gg=G  " indent a file
-
-### Colorizer
-	:ColorHighlight  " impressive colourizing, but then can't be truly turned off
-	:packadd Colorizer
-
-### colorizer
-	<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
-	:packadd colorizer  " load the plugin from an opt directory. Only interprets codes.
-
-### colour test
-	pack/packs-unix/opt/vim-hexokinase/test_colours.txt
-
-#### cterm-colors
-    NR-16   NR-8    COLOR NAME
-    0       0       Black
-    1       4       DarkBlue
-    2       2       DarkGreen
-    3       6       DarkCyan
-    4       1       DarkRed
-    5       5       DarkMagenta
-    6       3       Brown, DarkYellow
-    7       7       LightGray, LightGrey, Gray, Grey
-    8       0*      DarkGray, DarkGrey
-    9       4*      Blue, LightBlue
-    10      2*      Green, LightGreen
-    11      6*      Cyan, LightCyan
-    12      1*      Red, LightRed
-    13      5*      Magenta, LightMagenta
-    14      3*      Yellow, LightYellow
-    15      7*      White
-
-#### gui-colors
-	Red         LightRed        DarkRed
-	Green       LightGreen      DarkGreen       SeaGreen
-	Blue        LightBlue       DarkBlue        SlateBlue
-	Cyan        LightCyan       DarkCyan
-	Magenta     LightMagenta    DarkMagenta
-	Yellow      LightYellow     Brown           DarkYellow
-	Gray        LightGray       DarkGray
-	Black       White
-	Orange      Purple          Violet
-
-### Hexokinase
-	:HexokinaseTurnOn
-	:packadd vim-hexokinase
 
 ## number lists
     :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items

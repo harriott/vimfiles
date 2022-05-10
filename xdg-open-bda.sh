@@ -9,3 +9,4 @@
 # and that symbolic link is referenced by netrw from my $HOME/.vim/debian.vim
 
 xdg-open "$@" &
+
