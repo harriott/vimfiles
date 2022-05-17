@@ -444,16 +444,11 @@ inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
 packadd nerdtree-git-plugin
 
 "">> open-browser.vim
-function! NotifyCallToFirefox()
-    !notify-send "Firefox!"
-    " !notify-send -i '/usr/share/icons/hicolor/16x16/apps/firefox.png' "Firefox!"
-    " !notify-send -i /usr/share/icons/hicolor/16x16/apps/firefox.png "Firefox!"
-endfunction
-
 " If it looks like URI, Open URI under cursor. Otherwise, Search word under cursor.
-nmap <F6> <Plug>(openbrowser-smart-search)
+nnoremap <F6> :execute "normal \<Plug>(openbrowser-smart-search)"<bar>silent !nsBt<CR>
 " If it looks like URI, Open selected URI. Otherwise, Search selected word.
 vmap <F6> <Plug>(openbrowser-smart-search)
+"  (can't adapt this one for  nsBt)
 
 packadd open-browser.vim
 
