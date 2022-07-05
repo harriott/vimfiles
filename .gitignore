@@ -1,5 +1,6 @@
 
 # These are the files that I want to ignore:
+*.pdf
 .directory
 .netrwhist
 pack/packs-cp

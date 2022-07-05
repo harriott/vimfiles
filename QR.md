@@ -1,7 +1,7 @@
 
 Joseph's (g)Vim Quick Reference
 
-( see also https://vimhelp.org/quickref.txt.html )
+( see also quickref )  m4p QR.md 1
 
     :helpt ALL               " generate all tags
     :helptags $HOME\vimfiles " se tags
@@ -86,7 +86,7 @@ Joseph's (g)Vim Quick Reference
     :set expandtab " allows  :retab
     \\c            " toggle cursor column
     \\l            " toggle cursor line
-    \ll            " toggle listchars
+    \\ll           " toggle listchars
     gg=G           " indent a file
 
 ## Colorizer
@@ -164,7 +164,7 @@ Joseph's (g)Vim Quick Reference
     C-d       " down half a screen
     C-f       " forward (=down) a page
     C-u       " up half a screen
-    \zz       " (mapped in my vimrc to) toggle the value of 'scrolloff'
+    \zz       " toggle centering current line
     ^         " jumps to first non-blank character
     ``        " jump back (to position in current buffer where jumped from)
 
@@ -294,8 +294,8 @@ Joseph's (g)Vim Quick Reference
 
 ## number lists
     :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
-    :h v_g_CTRL-A                                 " create a series of numbers,
-    :put =range(1964,2020)
+    :h v_g_CTRL-A
+    :put =range(1964,2020) " create a series of numbers
 
 ### working down buffer
     :let i=1 | g#/# s##\='/'.i# | let i+=1  " prefix-number all files in nnn's neovim window

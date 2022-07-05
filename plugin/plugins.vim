@@ -157,7 +157,7 @@ if has('unix')
   elseif hostname() == 'LIP120s81A4'
     nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
   elseif hostname() == 'sbMb'
-    nnoremap <leader>j :Files /mnt/SD480GSSDPlus/Dropbox/JH<CR>
+    nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
   endif
 
   packadd fzf.vim
@@ -403,6 +403,7 @@ else
   nnoremap <leader>m :MRU<CR>
   nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
   nnoremap <leader>me :call MRU_highlighted('\.tex')<CR>:se hls<CR>
+  nnoremap <leader>mg :call MRU_highlighted('\.log')<CR>:se hls<CR>
   nnoremap <leader>mm :call MRU_highlighted('\.md' )<CR>:se hls<CR>
   nnoremap <leader>ml :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
   nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
@@ -492,7 +493,7 @@ endif
 "">> aligning
 
 "">>> tabular
-" packadd tabular
+" packadd tabular  " :Tabularize ...
 
 "">>> vim-easy-align
 packadd vim-easy-align

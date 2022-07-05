@@ -1,7 +1,7 @@
 " My adjustments
 " Language:	dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Sun 28 Mar 2021
+" Last Change: Thu 30 Jun 2022
 " This file should be in your vimfiles\ftplugin folder,
 " and you might want to (autocmd BufRead,BufNewFile) setlocal ft=dokuwiki.
 
@@ -13,6 +13,9 @@
 
 " While developing this plugin, I used
 " :source $HOME/vimfiles/ftplugin/dokuwiki.vim
+
+" convert a line to external link
+nnoremap <buffer> <leader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
 
 set nospell
 setlocal textwidth=0 foldexpr=DWF() fdl=0

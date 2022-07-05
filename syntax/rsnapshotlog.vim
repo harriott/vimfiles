@@ -2,11 +2,13 @@
 
 " Language:	rsnapshot log
 " Maintainer: Joseph Harriott
-" Last Change: Sun 30 Jan 2022
+" Last Change: Tue 31 May 2022
 
 " $vimfiles/syntax/rsnapshotlog.vim
 "  for  /var/log/rsnapshot  (- defined in  $MACHINE/etc/rsnapshot.conf
 " you need this modeline in the file that you want to affect:  vim: ft=rsnapshotlog:
+
+" see also  $vimfiles/ftplugin/rsnapshotlog.vim
 
 if exists("b:current_syntax")
   finish

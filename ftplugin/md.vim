@@ -2,7 +2,7 @@
 
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Mon 01 Nov 2021
+" Last Change: Tue 05 Jul 2022
 " this is for extra funtionality that I like for my *.md files
 " supplemental to  $vimfiles/ftplugin/markdown.vim
 " requires  $vimfiles/filetype.vim
@@ -14,7 +14,17 @@ nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 let b:tagbar_ignore = 1
 " because it's not particularly useful here, and slows down huge files like  Private.md
 
-""> convert mysms screen scrape to markdown:
+""> convert messenger screen scrape to markdown
+"  (I'm using <leader> here to avoid accidentally running this)
+if has('unix') " should really be asking if Perl is available
+  nnoremap <buffer><leader><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/MessengerMd.pl ".expand('%:p')<CR>
+else
+  nnoremap <buffer><leader><leader><F7> :call MessengerMd()<CR>
+    " to be defined in  $vimfiles/after/ftplugin/md.vim
+endif
+" check with  :map <leader><F7>
+
+""> convert mysms screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available
   nnoremap <buffer><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
