@@ -83,7 +83,8 @@ Joseph's (g)Vim Quick Reference
 
 # layout
     :%le           " remove all indents
-    :set expandtab " allows  :retab
+    :se gfn=*              " pop-up font selection
+    :se expandtab " allows  :retab
     \\c            " toggle cursor column
     \\l            " toggle cursor line
     \\ll           " toggle listchars
@@ -229,6 +230,7 @@ Joseph's (g)Vim Quick Reference
     :Bufferize python3 print(sys.path)
     :e.                   " netrw on current directory
     :f                    " prints current filename
+    :h fugitive
     :h netrw-quickmap
     :Locate <pattern>
     :packadd syntastic    " load the plugin from an opt directory
@@ -326,7 +328,6 @@ Joseph's (g)Vim Quick Reference
     :his s                 " Display search string history
     :Bufferize scriptnames " list of files sourced, in order
     :Bufferize se gfn      " show font
-    :se gfn=*              " pop-up font selection
     :so %                  " source the current file
     :DiffOrig              " brings the Recover version up left
     :verb se tw            " shows where textwidth was set

@@ -316,7 +316,7 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 
 ""> maxmempattern
-set mmp=25000
+set mmp=30000  " for $core/TextNotes/TN/JH-DailyLife/Health/Ingest/Regimes.md
 
 ""> neomutt
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal textwidth=0

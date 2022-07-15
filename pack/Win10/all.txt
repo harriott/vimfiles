@@ -26,6 +26,7 @@ C:\Users\troin\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\pack\packs-cp\opt\nerd
 C:\Users\troin\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\pack\packs-cp\opt\nerdtree
 C:\Users\troin\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\pack\packs-cp\opt\nerdtree-git-plugin
 C:\Users\troin\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\pack\packs-cp\opt\open-browser.vim
+C:\Users\troin\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\pack\packs-cp\opt\org.vim
 C:\Users\troin\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\pack\packs-cp\opt\quick-scope
 C:\Users\troin\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\pack\packs-cp\opt\SimpylFold
 C:\Users\troin\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\pack\packs-cp\opt\supertab

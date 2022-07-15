@@ -76,22 +76,18 @@ endfunction
 let $IT1 = $DROPBOX.'\JH\Technos\IT1'
 let $ITP = $DROPBOX.'\JH\Technos\IT0-Partitionable'  " $ITP\diskUsage.txt
 let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\T430i73520M'
-let $vimfiles = $HOME.'\vimfiles'
+let $vimfiles = $onGH.'\vimfiles'
 
 "">>> TeX locations
 let $MD4PDF = $onGH.'/md4pdf'
 let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'
 let $tex = $HOME.'/AppData/Roaming/MiKTeX/tex'
 
+"">> vim-airline
+let g:webdevicons_enable_airline_statusline = 0  " to be able to see  fileformat
+
 "">> vim-langtool
-" let g:langtool_jar=$HOME.'\tools\LanguageTool\languagetool-commandline.jar'
-" let g:langtool_jar=$HOME.'/Dropbox/JH/copied/IT-handy/LanguageTool/languagetool-commandline.jar'
-" let g:langtool_jar = $HOME.'\Dropbox\JH\copied\IT-handy\LanguageTool\languagetool-commandline.jar'
-" let g:langtool_jar = 'C:\Users\troin/Dropbox/JH/copied/IT-handy/LanguageTool/languagetool-commandline.jar'
-" let g:langtool_jar = 'C:\Users\troin\Dropbox\JH\copied\IT-handy\LanguageTool\languagetool-commandline.jar'
 let g:langtool_jar = 'C:\LanguageTool\languagetool-commandline.jar'
-" let g:langtool_jar = 'C:/Users/troin/Dropbox/JH/copied/IT-handy/LanguageTool/languagetool-commandline.jar'
-" put =g:langtool_jar
 
 "">> vim-LanguageTool
 let g:languagetool_jar='C:\LanguageTool\languagetool-commandline.jar'

@@ -125,6 +125,7 @@ nnoremap <leader>c= :windo set nowfh <CR>
 autocmd BufRead,BufNewFile */pages/wiki/dokuwiki.txt,*/pages/wiki/syntax.txt setlocal ft=dokuwiki fdl=1
 
 autocmd BufRead,BufNewFile */sudoers setlocal ft=sudoers
+autocmd BufRead,BufNewFile *PowerShell/PSReadLine/ConsoleHost_history.txt setlocal ft=PSRLCHhistory
 
 "">> turn off some unused Fn keys in insert mode
 inoremap <F3> <Esc>

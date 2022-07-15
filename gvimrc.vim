@@ -22,6 +22,8 @@ set cmdheight=2  " make command line two lines high
 set mousehide  " hide the mouse when typing text
 
 ""> 1 my additional initial settings
+highlight SpecialKey guifg=#4d4d4c
+" - reduce intrusiveness of  CR  characters
 let c_comment_strings=1  " I like highlighting strings inside C comments
 set cursorline
 set guioptions-=T  "removes toolbar

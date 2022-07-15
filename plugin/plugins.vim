@@ -314,7 +314,7 @@ if has('win32') | packadd vim-ingo-library | packadd vim-ShowTrailingWhitespace 
 " unix only added in terminal
 
 "">> nerdfont.vim
-packadd nerdfont.vim
+" packadd nerdfont.vim
 
 "">> vim-airline
 let g:airline_powerline_fonts = 1
@@ -325,6 +325,14 @@ let g:airline#extensions#fzf#enabled = 1  " adds line-number/total lines
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
 packadd vim-airline-themes
+if has('win32')
+  let g:airline_left_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_symbols.colnr = ' '
+  let g:airline_symbols.linenr = ' '
+  let g:airline_symbols.maxlinenr = ''
+  let g:airline_symbols.branch = ''
+endif
 
 "">> vim-fontsize
 packadd vim-fontsize
