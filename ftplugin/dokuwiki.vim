@@ -39,6 +39,7 @@ iab <p <code powershell>
 iab <o <code python>
 iab <u <code lua>
 iab <v <code vim>
+iab <x <code xml>
 iab <y <code yaml>
 
 ""> add wrap indent tags around quotes

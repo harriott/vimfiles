@@ -370,6 +370,17 @@ endif
 nnoremap <leader>n :nohlsearch<CR>
 vnoremap <leader>n <Esc>:nohlsearch<CR>
 
+""> searching - get lower-case text of last search term in empty buffer
+" for tweaking, eg "Find find in finding."
+function! TweakLS()
+  new
+  normal! "/p
+  s/\\<//  " remove \<
+  s/\\>//  " remove \>
+  normal! gue
+endfunction
+nnoremap <leader>/ :call TweakLS()<CR>
+
 ""> searching - grepping
 " Strip the current selection & store it in the l then s register:
 function! StripStoreCurSel()
@@ -431,16 +442,6 @@ endfunction
 " eg to look again at results of vimgrep
 " noremap <leader>q :copen<CR>
 " now using  ListToggle
-
-""> searching - search again as word
-" convert the last search into a case-free word
-" useful in quickfix-window after F3
-function! SearchCFW()
-  let @/ = '\<'.getreg('/').'\>' " reasssign the current search
-  call histadd('/', @/)
-endfunction
-nnoremap <leader>sw :call SearchCFW()<CR>
-" can also use  g#  g*  on a selection
 
 ""> searching - search within a visual selection
 "  before calling this you need to search for something, then

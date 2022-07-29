@@ -79,7 +79,7 @@ packadd vim-rhubarb
 packadd csv.vim
 
 "">>> mediawiki.vim
-packadd mediawiki.vim
+packadd mediawiki.vim  " $vimfiles/pack/packs-cp/opt/mediawiki.vim/README.md
 
 "">>> MTA
 packadd MatchTagAlways
@@ -366,7 +366,7 @@ packadd ctrlp.vim
 
 "">> Fern
 noremap <C-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim
+packadd fern.vim " $vimfiles/pack/packs-cp/opt/fern.vim/README.md
 " <c-h>  in
 " <c-m>  out
 " +  vim-buffing-wheel out

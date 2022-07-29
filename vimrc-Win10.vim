@@ -76,6 +76,7 @@ endfunction
 let $IT1 = $DROPBOX.'\JH\Technos\IT1'
 let $ITP = $DROPBOX.'\JH\Technos\IT0-Partitionable'  " $ITP\diskUsage.txt
 let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\T430i73520M'
+let $MSWin10 = $onGH.'\MSWin10'
 let $vimfiles = $onGH.'\vimfiles'
 
 "">>> TeX locations

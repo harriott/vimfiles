@@ -180,7 +180,7 @@ Joseph's (g)Vim Quick Reference
     %                     " find opposing bracket in a line
     *                     " highlight all instances of exactly the word under the cursor
     /pat1\|pat2\|pat3
-	g#                    " # without \< \>
+	g# (or g*)            " # (or *) without \< \>
     \B                    " :BLines
     \L                    " :Lines
     \n                    " (my mapping for) clearing yellow searched highlights
@@ -201,9 +201,9 @@ Joseph's (g)Vim Quick Reference
 
 ## following /
 	<ctrl-v>u0000 " (0000 is replaced by the hexadecimal code point value) for combining characters
+    \/            " TweakLS()
 	\C (anywhere) " force case
 	\c (anywhere) " ignore case
-    \sw           " search again as word
 	\M            " nomagic (for what follows), eg returning . & * to themselves
 	\V            " very nomagic (for what follows), eg (also) returning $ to itself
 	\v            " very magic (for what follows), eg making | separate alternatives
@@ -265,19 +265,20 @@ Joseph's (g)Vim Quick Reference
 # tricks
     :%s/\v^.*$/\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
 
-    &                         " repeat last substitute
-    ctrl-q ctrl-m             " inserts ^M (carriage return)
-    g&                        " repeat last command over the whole document
-    g Ctrl-g                  " prints the cursor position
-    q                         " end recording macro
-    qj                        " begin recording macro in j
-    :exe                      " :normal i" . strftime("%c")  " put date-time at cursor
-    :g/^/m 0                  " reverse the entire buffer
-    :h g_CTRL-G               " position and word info, works on a range too
-    :ni<somecharacter><Enter> " inserts <somecharacters> n time
-    :s/./&/gn|noh             " show number of characters in a long line
+    &                            " repeat last substitute
+    ctrl-q ctrl-m                " inserts ^M (carriage return)
+    g&                           " repeat last command over the whole document
+    g Ctrl-g                     " prints the cursor position
+    q                            " end recording macro
+    qj                           " begin recording macro in j
+    :exe                         "
+    :g/^/m 0                     " reverse the entire buffer
+    :h g_CTRL-G                  " position and word info, works on a range too
+    :ni<somecharacter><Enter>    " inserts <somecharacters> n time
+    :normal i" . strftime("%c")  " put date-time at cursor
+    :s/./&/gn|noh                " show number of characters in a long line
     :so /usr/share/vim/vim82/tools/emoji_list.vim
-    \yy                       " CalendarH
+    \yy                          " CalendarH
 
 ## base64
 	<leader>atob " base64 to a string
@@ -291,6 +292,7 @@ Joseph's (g)Vim Quick Reference
     u            " lowercase a visual block
 
 ## entering specials
+    digraphs
     Entering special characters
     ^Vu03b2  " gets β
 

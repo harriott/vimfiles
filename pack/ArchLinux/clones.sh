@@ -26,7 +26,7 @@ gd opt; ls
   # $gc https://github.com/chrisbra/csv.vim
   # $gc https://github.com/ctrlpvim/ctrlp.vim
   # $gc https://github.com/AndrewRadev/dsf.vim
-  # $gc https://github.com/lambdalisue/fern.vim
+  $gc https://github.com/lambdalisue/fern.vim
   # $gc https://github.com/lambdalisue/fern-git-status.vim
   # $gc https://github.com/yuki-yano/fern-preview.vim
   # $gc https://github.com/lambdalisue/fern-renderer-nerdfont.vim
@@ -53,7 +53,7 @@ gd opt; ls
   # [[ -d tagbar ]] && sudo rm -r tagbar; $gc https://github.com/preservim/tagbar
   # $gc https://github.com/wellle/targets.vim
   # $gc https://github.com/mbbill/undotree
-  $gc https://github.com/bling/vim-airline
+  # $gc https://github.com/bling/vim-airline
   # $gc https://github.com/vim-airline/vim-airline-themes
   # $gc https://github.com/haya14busa/vim-asterisk
   # $gc https://github.com/christianrondeau/vim-base64
