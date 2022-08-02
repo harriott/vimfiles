@@ -1,15 +1,8 @@
 vim: ft=Fn:
 
-../ftplugin/muttaliases.vim:nnoremap <buffer> <F7> gg2jVG:sort u <cr>
-../ftplugin/fugitive.vim:" <F1> gets remapped by  vim-fugitive  to  :h fugitive
-../ftplugin/fugitive.vim:nnoremap <buffer><F1> <C-W><C-W>
-../ftplugin/fugitive.vim:inoremap <buffer><F1> <Esc><C-W><C-W>
-../ftplugin/fugitive.vim:vnoremap <buffer><F1> <Esc><C-W><C-W>
-../ftplugin/csv.vim:nnoremap <buffer><F7> :call CsvColumnToggle()<cr>
-../ftplugin/md.vim:nnoremap <buffer> <F12> :call CompiledPDF()<CR>
-../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
-../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
-../ftplugin/md.vim:" check with  :map <leader><F7>
+../ftplugin/php/phpfolding.vim:"       map <F5> <Esc>:EnableFastPHPFolds<Cr>
+../ftplugin/php/phpfolding.vim:"       map <F6> <Esc>:EnablePHPFolds<Cr>
+../ftplugin/php/phpfolding.vim:"       map <F7> <Esc>:DisablePHPFolds<Cr>
 ../ftplugin/tex.vim:nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
 ../ftplugin/tex.vim:inoremap <buffer><S-F7> <Esc>:normal gAip*&<CR><Bar> :update<CR>
 ../ftplugin/tex.vim:  nnoremap <silent> <F7> :call PHMatch()<cr>
@@ -18,36 +11,84 @@ vim: ft=Fn:
 ../ftplugin/tex.vim:  nnoremap <silent><buffer> <F7> :call LaTeXsyntaxFolding()<cr>
 ../ftplugin/tex.vim:  inoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
 ../ftplugin/tex.vim:  vnoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
-../ftplugin/php/phpfolding.vim:"       map <F5> <Esc>:EnableFastPHPFolds<Cr>
-../ftplugin/php/phpfolding.vim:"       map <F6> <Esc>:EnablePHPFolds<Cr>
-../ftplugin/php/phpfolding.vim:"       map <F7> <Esc>:DisablePHPFolds<Cr>
-../ftplugin/text.vim:nnoremap <buffer><F7> :ALEToggleBuffer<cr>
+../ftplugin/fugitive.vim:" <F1> gets remapped by  vim-fugitive  to  :h fugitive
+../ftplugin/fugitive.vim:nnoremap <buffer><F1> <C-W><C-W>
+../ftplugin/fugitive.vim:inoremap <buffer><F1> <Esc><C-W><C-W>
+../ftplugin/fugitive.vim:vnoremap <buffer><F1> <Esc><C-W><C-W>
+../ftplugin/muttaliases.vim:nnoremap <buffer> <F7> gg2jVG:sort u <cr>
+../ftplugin/md.vim:nnoremap <buffer> <F12> :call CompiledPDF()<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/MessengerMd.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><leader><F7> :call MessengerMd()<CR>
+../ftplugin/md.vim:" check with  :map <leader><F7>
+../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
+../ftplugin/md.vim:  nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
+../ftplugin/md.vim:" check with  :map <leader><F7>
+../ftplugin/csv.vim:nnoremap <buffer><F7> :call CsvColumnToggle()<cr>
 ../gvimrc.vim:nnoremap <S-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
-../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:<F5> if that mapping is available. If it is not available you will need to
-../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:either map the function manually or change your current <F5> mapping to
-../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:support normal, insert and visual mode usage, changing the "<F5>" value to the
-../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:    call togglebg#map("<F5>")
-../pack/packs-cp/opt/vim-colors-tomorrow/autoload/togglebg.vim:    call togglebg#map("<F5>")
-../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:    * the default mapping of <F5>
-../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:Toggle Background starts with a default mapping to function key <F5>. If you 
-../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:remove/change your existing <F5> mapping to another value. To customize the 
-../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:"<F5>" value to the key or key combination you wish to use:
-../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:	call togglebg#map("<F5>")
-../pack/packs-cp/opt/vim-colors-solarized/README.mkd:<F5> if that mapping is available. If it is not available you will need to 
-../pack/packs-cp/opt/vim-colors-solarized/README.mkd:either map the function manually or change your current <F5> mapping to 
-../pack/packs-cp/opt/vim-colors-solarized/README.mkd:support normal, insert and visual mode usage, changing the "<F5>" value to the 
-../pack/packs-cp/opt/vim-colors-solarized/README.mkd:    call togglebg#map("<F5>")
-../pack/packs-cp/opt/vim-colors-solarized/autoload/togglebg.vim:    call togglebg#map("<F5>")
 ../pack/packs-cp/opt/vim-colors-solarized/doc/solarized.txt:    * the default mapping of <F5>
 ../pack/packs-cp/opt/vim-colors-solarized/doc/solarized.txt:Toggle Background starts with a default mapping to function key <F5>. If you 
 ../pack/packs-cp/opt/vim-colors-solarized/doc/solarized.txt:remove/change your existing <F5> mapping to another value. To customize the 
 ../pack/packs-cp/opt/vim-colors-solarized/doc/solarized.txt:"<F5>" value to the key or key combination you wish to use:
 ../pack/packs-cp/opt/vim-colors-solarized/doc/solarized.txt:	call togglebg#map("<F5>")
-../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> <F5> <Plug>(fern-action-reload)
+../pack/packs-cp/opt/vim-colors-solarized/autoload/togglebg.vim:    call togglebg#map("<F5>")
+../pack/packs-cp/opt/vim-colors-solarized/README.mkd:<F5> if that mapping is available. If it is not available you will need to 
+../pack/packs-cp/opt/vim-colors-solarized/README.mkd:either map the function manually or change your current <F5> mapping to 
+../pack/packs-cp/opt/vim-colors-solarized/README.mkd:support normal, insert and visual mode usage, changing the "<F5>" value to the 
+../pack/packs-cp/opt/vim-colors-solarized/README.mkd:    call togglebg#map("<F5>")
+../pack/packs-cp/opt/undotree/doc/undotree.txt:    nnoremap <F5> :UndotreeToggle<cr>
+../pack/packs-cp/opt/undotree/README.md:nnoremap <F5> :UndotreeToggle<CR>
 ../pack/packs-cp/opt/vim-fontsize/doc/fontsize.txt:  nmap <silent> <F8>                        <Plug>FontsizeBegin
-../pack/packs-cp/opt/ctrlp.vim/readme.md:* Press `<F5>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
-../pack/packs-cp/opt/ctrlp.vim/autoload/ctrlp.vim:	\ 'PrtClearCache()':      ['<F5>'],
-../pack/packs-cp/opt/ctrlp.vim/autoload/ctrlp.vim:	\ 'PrtDeleteEnt()':       ['<F7>'],
+../pack/packs-cp/opt/supertab/plugin/supertab.vim:  "   nmap <F6> :call SetSuperTabCompletionType("<c-p>")<cr>
+../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt: <F1>          Toggle help information.
+../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:" Press <F1> for Help
+../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:  nnoremap <silent> <F11> :BufExplorer<CR>
+../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:  nnoremap <silent> <s-F11> :ToggleBufExplorer<CR>
+../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:  nnoremap <silent> <m-F11> :BufExplorerHorizontalSplit<CR>
+../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:      * Changed the help key from '?' to <F1> to be more 'standard'.
+../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                   nnoremap <silent> <F11> :BufExplorer<CR>
+../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                   nnoremap <silent> <s-F11> :ToggleBufExplorer<CR>
+../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                   nnoremap <silent> <m-F11> :BufExplorerHorizontalSplit<CR>
+../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:    nnoremap <script> <silent> <nowait> <buffer> <F1>          :call <SID>ToggleHelp()<CR>
+../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:        call add(header, '" <F1> : toggle this help')
+../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:        call add(header, '" Press <F1> for Help')
+../pack/packs-cp/opt/Highlight.vim/README.md:map <F2> :HighlightText Screenshots<CR>
+../pack/packs-cp/opt/Highlight.vim/README.md:map <F3> :HighlightYanked 134<CR>
+../pack/packs-cp/opt/Highlight.vim/README.md::map <F3> @:
+../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:  call s:Map('n', '<F1>', ':help :Git_blame<CR>', '<silent>', ft)
+../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<F1>',  ":<C-U>help fugitive-map<CR>", '<silent>')
+../pack/packs-cp/opt/vim-airline/doc/airline.txt:|~           type :help<Enter> or <F1>  for on-line help                    |
+../pack/packs-cp/opt/vim-airline/doc/airline.txt:  nmap <F5>          <Plug>XTablineToggleTabs
+../pack/packs-cp/opt/vim-airline/doc/airline.txt:  nmap <leader><F5>  <Plug>XTablineToggleFiltering
+../pack/packs-cp/opt/vim-airline/doc/airline.txt:be updated automatically. Either re-enter the tab or press <F5> two times.
+../pack/packs-cp/opt/vim-airline/autoload/airline/extensions/tabline/xtabline.vim:        call s:mapkeys('<F5>','<Plug>XTablineToggleTabs')
+../pack/packs-cp/opt/vim-airline/autoload/airline/extensions/tabline/xtabline.vim:        call s:mapkeys('<leader><F5>','<Plug>XTablineToggleFiltering')
+../pack/packs-cp/opt/vim-airline/README.md:|~           type :help<Enter> or <F1>  for on-line help                      |
+../pack/packs-cp/opt/tagbar/doc/tagbar.txt:        nnoremap <silent> <F8> :TagbarToggle<CR>
+../pack/packs-cp/opt/tagbar/doc/tagbar.txt:You can then open and close Tagbar by simply pressing the <F8> key.
+../pack/packs-cp/opt/tagbar/doc/tagbar.txt:<F1>/?        Display key mapping help.
+../pack/packs-cp/opt/tagbar/README.md:nmap <F8> :TagbarToggle<CR>
+../pack/packs-cp/opt/fern.vim/autoload/fern/mapping/node.vim:    nmap <buffer><nowait> <F5> <Plug>(fern-action-reload)
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	" toggle insert/replace with <F10>
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	nmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	xmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	" toggle insert/replace with <F10>
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	nmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	xmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	" toggle insert/replace with <F10>
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	nmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	xmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	" toggle insert/replace with <F10>
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	nmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/doc/textmanip.txt:	xmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/README.md:" toggle insert/replace with <F10>
+../pack/packs-cp/opt/vim-textmanip/README.md:nmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/README.md:xmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/README.md:" toggle insert/replace with <F10>
+../pack/packs-cp/opt/vim-textmanip/README.md:nmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/README.md:xmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/README.md:" toggle insert/replace with <F10>
+../pack/packs-cp/opt/vim-textmanip/README.md:nmap <F10> <Plug>(textmanip-toggle-mode)
+../pack/packs-cp/opt/vim-textmanip/README.md:xmap <F10> <Plug>(textmanip-toggle-mode)
 ../pack/packs-cp/opt/ctrlp.vim/doc/ctrlp.cnx:注意: 当在CtrlP中时你可以使用 <F5> 来快速的清除缓存。
 ../pack/packs-cp/opt/ctrlp.vim/doc/ctrlp.cnx:  let g:ctrlp_prompt_mappings = { 'ToggleKeyLoop()': ['<F3>'] }
 ../pack/packs-cp/opt/ctrlp.vim/doc/ctrlp.cnx:    \ 'PrtClearCache()':      ['<F5>'],
@@ -72,48 +113,24 @@ vim: ft=Fn:
 ../pack/packs-cp/opt/ctrlp.vim/doc/ctrlp.txt:      times. You can hit <F5> to force it to refresh. This will use the newer
 ../pack/packs-cp/opt/ctrlp.vim/doc/ctrlp.txt:                   <F5> also removes non-existent files from MRU list.
 ../pack/packs-cp/opt/ctrlp.vim/doc/ctrlp.txt:    + New mapping: <F5>.
-../pack/packs-cp/opt/vim-airline/README.md:|~           type :help<Enter> or <F1>  for on-line help                      |
-../pack/packs-cp/opt/vim-airline/autoload/airline/extensions/tabline/xtabline.vim:        call s:mapkeys('<F5>','<Plug>XTablineToggleTabs')
-../pack/packs-cp/opt/vim-airline/autoload/airline/extensions/tabline/xtabline.vim:        call s:mapkeys('<leader><F5>','<Plug>XTablineToggleFiltering')
-../pack/packs-cp/opt/vim-airline/doc/airline.txt:|~           type :help<Enter> or <F1>  for on-line help                    |
-../pack/packs-cp/opt/vim-airline/doc/airline.txt:  nmap <F5>          <Plug>XTablineToggleTabs
-../pack/packs-cp/opt/vim-airline/doc/airline.txt:  nmap <leader><F5>  <Plug>XTablineToggleFiltering
-../pack/packs-cp/opt/vim-airline/doc/airline.txt:be updated automatically. Either re-enter the tab or press <F5> two times.
-../pack/packs-cp/opt/supertab/plugin/supertab.vim:  "   nmap <F6> :call SetSuperTabCompletionType("<c-p>")<cr>
-../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:  call s:Map('n', '<F1>', ':help :Git_blame<CR>', '<silent>', ft)
-../pack/packs-cp/opt/vim-fugitive/autoload/fugitive.vim:    call s:Map('n', '<F1>',  ":<C-U>help fugitive-map<CR>", '<silent>')
+../pack/packs-cp/opt/ctrlp.vim/readme.md:* Press `<F5>` to purge the cache for the current directory to get new files, remove deleted files and apply new ignore options.
+../pack/packs-cp/opt/ctrlp.vim/autoload/ctrlp.vim:	\ 'PrtClearCache()':      ['<F5>'],
+../pack/packs-cp/opt/ctrlp.vim/autoload/ctrlp.vim:	\ 'PrtDeleteEnt()':       ['<F7>'],
 ../pack/packs-cp/opt/ale/doc/ale.txt:  nmap <F8> <Plug>(ale_fix)
-../pack/packs-cp/opt/tagbar/README.md:nmap <F8> :TagbarToggle<CR>
-../pack/packs-cp/opt/tagbar/doc/tagbar.txt:        nnoremap <silent> <F8> :TagbarToggle<CR>
-../pack/packs-cp/opt/tagbar/doc/tagbar.txt:You can then open and close Tagbar by simply pressing the <F8> key.
-../pack/packs-cp/opt/tagbar/doc/tagbar.txt:<F1>/?        Display key mapping help.
-../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                   nnoremap <silent> <F11> :BufExplorer<CR>
-../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                   nnoremap <silent> <s-F11> :ToggleBufExplorer<CR>
-../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:"                   nnoremap <silent> <m-F11> :BufExplorerHorizontalSplit<CR>
-../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:    nnoremap <script> <silent> <nowait> <buffer> <F1>          :call <SID>ToggleHelp()<CR>
-../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:        call add(header, '" <F1> : toggle this help')
-../pack/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim:        call add(header, '" Press <F1> for Help')
-../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt: <F1>          Toggle help information.
-../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:" Press <F1> for Help
-../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:  nnoremap <silent> <F11> :BufExplorer<CR>
-../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:  nnoremap <silent> <s-F11> :ToggleBufExplorer<CR>
-../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:  nnoremap <silent> <m-F11> :BufExplorerHorizontalSplit<CR>
-../pack/packs-cp/opt/bufexplorer/doc/bufexplorer.txt:      * Changed the help key from '?' to <F1> to be more 'standard'.
-../pack/packs-cp/opt/undotree/README.md:nnoremap <F5> :UndotreeToggle<CR>
-../pack/packs-cp/opt/undotree/doc/undotree.txt:    nnoremap <F5> :UndotreeToggle<cr>
+../pack/packs-cp/opt/vim-matchup/doc/matchup.txt:  nmap <silent> <F7> <plug>(matchup-hi-surround)
+../pack/packs-cp/opt/vim-matchup/README.md:nmap <silent> <F7> <plug>(matchup-hi-surround)
+../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:    * the default mapping of <F5>
+../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:Toggle Background starts with a default mapping to function key <F5>. If you 
+../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:remove/change your existing <F5> mapping to another value. To customize the 
+../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:"<F5>" value to the key or key combination you wish to use:
+../pack/packs-cp/opt/vim-colors-tomorrow/doc/tomorrow.txt:	call togglebg#map("<F5>")
+../pack/packs-cp/opt/vim-colors-tomorrow/autoload/togglebg.vim:    call togglebg#map("<F5>")
+../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:<F5> if that mapping is available. If it is not available you will need to
+../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:either map the function manually or change your current <F5> mapping to
+../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:support normal, insert and visual mode usage, changing the "<F5>" value to the
+../pack/packs-cp/opt/vim-colors-tomorrow/README.mkd:    call togglebg#map("<F5>")
 ../pack/ArchLinux/after.sh:# reduce help keystroke  ['<F1>', '?']  to  ['?']  so that my  <F1>  still works
 ../pack/ArchLinux/after.sh:sed -i "s/'<F1>', //" ../packs-cp/opt/tagbar/plugin/tagbar.vim
-../plugin/plugins.vim:  nnoremap <F8> :History:<CR>
-../plugin/plugins.vim:  inoremap <F8> <Esc>:History:<CR>
-../plugin/plugins.vim:  vnoremap <F8> <Esc>:History:<CR>
-../plugin/plugins.vim:  nnoremap <F9> :History/<CR>
-../plugin/plugins.vim:  inoremap <F9> <Esc>:History/<CR>
-../plugin/plugins.vim:  vnoremap <F9> <Esc>:History/<CR>
-../plugin/plugins.vim:nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
-../plugin/plugins.vim:inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
-../plugin/plugins.vim:nmap <F6> <Plug>(openbrowser-smart-search)
-../plugin/plugins.vim:vmap <F6> <Plug>(openbrowser-smart-search)
-../plugin/plugins.vim:nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 ../plugin/plugin.vim:autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ nnoremap <F4> :wa<CR>:q<CR>
 ../plugin/plugin.vim:autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ inoremap <F4> <Esc>:wa<CR>:q<CR>
 ../plugin/plugin.vim:autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <F4> :wa<CR>:q<CR>
@@ -134,6 +151,17 @@ vim: ft=Fn:
 ../plugin/plugin.vim:nnoremap <F4> :wa<CR>:bd<CR>
 ../plugin/plugin.vim:inoremap <F4> <Esc>:wa<CR>:bd<CR>
 ../plugin/plugin.vim:vnoremap <F4> <Esc>:wa<CR>:bd<CR>
+../plugin/plugins.vim:nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
+../plugin/plugins.vim:  nnoremap <F8> :History:<CR>
+../plugin/plugins.vim:  inoremap <F8> <Esc>:History:<CR>
+../plugin/plugins.vim:  vnoremap <F8> <Esc>:History:<CR>
+../plugin/plugins.vim:  nnoremap <F9> :History/<CR>
+../plugin/plugins.vim:  inoremap <F9> <Esc>:History/<CR>
+../plugin/plugins.vim:  vnoremap <F9> <Esc>:History/<CR>
+../plugin/plugins.vim:nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+../plugin/plugins.vim:inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+../plugin/plugins.vim:nnoremap <F6> :execute "normal \<Plug>(openbrowser-smart-search)"<bar>silent !nsBt<CR>
+../plugin/plugins.vim:vmap <F6> <Plug>(openbrowser-smart-search)
 ../vimrc-Arch.vim:  noremap <F11> :silent !dolphin %:p:h &<CR>
 ../vimrc-Arch.vim:  imap <F11> <Esc><F11>
 ../vimrc-Arch.vim:  noremap <F11> :cd %:p:h<CR><bar>:silent !pcmanfm &<CR>

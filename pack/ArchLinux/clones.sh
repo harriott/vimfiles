@@ -26,16 +26,18 @@ gd opt; ls
   # $gc https://github.com/chrisbra/csv.vim
   # $gc https://github.com/ctrlpvim/ctrlp.vim
   # $gc https://github.com/AndrewRadev/dsf.vim
-  $gc https://github.com/lambdalisue/fern.vim
+  # $gc https://github.com/lambdalisue/fern.vim
   # $gc https://github.com/lambdalisue/fern-git-status.vim
   # $gc https://github.com/yuki-yano/fern-preview.vim
   # $gc https://github.com/lambdalisue/fern-renderer-nerdfont.vim
   # $gc https://github.com/vim-scripts/gitignore.vim
+  # $gc https://github.com/solyarisoftware/Highlight.vim
   # $gc https://github.com/haya14busa/incsearch-fuzzy.vim
   # $gc https://github.com/haya14busa/incsearch.vim
   # $gc https://github.com/junegunn/limelight.vim
   # $gc https://github.com/valloric/listtoggle
   # $gc https://github.com/Valloric/MatchTagAlways
+  # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/andymass/vim-matchup
   # $gc https://github.com/chikamichi/mediawiki.vim
   # $gc https://github.com/yegappan/mru
@@ -80,6 +82,7 @@ gd opt; ls
   # $gc https://github.com/Konfekt/vim-langtool
   # $gc https://github.com/dpelle/vim-LanguageTool
   # $gc https://github.com/elbeardmorez/vim-loclist-follow
+  $gc https://github.com/inkarkat/vim-mark
   # $gc https://github.com/adelarsq/vim-matchit
   # $gc https://github.com/chunkhang/vim-mbsync
   # $gc https://github.com/dhruvasagar/vim-open-url

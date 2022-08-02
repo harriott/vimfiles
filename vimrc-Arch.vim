@@ -1,5 +1,5 @@
 
-" sourced from my Arch Linux installation's ~/.vimrc
+" sourced from my  $ARCHBUILDS/jo/textEdit/Vim/vimrc
 
 source $HOME/.vim/vimrc-GNULinux.vim
 
@@ -38,7 +38,6 @@ if has('nvim')
   let g:better_whitespace_operator=''
 else
   colorscheme tomorrow
-  packadd vim-ingo-library
-  packadd vim-ShowTrailingWhitespace
+  let g:useSTW='1'
 endif
 

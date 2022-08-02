@@ -7,6 +7,8 @@
 # ---------------------------------
 # bash grabMaps.sh
 
+set -e  # terminate on a fail
+
 # Grab uses of Function keys
 #  this can be run as a vim command,  :execute "!grep -ri -E '<(m-|s-)?F[0-9]{1,2}>'"
 #  but that can't be passed to Bufferize...

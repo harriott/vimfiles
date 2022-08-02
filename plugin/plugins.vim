@@ -174,6 +174,10 @@ if has('unix')
 
 endif
 
+""> ingo-library
+" required for  vim-mark  vim-ShowTrailingWhitespace
+packadd vim-ingo-library
+
 ""> languages
 
 "">> ALE
@@ -266,13 +270,13 @@ let g:Hexokinase_highlighters = ['foregroundfull']
 "">> color schemes
 
 "">>> jellybeans.vim
-" added for neovim
+" see $vimfiles/vimrc-Arch.vim
 
 "">>> vim-colors-solarized
 " packadd vim-colors-solarized
 
 "">>> vim-colors-tomorrow
-packadd vim-colors-tomorrow
+packadd vim-colors-tomorrow  " colorscheme tomorrow
 
 "">>> vim-wombat-scheme
 " optionally added for neovim
@@ -310,8 +314,7 @@ endfunction
 " let g:interestingWordsRandomiseColors = 1
 
 "">>> vim-ShowTrailingWhitespace
-if has('win32') | packadd vim-ingo-library | packadd vim-ShowTrailingWhitespace | endif
-" unix only added in terminal
+if g:useSTW | packadd vim-ShowTrailingWhitespace | endif  " requires  ingo-library
 
 "">> nerdfont.vim
 " packadd nerdfont.vim
@@ -524,6 +527,9 @@ xmap <c-right> <Plug>(textmanip-move-right)
 
 "">> find/replace
 
+"">>> Highlight.vim
+if !has('gui_running') && !has('nvim') | packadd Highlight.vim | endif
+
 "">>> incsearch.vim
 " :h incsearch.vim
 map g/ <Plug>(incsearch-stay)
@@ -581,6 +587,11 @@ function! EasyMotionSearchToggle()
         echo 'searching with EasyMotion'
     endif
 endfunction
+
+"">>> vim-mark
+let g:mw_no_mappings = 1
+packadd vim-mark
+" requires  ingo-library
 
 " "">>> vim-visual-star-search
 " packadd vim-visual-star-search

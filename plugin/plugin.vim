@@ -375,8 +375,8 @@ vnoremap <leader>n <Esc>:nohlsearch<CR>
 function! TweakLS()
   new
   normal! "/p
-  s/\\<//  " remove \<
-  s/\\>//  " remove \>
+  sil! s/\\<//  " remove \<
+  sil! s/\\>//  " remove \>
   normal! gue
 endfunction
 nnoremap <leader>/ :call TweakLS()<CR>

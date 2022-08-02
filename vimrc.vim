@@ -8,6 +8,7 @@
 " typically basic Vim settings here - look in plugin folder for more
 " ------------------------------------------------------------------
 
+let g:useSTW=''
 set encoding=utf-8  " get this done early
 set ssop-=blank ssop-=help
 set ssop+=winpos

@@ -26,6 +26,7 @@ unmap <C-F>
 "">> colorscheme
 function! STWDG()
   set background=dark
+    let g:useSTW='1'
     " highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
     highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
   let g:CSDark = 1

@@ -13,6 +13,7 @@
 ../packs-cp/opt/fern-renderer-nerdfont.vim
 ../packs-cp/opt/fern.vim
 ../packs-cp/opt/gitignore.vim
+../packs-cp/opt/Highlight.vim
 ../packs-cp/opt/incsearch-fuzzy.vim
 ../packs-cp/opt/incsearch.vim
 ../packs-cp/opt/limelight.vim
@@ -62,6 +63,7 @@
 ../packs-cp/opt/vim-langtool
 ../packs-cp/opt/vim-LanguageTool
 ../packs-cp/opt/vim-loclist-follow
+../packs-cp/opt/vim-mark
 ../packs-cp/opt/vim-matchup
 ../packs-cp/opt/vim-mbsync
 ../packs-cp/opt/vim-open-url

@@ -91,6 +91,7 @@ Joseph's (g)Vim Quick Reference
     gg=G           " indent a file
 
 ## Colorizer
+    :ColorClear      " clears colourizing
 	:ColorHighlight  " impressive colourizing, but then can't be truly turned off
 	:packadd Colorizer
 
@@ -179,7 +180,6 @@ Joseph's (g)Vim Quick Reference
     #                     " over a word highlights all exact instances, and jumps to last
     %                     " find opposing bracket in a line
     *                     " highlight all instances of exactly the word under the cursor
-    /pat1\|pat2\|pat3
 	g# (or g*)            " # (or *) without \< \>
     \B                    " :BLines
     \L                    " :Lines
@@ -319,7 +319,6 @@ Joseph's (g)Vim Quick Reference
     vi  " exit Ex mode
     \8  " toggle 82/106 columns
     \ll " list mode
-
     C-k<non-text-key>      " enters the Vim value of a non-text-key
     C-r                    " " (in command line) insert the unnamed register
     :colo                  " show color scheme
@@ -334,7 +333,7 @@ Joseph's (g)Vim Quick Reference
     :DiffOrig              " brings the Recover version up left
     :verb se tw            " shows where textwidth was set
 
-command-line window: C-c C-c  closes
+    command-line window: C-c C-c  closes
 
 ## buffer listing your recent messages
     :Bufferize messages

@@ -1,4 +1,11 @@
 
+x  "            @peekaboo#peek(v:count1, '"',  1)
+n  "            @peekaboo#peek(v:count1, '"',  0)
+n  @            @peekaboo#peek(v:count1, '@', 0)
+n  \#          *@099i~<Esc>
+n  \=-         *@0xx<Esc>$xx<Esc>
+n  \==         *@I==<Esc>A==<Esc>
+n  \\=         *@I==  <Esc>A  ==<Esc>
 n  <Space>     * za
 o  ,           * :
 x  ,           * :
@@ -17,38 +24,42 @@ o  I             targets#e('o', 'I', 'I')
    Q           * @q
 n  U           * :CapsLockOff<CR> | U
    \gg         * :call GitGutterFocus()<CR>
-n  \lt         * :LangTool | lopen 15 <CR>
-n  \e          * :call EasyMotionSearchToggle()<CR>
-n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
-n  \btoa/      * :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
-v  \btoa       * :<C-U>call base64#v_btoa()<CR>
-v  \atob       * :<C-U>call base64#v_atob()<CR>
-n  \m          * :MRU
 n  \q          * :QToggle<CR>
 n  \l          * :LToggle<CR>
-n  \bf         * :Buffers<CR>
-n  \L          * :Lines<CR>
-n  \B          * :BLines<CR>
-n  \j          * :Files /mnt/SD480GSSDPlus/Dropbox/JH<CR>
-n  \bb         * :CtrlPBuffer<CR>
 n  \bd         * :Bdelete hidden<CR>
 n  \bdd        * :Bdelete other<CR>
-   \yy         * :CalendarH<CR>
 n  \bv         & :BufExplorerVerticalSplit<CR>
 n  \bs         & :BufExplorerHorizontalSplit<CR>
 n  \bt         & :ToggleBufExplorer<CR>
    \be         * :BufExplorer<CR>
-   \aa         * :ALEToggleBuffer<CR>
+n  \e          * :call EasyMotionSearchToggle()<CR>
+n  \m          * :MRU
+n  \bb         * :CtrlPBuffer<CR>
+   \yy         * :CalendarH<CR>
+n  \it         * :call IlluminateMoreToggle()<CR>
+n  \LT         * :call LanguageTool_lopen() <CR>
+n  \lt         * :LangTool | lopen 15 <CR>
+n  \th         * :ThesaurusQueryReplaceCurrentWord<CR>
+   \aa         * :call ALEToggleBufferShow()<CR>
+n  \bf         * :Buffers<CR>
+n  \L          * :Lines<CR>
+n  \B          * :BLines<CR>
+n  \j          * :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
+n  \pp         * :<C-U>MatchupWhereAmI??<CR>
+n  \atob/      * :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
+n  \btoa/      * :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
+v  \btoa       * :<C-U>call base64#v_btoa()<CR>
+v  \atob       * :<C-U>call base64#v_atob()<CR>
 n  \d          * :cd %:p:h<CR>:pwd<CR>
 n  \-          * :Hexplore<CR>
 n  \f          * :let@f=@%<CR>
 n  \v          * v$hy
 v  \vs         * <Esc>:call ConvertSearchForVisualSelection()<CR>
 n  \vs         * :call ConvertSearchForVisualSelection()<CR>
-n  \sw         * :call SearchCFW()<CR>
 n  \pt         * :call ParenthsToggle()<CR>
-n  \i          * :call IncSearchToggle()<CR>
+n  \is         * :call IncSearchToggle()<CR>
 n  \vg         * :call VimgrepSelection()<CR>
+n  \/          * :call TweakLS()<CR>
 v  \n          * <Esc>:nohlsearch<CR>
 n  \n          * :nohlsearch<CR>
 n  \rn         * :set rnu! rnu? <CR>
@@ -80,13 +91,14 @@ n  q:          * <Nop>
 x  q,          * q:
 n  q,          * q:
 n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
-n  zr          * :exe ':spellra  '.expand('<cWORD>')<CR>
+n  zr          * :exe ':spellrare  '.expand('<cWORD>')<CR>
 v  ~           * y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
    <C-N>       * :NERDTreeToggle<CR>
    <C-E>       * :cd %:p:h<CR>:Fern . -reveal=%<CR>
 n  <Insert>    * :CapsLockOff <CR>
 
-c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
+i  <C-R>        @peekaboo#peek(1, "\<C-R>",  0)
 i  <C-Tab>     * <Tab>
+c  <C-R><C-G>  & fnameescape(fugitive#Object(@%))
 i  <Insert>    * <Esc> :CapsLockOff <CR>
 i  <C-U>       * <C-G>u<C-U>
