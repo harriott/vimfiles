@@ -44,6 +44,7 @@
 ../packs-cp/opt/vim-buffing-wheel
 ../packs-cp/opt/vim-bufkill
 ../packs-cp/opt/vim-characterize
+../packs-cp/opt/vim-clifm
 ../packs-cp/opt/vim-colors-solarized
 ../packs-cp/opt/vim-colors-tomorrow
 ../packs-cp/opt/vim-devicons

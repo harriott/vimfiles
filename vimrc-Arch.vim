@@ -38,6 +38,6 @@ if has('nvim')
   let g:better_whitespace_operator=''
 else
   colorscheme tomorrow
-  let g:useSTW='1'
+  let g:useSTW = 1
 endif
 

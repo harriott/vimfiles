@@ -38,7 +38,7 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 " keystrokes
 "  ce  " amend the last commit without editing the message
 "  U   " unstages all
-"  :GBrowse
+"  :GB :GBrowse
 "  :Git pull
 
 packadd vim-fugitive
@@ -109,7 +109,7 @@ packadd vim-base64
 packadd vim-bbcode
 
 "">>> vim-dokuwiki
-" nvim -O $IThandy/encoding/vi/vim-dokuwiki/syntax/dokuwiki.vim $vimfiles/syntax/dokuwiki.vim
+" nvim -O $cITh/encoding/vi/vim-dokuwiki/syntax/dokuwiki.vim $vimfiles/syntax/dokuwiki.vim
 
 "">>> vim-hjson
 packadd vim-hjson
@@ -132,6 +132,8 @@ let NERDSpaceDelims = 1
 " add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
 " h tagbar-contents
 " h tagbar-ignore
+
+autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
 packadd tagbar
 
 "">> vim match-up
@@ -435,6 +437,7 @@ packadd mru
 " :MRU \.md
 " :MruRefresh
 " in the normal MRU window
+"  d = delete from list
 "  Enter = open over current window
 "  O = open split right
 "  o = open split below
@@ -463,6 +466,9 @@ vmap <F6> <Plug>(openbrowser-smart-search)
 "  (can't adapt this one for  nsBt)
 
 packadd open-browser.vim
+
+"">> vim-clifm
+packadd vim-clifm
 
 "">> vim-dirvish
 " h dirvish
@@ -528,7 +534,7 @@ xmap <c-right> <Plug>(textmanip-move-right)
 "">> find/replace
 
 "">>> Highlight.vim
-if !has('gui_running') && !has('nvim') | packadd Highlight.vim | endif
+if !has('gui_running') && !has('nvim') | packadd Highlight.vim | endif  " plain vim only
 
 "">>> incsearch.vim
 " :h incsearch.vim
@@ -589,9 +595,14 @@ function! EasyMotionSearchToggle()
 endfunction
 
 "">>> vim-mark
+" :h mark.txt
+" :Mark /pattern
+
 let g:mw_no_mappings = 1
-packadd vim-mark
-" requires  ingo-library
+nmap <leader><leader>m <Plug>MarkSet
+nmap <leader><leader>n <Plug>MarkClear
+nmap <leader><leader>r <Plug>MarkRegex
+packadd vim-mark  " requires  ingo-library
 
 " "">>> vim-visual-star-search
 " packadd vim-visual-star-search

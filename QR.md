@@ -193,6 +193,8 @@ Joseph's (g)Vim Quick Reference
     n                     " find next highlighted search result
     z/                    " incsearch-fuzzy-stay
 
+    vim-mark
+
 ## fzf.vim
     :Rg <regex> " in the cwd
     \j          " :Files /mnt/SDSSDA240G/Dropbox/JH
@@ -346,6 +348,7 @@ Joseph's (g)Vim Quick Reference
 	:hi
 	:so $VIMRUNTIME/syntax/hitest.vim
     :se synmaxcol=0  " removes 3000 character limit
+    :syntax list  # what's set for the current file
 
 	$VIMRUNTIME/syntax/syncolor.vim
 

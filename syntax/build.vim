@@ -14,7 +14,6 @@ if exists("b:current_syntax")
 endif
 
 syntax region buildH start=/^#/ end=/$/
-
 hi def link buildH Folded  " for an unobtrusive heading
 
 let b:current_syntax = "build"

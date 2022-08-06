@@ -3,7 +3,7 @@
 
 " Language:	cmusq
 " Maintainer: Joseph Harriott
-" Last Change: Mon 22 Nov 2021
+" Last Change: Thu 04 Aug 2022
 
 " $vimfiles/syntax/cmusq.vim
 "  for the output of  $ARCHBUILDS/jo/Openbox/cmusqueue.sh
@@ -12,7 +12,7 @@
 if exists('b:current_syntax') | finish | endif
 
 " Highlight the tracknumber only:
-syn match filename '/\d\{1,2}'
+syn match filename '.\+/\zs\d\{1,2}'
 hi def link filename DiffText
 
 let b:current_syntax = "cmusq"

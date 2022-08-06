@@ -5,14 +5,11 @@
 " Last Change: Tue 05 Jul 2022
 " this is for extra funtionality that I like for my *.md files
 " supplemental to  $vimfiles/ftplugin/markdown.vim
-" requires  $vimfiles/filetype.vim
+" as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
+"  this requires  $vimfiles/filetype.vim
 
 " open Pandoc'd pdf
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>
-
-" Tagbar off
-let b:tagbar_ignore = 1
-" because it's not particularly useful here, and slows down huge files like  Private.md
 
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
