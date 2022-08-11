@@ -82,13 +82,13 @@ Joseph's (g)Vim Quick Reference
     C-qu201c " unicode codepoint for “
 
 # layout
-    :%le           " remove all indents
-    :se gfn=*              " pop-up font selection
+    :%le          " remove all indents
+    :se gfn=*     " pop-up font selection
     :se expandtab " allows  :retab
-    \\c            " toggle cursor column
-    \\l            " toggle cursor line
-    \\ll           " toggle listchars
-    gg=G           " indent a file
+    \\c           " toggle cursor column
+    \\l           " toggle cursor line
+    \\ll          " toggle listchars
+    gg=G          " indent a file
 
 ## Colorizer
     :ColorClear      " clears colourizing
@@ -137,44 +137,51 @@ Joseph's (g)Vim Quick Reference
 	:packadd vim-hexokinase
 
 # movements
-    $         " end of line
-    '.        " jump to position where last change occurred in current buffer
-    :(5,7)m0  " move line(s 5-7) to start
-    :#        " go to line #
-    :m-2      " That is, the current line is moved up one line
-    :m+       " the current line is moved down one line
-    0         " start of line
+
+## in buffer
     #G        " go to line #
-    C-e       " scroll up the window, without displacing the cursor
-    C-y       " scroll down the window, without displacing the cursor
+    :#        " go to line #
+    ge        " go backwards to end of word
+    g:        " jump forward to position of a newer change
+    g;        " jump back to position of an older change
+    gj/k      " go down/up a visual line
+    { or }    " move cursor to start or end of paragraph
+    ( or )    " move cursor to start or end of sentence
+    :h ``
+    :h '.
+
+## in current line
+    $         " end of line
+    0         " start of line
+    _         " jump to first non-blank character of line
+    ^         " jump to first non-blank character
+    g$        " jump to last character of screen line
+    g^        " jump to first character of screen line
+
+## in current window display
     H         " go Home (top line of current window display)
     M         " go Middle line (of current window display)
     L         " go Last line (of current window display)
-    ^         " first non-blank char of line
-    easymotion-default-mappings
-    g$        " jump to last character of screen line
-    g,        " jump forward to position of a newer change
-    g;        " jump back to position of an older change
-    g^        " jump to first character of screen line
-    ge        " go backwards to end of word
-    gj/k      " go down/up a visual line
-    gqq
-    zz        " centre window on cursor
-    { or }    " move cursor to start or end of paragraph
-    ( or )    " move cursor to start or end of sentence
-    C-b       " back (=up) a page
-    C-d       " down half a screen
-    C-f       " forward (=down) a page
-    C-u       " up half a screen
-    \zz       " toggle centering current line
-    ^         " jumps to first non-blank character
-    ``        " jump back (to position in current buffer where jumped from)
 
 ## marks
     `z        " move to mark z
     'z        " move to start of line of mark z
     mz        " create mark z
     mJ        " put a file-specific mark in current file (can use A-Z0-9)
+
+## move current line
+    :(5,7)m0  " move line(s 5-7) to start
+    :m-2      " That is, the current line is moved up one line
+    :m+       " the current line is moved down one line
+
+## move window
+    C-b       " back (=up) a page
+    C-d       " down half a screen
+    C-f       " forward (=down) a page
+    C-u       " up half a screen
+    C-y       " scroll down the window, without displacing the cursor
+    zz        " centre window on cursor
+    \zz       " toggle centering current line
 
 # search
     #                     " over a word highlights all exact instances, and jumps to last
@@ -217,6 +224,7 @@ Joseph's (g)Vim Quick Reference
 	\(alt1\|alt2\|alt3\)
 	\d    " digit
 	\D    " non-digit
+    \h    " head of word character (a,b,c...z,A,B,C...Z and _)
 	\S    " non-whitespace character
 	\s    " whitespace character
 	\u    " uppercase character
@@ -308,11 +316,6 @@ Joseph's (g)Vim Quick Reference
     :let i=2 | g#.# s#1#\=i#g | let i+=1    " g-> working down through the entire buffer, s-> increase counts
 
 # Vim
-    :Bufferize dig!  " categorised digraphs
-    :Bufferize let
-    :Bufferize se
-    :Bufferize version  " Vim version etc
-    :colo  " see current colorscheme
     @@  " = @: = repeat last command-line
     K   " brings up a man page (if there is one) for word under cursor
     ga  " returns code values for character under cursor
@@ -323,28 +326,38 @@ Joseph's (g)Vim Quick Reference
     \ll " list mode
     C-k<non-text-key>      " enters the Vim value of a non-text-key
     C-r                    " " (in command line) insert the unnamed register
-    :colo                  " show color scheme
     :X                     " prompts for an encryption key
-    :help index            " lists the all of the commands
-    :help 'sw'             " autoindentation - shiftwidth
+    :h index               " lists the all of the commands
+    :h 'sw'                " autoindentation - shiftwidth
     :his                   " Display command-line history
     :his s                 " Display search string history
-    :Bufferize scriptnames " list of files sourced, in order
-    :Bufferize se gfn      " show font
     :so %                  " source the current file
     :DiffOrig              " brings the Recover version up left
-    :verb se tw            " shows where textwidth was set
 
     command-line window: C-c C-c  closes
+    /usr/share/vim/vim90
 
 ## buffer listing your recent messages
     :Bufferize messages
 	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
 
-## syntax highlighting
+## settings
+    :Bufferize dig!                    " categorised digraphs
+    :Bufferize let                     " all internal variables
+    :Bufferize se rtp                  " runtimepath
+    :Bufferize scriptnames             " list of files sourced, in order
+    :Bufferize se                      " all option changes
+    :Bufferize se gfn                  " show font
+    :Bufferize verb map <LocalLeader>q " where that mapping was set
+    :Bufferize version                 " Vim version etc
+    :colo                              " current colorscheme
+    :let mapleader
+    :verb se tw                        " shows where textwidth was set
+
+### syntax highlighting
 	:h syn-region
 
-### settings
+#### settings
 	:hi
 	:so $VIMRUNTIME/syntax/hitest.vim
     :se synmaxcol=0  " removes 3000 character limit

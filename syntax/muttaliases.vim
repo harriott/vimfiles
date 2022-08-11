@@ -1,9 +1,11 @@
+
 " Language:	mutt aliases file
 " Maintainer: Joseph Harriott
-" Last Change: Sun 12 Apr 2020
+" Last Change: Mon 08 Aug 2022
 
-" This file should be in your vimfiles\syntax folder,
-"  set filetype=muttaliases
+" also  $vimfiles/ftplugin/muttaliases.vim
+"  vim: se ft=muttaliases:
+" I prefer this over  se ft=mailaliases.
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")

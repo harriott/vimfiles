@@ -107,6 +107,10 @@ if v:lang == 'fr_FR.UTF-8'
   let mapleader = 'é'  " (equates to è)
 endif
 
+"">> localleader
+let maplocalleader = '_'
+nnoremap <localleader>h :echo 'you just hit _h'<cr>
+
 "">> resize vim windows
 " decrease window height
 nnoremap <leader><down> 5<C-W>-

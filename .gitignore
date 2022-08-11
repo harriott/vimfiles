@@ -3,6 +3,7 @@
 *.pdf
 .directory
 .netrwhist
+plugin/fzf
 pack/packs-cp
 pack/packs-unix
 pack/packs-win32

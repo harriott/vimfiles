@@ -1,9 +1,10 @@
+
 " Language:	mutt aliases file
 " Maintainer: Joseph Harriott
-" Last Change: Mon 13 Apr 2020
+" Last Change: Mon 08 Aug 2022
 
-" This file should be in your .vim/ftplugin folder.
-"  set filetype=muttaliases
+"  vim: se ft=muttaliases:
+" also  $vimfiles/syntax/muttaliases.vim
 
 " sort
 nnoremap <buffer> <F7> gg2jVG:sort u <cr>

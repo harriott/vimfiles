@@ -150,31 +150,29 @@ nnoremap <leader>pp :<c-u>MatchupWhereAmI??<cr>
 packadd vim-matchup
 
 ""> fzf.vim
-if has('unix')
+" in ~/.vim: rg '>j' --no-ignore
 
-  " in ~/.vim: rg '>j' --no-ignore
-
-  if hostname() == 'i34G1TU02'
-    nnoremap <leader>j :Files /mnt/BX200/Dropbox/JH<CR>
-  elseif hostname() == 'LIP120s81A4'
-    nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
-  elseif hostname() == 'sbMb'
-    nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
-  endif
-
-  packadd fzf.vim
-
-  nnoremap <leader>B :BLines<CR>
-  nnoremap <leader>L :Lines<CR>
-  nnoremap <leader>bf :Buffers<CR>
-  nnoremap <F8> :History:<CR>
-  inoremap <F8> <Esc>:History:<CR>
-  vnoremap <F8> <Esc>:History:<CR>
-  nnoremap <F9> :History/<CR>
-  inoremap <F9> <Esc>:History/<CR>
-  vnoremap <F9> <Esc>:History/<CR>
-
+if hostname() == 'i34G1TU02'
+  nnoremap <leader>j :Files /mnt/BX200/Dropbox/JH<CR>
+elseif hostname() == 'LIP120s81A4'
+  nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
+elseif hostname() == 'sbMb'
+  nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
+elseif hostname() == 'T430i73520M'
+  nnoremap <leader>j :Files C:\Users\troin\Dropbox\JH<CR>
 endif
+
+packadd fzf.vim
+
+nnoremap <leader>B :BLines<CR>
+nnoremap <leader>L :Lines<CR>
+nnoremap <leader>bf :Buffers<CR>
+nnoremap <F8> :History:<CR>
+inoremap <F8> <Esc>:History:<CR>
+vnoremap <F8> <Esc>:History:<CR>
+nnoremap <F9> :History/<CR>
+inoremap <F9> <Esc>:History/<CR>
+vnoremap <F9> <Esc>:History/<CR>
 
 ""> ingo-library
 " required for  vim-mark  vim-ShowTrailingWhitespace
@@ -185,6 +183,7 @@ packadd vim-ingo-library
 "">> ALE
 " :Bufferize ALEInfo  " shows settings for the filetype
 " :h ale-languagetool-options
+" $vimfiles/pack/packs-cp/opt/ale/plugin/ale.vim
 
 " Enabled?
 "  :let ale_enabled
@@ -370,6 +369,7 @@ nnoremap <leader>bb :CtrlPBuffer<CR>
 packadd ctrlp.vim
 
 "">> Fern
+" vim default c-e = scroll up the window, without displacing the cursor
 noremap <C-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
 packadd fern.vim " $vimfiles/pack/packs-cp/opt/fern.vim/README.md
 " <c-h>  in
@@ -562,6 +562,7 @@ map z* <Plug>(asterisk-z*)  " rg --no-ignore ' z\* '
 map z# <Plug>(asterisk-z#)  " rg --no-ignore ' z# '
 
 "">>> vim-easymotion
+" :h easymotion-default-mappings
 packadd vim-easymotion
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -660,6 +661,10 @@ packadd cfilter
 packadd listtoggle
 let g:lt_location_list_toggle_map = '<leader>ll'
 let g:lt_height = 15
+
+" Defaults:
+" let g:lt_location_list_toggle_map = '<leader>l'
+" let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 "">>> vim-loclist-follow
 let g:loclist_follow = 1
