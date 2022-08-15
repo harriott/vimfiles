@@ -6,6 +6,17 @@
 " here I have things that I might, rarely, want to comment out
 " keep this file in your plugin directory so's it's automatically sourced at startup
 
+function! UnComment()
+  " set filetype=
+  " normal Vip<Esc>
+  normal Vip
+  " normal <Esc>
+  escape
+  '<,'>s/%/※/
+  " s/%/※/
+  " set filetype=tex
+endfunction
+
 ""> buffer - finish a Git commit message
 autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ nnoremap <F4> :wa<CR>:q<CR>
 autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ inoremap <F4> <Esc>:wa<CR>:q<CR>

@@ -93,7 +93,7 @@ Joseph's (g)Vim Quick Reference
 ## Colorizer
     :ColorClear      " clears colourizing
 	:ColorHighlight  " impressive colourizing, but then can't be truly turned off
-	:packadd Colorizer
+	:packadd Colorizer  " slows down large file opening
 
 ## colorizer
 	<leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
@@ -286,13 +286,17 @@ Joseph's (g)Vim Quick Reference
     :h g_CTRL-G                  " position and word info, works on a range too
     :ni<somecharacter><Enter>    " inserts <somecharacters> n time
     :normal i" . strftime("%c")  " put date-time at cursor
-    :s/./&/gn|noh                " show number of characters in a long line
     :so /usr/share/vim/vim82/tools/emoji_list.vim
     \yy                          " CalendarH
 
 ## base64
 	<leader>atob " base64 to a string
 	<leader>btoa " a string to base64
+
+## counting stuff
+    :%s/.//gn|noh  " characters in buffer
+    :s/./&/gn|noh  " show number of characters in a long line
+    g CTRL-G       " counts, from here to whole buffer
 
 ## case
     g~<movement> " invert case
@@ -344,7 +348,6 @@ Joseph's (g)Vim Quick Reference
 ## settings
     :Bufferize dig!                    " categorised digraphs
     :Bufferize let                     " all internal variables
-    :Bufferize se rtp                  " runtimepath
     :Bufferize scriptnames             " list of files sourced, in order
     :Bufferize se                      " all option changes
     :Bufferize se gfn                  " show font
@@ -353,6 +356,10 @@ Joseph's (g)Vim Quick Reference
     :colo                              " current colorscheme
     :let mapleader
     :verb se tw                        " shows where textwidth was set
+
+### runtimepath
+    :Bufferize echo &rtp
+    :Bufferize se rtp
 
 ### syntax highlighting
 	:h syn-region

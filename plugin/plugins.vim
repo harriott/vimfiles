@@ -150,18 +150,6 @@ nnoremap <leader>pp :<c-u>MatchupWhereAmI??<cr>
 packadd vim-matchup
 
 ""> fzf.vim
-" in ~/.vim: rg '>j' --no-ignore
-
-if hostname() == 'i34G1TU02'
-  nnoremap <leader>j :Files /mnt/BX200/Dropbox/JH<CR>
-elseif hostname() == 'LIP120s81A4'
-  nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
-elseif hostname() == 'sbMb'
-  nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
-elseif hostname() == 'T430i73520M'
-  nnoremap <leader>j :Files C:\Users\troin\Dropbox\JH<CR>
-endif
-
 packadd fzf.vim
 
 nnoremap <leader>B :BLines<CR>
@@ -173,6 +161,23 @@ vnoremap <F8> <Esc>:History:<CR>
 nnoremap <F9> :History/<CR>
 inoremap <F9> <Esc>:History/<CR>
 vnoremap <F9> <Esc>:History/<CR>
+
+" Win10:
+" junegunn/fzf  at  $vimfiles\plugin\fzf,
+"  because  fzf  is not found externally inspite of  :set rtp+=$CP\fzf
+
+"">> \j
+" in ~/.vim: rg '>j' --no-ignore
+
+if hostname() == 'i34G1TU02'
+  nnoremap <leader>j :Files /mnt/BX200/Dropbox/JH<CR>
+elseif hostname() == 'LIP120s81A4'
+  nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
+elseif hostname() == 'sbMb'
+  nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
+elseif hostname() == 'T430i73520M'
+  nnoremap <leader>j :Files C:\Users\troin\Dropbox\JH<CR>
+endif
 
 ""> ingo-library
 " required for  vim-mark  vim-ShowTrailingWhitespace

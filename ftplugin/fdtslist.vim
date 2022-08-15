@@ -1,6 +1,4 @@
 
-" Vim syntax file
-
 " Language:	file type list
 " Maintainer: Joseph Harriott
 " Last Change: Mon 08 Aug 2022
