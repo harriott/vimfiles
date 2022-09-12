@@ -54,8 +54,9 @@ gd opt; ls
   # $gc https://github.com/godlygeek/tabular
   # [[ -d tagbar ]] && sudo rm -r tagbar; $gc https://github.com/preservim/tagbar
   # $gc https://github.com/wellle/targets.vim
-  $gc https://github.com/ron89/thesaurus_query.vim
+  # $gc https://github.com/ron89/thesaurus_query.vim
   # $gc https://github.com/mbbill/undotree
+  # $gc https://github.com/vifm/vifm.vim
   # $gc https://github.com/bling/vim-airline
   # $gc https://github.com/vim-airline/vim-airline-themes
   # $gc https://github.com/haya14busa/vim-asterisk
@@ -64,12 +65,13 @@ gd opt; ls
   # $gc https://github.com/harriott/vim-buffing-wheel
   # $gc https://github.com/qpkorr/vim-bufkill
   # $gc https://github.com/tpope/vim-characterize
-  $gc https://github.com/harriott/vim-clifm
+  # $gc https://github.com/harriott/vim-clifm
   # $gc https://github.com/altercation/vim-colors-solarized
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/ryanoasis/vim-devicons
   # $gc https://github.com/justinmk/vim-dirvish
   # $gc https://github.com/kristijanhusak/vim-dirvish-git
+  # $gc https://github.com/nblock/vim-dokuwiki
   # $gc https://github.com/junegunn/vim-easy-align
   # $gc https://github.com/easymotion/vim-easymotion
   # $gc https://github.com/rbong/vim-flog
@@ -100,6 +102,7 @@ gd opt; ls
   # $gc https://github.com/bronson/vim-visual-star-search
 
   # $gc https://github.com/vim-scripts/MultipleSearch
+  # $gc https://github.com/moll/vim-bbye
   # $gc https://github.com/adelarsq/vim-matchit
 
 #==> unix
@@ -113,6 +116,7 @@ gd opt; ls
   # $gc https://github.com/ntpeters/vim-better-whitespace
   # $gc https://github.com/RRethy/vim-hexokinase
   # $gc https://github.com/srstevenson/vim-picker
+  # $gc https://github.com/qnighy/vim-ssh-annex
   # $gc https://github.com/sheerun/vim-wombat-scheme
 
 #==> win32
@@ -122,5 +126,5 @@ gd opt; ls
 
 #=> 2 lists
 echo; $cdp
-cd ArchLinux; . lists.sh
+cd ArchLinux; . after.sh
 

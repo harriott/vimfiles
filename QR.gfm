@@ -1,7 +1,10 @@
 
 Joseph's (g)Vim Quick Reference
 
-( see also quickref )  m4p QR.md 1
+    $vimfiles\QR.md
+    g4p -gfm QR
+
+see also quickref
 
     :helpt ALL               " generate all tags
     :helptags $HOME\vimfiles " se tags
@@ -10,7 +13,7 @@ Joseph's (g)Vim Quick Reference
 " vim-easy-align on a selection: gA"
 
 ## tabular
-:Tabularize/ "
+:Tabularize\ "
 
 # buffers
     'J      " bring up file marked with J (as saved in viminfo) into buffer
@@ -45,7 +48,7 @@ Joseph's (g)Vim Quick Reference
     d0      " delete back to start of line
     :1,.d         " delete to beginning of file
     :.,$d         " delete to end of file
-    :g/pattern/d  " delete lines containing "pattern"
+    :g\pattern\d  " delete lines containing "pattern"
 
 # diff
     :dif                    " diffupdate
@@ -63,7 +66,7 @@ Joseph's (g)Vim Quick Reference
     zMzv           " focus on just the current fold
     zO             " expand current fold & subfolds
     zR             " expand all folds
-    za             " toggle current fold open/closed
+    za             " toggle current fold open\closed
     zc             " close a fold (or, if already closed, close its parent)
     zi             " toggle foldenable
     zj             " down to next fold
@@ -91,8 +94,8 @@ Joseph's (g)Vim Quick Reference
     gg=G          " indent a file
 
 ## Colorizer
-    :ColorClear      " clears colourizing
-	:ColorHighlight  " impressive colourizing, but then can't be truly turned off
+    :ColorClear         " clears colourizing
+	:ColorHighlight     " impressive colourizing, but then can't be truly turned off
 	:packadd Colorizer  " slows down large file opening
 
 ## colorizer
@@ -100,7 +103,7 @@ Joseph's (g)Vim Quick Reference
 	:packadd colorizer  " load the plugin from an opt directory. Only interprets codes.
 
 ## colour test
-	pack/packs-unix/opt/vim-hexokinase/test_colours.txt
+	pack\packs-unix\opt\vim-hexokinase\test_colours.txt
 
 ### cterm-colors
     NR-16   NR-8    COLOR NAME
@@ -139,16 +142,19 @@ Joseph's (g)Vim Quick Reference
 # movements
 
 ## in buffer
-    #G        " go to line #
-    :#        " go to line #
-    ge        " go backwards to end of word
-    g:        " jump forward to position of a newer change
-    g;        " jump back to position of an older change
-    gj/k      " go down/up a visual line
-    { or }    " move cursor to start or end of paragraph
-    ( or )    " move cursor to start or end of sentence
-    :h ``
-    :h '.
+    nG  " go to line n
+    :n  " go to line n
+
+```vim
+ge        " go backwards to end of word
+g:        " jump forward to position of a newer change
+g;        " jump back to position of an older change
+gj\k      " go down\up a visual line
+{ or }    " move cursor to start or end of paragraph
+( or )    " move cursor to start or end of sentence
+:h ``
+:h '.
+```
 
 ## in current line
     $         " end of line
@@ -164,10 +170,12 @@ Joseph's (g)Vim Quick Reference
     L         " go Last line (of current window display)
 
 ## marks
-    `z        " move to mark z
-    'z        " move to start of line of mark z
-    mz        " create mark z
-    mJ        " put a file-specific mark in current file (can use A-Z0-9)
+```vim
+`z  " move to mark z
+'z  " move to start of line of mark z
+mz  " create mark z
+mJ  " put a file-specific mark in current file (can use A-Z0-9)
+```
 
 ## move current line
     :(5,7)m0  " move line(s 5-7) to start
@@ -184,33 +192,36 @@ Joseph's (g)Vim Quick Reference
     \zz       " toggle centering current line
 
 # search
-    #                     " over a word highlights all exact instances, and jumps to last
-    %                     " find opposing bracket in a line
-    *                     " highlight all instances of exactly the word under the cursor
-	g# (or g*)            " # (or *) without \< \>
-    \B                    " :BLines
-    \L                    " :Lines
-    \n                    " (my mapping for) clearing yellow searched highlights
-    \rn                   " (my mapping for) toggle relativenumber
-    :Bufferize il <word>  " grab list of lines containing <word> in a new buffer
-    :g/^#####\+           " shows lines that begin with 5 or more #'s
-    :g/pattern            " list of lines containing "pattern"
-    :%s/pattern//ng       " reports number of occurances
-    [I or ]I              " list lines containing word under cursor
-    n                     " find next highlighted search result
-    z/                    " incsearch-fuzzy-stay
+    <hash>      " over a word highlights all exact instances, and jumps to last
+    :g\pattern  " list of lines containing "pattern"
+
+```vim
+%                     " find opposing bracket in a line
+*                     " highlight all instances of exactly the word under the cursor
+g# (or g*)            " # (or *) without \< \>
+\B                    " :BLines
+\L                    " :Lines
+\n                    " (my mapping for) clearing yellow searched highlights
+\rn                   " (my mapping for) toggle relativenumber
+:Bufferize il <word>  " grab list of lines containing <word> in a new buffer
+:g\^#####\+           " shows lines that begin with 5 or more #'s
+:%s\pattern\\ng       " reports number of occurances
+[I or ]I              " list lines containing word under cursor
+n                     " find next highlighted search result
+z\                    " incsearch-fuzzy-stay
+```
 
     vim-mark
 
 ## fzf.vim
     :Rg <regex> " in the cwd
-    \j          " :Files /mnt/SDSSDA240G/Dropbox/JH
+    \j          " :Files \mnt\SDSSDA240G\Dropbox\JH
     F8          " :History:
-    F9          " :History/
+    F9          " :History\
 
-## following /
+## following \
 	<ctrl-v>u0000 " (0000 is replaced by the hexadecimal code point value) for combining characters
-    \/            " TweakLS()
+    \\            " TweakLS()
 	\C (anywhere) " force case
 	\c (anywhere) " ignore case
 	\M            " nomagic (for what follows), eg returning . & * to themselves
@@ -221,6 +232,7 @@ Joseph's (g)Vim Quick Reference
 	text\|alt     " searches for text & alt
 
 ## regex
+```vim
 	\(alt1\|alt2\|alt3\)
 	\d    " digit
 	\D    " non-digit
@@ -228,12 +240,14 @@ Joseph's (g)Vim Quick Reference
 	\S    " non-whitespace character
 	\s    " whitespace character
 	\u    " uppercase character
+	\ze \zs
     \{,m} " 0-m matches
     \{-}  " as few as possible
+```
 
 ## replace - reuse matched pattern
-    :h s/\&
-    :s/<pattern>/<new1>&<new2>/ " wraps <pattern> in <new1> & <new2>
+    :h s\\&
+    :s\<pattern>\<new1>&<new2>\ " wraps <pattern> in <new1> & <new2>
 
 # shell
     :!<shellcmd>          " runs the external shell command
@@ -247,14 +261,14 @@ Joseph's (g)Vim Quick Reference
     :packadd vim-rhubarb  " load the plugin from an opt directory, for :GBrowse to work
     :r!<shell command>    " reads shell command output into the buffer
     :se shell?            " returns the path to the shell
-    :tabe $HOME/_vimrc    " bring up my vimrc in a new tab
+    :tabe $HOME\_vimrc    " bring up my vimrc in a new tab
     :ALEToggle
     :Vexplore             " opens a netrw vertical directory browsing window
     \vg                   " cd to file's and vimgrep for last search
     C-g                   " display relative path of current file
     <shellcmd> | gvim -   " pipes shell command output into gvim
     gf                    " open file under cursor - :h gF
-    gx                    " open url under cursor
+    gx                    " open url under cursor (or all of first line of markdown link)
 
 ## open webpages
 	F6 " open a uURL using open-browser.vim
@@ -273,42 +287,55 @@ Joseph's (g)Vim Quick Reference
     ci} " change inside curly braces
 
 # tricks
-    :%s/\v^.*$/\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
+```
+:%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
+:so \usr\share\vim\vim82\tools\emoji_list.vim
 
-    &                            " repeat last substitute
-    ctrl-q ctrl-m                " inserts ^M (carriage return)
-    g&                           " repeat last command over the whole document
-    g Ctrl-g                     " prints the cursor position
-    q                            " end recording macro
-    qj                           " begin recording macro in j
-    :exe                         "
-    :g/^/m 0                     " reverse the entire buffer
-    :h g_CTRL-G                  " position and word info, works on a range too
-    :ni<somecharacter><Enter>    " inserts <somecharacters> n time
-    :normal i" . strftime("%c")  " put date-time at cursor
-    :so /usr/share/vim/vim82/tools/emoji_list.vim
-    \yy                          " CalendarH
+&                            " repeat last substitute
+ctrl-q ctrl-m                " inserts ^M (carriage return)
+g&                           " repeat last command over the whole document
+g Ctrl-g                     " prints the cursor position
+qj                           " begin recording macro in j
+:echo &bomb                  " 1 if BOM
+:exe
+:g\^\m 0                     " reverse the entire buffer
+:ni<somecharacter><Enter>    " inserts <somecharacters> n time
+:normal i" . strftime("%c")  " put date-time at cursor
+```
+```vim
+q                            " end recording macro
+:h g_CTRL-G                  " position and word info, works on a range too
+:t.                          " reproduce line
+:t.|s\.\=\g                  " setext-style header underlining
+\yy                          " CalendarH
+```
 
 ## base64
-	<leader>atob " base64 to a string
-	<leader>btoa " a string to base64
+```
+<leader>atob " base64 to a string
+<leader>btoa " a string to base64
+```
 
 ## counting stuff
-    :%s/.//gn|noh  " characters in buffer
-    :s/./&/gn|noh  " show number of characters in a long line
+    :%s\.\\gn|noh  " characters in buffer
+    :s\.\&\gn|noh  " show number of characters in a long line
     g CTRL-G       " counts, from here to whole buffer
 
 ## case
-    g~<movement> " invert case
-    ~            " toggle case of selection
-    ~            " TwiddleCase of a selection
-    :s/\<./\u&/g " capitalise first letters
-    u            " lowercase a visual block
+```
+g~<movement> " invert case
+```
+```vim
+~            " toggle case of letter
+~            " TwiddleCase of a selection
+:s\\<.\\u&\g " capitalise first letters
+u            " lowercase a visual block
+```
 
 ## entering specials
     digraphs
     Entering special characters
-    ^Vu03b2  " gets β
+    ^Vu03b2  " gets greek small letter beta
 
 ## number lists
     :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
@@ -316,34 +343,53 @@ Joseph's (g)Vim Quick Reference
     :put =range(1964,2020) " create a series of numbers
 
 ### working down buffer
-    :let i=1 | g#/# s##\='/'.i# | let i+=1  " prefix-number all files in nnn's neovim window
+    :let i=1 | g#\# s##\='\'.i# | let i+=1  " prefix-number all files in nnn's neovim window
     :let i=2 | g#.# s#1#\=i#g | let i+=1    " g-> working down through the entire buffer, s-> increase counts
 
 # Vim
-    @@  " = @: = repeat last command-line
-    K   " brings up a man page (if there is one) for word under cursor
-    ga  " returns code values for character under cursor
-    gQ  " enter Ex mode
-    q:  " brings up an interactive history of :commands (in an editable window)
-    vi  " exit Ex mode
-    \8  " toggle 82/106 columns
-    \ll " list mode
-    C-k<non-text-key>      " enters the Vim value of a non-text-key
-    C-r                    " " (in command line) insert the unnamed register
-    :X                     " prompts for an encryption key
-    :h index               " lists the all of the commands
-    :h 'sw'                " autoindentation - shiftwidth
-    :his                   " Display command-line history
-    :his s                 " Display search string history
-    :so %                  " source the current file
-    :DiffOrig              " brings the Recover version up left
+```vim
+@@         " = @: = repeat last command-line
+\8         " toggle 82\106 columns
+\ll        " list mode
+ga         " returns code values for character under cursor
+gQ         " enter Ex mode
+K          " brings up a man page (if there is one) for word under cursor
+q:         " brings up an interactive history of :commands (in an editable window)
+vi         " exit Ex mode
+:h index   " lists the all of the commands
+:h 'sw'    " autoindentation - shiftwidth
+:his       " Display command-line history
+:his s     " Display search string history
+:so %      " source the current file
+:DiffOrig  " brings the Recover version up left
+:X         " prompts for an encryption key
 
-    command-line window: C-c C-c  closes
-    /usr/share/vim/vim90
+r $vimfiles
+```
+```
+c-k<non-text-key> " enters the Vim value of a non-text-key
+c-r "  " (in command line) insert the unnamed register
+command-line window: C-c C-c  closes
+```
 
 ## buffer listing your recent messages
     :Bufferize messages
 	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
+
+## quickfix
+    :cc n    " goto error n
+    :ccl     " close
+    :cn :cp  " next error  previous error
+    :copen   " open
+    :cw      " open if errors or close
+
+## registers
+    ":p                               " paste in last command.
+    "kyy                              " copies current line into register k
+    :echo @%                          " (relative) filepath
+    :let@\='something to search for'  " makes that last search
+    :let@a=@_                         " sets a to (always empty) black hole register
+    :let@q=@k                         " sets a to contents of register k
 
 ## settings
     :Bufferize dig!                    " categorised digraphs
@@ -357,23 +403,30 @@ Joseph's (g)Vim Quick Reference
     :let mapleader
     :verb se tw                        " shows where textwidth was set
 
+    $VIMRUNTIME
+    C \usr\share\vim\vim90\ftplugin
+    C:\Vim\vim90\ftplugin
+
 ### runtimepath
     :Bufferize echo &rtp
     :Bufferize se rtp
 
 ### syntax highlighting
 	:h syn-region
+    :windo echo b:current_syntax
+    C \usr\share\vim\vim90\syntax
+    C:\Vim\vim90\syntax
 
 #### settings
 	:hi
-	:so $VIMRUNTIME/syntax/hitest.vim
+	:so $VIMRUNTIME\syntax\hitest.vim
     :se synmaxcol=0  " removes 3000 character limit
-    :syntax list  # what's set for the current file
+    :Bufferize sy list  " what's set for the current file
 
-	$VIMRUNTIME/syntax/syncolor.vim
+	$VIMRUNTIME\syntax\syncolor.vim
 
 # Visual mode commands
-    V  " line-based visual selection
+    V  " line-based visual SELection
     gv " reselect the last block
     j  " in Visual mode, selects line and moves cursor down (k for up)
     v  " character-based visual selection
@@ -399,7 +452,9 @@ Joseph's (g)Vim Quick Reference
     C-w+v        " split vertical
 
 # words
-    g<Ctrl-G>  " statistics
+```
+g<Ctrl-G>  " statistics
+```
 
 ## spell
     (count)]s => move to next misspelled word after the cursor

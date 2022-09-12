@@ -17,11 +17,14 @@ vnoremap <buffer><leader><leader>b c\textbf{<Esc>pa}<Esc>  " enbolden a selectio
 vnoremap <buffer><leader><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
 
 " EasyAlign  mappings for  tabular  environment
-nnoremap <buffer> gT :normal gAip*&<CR><Bar> :update<CR> " over-mapping - h gT
-inoremap <buffer><S-F7> <Esc>:normal gAip*&<CR><Bar> :update<CR>
-" - doesn't work in Win10's gVim
+nnoremap <buffer><F7> :call TabularFullAlign()<CR><Bar>:update<CR>
+inoremap <buffer><F7> <Esc>:call TabularFullAlign()<CR><Bar>:update<CR>
 function! TabularFullAlign()
   " include comments
+  normal vip
+  silent! '<,'>s/%/※/
+  normal gAip*&
+  silent! '<,'>s/※/%/
 endfunction
 
 ""> demote or promote sections
@@ -65,9 +68,9 @@ if b:PandocLaTeX
   hi percentHeading term=bold cterm=bold gui=bold guifg=LightGreen
   " toggle  match  on and off - can allow for easier reading
   "  (match works on the window)
-  nnoremap <silent> <F7> :call PHMatch()<cr>
-  inoremap <silent> <F7> <Esc>:call PHMatch()<cr>
-  vnoremap <silent> <F7> <Esc>:call PHMatch()<cr>
+  nnoremap <silent><buffer><leader><F7> :call PHMatch()<cr>
+  inoremap <silent><buffer><leader><F7> <Esc>:call PHMatch()<cr>
+  vnoremap <silent><buffer><leader><F7> <Esc>:call PHMatch()<cr>
   let w:PHMatch = 0
   function! PHMatch()
     if w:PHMatch
@@ -86,9 +89,9 @@ else
   "  needs to be done before opening the buffer, eg in vimrc
   setlocal fdc=1 fdl=1 fdm=syntax tw=0
   " toggle syntax folding on and off for the buffer - useful for large files
-  nnoremap <silent><buffer> <F7> :call LaTeXsyntaxFolding()<cr>
-  inoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
-  vnoremap <silent><buffer> <F7> <Esc>:call LaTeXsyntaxFolding()<cr>
+  nnoremap <silent><buffer><leader><F7> :call LaTeXsyntaxFolding()<cr>
+  inoremap <silent><buffer><leader><F7> <Esc>:call LaTeXsyntaxFolding()<cr>
+  vnoremap <silent><buffer><leader><F7> <Esc>:call LaTeXsyntaxFolding()<cr>
   let b:LaTeXsyntaxFolding = 1
   function! LaTeXsyntaxFolding()
     if b:LaTeXsyntaxFolding

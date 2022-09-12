@@ -3,9 +3,9 @@
 " Language:	digraphs
 "  for  $vimfiles/digraphs.txt  created by  $vimfiles/digraphsTidy.pl
 " Maintainer: Joseph Harriott
-" Last Change: Sat 06 Nov 2021
+" Last Change: Sat 27 Aug 2022
 "
-" This file should be in your .vim/ftplugin folder.
+" also  $vimfiles/syntax/digraphs.vim
 " You need this modeline in the file that you want to affect:  vim: ft=digraphs:
 
 " folding by header marks

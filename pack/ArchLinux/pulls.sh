@@ -8,12 +8,12 @@
 set -e  # quits on error
 
 # optionally declare a snagged plugin to start from:
-# snagged=tagbar
+snagged=tagbar  # see  $vimfiles/pack/ArchLinux/after.sh
 
 [[ $snagged ]] || tidyup=1  # only tidy up if  snagged  wasn't set
 
 cd ..
-find . -maxdepth 3 -mindepth 3 -type d | while read plugin; do
+find . -maxdepth 3 -mindepth 3 -type d | sort | while read plugin; do
   pluginName=${plugin##*/}
   if [ $snagged ]; then
     if [ $pluginName = $snagged ]; then
@@ -22,7 +22,8 @@ find . -maxdepth 3 -mindepth 3 -type d | while read plugin; do
       continue
     fi
   fi
-  echo -e "\e[1m $plugin \e[0m"
+  # echo -e "\e[1m $plugin \e[0m"
+  echo "${tpf3b} $plugin ${tpfn}"
   cd "$plugin"
   git pull
   cd ~/.vim/pack

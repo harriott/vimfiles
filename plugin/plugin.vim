@@ -1,8 +1,9 @@
 " vim: ft=vim:
 
-" Joseph Harriott - Fri 12 Nov 2021
+" Joseph Harriott - Tue 30 Aug 2022
 " ---------------------------------
 
+" $vimfiles/plugin/plugin.vim
 " here I have things that I might, rarely, want to comment out
 " keep this file in your plugin directory so's it's automatically sourced at startup
 
@@ -71,6 +72,7 @@ function! ClearFancyText()
   :sil!%s/“/"/g
   :sil!%s/”/"/g
   :sil!%s/″/"/g
+  :sil!%s/ʻ/'/g
   :sil!%s/‘/'/g
   :sil!%s/’/'/g
   :sil!%s/‑/-/g
@@ -78,9 +80,11 @@ function! ClearFancyText()
   :sil!%s/—/-/g
   :sil!%s/―/-/g
   :sil!%s/‐/-/g
+  :sil!%s/­//g  " remove soft hyphen
   :sil!%s/…/.../g
   :sil!%s/│/|/g
   :sil!%s/，/,/g
+  :sil!%s/→/-->/g
 endfunction
 
 ""> format - date abbreviations
@@ -109,7 +113,8 @@ endif
 " 9 here means convert back to parentheses (eg for a quoted url in tex):
 nnoremap <leader>9 :call PercentUnicode()<cr>
 function! PercentUnicode()
-    :keepp s/%27/'/e
+    :keepp s/%26/\&/eg
+    :keepp s/%27/'/eg
     :keepp s/%28/(/e
     :keepp s/%29/)/e
     :keepp s/%C3%82/Â/eg
@@ -145,6 +150,7 @@ endfunction
 " 5 here means convert to % code (my general preference):
 nnoremap <leader>5 :call UnicodePercent()<cr>
 function! UnicodePercent()
+    :keepp s/&/%26/eg
     :keepp s/'/%27/eg
     :keepp s/(/%28/e
     :keepp s/)/%29/e
@@ -211,15 +217,13 @@ nnoremap <leader>U :Underline
 " but I use xml filetype because it has folding
 autocmd BufNewFile,BufRead *.aesl setlocal filetype=xml
 
+""> ft Emacs history
+autocmd BufNewFile,BufRead ~/.emacs.d/history setlocal filetype=lisp
+
 ""> ft defaults
 set shiftwidth=4
 set tabstop=4
 set textwidth=99
-
-""> ft dokuwiki
-" for $vimfiles/syntax/dokuwiki.vim
-let dokuwiki_comment=1  " comment highlighting on
-let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
 
 ""> ft LaTeX syntax folding
 " on before opening a buffer:
@@ -232,8 +236,8 @@ autocmd BufReadPre *templates/*.latex let b:PandocLaTeX = 1
 " turn off syntax folding for the long log files from md4pdf.ps1
 autocmd BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 
-""> ft rsnapshotlog
-autocmd BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
+""> ft vifm
+autocmd BufNewFile,BufRead /usr/share/vifm/vifm-help.txt setlocal ft=man
 
 ""> ft vimscript
 " lesser indentation of continuation line

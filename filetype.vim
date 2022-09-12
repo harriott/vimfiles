@@ -17,7 +17,8 @@ if exists("did_load_filetypes")
     finish
 endif
 augroup filetypedetect
+    autocmd! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
     autocmd! BufRead,BufNewFile *.mail setfiletype mail
-    " - overrides  $VIMRUNTIME/filetype.vim
-augroup END
+    autocmd! BufRead,BufNewFile .spacemacs setfiletype lisp
+augroup END  " - overrides  $VIMRUNTIME/filetype.vim
 

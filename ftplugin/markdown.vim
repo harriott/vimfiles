@@ -2,7 +2,7 @@
 
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Wed 09 Feb 2022
+" Last Change: Mon 12 Sep 2022
 " $vimfiles/ftplugin/markdown.vim
 "  supplementary to  $VIMRUNTIME/ftplugin/markdown.vim  which includes  $vimfiles/ftplugin/html.vim
 " $VIMRUNTIME/filetype.vim  determines which files are automatically detected as  markdown
@@ -17,6 +17,12 @@ let b:ale_linters = ['languagetool']
 vnoremap <buffer><leader>> :s/^#/##/<CR>
 " promote a selected part
 vnoremap <buffer><leader>< :s/^#//<CR>
+
+" open Pandoc'd pdf
+nnoremap <buffer> <F12> :call CompiledPDF()<CR>
+
+" Vim Markdown
+set conceallevel=2
 
 " wrap the inner word under cursor with backticks
 nnoremap <buffer> <leader>` viwc``<Esc>P

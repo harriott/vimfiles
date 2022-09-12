@@ -38,26 +38,11 @@ vnoremap <buffer><leader>> :s/"">/"">>/<CR>
 vnoremap <buffer><leader>< :s/"">>/"">/<CR>
 
 "">> turn off or on a fold of commands
+execute 'source 'g:vimfiles.'/ftplugin/firmCommentWholeFold.vim'
 
 " firmly comment out a whole fold
-function! FirmComment()
-  " definitely close the current fold, and select it
-  normal! zozckjV
-  " firmly comment it out
-  s/^\(.\)/" \1/
-  " definitely close the current fold, then delete and restore to get out of visual line
-  normal! zozckjdP
-endfunction
-nnoremap <buffer><leader><leader>> :call FirmComment()<cr>
+nnoremap <buffer><leader><leader>> :call FirmComment('"')<cr>
 
 " remove firm comments from a whole fold
-function! FirmUnComment()
-  " definitely close the current fold, and select it
-  normal! zozckjV
-  " firmly uncomment it (suppressing any error messages if there're uncommented lines)
-  sil! exec 's/^" //'
-  " definitely close the current fold, then delete and restore to get out of visual line
-  normal! zozckjdP
-endfunction
-nnoremap <buffer><leader><leader>< :call FirmUnComment()<cr>
+nnoremap <buffer><leader><leader>< :call FirmUnComment('"')<cr>
 

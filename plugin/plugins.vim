@@ -45,10 +45,10 @@ packadd vim-fugitive
 
 "">>> vim-gfm-syntax
 " $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/autoload/gfm_syntax/emoji.vim
+autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm  " or vim: ft=markdown.gfm:
 let g:gfm_syntax_enable_always = 0
 let g:gfm_syntax_enable_filetypes = ['markdown.gfm'] " a subtype of markdown filetype
 let g:gfm_syntax_emoji_conceal = 1
-autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm  " or vim: ft=markdown.gfm:
 packadd vim-gfm-syntax
 
 "">>> vim-gitgutter
@@ -109,7 +109,9 @@ packadd vim-base64
 packadd vim-bbcode
 
 "">>> vim-dokuwiki
-" nvim -O $cITh/encoding/vi/vim-dokuwiki/syntax/dokuwiki.vim $vimfiles/syntax/dokuwiki.vim
+packadd vim-dokuwiki
+let dokuwiki_comment=1  " comment highlighting on
+let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
 
 "">>> vim-hjson
 packadd vim-hjson
@@ -121,12 +123,17 @@ packadd vim-mbsync
 packadd vim-pandoc-syntax
 
 "">>> vim-ps1
+" $vimfiles\pack\packs-cp\opt\vim-ps1\ftdetect\ps1.vim
 packadd vim-ps1
 
-"">> nerdcommenter
+"">> The NERD Commenter
 packadd nerdcommenter
 let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
+
+" extra filetypes
+" $vimfiles/pack/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 
 "">> Tagbar
 " add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
@@ -149,6 +156,10 @@ packadd tagbar
 nnoremap <leader>pp :<c-u>MatchupWhereAmI??<cr>
 packadd vim-matchup
 
+"">> vim-ssh-annex
+autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
+packadd vim-ssh-annex
+
 ""> fzf.vim
 packadd fzf.vim
 
@@ -164,7 +175,8 @@ vnoremap <F9> <Esc>:History/<CR>
 
 " Win10:
 " junegunn/fzf  at  $vimfiles\plugin\fzf,
-"  because  fzf  is not found externally inspite of  :set rtp+=$CP\fzf
+"  because  fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
+"  (the advice at  $vimfiles\plugin\fzf\README-VIM.md  ain't correct)
 
 "">> \j
 " in ~/.vim: rg '>j' --no-ignore
@@ -252,6 +264,12 @@ let g:languagetool_win_height = -1
 " needs a  g:languagetool_*  defined
 packadd vim-LanguageTool " then can  :h LanguageTool
 " now preferring  vim-langtool
+
+"">> Vim Markdown
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_new_list_item_indent = 0
+packadd vim-markdown
 
 ""> layout
 
@@ -416,25 +434,9 @@ endif
 
 if has('unix')
   nnoremap <leader>m :MRU
-  " - allowing for a qualifying regex
+  " - allows for a qualifying regex
 else
   nnoremap <leader>m :MRU<CR>
-  nnoremap <leader>mc :call MRU_highlighted('\.cls')<CR>:se hls<CR>
-  nnoremap <leader>me :call MRU_highlighted('\.tex')<CR>:se hls<CR>
-  nnoremap <leader>mg :call MRU_highlighted('\.log')<CR>:se hls<CR>
-  nnoremap <leader>mm :call MRU_highlighted('\.md' )<CR>:se hls<CR>
-  nnoremap <leader>ml :call MRU_highlighted('\.pl' )<CR>:se hls<CR>
-  nnoremap <leader>mp :call MRU_highlighted('\.ps1')<CR>:se hls<CR>
-  nnoremap <leader>ms :call MRU_highlighted('\.sh')<CR>:se hls<CR>
-  nnoremap <leader>mt :call MRU_highlighted('\.txt')<CR>:se hls<CR>
-  nnoremap <leader>mv :call MRU_highlighted('\.vim')<CR>:se hls<CR>
-  nnoremap <leader>mx :call MRU_highlighted('\.xml')<CR>:se hls<CR>
-  nnoremap <leader>my :call MRU_highlighted('\.py')<CR>:se hls<CR>
-  function! MRU_highlighted(filetype)
-    let @/ = a:filetype
-    MRU
-  endfunction
-  " - because a qualified MRU fails to time-sort
 endif
 packadd mru
 
@@ -471,6 +473,9 @@ vmap <F6> <Plug>(openbrowser-smart-search)
 "  (can't adapt this one for  nsBt)
 
 packadd open-browser.vim
+
+"">> vifm.vim
+packadd vifm.vim
 
 "">> vim-clifm
 packadd vim-clifm
@@ -654,7 +659,7 @@ packadd vim-buffing-wheel
 " - + X
 
 "">>> vim-bufkill
-" :BD
+" :BD  :bd maintaining splits
 packadd vim-bufkill
 
 "">> location/quickfix list
@@ -680,6 +685,8 @@ packadd undotree
 
 "">> vim-peekaboo
 packadd vim-peekaboo
+" triggered by "/@ normal mode, <CTRL-R> insert mode
+"  spacebar toggles full-screen, to see clearer the register's contents
 
 "">> vim-repeat
 packadd vim-repeat

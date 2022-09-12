@@ -12,6 +12,7 @@
 ../packs-cp/opt/fern-preview.vim
 ../packs-cp/opt/fern-renderer-nerdfont.vim
 ../packs-cp/opt/fern.vim
+../packs-cp/opt/fzf.vim
 ../packs-cp/opt/gitignore.vim
 ../packs-cp/opt/Highlight.vim
 ../packs-cp/opt/incsearch-fuzzy.vim
@@ -36,11 +37,13 @@
 ../packs-cp/opt/targets.vim
 ../packs-cp/opt/thesaurus_query.vim
 ../packs-cp/opt/undotree
+../packs-cp/opt/vifm.vim
 ../packs-cp/opt/vim-airline
 ../packs-cp/opt/vim-airline-themes
 ../packs-cp/opt/vim-asterisk
 ../packs-cp/opt/vim-base64
 ../packs-cp/opt/vim-bbcode
+../packs-cp/opt/vim-bbye
 ../packs-cp/opt/vim-buffing-wheel
 ../packs-cp/opt/vim-bufkill
 ../packs-cp/opt/vim-characterize
@@ -50,6 +53,7 @@
 ../packs-cp/opt/vim-devicons
 ../packs-cp/opt/vim-dirvish
 ../packs-cp/opt/vim-dirvish-git
+../packs-cp/opt/vim-dokuwiki
 ../packs-cp/opt/vim-easy-align
 ../packs-cp/opt/vim-easymotion
 ../packs-cp/opt/vim-flog
@@ -79,9 +83,9 @@
 ../packs-cp/opt/vim-textmanip
 ../packs-cp/opt/vim-visual-star-search
 ../packs-unix/opt/Colorizer
-../packs-unix/opt/fzf.vim
 ../packs-unix/opt/jellybeans.vim
 ../packs-unix/opt/vim-better-whitespace
 ../packs-unix/opt/vim-hexokinase
 ../packs-unix/opt/vim-picker
+../packs-unix/opt/vim-ssh-annex
 ../packs-unix/opt/vim-wombat-scheme

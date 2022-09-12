@@ -1,9 +1,9 @@
 # vim: set fdl=1 et tw=0:
 
-# Joseph Harriott, Fri 21 Jan 2022
+# Joseph Harriott, Thu 01 Sep 2022
 # run this when you want to update your remote plugins
 
-gci -Directory ..\*\*\* |
+gci -Directory ..\*\*\* | sort |
 foreach{
   [System.Console]::BackgroundColor = 'DarkCyan'
   [System.Console]::ForegroundColor = 'White'
@@ -11,11 +11,12 @@ foreach{
   [System.Console]::ResetColor()
   '' # gets the colour reset done
   cd $_
-  git pull
+  # git pull
   if( -not $? ) { exit }
 }
-cd ..\..\..
+cd $vimfiles\plugin\fzf
+git pull
 
-cd Win10
+cd $vimfiles\pack\Win10
 .\lists.ps1
 

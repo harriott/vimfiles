@@ -3,11 +3,14 @@
 
 # Joseph Harriott, Mon 18 Oct 2021
 
-# bash after.sh  - some tweaks on plugins
+# some tweaks on plugins
+# bash $vimfiles/pack/ArchLinux/after.sh
+
+set -e
 
 #=> hexokinase
 echo -e "\e[1m make hexokinase \e[0m"
-cd ../packs-unix/opt/vim-hexokinase
+cd $vimfiles/pack/packs-unix/opt/vim-hexokinase
 make hexokinase
 cd ../../../ArchLinux
 
@@ -16,6 +19,7 @@ cd ../../../ArchLinux
 
 #=> tagbar
 # reduce help keystroke  ['<F1>', '?']  to  ['?']  so that my  <F1>  still works
+# first tweak & run  $vimfiles/pack/ArchLinux/clones.sh  then
 sed -i "s/'<F1>', //" ../packs-cp/opt/tagbar/plugin/tagbar.vim
 
 #=> vim-ShowTrailingWhitespace

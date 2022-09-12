@@ -49,6 +49,7 @@ ensurePath cp
   # gicl https://github.com/vim-scripts/gitignore.vim
   # gicl https://github.com/wellle/targets.vim
   # gicl https://github.com/yegappan/mru
+  gicl https://github.com/preservim/vim-markdown
 
 pack
 #endregion

@@ -8,9 +8,6 @@
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
 "  this requires  $vimfiles/filetype.vim
 
-" open Pandoc'd pdf
-nnoremap <buffer> <F12> :call CompiledPDF()<CR>
-
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available

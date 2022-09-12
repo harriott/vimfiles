@@ -1,6 +1,6 @@
 
 " ------------------------------
-" sourced by  $MACHINE/jo/gvimrc
+" sourced by  $machBld/jo/gvimrc
 " ------------------------------
 
 " move on ot the more portable configuration:

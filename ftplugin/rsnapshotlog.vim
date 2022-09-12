@@ -4,9 +4,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Tue 31 May 2022
 
-" $vimfiles/ftplugin/rsnapshotlog.vim
-"  for  /var/log/rsnapshot  (- defined in  $MACHINE/etc/rsnapshot.conf
-" you need this modeline in the file that you want to affect:  vim: ft=rsnapshotlog:
+" also  $vimfiles/syntax/rsnapshotlog.vim
+" for  /var/log/rsnapshot  (- defined in  $machBld/etc/rsnapshot.conf)
 
 " see also  $vimfiles/syntax/rsnapshotlog.vim
 

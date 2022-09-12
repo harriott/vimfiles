@@ -3,7 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 08 Aug 2022
 
-" also  $vimfiles/syntax/ftlist.vim
+" also  $vimfiles/syntax/fdtslist.vim
 " vim: ft=ftlist:
 
 "  for

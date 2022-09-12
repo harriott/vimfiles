@@ -12,6 +12,7 @@
 ../packs-cp/opt/fern-preview.vim/.git
 ../packs-cp/opt/fern-renderer-nerdfont.vim/.git
 ../packs-cp/opt/fern.vim/.git
+../packs-cp/opt/fzf.vim/.git
 ../packs-cp/opt/gitignore.vim/.git
 ../packs-cp/opt/Highlight.vim/.git
 ../packs-cp/opt/incsearch-fuzzy.vim/.git
@@ -36,11 +37,13 @@
 ../packs-cp/opt/targets.vim/.git
 ../packs-cp/opt/thesaurus_query.vim/.git
 ../packs-cp/opt/undotree/.git
+../packs-cp/opt/vifm.vim/.git
 ../packs-cp/opt/vim-airline/.git
 ../packs-cp/opt/vim-airline-themes/.git
 ../packs-cp/opt/vim-asterisk/.git
 ../packs-cp/opt/vim-base64/.git
 ../packs-cp/opt/vim-bbcode/.git
+../packs-cp/opt/vim-bbye/.git
 ../packs-cp/opt/vim-buffing-wheel/.git
 ../packs-cp/opt/vim-bufkill/.git
 ../packs-cp/opt/vim-characterize/.git
@@ -50,6 +53,7 @@
 ../packs-cp/opt/vim-devicons/.git
 ../packs-cp/opt/vim-dirvish/.git
 ../packs-cp/opt/vim-dirvish-git/.git
+../packs-cp/opt/vim-dokuwiki/.git
 ../packs-cp/opt/vim-easy-align/.git
 ../packs-cp/opt/vim-easymotion/.git
 ../packs-cp/opt/vim-flog/.git
@@ -79,9 +83,9 @@
 ../packs-cp/opt/vim-textmanip/.git
 ../packs-cp/opt/vim-visual-star-search/.git
 ../packs-unix/opt/Colorizer/.git
-../packs-unix/opt/fzf.vim/.git
 ../packs-unix/opt/jellybeans.vim/.git
 ../packs-unix/opt/vim-better-whitespace/.git
 ../packs-unix/opt/vim-hexokinase/.git
 ../packs-unix/opt/vim-picker/.git
+../packs-unix/opt/vim-ssh-annex/.git
 ../packs-unix/opt/vim-wombat-scheme/.git

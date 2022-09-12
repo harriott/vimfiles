@@ -1,18 +1,18 @@
 
 " Language:	vim
 " Maintainer: Joseph Harriott
-" Last Change: Sun 30 Jan 2022
+" Last Change: Tue 30 Aug 2022
 
 " $vimfiles/after/syntax/vim.vim
 " put this in your modeline: " vim: ft=vim:
 
 " my syntax for folding
-syntax match buildY '^"">.*$'
 syntax match buildN '^ \+"">.*$'
+syntax match buildY '^"">.*$'
 
-hi def buildY term=bold cterm=bold gui=bold guifg=LightGreen
 hi def buildN term=bold cterm=bold gui=bold guifg=LightGray
-" see  cterm-colors  in  ../keystrokes.md
+hi def buildY term=bold cterm=bold gui=bold guifg=LightGreen
+" see  cterm-colors  in  $vimfiles/QR.md
 
 let b:current_syntax = "vim"
 

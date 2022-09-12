@@ -9,6 +9,7 @@ echo "" > all.txt
 foreach ($group in 'cp', 'unix', 'win32') {
   gci "..\packs-$group\opt\*" | select -expand FullName >> all.txt
 }
+echo $vimfiles\plugin\fzf >> all.txt
 
 Write-Host " don't forget to " -nonewline
   Write-Host ":helptags ALL" -foregroundcolor red -backgroundcolor yellow -nonewline

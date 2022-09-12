@@ -35,8 +35,9 @@ iab <g <code go>
 iab <h <code html>
 iab <k <code haskell>
 iab <l <code latex>
-iab <p <code powershell>
 iab <o <code python>
+iab <p <code powershell>
+iab <s <code lisp>
 iab <u <code lua>
 iab <v <code vim>
 iab <x <code xml>
@@ -57,6 +58,7 @@ nnoremap <buffer> <leader><leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A 
 "    but only the last closing tag gets pasted, you have to do the other two manually.
 
 ""> folding by header marks
+" much faster than that proposed in  $vimfiles/pack/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim
 " (based on http://stackoverflow.com/questions/3828606/vim-markdown-folding)
 function! DWF()
 	let j = len(matchstr(getline(v:lnum), '^=\+'))
@@ -97,7 +99,9 @@ vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 
 ""> monospacing
 " convert monospaced to unformatted
-nnoremap <leader><leader>5 mp?''<cr><bar>:s/''/%% /<cr>:s/''/ %%/<cr>
+" nnoremap <leader><leader>5 mp?''<cr><bar>:s/''/%% /<cr>:s/''/ %%/<cr>
+" nnoremap <leader><leader>5 ?''<cr>i<cr><esc><bar>:s/''/%% /<cr>:s/''/ %%/<cr>
+nnoremap <leader><leader>5 ?''<cr>i<cr><esc>:s/''/%% /<cr>:s/''/ %%/<cr>kJ
 
 " wrap the inner word under cursor with ''
 nnoremap <buffer> <leader>' viwc''''<Esc>hP

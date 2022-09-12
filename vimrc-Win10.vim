@@ -76,6 +76,7 @@ endfunction
 "">> paths
 " $DROPBOX  &  $USER  are set in  $machine > $USER > _vimrc
 let $cITh = $DROPBOX.'/JH/copied/IT-handy'
+  let $GHrUse = $cITh.'/GHrepos'  " GitHub Repositories Use
 let $IT1 = $DROPBOX.'\JH\Technos\IT1'
 let $ITP = $DROPBOX.'\JH\Technos\IT0-storage'  " $ITP\diskUsage.txt
 let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\T430i73520M'
