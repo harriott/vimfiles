@@ -4,7 +4,6 @@
 " Last Change: Tue 31 Aug 2021
 " Useful adjustments for working with LaTeX documents.
 "  supplemental to  $VIMRUNTIME/ftplugin/tex.vim
-" This file should be in your vimfiles\ftplugin folder.
 " $VIMRUNTIME/filetype.vim > TeX  to see detections
 " see also  $vimfiles/after/ftplugin/tex.vim
 
@@ -13,8 +12,6 @@ let b:ale_enabled = 0 " and toggle it as defined in $vimfiles/plugin/plugins.vim
 
 nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
 nnoremap <buffer><leader><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
-vnoremap <buffer><leader><leader>b c\textbf{<Esc>pa}<Esc>  " enbolden a selection
-vnoremap <buffer><leader><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
 
 " EasyAlign  mappings for  tabular  environment
 nnoremap <buffer><F7> :call TabularFullAlign()<CR><Bar>:update<CR>
@@ -26,6 +23,11 @@ function! TabularFullAlign()
   normal gAip*&
   silent! '<,'>s/※/%/
 endfunction
+
+""> \command{}
+nnoremap <buffer><leader><leader>r :s#\\\h\+{##<bar>s/}//<bar>nohls<CR>  " remove first command
+vnoremap <buffer><leader><leader>b c\textbf{<Esc>pa}<Esc>  " enbolden a selection
+vnoremap <buffer><leader><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
 
 ""> demote or promote sections
 " select a region, then
@@ -114,9 +116,6 @@ setlocal shiftwidth=2
 setlocal softtabstop=2
 " Let tab keys always be expanded to spaces
 setlocal expandtab
-
-" \textbf{<selection>}
-vnoremap <leader>b c\textbf{}<Esc>P
 
 ""> for Verse
 " append  \\:

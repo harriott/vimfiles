@@ -67,6 +67,11 @@ endif
 set guifont=Lucida_Console:h9  "better to append size so that it's reported
 set linespace=4
 
+"">> open in Emacs
+function! OpenInEmacs()
+  execute 'silent !C:\Emacs\emacs-28.1\bin\runemacs.exe --no-splash +'.line('.').' '.expand('%:p')
+endfunction
+
 "">> open equivalent LaTeX compiled PDF
 function! CompiledPDF()
   execute 'silent !start '.expand('%:p:r').".pdf"

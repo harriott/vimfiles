@@ -1,10 +1,10 @@
 " vim: set fdl=2:
 
-" Language:	emdr - for my draft emails
-" Maintainer: Joseph Harriott
-" Last Change: Tue 09 Aug 2022
 " sourced by  $vimfiles/filetype.vim
-" also  $vimfiles/syntax/emailDraft.vim
+" Language:	emdr - for my draft emails ($vimfiles/sample.emdr)
+" Maintainer: Joseph Harriott
+" Last Change: Sun 25 Sep 2022
+" also  $vimfiles/syntax/emdr.vim
 
 ""> sectioning marks for emails
 setlocal expandtab foldcolumn=1 foldexpr=EF() foldmethod=expr shiftwidth=2 spell textwidth=0

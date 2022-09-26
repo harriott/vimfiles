@@ -1,8 +1,7 @@
 
-" -----------------------------------------------------------------------
-" sourced by  $vimfiles/gvimrc-Arch.vim
-" sourced by  $vimfiles/gvimrc-Win10.vim
-" -----------------------------------------------------------------------
+" $vimfiles/gvimrc.vim
+"  sourced by  $vimfiles/gvimrc-Arch.vim
+"  sourced by  $vimfiles/gvimrc-Win10.vim
 
 ""> 0 preliminaries
 " adapted from  $VIMRUNTIME/gvimrc_example.vim

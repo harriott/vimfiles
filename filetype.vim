@@ -5,7 +5,7 @@
 
 ""> 0 special functionality for my .emdr's
 " my email draft format, needs to be seen as  filetype text  for  ALE
-autocmd! BufRead,BufNewFile *.emdr setfiletype text | source $vimfiles/ftplugin/emailDraft.vim | source $vimfiles/syntax/emailDraft.vim
+autocmd! BufRead,BufNewFile *.emdr setfiletype text | source $vimfiles/ftplugin/emdr.vim | source $vimfiles/syntax/emdr.vim
 
 ""> 0 special functionality for my .md's
 autocmd! BufRead,BufNewFile *.md source $vimfiles/ftplugin/md.vim

@@ -485,6 +485,10 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 2
 nnoremap <leader>- :Hexplore<cr>
 
+""> shell - open in Emacs
+nnoremap <S-F11> :call OpenInEmacs()<CR>
+inoremap <S-F11> <Esc><S-F11>
+
 ""> shell - working directory to file's
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 

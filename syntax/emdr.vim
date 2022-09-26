@@ -1,10 +1,10 @@
 " vim: set fdl=1:
 
-" Language:	emdr - for my draft emails
-" Maintainer: Joseph Harriott
-" Last Change: Tue 09 Aug 2022
 " sourced by  $vimfiles/filetype.vim
-" also  $vimfiles/ftplugin/emailDraft.vim
+" Language:	emdr - for my draft emails ($vimfiles/sample.emdr)
+" Maintainer: Joseph Harriott
+" Last Change: Sun 25 Sep 2022
+" also  $vimfiles/ftplugin/emdr.vim
 
 ""> sectioning marks for emails
 " Quit when a (custom) syntax file was already loaded

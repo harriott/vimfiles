@@ -370,8 +370,10 @@ packadd vim-fontsize
 ""> shell
 
 "">> calendar-vim
-packadd calendar-vim
+let g:calendar_monday = 1
+let g:calendar_weeknm = 1
 noremap <leader>yy :CalendarH<CR>
+packadd calendar-vim
 
 "">> ctrlp.vim
 " $HOME/.cache/ctrlp/mru/cache.txt
@@ -607,12 +609,13 @@ endfunction
 
 "">>> vim-mark
 " :h mark.txt
-" :Mark /pattern
+" :Mark => disable them
+" :Mark /arbitrary/
+" :Mark word
 
 let g:mw_no_mappings = 1
 nmap <leader><leader>m <Plug>MarkSet
 nmap <leader><leader>n <Plug>MarkClear
-nmap <leader><leader>r <Plug>MarkRegex
 packadd vim-mark  " requires  ingo-library
 
 " "">>> vim-visual-star-search

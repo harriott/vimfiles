@@ -1,5 +1,5 @@
 
-" sourced from my  $ARCHBUILDS/jo/textEdit/Vim/vimrc
+" sourced from my  $ABjo/textEdit/Vim/vimrc
 
 source $HOME/.vim/vimrc-GNULinux.vim
 
@@ -8,6 +8,12 @@ set linespace=2
 ""> LanguageTool
 let g:langtool_jar = '/usr/share/java/LanguageTool/languagetool-commandline.jar'
 let g:languagetool_jar = '/usr/share/java/LanguageTool/languagetool-commandline.jar'
+
+""> open in Emacs
+function! OpenInEmacs()
+  execute 'silent !emacs --no-splash +'.line('.').' '.expand('%:p').' & disown'
+endfunction
+" this function is only needed for markdown and TeX files
 
 ""> open equivalent LaTeX compiled PDF
 function! CompiledPDF()
