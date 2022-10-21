@@ -3,7 +3,7 @@
 " sourced by  $vimfiles/filetype.vim
 " Language:	emdr - for my draft emails ($vimfiles/sample.emdr)
 " Maintainer: Joseph Harriott
-" Last Change: Sun 25 Sep 2022
+" Last Change: Fri 07 Oct 2022
 " also  $vimfiles/ftplugin/emdr.vim
 
 ""> sectioning marks for emails
@@ -12,22 +12,26 @@ if exists("b:current_syntax")
   finish
 endif
 
-syntax match modeline '\%1l^vim: .*'
-hi link modeline Comment
+syntax match emdrModeline '\%1l^vim: .*'
+hi link emdrModeline Comment
 
-" Headings: ====== title ======  ==== title ====  == title ==
-syn match heading1 '^=\{6} .* =\{6}$'
-syn match heading2 '^=\{4} .* =\{4}$'
-syn match heading3 '^=\{2} .* =\{2}$'
+" Headings: ━━━━━━ l0 ━━━━━━  ━━━━ l1 ━━━━  ━━ l2 ━━
+syn match emdrHeading1 '^━\{6} .* ━\{6}$'
+syn match emdrHeading2 '^━\{4} .* ━\{4}$'
+syn match emdrHeading3 '^━\{2} .* ━\{2}$'
 
 " the guifg's are best checked here with hexokinase
-hi def heading1 term=bold cterm=bold gui=bold guifg=LightGreen
-hi def heading2 term=bold cterm=bold gui=bold guifg=Violet
-hi def heading3 term=bold cterm=bold gui=bold guifg=Orange
+hi def emdrHeading1 term=bold cterm=bold gui=bold guifg=LightGreen
+hi def emdrHeading2 term=bold cterm=bold gui=bold guifg=Violet
+hi def emdrHeading3 term=bold cterm=bold gui=bold guifg=Orange
+
+" Lists:
+syn match emdrList '⇒'
+hi link emdrList ModeMsg
 
 " Weblinks:
-syn match hyperlink '\(http\|https\|telnet\|gopher\|wais\|ftp\|ed2k\|irc\|ldap\):\/\/[a-zA-Z0-9~!@#%&_+=/.,?:;-]*'
-hi link hyperlink Underlined
+syn match emdrHyperlink '\(http\|https\|telnet\|gopher\|wais\|ftp\|ed2k\|irc\|ldap\):\/\/[a-zA-Z0-9~!@#%&_+=/.,?:;-]*'
+hi link emdrHyperlink Underlined
 
 let b:current_syntax = "text"
 

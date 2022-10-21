@@ -1,5 +1,4 @@
 # vim: set et tw=0:
-# #region & #endregion create folding blocks if Peter Provost's vim-ps1 is installed
 
 # Joseph Harriott
 
@@ -16,7 +15,7 @@ Function rirf { ri -recurse -force $args[0] }
 
 function pack {cd "$Env:UserProfile\vimfiles\pack"}
 
-#region --- cp
+#=> 0 cp
 ensurePath cp
 
   # gicl https://github.com/AndrewRadev/bufferize.vim
@@ -49,21 +48,22 @@ ensurePath cp
   # gicl https://github.com/vim-scripts/gitignore.vim
   # gicl https://github.com/wellle/targets.vim
   # gicl https://github.com/yegappan/mru
+  # gicl https://github.com/lervag/vimtex
 
   # gicl https://github.com/preservim/vim-markdown
-  gicl git@github.com:harriott/vim-markdown.git
+  # gicl git@github.com:harriott/vim-markdown.git
+  # gicl https://github.com/Konfekt/FoldText
+  gicl https://github.com/Konfekt/FastFold
 
 pack
-#endregion
 
-#region --- unix
+#=> 0 unix
 ensurePath unix
 
 
 pack
-#endregion
 
-#region --- win32
+#=> 0 win32
 ensurePath win32
 
   # gicl https://github.com/adelarsq/vim-matchit
@@ -88,8 +88,8 @@ ensurePath win32
   # gicl https://github.com/vim-syntastic/syntastic
 
 pack
-#endregion
 
+#=> 1 tidy off
 cd Win10
 .\lists.ps1
 cd $PSScriptRoot

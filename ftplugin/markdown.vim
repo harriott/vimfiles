@@ -32,7 +32,6 @@ vnoremap <leader>` c``<Esc>P
 
 ""> folding by header marks
 execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
-setlocal fillchars=fold:\  " cleaner folds
 setlocal foldcolumn=2 " slightly better distinction from line numbers
 
 ""> Syntax highlighting

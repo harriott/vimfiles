@@ -1,13 +1,15 @@
-"
+" vim: fdl=1:
+
 " Language:	sh
 " Maintainer: Joseph Harriott
-" Last Change: Thu 17 Sep 2020
-" this file should be in your vimfiles\syntax folder
-" you should at least have this in your modeline: " vim: ft=ps1.ps1region:
+" Last Change: Mon 26 Sep 2022
+" $vimfiles/after/syntax/ps1.vim, supplementary to  $vimfiles/pack/packs-cp/opt/vim-ps1/syntax/ps1.vim
 
+execute 'source 'g:vimfiles.'/after/syntax/HashEqualsFolding.vim'
+
+""> PP's regions
 " syntax match regionstart '#region' " unfortunately overrides the folding...
 syntax match regiontitle '--- .*'
-
 hi def regiontitle term=bold cterm=bold gui=bold guifg=LightGreen
 " " see  cterm-colors  in  ../keystrokes.md
 

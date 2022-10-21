@@ -79,11 +79,14 @@ endfunction
 " this function is only needed for markdown and TeX files
 
 "">> paths
-" $DROPBOX  &  $USER  are set in  $machine > $USER > _vimrc
-let $cITh = $DROPBOX.'/JH/copied/IT-handy'
+" $Drpbx  &  $USER  are set in  $machine > $USER > _vimrc
+let $cITh = $Drpbx.'/JH/copied/IT-handy'
   let $GHrUse = $cITh.'/GHrepos'  " GitHub Repositories Use
-let $IT1 = $DROPBOX.'\JH\Technos\IT1'
-let $ITP = $DROPBOX.'\JH\Technos\IT0-storage'  " $ITP\diskUsage.txt
+let $core = $Drpbx.'/JH/core'
+  let $ITstack = $core.'/IT_stack'
+    let $CrPl = $ITstack.'/CP'
+let $IT1 = $Drpbx.'\JH\Technos\IT1'
+let $ITP = $Drpbx.'\JH\Technos\IT0-storage'  " $ITP\diskUsage.txt
 let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\T430i73520M'
 let $MSWin10 = $onGH.'\MSWin10'
 let $vimfiles = $onGH.'\vimfiles'

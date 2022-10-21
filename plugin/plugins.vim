@@ -1,5 +1,5 @@
 
-" Joseph Harriott - Tue 10 May 2022
+" Joseph Harriott - Sun 09 Oct 2022
 
 " $vimfiles/plugin/plugins.vim
 
@@ -266,10 +266,58 @@ packadd vim-LanguageTool " then can  :h LanguageTool
 " now preferring  vim-langtool
 
 "">> Vim Markdown
+" $vimfiles/pack/packs-cp/opt/vim-markdown/README.md
+" inline code in quotes isn't highlit
 let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
-packadd vim-markdown
+packadd vim-markdown  " preservim
+
+"">> VimTeX
+" dsd  " delete surrounding delimiters
+" commands
+"  csc  " change surrounding
+"  dsc  " delete surrounding
+"  tsc  " toggle starred commands
+" surrounding environments
+"  cse <newEnvironment>  "to change
+"  dse  " delete
+" surrounding maths environment
+"  cs$  " change
+"  ds$  " delete
+"  ts$  " toggle
+" :h vimtex-default-mappings
+" :VimtexInfo
+" [[  or  ]]  " move to previous or next sectioning
+" [m  or  ]m  " move to previous or next environment
+" =li  or  =lI  " vimtex-info  or  vimtex-info-full
+" =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
+let g:vimtex_disable_recursive_main_file_detection = 1
+let g:vimtex_fold_enabled =1
+let g:vimtex_syntax_custom_cmds = [
+  \ {'name': 'Odr', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Eltt', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Jo', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Luce', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Mth', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Mrstl', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Rox', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Tom', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'AM', 'hlgroup': 'Question'},
+  \ {'name': 'Anntt', 'hlgroup': 'Question'},
+  \ {'name': 'Brgt', 'hlgroup': 'Question'},
+  \ {'name': 'Crla', 'hlgroup': 'Question'},
+  \ {'name': 'Hmlh', 'hlgroup': 'Question'},
+  \ {'name': 'Jln', 'hlgroup': 'Question'},
+  \ {'name': 'Kddj', 'hlgroup': 'Question'},
+  \ {'name': 'Ltt', 'hlgroup': 'Question'},
+  \ {'name': 'Ncl', 'hlgroup': 'Question'},
+  \ {'name': 'SrB', 'hlgroup': 'Question'},
+  \ {'name': 'Vrgn', 'hlgroup': 'Question'},
+  \ {'name': 'section', 'hlgroup': 'Todo'},
+  \]
+packadd vimtex
 
 ""> layout
 
@@ -304,6 +352,13 @@ packadd vim-colors-tomorrow  " colorscheme tomorrow
 
 "">>> vim-wombat-scheme
 " optionally added for neovim
+
+"">> FastFold
+let g:fastfold_fold_command_suffixes = []
+packadd FastFold
+
+"">> FoldText
+packadd FoldText
 
 "">> highlighting
 
@@ -360,6 +415,9 @@ if has('win32')
   let g:airline_symbols.maxlinenr = ''
   let g:airline_symbols.branch = ''
 endif
+
+"">> vim-devicons
+" loaded in  $vimfiles/after/plugin/plugins.vim
 
 "">> vim-fontsize
 packadd vim-fontsize
@@ -528,6 +586,9 @@ endif
 packadd vim-easy-align
 nmap gA <Plug>(EasyAlign)
 xmap gA <Plug>(EasyAlign)
+
+" * => all
+" <CR> to change l/r/c
 
 " the following are just as easily entered as regex's
 let g:easy_align_delimiters = {

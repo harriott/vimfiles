@@ -11,7 +11,7 @@
 let b:ale_enabled = 0 " and toggle it as defined in $vimfiles/plugin/plugins.vim
 
 nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
-nnoremap <buffer><leader><leader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
+nnoremap <buffer><localleader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
 
 " EasyAlign  mappings for  tabular  environment
 nnoremap <buffer><F7> :call TabularFullAlign()<CR><Bar>:update<CR>
@@ -85,6 +85,8 @@ if b:PandocLaTeX
       echo 'match ^%%'
     endif
   endfunction
+elseif match(&runtimepath, 'vimtex') != -1
+  setlocal fdc=1 tw=0
 else
   " For folding to be handled by  $VIMRUNTIME/syntax/tex.vim,
   "  let g:tex_fold_enabled=1

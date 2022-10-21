@@ -1,20 +1,16 @@
 vim: set et fdl=3 tw=0:  \aa = ALEToggleBuffer  \lt = LanguageTool
 
-sample showing heading syntax highlighting
+sample showing heading & list syntax highlighting
 
 $vimfiles/ftplugin/emdr.vim  &  $vimfiles/syntax/emdr.vim
 
-==  level2  ==
+in Vim, ctrl-k > HH & =>, ctrl-l to fix the latter
 
-====  level1  ====
+━━━  level0  ━━━
 
-======  level0  ======
+━━  level1  ━━
 
-▓ dark shade
-▒
-░
-
-====  level1  ====
-
-==  level2  ==
+━  level2  ━
+⇒ item
+  ⇒ subitem
 

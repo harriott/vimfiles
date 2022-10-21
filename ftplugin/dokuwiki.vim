@@ -23,25 +23,25 @@ setlocal foldmethod=expr
 setlocal fdc=2 " slightly better distinction from line numbers
 
 ""> abbreviations for code tags
-iab </ </code>
-iab </f </file>
-iab <a <code awk>
-iab <b <code bash>
-iab <d <code dos>
-iab <j <code javascript>
-iab <e <code perl>
-iab <f <file>
-iab <g <code go>
-iab <h <code html>
-iab <k <code haskell>
-iab <l <code latex>
-iab <o <code python>
-iab <p <code powershell>
-iab <s <code lisp>
-iab <u <code lua>
-iab <v <code vim>
-iab <x <code xml>
-iab <y <code yaml>
+iabbrev <buffer> </ </code>
+iabbrev <buffer> </f </file>
+iabbrev <buffer> <a <code awk>
+iabbrev <buffer> <b <code bash>
+iabbrev <buffer> <d <code dos>
+iabbrev <buffer> <j <code javascript>
+iabbrev <buffer> <e <code perl>
+iabbrev <buffer> <f <file>
+iabbrev <buffer> <g <code go>
+iabbrev <buffer> <h <code html>
+iabbrev <buffer> <k <code haskell>
+iabbrev <buffer> <l <code latex>
+iabbrev <buffer> <o <code python>
+iabbrev <buffer> <p <code powershell>
+iabbrev <buffer> <s <code lisp>
+iabbrev <buffer> <u <code lua>
+iabbrev <buffer> <v <code vim>
+iabbrev <buffer> <x <code xml>
+iabbrev <buffer> <y <code yaml>
 
 ""> add wrap indent tags around quotes
 " For use when Anika Henke's excellent Wrap Plugin is installed in DokuWiki.
@@ -99,8 +99,6 @@ vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 
 ""> monospacing
 " convert monospaced to unformatted
-" nnoremap <leader><leader>5 mp?''<cr><bar>:s/''/%% /<cr>:s/''/ %%/<cr>
-" nnoremap <leader><leader>5 ?''<cr>i<cr><esc><bar>:s/''/%% /<cr>:s/''/ %%/<cr>
 nnoremap <leader><leader>5 ?''<cr>i<cr><esc>:s/''/%% /<cr>:s/''/ %%/<cr>kJ
 
 " wrap the inner word under cursor with ''

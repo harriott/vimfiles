@@ -105,6 +105,15 @@ elseif has('win32')
   noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
 endif
 
+""> format - strip Thunderbird address book csv down to just emails
+" decorations:  >, .\{-} <
+
+function! TbCsv()
+  normal vip
+  '<,'>s/^\(.\{-},\)\{,4}/
+  '<,'>s/,.*/
+endfunction
+
 ""> format - percent code
 " convert url parenthesis, and various diacritics to percent code
 " to switch the order of these substitutions, use  s#/\(.\{-}\)/\(.\{-}\)/#/\2/\1/#g
@@ -349,7 +358,7 @@ autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <E
 "">> overcome $VIMRUNTIME/filetype.vim
 autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 " required for  muttrc-gmx
-" (see $DROPBOX/JH/technos/IT1/cross-platform/Vim/muttrc-123)
+" (see $Drpbx/JH/technos/IT1/cross-platform/Vim/muttrc-123)
 
 "">> tidy an inmail
 " swap out any crap (and go back to top):

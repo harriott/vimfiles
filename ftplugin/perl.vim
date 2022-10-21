@@ -1,10 +1,11 @@
 "
 " Language:	Perl
 " Maintainer: Joseph Harriott
-" Last Change: Wed 20 Oct 2021
-" This file should be in your  vimfiles\ftplugin  folder.
+" Last Change: Mon 26 Sep 2022
+" $vimfiles/ftplugin/perl.vim, supplemental to  $VIMRUNTIME/ftplugin/perl.vim
 
 setlocal expandtab shiftwidth=2
+setlocal complete-=i  " setl complete
 
 nnoremap <leader>u :TagbarToggle<CR>
 

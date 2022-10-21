@@ -15,7 +15,7 @@
 
 if exists('b:current_syntax') | finish |  endif
 
-syn match pathish '\( \/.*\| \\.*\)' contains=gdoafwe  " paths in linux & MSWin
+syn match pathish '\(\/.*\| C:\\.*\)' contains=gdoafwe  " paths in linux & MSWin
 syn match gdoafwe '\([-._0-9a-zA-Z]\+\ze\/\.gitignore$\|[-_0-9a-zA-Zé ]\+\.[a-zA-Z]\+$\)' contained
 " - matches git directory or any file with extension
 hi def link gdoafwe DiffText

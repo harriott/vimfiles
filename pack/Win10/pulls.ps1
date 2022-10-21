@@ -10,13 +10,15 @@ foreach{
     Write-Host $_.basename -nonewline
   [System.Console]::ResetColor()
   '' # gets the colour reset done
-  cd $_
-  # git pull
+  sl $_
+  git pull
   if( -not $? ) { exit }
 }
-cd $vimfiles\plugin\fzf
+sl $vimfiles\plugin\fzf
+ri -recurse install
+ri -recurse test/test_go.rb
 git pull
 
-cd $vimfiles\pack\Win10
+sl $vimfiles\pack\Win10
 .\lists.ps1
 

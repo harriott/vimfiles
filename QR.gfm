@@ -49,7 +49,10 @@ see also quickref
     d0      " delete back to start of line
     :1,.d         " delete to beginning of file
     :.,$d         " delete to end of file
-    :g\pattern\d  " delete lines containing "pattern"
+
+    :g/pattern/d  " delete lines containing "pattern"
+    :h :g         " global
+    :h :v         " vglobal
 
 # diff
     :dif                    " diffupdate
@@ -60,23 +63,6 @@ see also quickref
     [c                      " previous diff
     :se diffopt+=iwhiteall
     :windo difft            " diff the windows
-
-# folds
-    zC             " close current fold & subfolds
-    zM             " close all folds
-    zMzv           " focus on just the current fold
-    zO             " expand current fold & subfolds
-    zR             " expand all folds
-    za             " toggle current fold open\closed
-    zc             " close a fold (or, if already closed, close its parent)
-    zi             " toggle foldenable
-    zj             " down to next fold
-    zk             " up to next fold
-    zm             " reduce foldlevel
-    zr             " increase foldlevel (#zr -> foldlevel #)
-    zv             " view cursor line (opening just enough folds)
-    zx             " set folds back to foldlevel
-    :se fdl?       " reports the current foldlevel
 
 # insert mode commands
     C-ke'    " digraph code for é
@@ -135,6 +121,27 @@ see also quickref
 	Gray        LightGray       DarkGray
 	Black       White
 	Orange      Purple          Violet
+
+## folds
+    zC             " close current fold & subfolds
+    zM             " close all folds
+    zMzv           " focus on just the current fold
+    zO             " expand current fold & subfolds
+    zR             " expand all folds
+    za             " toggle current fold open\closed
+    zc             " close a fold (or, if already closed, close its parent)
+    zi             " toggle foldenable
+    zj             " down to next fold
+    zk             " up to next fold
+    zm             " reduce foldlevel
+    zr             " increase foldlevel (#zr -> foldlevel #)
+    zv             " view cursor line (opening just enough folds)
+    zx             " set folds back to foldlevel
+    :se fdl?       " reports the current foldlevel
+
+### foldopen
+    h 'fdo'
+    set fdo?
 
 ## Hexokinase
 	:HexokinaseTurnOn
@@ -337,7 +344,7 @@ u            " lowercase a visual block
     ^Vu03b2  " gets greek small letter beta
 
 ## macros
-qj  " run macro j
+@j  " run macro j
 q   " end recording macro
 qj  " begin recording macro in j
 
@@ -350,6 +357,11 @@ qj  " begin recording macro in j
     :let i=1 | g#\# s##\='\'.i# | let i+=1  " prefix-number all files in nnn's neovim window
     :let i=2 | g#.# s#1#\=i#g | let i+=1    " g-> working down through the entire buffer, s-> increase counts
 
+## repeating text
+    Esc <number> i <repeatable> Esc  " inserts <repeatable> <number> times
+    iab <expr> -- repeat('-', 80)  " then insert  --<tab>
+    <repeatable> Esc <number> .  " makes lines of repeatable
+
 # Vim
 ```vim
 @@         " = @: = repeat last command-line
@@ -360,6 +372,7 @@ gQ         " enter Ex mode
 K          " brings up a man page (if there is one) for word under cursor
 q:         " brings up an interactive history of :commands (in an editable window)
 vi         " exit Ex mode
+:echo getline(1) " contents of line 1
 :h index   " lists the all of the commands
 :h 'sw'    " autoindentation - shiftwidth
 :his       " Display command-line history
@@ -424,7 +437,7 @@ r $vimfiles
 
 #### settings
 	:hi
-	:so $VIMRUNTIME\syntax\hitest.vim
+	:so $VIMRUNTIME/syntax/hitest.vim
     :se synmaxcol=0  " removes 3000 character limit
     :Bufferize sy list  " what's set for the current file
 
