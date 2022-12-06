@@ -11,17 +11,16 @@
 " This syntax file copy solves this problem:
 "
 " If I have a GFM file that contains emoji names such as :dog:, those names can be colourfully concealed by the emoji with
-" vim-gfm-syntax/autoload/gfm_syntax/emoji.vim (https://github.com/rhysd/vim-gfm-syntax/blob/master/autoload/gfm_syntax/emoji.vim),
-" but that functionality is somehow blocked by  vim-markdown (https://github.com/preservim/vim-markdown).
-" My fix is to separately define filetype  gfme:
+" vim-gfm-syntax/autoload/gfm_syntax/emoji.vim (= https://github.com/rhysd/vim-gfm-syntax/blob/master/autoload/gfm_syntax/emoji.vim),
+" but that functionality is somehow blocked by  vim-markdown (= https://github.com/preservim/vim-markdown).
+"
+" My workaround is to separately enable filetype  gfme:
 "
 "    detect: $vimfiles/filetype.vim      - defines filetype  gfme
 "  ftplugin: $vimfiles/ftplugin/gfme.vim - invokes  $VIMRUNTIME/ftplugin/markdown.vim
-"    syntax: $vimfiles/syntax/gfme.vim   - this file
+"    syntax: $vimfiles/syntax/gfme.vim   - this file, only changed  markdown -> gfme
 "    emojis: $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/after/syntax/gfme/gfm.vim
 "            (= https://github.com/harriott/vim-gfm-syntax/blob/master/after/syntax/gfme/gfm.vim)
-"
-" All I change here is  markdown -> gfme.
 
 if exists("b:current_syntax")
   finish

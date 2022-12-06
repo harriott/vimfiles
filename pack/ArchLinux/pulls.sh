@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: sw=2:
+# vim: fdl=1 sw=2:
 
 # Joseph Harriott, Tue 06 Dec 2022
 
@@ -30,6 +30,7 @@ find . -maxdepth 3 -mindepth 3 -type d | sort | while read plugin; do
 done
 
 #=> 2 my forks
+echo ''
 xdg-open https://github.com/harriott/tagbar
 xdg-open https://github.com/harriott/vim-buffing-wheel
 xdg-open https://github.com/harriott/vim-clifm
@@ -37,6 +38,7 @@ xdg-open https://github.com/harriott/vim-gfm-syntax
 xdg-open https://github.com/harriott/vim-markdown
 fd -HI -tf ^config$ | xargs rg -l 'harriott'
 echo 'Now check the forks!'
+echo ''
 
 #=> 3 tidy up
 cd ArchLinux; [ $tidyup ] && . after.sh
