@@ -14,6 +14,7 @@ setlocal expandtab foldcolumn=1 foldexpr=EF() foldmethod=expr shiftwidth=2 spell
 
 " create a heading around text:
 nnoremap <buffer> <leader><leader>= I━━  <Esc>A  ━━<Esc>
+nnoremap <buffer> <localleader>= I━━  <Esc>A  ━━<Esc>
 " boost up a heading:
 nnoremap <buffer> <leader>== I━━<Esc>A━━<Esc>
 " demote a heading:

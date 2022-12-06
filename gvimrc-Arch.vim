@@ -1,7 +1,6 @@
 
-" ------------------------------
-" sourced by  $machBld/jo/gvimrc
-" ------------------------------
+" $vimfiles/gvimrc-Arch.vim  sourced by  $machBld/jo/gvimrc
+" ---------------------------------------------------------
 
 " move on ot the more portable configuration:
 source $HOME/.vim/gvimrc.vim

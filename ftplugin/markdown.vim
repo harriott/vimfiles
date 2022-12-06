@@ -4,8 +4,12 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 12 Sep 2022
 " $vimfiles/ftplugin/markdown.vim
-"  supplementary to  $VIMRUNTIME/ftplugin/markdown.vim  which includes  $vimfiles/ftplugin/html.vim
-" $VIMRUNTIME/filetype.vim  determines which files are automatically detected as  markdown
+"  supplementary to [ $vimfiles/pack/packs-cp/opt/vim-markdown/README.md, ] $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/ftplugin/html.vim )
+
+" Filetype detection:
+"  $vimfiles/filetype.vim
+"  $VIMRUNTIME/filetype.vim
+"  $vimfiles/pack/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
 
 setlocal expandtab
 

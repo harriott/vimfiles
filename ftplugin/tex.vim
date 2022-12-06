@@ -25,9 +25,12 @@ function! TabularFullAlign()
 endfunction
 
 ""> \command{}
-nnoremap <buffer><leader><leader>r :s#\\\h\+{##<bar>s/}//<bar>nohls<CR>  " remove first command
-vnoremap <buffer><leader><leader>b c\textbf{<Esc>pa}<Esc>  " enbolden a selection
-vnoremap <buffer><leader><leader>i c\textit{<Esc>pa}<Esc>  " italicize a selection
+nnoremap <buffer><localleader>r :s#\\\h\+{##<bar>s/}//<bar>nohls<CR>  " remove first command
+
+"">> for a selection
+vnoremap <buffer><localleader>b c\textbf{<Esc>pa}<Esc>  " enbolden
+vnoremap <buffer><localleader>d c\cdg{<Esc>pa}<Esc>  " $CrPl/LaTeX/jo/JH.sty
+vnoremap <buffer><localleader>i c\textit{<Esc>pa}<Esc>  " italicize
 
 ""> demote or promote sections
 " select a region, then

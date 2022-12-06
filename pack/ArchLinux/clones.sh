@@ -53,6 +53,7 @@ gd opt; ls
   # $gc https://github.com/vim-syntastic/syntastic
   # $gc https://github.com/godlygeek/tabular
   # [[ -d tagbar ]] && sudo rm -r tagbar; $gc https://github.com/preservim/tagbar
+  # $gc https://github.com/harriott/tagbar
   # $gc https://github.com/wellle/targets.vim
   # $gc https://github.com/ron89/thesaurus_query.vim
   # $gc https://github.com/mbbill/undotree
@@ -100,6 +101,7 @@ gd opt; ls
   # $gc https://github.com/tpope/vim-surround
   # $gc https://github.com/t9md/vim-textmanip
   # $gc https://github.com/bronson/vim-visual-star-search
+  $gc git@github.com:harriott/vim-gfm-syntax.git
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye

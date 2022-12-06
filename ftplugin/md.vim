@@ -6,7 +6,7 @@
 " this is for extra funtionality that I like for my *.md files
 " supplemental to  $vimfiles/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
-"  this requires  $vimfiles/filetype.vim
+"  this configuration file is called by  $vimfiles/filetype.vim
 
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)

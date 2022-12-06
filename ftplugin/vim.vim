@@ -28,7 +28,7 @@ function! VimFolds()
   endif
 endfunction
 
-setlocal fde=VimFolds() fdm=expr
+setlocal fde=VimFolds() fdm=expr tw=0
 
 " heading strength
 "  grep -rl '"=\+' # shows that this is a good unambiguous choice

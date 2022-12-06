@@ -1,5 +1,3 @@
-" vim: ft=vim:
-
 " Joseph Harriott - Tue 30 Aug 2022
 " ---------------------------------
 
@@ -40,7 +38,7 @@ autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^na
 
 ""> buffer - refresh
 " writes all changed buffers and reloads the current one
-nnoremap <F5> :wa<CR>:e<CR>
+nnoremap <F5> :wa<CR>:edit<CR>
 inoremap <F5> <Esc>:wa<CR>:e<CR>
 vnoremap <F5> <Esc>:wa<CR>:e<CR>
 
@@ -340,7 +338,7 @@ nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 
 ""> maxmempattern
-set mmp=30000  " for $core/TextNotes/TN/JH-DailyLife/Health/Ingest/Regimes.md
+set mmp=30000  " for $TeNo/TN/JH-DailyLife/Health/Ingest/Regimes.md
 
 ""> neomutt
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal textwidth=0
@@ -488,6 +486,11 @@ endif
 
 ""> shell - filepath into register f
 nnoremap <leader>f :let@f=@%<CR>
+
+""> shell - last modification time
+nnoremap <silent><leader><F11> :echo strftime('%c',getftime(expand('%')))<cr>
+inoremap <silent><leader><F11> <Esc>:echo strftime('%c',getftime(expand('%')))<cr>
+vnoremap <silent><leader><F11> <Esc>:echo strftime('%c',getftime(expand('%')))<cr>
 
 ""> shell - netrw
 let g:netrw_banner = 0

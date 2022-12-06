@@ -8,10 +8,12 @@
 ../packs-cp/opt/csv.vim/.git
 ../packs-cp/opt/ctrlp.vim/.git
 ../packs-cp/opt/dsf.vim/.git
+../packs-cp/opt/FastFold/.git
 ../packs-cp/opt/fern-git-status.vim/.git
 ../packs-cp/opt/fern-preview.vim/.git
 ../packs-cp/opt/fern-renderer-nerdfont.vim/.git
 ../packs-cp/opt/fern.vim/.git
+../packs-cp/opt/FoldText/.git
 ../packs-cp/opt/fzf.vim/.git
 ../packs-cp/opt/gitignore.vim/.git
 ../packs-cp/opt/Highlight.vim/.git
@@ -43,7 +45,6 @@
 ../packs-cp/opt/vim-asterisk/.git
 ../packs-cp/opt/vim-base64/.git
 ../packs-cp/opt/vim-bbcode/.git
-../packs-cp/opt/vim-bbye/.git
 ../packs-cp/opt/vim-buffing-wheel/.git
 ../packs-cp/opt/vim-bufkill/.git
 ../packs-cp/opt/vim-characterize/.git
@@ -68,6 +69,7 @@
 ../packs-cp/opt/vim-langtool/.git
 ../packs-cp/opt/vim-LanguageTool/.git
 ../packs-cp/opt/vim-loclist-follow/.git
+../packs-cp/opt/vim-markdown/.git
 ../packs-cp/opt/vim-mark/.git
 ../packs-cp/opt/vim-matchup/.git
 ../packs-cp/opt/vim-mbsync/.git
@@ -80,6 +82,7 @@
 ../packs-cp/opt/vim-ShowTrailingWhitespace/.git
 ../packs-cp/opt/vim-startify/.git
 ../packs-cp/opt/vim-surround/.git
+../packs-cp/opt/vimtex/.git
 ../packs-cp/opt/vim-textmanip/.git
 ../packs-cp/opt/vim-visual-star-search/.git
 ../packs-unix/opt/Colorizer/.git

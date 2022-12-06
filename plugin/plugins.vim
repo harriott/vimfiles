@@ -45,9 +45,11 @@ packadd vim-fugitive
 
 "">>> vim-gfm-syntax
 " $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/autoload/gfm_syntax/emoji.vim
-autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm  " or vim: ft=markdown.gfm:
+"" autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm  " or vim: ft=markdown.gfm:
+"" autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm  " or vim: ft=gfm:
 let g:gfm_syntax_enable_always = 0
-let g:gfm_syntax_enable_filetypes = ['markdown.gfm'] " a subtype of markdown filetype
+"" let g:gfm_syntax_enable_filetypes = ['markdown.gfm'] " a subtype of markdown filetype
+let g:gfm_syntax_enable_filetypes = ['markdown.gfm', 'gfme']
 let g:gfm_syntax_emoji_conceal = 1
 packadd vim-gfm-syntax
 
@@ -109,6 +111,7 @@ packadd vim-base64
 packadd vim-bbcode
 
 "">>> vim-dokuwiki
+" $vimfiles/pack/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
 packadd vim-dokuwiki
 let dokuwiki_comment=1  " comment highlighting on
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
@@ -183,7 +186,7 @@ vnoremap <F9> <Esc>:History/<CR>
 
 if hostname() == 'i34G1TU02'
   nnoremap <leader>j :Files /mnt/BX200/Dropbox/JH<CR>
-elseif hostname() == 'LIP120s81A4'
+elseif hostname() == 'AsusW202'
   nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
 elseif hostname() == 'sbMb'
   nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
@@ -272,7 +275,7 @@ let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_new_list_item_indent = 0
-packadd vim-markdown  " preservim
+packadd vim-markdown  " harriott  clone of  preservim
 
 "">> VimTeX
 " dsd  " delete surrounding delimiters
@@ -308,13 +311,17 @@ let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'Anntt', 'hlgroup': 'Question'},
   \ {'name': 'Brgt', 'hlgroup': 'Question'},
   \ {'name': 'Crla', 'hlgroup': 'Question'},
+  \ {'name': 'Emna', 'hlgroup': 'Question'},
+  \ {'name': 'Ftm', 'hlgroup': 'Question'},
   \ {'name': 'Hmlh', 'hlgroup': 'Question'},
   \ {'name': 'Jln', 'hlgroup': 'Question'},
   \ {'name': 'Kddj', 'hlgroup': 'Question'},
   \ {'name': 'Ltt', 'hlgroup': 'Question'},
   \ {'name': 'Ncl', 'hlgroup': 'Question'},
+  \ {'name': 'Olv', 'hlgroup': 'Question'},
   \ {'name': 'SrB', 'hlgroup': 'Question'},
   \ {'name': 'Vrgn', 'hlgroup': 'Question'},
+  \ {'name': 'Yumi', 'hlgroup': 'Question'},
   \ {'name': 'section', 'hlgroup': 'Todo'},
   \]
 packadd vimtex
@@ -354,8 +361,8 @@ packadd vim-colors-tomorrow  " colorscheme tomorrow
 " optionally added for neovim
 
 "">> FastFold
-let g:fastfold_fold_command_suffixes = []
-packadd FastFold
+" let g:fastfold_fold_command_suffixes = []
+" packadd FastFold
 
 "">> FoldText
 packadd FoldText

@@ -1,4 +1,3 @@
-" vim: fdm=expr ft=vim.vimbuild:
 
 " My portable vimrc - Joseph Harriott
 " -----------------------------------

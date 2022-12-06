@@ -1,18 +1,16 @@
 " My adjustments
 " Language:	dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Thu 30 Jun 2022
-" This file should be in your vimfiles\ftplugin folder,
-" and you might want to (autocmd BufRead,BufNewFile) setlocal ft=dokuwiki.
+" Last Change: Tue 06 Dec 2022
+" $vimfiles/ftplugin/dokuwiki.vim
+
+" Also  vim-dokuwiki:
+"  comment out  setlocal foldmethod=syntax
+"  detects  *.dw  files
+"  manages the syntax
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
 "  /* vim: set ft=dokuwiki: */
-" You should also have  https://github.com/nblock/vim-dokuwiki/blob/master/syntax/dokuwiki.vim
-"  installed at  $vimfiles/syntax/dokuwiki.vim
-"  with this line commented out:  setlocal foldmethod=syntax
-
-" While developing this plugin, I used
-" :source $HOME/vimfiles/ftplugin/dokuwiki.vim
 
 " convert a line to external link
 nnoremap <buffer> <leader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
@@ -27,6 +25,7 @@ iabbrev <buffer> </ </code>
 iabbrev <buffer> </f </file>
 iabbrev <buffer> <a <code awk>
 iabbrev <buffer> <b <code bash>
+iabbrev <buffer> <c <code css>
 iabbrev <buffer> <d <code dos>
 iabbrev <buffer> <j <code javascript>
 iabbrev <buffer> <e <code perl>
