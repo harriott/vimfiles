@@ -6,7 +6,7 @@
 " This file should be in your  vimfiles/ftplugin  folder
 "  ( it is supplemental to  $VIMRUNTIME/ftplugin/vim.vim )
 
-setlocal expandtab shiftwidth=2
+setlocal expandtab shiftwidth=2 textwidth=0
 
 ""> config-file folding by lines that start with [space(s)]"=>...
 "  ""=> first level fold
@@ -28,7 +28,7 @@ function! VimFolds()
   endif
 endfunction
 
-setlocal fde=VimFolds() fdm=expr tw=0
+setlocal fde=VimFolds() fdm=expr
 
 " heading strength
 "  grep -rl '"=\+' # shows that this is a good unambiguous choice

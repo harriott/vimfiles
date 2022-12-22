@@ -63,7 +63,7 @@ let g:GGF = 0
 " $vimfiles/after/plugin/plugins.vim
 
 "">>> vim-rhubarb
-packadd vim-rhubarb
+packadd vim-rhubarb  " for :GBrowse to work
 
 "">> languages
 
@@ -107,7 +107,7 @@ let g:syntastic_python_checkers = ['flake8']
 packadd vim-base64
 
 "">>> vim-bbcode
-" $vimfiles/pack/packs-cp/opt/vim-bbcode/example.bbcode
+" $vimfiles/pack/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
 packadd vim-bbcode
 
 "">>> vim-dokuwiki
@@ -199,6 +199,7 @@ endif
 packadd vim-ingo-library
 
 ""> languages
+packadd CSS-one-line--multi-line-folding
 
 "">> ALE
 " :Bufferize ALEInfo  " shows settings for the filetype
@@ -246,6 +247,9 @@ let g:tq_language=['en', 'fr']
 autocmd BufRead,BufNewFile */France/Scratch/* let b:tq_language=['fr']
 nnoremap <leader>th :ThesaurusQueryReplaceCurrentWord<CR>
 packadd thesaurus_query.vim
+
+"">> vim-go
+packadd vim-go
 
 "">> vim-langtool
 nnoremap <leader>lt :LangTool <bar> lopen 15 <CR>
@@ -296,7 +300,6 @@ packadd vim-markdown  " harriott  clone of  preservim
 " [m  or  ]m  " move to previous or next environment
 " =li  or  =lI  " vimtex-info  or  vimtex-info-full
 " =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
-let g:vimtex_disable_recursive_main_file_detection = 1
 let g:vimtex_fold_enabled =1
 let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'Odr', 'hlgroup': 'CursorLineNr'},
@@ -698,6 +701,7 @@ packadd supertab
 packadd targets.vim
 
 "">> vim-surround
+" h surround
 packadd vim-surround
 
 ""> vim

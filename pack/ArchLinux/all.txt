@@ -5,6 +5,7 @@
 ../packs-cp/opt/close-buffers.vim
 ../packs-cp/opt/colorizer
 ../packs-cp/opt/conky-syntax.vim
+../packs-cp/opt/CSS-one-line--multi-line-folding
 ../packs-cp/opt/csv.vim
 ../packs-cp/opt/ctrlp.vim
 ../packs-cp/opt/dsf.vim
@@ -62,6 +63,7 @@
 ../packs-cp/opt/vim-fugitive
 ../packs-cp/opt/vim-gfm-syntax
 ../packs-cp/opt/vim-gitgutter
+../packs-cp/opt/vim-go
 ../packs-cp/opt/vim-hjson
 ../packs-cp/opt/vim-illuminate
 ../packs-cp/opt/vim-ingo-library

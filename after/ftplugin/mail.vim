@@ -5,5 +5,5 @@
 " supplementary to  $vimfiles/ftplugin/mail.vim
 
 setlocal textwidth=0
-" overrides the setting in  $VIMRUNTIME/ftplugin/mail.vim
+" overrides the setting in  $VIMRUNTIME/ftplugin/vim.vim
 

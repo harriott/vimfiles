@@ -40,5 +40,5 @@ setlocal foldcolumn=2 " slightly better distinction from line numbers
 
 ""> Syntax highlighting
 " Get highlighting working for  # low-carb  in  Regimes.md
-let g:markdown_minlines = 40  " see $VIMRUNTIME/syntax/markdown.vim
+let g:markdown_minlines = 40  " see  $VIMRUNTIME/syntax/markdown.vim
 

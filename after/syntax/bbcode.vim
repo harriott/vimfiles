@@ -1,14 +1,11 @@
 
 " Language:	bbcode
 " Maintainer: Joseph Harriott
-" Last Change: Thu 13 May 2021
-" syntax highlighting for folding
-" (see  $vimfiles/ftplugin/bbcode.vim)
+" Last Change: Mon 12 Dec 2022
+" $vimfiles/after/syntax/bbcode.vim
+"  syntax highlighting for folding (see  $vimfiles/ftplugin/bbcode.vim)
+"  supplementary to  $vimfiles/pack/packs-cp/opt/vim-bbcode/syntax/bbcode.vim
 
-" this file should be in  after/vimfiles/syntax  folder
-"  it is supplementary to  $vimfiles/pack/packs-cp/opt/vim-bbcode/syntax/bbcode.vim
-
-execute 'source 'g:vimfiles.'/after/syntax/HashEqualsFolding.vim'
-
-let b:current_syntax = "bbcode"
+syntax region buildH start=/^#/ end=/$/
+hi def link buildH Folded  " for an unobtrusive heading
 

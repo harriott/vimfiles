@@ -261,24 +261,27 @@ z\                    " incsearch-fuzzy-stay
 ```
 :!<shellcmd>          " runs the external shell command
 :Bufferize python3 print(sys.path)
-:e.                   " dirvish (or netrw) on current directory
-:f                    " prints current filename
-:h fugitive
-:h netrw-quickmap
 :Locate <pattern>
 :packadd syntastic    " load the plugin from an opt directory
-:packadd vim-rhubarb  " load the plugin from an opt directory, for :GBrowse to work
 :r!<shell command>    " reads shell command output into the buffer
 :se shell?            " returns the path to the shell
 :tabe $HOME\_vimrc    " bring up my vimrc in a new tab
 :ALEToggle
-:Vexplore             " opens a netrw vertical directory browsing window
-\vg                   " cd to file's and vimgrep for last search
-C-g                   " display relative path of current file
 <shellcmd> | gvim -   " pipes shell command output into gvim
-gf                    " open file under cursor - :h gF
 gx                    " open url under cursor (or all of first line of markdown link)
 shift+F11             " open in Emacs
+```
+
+## files & directories
+```
+2ctrl-g " print buffer number & full filename
+:e.                   " dirvish (or netrw) on current directory
+:f                    " prints relative filename (:h :f)
+:h fugitive
+:Vexplore             " vertical split and explore
+\vg                   " cd to file's and vimgrep for last search
+c-g                   " display relative path of current file
+gf                    " open file under cursor - :h gF
 ```
 
 ## open webpages

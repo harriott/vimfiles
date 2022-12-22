@@ -101,7 +101,9 @@ gd opt; ls
   # $gc https://github.com/tpope/vim-surround
   # $gc https://github.com/t9md/vim-textmanip
   # $gc https://github.com/bronson/vim-visual-star-search
-  $gc git@github.com:harriott/vim-gfm-syntax.git
+  # $gc git@github.com:harriott/vim-gfm-syntax.git
+  # $gc https://github.com/fatih/vim-go
+  # $gc https://github.com/vim-scripts/CSS-one-line--multi-line-folding
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye

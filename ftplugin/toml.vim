@@ -1,5 +1,5 @@
 "
-" Language:	toml
+" Language:	TOML
 " Maintainer: Joseph Harriott
 " Last Change: Mon 05 Dec 2022
 " $vimfiles/ftplugin/toml.vim  - supplementary to  $VIMRUNTIME/ftplugin/toml.vim
