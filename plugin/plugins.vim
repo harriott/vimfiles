@@ -45,12 +45,9 @@ packadd vim-fugitive
 
 "">>> vim-gfm-syntax
 " $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/autoload/gfm_syntax/emoji.vim
-"" autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm  " or vim: ft=markdown.gfm:
-"" autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm  " or vim: ft=gfm:
-let g:gfm_syntax_enable_always = 0
-"" let g:gfm_syntax_enable_filetypes = ['markdown.gfm'] " a subtype of markdown filetype
-let g:gfm_syntax_enable_filetypes = ['markdown.gfm', 'gfme']
 let g:gfm_syntax_emoji_conceal = 1
+let g:gfm_syntax_enable_always = 0
+let g:gfm_syntax_enable_filetypes = ['markdown.gfm', 'gfme']
 packadd vim-gfm-syntax
 
 "">>> vim-gitgutter
@@ -274,7 +271,6 @@ packadd vim-LanguageTool " then can  :h LanguageTool
 
 "">> Vim Markdown
 " $vimfiles/pack/packs-cp/opt/vim-markdown/README.md
-" inline code in quotes isn't highlit
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_disabled = 1

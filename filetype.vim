@@ -6,7 +6,7 @@
 
 ""> 0 GitHub Flavored Markdown
 autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm  " or vim: ft=gfm:
-"" autocmd BufRead,BufNew,BufNewFile *.gfme setlocal ft=gfme  " or vim: ft=gfm:
+autocmd BufRead,BufNew,BufNewFile *.gfme setlocal ft=gfme  " or vim: ft=gfme:
 
 ""> 0 special functionality for my .emdr's
 " my email draft format, needs to be seen as  filetype text  for  ALE
