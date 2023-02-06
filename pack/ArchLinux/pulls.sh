@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# Joseph Harriott, Tue 06 Dec 2022
+# Joseph Harriott, Sun 29 Jan 2023
 
 # bash pulls.sh  when you want to update your remote plugins
 
@@ -32,8 +32,6 @@ done
 #=> 2 my forks
 echo ''
 xdg-open https://github.com/harriott/tagbar
-xdg-open https://github.com/harriott/vim-buffing-wheel
-xdg-open https://github.com/harriott/vim-clifm
 xdg-open https://github.com/harriott/vim-gfm-syntax
 xdg-open https://github.com/harriott/vim-markdown
 fd -HI -tf ^config$ | xargs rg -l 'harriott'

@@ -3,6 +3,10 @@
 
 source $HOME/.vim/vimrc-GNULinux.vim
 
+if hostname() == 'AsusW202'
+  set redrawtime=4000  " for  linux-pn.dw
+endif
+
 set linespace=2
 
 ""> LanguageTool

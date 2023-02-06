@@ -36,6 +36,7 @@ iabbrev <buffer> <k <code haskell>
 iabbrev <buffer> <l <code latex>
 iabbrev <buffer> <o <code python>
 iabbrev <buffer> <p <code powershell>
+iabbrev <buffer> <r <code ruby>
 iabbrev <buffer> <s <code lisp>
 iabbrev <buffer> <u <code lua>
 iabbrev <buffer> <v <code vim>

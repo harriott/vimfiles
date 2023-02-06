@@ -104,6 +104,7 @@ gd opt; ls
   # $gc git@github.com:harriott/vim-gfm-syntax.git
   # $gc https://github.com/fatih/vim-go
   # $gc https://github.com/vim-scripts/CSS-one-line--multi-line-folding
+  $gc https://github.com/tpope/vim-liquid
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye
@@ -122,6 +123,7 @@ gd opt; ls
   # $gc https://github.com/srstevenson/vim-picker
   # $gc https://github.com/qnighy/vim-ssh-annex
   # $gc https://github.com/sheerun/vim-wombat-scheme
+  # $gc https://github.com/powerman/vim-plugin-AnsiEsc
 
 #==> win32
 echo; $cdp; gd packs-win32

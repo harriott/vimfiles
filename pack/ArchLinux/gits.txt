@@ -70,6 +70,7 @@
 ../packs-cp/opt/vim-interestingwords/.git
 ../packs-cp/opt/vim-langtool/.git
 ../packs-cp/opt/vim-LanguageTool/.git
+../packs-cp/opt/vim-liquid/.git
 ../packs-cp/opt/vim-loclist-follow/.git
 ../packs-cp/opt/vim-markdown/.git
 ../packs-cp/opt/vim-mark/.git
@@ -92,5 +93,6 @@
 ../packs-unix/opt/vim-better-whitespace/.git
 ../packs-unix/opt/vim-hexokinase/.git
 ../packs-unix/opt/vim-picker/.git
+../packs-unix/opt/vim-plugin-AnsiEsc/.git
 ../packs-unix/opt/vim-ssh-annex/.git
 ../packs-unix/opt/vim-wombat-scheme/.git

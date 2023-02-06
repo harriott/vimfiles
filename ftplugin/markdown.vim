@@ -22,9 +22,6 @@ vnoremap <buffer><leader>> :s/^#/##/<CR>
 " promote a selected part
 vnoremap <buffer><leader>< :s/^#//<CR>
 
-" open Pandoc'd pdf
-nnoremap <buffer> <F12> :call CompiledPDF()<CR>
-
 " Vim Markdown
 set conceallevel=2
 

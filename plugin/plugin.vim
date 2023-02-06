@@ -62,6 +62,7 @@ noremap Q @q
 " nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
 nnoremap <leader>2 :call ClearFancyText()<cr>
 function! ClearFancyText()
+  :sil!%s/ / /g
   :sil!%s/​//g
   :sil!%s/‌//g
   :sil!%s/‍//g

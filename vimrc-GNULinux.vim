@@ -1,4 +1,4 @@
-" Sourced, evenutally, from my GNU/Linux distribition's ~/.vimrc
+" Sourced, eventually, from my GNU/Linux distribition's ~/.vimrc
 " To investigate vim installation, begin here: /etc/vim/vimrc
 
 if !has('nvim')

@@ -1,4 +1,3 @@
-" Vim ftplugin file
 
 " Language:	digraphs
 "  for  $vimfiles/digraphs.txt  created by  $vimfiles/digraphsTidy.pl

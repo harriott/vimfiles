@@ -8,8 +8,8 @@
   "   $vimfiles/after/syntax/neomuttrc.vim
 
 ""> my syntax for  #=>  folding
-syntax match foldY ' *#=.*$'
-syntax match foldN '# \+#=.*$'
+syntax match foldY '^ *#=.*$'
+syntax match foldN '^# \+#=.*$'
 
 hi def foldY term=bold cterm=bold gui=bold guifg=LightGreen
 hi def foldN term=bold cterm=bold gui=bold guifg=LightGray

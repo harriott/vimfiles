@@ -1,12 +1,15 @@
 " vim: se fdl=1:
 
-" Language:	markdown
+" Language:	md
 " Maintainer: Joseph Harriott
-" Last Change: Tue 05 Jul 2022
+" Last Change: Mon 06 Feb 2023
 " this is for extra funtionality that I like for my *.md files
 " supplemental to  $vimfiles/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
-"  this configuration file is called by  $vimfiles/filetype.vim
+"  this configuration file is sourced as needed by  $vimfiles/filetype.vim
+
+" open Pandoc'd pdf
+nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)

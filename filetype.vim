@@ -1,7 +1,7 @@
 " vim: se fdl=1:
 
 " Maintainer: Joseph Harriott
-" Last Change: Tue 06 Dec 2022
+" Last Change: Sat 28 Jan 2023
 " $vimfiles/filetype.vim
 
 ""> 0 GitHub Flavored Markdown
@@ -23,7 +23,12 @@ if exists("did_load_filetypes")
 endif
 augroup filetypedetect
     autocmd! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
-    autocmd! BufRead,BufNewFile *.mail setfiletype mail
+    autocmd! BufRead,BufNewFile *.dirl setfiletype dirl  " $vimfiles/syntax/dirl.vim
+    autocmd! BufRead,BufNewFile *.fetl setfiletype fetl  " $vimfiles/syntax/fetl.vim
+    autocmd! BufRead,BufNewFile *.gems setfiletype gems  " $vimfiles/syntax/gems.vim
+    autocmd! BufRead,BufNewFile *.jctl setfiletype jctl  " $vimfiles/syntax/jctl.vim
+    autocmd! BufRead,BufNewFile *.mail setfiletype mail  " $vimfiles/syntax/mail.vim
+    autocmd! BufRead,BufNewFile *.sifw setfiletype sifw  " $vimfiles/syntax/sifw.vim
     autocmd! BufRead,BufNewFile .spacemacs setfiletype lisp
 augroup END  " - overrides  $VIMRUNTIME/filetype.vim
 

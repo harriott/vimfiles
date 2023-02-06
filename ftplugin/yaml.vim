@@ -1,8 +1,9 @@
-"
+
 " Language:	YAML
 " Maintainer: Joseph Harriott
 " Last Change: Wed 07 Dec 2022
 " $vimfiles/ftplugin/yaml.vim  - supplementary to  $VIMRUNTIME/ftplugin/yaml.vim
+"  also  $vimfiles/after/syntax/yaml.vim
 " ($VIMRUNTIME/filetype.vim  decides the various files that are detected as  yaml)
 
 setlocal foldcolumn=1 textwidth=0

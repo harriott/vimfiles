@@ -1,11 +1,14 @@
 
-" Joseph Harriott - Sun 09 Oct 2022
+" https://harriott.github.io/ - Sun 05 Feb 2023
 
 " $vimfiles/plugin/plugins.vim
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
 ""> encoding
+
+"">> AnsiEsc
+packadd vim-plugin-AnsiEsc
 
 "">> dsf
 packadd dsf.vim
@@ -63,6 +66,7 @@ let g:GGF = 0
 packadd vim-rhubarb  " for :GBrowse to work
 
 "">> languages
+packadd vim-liquid  " Liquid highlighting added into html's
 
 "">>> csv.vim
 " $vimfiles/pack/packs-cp/opt/csv.vim/ftdetect/csv.vim
@@ -211,6 +215,7 @@ packadd CSS-one-line--multi-line-folding
 " Arch's  languagetool  is found
 let g:ale_echo_msg_format = '%linter% %code% %s'
 " let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
+let g:ale_virtualtext_cursor = 'disabled'  " turns off end of line  virtual-text  messages
 let g:ale_linters_explicit = 1  " turns off all except explicity defined linters
 "  I use  let b:ale_linters = [...]  in my ftplugin configurations
 let g:ale_sign_column_always = 1
@@ -270,10 +275,12 @@ packadd vim-LanguageTool " then can  :h LanguageTool
 " now preferring  vim-langtool
 
 "">> Vim Markdown
+" :h markdown
 " $vimfiles/pack/packs-cp/opt/vim-markdown/README.md
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1  " highlight YAML Front Matter
 let g:vim_markdown_new_list_item_indent = 0
 packadd vim-markdown  " harriott  clone of  preservim
 

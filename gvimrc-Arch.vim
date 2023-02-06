@@ -2,7 +2,7 @@
 " $vimfiles/gvimrc-Arch.vim  sourced by  $machBld/jo/gvimrc
 " ---------------------------------------------------------
 
-" move on ot the more portable configuration:
+" move on to the more portable configuration:
 source $HOME/.vim/gvimrc.vim
 
 ""> Colour Scheme

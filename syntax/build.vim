@@ -8,9 +8,7 @@
 " $vimfiles/syntax/build.vim  &  $vimfiles/ftplugin/build.vim
 " vim: ft=build:
 
-if exists("b:current_syntax")
-  finish
-endif
+if exists("b:current_syntax") | finish | endif
 
 syntax region buildH start=/^#/ end=/$/
 hi def link buildH Folded  " for an unobtrusive heading
