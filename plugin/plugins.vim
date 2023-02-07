@@ -47,10 +47,10 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 packadd vim-fugitive
 
 "">>> vim-gfm-syntax
-" $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/autoload/gfm_syntax/emoji.vim
+" $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/README.md
 let g:gfm_syntax_emoji_conceal = 1
 let g:gfm_syntax_enable_always = 0
-let g:gfm_syntax_enable_filetypes = ['markdown.gfm', 'gfme']
+let g:gfm_syntax_enable_filetypes = ['gfm']
 packadd vim-gfm-syntax
 
 "">>> vim-gitgutter
@@ -66,7 +66,6 @@ let g:GGF = 0
 packadd vim-rhubarb  " for :GBrowse to work
 
 "">> languages
-packadd vim-liquid  " Liquid highlighting added into html's
 
 "">>> csv.vim
 " $vimfiles/pack/packs-cp/opt/csv.vim/ftdetect/csv.vim
@@ -80,6 +79,9 @@ packadd vim-liquid  " Liquid highlighting added into html's
 "  <cr>  " unhide
 "  <enter>  " hides away non-matching
 packadd csv.vim
+
+"">>> Liquid
+packadd vim-liquid  " $vimfiles/pack/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
 
 "">>> mediawiki.vim
 packadd mediawiki.vim  " $vimfiles/pack/packs-cp/opt/mediawiki.vim/README.md
@@ -276,13 +278,26 @@ packadd vim-LanguageTool " then can  :h LanguageTool
 
 "">> Vim Markdown
 " :h markdown
-" $vimfiles/pack/packs-cp/opt/vim-markdown/README.md
+" $vimfiles/pack/packs-cp/opt/vim-markdown/maintenance.md
 let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_conceal_code_blocks = 0  " need to see them
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1  " highlight YAML Front Matter
 let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_strikethrough = 1
 packadd vim-markdown  " harriott  clone of  preservim
+
+" Movements:
+" ]] => next header
+" [[ => previous header
+" ][ => next sibling header
+" [] => previous sibling header
+" ]h => current header
+" ]u => parent header
+
+" ToC:
+" :Toc => quickfix ToC left
+" :Toch => quickfix ToC below
 
 "">> VimTeX
 " dsd  " delete surrounding delimiters

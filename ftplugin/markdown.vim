@@ -2,7 +2,7 @@
 
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Mon 12 Sep 2022
+" Last Change: Tue 07 Feb 2023
 " $vimfiles/ftplugin/markdown.vim
 "  supplementary to [ $vimfiles/pack/packs-cp/opt/vim-markdown/README.md, ] $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/ftplugin/html.vim )
 
@@ -34,8 +34,4 @@ vnoremap <leader>` c``<Esc>P
 ""> folding by header marks
 execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
 setlocal foldcolumn=2 " slightly better distinction from line numbers
-
-""> Syntax highlighting
-" Get highlighting working for  # low-carb  in  Regimes.md
-let g:markdown_minlines = 40  " see  $VIMRUNTIME/syntax/markdown.vim
 

@@ -1,16 +1,16 @@
 " vim: se fdl=1:
 
 " Maintainer: Joseph Harriott
-" Last Change: Sat 28 Jan 2023
+" Last Change: Tue 07 Feb 2023
 " $vimfiles/filetype.vim
 
 ""> 0 GitHub Flavored Markdown
-autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=markdown.gfm  " or vim: ft=gfm:
-autocmd BufRead,BufNew,BufNewFile *.gfme setlocal ft=gfme  " or vim: ft=gfme:
+autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
 
 ""> 0 special functionality for my .emdr's
 " my email draft format, needs to be seen as  filetype text  for  ALE
-autocmd! BufRead,BufNewFile *.emdr setfiletype text | source $vimfiles/ftplugin/emdr.vim | source $vimfiles/syntax/emdr.vim
+autocmd! BufRead,BufNewFile *.emdr setfiletype text |
+  \ source $vimfiles/ftplugin/emdr.vim | source $vimfiles/syntax/emdr.vim
 
 ""> 0 special functionality for my .md's
 autocmd! BufRead,BufNewFile *.md source $vimfiles/ftplugin/md.vim

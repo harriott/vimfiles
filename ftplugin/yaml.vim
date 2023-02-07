@@ -6,6 +6,7 @@
 "  also  $vimfiles/after/syntax/yaml.vim
 " ($VIMRUNTIME/filetype.vim  decides the various files that are detected as  yaml)
 
+let b:ale_linters = ['yamllint']
 setlocal foldcolumn=1 textwidth=0
 
 " my folding tools:

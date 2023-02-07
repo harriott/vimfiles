@@ -1,7 +1,7 @@
 " My adjustments
 " Language:	dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Tue 06 Dec 2022
+" Last Change: Tue 07 Feb 2023
 " $vimfiles/ftplugin/dokuwiki.vim
 
 " Also  vim-dokuwiki:
@@ -11,6 +11,14 @@
 
 " If you want to trigger these adjustments from the modeline in a file, it's:
 "  /* vim: set ft=dokuwiki: */
+
+" convert <title> <url> to DokuWiki hyperlink
+function! PageTitleToHyperlink()
+  let l:pagetitle = getreg('"')
+  execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
+endfunction
+vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
+" (I'm using two h's because  gitgutter.vim  binds some \hx's)
 
 " convert a line to external link
 nnoremap <buffer> <leader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
@@ -88,14 +96,6 @@ nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
 
 " create a heading:
 nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
-
-" having just selected a web-page heading, format it into a DokuWiki hyperlink
-function! PageTitleToHyperlink()
-  let l:pagetitle = getreg('"')
-  execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
-endfunction
-vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
-" (I'm using two h's because  gitgutter.vim  binds some \hx's)
 
 ""> monospacing
 " convert monospaced to unformatted

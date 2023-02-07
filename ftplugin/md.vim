@@ -31,6 +31,12 @@ else
 endif
 " check with  :map <leader><F7>
 
+""> Syntax highlighting
+" Get highlighting working for  # low-carb  in  Regimes.md
+let g:markdown_minlines = 40  " see  $VIMRUNTIME/syntax/markdown.vim
+
+" maxmempattern  is set in  $vimfiles/plugin/plugin.vim
+
 ""> for Verse
 " prepend >  & append  :
 vnoremap <buffer> <leader>v1 :s#^\v(.+)$#> \1  #g <bar> nohlsearch <CR>
