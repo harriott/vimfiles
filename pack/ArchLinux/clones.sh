@@ -104,7 +104,8 @@ gd opt; ls
   # $gc git@github.com:harriott/vim-gfm-syntax.git
   # $gc https://github.com/fatih/vim-go
   # $gc https://github.com/vim-scripts/CSS-one-line--multi-line-folding
-  $gc https://github.com/tpope/vim-liquid
+  # $gc https://github.com/tpope/vim-liquid
+  $gc https://github.com/arecarn/vim-clean-fold
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye

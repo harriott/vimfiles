@@ -49,6 +49,7 @@
 ../packs-cp/opt/vim-buffing-wheel
 ../packs-cp/opt/vim-bufkill
 ../packs-cp/opt/vim-characterize
+../packs-cp/opt/vim-clean-fold
 ../packs-cp/opt/vim-clifm
 ../packs-cp/opt/vim-colors-solarized
 ../packs-cp/opt/vim-colors-tomorrow
@@ -62,6 +63,7 @@
 ../packs-cp/opt/vim-fontsize
 ../packs-cp/opt/vim-fugitive
 ../packs-cp/opt/vim-gfm-syntax
+../packs-cp/opt/vim-gfm-syntax-rhysd
 ../packs-cp/opt/vim-gitgutter
 ../packs-cp/opt/vim-go
 ../packs-cp/opt/vim-hjson

@@ -1,13 +1,13 @@
 
-" Language:	my RoboCopy log files
+" Language:	RClog - my RoboCopy log files
 " Maintainer: Joseph Harriott
 " Last Change: Sun 18 Oct 2020
 
-syntax match Folder '^# .*$'
-syntax match Muted '\(^v\|^\s\).*$'
+syntax match RClogFolder '^# .*$'
+syntax match RClogMuted '\(^v\|^\s\).*$'
 
-hi def Folder guifg=LightGreen
-hi def Muted guifg=DarkGrey
+hi def RClogFolder guifg=LightGreen
+hi def RClogMuted guifg=DarkGrey
 " see  cterm-colors  in  ../keystrokes.md
 
 let b:current_syntax = "RClog"

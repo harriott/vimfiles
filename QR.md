@@ -391,6 +391,7 @@ c-k<non-text-key> " enters the Vim value of a non-text-key
 c-r "  " (in command line) insert the unnamed register
 command-line window: C-c C-c  closes
 
+$GHrUse/CP/vim/vim-vim/README.md
 C:\Vim\vim90\gvim.exe
 r $vimfiles
 ```

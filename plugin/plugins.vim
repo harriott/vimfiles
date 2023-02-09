@@ -46,12 +46,12 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 
 packadd vim-fugitive
 
-"">>> vim-gfm-syntax
-" $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/README.md
-let g:gfm_syntax_emoji_conceal = 1
-let g:gfm_syntax_enable_always = 0
-let g:gfm_syntax_enable_filetypes = ['gfm']
-packadd vim-gfm-syntax
+" "">>> vim-gfm-syntax
+" " $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/README.md
+" let g:gfm_syntax_emoji_conceal = 1
+" let g:gfm_syntax_enable_always = 0
+" let g:gfm_syntax_enable_filetypes = ['gfm']
+" packadd vim-gfm-syntax
 
 "">>> vim-gitgutter
 let g:gitgutter_max_signs = 600
@@ -66,6 +66,7 @@ let g:GGF = 0
 packadd vim-rhubarb  " for :GBrowse to work
 
 "">> languages
+packadd CSS-one-line--multi-line-folding
 
 "">>> csv.vim
 " $vimfiles/pack/packs-cp/opt/csv.vim/ftdetect/csv.vim
@@ -89,6 +90,7 @@ packadd mediawiki.vim  " $vimfiles/pack/packs-cp/opt/mediawiki.vim/README.md
 "">>> MTA
 packadd MatchTagAlways
 " requires a Python 3 that corresponds to vim's compilation
+" $vimfiles/pack/packs-cp/opt/MatchTagAlways/test.html
 
 "">>> Org.vim
 packadd org.vim
@@ -119,8 +121,34 @@ packadd vim-dokuwiki
 let dokuwiki_comment=1  " comment highlighting on
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
 
+"">>> vim-go
+packadd vim-go
+
 "">>> vim-hjson
 packadd vim-hjson
+
+"">>> Vim Markdown
+" :h markdown
+" $vimfiles/pack/packs-cp/opt/vim-markdown/maintenance.md
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_conceal_code_blocks = 0  " need to see them
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1  " highlight YAML Front Matter
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_strikethrough = 1
+packadd vim-markdown  " harriott  clone of  preservim
+
+" Movements:
+" ]] => next header
+" [[ => previous header
+" ][ => next sibling header
+" [] => previous sibling header
+" ]h => current header
+" ]u => parent header
+
+" ToC:
+" :Toc => quickfix ToC left
+" :Toch => quickfix ToC below
 
 "">>> vim-mbsync
 packadd vim-mbsync
@@ -131,6 +159,54 @@ packadd vim-pandoc-syntax
 "">>> vim-ps1
 " $vimfiles\pack\packs-cp\opt\vim-ps1\ftdetect\ps1.vim
 packadd vim-ps1
+
+"">>> VimTeX
+" dsd  " delete surrounding delimiters
+" commands
+"  csc  " change surrounding
+"  dsc  " delete surrounding
+"  tsc  " toggle starred commands
+" surrounding environments
+"  cse <newEnvironment>  "to change
+"  dse  " delete
+" surrounding maths environment
+"  cs$  " change
+"  ds$  " delete
+"  ts$  " toggle
+" :h vimtex-default-mappings
+" :VimtexInfo
+" [[  or  ]]  " move to previous or next sectioning
+" [m  or  ]m  " move to previous or next environment
+" =li  or  =lI  " vimtex-info  or  vimtex-info-full
+" =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
+let g:vimtex_fold_enabled =1
+let g:vimtex_syntax_custom_cmds = [
+  \ {'name': 'Odr', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Eltt', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Jo', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Luce', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Mth', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Mrstl', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Rox', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'Tom', 'hlgroup': 'CursorLineNr'},
+  \ {'name': 'AM', 'hlgroup': 'Question'},
+  \ {'name': 'Anntt', 'hlgroup': 'Question'},
+  \ {'name': 'Brgt', 'hlgroup': 'Question'},
+  \ {'name': 'Crla', 'hlgroup': 'Question'},
+  \ {'name': 'Emna', 'hlgroup': 'Question'},
+  \ {'name': 'Ftm', 'hlgroup': 'Question'},
+  \ {'name': 'Hmlh', 'hlgroup': 'Question'},
+  \ {'name': 'Jln', 'hlgroup': 'Question'},
+  \ {'name': 'Kddj', 'hlgroup': 'Question'},
+  \ {'name': 'Ltt', 'hlgroup': 'Question'},
+  \ {'name': 'Ncl', 'hlgroup': 'Question'},
+  \ {'name': 'Olv', 'hlgroup': 'Question'},
+  \ {'name': 'SrB', 'hlgroup': 'Question'},
+  \ {'name': 'Vrgn', 'hlgroup': 'Question'},
+  \ {'name': 'Yumi', 'hlgroup': 'Question'},
+  \ {'name': 'section', 'hlgroup': 'Todo'},
+  \]
+packadd vimtex
 
 "">> The NERD Commenter
 packadd nerdcommenter
@@ -202,9 +278,9 @@ endif
 packadd vim-ingo-library
 
 ""> languages
-packadd CSS-one-line--multi-line-folding
 
 "">> ALE
+" :ALEFix
 " :Bufferize ALEInfo  " shows settings for the filetype
 " :h ale-languagetool-options
 " $vimfiles/pack/packs-cp/opt/ale/plugin/ale.vim
@@ -216,7 +292,6 @@ packadd CSS-one-line--multi-line-folding
 
 " Arch's  languagetool  is found
 let g:ale_echo_msg_format = '%linter% %code% %s'
-" let g:ale_linters = {'email': ['languagetool'], 'text': ['languagetool']}
 let g:ale_virtualtext_cursor = 'disabled'  " turns off end of line  virtual-text  messages
 let g:ale_linters_explicit = 1  " turns off all except explicity defined linters
 "  I use  let b:ale_linters = [...]  in my ftplugin configurations
@@ -252,9 +327,6 @@ autocmd BufRead,BufNewFile */France/Scratch/* let b:tq_language=['fr']
 nnoremap <leader>th :ThesaurusQueryReplaceCurrentWord<CR>
 packadd thesaurus_query.vim
 
-"">> vim-go
-packadd vim-go
-
 "">> vim-langtool
 nnoremap <leader>lt :LangTool <bar> lopen 15 <CR>
 packadd vim-langtool  " can then  :h langtool
@@ -275,77 +347,6 @@ let g:languagetool_win_height = -1
 " needs a  g:languagetool_*  defined
 packadd vim-LanguageTool " then can  :h LanguageTool
 " now preferring  vim-langtool
-
-"">> Vim Markdown
-" :h markdown
-" $vimfiles/pack/packs-cp/opt/vim-markdown/maintenance.md
-let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_conceal_code_blocks = 0  " need to see them
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_frontmatter = 1  " highlight YAML Front Matter
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_strikethrough = 1
-packadd vim-markdown  " harriott  clone of  preservim
-
-" Movements:
-" ]] => next header
-" [[ => previous header
-" ][ => next sibling header
-" [] => previous sibling header
-" ]h => current header
-" ]u => parent header
-
-" ToC:
-" :Toc => quickfix ToC left
-" :Toch => quickfix ToC below
-
-"">> VimTeX
-" dsd  " delete surrounding delimiters
-" commands
-"  csc  " change surrounding
-"  dsc  " delete surrounding
-"  tsc  " toggle starred commands
-" surrounding environments
-"  cse <newEnvironment>  "to change
-"  dse  " delete
-" surrounding maths environment
-"  cs$  " change
-"  ds$  " delete
-"  ts$  " toggle
-" :h vimtex-default-mappings
-" :VimtexInfo
-" [[  or  ]]  " move to previous or next sectioning
-" [m  or  ]m  " move to previous or next environment
-" =li  or  =lI  " vimtex-info  or  vimtex-info-full
-" =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
-let g:vimtex_fold_enabled =1
-let g:vimtex_syntax_custom_cmds = [
-  \ {'name': 'Odr', 'hlgroup': 'CursorLineNr'},
-  \ {'name': 'Eltt', 'hlgroup': 'CursorLineNr'},
-  \ {'name': 'Jo', 'hlgroup': 'CursorLineNr'},
-  \ {'name': 'Luce', 'hlgroup': 'CursorLineNr'},
-  \ {'name': 'Mth', 'hlgroup': 'CursorLineNr'},
-  \ {'name': 'Mrstl', 'hlgroup': 'CursorLineNr'},
-  \ {'name': 'Rox', 'hlgroup': 'CursorLineNr'},
-  \ {'name': 'Tom', 'hlgroup': 'CursorLineNr'},
-  \ {'name': 'AM', 'hlgroup': 'Question'},
-  \ {'name': 'Anntt', 'hlgroup': 'Question'},
-  \ {'name': 'Brgt', 'hlgroup': 'Question'},
-  \ {'name': 'Crla', 'hlgroup': 'Question'},
-  \ {'name': 'Emna', 'hlgroup': 'Question'},
-  \ {'name': 'Ftm', 'hlgroup': 'Question'},
-  \ {'name': 'Hmlh', 'hlgroup': 'Question'},
-  \ {'name': 'Jln', 'hlgroup': 'Question'},
-  \ {'name': 'Kddj', 'hlgroup': 'Question'},
-  \ {'name': 'Ltt', 'hlgroup': 'Question'},
-  \ {'name': 'Ncl', 'hlgroup': 'Question'},
-  \ {'name': 'Olv', 'hlgroup': 'Question'},
-  \ {'name': 'SrB', 'hlgroup': 'Question'},
-  \ {'name': 'Vrgn', 'hlgroup': 'Question'},
-  \ {'name': 'Yumi', 'hlgroup': 'Question'},
-  \ {'name': 'section', 'hlgroup': 'Todo'},
-  \]
-packadd vimtex
 
 ""> layout
 
