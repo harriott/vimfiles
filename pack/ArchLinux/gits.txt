@@ -9,6 +9,7 @@
 ../packs-cp/opt/csv.vim/.git
 ../packs-cp/opt/ctrlp.vim/.git
 ../packs-cp/opt/dsf.vim/.git
+../packs-cp/opt/emmet-vim/.git
 ../packs-cp/opt/FastFold/.git
 ../packs-cp/opt/fern-git-status.vim/.git
 ../packs-cp/opt/fern-preview.vim/.git
@@ -36,6 +37,7 @@
 ../packs-cp/opt/supertab/.git
 ../packs-cp/opt/syntastic/.git
 ../packs-cp/opt/tabular/.git
+../packs-cp/opt/tagalong.vim/.git
 ../packs-cp/opt/tagbar/.git
 ../packs-cp/opt/targets.vim/.git
 ../packs-cp/opt/thesaurus_query.vim/.git
@@ -51,8 +53,10 @@
 ../packs-cp/opt/vim-characterize/.git
 ../packs-cp/opt/vim-clean-fold/.git
 ../packs-cp/opt/vim-clifm/.git
+../packs-cp/opt/vim-closetag/.git
 ../packs-cp/opt/vim-colors-solarized/.git
 ../packs-cp/opt/vim-colors-tomorrow/.git
+../packs-cp/opt/vim-css-color/.git
 ../packs-cp/opt/vim-devicons/.git
 ../packs-cp/opt/vim-dirvish/.git
 ../packs-cp/opt/vim-dirvish-git/.git
@@ -81,11 +85,13 @@
 ../packs-cp/opt/vim-open-url/.git
 ../packs-cp/opt/vim-pandoc-syntax/.git
 ../packs-cp/opt/vim-peekaboo/.git
+../packs-cp/opt/vim-prettier/.git
 ../packs-cp/opt/vim-ps1/.git
 ../packs-cp/opt/vim-repeat/.git
 ../packs-cp/opt/vim-rhubarb/.git
 ../packs-cp/opt/vim-ShowTrailingWhitespace/.git
 ../packs-cp/opt/vim-startify/.git
+../packs-cp/opt/vim-subversive/.git
 ../packs-cp/opt/vim-surround/.git
 ../packs-cp/opt/vimtex/.git
 ../packs-cp/opt/vim-textmanip/.git

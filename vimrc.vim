@@ -39,6 +39,8 @@ autocmd BufRead,BufNewFile */sudoers setlocal ft=sudoers
 autocmd BufRead,BufNewFile *PowerShell/PSReadLine/ConsoleHost_history.txt setlocal nospell
 
 ""> mappings
+cabbrev h vert h
+
 noremap <leader><leader>ll :set list! list? <CR>  " (:h 'list')
 
 nnoremap zr :exe ':spellrare  '.expand('<cWORD>')<CR>

@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Joseph Harriott
+# Joseph Harriott - https://harriott.github.io/
 
-# ---------------------------------
-# some scripts to grab key-bindings
-# ---------------------------------
+# -----------------
+# grab key-bindings
+# -----------------
 # bash grabMaps.sh
 
 set -e  # terminate on a fail
@@ -12,18 +12,20 @@ set -e  # terminate on a fail
 # Grab uses of Function keys
 #  this can be run as a vim command,  :execute "!grep -ri -E '<(m-|s-)?F[0-9]{1,2}>'"
 #  but that can't be passed to Bufferize...
-echo 'vim: ft=Fn:' > FnUses.txt
-echo >> FnUses.txt
-grep -ri --exclude-dir=grabbed -E '<(m-|s-)?F[0-9]{1,2}>' ../* >> FnUses.txt
+of=$vimfiles/grabbed/FnUses.txt
+echo 'vim: ft=Fn:' > $of
+echo >> $of
+grep -ri --exclude-dir=grabbed -E '<(m-|s-)?F[0-9]{1,2}>' ../* >> $of
 # rg --no-ignore '<(F|S-F)\d\+>'
 
 # Grab uses of <leader>
-echo 'vim: ft=leader:' > leaderUses.txt
-echo >> leaderUses.txt
-grep -ri --exclude-dir=grabbed -E '<leader>' ../* >> leaderUses.txt
+of=$vimfiles/grabbed/leaderUses.txt
+echo 'vim: ft=leader:' > $of
+echo >> $of
+grep -ri --exclude-dir=grabbed -E '<leader>' ../* >> $of
 
 # Grab uses of <Plug>
-grep -ri --exclude-dir=grabbed -E '<Plug>' ../* > PlugUses.txt
+grep -ri --exclude-dir=grabbed -E '<Plug>' ../* > $vimfiles/grabbed/PlugUses.txt
 
 # grab mappings
 # -------------

@@ -105,7 +105,13 @@ gd opt; ls
   # $gc https://github.com/fatih/vim-go
   # $gc https://github.com/vim-scripts/CSS-one-line--multi-line-folding
   # $gc https://github.com/tpope/vim-liquid
-  $gc https://github.com/arecarn/vim-clean-fold
+  # $gc https://github.com/arecarn/vim-clean-fold
+  # $gc https://github.com/mattn/emmet-vim
+  # $gc https://github.com/alvan/vim-closetag
+  # $gc https://github.com/AndrewRadev/tagalong.vim
+  # $gc https://github.com/ap/vim-css-color
+  # $gc https://github.com/prettier/vim-prettier
+  $gc https://github.com/svermeulen/vim-subversive
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye

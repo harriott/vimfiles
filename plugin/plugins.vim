@@ -68,6 +68,9 @@ packadd vim-rhubarb  " for :GBrowse to work
 "">> languages
 packadd CSS-one-line--multi-line-folding
 
+" "">>> CSS Color
+" packadd vim-css-color  " slows down every other filetype...
+
 "">>> csv.vim
 " $vimfiles/pack/packs-cp/opt/csv.vim/ftdetect/csv.vim
 " H -> go left
@@ -80,6 +83,11 @@ packadd CSS-one-line--multi-line-folding
 "  <cr>  " unhide
 "  <enter>  " hides away non-matching
 packadd csv.vim
+
+"">>> emmet-vim
+" EmmetInstall
+let g:user_emmet_install_global = 0
+packadd emmet-vim
 
 "">>> Liquid
 packadd vim-liquid  " $vimfiles/pack/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
@@ -108,12 +116,22 @@ else
 endif
 let g:syntastic_python_checkers = ['flake8']
 
+"">>> tagalong.vim
+" change a tag, its pair is changed too
+let g:tagalong_verbose = 1
+packadd tagalong.vim
+
 "">>> vim-base64
 packadd vim-base64
 
 "">>> vim-bbcode
 " $vimfiles/pack/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
 packadd vim-bbcode
+
+"">>> vim-closetag
+let g:closetag_close_shortcut = '<localleader>>'  " for > without closing
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+packadd vim-closetag
 
 "">>> vim-dokuwiki
 " $vimfiles/pack/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
@@ -155,6 +173,10 @@ packadd vim-mbsync
 
 "">>> vim-pandoc-syntax
 packadd vim-pandoc-syntax
+
+"">>> vim-prettier
+" :Prettier
+packadd vim-prettier
 
 "">>> vim-ps1
 " $vimfiles\pack\packs-cp\opt\vim-ps1\ftdetect\ps1.vim
@@ -719,8 +741,21 @@ packadd supertab
 " $vimfiles/pack/packs-cp/opt/targets.vim/cheatsheet.md
 packadd targets.vim
 
+"">> vim-subversive
+packadd vim-subversive
+
+nmap S <plug>(SubversiveSubstituteRange)
+" S<motion1><motion2> => prompts for text to replace <motion1> in <motion2>
+nmap <leader>s <plug>(SubversiveSubstituteRangeConfirm)
+
 "">> vim-surround
+" cs'b cs'B cs'r cs'a => change surrounding ' to ) ] } >
+" cs'( cs'{ cs'[ cs'< => ...with spaces
+" ds' => delete surrounding '
 " h surround
+" ysiw<q> => yes surround word in quote tags (ySiw  or  ySS  to include newlines)
+" yssb => bracket the line
+" on a visual selection, Sr => wrap with []
 packadd vim-surround
 
 ""> vim

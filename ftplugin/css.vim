@@ -9,3 +9,5 @@ let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/plugin/plugins.vi
 " let g:ale_fixers = ['stylelint']
 " let g:ale_linters = ['stylelint']
 
+EmmetInstall
+

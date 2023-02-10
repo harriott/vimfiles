@@ -3,6 +3,7 @@
 *.pdf
 .directory
 .netrwhist
+grabbed
 plugin/fzf
 pack/packs-cp
 pack/packs-unix

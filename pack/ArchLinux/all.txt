@@ -9,6 +9,7 @@
 ../packs-cp/opt/csv.vim
 ../packs-cp/opt/ctrlp.vim
 ../packs-cp/opt/dsf.vim
+../packs-cp/opt/emmet-vim
 ../packs-cp/opt/FastFold
 ../packs-cp/opt/fern-git-status.vim
 ../packs-cp/opt/fern-preview.vim
@@ -36,6 +37,7 @@
 ../packs-cp/opt/supertab
 ../packs-cp/opt/syntastic
 ../packs-cp/opt/tabular
+../packs-cp/opt/tagalong.vim
 ../packs-cp/opt/tagbar
 ../packs-cp/opt/targets.vim
 ../packs-cp/opt/thesaurus_query.vim
@@ -51,8 +53,10 @@
 ../packs-cp/opt/vim-characterize
 ../packs-cp/opt/vim-clean-fold
 ../packs-cp/opt/vim-clifm
+../packs-cp/opt/vim-closetag
 ../packs-cp/opt/vim-colors-solarized
 ../packs-cp/opt/vim-colors-tomorrow
+../packs-cp/opt/vim-css-color
 ../packs-cp/opt/vim-devicons
 ../packs-cp/opt/vim-dirvish
 ../packs-cp/opt/vim-dirvish-git
@@ -81,11 +85,13 @@
 ../packs-cp/opt/vim-open-url
 ../packs-cp/opt/vim-pandoc-syntax
 ../packs-cp/opt/vim-peekaboo
+../packs-cp/opt/vim-prettier
 ../packs-cp/opt/vim-ps1
 ../packs-cp/opt/vim-repeat
 ../packs-cp/opt/vim-rhubarb
 ../packs-cp/opt/vim-ShowTrailingWhitespace
 ../packs-cp/opt/vim-startify
+../packs-cp/opt/vim-subversive
 ../packs-cp/opt/vim-surround
 ../packs-cp/opt/vimtex
 ../packs-cp/opt/vim-textmanip

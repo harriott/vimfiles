@@ -369,31 +369,34 @@ qj  " begin recording macro in j
 
 # Vim
 ```vim
-@@         " = @: = repeat last command-line
-\8         " toggle 82\106 columns
-\ll        " list mode
-ga         " returns code values for character under cursor
-gQ         " enter Ex mode
-K          " brings up a man page (if there is one) for word under cursor
-q:         " brings up an interactive history of :commands (in an editable window)
-vi         " exit Ex mode
-:echo getline(1) " contents of line 1
-:h index   " lists the all of the commands
-:h 'sw'    " autoindentation - shiftwidth
-:his       " Display command-line history
-:his s     " Display search string history
-:so %      " source the current file
-:DiffOrig  " brings the Recover version up left
-:X         " prompts for an encryption key
+@@           " = @: = repeat last command-line
+\8           " toggle 82\106 columns
+\ll          " list mode
+ga           " returns code values for character under cursor
+gQ           " enter Ex mode
+K            " brings up a man page (if there is one) for word under cursor
+q:           " brings up an interactive history of :commands (in an editable window)
+vi           " exit Ex mode
+:h index     " lists the all of the commands
+:h 'sw'      " autoindentation - shiftwidth
+:his         " Display command-line history
+:his s       " Display search string history
+:profile ... " for speed tests
+:so %        " source the current file
+:DiffOrig    " brings the Recover version up left
+:X           " prompts for an encryption key
 ```
+
 ```
 c-k<non-text-key> " enters the Vim value of a non-text-key
 c-r "  " (in command line) insert the unnamed register
 command-line window: C-c C-c  closes
+:echo getline(1) " contents of line 1
 
 $GHrUse/CP/vim/vim-vim/README.md
 C:\Vim\vim90\gvim.exe
 r $vimfiles
+vim(1)
 ```
 
 ## buffer listing your recent messages
@@ -421,7 +424,6 @@ r $vimfiles
     :Bufferize scriptnames             " list of files sourced, in order
     :Bufferize se                      " all option changes
     :Bufferize se gfn                  " show font
-    :Bufferize verb map <LocalLeader>q " where that mapping was set
     :Bufferize version                 " Vim version etc
     :colo                              " current colorscheme
     :let mapleader
@@ -430,6 +432,12 @@ r $vimfiles
     $VIMRUNTIME
     C \usr\share\vim\vim90\ftplugin
     C:\Vim\vim90\ftplugin
+
+### mappings
+    :Bufferize map                     " n v s
+    :Bufferize map!                    " i e
+    :Bufferize verb map <LocalLeader>q " where that mapping was set
+    :map <c-n>                         " shows the mapping
 
 ### runtimepath
     :Bufferize echo &rtp

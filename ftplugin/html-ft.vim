@@ -5,6 +5,7 @@
 " Last Change: Thu 09 Feb 2023
 " $vimfiles/ftplugin/html-ft.vim, supplementary to  $vimfiles/ftplugin/html.vim
 
+EmmetInstall
 setlocal foldmethod=indent
 
 ""> ALE
