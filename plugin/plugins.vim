@@ -746,7 +746,9 @@ packadd vim-subversive
 
 nmap S <plug>(SubversiveSubstituteRange)
 " S<motion1><motion2> => prompts for text to replace <motion1> in <motion2>
+" "zS<motion1><motion2> => replaces <motion1> in <motion2> with register z
 nmap <leader>s <plug>(SubversiveSubstituteRangeConfirm)
+" - requests confirmations
 
 "">> vim-surround
 " cs'b cs'B cs'r cs'a => change surrounding ' to ) ] } >

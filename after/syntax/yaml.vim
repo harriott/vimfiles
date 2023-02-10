@@ -15,5 +15,6 @@ hi def yamlFoldN term=bold cterm=bold gui=bold guifg=LightGray
 
 "">> active fold, allowing a YAML key on next line
 syntax match yamlFoldY '^ *#=.*$' contained containedin=yamlComment skipnl nextgroup=yamlFlowMappingKey
+" syntax match yFMKnl '^.*: \zs.*' contains=yamlFlowMappingKey  - attempt to get text normal...
 hi def yamlFoldY term=bold cterm=bold gui=bold guifg=LightGreen
 

@@ -12,7 +12,6 @@
 " If you want to trigger these adjustments from the modeline in a file, it's:
 "  /* vim: set ft=dokuwiki: */
 
-" convert <title> <url> to DokuWiki hyperlink
 function! PageTitleToHyperlink()
   let l:pagetitle = getreg('"')
   execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
@@ -23,6 +22,8 @@ vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
 " convert a line to external link
 nnoremap <buffer> <leader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
 
+let b:match_words = '<:>'
+" convert <title> <url> to DokuWiki hyperlink
 set nospell
 setlocal textwidth=0 foldexpr=DWF() fdl=0
 setlocal foldmethod=expr

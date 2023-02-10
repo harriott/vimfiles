@@ -242,10 +242,13 @@ z\                    " incsearch-fuzzy-stay
 \S    " non-whitespace character
 \s    " whitespace character
 \u    " uppercase character
-\ze \zs
 \{,m} " 0-m matches
 \{-}  " as few as possible
 ```
+
+### searching before and after
+    \ze<endPatternToDiscard>
+    <startPatternToDiscard>\zs
 
 ## replace - reuse matched pattern
     :h s\\&
