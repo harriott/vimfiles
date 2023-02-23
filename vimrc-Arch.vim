@@ -1,5 +1,5 @@
 
-" sourced from my  $ABjo/textEdit/Vim/vimrc
+" $vimfiles/vimrc-Arch.vim  sourced from my  $ABjo/textEdit/Vim/vimrc
 
 source $HOME/.vim/vimrc-GNULinux.vim
 

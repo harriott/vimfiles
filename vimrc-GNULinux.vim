@@ -1,5 +1,5 @@
-" Sourced, eventually, from my GNU/Linux distribition's ~/.vimrc
-" To investigate vim installation, begin here: /etc/vim/vimrc
+
+" $vimfiles/vimrc-GNULinux.vim  source'd from my  $vimfiles/vimrc-Arch.vim
 
 if !has('nvim')
   " first, some general settings
@@ -19,7 +19,7 @@ set kp=
 
 " Getting rid of Caps Lock
 " ------------------------
-"
+
 " Insert key to turn it off:
 "  (useful if there's no keyboard LED for this)
 command! CapsLockOff wa <bar> silent !python $HOME/.vim/XkbLockModifiers.py

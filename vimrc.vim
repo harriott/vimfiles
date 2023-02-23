@@ -19,6 +19,13 @@ set directory=$HOME/.vimswap// " swapfiles, centrally stored with complete paths
 set hidden  " allows working on multiple files while not visually focussing on them all
 set winminheight=0  " reduce minimized windows to zero lines shown
 
+""> get g:vimfiles location
+if empty(matchstr($HOME, '/home/'))
+  let g:vimfiles = $HOME.'\vimfiles'
+else
+  let g:vimfiles = $HOME.'/.vim'
+endif
+
 ""> interface
 set fillchars=fold:\ 
 " - '\ ' for cleaner folds

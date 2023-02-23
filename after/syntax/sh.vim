@@ -7,6 +7,8 @@
 " $vimfiles/after/syntax/sh.vim, supplementary to  $VIMRUNTIME/syntax/bash.vim
 " (I set  fdm=expr  in  $vimfiles/ftplugin/sh.vim)
 
+syntax keyword bashAdminStatement sudo
+syntax keyword bashStatement bm checkupdates copyq date expac i pacfinder pacman pactree pass
 syntax sync fromstart  " for longer build scripts
 
 ""> my folding

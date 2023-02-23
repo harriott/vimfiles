@@ -302,26 +302,25 @@ gf          " open file under cursor - :h gF
     ci} " change inside curly braces
 
 # tricks
-```
-:%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
-:so /usr/share/vim/vim90/tools/emoji_list.vim
-
+```vim
 &                            " repeat last substitute
-ctrl-q ctrl-m                " inserts ^M (carriage return)
-g&                           " repeat last command over the whole document
-g Ctrl-g                     " prints the cursor position
 :echo &bomb                  " 1 if BOM
 :exe
 :g\^\m 0                     " reverse the entire buffer
 :ni<somecharacter><Enter>    " inserts <somecharacters> n time
 :normal i" . strftime("%c")  " put date-time at cursor
-```
-```vim
+:%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
 :h g_CTRL-G                  " position and word info, works on a range too
+:so /usr/share/vim/vim90/tools/emoji_list.vim
 :t.                          " reproduce line
 :t.|s\.\=\g                  " setext-style header underlining
 \yy                          " CalendarH
+ctrl-q ctrl-m                " inserts ^M (carriage return)
+g&                           " repeat last command over the whole document
+g Ctrl-g                     " prints the cursor position
 ```
+
+in command-line `\t` inserts a tab character
 
 ## base64
 ```
@@ -399,6 +398,7 @@ command-line window: C-c C-c  closes
 $GHrUse/CP/vim/vim-vim/README.md
 C:\Vim\vim90\gvim.exe
 r $vimfiles
+vim -u NONE
 vim(1)
 ```
 
@@ -422,15 +422,15 @@ vim(1)
     :let@q=@k                         " sets a to contents of register k
 
 ## settings
-    :Bufferize dig!                    " categorised digraphs
-    :Bufferize let                     " all internal variables
-    :Bufferize scriptnames             " list of files sourced, in order
-    :Bufferize se                      " all option changes
-    :Bufferize se gfn                  " show font
-    :Bufferize version                 " Vim version etc
-    :colo                              " current colorscheme
+    :Bufferize dig!        " categorised digraphs
+    :Bufferize let         " all internal variables
+    :Bufferize scriptnames " list of files sourced, in order
+    :Bufferize se          " all option changes
+    :Bufferize se gfn      " show font
+    :Bufferize version     " Vim version etc
+    :colo                  " current colorscheme
     :let mapleader
-    :verb se tw                        " shows where textwidth was set
+    :verb se tw            " shows where textwidth was set
 
     $VIMRUNTIME
     C \usr\share\vim\vim90\ftplugin

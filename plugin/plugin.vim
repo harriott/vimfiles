@@ -255,13 +255,6 @@ let g:vim_indent_cont = &sw
 " XML syntax folding on:
 let g:xml_syntax_folding = 1
 
-""> get g:vimfiles location
-if empty(matchstr($HOME, '/home/'))
-  let g:vimfiles = $HOME.'\vimfiles'
-else
-  let g:vimfiles = $HOME.'/.vim'
-endif
-
 ""> grab my settings
 function! GrabWrite(toGrab)
   " only to be called from within a parent function that has just before opened an empty buffer
