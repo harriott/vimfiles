@@ -2,4 +2,4 @@
 ,call GrabRtp()
 ,wq
 
-" called by  $vimfiles/grabbed/grabMaps.sh
+" called by  $vimfiles/grab/all.sh

@@ -267,7 +267,7 @@ function! GrabWrite(toGrab)
   write
 endfunction
 
-"">> called from grabbed/grabMaps.sh
+"">> called from  $vimfiles/grab/all.sh
 function! GrabCommands()
   exe 'edit '.g:vimfiles.'/grabbed/commands.txt'
   normal! VGd

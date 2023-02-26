@@ -1,12 +1,12 @@
 " vim: fdl=2:
 
-" Joseph Harriott - Mon 17 Oct 2022
+" Joseph Harriott - Sun 26 Feb 2023
 
 " $vimfiles/after/plugin/plugins.vim
 
 ""> vim-devicons
 packadd vim-devicons  " recommended after many others
-  packadd nerdtree  " issue #428
+  packadd nerdtree  " $tInf/CP/Vim/plugins/vim-devicons/issue428.md
 
 ""> vim-gitgutter
 " $vimfiles/plugin/plugins.vim

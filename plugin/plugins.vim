@@ -281,7 +281,7 @@ vnoremap <F9> <Esc>:History/<CR>
 " Win10:
 " junegunn/fzf  at  $vimfiles\plugin\fzf,
 "  because  fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
-"  (the advice at  $vimfiles\plugin\fzf\README-VIM.md  ain't correct)
+"  (the advice at  $vimfiles/plugin/fzf/README-VIM.md  ain't correct)
 
 "">> \j
 " in ~/.vim: rg '>j' --no-ignore

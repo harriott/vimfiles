@@ -6,6 +6,7 @@ Joseph's (g)Vim Quick Reference
 
     $vimfiles\QR.gfm
     g4p -gfm QR
+    m4p QR.md 1
 
     :h quickref
     :helpt ALL               " generate all tags

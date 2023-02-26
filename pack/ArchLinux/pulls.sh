@@ -25,9 +25,15 @@ find . -maxdepth 3 -mindepth 3 -type d | sort | while read plugin; do
   echo "${tpf3b} $plugin ${tpfn}"
   cd "$plugin"
   grep url .git/config
-  git pull
+  # git pull
   cd $vimfiles/pack
 done
+echo "${tpf3b} fzf ${tpfn}"
+pushd ../plugin/fzf
+# rm install
+# rm test/test_go.rb
+grep url .git/config; git pull
+popd
 
 #=> 2 my forks
 echo ''

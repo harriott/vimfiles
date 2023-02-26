@@ -24,6 +24,9 @@ vnoremap <buffer><leader>> :s/^#/##/<CR>
 " promote a selected part
 vnoremap <buffer><leader>< :s/^#//<CR>
 
+" enbolden the inner word
+nnoremap <buffer><localleader>b viwc****<Esc>hP
+
 " folding by header marks
 execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
 
@@ -31,8 +34,8 @@ execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
 set conceallevel=2
 
 " wrap the inner word under cursor with backticks
-nnoremap <buffer> <leader>` viwc``<Esc>P
+nnoremap <buffer><leader>` viwc``<Esc>P
 
 " wrap a selection with backticks
-vnoremap <leader>` c``<Esc>P
+vnoremap <buffer><leader>` c``<Esc>P
 
