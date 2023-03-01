@@ -2,7 +2,7 @@
 
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Thu 09 Feb 2023
+" Last Change: Wed 01 Mar 2023
 " $vimfiles/ftplugin/markdown.vim
 "  supplementary to
 "   [ $vimfiles/pack/packs-cp/opt/vim-markdown/README.md ]

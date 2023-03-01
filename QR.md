@@ -259,6 +259,7 @@ z\                    " incsearch-fuzzy-stay
 ```
 :!<shellcmd>          " runs the external shell command
 :Bufferize python3 print(sys.path)
+:cd $Drpbx/JH
 :Locate <pattern>
 :packadd syntastic    " load the plugin from an opt directory
 :r!<shell command>    " reads shell command output into the buffer
@@ -452,6 +453,8 @@ vim(1)
     :windo echo b:current_syntax
     C \usr\share\vim\vim90\syntax
     C:\Vim\vim90\syntax
+
+syntax.txt
 
 #### settings
 	:hi

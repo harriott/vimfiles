@@ -14,6 +14,7 @@ autocmd! BufRead,BufNewFile *.emdr setfiletype text |
 
 ""> 0 special functionality for my .md's
 autocmd! BufRead,BufNewFile *.md source $vimfiles/ftplugin/md.vim
+autocmd! BufEnter *misc/*/QR.md syntax sync fromstart  " ensures syntax throughout
 
 ""> 1 other filetypes
 " supplemental to  $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes

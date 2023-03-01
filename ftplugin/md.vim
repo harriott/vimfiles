@@ -2,9 +2,9 @@
 
 " Language:	md
 " Maintainer: Joseph Harriott
-" Last Change: Mon 06 Feb 2023
+" Last Change: Wed 01 Mar 2023
 " this is for extra funtionality that I like for my *.md files
-" supplemental to  $vimfiles/ftplugin/markdown.vim
+" $vimfiles/ftplugin/md.vim  supplemental to  $vimfiles/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
 "  this configuration file is sourced as needed by  $vimfiles/filetype.vim
 
@@ -32,9 +32,6 @@ endif
 " check with  :map <leader><F7>
 
 ""> Syntax highlighting
-" Get highlighting working for  # low-carb  in  Regimes.md
-let g:markdown_minlines = 40  " see  $VIMRUNTIME/syntax/markdown.vim
-
 " maxmempattern  is set in  $vimfiles/plugin/plugin.vim
 
 ""> for Verse
