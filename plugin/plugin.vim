@@ -333,8 +333,8 @@ nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 
 ""> maxmempattern
 " set mmp=90000  " for $TeNo/TN/JH-DailyLife/Health/Ingest/Regimes.md
-" set mmp=800000
-set mmp=2000000  " = unlimited
+set mmp=800000
+" set mmp=2000000  " = unlimited
 
 ""> neomutt
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal textwidth=0

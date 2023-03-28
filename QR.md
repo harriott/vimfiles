@@ -319,7 +319,6 @@ gf          " open file under cursor - :h gF
 \yy                          " CalendarH
 ctrl-q ctrl-m                " inserts ^M (carriage return)
 g&                           " repeat last command over the whole document
-g Ctrl-g                     " prints the cursor position
 ```
 
 in command-line `\t` inserts a tab character
@@ -333,7 +332,7 @@ in command-line `\t` inserts a tab character
 ## counting stuff
     :%s\.\\gn|noh  " characters in buffer
     :s\.\&\gn|noh  " show number of characters in a long line
-    g CTRL-G       " counts, from here to whole buffer
+    [selection]g ctrl-g       " counts in context
 
 ## case
 ```

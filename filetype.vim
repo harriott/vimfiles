@@ -24,7 +24,9 @@ if exists("did_load_filetypes")
 endif
 augroup filetypedetect
     autocmd! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
+    autocmd! BufRead,BufNewFile *.digs setfiletype digs  " $vimfiles/ftplugin/digs.vim
     autocmd! BufRead,BufNewFile *.dirl setfiletype dirl  " $vimfiles/syntax/dirl.vim
+    autocmd! BufRead,BufNewFile *.exts setfiletype exts  " $vimfiles/syntax/exts.vim
     autocmd! BufRead,BufNewFile *.fetl setfiletype fetl  " $vimfiles/syntax/fetl.vim
     autocmd! BufRead,BufNewFile *.gems setfiletype gems  " $vimfiles/syntax/gems.vim
     autocmd! BufRead,BufNewFile *.jctl setfiletype jctl  " $vimfiles/syntax/jctl.vim

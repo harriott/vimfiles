@@ -5,11 +5,11 @@
 #
 # save digraphs in Vim:
 #  :redir @d | silent digraphs! | redir END | new | exe "normal! \"dp"
-#  :saveas! $vimfiles/digraphs.txt
+#  :saveas! $vimfiles/digraphs.digs
 #
 # then  perl digraphsTidy.pl
 #
-# then  $vimfiles/digraphs.txt  is handled by
+# then  $vimfiles/digraphs.digs  is handled by
 #  $vimfiles/ftplugin/digraphs.vim
 #  $vimfiles/syntax/digraphs.vim
 #
@@ -21,7 +21,7 @@ use Tie::File;  # on MSWin requires  fileformat=dos
 use Data::Printer;
 
 # grab the lines of the digraphs save:
-tie my @dgs, 'Tie::File', "digraphs.txt" or die "Can't read file: $!\n";
+tie my @dgs, 'Tie::File', "digraphs.digs" or die "Can't read file: $!\n";
 # print join("\n",@dgs),"\n";
 # p @dgs; # Data::Printer
 # exit;
@@ -71,5 +71,5 @@ $all = join ( ' ', @workspace );
 @dgs = split('¬¬', $all);
 unshift @dgs, '';
 unshift @dgs, 'vim: ft=digraphs:';
-untie @dgs;  # put the tidied array back into  digraphs.txt
+untie @dgs;  # put the tidied array back into  digraphs.digs
 

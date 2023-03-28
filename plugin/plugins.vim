@@ -202,7 +202,8 @@ packadd vim-ps1
 " [m  or  ]m  " move to previous or next environment
 " =li  or  =lI  " vimtex-info  or  vimtex-info-full
 " =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
-let g:vimtex_fold_enabled =1
+let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 1, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, }
+let g:vimtex_fold_enabled = 1
 let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'Odr', 'hlgroup': 'CursorLineNr'},
   \ {'name': 'Eltt', 'hlgroup': 'CursorLineNr'},
