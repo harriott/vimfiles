@@ -2,6 +2,8 @@
 " My portable vimrc - Joseph Harriott
 " -----------------------------------
 " True vimrc should source this file, which has settings that work in both MSWin & GNU+Linux.
+" sourced by
+"  $vimfiles/vimrc-GNULinux.vim
 
 " ------------------------------------------------------------------
 " typically basic Vim settings here - look in plugin folder for more

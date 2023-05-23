@@ -2,11 +2,15 @@
 
 " Language:	md
 " Maintainer: Joseph Harriott
-" Last Change: Wed 01 Mar 2023
+" Last Change: Fri 28 Apr 2023
 " this is for extra funtionality that I like for my *.md files
 " $vimfiles/ftplugin/md.vim  supplemental to  $vimfiles/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
 "  this configuration file is sourced as needed by  $vimfiles/filetype.vim
+
+" For md's detected as  liquid:
+nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
+" - then just reload the file to return to  liquid  syntax highlighting
 
 " open Pandoc'd pdf
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>
@@ -19,7 +23,7 @@ else
   nnoremap <buffer><leader><leader><F7> :call MessengerMd()<CR>
     " to be defined in  $vimfiles/after/ftplugin/md.vim
 endif
-" check with  :map <leader><F7>
+" check with  :map <leader><leader><F7>
 
 ""> convert mysms screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
@@ -31,7 +35,7 @@ else
 endif
 " check with  :map <leader><F7>
 
-""> Syntax highlighting
+""> syntax highlighting
 " maxmempattern  is set in  $vimfiles/plugin/plugin.vim
 
 ""> for Verse

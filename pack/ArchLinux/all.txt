@@ -25,6 +25,7 @@
 ../packs-cp/opt/listtoggle
 ../packs-cp/opt/MatchTagAlways
 ../packs-cp/opt/mediawiki.vim
+../packs-cp/opt/minimap.vim
 ../packs-cp/opt/mru
 ../packs-cp/opt/nerdcommenter
 ../packs-cp/opt/nerdfont.vim

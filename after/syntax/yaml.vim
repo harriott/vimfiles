@@ -5,7 +5,7 @@
 " Last Change: Mon 06 Feb 2023
 
 " $vimfiles/after/syntax/yaml.vim, supplementary to  $VIMRUNTIME/syntax/yaml.vim
-"  also $vimfiles/ftplugin/yaml.vim
+"  also  $vimfiles/ftplugin/yaml.vim
 " $VIMRUNTIME/filetype.vim  decides the various files that are detected as  yaml
 "  or use  vim: ft=yaml:
 

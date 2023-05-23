@@ -111,7 +111,8 @@ gd opt; ls
   # $gc https://github.com/AndrewRadev/tagalong.vim
   # $gc https://github.com/ap/vim-css-color
   # $gc https://github.com/prettier/vim-prettier
-  $gc https://github.com/svermeulen/vim-subversive
+  # $gc https://github.com/svermeulen/vim-subversive
+  $gc https://github.com/wfxr/minimap.vim
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye

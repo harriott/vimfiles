@@ -1,9 +1,9 @@
 
 " Vim syntax file
 
-" Language:	file type list
+" Language:	file type list  as made by  fmtypes() in my  $Bash/bashrc-console
 " Maintainer: Joseph Harriott
-" Last Change: Mon 19 Sep 2022
+" Last Change: Tue 23 May 2023
 
 " $vimfiles/syntax/fileMimeList.vim
 

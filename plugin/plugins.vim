@@ -10,6 +10,9 @@
 "">> AnsiEsc
 packadd vim-plugin-AnsiEsc
 
+"">> minimap.vim
+packadd minimap.vim
+
 "">> dsf
 packadd dsf.vim
 " csf -> change surrounding function
@@ -73,15 +76,30 @@ packadd CSS-one-line--multi-line-folding
 
 "">>> csv.vim
 " $vimfiles/pack/packs-cp/opt/csv.vim/ftdetect/csv.vim
+" :h ft-csv  ($vimfiles/pack/packs-cp/opt/csv.vim/doc/ft-csv.txt)
+
 " H -> go left
 " L -> go right
+
+" %ArrangeColumn
+" %UnArrangeColumn
+" :DeleteColumn [n[-m]]  " deleted column(s) [n[-m]]
+" :HiColumn [n]  " highlight column [n]
+" :HiColumn!  " removes
+" :MoveColumn [n] [m]  " moves column [n] to right [of column m] (m can be $)
+" :Sort [column}
+
 " column hiding
 "  :VertFold  " hides from left to current
 "  :VertFold!  " unhide
 " :CSVTabularize  " open as table in new buffer
-" line hiding
-"  <cr>  " unhide
-"  <enter>  " hides away non-matching
+
+" dynamic filters (:h csv-filter) see lines containing same value
+"  :Filter  " show them
+"  <enter>  hides away non-matching lines
+"  <backspace>  successively removes filters
+"  <space>  hides away matching lines
+"
 packadd csv.vim
 
 "">>> emmet-vim
@@ -753,13 +771,19 @@ nmap <leader>s <plug>(SubversiveSubstituteRangeConfirm)
 " - requests confirmations
 
 "">> vim-surround
-" cs'b cs'B cs'r cs'a => change surrounding ' to ) ] } >
-" cs'( cs'{ cs'[ cs'< => ...with spaces
-" ds' => delete surrounding '
 " h surround
+" optional target∙alias: )∙b ]∙B }∙r >∙a
+
+" cs'b cs'B cs'r cs'a => change surrounding '
+" cs'( cs'{ cs'[ cs'< => ...with spaces
+
+" ds' => delete surrounding '
+" dst => delete surrounding tags
+
+" on a visual selection, Sr => wrap with []
 " ysiw<q> => yes surround word in quote tags (ySiw  or  ySS  to include newlines)
 " yssb => bracket the line
-" on a visual selection, Sr => wrap with []
+
 packadd vim-surround
 
 ""> vim

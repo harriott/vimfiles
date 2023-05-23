@@ -42,15 +42,6 @@ Joseph's (g)Vim Quick Reference
 \bt  " Toggles BufExplorer open or closed
 \bv  " Opens vertically split window BufExplorer
 
-# deletions
-    d0      " delete back to start of line
-    :1,.d         " delete to beginning of file
-    :.,$d         " delete to end of file
-
-    :g/pattern/d  " delete lines containing "pattern"
-    :h :g         " global
-    :h :v         " vglobal
-
 # diff
     :dif                    " diffupdate
     :diffo                  " diffoff the window
@@ -61,6 +52,11 @@ Joseph's (g)Vim Quick Reference
     :se diffopt+=iwhiteall
     :windo difft            " diff the windows
 
+# global
+    :g/pattern/d  " delete lines containing "pattern"
+    :h :g         " global
+    :h :v         " vglobal (=  :g!)
+
 # insert mode commands
     C-ke'    " digraph code for é
     C-o      " moves to normal mode for just one command
@@ -70,11 +66,12 @@ Joseph's (g)Vim Quick Reference
 
 # layout
     :%le          " remove all indents
+    :Prettier     " apply  prettier  to json & others
     :se gfn=*     " pop-up font selection
     :se expandtab " allows  :retab
     \\c           " toggle cursor column
     \\l           " toggle cursor line
-    \\ll          " toggle listchars
+    \\ll          " toggle listchars (:h 'list')
     gg=G          " indent a file
 
 ## Colorizer
@@ -237,14 +234,16 @@ z\                    " incsearch-fuzzy-stay
 ## regex
 ```vim
 \(alt1\|alt2\|alt3\)
+\a    " alphabetic character [A-Za-z]
 \d    " digit
 \D    " non-digit
 \h    " head of word character (a,b,c...z,A,B,C...Z and _)
 \S    " non-whitespace character
 \s    " whitespace character
 \u    " uppercase character
+\w    " word character [0-9A-Za-z_]
 \{,m} " 0-m matches
-\{-}  " as few as possible
+\{-}  " as few as possible (only seems to work for single characters)
 ```
 
 ### searching before and after
@@ -342,9 +341,14 @@ g~<movement> " invert case
 ```vim
 ~            " toggle case of letter
 ~            " TwiddleCase of a selection
-:s\\<.\\u&\g " capitalise first letters
+:s/\<./\u&/g " capitalise first letters
 u            " lowercase a visual block
 ```
+
+## deletions
+    d0      " delete back to start of line
+    :1,.d         " delete to beginning of file
+    :.,$d         " delete to end of file
 
 ## entering specials
     digraphs
@@ -374,7 +378,6 @@ qj  " begin recording macro in j
 ```vim
 @@           " = @: = repeat last command-line
 \8           " toggle 82\106 columns
-\ll          " list mode
 ga           " returns code values for character under cursor
 gQ           " enter Ex mode
 K            " brings up a man page (if there is one) for word under cursor
@@ -453,13 +456,14 @@ vim(1)
     C \usr\share\vim\vim90\syntax
     C:\Vim\vim90\syntax
 
-syntax.txt
+    syntax.txt
 
 #### settings
+    :Bufferize sy  " :h syn-list
 	:hi
+    :se synmaxcol=0  " removes 3000 character limit (:se smc)
 	:so $VIMRUNTIME/syntax/hitest.vim
-    :se synmaxcol=0  " removes 3000 character limit
-    :Bufferize sy list  " what's set for the current file
+    :sy sync fromstart  " but can't find any way to check this setting
 
 	$VIMRUNTIME\syntax\syncolor.vim
 
@@ -470,12 +474,16 @@ syntax.txt
     v  " character-based visual selection
 
 # windows splits
-    C-w+[h|j|k|l] " move focus to neighbouring split
+    :h ctrl-w
+    c-w+[h|j|k|l] " move focus to neighbouring split
     winfixheight
 
 ## move them around
-    C-w+[H|J|K|L] " move split (can get fiddly)
-    C-w+r         " rotate split to right
+    c-w+H  " move split to far left
+    c-w+J  " move split to very bottom
+    c-w+K  " move split to very top
+    c-w+L  " move split to far right
+    c-w+r  " rotate split to right
 
 ## sizes
     C-w+=         " equalise window sizes
@@ -483,11 +491,9 @@ syntax.txt
     Resize Splits with mouse
 
 ## split
-    :ba          " all horizontally
+    :ba          " view all buffers
     :sp          " current window
-    C-w+H        " rearrange horizontally
-    C-w+K        " rearrange vertically
-    C-w+v        " split vertical
+    c-w+v        " split vertical
 
 # words
 ```

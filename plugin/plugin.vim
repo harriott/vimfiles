@@ -68,6 +68,8 @@ function! ClearFancyText()
   :sil!%s/‍//g
   :sil!%s/‎//g
   :sil!%s/‏//g
+  :sil!%s/´/'/g
+  :sil!%s/ˮ/"/g
   :sil!%s/“/"/g
   :sil!%s/”/"/g
   :sil!%s/″/"/g
@@ -99,9 +101,9 @@ iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
 ""> format - date in French
 if has('unix')
-  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
+  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%A %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
 elseif has('win32')
-  noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
+  noremap <leader>yp :lan tim French<CR>:pu=strftime('%A %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
 endif
 
 ""> format - strip Thunderbird address book csv down to just emails

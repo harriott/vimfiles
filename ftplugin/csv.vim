@@ -16,3 +16,9 @@ function! CsvColumnToggle()
     endif
 endfunction
 
+function! CzAdherentsCsvColumns()
+    DeleteColumn 1-4
+    DeleteColumn 3
+    DeleteColumn 5-52
+endfunction
+

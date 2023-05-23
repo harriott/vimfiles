@@ -29,7 +29,7 @@ nnoremap <buffer><localleader>r :s#\\\h\+{##<bar>s/}//<bar>nohls<CR>  " remove f
 
 "">> for a selection
 vnoremap <buffer><localleader>b c\textbf{<Esc>pa}<Esc>  " enbolden
-vnoremap <buffer><localleader>d c\cdg{<Esc>pa}<Esc>  " $CrPl/LaTeX/jo/JH.sty
+vnoremap <buffer><localleader>d c\cdg{<Esc>pa}<Esc>  " $LTXj/JH.sty
 vnoremap <buffer><localleader>i c\textit{<Esc>pa}<Esc>  " italicize
 
 ""> demote or promote sections

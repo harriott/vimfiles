@@ -13,8 +13,11 @@ autocmd! BufRead,BufNewFile *.emdr setfiletype text |
   \ source $vimfiles/ftplugin/emdr.vim | source $vimfiles/syntax/emdr.vim
 
 ""> 0 special functionality for my .md's
-autocmd! BufRead,BufNewFile *.md source $vimfiles/ftplugin/md.vim
-autocmd! BufEnter *misc/*/QR.md syntax sync fromstart  " ensures syntax throughout
+autocmd! BufRead,BufNewFile *.md set synmaxcol=0 | source $vimfiles/ftplugin/md.vim
+"
+" ensure syntax throughout
+autocmd! BufEnter *Dropbox/JH/core/IT_stack/unix_like-Android/phones.md syntax sync fromstart
+autocmd! BufEnter *misc/*/QR.md syntax sync fromstart
 
 ""> 1 other filetypes
 " supplemental to  $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
@@ -31,6 +34,7 @@ augroup filetypedetect
     autocmd! BufRead,BufNewFile *.gems setfiletype gems  " $vimfiles/syntax/gems.vim
     autocmd! BufRead,BufNewFile *.jctl setfiletype jctl  " $vimfiles/syntax/jctl.vim
     autocmd! BufRead,BufNewFile *.mail setfiletype mail  " $vimfiles/syntax/mail.vim
+    autocmd! BufRead,BufNewFile *.osp setfiletype json  " $vimfiles/syntax/json.vim
     autocmd! BufRead,BufNewFile *.sifw setfiletype sifw  " $vimfiles/syntax/sifw.vim
     autocmd! BufRead,BufNewFile .spacemacs setfiletype lisp
 augroup END  " - overrides  $VIMRUNTIME/filetype.vim

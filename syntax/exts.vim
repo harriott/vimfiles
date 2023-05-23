@@ -10,7 +10,7 @@ if exists('b:current_syntax') | finish | endif
 syn match sortFrequency '\d\+`'  " dimming out my separator characters and the digraph keystrokes
 hi def link sortFrequency LineNr
 
-set nospell
+set synmaxcol=0 nospell
 
 let b:current_syntax = "exts"
 
