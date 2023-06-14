@@ -21,9 +21,11 @@ nnoremap <buffer> <leader>] viwc[color=navy][/color]<Esc>bbp
 vnoremap <buffer> <leader>] c[color=navy][/color]<Esc>bbp
 
 ""> tags - user
+" need to add user id number after =
+
 " wrap the inner word under cursor
-nnoremap <buffer> <leader>u viwc[user][/user]<Esc>bbp
+nnoremap <buffer> <leader>u viwc[user=][/user]<Esc>F[PF]
 
 " wrap a selection
-vnoremap <buffer> <leader>u c[user][/user]<Esc>bbp
+vnoremap <buffer> <leader>u c[user=][/user]<Esc>F[PF]
 

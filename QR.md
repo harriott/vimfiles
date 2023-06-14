@@ -65,14 +65,12 @@ Joseph's (g)Vim Quick Reference
     C-qu201c " unicode codepoint for “
 
 # layout
-    :%le          " remove all indents
     :Prettier     " apply  prettier  to json & others
     :se gfn=*     " pop-up font selection
     :se expandtab " allows  :retab
     \\c           " toggle cursor column
     \\l           " toggle cursor line
     \\ll          " toggle listchars (:h 'list')
-    gg=G          " indent a file
 
 ## Colorizer
     :ColorClear         " clears colourizing
@@ -116,6 +114,12 @@ Joseph's (g)Vim Quick Reference
     Black       White
     Orange      Purple          Violet
 
+## filter
+    :h =
+    :set equalprg   " empty by default
+    :set indentexpr " empty by default
+    gg=G            " indent a file
+
 ## folds
     zC             " close current fold & subfolds
     zM             " close all folds
@@ -140,6 +144,10 @@ set fdo?
 ## Hexokinase
     :HexokinaseTurnOn
     :packadd vim-hexokinase
+
+## indentation
+    :%le          " remove all indents
+    :h 'sw'      " autoindentation - shiftwidth
 
 # movements - in buffer
     nG  " go to line n
@@ -246,6 +254,8 @@ z\                    " incsearch-fuzzy-stay
 \{-}  " as few as possible (only seems to work for single characters)
 ```
 
+`set magic` is the default, `\v` goes very
+
 ### searching before and after
     \ze<endPatternToDiscard>
     <startPatternToDiscard>\zs
@@ -257,14 +267,15 @@ z\                    " incsearch-fuzzy-stay
 # shell
 ```
 :!<shellcmd>          " runs the external shell command
+:ALEToggle
 :Bufferize python3 print(sys.path)
-:cd $Drpbx/JH
+:cd $DJH
 :Locate <pattern>
 :packadd syntastic    " load the plugin from an opt directory
 :r!<shell command>    " reads shell command output into the buffer
 :se shell?            " returns the path to the shell
 :tabe $HOME\_vimrc    " bring up my vimrc in a new tab
-:ALEToggle
+:term
 <shellcmd> | gvim -   " pipes shell command output into gvim
 gx                    " open url under cursor (or all of first line of markdown link)
 shift+F11             " open in Emacs
@@ -293,6 +304,17 @@ gf          " open file under cursor - :h gF
 	gB " open URL
 	gS " search word
 	gW " search Wikipedia
+
+## Python
+    :echo has('python') 
+
+`:version` shows what minor version of Python is expected
+
+## Win10
+```
+:echo $computername
+:echo $username
+```
 
 # tab views
     gT  gt    " move around tabs
@@ -383,8 +405,8 @@ gQ           " enter Ex mode
 K            " brings up a man page (if there is one) for word under cursor
 q:           " brings up an interactive history of :commands (in an editable window)
 vi           " exit Ex mode
+:h key-notation
 :h index     " lists the all of the commands
-:h 'sw'      " autoindentation - shiftwidth
 :his         " Display command-line history
 :his s       " Display search string history
 :profile ... " for speed tests

@@ -11,6 +11,7 @@
 packadd vim-plugin-AnsiEsc
 
 "">> minimap.vim
+" MinimapToggle
 packadd minimap.vim
 
 "">> dsf
@@ -171,7 +172,7 @@ let g:vim_markdown_conceal_code_blocks = 0  " need to see them
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1  " highlight YAML Front Matter
 let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_strikethrough = 1  " ~~ struck thru ~~
 " let g:vim_markdown_fenced_languages
 packadd vim-markdown  " harriott  clone of  preservim
 
@@ -182,6 +183,10 @@ packadd vim-markdown  " harriott  clone of  preservim
 " [] => previous sibling header
 " ]h => current header
 " ]u => parent header
+
+" Shell:
+" ge => open link in Vim
+" gx => open link in browser
 
 " ToC:
 " :Toc => quickfix ToC left

@@ -1,14 +1,13 @@
 
 " ---------------------------------
-" Joseph Harriott - Mon 07 Mar 2022
+" Joseph Harriott - Tue 23 May 2023
 " sourced by  $machine\troin\_vimrc
 " ---------------------------------
 
+if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \
+
 ""> 0 quit if called from Git's vim
-" (adapted for Git-2.8.1-64-bit.exe on Windows 10)
-if $VIM == '/usr/share/vim'
-  finish
-endif
+if $VIM == '/usr/share/vim' | finish | endif  " (adapted for Git-2.8.1-64-bit.exe on Windows 10)
 
 ""> 1 vimrc_example.vim
 source $HOME/vimfiles/vimrc_example.vim
@@ -22,6 +21,7 @@ unmap <C-F>
 
 ""> 3 my initial settings
 " set noloadplugins
+let $USER = 'troin'
 
 "">> colorscheme
 function! STWDG()
@@ -79,17 +79,21 @@ endfunction
 " this function is only needed for markdown and TeX files
 
 "">> paths
-" $Drpbx  &  $USER  are set in  $machine > $USER > _vimrc
-let $cITh = $Drpbx.'/JH/copied/IT-handy'
-  let $GHrUse = $cITh.'/GHrepos'  " GitHub Repositories Use
-let $core = $Drpbx.'/JH/core'
-  let $ITstack = $core.'/IT_stack'
-    let $CrPl = $ITstack.'/CP'
-let $IT1 = $Drpbx.'\JH\Technos\IT1'
-let $tIs = $Drpbx.'\JH\Technos\IT0-storage'  " $tIs\diskUsage.txt
-let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\T430i73520M'
-let $MSWin10 = $onGH.'\MSWin10'
-let $vimfiles = $onGH.'\vimfiles'
+let $Drpbx = $HOME.'\Dropbox'
+  let $DJH = $Drpbx.'\JH'
+    let $cITh = $DJH.'copied\IT-handy'
+    let $core = $DJH.'\core'
+      let $ITstack = $core.'\IT_stack'
+        let $CrPl = $ITstack.'\CP'
+        let $onGH = $ITstack.'\onGitHub'
+          let $MSwin10 = $onGH.'\OS-MSWin10'
+            let $machine = $MSwin10.'\'.$computername
+          let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\'.$computername
+          let $vimfiles = $onGH.'\vimfiles'
+    let $GHrUse = $DJH.'\CGHrepos'
+    let $IT1 = $DJH.'Technos\IT1'
+    let $JHw = $DJH.'\work'
+    let $tIs = $DJH.'\Technos\IT0-storage'  " $tIs\diskUsage.txt
 
 "">>> TeX locations
 let $MD4PDF = $onGH.'/md4pdf'

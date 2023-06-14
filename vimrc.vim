@@ -128,12 +128,12 @@ if v:lang == 'fr_FR.UTF-8'
 endif
 
 "">> localleader
-nnoremap _ =
-xnoremap _ =
-onoremap _ =
-" - because I rarely need  :h =
 let maplocalleader = '='
-nnoremap <localleader>h :echo 'you just hit =h'<cr>
+  " ='s filter mapping still works, so these aren't needed
+  " nnoremap _ =
+  " xnoremap _ =
+  " onoremap _ =
+nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
 
 "">> resize vim windows
 " decrease window height
