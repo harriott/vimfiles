@@ -396,6 +396,12 @@ qj  " begin recording macro in j
     iab <expr> -- repeat('-', 80)  " then insert  --<tab>
     <repeatable> Esc <number> .  " makes lines of repeatable
 
+## sort
+:296,349sort
+:%sort u  " removing duplicate lines
+:%sort!   " reverse
+:sort n   " numeric
+
 # Vim
 ```vim
 @@           " = @: = repeat last command-line
@@ -514,7 +520,7 @@ vim(1)
 
 ## split
     :ba          " view all buffers
-    :sp          " current window
+    :sp          " split current window horizontally
     c-w+v        " split vertical
 
 # words
@@ -523,6 +529,8 @@ g<Ctrl-G>  " statistics
 ```
 
 ## spell
+    $vimfiles/spell/en.utf-8.add
+    $vimfiles/spell/fr.utf-8.add
     (count)]s => move to next misspelled word after the cursor
     (count)[s => like  ]s  but search backwards
     :h nospell

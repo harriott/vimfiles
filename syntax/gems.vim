@@ -1,6 +1,6 @@
 
 " Language:	gems
-"  gem list > $ulL/Arch/$host/gems.gems
+"  gem list > $ulLA/$host/gems.gems
 " Maintainer: Joseph Harriott
 " Last Change: Mon 06 Feb 2023
 " $vimfiles/syntax/gems.vim

@@ -4,6 +4,9 @@
 " Last Change: Wed 14 Jun 2023
 " $vimfiles/filetype.vim  supplemental to  $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
 
+""> 0 default applications
+autocmd BufRead,BufNew,BufNewFile mimeapps.list setlocal ft=dosini
+
 ""> 0 GitHub Flavored Markdown
 autocmd BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
 

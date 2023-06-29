@@ -3,7 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Sat 04 Feb 2023
 
-" $vimfiles/syntax/fetl.vim
+" $vimfiles/ftplugin/fetl.vim
 " also  $vimfiles/syntax/fetl.vim
 
 "  configured in  $vimfiles/filetype.vim  or with  vim: ft=fetl:

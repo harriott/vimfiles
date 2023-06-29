@@ -354,7 +354,7 @@ autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <E
 "">> overcome $VIMRUNTIME/filetype.vim
 autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 " required for  muttrc-gmx
-" (see $Drpbx/JH/technos/IT1/cross-platform/Vim/muttrc-123)
+" (see $DJH/technos/IT1/cross-platform/Vim/muttrc-123)
 
 "">> tidy an inmail
 " swap out any crap (and go back to top):

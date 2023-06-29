@@ -5,7 +5,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Tue 17 May 2022
 
-" for my  $Drpbx/JH/slJH.log
+" for my  $DJH/slJH.log
 
 " You need this modeline in the file that you want to affect:  vim: ft=slJH:
 
