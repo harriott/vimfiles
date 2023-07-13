@@ -6,7 +6,7 @@
 
 ""> vim-devicons
 packadd vim-devicons  " recommended after many others
-  packadd nerdtree  " $tInf/CP/Vim/plugins/vim-devicons/issue428.md
+  packadd nerdtree  " $jtIT/CP/Vim/plugins/vim-devicons/issue428.md
 
 ""> vim-gitgutter
 " $vimfiles/plugin/plugins.vim

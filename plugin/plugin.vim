@@ -84,6 +84,8 @@ function! ClearFancyText()
   :sil!%s/­//g  " remove soft hyphen
   :sil!%s/…/.../g
   :sil!%s/│/|/g
+  :sil!%s/⟨/</g
+  :sil!%s/⟩/>/g
   :sil!%s/，/,/g
   :sil!%s/→/-->/g
 endfunction

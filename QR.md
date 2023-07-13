@@ -536,8 +536,11 @@ g<Ctrl-G>  " statistics
     :h nospell
     :se spell?
     :spellra <rareword>
+:h hl-SpellRare
+:h spell-RARE
     z= => suggest corrections
     zg => add good word
+        zuw => undo
 
 ### spelllang
     :se spl
