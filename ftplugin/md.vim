@@ -2,7 +2,7 @@
 
 " Language:	md
 " Maintainer: Joseph Harriott
-" Last Change: Fri 28 Apr 2023
+" Last Change: Thu 13 Jul 2023
 " this is for extra funtionality that I like for my *.md files
 " $vimfiles/ftplugin/md.vim  supplemental to  $vimfiles/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
@@ -37,14 +37,7 @@ else
 endif
 " check with  :map <leader><F7>
 
-""> syntax highlighting fixes
-" highlighting sometimes disappears on longer markdowns containing code after loading
-"  $ITstack/unix_like-Android/phones.md
-"  $TeNo/md-JH-DailyLife/roles/healing.md
-"  my various  .../QR.md
-nnoremap <S-F5> :syntax sync fromstart<CR>
-inoremap <S-F5> <Esc><S-F5>
-
+""> syntax highlighting fix
 " maxmempattern  is set in  $vimfiles/plugin/plugin.vim
 setlocal synmaxcol=0
 

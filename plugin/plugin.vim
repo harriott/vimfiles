@@ -514,3 +514,13 @@ nnoremap <F4> :wa<CR>:bd<CR>
 inoremap <F4> <Esc>:wa<CR>:bd<CR>
 vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 
+""> syntax sync fromstart
+" highlighting sometimes disappears on some longer complex files after loading
+"  long dw's
+"  markdowns
+"   $ITstack/unix_like-Android/phones.md
+"   $TeNo/md-JH-DailyLife/roles/healing.md
+"   my various  .../QR.md
+nnoremap <S-F5> :syntax sync fromstart<CR>
+inoremap <S-F5> <Esc><S-F5>
+
