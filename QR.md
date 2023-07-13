@@ -260,7 +260,10 @@ z\                    " incsearch-fuzzy-stay
     \ze<endPatternToDiscard>
     <startPatternToDiscard>\zs
 
-## replace - reuse matched pattern
+## replace
+    s/jpg\C/JPG/  " force case
+
+### reuse matched pattern
     :h s\\&
     :s\<pattern>\<new1>&<new2>\ " wraps <pattern> in <new1> & <new2>
 
