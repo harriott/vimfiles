@@ -88,6 +88,8 @@ function! ClearFancyText()
   :sil!%s/⟩/>/g
   :sil!%s/，/,/g
   :sil!%s/→/-->/g
+  :sil!%s/：/:/g
+  :sil!%s/？/?/g
 endfunction
 
 ""> format - date abbreviations
@@ -324,6 +326,10 @@ function! GrabSimpleMaps()
   write
 endfunction
 
+""> layout
+" new buffer split vertically
+nnoremap <leader>vn :vnew<CR>
+
 ""> layout - tabline
 " set showtabline=1
 " because it's somehow sometimes set to 2
@@ -371,6 +377,10 @@ autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
 "  unneeded blanks
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/^> */>/g | go
 
+""> neovim - DiffOrig
+if has('nvim')
+  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis
+endif
 ""> neovim - quit fcrontab
 if has('nvim')
   autocmd BufRead,BufNewFile fcr-* nnoremap <buffer> <F4> :call BackupQuit()<CR>

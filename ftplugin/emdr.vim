@@ -8,6 +8,7 @@
 
 " For lists:
 iabbrev <buffer> => ⇒
+"  s/^- /⇒ 
 
 ""> sectioning marks for emails
 setlocal expandtab foldcolumn=1 foldexpr=EF() foldmethod=expr shiftwidth=2 spell textwidth=0

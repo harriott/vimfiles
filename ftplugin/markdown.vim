@@ -2,7 +2,7 @@
 
 " Language:	markdown
 " Maintainer: Joseph Harriott
-" Last Change: Wed 01 Mar 2023
+" Last Change: Sun 30 Jul 2023
 " $vimfiles/ftplugin/markdown.vim
 "  supplementary to
 "   [ $vimfiles/pack/packs-cp/opt/vim-markdown/README.md ]
@@ -14,6 +14,7 @@
 "  $vimfiles/pack/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
 
 setlocal expandtab
+vnoremap <buffer>= <Nop>  " disable filter
 
 " ALE
 let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/plugin/plugins.vim

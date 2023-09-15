@@ -1,9 +1,10 @@
 
-" My portable vimrc - Joseph Harriott
-" -----------------------------------
-" True vimrc should source this file, which has settings that work in both MSWin & GNU+Linux.
-" sourced by
+" my portable vimrc - settings that work in both MSWin & GNU+Linux - Joseph Harriott
+" ----------------------------------------------------------------------------------
+
+" $vimfiles/vimrc.vim  sourced by
 "  $vimfiles/vimrc-GNULinux.vim
+"  $vimfiles\vimrc-Win10.vim
 
 " ------------------------------------------------------------------
 " typically basic Vim settings here - look in plugin folder for more

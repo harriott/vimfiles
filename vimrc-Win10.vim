@@ -1,8 +1,8 @@
 
-" ---------------------------------
-" Joseph Harriott - Tue 23 May 2023
-" sourced by  $machine\troin\_vimrc
-" ---------------------------------
+" -----------------------------------------------------------
+" Joseph Harriott - Thu 03 Aug 2023
+" $vimfiles\vimrc-Win10.vim  source'd by  $MSWin10\user\_vimrc
+" -----------------------------------------------------------
 
 if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \
 
@@ -51,7 +51,7 @@ function! ColorLightDark()
 endfunction
 
 "">> continue vimrc
-source $HOME/vimfiles/vimrc.vim
+source $HOME/vimfiles/vimrc.vim  " $vimfiles/vimrc.vim
 
 "">> ensure vimswap
 if isdirectory($HOME.'/.vimswap') == 0
@@ -93,10 +93,12 @@ let $Drpbx = $HOME.'\Dropbox'
     let $GHrUse = $DJH.'\CGHrepos'
     let $IT1 = $DJH.'Technos\IT1'
     let $JHw = $DJH.'\work'
+      let $JHm = $JHw.'\IT-Jekyll-harriott-minima'
     let $tIs = $DJH.'\Technos\IT0-storage'  " $tIs\diskUsage.txt
+  let $Thb = $DJH.'\Thbdr'
 
 "">>> TeX locations
-let $MD4PDF = $onGH.'/md4pdf'
+let $MD4PDF = $onGH.'/pandoc-md4pdf'
 let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'
 let $tex = $HOME.'/AppData/Roaming/MiKTeX/tex'
 

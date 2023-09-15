@@ -1,11 +1,11 @@
 
-" Language:	mutt aliases file
+" Language:	TBmo - Thunderbird mail-out - my lists for sending mails to multiple recipients
 " Maintainer: Joseph Harriott
-" Last Change: Fri 09 Jun 2023
+" Last Change: Fri 15 Sep 2023
 
-"  vim: se ft=tbmo:
-
-" $vimfiles/syntax/tbmo.vim  configured in  $vimfiles/filetype.vim
+" $vimfiles/syntax/tbmo.vim
+" also  $vimfiles/ftplugin/tbmo.vim
+" *.tbmo  is detected by  $vimfiles/filetype.vim
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")

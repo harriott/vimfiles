@@ -51,6 +51,7 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 packadd vim-fugitive
 
 " "">>> vim-gfm-syntax
+" " enable this for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
 " " $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/README.md
 " let g:gfm_syntax_emoji_conceal = 1
 " let g:gfm_syntax_enable_always = 0

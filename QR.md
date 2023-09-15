@@ -146,8 +146,8 @@ set fdo?
     :packadd vim-hexokinase
 
 ## indentation
-    :%le          " remove all indents
-    :h 'sw'      " autoindentation - shiftwidth
+    :%le     " remove all indents
+    :h 'sw'  " autoindentation - shiftwidth
 
 # movements - in buffer
     nG  " go to line n
@@ -191,9 +191,9 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     :m+       " the current line is moved down one line
 
 # movements - move window
-    C-b       " back (=up) a page
+    C-b       " back (= up) a page
     C-d       " down half a screen
-    C-f       " forward (=down) a page
+    C-f       " forward (= down) a page
     C-u       " up half a screen
     C-y       " scroll down the window, without displacing the cursor
     zz        " centre window on cursor
@@ -328,21 +328,23 @@ gf          " open file under cursor - :h gF
     ci} " change inside curly braces
 
 # tricks
+    :%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
+    :echo &bomb                  " 1 if BOM
+    :so /usr/share/vim/vim90/tools/emoji_list.vim
+
 ```vim
 &                            " repeat last substitute
-:echo &bomb                  " 1 if BOM
 :exe
 :g\^\m 0                     " reverse the entire buffer
 :ni<somecharacter><Enter>    " inserts <somecharacters> n time
 :normal i" . strftime("%c")  " put date-time at cursor
-:%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
 :h g_CTRL-G                  " position and word info, works on a range too
-:so /usr/share/vim/vim90/tools/emoji_list.vim
 :t.                          " reproduce line
 :t.|s\.\=\g                  " setext-style header underlining
 \yy                          " CalendarH
 ctrl-q ctrl-m                " inserts ^M (carriage return)
 g&                           " repeat last command over the whole document
+:.,+3s/foo/bar               " replaces on this and next 3 lines
 ```
 
 in command-line `\t` inserts a tab character
@@ -390,9 +392,10 @@ qj  " begin recording macro in j
     :h v_g_CTRL-A
     :put =range(1964,2020) " create a series of numbers
 
-### working down buffer
+### working down entire buffer
     :let i=1 | g#/# s##\='\'.i# | let i+=1  " prefix-number all files in nnn's neovim window
-    :let i=2 | g#.# s#1#\=i#g | let i+=1    " g-> working down through the entire buffer, s-> increase counts
+    :let i=1 | g#^# s##\='> '.i.'. '# | let i+=1  " markdown number all lines
+    :let i=1 | g#^.# s#1#\=i#g | let i+=1    " g-> working down through the entire buffer, s-> increase counts
 
 ## repeating text
     Esc <number> i <repeatable> Esc  " inserts <repeatable> <number> times
@@ -480,6 +483,7 @@ vim(1)
 ### runtimepath
     :Bufferize echo &rtp
     :Bufferize se rtp
+    :s/,/\r/g
 
 ### syntax highlighting
 	:h syn-region
@@ -522,9 +526,18 @@ vim(1)
     Resize Splits with mouse
 
 ## split
-    :ba          " view all buffers
-    :sp          " split current window horizontally
-    c-w+v        " split vertical
+    :ba    " view all buffers, split horizontally
+
+### current buffer
+    :sp    " split horizontally
+    :vsp   " split vertically
+    c-w+v  " split vertical
+
+### new buffer
+    :new     " new buffer, split above
+    :vne[w]  " new buffer, split vertical
+    c-w n    " new buffer, split horizontal
+    c-w ^    " split horizontal and edit the alternative
 
 # words
 ```
@@ -538,12 +551,14 @@ g<Ctrl-G>  " statistics
     (count)[s => like  ]s  but search backwards
     :h nospell
     :se spell?
-    :spellra <rareword>
-:h hl-SpellRare
-:h spell-RARE
     z= => suggest corrections
     zg => add good word
         zuw => undo
+
+### rare words
+    :h hl-SpellRare
+    :h spell-RARE
+    :spellra <rareword>
 
 ### spelllang
     :se spl

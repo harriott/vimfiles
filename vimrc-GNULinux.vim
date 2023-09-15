@@ -12,7 +12,7 @@ set clipboard=unnamedplus
 " let g:netrw_browsex_viewer = "xdg-open-bda"
 " see $HOME/.vim/xdg-open-bda.sh
 
-source $HOME/.vim/vimrc.vim
+source $HOME/.vim/vimrc.vim  " $vimfiles/vimrc.vim
 
 " Set keywordprg empty, to make K invoke vim's internal help:
 set kp=

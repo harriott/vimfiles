@@ -28,6 +28,7 @@ set nospell
 setlocal textwidth=0 foldexpr=DWF() fdl=0
 setlocal foldmethod=expr
 setlocal fdc=2 " slightly better distinction from line numbers
+vnoremap <buffer>= <Nop>  " disable filter
 
 ""> abbreviations for code tags
 iabbrev <buffer> </ </code>
