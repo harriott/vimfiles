@@ -3,7 +3,7 @@
 
 " Language:	fetl: file extension time list
 " Maintainer: Joseph Harriott
-" Last Change: Sat 04 Feb 2023
+" Last Change: Sun 24 Sep 2023
 
 " $vimfiles/syntax/fetl.vim
 "  for
@@ -15,9 +15,9 @@
 
 if exists('b:current_syntax') | finish |  endif
 
+syn match fetl_file '^[^/^\\]\+$' contains=fetl_gdoafwe  " paths in linux & MSWin
 syn match fetl_pathish '\(\/.*\| C:\\.*\)' contains=fetl_gdoafwe  " paths in linux & MSWin
-syn match fetl_gdoafwe '\([-._0-9a-zA-Z]\+\ze\(\/\|\\\)\.git.*$\|[-,_0-9a-zA-Zé '+]\+\.[0-9a-zA-Z]\+$\)' contained
-" - matches git directory or any file with extension
+syn match fetl_gdoafwe '\([-._0-9a-zA-Z]\+\ze\(\/\|\\\)\.git.*$\|[-,_0-9a-zA-Zé '+]\+\.[0-9a-zA-Z]\+$\)' contained " matche git directory or any file with extension
 hi def link fetl_gdoafwe DiffText
 
 let b:current_syntax = "fetl"

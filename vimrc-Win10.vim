@@ -94,7 +94,7 @@ let $Drpbx = $HOME.'\Dropbox'
     let $IT1 = $DJH.'Technos\IT1'
     let $JHw = $DJH.'\work'
       let $JHm = $JHw.'\IT-Jekyll-harriott-minima'
-    let $tIs = $DJH.'\Technos\IT0-storage'  " $tIs\diskUsage.txt
+    let $tIs = $DJH.'\technos\IT-storage'  " $tIs\diskUsage.txt
   let $Thb = $DJH.'\Thbdr'
 
 "">>> TeX locations

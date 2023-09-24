@@ -3,12 +3,15 @@
 
 # Joseph Harriott, Sun 29 Jan 2023
 
+# $vimfiles/pack/ArchLinux/pulls.sh
 # bash pulls.sh  when you want to update your remote plugins
 
 set -e  # quits on error
 
 #=> 0 snagged
-# snagged=tagbar  # optionally declare a snagged plugin to start from
+# optionally declare a snagged plugin to start from
+# snagged=tagbar
+snagged=vim-gitgutter
 [[ $snagged ]] || tidyup=1  # only tidy up if  snagged  wasn't set
 
 #=> 1 pulls

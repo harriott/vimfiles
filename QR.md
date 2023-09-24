@@ -249,6 +249,7 @@ z\                    " incsearch-fuzzy-stay
 \S    " non-whitespace character
 \s    " whitespace character
 \u    " uppercase character
+\U    " non-uppercase character
 \w    " word character [0-9A-Za-z_]
 \{,m} " 0-m matches
 \{-}  " as few as possible (only seems to work for single characters)

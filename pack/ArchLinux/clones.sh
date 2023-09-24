@@ -79,7 +79,7 @@ gd opt; ls
   # $gc https://github.com/drmikehenry/vim-fontsize
   # $gc https://github.com/tpope/vim-fugitive
   # $gc https://github.com/rhysd/vim-gfm-syntax
-  # $gc https://github.com/airblade/vim-gitgutter
+  # [[ -d vim-gitgutter ]] && sudo rm -r vim-gitgutter; $gc https://github.com/airblade/vim-gitgutter
   # $gc https://github.com/hjson/vim-hjson
   # $gc https://github.com/RRethy/vim-illuminate
   # $gc https://github.com/inkarkat/vim-ingo-library
@@ -112,7 +112,7 @@ gd opt; ls
   # $gc https://github.com/ap/vim-css-color
   # $gc https://github.com/prettier/vim-prettier
   # $gc https://github.com/svermeulen/vim-subversive
-  $gc https://github.com/wfxr/minimap.vim
+  # $gc https://github.com/wfxr/minimap.vim
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye

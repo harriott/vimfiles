@@ -83,8 +83,9 @@ packadd CSS-one-line--multi-line-folding
 " H -> go left
 " L -> go right
 
-" %ArrangeColumn
-" %UnArrangeColumn
+" %ArrangeColumn  " is slow, and makes changes
+" %UnArrangeColumn  " undoes
+" :CSVInit  " reinitialise the plugin (clears HiColumn)
 " :DeleteColumn [n[-m]]  " deleted column(s) [n[-m]]
 " :HiColumn [n]  " highlight column [n]
 " :HiColumn!  " removes
@@ -101,7 +102,11 @@ packadd CSS-one-line--multi-line-folding
 "  <enter>  hides away non-matching lines
 "  <backspace>  successively removes filters
 "  <space>  hides away matching lines
-"
+
+" Highlight column automatically
+" let g:csv_highlight_column = 'y'
+" Could be useful, but makes seeing the cursor difficult...
+
 packadd csv.vim
 
 "">>> emmet-vim

@@ -1,4 +1,4 @@
-[//]: # ( vim: set tw=0 fdm=expr fdl=4: )
+vim: set fdl=4:
 
 ## vimfiles
 All of my vim files (except my .gvimrc &amp; .vimrc - which vary by machine)
