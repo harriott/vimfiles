@@ -43,6 +43,7 @@
 ../packs-cp/opt/targets.vim/.git
 ../packs-cp/opt/thesaurus_query.vim/.git
 ../packs-cp/opt/undotree/.git
+../packs-cp/opt/vader.vim/.git
 ../packs-cp/opt/vifm.vim/.git
 ../packs-cp/opt/vim-airline/.git
 ../packs-cp/opt/vim-airline-themes/.git

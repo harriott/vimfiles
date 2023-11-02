@@ -5,6 +5,8 @@ source $HOME/.vim/vimrc-GNULinux.vim  " $vimfiles/vimrc-GNULinux.vim
 
 if hostname() == 'AsusW202'
   set redrawtime=4000  " for  linux-pn.dw
+elseif hostname() == 'sbMb'
+  set redrawtime=50000  " for  pack/packs-cp/opt/vim-markdown/test/syntax.vader
 endif
 
 set linespace=2
@@ -36,11 +38,9 @@ else " assume Openbox
   imap <F11> <Esc><F11>
 endif
 
-""> select colorscheme and plugin for showing trailing white spaces
+""> select colorscheme, and plugin for showing trailing white spaces
 if has('nvim')
-  packadd jellybeans.vim
   colorscheme jellybeans
-  " packadd vim-wombat-scheme
   " colorscheme wombat
   packadd vim-better-whitespace
   EnableWhitespace

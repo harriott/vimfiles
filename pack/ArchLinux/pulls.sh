@@ -3,7 +3,7 @@
 
 # Joseph Harriott, Sun 29 Jan 2023
 
-# $vimfiles/pack/ArchLinux/pulls.sh
+# $vfp/ArchLinux/pulls.sh
 # bash pulls.sh  when you want to update your remote plugins
 
 set -e  # quits on error
@@ -29,7 +29,7 @@ find . -maxdepth 3 -mindepth 3 -type d | sort | while read plugin; do
   cd "$plugin"
   grep url .git/config
   git pull
-  cd $vimfiles/pack
+  cd $vfp
 done
 echo "${tpf3b} fzf ${tpfn}"
 pushd ../plugin/fzf

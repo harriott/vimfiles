@@ -3,7 +3,7 @@
 " Language:	sh
 " Maintainer: Joseph Harriott
 " Last Change: Mon 26 Sep 2022
-" $vimfiles/after/syntax/ps1.vim, supplementary to  $vimfiles/pack/packs-cp/opt/vim-ps1/syntax/ps1.vim
+" $vimfiles/after/syntax/ps1.vim, supplementary to  $vfp/packs-cp/opt/vim-ps1/syntax/ps1.vim
 
 execute 'source 'g:vimfiles.'/after/syntax/HashEqualsFolding.vim'
 

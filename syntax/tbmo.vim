@@ -1,7 +1,7 @@
 
 " Language:	TBmo - Thunderbird mail-out - my lists for sending mails to multiple recipients
 " Maintainer: Joseph Harriott
-" Last Change: Fri 15 Sep 2023
+" Last Change: Thu 12 Oct 2023
 
 " $vimfiles/syntax/tbmo.vim
 " also  $vimfiles/ftplugin/tbmo.vim
@@ -12,13 +12,13 @@ if exists("b:current_syntax")
   finish
 endif
 
-" Comments
-syntax match commentText '# .\+'
-hi def link commentText Comment
-
-" email groups
+" email
 syntax match email '<.\{-}>'
 hi def link email Constant
+
+" groups
+syntax match TBgroup '# .\+'
+hi def link TBgroup Title
 
 let b:current_syntax = "tbmo"
 

@@ -16,6 +16,7 @@ Joseph's (g)Vim Quick Reference
     'J      " bring up file marked with J (as saved in viminfo) into buffer
     :BD     " :bd maintaining splits
     :bd!(n) " buffer delete
+    :bn     " go to buffer n
     :bro w  " your system's Save As dialogue
     :ls     " buffer list
     :marks  " list all the current marks
@@ -58,16 +59,18 @@ Joseph's (g)Vim Quick Reference
     :h :v         " vglobal (=  :g!)
 
 # insert mode commands
-    C-ke'    " digraph code for é
-    C-o      " moves to normal mode for just one command
-    C-p      " keyword completion
-    C-r%     " insert relative path of current file
-    C-qu201c " unicode codepoint for “
+    c-ke'    " digraph code for é
+    c-o      " moves to normal mode for just one command
+    c-p      " keyword completion
+    c-r%     " insert relative path of current file
+    c-qu201c " unicode codepoint for “
 
 # layout
     :Prettier     " apply  prettier  to json & others
     :se gfn=*     " pop-up font selection
     :se expandtab " allows  :retab
+    :se ch        " cmdheight - I like 2 in gVim
+    :se cwh       " cmdwinheight - I like 30
     \\c           " toggle cursor column
     \\l           " toggle cursor line
     \\ll          " toggle listchars (:h 'list')
@@ -82,7 +85,7 @@ Joseph's (g)Vim Quick Reference
     :packadd colorizer  " load the plugin from an opt directory. Only interprets codes.
 
 ## colour test
-    pack\packs-unix\opt\vim-hexokinase\test_colours.txt
+    $vfp/packs-unix/opt/vim-hexokinase/test_colours.txt
 
 ### cterm-colors
     NR-16   NR-8    COLOR NAME
@@ -144,6 +147,8 @@ set fdo?
 ## Hexokinase
     :HexokinaseTurnOn
     :packadd vim-hexokinase
+
+handles `$ulLA/IM-convert-list_color.txt`
 
 ## indentation
     :%le     " remove all indents
@@ -213,7 +218,7 @@ g# (or g*)            " # (or *) without \< \>
 \rn                   " (my mapping for) toggle relativenumber
 :Bufferize il <word>  " grab list of lines containing <word> in a new buffer
 :g/^#####\+           " shows lines that begin with 5 or more #'s
-:%s\pattern\\ng       " reports number of occurances
+:%s/pattern//ng       " reports number of occurances
 [I or ]I              " list lines containing word under cursor
 n                     " find next highlighted search result
 z\                    " incsearch-fuzzy-stay
@@ -240,6 +245,8 @@ z\                    " incsearch-fuzzy-stay
 	text\|alt     " searches for text & alt
 
 ## regex
+    [^"]*  " match until quote
+
 ```vim
 \(alt1\|alt2\|alt3\)
 \a    " alphabetic character [A-Za-z]
@@ -290,16 +297,17 @@ shift+F11             " open in Emacs
 2c-g        " buffer number & full filename
 :e.         " dirvish (or netrw) on current directory
 :f  or  c-g " relative filename (:h :f)
-:Gclog      " fugitive
 \<f11>      " last modification time
 \vg         " cd to file's and vimgrep for last search
 gf          " open file under cursor - :h gF
 ```
 
 ### Netrw
-:Hexplore             " horizontal split and explore
-:Lexplore             " toggle left netrw on working directory
-:Vexplore             " vertical split and explore
+```
+:Hexplore  " horizontal split and explore
+:Lexplore  " toggle left netrw on working directory
+:Vexplore  " vertical split and explore
+```
 
 ## open webpages
 	F6 " open a uURL using open-browser.vim
@@ -391,7 +399,7 @@ qj  " begin recording macro in j
 ## number lists
     :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
     :h v_g_CTRL-A
-    :put =range(1964,2020) " create a series of numbers
+    :put =range(202101,202112) " create a series of numbers
 
 ### working down entire buffer
     :let i=1 | g#/# s##\='\'.i# | let i+=1  " prefix-number all files in nnn's neovim window
@@ -418,6 +426,7 @@ gQ           " enter Ex mode
 K            " brings up a man page (if there is one) for word under cursor
 q:           " brings up an interactive history of :commands (in an editable window)
 vi           " exit Ex mode
+:ar          " the argument list
 :h key-notation
 :h index     " lists the all of the commands
 :his         " Display command-line history
@@ -434,11 +443,13 @@ c-r "  " (in command line) insert the unnamed register
 command-line window: C-c C-c  closes
 :echo getline(1) " contents of line 1
 
-$GHrUse/CP/vim/vim-vim/README.md
+$GHrUse/CP/Vim/vim-vim/README.md
 C:\Vim\vim90\gvim.exe
 r $vimfiles
 vim -u NONE
 vim(1)
+
+$misc/CrossPlatform/vimtest/README.md
 ```
 
 ## buffer listing your recent messages
@@ -467,13 +478,15 @@ vim(1)
     :Bufferize se          " all option changes
     :Bufferize se gfn      " show font
     :Bufferize version     " Vim version etc
-    :colo                  " current colorscheme
+    :colo [default]        " current colorscheme
     :let mapleader
     :verb se tw            " shows where textwidth was set
 
     $VIMRUNTIME
     C \usr\share\vim\vim90\ftplugin
     C:\Vim\vim90\ftplugin
+
+options as variable: `:echo &textwidth`
 
 ### mappings
     :Bufferize map                     " n v s
@@ -485,14 +498,16 @@ vim(1)
     :Bufferize echo &rtp
     :Bufferize se rtp
     :s/,/\r/g
+    :se pp  " packpath
 
 ### syntax highlighting
 	:h syn-region
     :windo echo b:current_syntax
     C \usr\share\vim\vim90\syntax
     C:\Vim\vim90\syntax
+    let g:syntax_on
 
-    syntax.txt
+`syntax.txt`
 
 #### settings
     :Bufferize sy  " :h syn-list
@@ -501,7 +516,7 @@ vim(1)
 	:so $VIMRUNTIME/syntax/hitest.vim
     :sy sync fromstart  " but can't find any way to check this setting
 
-	$VIMRUNTIME\syntax\syncolor.vim
+	$VIMRUNTIME/syntax/syncolor.vim
 
 # Visual mode commands
     V  " line-based visual SELection
@@ -560,6 +575,7 @@ g<Ctrl-G>  " statistics
     :h hl-SpellRare
     :h spell-RARE
     :spellra <rareword>
+    zr
 
 ### spelllang
     :se spl

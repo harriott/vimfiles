@@ -8,13 +8,11 @@
 
 " Only do this for Vim version 5.0 and later.
 if version >= 500
-
-  " Switch on syntax highlighting if it wasn't on yet.
+  " switch on syntax highlighting if it wasn't on yet
   if !exists("syntax_on")
     syntax on
   endif
-  " - somewhere, syntax_on has already been set to 1
-
+  " syntax on  is done in  $VIMRUNTIME/defaults.vim (check with  let g:syntax_on)
 endif
 
 set cmdheight=2  " make command line two lines high
@@ -25,7 +23,7 @@ highlight SpecialKey guifg=#4d4d4c
 " - reduce intrusiveness of  CR  characters
 let c_comment_strings=1  " I like highlighting strings inside C comments
 set cursorline
-set guioptions-=T  "removes toolbar
+set guioptions-=T  "removes toolbar (se go+=T)
 set hlsearch  " switch on search pattern highlighting
 set visualbell t_vb=  " disable beeps
 
@@ -33,10 +31,10 @@ set visualbell t_vb=  " disable beeps
 let g:solarized_contrast="high"  "default value is normal, for solarized & tomorrow
 
 "">> menubar
-" Shift+F1 can toggle it:
-nnoremap <S-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
-
 set guioptions-=m  " removes it by default
+
+" shift+f1 can toggle it:
+nnoremap <S-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
 
 "">> toggle window width
 " possibly a better size for reading prose

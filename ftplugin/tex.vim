@@ -1,7 +1,7 @@
 
 " Language:	TeX
 " Maintainer: Joseph Harriott
-" Last Change: Tue 31 Aug 2021
+" Last Change: Mon 16 Oct 2023
 " Useful adjustments for working with LaTeX documents.
 "  supplemental to  $VIMRUNTIME/ftplugin/tex.vim
 " $VIMRUNTIME/filetype.vim > TeX  to see detections
@@ -11,11 +11,11 @@
 let b:ale_enabled = 0 " and toggle it as defined in $vimfiles/plugin/plugins.vim
 
 nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
-nnoremap <buffer><localleader>< :s/</\\url{/<bar>s/>/}/<CR>  " convert md url
+nnoremap <buffer><localleader>< :s/</\\url{/<bar>s/>/}/<bar>nohls<CR>  " convert md url
 
 " EasyAlign  mappings for  tabular  environment
-nnoremap <buffer><F7> :call TabularFullAlign()<CR><Bar>:update<CR>
-inoremap <buffer><F7> <Esc>:call TabularFullAlign()<CR><Bar>:update<CR>
+nnoremap <buffer><leader><F7> :call TabularFullAlign()<CR><Bar>:update<CR>
+inoremap <buffer><leader><F7> <Esc>:call TabularFullAlign()<CR><Bar>:update<CR>
 function! TabularFullAlign()
   " include comments
   normal vip
@@ -24,12 +24,18 @@ function! TabularFullAlign()
   silent! '<,'>s/※/%/
 endfunction
 
+" conceallevel for VimTeX
+setlocal conceallevel=2
+" toggle it
+nnoremap <s-f5> :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
+" - can help when using  tabular  while  VimTeX  is active
+
 ""> \command{}
 nnoremap <buffer><localleader>r :s#\\\h\+{##<bar>s/}//<bar>nohls<CR>  " remove first command
 
 "">> for a selection
 vnoremap <buffer><localleader>b c\textbf{<Esc>pa}<Esc>  " enbolden
-vnoremap <buffer><localleader>d c\cdg{<Esc>pa}<Esc>  " $LTXj/JH.sty
+vnoremap <buffer><localleader>d c\dgy{<Esc>pa}<Esc>  " $LTXj/JH.sty
 vnoremap <buffer><localleader>i c\textit{<Esc>pa}<Esc>  " italicize
 
 ""> demote or promote sections

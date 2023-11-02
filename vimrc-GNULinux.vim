@@ -3,13 +3,13 @@
 
 if !has('nvim')
   " first, some general settings
-  source $HOME/.vim/vimrc_example.vim
+  source $HOME/.vim/vimrc_example.vim  " $vimfiles/vimrc_example.vim
 endif
 
 " link unnamed register to X-Windows clipboard:
 set clipboard=unnamedplus
 
-" let g:netrw_browsex_viewer = "xdg-open-bda"
+" let g:netrw_browsex_viewer = 'xdg-open-bda'
 " see $HOME/.vim/xdg-open-bda.sh
 
 source $HOME/.vim/vimrc.vim  " $vimfiles/vimrc.vim

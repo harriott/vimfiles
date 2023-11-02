@@ -5,9 +5,11 @@
 # -----------------
 # grab key-bindings
 # -----------------
-# bash all.sh
+# in  $vimfiles/grab/   bash all.sh
 
 set -e  # terminate on a fail
+
+echo 'Be patient...'
 
 echo 'grab uses of function keys'
 #  this can be run as a vim command,  :execute "!grep -ri -E '<(m-|s-)?F[0-9]{1,2}>'"

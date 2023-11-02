@@ -3,7 +3,7 @@
 
 # Joseph Harriott
 # grab repositories
-# bash $vimfiles/pack/ArchLinux/clones.sh
+# bash $vfp/ArchLinux/clones.sh
 
 set -e
 
@@ -113,6 +113,7 @@ gd opt; ls
   # $gc https://github.com/prettier/vim-prettier
   # $gc https://github.com/svermeulen/vim-subversive
   # $gc https://github.com/wfxr/minimap.vim
+  # $gc https://github.com/junegunn/vader.vim
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye

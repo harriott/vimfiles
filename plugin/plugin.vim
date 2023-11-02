@@ -240,10 +240,10 @@ set tabstop=4
 set textwidth=99
 
 ""> ft LaTeX syntax folding
-" on before opening a buffer:
+" On before opening a buffer:
 let g:tex_fold_enabled=1
-" check for Pandoc template
-autocmd BufReadPre *.cls,*.dtx,*.sty,*.tex let b:PandocLaTeX = 0
+" Check for Pandoc template:
+autocmd BufReadPre *.cls,*.dtx,*.sty,*.tex,*.toc let b:PandocLaTeX = 0
 autocmd BufReadPre *templates/*.latex let b:PandocLaTeX = 1
 
 "">> md4pdfLog.tex
@@ -329,6 +329,11 @@ endfunction
 ""> layout
 " new buffer split vertically
 nnoremap <leader>vn :vnew<CR>
+
+""> clearmatches
+" see  $jtCP/Vim/plugins/csv_vim-HiColumnLeaky/issue.md
+inoremap <leader><f5> :call clearmatches()<cr>
+nnoremap <leader><f5> :call clearmatches()<cr>
 
 ""> layout - tabline
 " set showtabline=1

@@ -81,6 +81,8 @@ endfunction
 "">> paths
 let $Drpbx = $HOME.'\Dropbox'
   let $DJH = $Drpbx.'\JH'
+    let $Cfzd = $DJH.'\Cafezoide'
+      let $CzPhy = $Cfzd.'\PhysicalProperty'
     let $cITh = $DJH.'copied\IT-handy'
     let $core = $DJH.'\core'
       let $ITstack = $core.'\IT_stack'

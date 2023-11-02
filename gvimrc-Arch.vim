@@ -1,22 +1,22 @@
+" vim: set fdl=1:
 
 " $vimfiles/gvimrc-Arch.vim  sourced by  $machBld/jo/gvimrc
 " ---------------------------------------------------------
 
 " move on to the more portable configuration:
-source $HOME/.vim/gvimrc.vim
+source $HOME/.vim/gvimrc.vim  " $vimfiles/gvimrc.vim
 
-""> Colour Scheme
+""> colour scheme
 function! TWSDark()
   set background=dark
     highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
     highlight SignColumn guibg=black ctermbg=black " less distracting ALE
   let g:CSDark = 1
 endfunction
-
-" start with Tomorrow dark
-" colorscheme solarized
-let g:gitgutter_set_sign_backgrounds = 1
 call TWSDark()
+
+let g:gitgutter_set_sign_backgrounds = 1
+" - better for Tomorrow dark
 
 " reliable light-dark toggle
 nnoremap <C-F5> :call ColorLightDark()<cr>

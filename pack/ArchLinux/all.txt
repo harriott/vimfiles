@@ -43,6 +43,7 @@
 ../packs-cp/opt/targets.vim
 ../packs-cp/opt/thesaurus_query.vim
 ../packs-cp/opt/undotree
+../packs-cp/opt/vader.vim
 ../packs-cp/opt/vifm.vim
 ../packs-cp/opt/vim-airline
 ../packs-cp/opt/vim-airline-themes

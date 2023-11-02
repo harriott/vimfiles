@@ -20,7 +20,7 @@ nnoremap <buffer><localleader>[ :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>  " c
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available
-  nnoremap <buffer><leader><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/MessengerMd.pl ".expand('%:p')<CR>
+  nnoremap <buffer><leader><leader><F7> :execute "silent !perl $misc/PerlTools/MessengerMd.pl ".expand('%:p')<CR>
 else
   nnoremap <buffer><leader><leader><F7> :call MessengerMd()<CR>
     " to be defined in  $vimfiles/after/ftplugin/md.vim
@@ -30,7 +30,7 @@ endif
 ""> convert mysms screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available
-  nnoremap <buffer><leader><F7> :execute "silent !perl $onGH/misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
+  nnoremap <buffer><leader><F7> :execute "silent !perl $misc/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
 else
   nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
     " defined in  $vimfiles/after/ftplugin/md.vim

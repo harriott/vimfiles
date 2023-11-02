@@ -46,13 +46,14 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 "  ce  " amend the last commit without editing the message
 "  U   " unstages all
 "  :GB :GBrowse
+"  :Gclog  " load commit history,  (  &  )  to navigate
 "  :Git pull
 
 packadd vim-fugitive
 
 " "">>> vim-gfm-syntax
 " " enable this for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
-" " $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/README.md
+" " $vfp/packs-cp/opt/vim-gfm-syntax/README.md
 " let g:gfm_syntax_emoji_conceal = 1
 " let g:gfm_syntax_enable_always = 0
 " let g:gfm_syntax_enable_filetypes = ['gfm']
@@ -77,9 +78,28 @@ packadd CSS-one-line--multi-line-folding
 " packadd vim-css-color  " slows down every other filetype...
 
 "">>> csv.vim
-" $vimfiles/pack/packs-cp/opt/csv.vim/ftdetect/csv.vim
-" :h ft-csv  ($vimfiles/pack/packs-cp/opt/csv.vim/doc/ft-csv.txt)
+" configured in  $vimfiles/ftplugin/csv.vim
 
+" $vfp/packs-cp/opt/csv.vim/ftdetect/csv.vim
+" :h ft-csv  ($vfp/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
+
+packadd csv.vim
+
+"">>>> column highlighting
+" :HiColumn [n]  " highlight column [n] using  WildMenu  syntax colour
+" :HiColumn!  " removes
+" - f7 toggle define in  $vimfiles/ftplugin/csv.vim
+
+" my preferred syntax colour
+let g:csv_hiGroup = 'Directory'  " good in my  Vim
+if has('nvim') | let g:csv_hiGroup = 'CursorLineNr' |
+elseif has("gui_running") | :let g:csv_hiGroup = 'DiffText' | endif
+
+" automatic
+let g:csv_highlight_column = 'y'
+" - could be useful, but makes seeing the cursor difficult in  tomorrow
+
+"">>>> commands
 " H -> go left
 " L -> go right
 
@@ -87,8 +107,6 @@ packadd CSS-one-line--multi-line-folding
 " %UnArrangeColumn  " undoes
 " :CSVInit  " reinitialise the plugin (clears HiColumn)
 " :DeleteColumn [n[-m]]  " deleted column(s) [n[-m]]
-" :HiColumn [n]  " highlight column [n]
-" :HiColumn!  " removes
 " :MoveColumn [n] [m]  " moves column [n] to right [of column m] (m can be $)
 " :Sort [column}
 
@@ -103,27 +121,21 @@ packadd CSS-one-line--multi-line-folding
 "  <backspace>  successively removes filters
 "  <space>  hides away matching lines
 
-" Highlight column automatically
-" let g:csv_highlight_column = 'y'
-" Could be useful, but makes seeing the cursor difficult...
-
-packadd csv.vim
-
 "">>> emmet-vim
 " EmmetInstall
 let g:user_emmet_install_global = 0
 packadd emmet-vim
 
 "">>> Liquid
-packadd vim-liquid  " $vimfiles/pack/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
+packadd vim-liquid  " $vfp/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
 
 "">>> mediawiki.vim
-packadd mediawiki.vim  " $vimfiles/pack/packs-cp/opt/mediawiki.vim/README.md
+packadd mediawiki.vim  " $vfp/packs-cp/opt/mediawiki.vim/README.md
 
 "">>> MTA
 packadd MatchTagAlways
 " requires a Python 3 that corresponds to vim's compilation
-" $vimfiles/pack/packs-cp/opt/MatchTagAlways/test.html
+" $vfp/packs-cp/opt/MatchTagAlways/test.html
 
 "">>> Org.vim
 packadd org.vim
@@ -146,11 +158,14 @@ let g:syntastic_python_checkers = ['flake8']
 let g:tagalong_verbose = 1
 packadd tagalong.vim
 
+"">>> vader.vim
+packadd vader.vim
+
 "">>> vim-base64
 packadd vim-base64
 
 "">>> vim-bbcode
-" $vimfiles/pack/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
+" $vfp/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
 packadd vim-bbcode
 
 "">>> vim-closetag
@@ -159,7 +174,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 packadd vim-closetag
 
 "">>> vim-dokuwiki
-" $vimfiles/pack/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
+" $vfp/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
 packadd vim-dokuwiki
 let dokuwiki_comment=1  " comment highlighting on
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
@@ -172,14 +187,13 @@ packadd vim-hjson
 
 "">>> Vim Markdown
 " :h markdown
-" $vimfiles/pack/packs-cp/opt/vim-markdown/maintenance.md
+" $vfp/packs-cp/opt/vim-markdown/maintenance.md
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_conceal_code_blocks = 0  " need to see them
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_frontmatter = 1  " highlight YAML Front Matter
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_strikethrough = 1  " ~~ struck thru ~~
-" let g:vim_markdown_fenced_languages
 packadd vim-markdown  " harriott  clone of  preservim
 
 " Movements:
@@ -213,6 +227,8 @@ packadd vim-prettier
 packadd vim-ps1
 
 "">>> VimTeX
+" $vfp/packs-cp/opt/vimtex/README.md
+
 " dsd  " delete surrounding delimiters
 " commands
 "  csc  " change surrounding
@@ -231,8 +247,11 @@ packadd vim-ps1
 " [m  or  ]m  " move to previous or next environment
 " =li  or  =lI  " vimtex-info  or  vimtex-info-full
 " =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
-let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 1, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, }
+let g:vimtex_compiler_enabled = 0
+let g:vimtex_compiler_silent = 1  " doesn't hide the «latexmk is not executable» message
 let g:vimtex_fold_enabled = 1
+let g:vimtex_include_search_enabled = 0
+let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 1, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, }
 let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'Odr', 'hlgroup': 'CursorLineNr'},
   \ {'name': 'Eltt', 'hlgroup': 'CursorLineNr'},
@@ -259,6 +278,7 @@ let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'Yumi', 'hlgroup': 'Question'},
   \ {'name': 'section', 'hlgroup': 'Todo'},
   \]
+let g:vimtex_view_enabled = 0
 packadd vimtex
 
 "">> The NERD Commenter
@@ -267,10 +287,12 @@ let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
 " extra filetypes
-" $vimfiles/pack/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+" $vfp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 
 "">> Tagbar
+" $vfp/packs-cp/opt/tagbar/README.md
+
 " add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
 " h tagbar-contents
 " h tagbar-ignore
@@ -327,7 +349,8 @@ elseif hostname() == 'T430i73520M'
 endif
 
 ""> ingo-library
-" required for  vim-mark  vim-ShowTrailingWhitespace
+" $vfp/packs-cp/opt/vim-ingo-library/README.md
+"  required for  vim-mark  vim-ShowTrailingWhitespace
 packadd vim-ingo-library
 
 ""> languages
@@ -336,7 +359,7 @@ packadd vim-ingo-library
 " :ALEFix
 " :Bufferize ALEInfo  " shows settings for the filetype
 " :h ale-languagetool-options
-" $vimfiles/pack/packs-cp/opt/ale/plugin/ale.vim
+" $vfp/packs-cp/opt/ale/plugin/ale.vim
 
 " Enabled?
 "  :let ale_enabled
@@ -422,6 +445,7 @@ let g:colorizer_disable_bufleave = 1
 let g:Hexokinase_highlighters = ['foregroundfull']
 
 "">> color schemes
+" no need to  packadd
 
 "">>> jellybeans.vim
 " see $vimfiles/vimrc-Arch.vim
@@ -430,7 +454,7 @@ let g:Hexokinase_highlighters = ['foregroundfull']
 " packadd vim-colors-solarized
 
 "">>> vim-colors-tomorrow
-packadd vim-colors-tomorrow  " colorscheme tomorrow
+" packadd vim-colors-tomorrow  " colorscheme tomorrow
 
 "">>> vim-wombat-scheme
 " optionally added for neovim
@@ -444,7 +468,14 @@ packadd FoldText
 
 "">> highlighting
 
-"">>> illuminate
+" "">>> limelight.vim
+" " Limelight!!
+" packadd limelight.vim
+
+"">>> vim-better-whitespace
+" added for neovim
+
+"">>> vim-illuminate
 packadd vim-illuminate
 
 " toggle illuminate more visible
@@ -458,15 +489,8 @@ function! IlluminateMoreToggle()
     hi link illuminatedWord buildN
     let g:illuminatedWordMoreVisible = 1
   endif
-hi illuminatedWord
+  hi illuminatedWord
 endfunction
-
-" "">>> limelight.vim
-" " Limelight!!
-" packadd limelight.vim
-
-"">>> vim-better-whitespace
-" added for neovim
 
 " "">>> vim-interestingwords
 " " \k -> new highlight
@@ -536,7 +560,7 @@ packadd ctrlp.vim
 "">> Fern
 " vim default c-e = scroll up the window, without displacing the cursor
 noremap <C-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim " $vimfiles/pack/packs-cp/opt/fern.vim/README.md
+packadd fern.vim " $vfp/packs-cp/opt/fern.vim/README.md
 " <c-h>  in
 " <c-m>  out
 " +  vim-buffing-wheel out
@@ -769,7 +793,7 @@ packadd vim-mark  " requires  ingo-library
 packadd supertab
 
 "">> targets.vim
-" $vimfiles/pack/packs-cp/opt/targets.vim/cheatsheet.md
+" $vfp/packs-cp/opt/targets.vim/cheatsheet.md
 packadd targets.vim
 
 "">> vim-subversive
@@ -836,6 +860,8 @@ packadd vim-bufkill
 packadd cfilter
 
 "">>> ListToggle
+" $vfp/packs-cp/opt/listtoggle/README.md
+
 packadd listtoggle
 let g:lt_location_list_toggle_map = '<leader>ll'
 let g:lt_height = 15

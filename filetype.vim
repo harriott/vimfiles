@@ -22,10 +22,8 @@ autocmd! BufRead,BufNewFile *.emdr setfiletype text |
 autocmd! BufRead,BufNewFile *.md source $vimfiles/ftplugin/md.vim
 
 ""> 1 other filetypes
-" as per  https://vim-jp.org/vimdoc-en/vim_faq.html
-if exists("did_load_filetypes")
-    finish
-endif
+" as per  vim_faq
+if exists("did_load_filetypes") | finish | endif
 augroup filetypedetect
     autocmd! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
     autocmd! BufRead,BufNewFile *.digs setfiletype digs  " $vimfiles/ftplugin/digs.vim
@@ -38,6 +36,8 @@ augroup filetypedetect
     autocmd! BufRead,BufNewFile *.osp setfiletype json  " $vimfiles/syntax/json.vim
     autocmd! BufRead,BufNewFile *.sifw setfiletype sifw  " $vimfiles/syntax/sifw.vim
     autocmd! BufRead,BufNewFile *.tbmo setfiletype tbmo  " $vimfiles/syntax/tbmo.vim
+    autocmd! BufRead,BufNewFile *.toc setfiletype tex  " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
+    autocmd! BufRead,BufNewFile *.whatsapp setfiletype whatsapp  " $vimfiles/syntax/whatsapp.vim
     autocmd! BufRead,BufNewFile .spacemacs setfiletype lisp
 augroup END  " - overrides  $VIMRUNTIME/filetype.vim
 

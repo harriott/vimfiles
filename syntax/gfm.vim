@@ -8,6 +8,6 @@
 
 source $VIMRUNTIME/syntax/markdown.vim
 
-" $vimfiles/pack/packs-cp/opt/vim-gfm-syntax/autoload/gfm_syntax/emoji.vim
+" $vfp/packs-cp/opt/vim-gfm-syntax/autoload/gfm_syntax/emoji.vim
 " $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
 

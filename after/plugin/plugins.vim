@@ -22,7 +22,7 @@ function! GitGutterFocus()
     let g:CSDark = 1  " switch to light theme as Tomorrow dark obscures GitGutter's signs
     let g:GGF = 1
   endif
-call ColorLightDark()
+  call ColorLightDark()
 endfunction
 noremap <leader>gg :call GitGutterFocus()<cr>
 
