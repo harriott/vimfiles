@@ -440,6 +440,14 @@ function! VimgrepSelection()
   copen
 endfunction
 
+" search in my QuickReference notes
+nnoremap <leader><leader>q :call VimgrepQRs()<CR>
+function! VimgrepQRs()
+  call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CrossPlatform/QR/*.md '.$misc.'/linux/QR/*.md '.$OSAB.'/QR.md'
+  copen
+endfunction
+
 ""> searching - incsearch
 set incsearch
 nnoremap <leader>is :call IncSearchToggle()<cr>

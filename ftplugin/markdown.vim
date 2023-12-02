@@ -14,7 +14,9 @@
 "  $vfp/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
 
 setlocal expandtab
-vnoremap <buffer>= <Nop>  " disable filter
+
+" disable filter
+vnoremap <buffer>= <Nop>
 
 " ALE
 let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/plugin/plugins.vim

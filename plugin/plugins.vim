@@ -223,7 +223,7 @@ packadd vim-pandoc-syntax
 packadd vim-prettier
 
 "">>> vim-ps1
-" $vimfiles\pack\packs-cp\opt\vim-ps1\ftdetect\ps1.vim
+" $vfp\packs-cp\opt\vim-ps1\ftdetect\ps1.vim
 packadd vim-ps1
 
 "">>> VimTeX
@@ -686,6 +686,7 @@ endif
 "">> aligning
 
 "">>> tabular
+" $vfp/packs-cp/opt/tabular/README.md
 " packadd tabular  " :Tabularize ...
 
 "">>> vim-easy-align

@@ -80,9 +80,15 @@ Joseph's (g)Vim Quick Reference
     :ColorHighlight     " impressive colourizing, but then can't be truly turned off
     :packadd Colorizer  " slows down large file opening
 
+- rgba(255, 255, 255, 0.05) - no
+- rgba(255, 255, 255, 5) - yes
+
 ## colorizer
     <leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
-    :packadd colorizer  " load the plugin from an opt directory. Only interprets codes.
+    :packadd colorizer  " load the plugin from an opt directory
+
+- doesn't handle rgba's
+- only interprets codes
 
 ## colour test
     $vfp/packs-unix/opt/vim-hexokinase/test_colours.txt
@@ -145,10 +151,13 @@ h 'fdo'
 set fdo?
 
 ## Hexokinase
-    :HexokinaseTurnOn
+    :HexokinaseTurnOn  # refresh if already on
+    :HexokinaseTurnOff
     :packadd vim-hexokinase
 
-handles `$ulLA/IM-convert-list_color.txt`
+### handles
+    $ulLA/IM-convert-list_color.txt`
+    rgba(255,255,255,0.05)
 
 ## indentation
     :%le     " remove all indents
@@ -318,7 +327,7 @@ gf          " open file under cursor - :h gF
 	gW " search Wikipedia
 
 ## Python
-    :echo has('python') 
+    :echo has('python')
 
 `:version` shows what minor version of Python is expected
 

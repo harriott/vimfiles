@@ -1,4 +1,3 @@
-" vim: se fdl=1:
 
 " Language:	md
 " Maintainer: Joseph Harriott

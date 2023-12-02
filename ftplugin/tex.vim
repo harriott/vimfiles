@@ -10,8 +10,10 @@
 " ALE
 let b:ale_enabled = 0 " and toggle it as defined in $vimfiles/plugin/plugins.vim
 
-nnoremap <buffer><F12> :call CompiledPDF()<CR>  " open compiled pdf
-nnoremap <buffer><localleader>< :s/</\\url{/<bar>s/>/}/<bar>nohls<CR>  " convert md url
+" open compiled pdf
+  nnoremap <buffer><F12> :call CompiledPDF()<CR>
+" convert md url
+  nnoremap <buffer><localleader>< :s/</\\url{/<bar>s/>/}/<bar>nohls<CR>
 
 " EasyAlign  mappings for  tabular  environment
 nnoremap <buffer><leader><F7> :call TabularFullAlign()<CR><Bar>:update<CR>
@@ -27,7 +29,7 @@ endfunction
 " conceallevel for VimTeX
 setlocal conceallevel=2
 " toggle it
-nnoremap <s-f5> :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
+nnoremap <localleader><f5> :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
 " - can help when using  tabular  while  VimTeX  is active
 
 ""> \command{}

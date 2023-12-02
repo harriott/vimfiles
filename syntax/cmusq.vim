@@ -6,7 +6,7 @@
 " Last Change: Thu 04 Aug 2022
 
 " $vimfiles/syntax/cmusq.vim
-"  for the output of  $ABjo/Openbox/cmusqueue.sh
+"  for the output of  $ABjo/wm/cmusqueue.sh
 " you need this modeline in the file that you want to affect:  vim: ft=cmusq:
 
 if exists('b:current_syntax') | finish | endif
