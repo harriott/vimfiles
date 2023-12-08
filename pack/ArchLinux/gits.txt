@@ -69,7 +69,6 @@
 ../packs-cp/opt/vim-fontsize/.git
 ../packs-cp/opt/vim-fugitive/.git
 ../packs-cp/opt/vim-gfm-syntax/.git
-../packs-cp/opt/vim-gfm-syntax-rhysd/.git
 ../packs-cp/opt/vim-gitgutter/.git
 ../packs-cp/opt/vim-go/.git
 ../packs-cp/opt/vim-hjson/.git
@@ -98,6 +97,7 @@
 ../packs-cp/opt/vimtex/.git
 ../packs-cp/opt/vim-textmanip/.git
 ../packs-cp/opt/vim-visual-star-search/.git
+../packs-cp/opt/vis/.git
 ../packs-unix/opt/Colorizer/.git
 ../packs-unix/opt/jellybeans.vim/.git
 ../packs-unix/opt/vim-better-whitespace/.git

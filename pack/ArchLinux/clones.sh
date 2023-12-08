@@ -114,6 +114,7 @@ gd opt; ls
   # $gc https://github.com/svermeulen/vim-subversive
   # $gc https://github.com/wfxr/minimap.vim
   # $gc https://github.com/junegunn/vader.vim
+  # $gc https://github.com/vim-scripts/vis
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye
