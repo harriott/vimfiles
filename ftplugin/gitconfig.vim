@@ -1,5 +1,5 @@
 
-" Language:	gitconfig
+" Language: gitconfig
 " Maintainer: Joseph Harriott
 " Last Change: Wed 20 Oct 2021
 " This file should be in your .vim/ftplugin folder.

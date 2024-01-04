@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	cmusq
+" Language: cmusq
 " Maintainer: Joseph Harriott
 " Last Change: Thu 04 Aug 2022
 

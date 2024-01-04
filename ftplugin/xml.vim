@@ -1,5 +1,6 @@
+"
 " Couple of useful adjustments for working with xml documents.
-" Language:	XML
+" Language: XML
 " Maintainer: Joseph Harriott
 " Last Change: Sat 17 Dec 2016
 " This file should be in your  vimfiles\ftplugin  folder so that it's applied to  *.xml  files.

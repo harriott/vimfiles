@@ -1,6 +1,6 @@
 " Vim ftplugin file
 
-" Language:	rsnapshot log
+" Language: rsnapshot log
 " Maintainer: Joseph Harriott
 " Last Change: Tue 31 May 2022
 

@@ -1,6 +1,6 @@
 
 " Folded Windows registry backups
-" Language:	MSWin registry backup file (*.reg)
+" Language:	registry - MSWin registry backup file (*.reg)
 " Maintainer: Joseph Harriott http://momentary.eu/
 " Last Change: Thu 07 Jun 2018
 " $vimfiles/ftplugin/registry.vim

@@ -1,5 +1,5 @@
 
-" Language:	css
+" Language: css
 " Maintainer: Joseph Harriott
 " Last Change: Thu 09 Feb 2023
 " $vimfiles/ftplugin/css.vim, supplementary to  $VIMRUNTIME/ftplugin/css.vim

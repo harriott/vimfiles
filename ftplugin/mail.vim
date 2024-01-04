@@ -1,5 +1,5 @@
 
-" Language:	email
+" Language: email
 " Maintainer: Joseph Harriott
 " Last Change: Wed 16 Feb 2022
 

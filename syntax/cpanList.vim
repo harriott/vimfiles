@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	cpanList
+" Language: cpanList
 "  for lists created by  $onGH\misc\PerlTools\ExtUtilsInstalled.ps1
 " Maintainer: Joseph Harriott
 " Last Change: Sat 29 Jan 2022

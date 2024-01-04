@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	fetl: file extension time list
+" Language: fetl: file extension time list
 " Maintainer: Joseph Harriott
 " Last Change: Sun 24 Sep 2023
 

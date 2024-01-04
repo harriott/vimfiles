@@ -26,6 +26,7 @@ autocmd! BufRead,BufNewFile *.md source $vimfiles/ftplugin/md.vim
 if exists("did_load_filetypes") | finish | endif
 augroup filetypedetect
     autocmd! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
+    autocmd! BufRead,BufNewFile *.gnudiff setfiletype gnudiff  " $vimfiles/ftplugin/gnudiff.vim
     autocmd! BufRead,BufNewFile *.digs setfiletype digs  " $vimfiles/ftplugin/digs.vim
     autocmd! BufRead,BufNewFile *.dirl setfiletype dirl  " $vimfiles/syntax/dirl.vim
     autocmd! BufRead,BufNewFile *.exts setfiletype exts  " $vimfiles/syntax/exts.vim
@@ -35,6 +36,7 @@ augroup filetypedetect
     autocmd! BufRead,BufNewFile *.mail setfiletype mail  " $vimfiles/syntax/mail.vim
     autocmd! BufRead,BufNewFile *.osp setfiletype json  " $vimfiles/syntax/json.vim
     autocmd! BufRead,BufNewFile *.sifw setfiletype sifw  " $vimfiles/syntax/sifw.vim
+    autocmd! BufRead,BufNewFile *.slJH setfiletype slJH  " $vimfiles/plugin/slJH.vim
     autocmd! BufRead,BufNewFile *.tbmo setfiletype tbmo  " $vimfiles/syntax/tbmo.vim
     autocmd! BufRead,BufNewFile *.toc setfiletype tex  " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
     autocmd! BufRead,BufNewFile *.whatsapp setfiletype whatsapp  " $vimfiles/syntax/whatsapp.vim

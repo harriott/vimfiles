@@ -1,5 +1,5 @@
 "
-" Language:	fugitive
+" Language: fugitive
 " Maintainer: Joseph Harriott
 " Last Change: Sun 26 Feb 2023
 

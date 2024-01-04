@@ -1,5 +1,5 @@
 
-" Language:	YAML
+" Language: YAML
 " Maintainer: Joseph Harriott
 " Last Change: Wed 07 Dec 2022
 " $vimfiles/ftplugin/yaml.vim  - supplementary to  $VIMRUNTIME/ftplugin/yaml.vim

@@ -1,5 +1,5 @@
 
-" Language:	my RoboCopy log files
+" Language: RClog - my RoboCopy log files
 " Maintainer: Joseph Harriott
 " Last Change: Sat 17 Oct 2020
 

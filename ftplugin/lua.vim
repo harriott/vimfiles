@@ -1,7 +1,7 @@
 
 " vim: set fdl=1:
 
-" Language:	Lua
+" Language: Lua
 " Maintainer: Joseph Harriott
 " Last Change: Tue 10 May 2022
 

@@ -1,5 +1,5 @@
 
-" Language:	TBmo - Thunderbird mail-out - my lists for sending mails to multiple recipients
+" Language: TBmo - Thunderbird mail-out - my lists for sending mails to multiple recipients
 " Maintainer: Joseph Harriott
 " Last Change: Thu 12 Oct 2023
 

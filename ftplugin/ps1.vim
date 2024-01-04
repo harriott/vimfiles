@@ -1,7 +1,7 @@
 " vim: fdl=1:
 
 " Modeline stuff for working with PowerShell scripts.
-" Language:	PowerShell
+" Language: PowerShell
 " Maintainer: Joseph Harriott
 " Last Change: Tue 16 Aug 2022
 " This file should be in your  vimfiles\ftplugin  folder.

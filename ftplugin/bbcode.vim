@@ -1,6 +1,6 @@
 " vim: se fdl=1:
 
-" Language:	BBCode
+" Language: BBCode
 " Maintainer: Joseph Harriott
 " Last Change: Thu 13 May 2021
 " $vimfiles/ftplugin/bbcode.vim  (see also  $vimfiles/after/syntax/bbcode.vim)

@@ -1,6 +1,6 @@
 " vim: set fdl=2:
 
-" Language:	text
+" Language: text
 " Maintainer: Joseph Harriott
 " Last Change: Tue 09 Aug 2022
 " $vimfiles/ftplugin/text.vim  - supplementary to  $VIMRUNTIME/ftplugin/text.vim

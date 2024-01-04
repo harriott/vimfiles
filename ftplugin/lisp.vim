@@ -1,6 +1,6 @@
 " vim: se fdl=1:
 
-" Language:	lisp
+" Language: lisp
 " Maintainer: Joseph Harriott
 " Last Change: Mon 05 Sep 2022
 

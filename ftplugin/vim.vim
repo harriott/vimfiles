@@ -1,6 +1,6 @@
 " vim: fdl=1:
 
-" Language:	Vim
+" Language: Vim
 " Maintainer: Joseph Harriott
 " Last Change: Mon 25 Jan 2021
 " This file should be in your  vimfiles/ftplugin  folder

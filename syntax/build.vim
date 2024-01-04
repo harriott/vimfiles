@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	build - text files of my system builds, nicely folded up
+" Language: build - text files of my system builds, nicely folded up
 " Maintainer: Joseph Harriott
 " Last Change: Thu 08 Sep 2022
 

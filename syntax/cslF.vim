@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	cslF - for my  clamscan log FOUND file ( $OSAB/Bash/bashrc-generic )
+" Language: cslF - for my  clamscan log FOUND file ( $OSAB/Bash/bashrc-generic )
 " Maintainer: Joseph Harriott
 " Last Change: Thu 04 Aug 2022
 

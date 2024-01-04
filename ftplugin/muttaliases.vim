@@ -1,5 +1,5 @@
 
-" Language:	mutt aliases file
+" Language: mutt aliases file
 " Maintainer: Joseph Harriott
 " Last Change: Mon 08 Aug 2022
 

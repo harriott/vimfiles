@@ -1,6 +1,6 @@
 " vim: se fdl=1:
 
-" Language:	markdown
+" Language: markdown
 " Maintainer: Joseph Harriott
 " Last Change: Sun 30 Jul 2023
 " $vimfiles/ftplugin/markdown.vim

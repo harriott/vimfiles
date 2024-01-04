@@ -1,6 +1,6 @@
 " vim: se fdl=2:
 
-" Language:	html
+" Language: html
 " Maintainer: Joseph Harriott
 " Last Change: Fri 28 Apr 2023
 " $vimfiles/ftplugin/html-ft.vim, sourced by  $vimfiles/ftplugin/html.vim

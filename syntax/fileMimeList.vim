@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	file type list, as made by  fmtypes() in my  $Bash/bashrc-console
+" Language: file type list, as made by  fmtypes() in my  $Bash/bashrc-console
 " Maintainer: Joseph Harriott
 " Last Change: Tue 23 May 2023
 

@@ -1,5 +1,5 @@
 
-" Language:	my rsync log files
+" Language: my rsync log files
 " Maintainer: Joseph Harriott
 " Last Change: Mon 12 Oct 2020
 

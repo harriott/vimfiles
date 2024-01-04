@@ -4,6 +4,10 @@
 
 " $vimfiles/after/plugin/plugins.vim
 
+" ""> csv.vim
+" " override  $vfp/packs-cp/opt/csv.vim/ftdetect/csv.vim
+" autocmd BufRead,BufNewFile *.dat set filetype=
+
 ""> vim-devicons
 packadd vim-devicons  " recommended after many others
   packadd nerdtree  " $jtCP/Vim/plugins/vim-devicons/issue428.md

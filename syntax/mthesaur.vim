@@ -1,5 +1,5 @@
 
-" Language:	mthesaur.txt
+" Language: mthesaur.txt
 " Maintainer: Joseph Harriott
 " Last Change: Fri 18 Feb 2022
 

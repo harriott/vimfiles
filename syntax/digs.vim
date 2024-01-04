@@ -1,5 +1,5 @@
 
-" Language:	digs
+" Language: digs
 "  for  $vimfiles/digraphs.digs  created by  $vimfiles/digraphsTidy.pl
 " Maintainer: Joseph Harriott
 " Last Change: Wed 22 Mar 2023

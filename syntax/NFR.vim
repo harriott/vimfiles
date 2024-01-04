@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	Get-NetFirewallRule
+" Language: Get-NetFirewallRule
 " Maintainer: Joseph Harriott
 " Last Change: Mon 17 Jan 2022
 " $vimfiles/syntax/NFR.vim

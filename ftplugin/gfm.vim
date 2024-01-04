@@ -1,6 +1,6 @@
 " vim: se fdl=1:
 
-" Language:	gfm: GitHub Flavored Markdown
+" Language: gfm: GitHub Flavored Markdown
 " Maintainer: Joseph Harriott
 " Last Change: Tue 07 Feb 2023
 " $vimfiles/ftplugin/gfm.vim (also  $vimfiles/syntax/gfm.vim)

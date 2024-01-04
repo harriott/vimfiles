@@ -1,5 +1,5 @@
 
-" Language:	jctl: output of journalctl
+" Language: jctl: output of journalctl
 " Maintainer: Joseph Harriott
 " Last Change: Sat 04 Feb 2023
 

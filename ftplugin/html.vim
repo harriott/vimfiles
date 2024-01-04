@@ -1,6 +1,6 @@
 " vim: se fdl=2:
 
-" Language:	html
+" Language: html
 " Maintainer: Joseph Harriott
 " Last Change: Thu 09 Feb 2023
 " $vimfiles/ftplugin/html.vim, supplementary to  $VIMRUNTIME/ftplugin/html.vim

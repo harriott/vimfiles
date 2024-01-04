@@ -1,5 +1,5 @@
 " My adjustments
-" Language:	dokuwiki
+" Language: dokuwiki
 " Maintainer: Joseph Harriott
 " Last Change: Tue 07 Feb 2023
 " $vimfiles/ftplugin/dokuwiki.vim

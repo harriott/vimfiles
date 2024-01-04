@@ -1,5 +1,5 @@
 "
-" Language:	sh
+" Language: sh
 " Maintainer: Joseph Harriott
 " Last Change: Tue 22 Feb 2022
 " $vimfiles/ftplugin/sh.vim  - supplementary to  $VIMRUNTIME/ftplugin/sh.vim

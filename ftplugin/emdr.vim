@@ -1,7 +1,7 @@
 " vim: set fdl=2:
 
 " sourced by  $vimfiles/filetype.vim
-" Language:	emdr - for my draft emails ($vimfiles/sample.emdr)
+" Language: emdr - for my draft emails ($vimfiles/sample.emdr)
 " Maintainer: Joseph Harriott
 " Last Change: Fri 30 Sep 2022
 " also  $vimfiles/syntax/emdr.vim

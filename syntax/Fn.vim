@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	Fn
+" Language: Fn
 "  for  $vimfiles/grabbed/FnUses.txt  created by  $vimfiles/grabbed/grabMaps.sh
 " Maintainer: Joseph Harriott
 " Last Change: Thu 04 Nov 2021

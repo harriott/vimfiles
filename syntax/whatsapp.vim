@@ -1,5 +1,5 @@
 
-" Language:	whatsapp - for conversation exported from WhatsApp
+" Language: whatsapp - for conversation exported from WhatsApp
 " Maintainer: Joseph Harriott
 " Last Change: Thu 02 Nov 2023
 " in WhatsApp phone app,  menu > More > Export chat

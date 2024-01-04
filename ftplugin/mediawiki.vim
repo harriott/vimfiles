@@ -1,6 +1,6 @@
 
 " My adjustments
-" Language:	mediawiki
+" Language: mediawiki
 " Maintainer: Joseph Harriott
 " Last Change: Fri 07 Oct 2016
 " $vimfiles/ftplugin/mediawiki.vim

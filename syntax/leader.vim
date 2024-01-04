@@ -1,7 +1,7 @@
 
 " Vim syntax file
 
-" Language:	leader
+" Language: leader
 "  for  $vimfiles/grabbed/leaderUses.txt  created by  $vimfiles/grabbed/grabMaps.sh
 " Maintainer: Joseph Harriott
 " Last Change: Fri 15 Oct 2021

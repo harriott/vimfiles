@@ -1,5 +1,5 @@
 
-" Language:	convert -list font
+" Language: convert -list font
 " Maintainer: Joseph Harriott
 " Last Change: Wed 08 Dec 2021
 

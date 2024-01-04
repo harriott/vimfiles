@@ -1,9 +1,10 @@
 
-" Language:	exts
+" Language: exts
 " Maintainer: Joseph Harriott
 " Last Change: Wed 22 Mar 2023
 
 " $vimfiles/syntax/exts.vim  configured in  $vimfiles/filetype.vim
+" see  $Bash/bashrc-console
 
 if exists('b:current_syntax') | finish | endif
 

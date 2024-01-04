@@ -79,6 +79,7 @@ packadd CSS-one-line--multi-line-folding
 
 "">>> csv.vim
 " configured in  $vimfiles/ftplugin/csv.vim
+" overriden in  $vimfiles/after/plugin/plugins.vim
 
 " $vfp/packs-cp/opt/csv.vim/ftdetect/csv.vim
 " :h ft-csv  ($vfp/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
@@ -561,12 +562,17 @@ packadd ctrlp.vim
 " vim default c-e = scroll up the window, without displacing the cursor
 noremap <C-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
 packadd fern.vim " $vfp/packs-cp/opt/fern.vim/README.md
-" <c-h>  in
-" <c-m>  out
-" +  vim-buffing-wheel out
-" E  open:side
-" x  open:system
-" t  open:tabedit
+" ! -- toggles hidden
+" + -- vim-buffing-wheel override (quits)
+" <bs>/<c-h> -- fern-action-leave (goes up a directory)
+" <c-m>/<cr> -- open-or-enter
+" ? -- help
+" - -- mark
+" e/<enter> -- open
+" E -- open:side
+" p -- preview:toggle
+" t -- open:tabedit
+" x -- open:system (eg to open an image)
 
 "">> fern-git-status
 packadd fern-git-status.vim
@@ -648,11 +654,13 @@ packadd vim-clifm
 
 "">> vim-dirvish
 " h dirvish
+" can't navigate up a directory
 " takes over :e.
 
 " in dirvish
 "  -       -> out
 "  <enter> -> in
+"  a       -> open file in window left
 "  g?      -> dirvish-mappings
 "  gq      -> quit
 "  preview left

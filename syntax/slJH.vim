@@ -1,18 +1,16 @@
 
 " Vim syntax file
 
-" Language:	slJH
+" Language: slJH  " symlinks in JH, which could bother Dropbox
 " Maintainer: Joseph Harriott
-" Last Change: Tue 17 May 2022
+" Last Change: Wed 03 Jan 2024
 
-" for my  $DJH/slJH.log
-
-" You need this modeline in the file that you want to affect:  vim: ft=slJH:
+" $vimfiles/syntax/slJH.vim (& $vimfiles/ftplugin/slJH.vim)
+" see  $misc/linux/symlinks_log.sh
 
 if exists('b:current_syntax') | finish |  endif
 
 " Highlight the symlink filename only:
-" syn match symfish '\(\.\|\d.\|\h\).* ->'
 syn match symfish '[-.0-9_a-zA-Z]\+ >>'
 syn match symfile '[-.0-9_a-zA-Z]\+ ' containedin=symfish contained
 hi def link symfile DiffText

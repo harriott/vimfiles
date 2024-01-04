@@ -1,6 +1,6 @@
 " vim: set fdl=2:
 
-" Language:	csv
+" Language: csv
 " Maintainer: Joseph Harriott
 " Last Change: Mon 09 Oct 2023
 " $vimfiles/ftplugin/csv.vim  supplementary to  $vfp/packs-cp/opt/csv.vim/README.md

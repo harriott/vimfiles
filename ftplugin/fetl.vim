@@ -1,5 +1,5 @@
 
-" Language:	file type list
+" Language: file type list
 " Maintainer: Joseph Harriott
 " Last Change: Sat 04 Feb 2023
 

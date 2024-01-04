@@ -1,5 +1,5 @@
 
-" Language:	TeX
+" Language: TeX
 " Maintainer: Joseph Harriott
 " Last Change: Mon 16 Oct 2023
 " Useful adjustments for working with LaTeX documents.
