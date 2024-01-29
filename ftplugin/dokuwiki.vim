@@ -1,16 +1,10 @@
 " My adjustments
 " Language: dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Tue 07 Feb 2023
+" Last Change: dim. 21 janv. 2024
 " $vimfiles/ftplugin/dokuwiki.vim
 
-" Also  vim-dokuwiki:
-"  comment out  setlocal foldmethod=syntax
-"  detects  *.dw  files
-"  manages the syntax
-
-" If you want to trigger these adjustments from the modeline in a file, it's:
-"  /* vim: set ft=dokuwiki: */
+" tweaked  $vfp\packs-cp\opt\vim-dokuwiki\syntax\dokuwiki.vim  manages the syntax
 
 function! PageTitleToHyperlink()
   let l:pagetitle = getreg('"')

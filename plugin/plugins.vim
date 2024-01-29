@@ -319,6 +319,7 @@ autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
 packadd vim-ssh-annex
 
 ""> fzf.vim
+let g:fzf_vim = {} | let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
 packadd fzf.vim
 
 nnoremap <leader>B :BLines<CR>
@@ -331,6 +332,7 @@ nnoremap <F9> :History/<CR>
 inoremap <F9> <Esc>:History/<CR>
 vnoremap <F9> <Esc>:History/<CR>
 
+" :Maps  = normal mode mappings
 " Win10:
 " junegunn/fzf  at  $vimfiles\plugin\fzf,
 "  because  fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
@@ -345,6 +347,8 @@ elseif hostname() == 'AsusW202'
   nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
 elseif hostname() == 'sbMb'
   nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
+elseif hostname() == 'HPEB840G362'
+  nnoremap <leader>j :Files C:\Users\jharr\Dropbox\JH<CR>
 elseif hostname() == 'T430i73520M'
   nnoremap <leader>j :Files C:\Users\troin\Dropbox\JH<CR>
 endif
@@ -594,7 +598,8 @@ let g:fern#renderer = "nerdfont"
 packadd fern-renderer-nerdfont.vim
 
 "">> MRU
-" $HOME/.vim_mru_files
+" $vfp/packs-cp/opt/mru/README.md
+" $vimfiles/syntax/mru.vim
 let MRU_Max_Entries = 1000
 if has('unix')
   let MRU_Window_Height = 20
@@ -612,6 +617,7 @@ else
 endif
 packadd mru
 
+" $HOME/.vim_mru_files
 " in GNU/Linux  :FZFMru
 " :MRU \.md
 " :MruRefresh

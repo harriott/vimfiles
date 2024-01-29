@@ -59,6 +59,8 @@ elseif has('unix') && g:monitorheight == '1050'
   set lines=60
 elseif has('unix') && g:monitorheight == '1080'
   set lines=63
+elseif has('win32') && g:monitorheight == '1080'
+  set lines=60
 endif
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
 

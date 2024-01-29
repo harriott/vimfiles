@@ -7,14 +7,10 @@
 
 if exists('b:current_syntax') | finish | endif
 
-syn match gdAnd ' and '
-hi def link gdAnd LineNr
-syn match gdDiffer ' differ$'
-hi def link gdDiffer LineNr
-syn match gdFiles '^Files'
-hi def link gdFiles LineNr
-syn match gdOnly '^Only in '
-hi def link gdOnly LineNr
+syn match gdAnd ' and ' | hi def link gdAnd LineNr
+syn match gdDiffer ' differ$' | hi def link gdDiffer LineNr
+syn match gdFiles '^Files' | hi def link gdFiles LineNr
+syn match gdOnly '^Only in ' | hi def link gdOnly LineNr
 
 let b:current_syntax = "digs"
 

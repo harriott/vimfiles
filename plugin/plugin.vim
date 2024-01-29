@@ -94,6 +94,7 @@ function! ClearFancyGlyphs()
   :sil!%s/⟨/</g
   :sil!%s/⟩/>/g
   :sil!%s/→/-->/g
+  :sil!%s/⧹/\\/g  " normalise big backslash
 endfunction
 
 ""> format - clear mathematical alphanumeric symbols

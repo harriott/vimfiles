@@ -335,6 +335,7 @@ gf          " open file under cursor - :h gF
 ## Win10
 ```
 :echo $computername
+:echo $programfiles
 :echo $username
 ```
 
@@ -349,6 +350,7 @@ gf          " open file under cursor - :h gF
 # tricks
     :%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
     :echo &bomb                  " 1 if BOM
+    :normal i" . strftime("%c")  " put date-time at cursor
     :so /usr/share/vim/vim90/tools/emoji_list.vim
 
 ```vim
@@ -356,7 +358,6 @@ gf          " open file under cursor - :h gF
 :exe
 :g\^\m 0                     " reverse the entire buffer
 :ni<somecharacter><Enter>    " inserts <somecharacters> n time
-:normal i" . strftime("%c")  " put date-time at cursor
 :h g_CTRL-G                  " position and word info, works on a range too
 :t.                          " reproduce line
 :t.|s\.\=\g                  " setext-style header underlining
@@ -402,9 +403,9 @@ u            " lowercase a visual block
     ^Vu03b2  " gets greek small letter beta
 
 ## macros
-@j  " run macro j
-q   " end recording macro
-qj  " begin recording macro in j
+    @j  " run macro j
+    q   " end recording macro
+    qj  " begin recording macro in j
 
 ## number lists
     :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
