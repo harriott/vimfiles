@@ -1,7 +1,9 @@
 
 " $vimfiles/vimrc-GNULinux.vim  source'd from my  $vimfiles/vimrc-Arch.vim
 
-if !has('nvim')
+if has('nvim')
+  set title  " for Alacritty
+else
   " first, some general settings
   source $HOME/.vim/vimrc_example.vim  " $vimfiles/vimrc_example.vim
 endif

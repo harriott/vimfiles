@@ -58,9 +58,14 @@ noremap Q @q
 
 ""> format - clear fancy glyphs
 " - left & right double & single quotes (as these aren't mapped to a keyboard key)
-" en dash, which can be copied from websites
-" nnoremap <leader>2 :sil!%s/“/"/g<bar>:sil!%s/”/"/g<bar>:sil!%s/‘/'/g<bar>:sil!%s/’/'/g<cr>
-nnoremap <leader>2 :call ClearFancyGlyphs()<cr>
+"   en dash, which can be copied from websites
+"   more...
+if v:lang =~ 'fr'
+  " AZERTY
+  nnoremap <leader>é :call ClearFancyGlyphs()<cr>
+else
+  nnoremap <leader>2 :call ClearFancyGlyphs()<cr>
+endif
 function! ClearFancyGlyphs()
   " nuls
   :sil!%s/ / /g
@@ -155,15 +160,15 @@ function! ClearMAS()
 endfunction
 
 ""> format - date abbreviations
-iab <expr> d8- strftime("%y-%m-%d")
-iab <expr> d8a strftime("%Y-%m-%d-%a")
-iab <expr> d8c strftime("%y%m%d")
-iab <expr> d8d strftime("%a %d %b %Y")
-iab <expr> d8l strftime("%Hh%M %a %d %b %Y")
-iab <expr> d8m strftime("%y%m%d-%Hh%Mm")
-iab <expr> d8p strftime("%Y-%m-%d %H:%M")
-iab <expr> d8s strftime("%d/%m/%y")
-iab <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
+iabbrev <expr> d8- strftime("%y-%m-%d")
+iabbrev <expr> d8a strftime("%Y-%m-%d-%a")
+iabbrev <expr> d8c strftime("%y%m%d")
+iabbrev <expr> d8d strftime("%a %d %b %Y")
+iabbrev <expr> d8l strftime("%Hh%M %a %d %b %Y")
+iabbrev <expr> d8m strftime("%y%m%d-%Hh%Mm")
+iabbrev <expr> d8p strftime("%Y-%m-%d %H:%M")
+iabbrev <expr> d8s strftime("%d/%m/%y")
+iabbrev <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
 ""> format - date in French
 if has('unix')
@@ -171,6 +176,10 @@ if has('unix')
 elseif has('win32')
   noremap <leader>yp :lan tim French<CR>:pu=strftime('%A %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
 endif
+
+""> format - capitalised last entered letter
+" useful for AZERTY - particularly accented letters
+if v:lang=~'fr'|inoremap ² <Esc>~a|endif
 
 ""> format - strip Thunderbird address book csv down to just emails
 " decorations:  >, .\{-} <
@@ -224,7 +233,12 @@ endfunction
 
 "">> to
 " 5 here means convert to % code (my general preference):
-nnoremap <leader>5 :call UnicodePercent()<cr>
+if v:lang =~ 'fr'
+  " AZERTY
+  nnoremap <leader>( :call UnicodePercent()<cr>
+else
+  nnoremap <leader>5 :call UnicodePercent()<cr>
+endif
 function! UnicodePercent()
     :keepp s/&/%26/eg
     :keepp s/'/%27/eg
@@ -260,7 +274,11 @@ endfunction
 
 ""> format - remove square bracketed text
 " as in Wikipedia articles
-nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
+if v:lang =~ 'fr'
+  nnoremap <leader><leader>( :s/\m\[.\{-}]//g<CR>
+else
+  nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
+endif
 
 ""> format - TwiddleCase
 function! TwiddleCase(str)
@@ -434,15 +452,15 @@ autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 "">> tidy an inmail
 " swap out any crap (and go back to top):
 "  next line
-autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s///g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s///g | go
 "  non-breaking whitespaces
-autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/ / /g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/ / /g | go
 "  'private use one'
-autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
 "  'private use two'
-autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
 "  unneeded blanks
-autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/^> */>/g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/^> */>/g | go
 
 ""> neovim - DiffOrig
 if has('nvim')
@@ -506,7 +524,7 @@ endfunction
 nnoremap <leader><leader>q :call VimgrepQRs()<CR>
 function! VimgrepQRs()
   call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CrossPlatform/QR/*.md '.$misc.'/linux/QR/*.md '.$OSAB.'/QR.md'
+  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$misc.'/linux/QR/*.md '.$OSAB.'/QR.md'
   copen
 endfunction
 

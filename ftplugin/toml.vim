@@ -5,7 +5,7 @@
 " $vimfiles/ftplugin/toml.vim  - supplementary to  $VIMRUNTIME/ftplugin/toml.vim
 " ($VIMRUNTIME/filetype.vim  decides the various files that are detected as  toml)
 
-setlocal expandtab foldcolumn=1 textwidth=0
+setlocal expandtab foldcolumn=1 shiftwidth=2 textwidth=0
 
 " my folding tools:
 execute 'source 'g:vimfiles.'/ftplugin/HashEqualsFolding.vim'

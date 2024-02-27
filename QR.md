@@ -463,6 +463,9 @@ vim(1)
 $misc/CrossPlatform/vimtest/README.md
 ```
 
+    PowerShell command | out-file <file> -encoding utf8BOM  # detected as utf-8
+    PowerShell command > <file>  # detected as latin1
+
 ## buffer listing your recent messages
     :Bufferize messages
 	:redir @m | silent messages | redir END | new | exe "normal! \"mp"

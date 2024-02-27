@@ -15,17 +15,28 @@ setlocal foldcolumn=1
 
 ""> tags - bold
 " wrap the inner word under cursor
-nnoremap <buffer> <leader>] viwc[color=navy][/color]<Esc>bbp
+nnoremap <buffer> <leader><leader>] viwc[color=navy][/color]<Esc>bbp
 
 " wrap a selection
-vnoremap <buffer> <leader>] c[color=navy][/color]<Esc>bbp
+vnoremap <buffer> <leader><leader>] c[color=navy][/color]<Esc>bbp
+
+""> tags - code
+" wrap the inner word under cursor
+nnoremap <buffer> <leader>] viwc[code][/code]<Esc>bbp
+
+" wrap a selection
+vnoremap <buffer> <leader>] c[code][/code]<Esc>bbp
+
+""> tags - url
+" wrap a selection
+vnoremap <buffer> <leader>u c[url][/url]<Esc>F[PF]
 
 ""> tags - user
 " need to add user id number after =
 
 " wrap the inner word under cursor
-nnoremap <buffer> <leader>u viwc[user=][/user]<Esc>F[PF]
+nnoremap <buffer> <leader><leader>u viwc[user=][/user]<Esc>F[PF]
 
 " wrap a selection
-vnoremap <buffer> <leader>u c[user=][/user]<Esc>F[PF]
+vnoremap <buffer> <leader><leader>u c[user=][/user]<Esc>F[PF]
 

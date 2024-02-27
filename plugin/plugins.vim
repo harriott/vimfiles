@@ -123,7 +123,7 @@ let g:csv_highlight_column = 'y'
 "  <space>  hides away matching lines
 
 "">>> emmet-vim
-" EmmetInstall
+" EmmetInstall  for CSS/HTML
 let g:user_emmet_install_global = 0
 packadd emmet-vim
 
@@ -331,6 +331,7 @@ vnoremap <F8> <Esc>:History:<CR>
 nnoremap <F9> :History/<CR>
 inoremap <F9> <Esc>:History/<CR>
 vnoremap <F9> <Esc>:History/<CR>
+if has('win32') | nnoremap <S-F9> call popup_clear(1):<CR> | endif
 
 " :Maps  = normal mode mappings
 " Win10:
@@ -700,6 +701,7 @@ endif
 "">> aligning
 
 "">>> tabular
+" :vert h tabular
 " $vfp/packs-cp/opt/tabular/README.md
 " packadd tabular  " :Tabularize ...
 

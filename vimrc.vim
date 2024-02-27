@@ -123,12 +123,10 @@ xnoremap q, q:
 nnoremap q: <NOP>
 xnoremap q: <NOP>
 
-"">> leader on AZERTY
-if v:lang == 'fr_FR.UTF-8'
-  let mapleader = 'é'  " (equates to è)
-endif
+"">> leader
+if v:lang =~ 'fr' | let mapleader = 'ù' | endif  " AZERTY
 
-"">> localleader
+"">>> localleader
 let maplocalleader = '='
   " ='s filter mapping still works, so these aren't needed
   " nnoremap _ =
