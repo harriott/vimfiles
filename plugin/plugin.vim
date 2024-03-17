@@ -77,6 +77,7 @@ function! ClearFancyGlyphs()
   " punctuations
   :sil!%s/´/'/g
   :sil!%s/ˮ/"/g
+  :sil!%s/[ก-๛]/-/g  " Thai characters
   :sil!%s/“/"/g
   :sil!%s/”/"/g
   :sil!%s/″/"/g

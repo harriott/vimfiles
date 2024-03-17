@@ -48,7 +48,18 @@ set shortmess-=S " display count of matches
 autocmd BufRead,BufNewFile */sudoers setlocal ft=sudoers
 autocmd BufRead,BufNewFile *PowerShell/PSReadLine/ConsoleHost_history.txt setlocal nospell
 
-""> mappings
+""> mappings 0 leader for AZERTY
+if v:lang =~ 'fr' | let mapleader = 'ù' | endif  " not reliably run
+
+""> mappings 0 localleader
+let maplocalleader = '='
+  " ='s filter mapping still works, so these aren't needed
+  " nnoremap _ =
+  " xnoremap _ =
+  " onoremap _ =
+nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
+
+""> mappings 1
 cabbrev h vert h
 
 noremap <leader><leader>ll :set list! list? <CR>  " (:h 'list')
@@ -122,17 +133,6 @@ xnoremap q, q:
 "">>>>> 2 semicolon no longer required
 nnoremap q: <NOP>
 xnoremap q: <NOP>
-
-"">> leader
-if v:lang =~ 'fr' | let mapleader = 'ù' | endif  " AZERTY
-
-"">>> localleader
-let maplocalleader = '='
-  " ='s filter mapping still works, so these aren't needed
-  " nnoremap _ =
-  " xnoremap _ =
-  " onoremap _ =
-nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
 
 "">> resize vim windows
 " decrease window height

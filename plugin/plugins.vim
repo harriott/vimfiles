@@ -331,7 +331,9 @@ vnoremap <F8> <Esc>:History:<CR>
 nnoremap <F9> :History/<CR>
 inoremap <F9> <Esc>:History/<CR>
 vnoremap <F9> <Esc>:History/<CR>
-if has('win32') | nnoremap <S-F9> call popup_clear(1):<CR> | endif
+if has('win32')
+  nnoremap <S-F9> call popup_clear(1):<CR>
+endif
 
 " :Maps  = normal mode mappings
 " Win10:
@@ -807,6 +809,7 @@ packadd vim-mark  " requires  ingo-library
 " " now preferring  vim-asterisk
 
 "">> supertab
+" c-v tab  to insert a literal tab
 packadd supertab
 
 "">> targets.vim
@@ -868,8 +871,15 @@ packadd vim-buffing-wheel
 " - + X
 
 "">>> vim-bufkill
-" :BD  :bd maintaining splits
+" :BB :BF  could be mapped to replace some of the functionality of  vim-buffing-wheel
+
 packadd vim-bufkill
+
+"">>>> mappings
+let g:BufKillCreateMappings = 0
+
+" :bd  maintaining splits
+noremap <silent> <leader>dd :BD<CR>
 
 "">> location/quickfix list
 

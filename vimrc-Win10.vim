@@ -1,8 +1,8 @@
 
-" -----------------------------------------------------------
+" ------------------------------------------------------------
 " Joseph Harriott - Thu 03 Aug 2023
-" $vimfiles\vimrc-Win10.vim  source'd by  $MSWin10\user\_vimrc
-" -----------------------------------------------------------
+" $vimfiles\vimrc-Win10.vim  source'd by  $machBld\user\_vimrc
+" ------------------------------------------------------------
 
 if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \
 
@@ -88,6 +88,8 @@ let $Drpbx = $HOME.'\Dropbox'
       let $ITstack = $core.'\IT_stack'
         let $CrPl = $ITstack.'\CP'
           let $LTXj = $CrPl.'\documenting\LaTeX\jo'
+        let $ITscc = $ITstack.'\copied-code'
+        let $ITscr = $ITstack.'\copied-reference'
         let $machLg = $ITstack.'\MSWin\ml-'.$computername
         let $onGH = $ITstack.'\onGitHub'
           let $MSwin10 = $onGH.'\OS-MSWin10'
@@ -95,12 +97,12 @@ let $Drpbx = $HOME.'\Dropbox'
           let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\'.$computername
           let $vimfiles = $onGH.'\vimfiles'
             let $vfp = $vimfiles.'\pack'
-    let $GHrUse = $DJH.'\CGHrepos'
     let $JHw = $DJH.'\work'
       let $JHm = $JHw.'\IT-Jekyll-harriott-minima'
     let $jtIT = $DJH.'\technos\IT'
+    let $Thb = $DJH.'\Thb-dr'
     let $tIs = $DJH.'\technos\IT-storage'  " $tIs\diskUsage.txt
-  let $Thb = $DJH.'\Thbdr'
+  let $GHrUse = $Drpbx.'\CGHrepos'
 
 "">>> TeX locations
 let $MD4PDF = $onGH.'/pandoc-md4pdf'

@@ -37,8 +37,16 @@ execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
 setlocal conceallevel=2
 
 " wrap the inner word under cursor with backticks
-nnoremap <buffer><leader>` viwc``<Esc>P
+if v:lang =~ 'fr'
+  nnoremap <buffer><leader>è viwc``<Esc>P
+else
+  nnoremap <buffer><leader>` viwc``<Esc>P
+endif
 
 " wrap a selection with backticks
-vnoremap <buffer><leader>` c``<Esc>P
+if v:lang =~ 'fr'
+  vnoremap <buffer><leader>è c``<Esc>P
+else
+  vnoremap <buffer><leader>` c``<Esc>P
+endif
 

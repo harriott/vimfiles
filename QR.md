@@ -71,8 +71,8 @@ Joseph's (g)Vim Quick Reference
     :se expandtab " allows  :retab
     :se ch        " cmdheight - I like 2 in gVim
     :se cwh       " cmdwinheight - I like 30
-    \\c           " toggle cursor column
-    \\l           " toggle cursor line
+    \\c           " toggle cursorcolumn
+    \\l           " toggle cursorline
     \\ll          " toggle listchars (:h 'list')
 
 ## Colorizer
@@ -164,16 +164,19 @@ set fdo?
     :h 'sw'  " autoindentation - shiftwidth
 
 # movements - in buffer
-    nG  " go to line n
-    :n  " go to line n
+    nG      " go to line n
+    :n      " go to line n
+    gj\k    " go down\up a visual line
+    [{ / ]} " jump to opening / closing }
+    ][ / [] " jump to previous / next } in 1st column
+    [( / ]) " jump to opening / closing )
+    { or }  " move cursor to start or end of paragraph
+    ( or )  " move cursor to start or end of sentence
 
 ```vim
-ge        " go backwards to end of word
-g:        " jump forward to position of a newer change
-g;        " jump back to position of an older change
-gj\k      " go down\up a visual line
-{ or }    " move cursor to start or end of paragraph
-( or )    " move cursor to start or end of sentence
+ge    " go backwards to end of word
+g:    " jump forward to position of a newer change
+g;    " jump back to position of an older change
 :h ``
 :h '.
 ```
