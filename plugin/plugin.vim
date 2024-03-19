@@ -171,11 +171,19 @@ iabbrev <expr> d8p strftime("%Y-%m-%d %H:%M")
 iabbrev <expr> d8s strftime("%d/%m/%y")
 iabbrev <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
-""> format - date in French
+""> format - put date in other language
 if has('unix')
-  noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%A %d %b %Y')<CR>:lan en_GB.UTF-8<CR>
+  if v:lang =~ 'gb'
+    noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>:s/\.//g<cr>:noh<cr>
+  else
+    noremap <leader>yp :lan en_GB.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan fr_FR.UTF-8<CR>
+  endif
 elseif has('win32')
-  noremap <leader>yp :lan tim French<CR>:pu=strftime('%A %d %b %Y')<CR>:lan tim English_United Kingdom<CR>
+  if v:lang =~ 'fr'
+    noremap <leader>yp :lan tim English_United Kingdom<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim French<CR>
+  else
+    noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>:s/\.//g<cr>:noh<cr>
+  endif
 endif
 
 ""> format - capitalised last entered letter
