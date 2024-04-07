@@ -5,7 +5,7 @@ if has('nvim')
   set title  " for Alacritty
 else
   " first, some general settings
-  source $HOME/.vim/vimenter/vimrc_example.vim  " $vimfiles/vimrc_example.vim
+  source $vimfiles/vim/enter/vimrc_example.vim  " $vimfiles/vimrc_example.vim
 endif
 
 " link unnamed register to X-Windows clipboard:
@@ -14,7 +14,7 @@ set clipboard=unnamedplus
 " let g:netrw_browsex_viewer = 'xdg-open-bda'
 " see $HOME/.vim/xdg-open-bda.sh
 
-source $HOME/.vim/vimenter/vimrc.vim  " $vimfiles/vimrc.vim
+source $vimfiles/vim/enter/vimrc.vim  " $vimfiles/vimrc.vim
 
 " Set keywordprg empty, to make K invoke vim's internal help:
 set kp=

@@ -2,7 +2,7 @@
 
 " Joseph Harriott - dim 07 avr 2024
 
-" $vimfiles\vimenter\vimrc-Win10-paths.vim
+" $vimfiles\vim\enter\vimrc-Win10-paths.vim
 " source'd by
 "  $MSWin10\mb\_vimrc-AZERTY
 " symlinked in  $MSwin10\mb\symlinks-mostly.ps1

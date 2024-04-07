@@ -1,7 +1,7 @@
 
 " Joseph Harriott - mar 19 mars 2024
 
-" $vimfiles/plugin/plugin.vim
+" $vimfiles/vim/plugin/plugin.vim
 " here I have things that I might, rarely, want to comment out
 " keep this file in your plugin directory so's it's automatically sourced at startup
 

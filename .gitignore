@@ -6,9 +6,10 @@
 .netrwhist
 grabbed/
 plugin/fzf
-pack/packs-cp
-pack/packs-unix
-pack/packs-win32
+**/*/packs-cp
+**/*/packs-nvim
+**/*/packs-unix
+**/*/packs-win32
 profile.log
 scratch.vim
 spell/

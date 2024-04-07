@@ -4,7 +4,7 @@
 " ---------------------------------------------------------
 
 " move on to the more portable configuration:
-source $HOME/.vim/vimenter/gvimrc.vim  " $vimfiles/gvimrc.vim
+source $vimfiles/vimenter/gvimrc.vim  " $vimfiles/gvimrc.vim
 
 ""> colour scheme
 function! TWSDark()

@@ -1,8 +1,7 @@
 
-" ------------------------------------------------------------
-" Joseph Harriott - Thu 03 Aug 2023
-" $vimfiles\vimrc-Win10.vim  source'd by  $machBld\user\_vimrc
-" ------------------------------------------------------------
+" Joseph Harriott - dim 07 avr 2024
+
+" $vimfiles\vim\enter\vimrc-Win10.vim ($MSwin10\mb\symlinks-mostly.ps1)
 
 if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \
 
@@ -11,7 +10,7 @@ if $VIM == '/usr/share/vim' | finish | endif  " (adapted for Git-2.8.1-64-bit.ex
 
 ""> 1 vimrc_example.vim
 if !has('nvim')
-  source $vimfiles/vimenter/vimrc_example.vim
+  source $vimfiles/vim/enter/vimrc_example.vim
 endif
 
 ""> 2 mswin.vim
@@ -55,7 +54,7 @@ function! ColorLightDark()
 endfunction
 
 "">> continue vimrc
-source $vimfiles/vimenter/vimrc.vim
+source $vimfiles/vim/enter/vimrc.vim
 
 "">> ensure vimswap
 if isdirectory($HOME.'/.vimswap') == 0
