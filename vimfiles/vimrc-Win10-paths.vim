@@ -1,0 +1,1 @@
+C:/Users/jharr/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vimenter/vimrc-Win10-paths.vim
