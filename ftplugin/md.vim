@@ -16,6 +16,10 @@ nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 
 nnoremap <buffer><localleader>[ :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>  " convert dw url
 
+if v:lang =~ 'fr'
+  nnoremap <buffer><localleader>< a<><Esc>
+endif
+
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available

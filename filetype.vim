@@ -32,9 +32,11 @@ augroup filetypedetect
     autocmd! BufRead,BufNewFile *.exts setfiletype exts  " $vimfiles/syntax/exts.vim
     autocmd! BufRead,BufNewFile *.fetl setfiletype fetl  " $vimfiles/syntax/fetl.vim
     autocmd! BufRead,BufNewFile *.gems setfiletype gems  " $vimfiles/syntax/gems.vim
+    autocmd! BufRead,BufNewFile *.IMclf setfiletype IMclf  " $vimfiles/syntax/IMclf.vim
     autocmd! BufRead,BufNewFile *.jctl setfiletype jctl  " $vimfiles/syntax/jctl.vim
     autocmd! BufRead,BufNewFile *.mail setfiletype mail  " $vimfiles/syntax/mail.vim
     autocmd! BufRead,BufNewFile *.osp setfiletype json  " $vimfiles/syntax/json.vim
+    autocmd! BufRead,BufNewFile *.rgtl setfiletype rgtl  " $vimfiles/syntax/rgtl.vim
     autocmd! BufRead,BufNewFile *.sifw setfiletype sifw  " $vimfiles/syntax/sifw.vim
     autocmd! BufRead,BufNewFile *.slJH setfiletype slJH  " $vimfiles/plugin/slJH.vim
     autocmd! BufRead,BufNewFile *.tbmo setfiletype tbmo  " $vimfiles/syntax/tbmo.vim

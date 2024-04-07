@@ -5,7 +5,7 @@
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
-""> encoding
+""> 0 encoding
 
 "">> AnsiEsc
 packadd vim-plugin-AnsiEsc
@@ -14,7 +14,14 @@ packadd vim-plugin-AnsiEsc
 " MinimapToggle
 packadd minimap.vim
 
+"">> context.vim
+" :ContextToggle
+let g:context_enabled = 0
+packadd context.vim
+
 "">> dsf
+" $vfp/packs-cp/opt/dsf.vim/README.md
+
 packadd dsf.vim
 " csf -> change surrounding function
 " daf -> delete a function call
@@ -135,6 +142,7 @@ packadd mediawiki.vim  " $vfp/packs-cp/opt/mediawiki.vim/README.md
 
 "">>> MTA
 packadd MatchTagAlways
+" for  XML/HTML  tags
 " requires a Python 3 that corresponds to vim's compilation
 " $vfp/packs-cp/opt/MatchTagAlways/test.html
 
@@ -290,16 +298,17 @@ let NERDSpaceDelims = 1
 " extra filetypes
 " $vfp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
+let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 
 "">> Tagbar
-" $vfp/packs-cp/opt/tagbar/README.md
+" $vfp/packs-cp/opt/vim-tagbar/README.md
 
 " add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
 " h tagbar-contents
 " h tagbar-ignore
 
 autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
-packadd tagbar
+packadd vim-tagbar
 
 "">> vim match-up
 " % = jump forward
@@ -318,7 +327,7 @@ packadd vim-matchup
 autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
 packadd vim-ssh-annex
 
-""> fzf.vim
+""> 0 fzf.vim
 let g:fzf_vim = {} | let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
 packadd fzf.vim
 
@@ -336,6 +345,7 @@ if has('win32')
 endif
 
 " :Maps  = normal mode mappings
+
 " Win10:
 " junegunn/fzf  at  $vimfiles\plugin\fzf,
 "  because  fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
@@ -350,23 +360,26 @@ elseif hostname() == 'AsusW202'
   nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
 elseif hostname() == 'sbMb'
   nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
-elseif hostname() == 'HPEB840G362'
+elseif hostname() == 'HPEB840G36'
+  nnoremap <leader>j :Files D:\Dropbox\JH<CR>
+elseif hostname() == 'HPEB840G37'
   nnoremap <leader>j :Files C:\Users\jharr\Dropbox\JH<CR>
 elseif hostname() == 'T430i73520M'
   nnoremap <leader>j :Files C:\Users\troin\Dropbox\JH<CR>
 endif
 
-""> ingo-library
+""> 0 ingo-library
 " $vfp/packs-cp/opt/vim-ingo-library/README.md
 "  required for  vim-mark  vim-ShowTrailingWhitespace
 packadd vim-ingo-library
 
-""> languages
+""> 0 languages
 
 "">> ALE
 " :ALEFix
 " :Bufferize ALEInfo  " shows settings for the filetype
 " :h ale-languagetool-options
+" needs  g:languagetool_jar  defined
 " $vfp/packs-cp/opt/ale/plugin/ale.vim
 
 " Enabled?
@@ -432,7 +445,7 @@ let g:languagetool_win_height = -1
 packadd vim-LanguageTool " then can  :h LanguageTool
 " now preferring  vim-langtool
 
-""> layout
+""> 0 layout
 
 "">> characterize.vim
 " enhances  ga
@@ -451,6 +464,7 @@ let g:colorizer_disable_bufleave = 1
   autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
 
 let g:Hexokinase_highlighters = ['foregroundfull']
+" $vfp/packs-unix/opt/vim-hexokinase/README.md
 
 "">> color schemes
 " no need to  packadd
@@ -509,6 +523,10 @@ endfunction
 "">>> vim-ShowTrailingWhitespace
 if g:useSTW | packadd vim-ShowTrailingWhitespace | endif  " requires  ingo-library
 
+"">> lf.vim
+" $vfp/packs-cp/opt/lf-vim/README.md
+packadd lf-vim
+
 "">> nerdfont.vim
 " packadd nerdfont.vim
 
@@ -539,7 +557,7 @@ packadd vim-fontsize
 " <Leader><Leader>- -> smaller font
 " <Leader><Leader>0 -> default font size
 
-""> shell
+""> 0 shell
 
 "">> calendar-vim
 let g:calendar_monday = 1
@@ -698,7 +716,7 @@ if has('unix')
   nmap <unique> <leader>pb <Plug>(PickerBuffer)
 endif
 
-""> text wrangling
+""> 0 text wrangling
 
 "">> aligning
 
@@ -841,7 +859,7 @@ nmap <leader>s <plug>(SubversiveSubstituteRangeConfirm)
 
 packadd vim-surround
 
-""> vim
+""> 0 vim
 
 "">> buffers
 
@@ -911,4 +929,10 @@ packadd vim-peekaboo
 
 "">> vim-repeat
 packadd vim-repeat
+
+""> 1 nvim
+
+"">> vim-nerdtree-syntax-highlight
+
+"">> neo-tree.nvim
 

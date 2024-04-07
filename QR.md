@@ -65,6 +65,11 @@ Joseph's (g)Vim Quick Reference
     c-r%     " insert relative path of current file
     c-qu201c " unicode codepoint for “
 
+## indent of current line
+    0 c-d " remove all indents
+    c-d   " remove a shiftwidth
+    c-t   " insert a shiftwidth
+
 # layout
     :Prettier     " apply  prettier  to json & others
     :se gfn=*     " pop-up font selection
@@ -213,8 +218,19 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     C-f       " forward (= down) a page
     C-u       " up half a screen
     C-y       " scroll down the window, without displacing the cursor
-    zz        " centre window on cursor
+    zb        " current line at bottom of window
+    zt        " current line at top of window
+    zz        " current line at centre of window
     \zz       " toggle centering current line
+
+# replace
+    :ncc           " change n lines
+    :nrc           " replace n characters with c
+    :s/jpg\C/JPG/  " force case
+
+## reuse matched pattern
+    :h s\\&
+    :s\<pattern>\<new1>&<new2>\ " wraps <pattern> in <new1> & <new2>
 
 # search
     <hash>      " over a word highlights all exact instances, and jumps to last
@@ -281,13 +297,6 @@ z\                    " incsearch-fuzzy-stay
     \ze<endPatternToDiscard>
     <startPatternToDiscard>\zs
 
-## replace
-    s/jpg\C/JPG/  " force case
-
-### reuse matched pattern
-    :h s\\&
-    :s\<pattern>\<new1>&<new2>\ " wraps <pattern> in <new1> & <new2>
-
 # shell
 ```
 :!<shellcmd>          " runs the external shell command
@@ -296,8 +305,9 @@ z\                    " incsearch-fuzzy-stay
 :cd $DJH
 :Locate <pattern>
 :packadd syntastic    " load the plugin from an opt directory
-:r!<shell command>    " reads shell command output into the buffer
-:se shell?            " returns the path to the shell
+:r<file>              " reads <file> into buffer
+:r!<shell_command>    " reads shell command output into buffer
+:se sh                " returns the path to the shell
 :tabe $HOME\_vimrc    " bring up my vimrc in a new tab
 :term
 <shellcmd> | gvim -   " pipes shell command output into gvim
@@ -458,16 +468,11 @@ command-line window: C-c C-c  closes
 :echo getline(1) " contents of line 1
 
 $GHrUse/CP/Vim/vim-vim/README.md
-C:\Vim\vim90\gvim.exe
-r $vimfiles
 vim -u NONE
 vim(1)
 
-$misc/CrossPlatform/vimtest/README.md
+$misc/CP/vimtest/README.md
 ```
-
-    PowerShell command | out-file <file> -encoding utf8BOM  # detected as utf-8
-    PowerShell command > <file>  # detected as latin1
 
 ## buffer listing your recent messages
     :Bufferize messages
@@ -497,6 +502,9 @@ $misc/CrossPlatform/vimtest/README.md
     :Bufferize version     " Vim version etc
     :colo [default]        " current colorscheme
     :let mapleader
+    :se                    " show all modified options
+    :se spc                " pattern for of a sentence
+    :se ttm                " ms timeout for key codes
     :verb se tw            " shows where textwidth was set
 
     $VIMRUNTIME
@@ -534,6 +542,10 @@ options as variable: `:echo &textwidth`
     :sy sync fromstart  " but can't find any way to check this setting
 
 	$VIMRUNTIME/syntax/syncolor.vim
+
+### mappings abbreviations settings
+- linux: `:mk _exrc`
+- MSWin: `:mk`
 
 # Visual mode commands
     V  " line-based visual SELection

@@ -1,5 +1,5 @@
-" Joseph Harriott - Tue 30 Aug 2022
-" ---------------------------------
+
+" Joseph Harriott - mar 19 mars 2024
 
 " $vimfiles/plugin/plugin.vim
 " here I have things that I might, rarely, want to comment out
@@ -49,7 +49,9 @@ nnoremap <leader>sb :buffers<CR>:sbuffer<Space>
 command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
 
 ""> easy q macro
-noremap Q @q
+if v:lang =~ 'en'
+  noremap Q @q
+endif
 
 " qq  starts recording
 " end recording in normal/visual with q
@@ -89,7 +91,7 @@ function! ClearFancyGlyphs()
   :sil!%s/–/-/g
   :sil!%s/—/-/g
   :sil!%s/―/-/g
-  :sil!%s/‐/-/g
+  :sil!%s/‐/-/g  " hyphen (U+2010)
   :sil!%s/­//g  " remove soft hyphen
   :sil!%s/…/.../g
   :sil!%s/，/,/g
@@ -101,6 +103,7 @@ function! ClearFancyGlyphs()
   :sil!%s/⟩/>/g
   :sil!%s/→/-->/g
   :sil!%s/⧹/\\/g  " normalise big backslash
+  :sil!%s#⧸#/#g
 endfunction
 
 ""> format - clear mathematical alphanumeric symbols
@@ -160,29 +163,42 @@ function! ClearMAS()
   :sil!s/\v𝐳|𝑧|𝒛|𝗓|𝘇|𝘻|𝙯|𝓏|𝔃|𝔷|𝖟|𝚣|𝕫/z/g
 endfunction
 
-""> format - date abbreviations
+""> format - date
+function! DateFr()
+  exe ":norm a".strftime('%a %d %b %Y')
+  norm F.x;xeee
+  " - remove periods
+endfunction
+
+"">> abbreviations
 iabbrev <expr> d8- strftime("%y-%m-%d")
 iabbrev <expr> d8a strftime("%Y-%m-%d-%a")
 iabbrev <expr> d8c strftime("%y%m%d")
-iabbrev <expr> d8d strftime("%a %d %b %Y")
+if v:lang =~ 'gb'
+  iabbrev <expr> d8d strftime("%a %d %b %Y")
+else " assume fr
+  inoremap <leader>_ <Esc>:call DateFr()<cr>
+  nnoremap <leader>_ :call DateFr()<cr>
+  vnoremap <leader>_ <Esc>:call DateFr()<cr>
+endif
 iabbrev <expr> d8l strftime("%Hh%M %a %d %b %Y")
 iabbrev <expr> d8m strftime("%y%m%d-%Hh%Mm")
 iabbrev <expr> d8p strftime("%Y-%m-%d %H:%M")
 iabbrev <expr> d8s strftime("%d/%m/%y")
 iabbrev <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
-""> format - put date in other language
+"">> in other language
 if has('unix')
   if v:lang =~ 'gb'
-    noremap <leader>yp :lan fr_FR.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan en_GB.UTF-8<CR>:s/\.//g<cr>:noh<cr>
+    noremap <leader>yp :lan fr_FR.UTF-8<CR>:call DateFr()<CR>:lan en_GB.UTF-8<CR>
   else
-    noremap <leader>yp :lan en_GB.UTF-8<CR>:pu=strftime('%a %d %b %Y')<CR>:lan fr_FR.UTF-8<CR>
+    noremap <leader>yp :lan en_GB.UTF-8<CR>:exe ":norm a".strftime('%a %d %b %Y')<CR>:lan fr_FR.UTF-8<CR>
   endif
 elseif has('win32')
   if v:lang =~ 'fr'
-    noremap <leader>yp :lan tim English_United Kingdom<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim French<CR>
+    noremap <leader>yp :lan tim English_United Kingdom<CR>:exe ":norm a".strftime('%a %d %b %Y')<CR>:lan tim French<CR>
   else
-    noremap <leader>yp :lan tim French<CR>:pu=strftime('%a %d %b %Y')<CR>:lan tim English_United Kingdom<CR>:s/\.//g<cr>:noh<cr>
+    noremap <leader>yp :lan tim French<CR>:call DateFr()<CR>:lan tim English_United Kingdom<CR>
   endif
 endif
 

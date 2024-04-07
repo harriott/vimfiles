@@ -11,7 +11,7 @@ if $VIM == '/usr/share/vim' | finish | endif  " (adapted for Git-2.8.1-64-bit.ex
 
 ""> 1 vimrc_example.vim
 if !has('nvim')
-  source $HOME/vimfiles/vimrc_example.vim  " $vimfiles/vimrc_example.vim
+  source $HOME/vim/vimenter/vimrc_example.vim  " $vimfiles/vimrc_example.vim
 endif
 
 ""> 2 mswin.vim
@@ -55,7 +55,7 @@ function! ColorLightDark()
 endfunction
 
 "">> continue vimrc
-source $HOME/vimfiles/vimrc.vim  " $vimfiles/vimrc.vim
+source $HOME/vim/vimenter/vimrc.vim  " $vimfiles/vimrc.vim
 
 "">> ensure vimswap
 if isdirectory($HOME.'/.vimswap') == 0

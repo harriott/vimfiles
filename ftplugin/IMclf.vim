@@ -1,9 +1,13 @@
 
-" Language: convert -list font
+" Language: IMclf ($OSAB/QR.md)
 " Maintainer: Joseph Harriott
-" Last Change: Wed 08 Dec 2021
+" Last Change: mer 03 avr 2024
 
-" f=$CrPl/IMclf-sbMb.txt; echo "vim: ft=IMclf fdm=expr:" > $f; convert -list font >> $f
+" $vimfiles/ftplugin/IMclf.vim
+"  also  $vimfiles/syntax/IMclf.vim
+"  configured in  $vimfiles/filetype.vim
+
+set fdm=expr
 
 " folding
 " -------

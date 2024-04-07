@@ -11,6 +11,6 @@ foreach ($group in 'cp', 'unix', 'win32') {
 }
 echo $vimfiles\plugin\fzf >> all.txt
 
-Write-Host " don't forget to " -nonewline
+Write-Host " try to " -nonewline
   Write-Host ":helptags ALL" -foregroundcolor red -backgroundcolor yellow -nonewline
 

@@ -6,34 +6,31 @@
 # run this when you want to update your remote plugins
 
 #=> 0 pulls
-$snagged = fzf.vim
-gci -Directory ..\*\*\* | sort |
-foreach{
-  if ( $snagged ) {
-    if ( $_ = $snagged ) {
-    $snagged
-    }
+# $pull = 'GO'  # comment out if setting  $start
+# $start = 'FoldText'
+$repos0 = (ls ..\*\*\* -directory)
+$repos1 = $repos0 | sort
+foreach ($repo in $repos1) {
+  $rn = $repo.name
+  if ( $rn -eq $start ) { $pull = 'GO' }
+  if ( $pull -eq 'GO' ) {
+    "$($PSStyle.foreground.BrightYellow)$rn$($PSStyle.reset)"
+    sl $repo
+    rg url .git/config --color=never -N --trim
+    git pull --depth 1; if( -not $? ) { exit }
   }
-  continue
-  [System.Console]::BackgroundColor = 'DarkCyan'
-  [System.Console]::ForegroundColor = 'White'
-    Write-Host $_.basename -nonewline
-  [System.Console]::ResetColor()
-  '' # gets the colour reset done
-  sl $_
-  git pull
-  if( -not $? ) { exit }
 }
+sl $vfp\Win10
 
-# #=> 1 fzf
-# sl $vimfiles\plugin\fzf
-# ri -recurse install
-# ri -recurse test/test_go.rb
-# git pull
+#=> 1 fzf
+sl $vimfiles\plugin\fzf
+ri -recurse install
+ri -recurse test/test_go.rb
+git pull --depth 1
 
 #=> 2 my forks
 
-# #=> 3 tidy up
-# sl $vfp\Win10
-# .\lists.ps1
+#=> 3 tidy up
+sl $vfp\Win10
+.\after.ps1
 

@@ -1,7 +1,7 @@
 
 " $vimfiles/vimrc-Arch.vim  sourced from my  $ABjo/textEdit/Vim/vimrc
 
-source $HOME/.vim/vimrc-GNULinux.vim  " $vimfiles/vimrc-GNULinux.vim
+source $HOME/.vim/vimenter/vimrc-GNULinux.vim  " $vimfiles/vimrc-GNULinux.vim
 
 if hostname() == 'AsusW202'
   set redrawtime=4000  " for  linux-pn.dw

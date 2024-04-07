@@ -21,6 +21,7 @@
 ../packs-cp/opt/Highlight.vim
 ../packs-cp/opt/incsearch-fuzzy.vim
 ../packs-cp/opt/incsearch.vim
+../packs-cp/opt/lf-vim
 ../packs-cp/opt/limelight.vim
 ../packs-cp/opt/listtoggle
 ../packs-cp/opt/MatchTagAlways
@@ -39,7 +40,6 @@
 ../packs-cp/opt/syntastic
 ../packs-cp/opt/tabular
 ../packs-cp/opt/tagalong.vim
-../packs-cp/opt/tagbar
 ../packs-cp/opt/targets.vim
 ../packs-cp/opt/thesaurus_query.vim
 ../packs-cp/opt/undotree
@@ -94,6 +94,7 @@
 ../packs-cp/opt/vim-startify
 ../packs-cp/opt/vim-subversive
 ../packs-cp/opt/vim-surround
+../packs-cp/opt/vim-tagbar
 ../packs-cp/opt/vimtex
 ../packs-cp/opt/vim-textmanip
 ../packs-cp/opt/vim-visual-star-search
