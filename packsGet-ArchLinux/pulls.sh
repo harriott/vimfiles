@@ -3,7 +3,7 @@
 
 # Joseph Harriott, Sun 29 Jan 2023
 
-# $vfp/ArchLinux/pulls.sh
+# $vimfiles/packsGet-ArchLinux/pulls.sh
 # bash pulls.sh  when you want to update your remote plugins
 
 set -e  # quits on error

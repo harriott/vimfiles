@@ -1,20 +1,18 @@
 #!/bin/bash
-# vim: sw=2:
+# vim: fdl=1 sw=2:
 
 # Joseph Harriott
 # grab repositories
-# bash $vfp/ArchLinux/clones.sh
+# bash $vimfiles/packsGet-ArchLinux/clones.sh
 
 set -e
-
-cdp="cd $HOME/.vim/pack"
 
 #=> 1 packs
 gcfbn='git clone --filter=blob:none'
 gd(){ echo $1; [[ -d $1 ]] || mkdir $1; cd $1; }
 
-#==> 0 cp
-echo; $cdp; gd packs-cp
+#==> cp
+echo; cd $vimfiles/vim; gd packs-cp
 
 gd opt; ls
 
@@ -115,6 +113,7 @@ gd opt; ls
   # $gcfbn https://github.com/vim-scripts/vis
   # $gcfbn https://github.com/harriott/vim-markdown
   # $gcfbn https://github.com/harriott/vim-tagbar
+  # $gcfbn https://github.com/EdenEast/nightfox.nvim
 
   # $gcfbn https://github.com/vim-scripts/MultipleSearch
   # $gcfbn https://github.com/moll/vim-bbye
@@ -123,8 +122,15 @@ gd opt; ls
   # [[ -d tagbar ]] && sudo rm -r tagbar; $gcfbn https://github.com/preservim/tagbar
   # [[ -d vim-gitgutter ]] && sudo rm -r vim-gitgutter; $gcfbn https://github.com/airblade/vim-gitgutter
 
-#==> 0 unix
-echo; $cdp; gd packs-unix
+#==> nvim
+echo; cd $vimfiles/nvim; gd packs-nvim
+
+gd opt; ls
+
+  # $gcfbn https://github.com/nanozuki/tabby.nvim
+
+#==> unix
+echo; cd $vimfiles/vim; gd packs-unix
 
 gd opt; ls
 
@@ -138,17 +144,12 @@ gd opt; ls
   # $gcfbn https://github.com/sheerun/vim-wombat-scheme
   # $gcfbn https://github.com/powerman/vim-plugin-AnsiEsc
 
-#==> 0 win32
-echo; $cdp; gd packs-win32
-
-gd opt; ls
-
-#==> 0 nvim
-echo; $cdp; gd packs-nvim
+#==> win32
+echo; cd $vimfiles/vim; gd packs-win32
 
 gd opt; ls
 
 #=> 2 lists
 echo; $cdp
-cd ArchLinux; . after.sh
+cd $vimfiles/packsGet-ArchLinux; . after.sh
 

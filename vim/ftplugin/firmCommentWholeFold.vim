@@ -2,9 +2,10 @@
 
 " Maintainer: Joseph Harriott
 " Last Change: Mon 18 Oct 2021
+  " $vimfiles/vim/ftplugin/firmCommentWholeFold.vim
   " used by
-  "   $vimfiles/ftplugin/HashEqualsFolding.vim
-  "   $vimfiles/ftplugin/vim.vim
+  "   $vimfiles/vim/ftplugin/HashEqualsFolding.vim
+  "   $vimfiles/vim/ftplugin/vim.vim
 
 ""> turn off or on a fold of commands
 

@@ -2,9 +2,9 @@
 " my portable vimrc - settings that work in both MSWin & GNU+Linux - Joseph Harriott
 " ----------------------------------------------------------------------------------
 
-" $vimfiles/vimrc.vim  sourced by
-"  $vimfiles/vimrc-GNULinux.vim
-"  $vimfiles\vimrc-Win10.vim
+" $vimfiles/vim/enter/vimrc.vim  sourced by
+"  $vimfiles/vim/enter/vimrc-GNULinux.vim
+"  $vimfiles\enter\vimrc-Win10.vim
 
 " ------------------------------------------------------------------
 " typically basic Vim settings here - look in plugin folder for more
@@ -13,7 +13,7 @@
 let g:useSTW=''
 set encoding=utf-8  " get this done early
 set mps=(:),{:},[:],<:>
-set nojoinspaces
+set nojoinspaces  " already off in  nvim
 set ssop-=blank ssop-=help
 set ssop+=winpos
 
@@ -35,11 +35,11 @@ endif
 set fillchars=fold:\ 
 " - '\ ' for cleaner folds
 set linebreak number relativenumber
-set laststatus=2  "ls=2  - always display the status line
+set laststatus=2  "ls=2  - always display the status line, already set in nvim
 set wildmode=longest,full
 set wildmenu
 
-set listchars=eol:│,trail:·,tab:»·  "nicer settings for list mode (:h 'list')
+set listchars=eol:│,nbsp:?,trail:·,tab:»·  "nicer settings for list mode (:h 'list')
 
 set history=500  " just guessing here...
 set modelines=4
@@ -50,8 +50,8 @@ set shortmess-=S " display count of matches
 autocmd BufRead,BufNewFile */sudoers setlocal ft=sudoers
 autocmd BufRead,BufNewFile *PowerShell/PSReadLine/ConsoleHost_history.txt setlocal nospell
 
-""> mappings 0 leader for AZERTY
-if v:lang =~ 'fr' | let mapleader = 'ù' | endif  " not reliably run
+" ""> mappings 0 leader for AZERTY
+" if v:lang =~ 'fr' | let mapleader = 'ù' | endif  " only seemed reliable in  nvim
 
 ""> mappings 0 localleader
 let maplocalleader = '='

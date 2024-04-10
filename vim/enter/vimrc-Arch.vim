@@ -1,5 +1,5 @@
 
-" $vimfiles/vimrc-Arch.vim
+" $vimfiles/vim/enter/vimrc-Arch.vim
 " sourced from my
 "  $ABjo/textEdit/Vim/vimrc
 
@@ -41,14 +41,7 @@ else " assume Openbox
 endif
 
 ""> select colorscheme, and plugin for showing trailing white spaces
-if has('nvim')
-  colorscheme jellybeans
-  " colorscheme wombat
-  packadd vim-better-whitespace
-  EnableWhitespace
-  highlight ExtraWhitespace ctermbg=blue
-  let g:better_whitespace_operator=''
-else
+if !has('nvim')
   colorscheme tomorrow
   let g:useSTW = 1
 endif

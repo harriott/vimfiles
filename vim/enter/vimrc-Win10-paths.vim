@@ -8,6 +8,7 @@
 " symlinked in  $MSwin10\mb\symlinks-mostly.ps1
 
 ""> paths
+let $nvim = $HOME.'\AppData\Local\nvim'
 let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'
 let $tex = $HOME.'/AppData/Roaming/MiKTeX/tex'
 if hostname() == 'HPEB840G36'

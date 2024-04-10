@@ -2,9 +2,9 @@
 
 " Joseph Harriott - Mon 25 Sep 2023
 
-" $vimfiles/vimrc_example.vim  sourced by
+" $vimfiles/vim/enter/vimrc_example.vim  sourced by
 "  $vimfiles/vimrc-GNULinux.vim
-"  $vimfiles\vimrc-Win10.vim
+"  $vimfiles\vimrc-Win10.vim  but not for  nvim
 
 ""> 0 some recommended defaults, with adjustments
 source $VIMRUNTIME/vimrc_example.vim

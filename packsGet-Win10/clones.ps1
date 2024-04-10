@@ -2,22 +2,21 @@
 
 # Joseph Harriott
 
-# $vfp\Win10\clones.ps1
-
 # grab repositories
+
+# close vims and in $vimfiles\packsGet-Win10  ./clones.ps1
 
 function dd { if ( test-path $args[0] ) { ri $args[0] -recurse -force } }
 # - needs  Vim  not to be running
 function ensurePath {
-  sl $vfp
-  $packs = 'packs-'+$args[0]+'\opt'
+  $packs = $vimfiles+'\'+$args[0]+'\opt'
   if ( ! ( test-path $packs ) ) { ni $packs -type directory }
   "cd $($packs)"; cd $($packs)
   }
 function gcfbn { git clone --filter=blob:none $args[0] }
 
 #=> 0 cp
-ensurePath cp
+ensurePath vim\packs-cp
 
   # gcfbn git@github.com:harriott/vim-markdown.git
   # gcfbn https://github.com/AndrewRadev/bufferize.vim
@@ -50,18 +49,18 @@ ensurePath cp
   # gcfbn https://github.com/vim-scripts/gitignore.vim
   # gcfbn https://github.com/wellle/targets.vim
   # gcfbn https://github.com/yegappan/mru
-  gcfbn https://github.com/wellle/context.vim
+  # gcfbn https://github.com/wellle/context.vim
 
   # dd dsf.vim; gcfbn https://github.com/AndrewRadev/dsf.vim
   # dd FoldText; gcfbn https://github.com/Konfekt/FoldText
   # dd vim-ShowTrailingWhitespace; gcfbn https://github.com/inkarkat/vim-ShowTrailingWhitespace
 
 #=> 0 unix
-ensurePath unix
+ensurePath vim\packs-unix
 
 
 #=> 0 win32
-ensurePath win32
+ensurePath vim\packs-win32
 
   # gcfbn https://github.com/adelarsq/vim-matchit
   # gcfbn https://github.com/airblade/vim-gitgutter
@@ -84,17 +83,13 @@ ensurePath win32
   # gcfbn https://github.com/vim-airline/vim-airline-themes
   # gcfbn https://github.com/vim-syntastic/syntastic
 
-#=> 1 fzf
-sl $vimfiles\plugin
-dd fzf; gcfbn https://github.com/junegunn/fzf
-# sl $vimfiles\plugin\fzf
-
 #=> 2 nvim
-ensurePath unix
+ensurePath nvim\packs-nvim
 
+  # gcfbn https://github.com/folke/tokyonight.nvim
+  gcfbn https://github.com/nvim-tree/nvim-web-devicons
 
 #=> 3 tidy off
-sl $vfp\Win10
+sl $vimfiles\packsGet-Win10
 .\after.ps1
-cd $PSScriptRoot
 

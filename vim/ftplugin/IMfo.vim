@@ -1,17 +1,17 @@
 
-" Language: IMclf ($OSAB/QR.md)
+" Language: IMfo - see $OSAB/QR.md
 " Maintainer: Joseph Harriott
-" Last Change: mer 03 avr 2024
+" Last Change: Tue 09 Apr 2024
 
-" $vimfiles/ftplugin/IMclf.vim
-"  also  $vimfiles/syntax/IMclf.vim
-"  configured in  $vimfiles/filetype.vim
+" $vimfiles/vim/ftplugin/IMfo.vim
+"  also  $vimfiles/vim/syntax/IMfo.vim
+"  configured in  $vimfiles/vim/filetype.vim
 
 set fdm=expr
 
 " folding
 " -------
-function! IMclf()
+function! FontTree()
 	let j = matchstr(getline(v:lnum), '^Path: ') "defined j, even in no match
 	let k = matchstr(getline(v:lnum), '^  Font: ') "defined k, even in no match
 	if ! empty(j)
@@ -23,5 +23,5 @@ function! IMclf()
     endif
 endfunction
 
-setlocal fde=IMclf() fdc=1
+setlocal fde=FontTree() fdc=1
 

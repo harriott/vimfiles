@@ -1,10 +1,9 @@
 " vim: set fdl=1:
 
-" $vimfiles/gvimrc-Arch.vim  sourced by  $machBld/jo/gvimrc
-" ---------------------------------------------------------
+" $vimfiles/vim/enter/gvimrc-Arch.vim  sourced by  $machBld/jo/gvimrc
 
 " move on to the more portable configuration:
-source $vimfiles/vimenter/gvimrc.vim  " $vimfiles/gvimrc.vim
+source $vimfiles/vim/enter/gvimrc.vim  " $vimfiles/gvimrc.vim
 
 ""> colour scheme
 function! TWSDark()

@@ -9,7 +9,9 @@
 " autocmd BufRead,BufNewFile *.dat set filetype=
 
 ""> vim-devicons
-packadd vim-devicons  " recommended after many others
+if !has('nvim')
+  packadd vim-devicons  " recommended after many others
+endif
   packadd nerdtree  " $jtCP/Vim/plugins/vim-devicons/issue428.md
 
 ""> vim-gitgutter

@@ -6,9 +6,7 @@
 # normally called from a parent script
 
 echo "" > all.txt
-foreach ($group in 'cp', 'unix', 'win32') {
-  gci "..\packs-$group\opt\*" | select -expand FullName >> all.txt
-}
+foreach ($group in ls ../*/packs-*) { ls $group\opt | select -expand FullName >> all.txt }
 echo $vimfiles\plugin\fzf >> all.txt
 
 Write-Host " try to " -nonewline

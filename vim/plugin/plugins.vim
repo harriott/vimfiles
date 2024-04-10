@@ -1,7 +1,7 @@
 
-" https://harriott.github.io/ - Sun 05 Feb 2023
+" https://harriott.github.io/ - d8d
 
-" $vimfiles/plugin/plugins.vim
+" $vimfiles/vim/plugin/plugins.vim
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
@@ -15,7 +15,9 @@ packadd vim-plugin-AnsiEsc
 packadd minimap.vim
 
 "">> context.vim
-" :ContextToggle
+" :ContextToggleWindow  mapped in
+"  $vimfiles/vim/ftplugin/perl.vim
+"  $vimfiles/vim/ftplugin/ps1.vim
 let g:context_enabled = 0
 packadd context.vim
 
@@ -32,8 +34,7 @@ packadd dsf.vim
 "">> Git
 
 "">>> Flog
-" :Flog
-" :Floggit
+" :Flog  " tab of commits
 packadd vim-flog
 
 "">>> gitignore.vim
@@ -70,6 +71,7 @@ packadd vim-fugitive
 let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
 packadd vim-gitgutter
+" $vimfiles/after/plugin/plugins.vim
 
 "">>>> toggle
 let g:GGF = 0
@@ -256,6 +258,7 @@ packadd vim-ps1
 " [m  or  ]m  " move to previous or next environment
 " =li  or  =lI  " vimtex-info  or  vimtex-info-full
 " =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
+if has('win32') | let g:vimtex_view_general_viewer = 'C:\SumatraPDF\SumatraPDF.exe' | endif
 let g:vimtex_compiler_enabled = 0
 let g:vimtex_compiler_silent = 1  " doesn't hide the «latexmk is not executable» message
 let g:vimtex_fold_enabled = 1
@@ -342,14 +345,10 @@ inoremap <F9> <Esc>:History/<CR>
 vnoremap <F9> <Esc>:History/<CR>
 if has('win32')
   nnoremap <S-F9> call popup_clear(1):<CR>
+  packadd fzf
 endif
 
 " :Maps  = normal mode mappings
-
-" Win10:
-" junegunn/fzf  at  $vimfiles\plugin\fzf,
-"  because  fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
-"  (the advice at  $vimfiles/plugin/fzf/README-VIM.md  ain't correct)
 
 "">> \j
 " in ~/.vim: rg '>j' --no-ignore
@@ -467,19 +466,24 @@ let g:Hexokinase_highlighters = ['foregroundfull']
 " $vfp/packs-unix/opt/vim-hexokinase/README.md
 
 "">> color schemes
-" no need to  packadd
+" no need to  packadd  for Vim
 
 "">>> jellybeans.vim
-" see $vimfiles/vimrc-Arch.vim
+" $vimfiles/nvim/init.vim
+
+"">>> nightfox.nvim
+" $vimfiles/nvim/init.vim
 
 "">>> vim-colors-solarized
-" packadd vim-colors-solarized
+" kept in reserve, replaced by  vim-colors-tomorrow
 
 "">>> vim-colors-tomorrow
-" packadd vim-colors-tomorrow  " colorscheme tomorrow
+" $vimfiles/vim/enter/gvimrc-Arch.vim
+" $vimfiles/vim/enter/vimrc-Arch.vim
+" $vimfiles/vim/enter/vimrc-Win10.vim
 
 "">>> vim-wombat-scheme
-" optionally added for neovim
+" $vimfiles/nvim/init.vim
 
 "">> FastFold
 " let g:fastfold_fold_command_suffixes = []
@@ -549,7 +553,7 @@ if has('win32')
 endif
 
 "">> vim-devicons
-" loaded in  $vimfiles/after/plugin/plugins.vim
+" loaded in  $vimfiles/vim/after/plugin/plugins.vim
 
 "">> vim-fontsize
 packadd vim-fontsize
@@ -585,7 +589,7 @@ packadd ctrlp.vim
 
 "">> Fern
 " vim default c-e = scroll up the window, without displacing the cursor
-noremap <C-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
+noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
 packadd fern.vim " $vfp/packs-cp/opt/fern.vim/README.md
 " ! -- toggles hidden
 " + -- vim-buffing-wheel override (quits)
@@ -609,8 +613,8 @@ augroup fern-settings
 augroup END
 function! s:fern_settings() abort
   nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
-  nmap <silent> <buffer> <C-d> <Plug>(fern-action-preview:scroll:down:half)
-  nmap <silent> <buffer> <C-u> <Plug>(fern-action-preview:scroll:up:half)
+  nmap <silent> <buffer> <c-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <c-u> <Plug>(fern-action-preview:scroll:up:half)
 endfunction
 packadd fern-preview.vim
 
@@ -622,20 +626,11 @@ packadd fern-renderer-nerdfont.vim
 " $vfp/packs-cp/opt/mru/README.md
 " $vimfiles/syntax/mru.vim
 let MRU_Max_Entries = 1000
-if has('unix')
-  let MRU_Window_Height = 20
-else
-  let MRU_Window_Height = 30
-endif
+let MRU_Window_Height = 20
 " - which is overriden by this:
 " let MRU_Use_Current_Window = 1
 
-if has('unix')
-  nnoremap <leader>m :MRU
-  " - allows for a qualifying regex
-else
-  nnoremap <leader>m :MRU<CR>
-endif
+nnoremap <leader>m :MRU
 packadd mru
 
 " $HOME/.vim_mru_files
@@ -874,6 +869,7 @@ noremap <silent> <leader>be :BufExplorer<CR>
 "  <Leader>bv - Opens vertically split window BufExplorer
 
 "">>> bufferize.vim
+" :Bufferize <something>  is handy, but the buffer's fragile...
 packadd bufferize.vim
 
 "">>> close-buffers.vim
@@ -897,7 +893,7 @@ packadd vim-bufkill
 let g:BufKillCreateMappings = 0
 
 " :bd  maintaining splits
-noremap <silent> <leader>dd :BD<CR>
+noremap <silent> <leader><leader>d :BD<CR>
 
 "">> location/quickfix list
 

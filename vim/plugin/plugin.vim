@@ -42,9 +42,6 @@ nnoremap <F5> :wa<CR>:edit<CR>
 inoremap <F5> <Esc>:wa<CR>:e<CR>
 vnoremap <F5> <Esc>:wa<CR>:e<CR>
 
-""> buffer - split window to a buffer
-nnoremap <leader>sb :buffers<CR>:sbuffer<Space>
-
 ""> clear registers b-z
 command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
 
@@ -366,76 +363,83 @@ let g:vim_indent_cont = &sw
 " XML syntax folding on:
 let g:xml_syntax_folding = 1
 
-""> grab my settings
-function! GrabWrite(toGrab)
-  " only to be called from within a parent function that has just before opened an empty buffer
-  silent execute 'Bufferize ' . a:toGrab
-  blast
+""> grab Vim settings - all commands
+function! AllCommands()
+  silent execute 'Bufferize command'
+  winc k
   normal! ggVGd
   bdelete
   blast
   normal! p
   write
 endfunction
+" for use in  $vimfiles/settings/*-commands-*.txt
 
-"">> called from  $vimfiles/grab/all.sh
-function! GrabCommands()
-  exe 'edit '.g:vimfiles.'/grabbed/commands.txt'
-  normal! VGd
-  call GrabWrite("command")
-endfunction
-
-function! GrabFnMaps()
-  exe 'edit '.g:vimfiles.'/grabbed/FnMaps.txt'
-  normal! ggVGd
-  call GrabWrite("map|map!")
+""> grab Vim settings - maps of function keys
+function! BmmFn()
+  silent execute 'Bufferize map|map!'
+  winc k
   v/<.\=.\=F.*>/d
   nohlsearch
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
   write
 endfunction
+" for use in  $vimfiles/settings/*-FnMaps-*.txt
 
-function! GrabPlugMaps()
-  exe 'edit '.g:vimfiles.'/grabbed/PlugMaps.txt'
-  normal! ggVGd
-  call GrabWrite("map|map!")
-  v/<Plug>/d
-  nohlsearch
+""> grab Vim settings - mkexrc
+function! MK()
+  cd $vimfiles/settings
+  let $mkh = 'vim.exrc'
+  if has('nvim')  | let $mkh =  'n'.$mkh | endif
+  if has('unix')  | let $mkh =  'unix-'.$mkh | endif
+  if has('win32') | let $mkh = 'win32-'.$mkh | endif
+  call delete($mkh)
+  mkexrc $mkh
+  edit $mkh
+  sil %s//<esc>/g
+  sil %s//<cr>/g
+  sil %s//<c-w>/g
+  sil %s//<bar>/g
+  norm ggO" vim: se nowrap:
   write
+  edit  " invokes the nowrap
+  let $mkh = $host.'.exrc'
 endfunction
+" call MK() makes  $vimfiles/settings/*-*.exrc - tidied settings, including all the package mappings
 
-" grab runtimepath
-function! GrabRtp()
-  exe 'edit '.g:vimfiles.'/grabbed/runtimepath.txt'
-  normal! ggVGd
-  call GrabWrite("echo &runtimepath")
-  %s/,/\r/g
-  nohlsearch
-  write
-endfunction
-
-function! GrabScriptnames()
-  exe 'edit '.g:vimfiles.'/grabbed/scriptnames-'.hostname().'.txt'
-  normal! ggVGd
-  call GrabWrite("scriptnames")
-endfunction
-
-function! GrabSimpleMaps()
-  exe 'edit '.g:vimfiles.'/grabbed/simpleMaps.txt'
-  normal! ggVGd
-  call GrabWrite("map|map!")
+""> grab Vim settings - simple maps
+function! SimpleMaps()
+  silent execute 'Bufferize map|map!'
+  winc k
   silent! exe 'g/<.\=.\=F.*>/d'
   silent! exe 'g/<Plug>/d'
   silent! exe 'g/<SNR>/d'
   g/ /d " non-breaking space
   nohlsearch
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
   write
 endfunction
+" for use in  $vimfiles/settings/*-simpleMaps-*.txt
 
-""> layout
-" new buffer split vertically
-nnoremap <leader>vn :vnew<CR>
+""> grab Vim settings - scriptnames
+function! Scriptnames()
+  silent execute 'Bufferize scriptnames'
+  winc k
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
+" for use in  $vimfiles/settings/*-scriptnames-*.fetl
 
-""> clearmatches
+""> layout - clearmatches
 " see  $jtCP/Vim/plugins/csv_vim-HiColumnLeaky/issue.md
 inoremap <leader><f5> :call clearmatches()<cr>
 nnoremap <leader><f5> :call clearmatches()<cr>
@@ -446,10 +450,23 @@ nnoremap <leader><f5> :call clearmatches()<cr>
 " overriden by  vim-airline  extension  tabline
 
 ""> layout - toggle centering current line
-nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 ""> layout - toggle relativenumber
 nnoremap <silent><leader>rn :set rnu! rnu? <CR>
+
+""> layout - windows
+" new buffer split vertically
+nnoremap <leader>vn :vnew<CR>
+
+nnoremap <leader>hh :call SplitHtoggle()<CR>
+function! SplitHtoggle()
+  if winnr() == winnr('$') | split | else | only | endif
+endfunction
+nnoremap <leader>vv :call SplitVtoggle()<CR>
+function! SplitVtoggle()
+  if winnr() == winnr('$') | vsplit | else | only | endif
+endfunction
 
 ""> maxmempattern
 " set mmp=90000  " for $TeNo/TN/JH-DailyLife/Health/Ingest/Regimes.md

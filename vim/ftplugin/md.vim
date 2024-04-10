@@ -3,7 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Thu 13 Jul 2023
 " this is for extra funtionality that I like for my *.md files
-" $vimfiles/ftplugin/md.vim  supplemental to  $vimfiles/ftplugin/markdown.vim
+" $vimfiles/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
 "  this configuration file is sourced as needed by  $vimfiles/filetype.vim
 

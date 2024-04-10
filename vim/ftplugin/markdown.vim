@@ -3,15 +3,15 @@
 " Language: markdown
 " Maintainer: Joseph Harriott
 " Last Change: Sun 30 Jul 2023
-" $vimfiles/ftplugin/markdown.vim
+" $vimfiles/vim/ftplugin/markdown.vim
 "  supplementary to
-"   [ $vfp/packs-cp/opt/vim-markdown/README.md ]
+"   [ $vimfiles/vim/packs-cp/opt/vim-markdown/README.md ]
 "   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/ftplugin/html.vim )
 
 " Filetype detection:
-"  $vimfiles/filetype.vim
+"  $vimfiles/vim/filetype.vim
 "  $VIMRUNTIME/filetype.vim
-"  $vfp/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
+"  $vimfiles/vim/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
 
 setlocal expandtab
 
@@ -19,7 +19,7 @@ setlocal expandtab
 vnoremap <buffer>= <Nop>
 
 " ALE
-let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/plugin/plugins.vim
+let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/vim/plugin/plugins.vim
 let b:ale_linters = ['languagetool']
 
 " demote a selected part

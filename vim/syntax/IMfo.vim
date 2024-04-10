@@ -1,10 +1,10 @@
 
-" Language: IMclf ($OSAB/QR.md)
+" Language: IMfo ($OSAB/QR.md)
 " Maintainer: Joseph Harriott
-" Last Change: mer 03 avr 2024
+" Last Change: Tue 09 Apr 2024
 
-" $vimfiles/syntax/IMclf.vim
-"  also  $vimfiles/ftplugin/IMclf.vim
+" $vimfiles/vim/syntax/IMfo.vim
+"  also  $vimfiles/vim/ftplugin/IMfo.vim
 "  configured in  $vimfiles/filetype.vim
 
 if exists('b:current_syntax') | finish |  endif
@@ -12,5 +12,5 @@ if exists('b:current_syntax') | finish |  endif
 syntax region fontPath start=/^Path: \|^  Font: / end=/$/
 hi def link fontPath Folded  " for an unobtrusive heading
 
-let b:current_syntax = "IMclf"
+let b:current_syntax = "IMfo"
 

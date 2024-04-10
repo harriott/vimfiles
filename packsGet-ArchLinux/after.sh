@@ -3,25 +3,25 @@
 
 # Joseph Harriott, Mon 18 Oct 2021
 
+# bash $vimfiles/packsGet-ArchLinux/after.sh
+
 # some tweaks on plugins
 
 # called at end of
-#  $vfp/ArchLinux/clones.sh
-#  $vfp/ArchLinux/pulls.sh
-
-# bash $vfp/ArchLinux/after.sh
+#  $vimfiles/packsGet-ArchLinux/clones.sh
+#  $vimfiles/packsGet-ArchLinux/pulls.sh
 
 set -e
 
 #=> 0 hexokinase
 echo -e "\e[1m make hexokinase \e[0m"
-cd $vfp/packs-unix/opt/vim-hexokinase
+cd $vimfiles/vim/packs-unix/opt/vim-hexokinase
 make hexokinase
-cd ../../../ArchLinux
+cd $vimfiles/packsGet-ArchLinux
 
 #=> 0 vim-ShowTrailingWhitespace
-sed -i 's/^c/" c/' ../packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
+sed -i 's/^c/" c/' $vimfiles/vim/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
 
 #=> 1 lists
-. lists.sh
+. $vimfiles/packsGet-ArchLinux/lists.sh
 

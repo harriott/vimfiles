@@ -1,7 +1,7 @@
 " My adjustments
 " Language: dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: dim. 21 janv. 2024
+" Last Change: Mon 08 Apr 2024
 " $vimfiles/ftplugin/dokuwiki.vim
 
 " tweaked  $vfp/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax
@@ -10,8 +10,7 @@ function! PageTitleToHyperlink()
   let l:pagetitle = getreg('"')
   execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
 endfunction
-vnoremap <buffer><leader>hh y:call PageTitleToHyperlink()<CR>
-" (I'm using two h's because  gitgutter.vim  binds some \hx's)
+vnoremap <buffer><leader>hy :call PageTitleToHyperlink()<CR>
 
 " convert a line to external link
 nnoremap <buffer><leader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>

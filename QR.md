@@ -12,6 +12,8 @@ Joseph's (g)Vim Quick Reference
     :helpt ALL               " generate all tags
     :helptags $HOME\vimfiles " se tags
 
+- Stack Exchange Vi and Vim
+
 # buffers
     'J      " bring up file marked with J (as saved in viminfo) into buffer
     :BD     " :bd maintaining splits
@@ -223,6 +225,12 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     zz        " current line at centre of window
     \zz       " toggle centering current line
 
+# nvim
+    fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
+    fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
+
+- `:che` (`:checkhealth`)
+
 # replace
     :ncc           " change n lines
     :nrc           " replace n characters with c
@@ -370,7 +378,7 @@ gf          " open file under cursor - :h gF
 &                            " repeat last substitute
 :exe
 :g\^\m 0                     " reverse the entire buffer
-:ni<somecharacter><Enter>    " inserts <somecharacters> n time
+:ni<somecharacter><enter>    " inserts <somecharacters> n time
 :h g_CTRL-G                  " position and word info, works on a range too
 :t.                          " reproduce line
 :t.|s\.\=\g                  " setext-style header underlining
@@ -513,17 +521,26 @@ $misc/CP/vimtest/README.md
 
 options as variable: `:echo &textwidth`
 
+### export
+1. `:cd $vimfiles/grab`
+1. `mk sbMb.exrc`
+1. in `$vimfiles/grab`,
+%s//<esc>/g
+
+mappings abbreviations settings
+
 ### mappings
-    :Bufferize map                     " n v s
-    :Bufferize map!                    " i e
+    :Bufferize map                     " n s v
+    :Bufferize map!                    " e i
+    :Bufferize map|map!                " e i n s v
     :Bufferize verb map <LocalLeader>q " where that mapping was set
     :map <c-n>                         " shows the mapping
 
 ### runtimepath
     :Bufferize echo &rtp
     :Bufferize se rtp
-    :s/,/\r/g
     :se pp  " packpath
+    $vimfiles/grab/rtp-$host.fetl
 
 ### syntax highlighting
 	:h syn-region
@@ -542,10 +559,6 @@ options as variable: `:echo &textwidth`
     :sy sync fromstart  " but can't find any way to check this setting
 
 	$VIMRUNTIME/syntax/syncolor.vim
-
-### mappings abbreviations settings
-- linux: `:mk _exrc`
-- MSWin: `:mk`
 
 # Visual mode commands
     V  " line-based visual SELection

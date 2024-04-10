@@ -2,14 +2,14 @@
 # These are the files that I want to ignore:
 *.fetl
 *.pdf
-.directory
-.netrwhist
-grabbed/
-plugin/fzf
 **/*/packs-cp
 **/*/packs-nvim
 **/*/packs-unix
 **/*/packs-win32
+.directory
+.netrwhist
+grabbed/
+plugin/fzf
 profile.log
 scratch.vim
 spell/

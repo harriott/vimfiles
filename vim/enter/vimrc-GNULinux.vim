@@ -1,5 +1,6 @@
 
-" $vimfiles/vimrc-GNULinux.vim  source'd from my  $vimfiles/vimrc-Arch.vim
+" $vimfiles/vim/enter/vimrc-GNULinux.vim
+" source'd by  $vimfiles/vim/enter/vimrc-Arch.vim
 
 if has('nvim')
   set title  " for Alacritty
