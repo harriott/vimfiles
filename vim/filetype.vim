@@ -16,8 +16,8 @@ au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dos
 
 ""> 0 special functionality for my .emdr's
 " my email draft format, needs to be seen as  filetype text  for  ALE
-au! BufRead,BufNewFile *.emdr setfiletype text |
-  \ source $vimfiles/vimfiles/ftplugin/emdr.vim | source $vimfiles/syntax/emdr.vim
+au! BufRead,BufNewFile *.emdr setf text |
+  \ source $vimfiles/vim/ftplugin/emdr.vim | source $vimfiles/vim/syntax/emdr.vim
 
 ""> 0 special functionality for my .md's
 au! BufRead,BufNewFile *.md source $vimfiles/vim/ftplugin/md.vim
@@ -26,22 +26,22 @@ au! BufRead,BufNewFile *.md source $vimfiles/vim/ftplugin/md.vim
 if exists("did_load_filetypes") | finish | endif
 aug filetypedetect
     au! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
-    au! BufRead,BufNewFile *.gnudiff setfiletype gnudiff   " $vimfiles/ftplugin/gnudiff.vim
-    au! BufRead,BufNewFile *.digs    setfiletype digs      " $vimfiles/vim/ftplugin/digs.vim
-    au! BufRead,BufNewFile *.dirl    setfiletype dirl      " $vimfiles/vim/syntax/dirl.vim
-    au! BufRead,BufNewFile *.exts    setfiletype exts      " $vimfiles/vim/syntax/exts.vim
-    au! BufRead,BufNewFile *.fetl    setfiletype fetl      " $vimfiles/vim/syntax/fetl.vim
-    au! BufRead,BufNewFile *.gems    setfiletype gems      " $vimfiles/vim/syntax/gems.vim
-    au! BufRead,BufNewFile *.IMfo    setfiletype IMfo      " $vimfiles/vim/ftplugin/IMfo.vim
-    au! BufRead,BufNewFile *.jctl    setfiletype jctl      " $vimfiles/vim/syntax/jctl.vim
-    au! BufRead,BufNewFile *.mail    setfiletype mail      " $vimfiles/vim/syntax/mail.vim
-    au! BufRead,BufNewFile *.osp     setfiletype json      " $vimfiles/vim/syntax/json.vim
-    au! BufRead,BufNewFile *.rgtl    setfiletype rgtl      " $vimfiles/vim/syntax/rgtl.vim
-    au! BufRead,BufNewFile *.sifw    setfiletype sifw      " $vimfiles/vim/syntax/sifw.vim
-    au! BufRead,BufNewFile *.slJH    setfiletype slJH      " $vimfiles/vim/plugin/slJH.vim
-    au! BufRead,BufNewFile *.tbmo    setfiletype tbmo      " $vimfiles/vim/syntax/tbmo.vim
-    au! BufRead,BufNewFile *.toc     setfiletype tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
-    au! BufRead,BufNewFile *.whatsapp setfiletype whatsapp " $vimfiles/vim/syntax/whatsapp.vim
-    au! BufRead,BufNewFile .spacemacs setfiletype lisp
+        \m au! BufRead,BufNewFile *.gnudiff setf gnudiff   " $vimfiles/ftplugin/gnudiff.vim
+        \m au! BufRead,BufNewFile *.digs    setf digs      " $vimfiles/vim/ftplugin/digs.vim
+        \m au! BufRead,BufNewFile *.dirl    setf dirl      " $vimfiles/vim/syntax/dirl.vim
+        \m au! BufRead,BufNewFile *.exts    setf exts      " $vimfiles/vim/syntax/exts.vim
+        \m au! BufRead,BufNewFile *.fetl    setf fetl      " $vimfiles/vim/syntax/fetl.vim
+        \m au! BufRead,BufNewFile *.gems    setf gems      " $vimfiles/vim/syntax/gems.vim
+        \m au! BufRead,BufNewFile *.IMfo    setf IMfo      " $vimfiles/vim/ftplugin/IMfo.vim
+        \m au! BufRead,BufNewFile *.jctl    setf jctl      " $vimfiles/vim/syntax/jctl.vim
+        \m au! BufRead,BufNewFile *.mail    setf mail      " $vimfiles/vim/syntax/mail.vim
+        \m au! BufRead,BufNewFile *.osp     setf json      " $vimfiles/vim/syntax/json.vim
+        \m au! BufRead,BufNewFile *.rgtl    setf rgtl      " $vimfiles/vim/syntax/rgtl.vim
+        \m au! BufRead,BufNewFile *.sifw    setf sifw      " $vimfiles/vim/syntax/sifw.vim
+        \m au! BufRead,BufNewFile *.slJH    setf slJH      " $vimfiles/vim/plugin/slJH.vim
+        \m au! BufRead,BufNewFile *.tbmo    setf tbmo      " $vimfiles/vim/syntax/tbmo.vim
+        \m au! BufRead,BufNewFile *.toc     setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
+        \m au! BufRead,BufNewFile *.whatsapp setf whatsapp " $vimfiles/vim/syntax/whatsapp.vim
+        \m au! BufRead,BufNewFile .spacemacs setf lisp
 aug END  " - overrides  $VIMRUNTIME/filetype.vim
 

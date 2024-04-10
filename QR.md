@@ -533,7 +533,7 @@ mappings abbreviations settings
     :Bufferize map                     " n s v
     :Bufferize map!                    " e i
     :Bufferize map|map!                " e i n s v
-    :Bufferize verb map <LocalLeader>q " where that mapping was set
+    :Bufferize verb map <localleader>q " where that mapping was set
     :map <c-n>                         " shows the mapping
 
 ### runtimepath

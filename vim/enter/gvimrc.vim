@@ -1,3 +1,4 @@
+" vim: set fdl=1:
 
 " $vimfiles/gvimrc.vim
 "  sourced by  $vimfiles/gvimrc-Arch.vim

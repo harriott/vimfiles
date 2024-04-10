@@ -1,7 +1,10 @@
 
 " Joseph Harriott - dim 07 avr 2024
 
-" $vimfiles\vim\enter\vimrc-Win10.vim ($MSwin10\mb\symlinks-mostly.ps1)
+" $vimfiles\vim\enter\vimrc-Win10.vim
+" source'd by
+"  $MSWin10\mb\_vimrc-AZERTY
+" symlinked in  $MSwin10\mb\symlinks-mostly.ps1
 
 if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \
 
