@@ -4,10 +4,11 @@
 
 " configurations that might be tested
 
-""> 0 check that this file's not been sourced
-let g:plugins_vim = 1
+""> 0 check that this file's been sourced
+let g:plugins_vimtest = 1
 
 ""> 1 packages
+" mostly reduced from  $vimfiles/vim/plugin/plugins.vim
 
 " "">> ALE
 " packadd ale
@@ -15,8 +16,10 @@ let g:plugins_vim = 1
 " "">> csv.vim
 " let g:csv_hiGroup = 'DiffChange'  " good in default colourscheme
 
-" "">> fzf.vim
-" packadd fzf.vim
+"">> fzf.vim
+nnoremap <leader><leader> :Lines<CR>
+if has('win32') | packadd fzf | endif
+packadd fzf.vim
 
 " "">> vim-illuminate
 " packadd vim-illuminate

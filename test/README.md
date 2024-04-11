@@ -26,5 +26,5 @@ setup - see [ $vimfiles/README.md ](https://github.com/harriott/vimfiles/blob/ma
     vim -u ~/.vimtest/vimrc.vim $vimfiles/test/test_files/filetypes/test_tex.md
 
 ## MSWin tests
-    vim -u ~/.vimtest/vimrc.vim $vimfiles/test/vimrc.vim
+    C:\Vim\vim91\vim.exe -u ~/vimtest/vimrc.vim "$vimfiles/test/vimrc.vim"
 

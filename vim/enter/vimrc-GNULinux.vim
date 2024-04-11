@@ -6,7 +6,7 @@ if has('nvim')
   set title  " for Alacritty
 else
   " first, some general settings
-  source $vimfiles/vim/enter/vimrc_example.vim  " $vimfiles/vimrc_example.vim
+  source $vimfiles/vim/enter/vimrc_example.vim
 endif
 
 " link unnamed register to X-Windows clipboard:
@@ -25,7 +25,7 @@ set kp=
 
 " Insert key to turn it off:
 "  (useful if there's no keyboard LED for this)
-command! CapsLockOff wa <bar> silent !python $HOME/.vim/XkbLockModifiers.py
+command! CapsLockOff wa <bar> silent !python $vimfiles/XkbLockModifiers.py
 nnoremap <Insert> :CapsLockOff <CR>
 inoremap <Insert> <Esc> :CapsLockOff <CR>
 "  imap <Insert> <Insert>  doesn't work
