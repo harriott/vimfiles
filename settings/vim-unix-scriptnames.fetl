@@ -1,0 +1,285 @@
+
+call GrabScriptnames() " pastes below (see $vimfiles/vim/plugin/plugin.vim)
+
+  1: /etc/vimrc
+  2: /usr/share/vim/vimfiles/archlinux.vim
+  3: ~/.vimrc
+  4: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/vimrc-Arch.vim
+  5: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/vimrc-GNULinux.vim
+  6: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/vimrc_example.vim
+  7: /usr/share/vim/vim91/vimrc_example.vim
+  8: /usr/share/vim/vim91/defaults.vim
+  9: ~/.vim/filetype.vim
+ 10: /usr/share/vim/vim91/filetype.vim
+ 11: /usr/share/vim/vimfiles/ftdetect/PKGBUILD.vim
+ 12: /usr/share/vim/vimfiles/ftdetect/SRCINFO.vim
+ 13: /usr/share/vim/vimfiles/ftdetect/conkyrc.vim
+ 14: /usr/share/vim/vimfiles/ftdetect/espeakfiletype.vim
+ 15: /usr/share/vim/vimfiles/ftdetect/meson.vim
+ 16: /usr/share/vim/vimfiles/ftdetect/nginx.vim
+ 17: /usr/share/vim/vim91/menu.vim
+ 18: /usr/share/vim/vim91/lang/menu_en_gb.utf-8.vim
+ 19: /usr/share/vim/vim91/lang/menu_en_gb.latin1.vim
+ 20: /usr/share/vim/vim91/autoload/paste.vim
+ 21: /usr/share/vim/vim91/ftplugin.vim
+ 22: /usr/share/vim/vim91/indent.vim
+ 23: /usr/share/vim/vim91/syntax/syntax.vim
+ 24: /usr/share/vim/vim91/syntax/synload.vim
+ 25: /usr/share/vim/vim91/syntax/syncolor.vim
+ 26: /usr/share/vim/vim91/colors/lists/default.vim
+ 27: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/vimrc.vim
+ 28: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-colors-tomorrow/colors/tomorrow.vim
+ 29: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/plugin/fzf/plugin/fzf.vim
+ 30: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/plugin/plugin.vim
+ 31: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/plugin/plugins.vim
+ 32: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-unix/opt/vim-plugin-AnsiEsc/plugin/AnsiEscPlugin.vim
+ 33: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-unix/opt/vim-plugin-AnsiEsc/plugin/cecutil.vim
+ 34: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/minimap.vim/plugin/minimap.vim
+ 35: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/context.vim/plugin/context.vim
+ 36: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/context.vim/autoload/context/settings.vim
+ 37: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/dsf.vim/plugin/dsf.vim
+ 38: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-flog/plugin/flog.vim
+ 39: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-flog/plugin/flog_graph_vim.vim
+ 40: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/gitignore.vim/ftdetect/gitignore.vim
+ 41: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-fugitive/plugin/fugitive.vim
+ 42: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-fugitive/ftdetect/fugitive.vim
+ 43: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-gitgutter/plugin/gitgutter.vim
+ 44: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-gitgutter/autoload/gitgutter/utility.vim
+ 45: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-gitgutter/autoload/gitgutter/highlight.vim
+ 46: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-rhubarb/plugin/rhubarb.vim
+ 47: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/csv.vim/plugin/csv.vim
+ 48: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/csv.vim/ftdetect/csv.vim
+ 49: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/emmet-vim/plugin/emmet.vim
+ 50: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
+ 51: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/mediawiki.vim/ftdetect/mediawiki.vim
+ 52: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/MatchTagAlways/plugin/MatchTagAlways.vim
+ 53: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/org.vim/ftdetect/org.vim
+ 54: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/tagalong.vim/plugin/tagalong.vim
+ 55: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vader.vim/plugin/vader.vim
+ 56: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vader.vim/ftdetect/vader.vim
+ 57: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-base64/plugin/base64.vim
+ 58: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-bbcode/ftdetect/bbcode.vim
+ 59: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-closetag/plugin/closetag.vim
+ 60: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
+ 61: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-go/plugin/go.vim
+ 62: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-go/autoload/go/config.vim
+ 63: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-go/autoload/go/util.vim
+ 64: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-go/ftdetect/gofiletype.vim
+ 65: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-hjson/ftdetect/hjson.vim
+ 66: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
+ 67: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-mbsync/ftdetect/mbsync.vim
+ 68: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-pandoc-syntax/plugin/pandoc-syntax-check.vim
+ 69: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/plugin/prettier.vim
+ 70: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/css.vim
+ 71: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/graphql.vim
+ 72: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/html.vim
+ 73: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/javascript.vim
+ 74: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/json.vim
+ 75: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/less.vim
+ 76: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/lua.vim
+ 77: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/markdown.vim
+ 78: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/php.vim
+ 79: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/ruby.vim
+ 80: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/scss.vim
+ 81: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/svelte.vim
+ 82: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/typescript.vim
+ 83: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/vue.vim
+ 84: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/xml.vim
+ 85: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-prettier/ftdetect/yaml.vim
+ 86: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ps1/ftdetect/ps1.vim
+ 87: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ps1/ftdetect/ps1xml.vim
+ 88: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ps1/ftdetect/xml.vim
+ 89: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vimtex/plugin/vimtex.vim
+ 90: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vimtex/ftdetect/cls.vim
+ 91: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vimtex/ftdetect/tex.vim
+ 92: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vimtex/ftdetect/tikz.vim
+ 93: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdcommenter/plugin/nerdcommenter.vim
+ 94: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-tagbar/plugin/tagbar.vim
+ 95: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-matchup/plugin/matchup.vim
+ 96: /usr/share/vim/vim91/plugin/matchparen.vim
+ 97: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-matchup/autoload/matchup.vim
+ 98: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-matchup/autoload/matchup/perf.vim
+ 99: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-matchup/autoload/matchup/loader.vim
+100: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-matchup/autoload/matchup/matchparen.vim
+101: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-unix/opt/vim-ssh-annex/ftdetect/ssh_authorized_keys.vim
+102: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-unix/opt/vim-ssh-annex/ftdetect/ssh_known_hosts.vim
+103: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fzf.vim/plugin/fzf.vim
+104: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ale/plugin/ale.vim
+105: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ale/autoload/ale/balloon.vim
+106: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ale/autoload/ale/code_action.vim
+107: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ale/autoload/ale/events.vim
+108: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/thesaurus_query.vim/plugin/thesaurus_query.vim
+109: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-langtool/plugin/langtool.vim
+110: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-LanguageTool/plugin/LanguageTool.vim
+111: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-characterize/plugin/characterize.vim
+112: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/FoldText/plugin/FoldText.vim
+113: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-illuminate/plugin/illuminate.vim
+114: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ShowTrailingWhitespace/plugin/ShowTrailingWhitespace.vim
+115: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ShowTrailingWhitespace/autoload/ShowTrailingWhitespace/Color.vim
+116: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ingo-library/autoload/ingo/hlgroup.vim
+117: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/lf-vim/ftdetect/lf.vim
+118: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/plugin/airline.vim
+119: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/init.vim
+120: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/parts.vim
+121: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/formatter/short_path.vim
+122: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/util.vim
+123: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline-themes/plugin/airline-themes.vim
+124: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-fontsize/plugin/fontsize.vim
+125: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/calendar-vim/plugin/calendar.vim
+126: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ctrlp.vim/plugin/ctrlp.vim
+127: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ctrlp.vim/autoload/ctrlp/mrufiles.vim
+128: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/plugin/fern.vim
+129: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern-git-status.vim/plugin/fern_git_status.vim
+130: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern-preview.vim/plugin/fern_preview.vim
+131: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/fern/scheme/file/mapping.vim
+132: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/vital/fern.vim
+133: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/vital/_fern/Async/Promise.vim
+134: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/vital/_fern.vim
+135: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/vital/_fern/Async/Later.vim
+136: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern-renderer-nerdfont.vim/plugin/fern_renderer_nerdfont.vim
+137: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/fern.vim
+138: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/vital/_fern/Config.vim
+139: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/mru/plugin/mru.vim
+140: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/open-browser.vim/plugin/openbrowser.vim
+141: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vifm.vim/plugin/vifm.vim
+142: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vifm.vim/autoload/vifm/globals.vim
+143: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vifm.vim/ftdetect/vifm-rename.vim
+144: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vifm.vim/ftdetect/vifm.vim
+145: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-clifm/ftdetect/clifm.vim
+146: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-dirvish/plugin/dirvish.vim
+147: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-dirvish-git/plugin/dirvish_git.vim
+148: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-open-url/plugin/open_url.vim
+149: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-startify/plugin/startify.vim
+150: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-unix/opt/vim-picker/plugin/picker.vim
+151: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-easy-align/plugin/easy_align.vim
+152: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-textmanip/plugin/textmanip.vim
+153: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/incsearch.vim/plugin/incsearch.vim
+154: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/incsearch-fuzzy.vim/plugin/incsearch/fuzzy.vim
+155: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/quick-scope/plugin/quick_scope.vim
+156: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-asterisk/plugin/asterisk.vim
+157: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-easymotion/plugin/EasyMotion.vim
+158: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-mark/plugin/mark.vim
+159: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/supertab/plugin/supertab.vim
+160: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/targets.vim/plugin/targets.vim
+161: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-subversive/plugin/subversive.vim
+162: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-surround/plugin/surround.vim
+163: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/bufexplorer/plugin/bufexplorer.vim
+164: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/bufferize.vim/plugin/bufferize.vim
+165: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/close-buffers.vim/plugin/close-buffers.vim
+166: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-buffing-wheel/plugin/buf.vim
+167: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-bufkill/plugin/bufkill.vim
+168: /usr/share/vim/vim91/pack/dist/opt/cfilter/plugin/cfilter.vim
+169: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/listtoggle/plugin/listtoggle.vim
+170: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-loclist-follow/plugin/loclist-follow.vim
+171: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/undotree/plugin/undotree.vim
+172: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-peekaboo/plugin/peekaboo.vim
+173: /usr/share/vim/vimfiles/plugin/black.vim
+174: /usr/share/vim/vimfiles/plugin/fzf.vim
+175: /usr/share/vim/vimfiles/plugin/redact_pass.vim
+176: /usr/share/vim/vim91/plugin/getscriptPlugin.vim
+177: /usr/share/vim/vim91/plugin/gzip.vim
+178: /usr/share/vim/vim91/plugin/logiPat.vim
+179: /usr/share/vim/vim91/plugin/manpager.vim
+180: /usr/share/vim/vim91/plugin/netrwPlugin.vim
+181: /usr/share/vim/vim91/plugin/rrhelper.vim
+182: /usr/share/vim/vim91/plugin/spellfile.vim
+183: /usr/share/vim/vim91/plugin/tarPlugin.vim
+184: /usr/share/vim/vim91/plugin/tohtml.vim
+185: /usr/share/vim/vim91/plugin/vimballPlugin.vim
+186: /usr/share/vim/vim91/plugin/zipPlugin.vim
+187: /usr/share/vim/vim91/pack/dist/opt/matchit/plugin/matchit.vim
+188: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-matchup/after/plugin/matchit.vim
+189: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/after/plugin/plugins.vim
+190: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-devicons/plugin/webdevicons.vim
+191: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline.vim
+192: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-devicons/autoload/devicons/plugins/ctrlp.vim
+193: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-devicons/autoload/devicons/plugins/startify.vim
+194: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/plugin/NERD_tree.vim
+195: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/autoload/nerdtree.vim
+196: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/path.vim
+197: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/menu_controller.vim
+198: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/menu_item.vim
+199: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/key_map.vim
+200: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/bookmark.vim
+201: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/tree_file_node.vim
+202: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/tree_dir_node.vim
+203: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/opener.vim
+204: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/creator.vim
+205: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/flag_set.vim
+206: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/nerdtree.vim
+207: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/ui.vim
+208: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/event.vim
+209: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/lib/nerdtree/notifier.vim
+210: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/autoload/nerdtree/ui_glue.vim
+211: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/nerdtree_plugin/exec_menuitem.vim
+212: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/nerdtree_plugin/fs_menu.vim
+213: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree/nerdtree_plugin/vcs.vim
+214: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-devicons/nerdtree_plugin/webdevicons.vim
+215: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree-git-plugin/nerdtree_plugin/git_status.vim
+216: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree-git-plugin/autoload/gitstatus.vim
+217: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree-git-plugin/autoload/gitstatus/log.vim
+218: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/nerdtree-git-plugin/autoload/gitstatus/listener.vim
+219: ~/.gvimrc
+220: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/gvimrc-Arch.vim
+221: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/gvimrc.vim
+222: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions.vim
+223: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/quickfix.vim
+224: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/fern.vim
+225: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/netrw.vim
+226: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/fzf.vim
+227: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/term.vim
+228: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/ctrlp.vim
+229: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/undotree.vim
+230: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/hunks.vim
+231: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/tagbar.vim
+232: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/csv.vim
+233: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/branch.vim
+234: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/fugitiveline.vim
+235: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/ale.vim
+236: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/whitespace.vim
+237: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/po.vim
+238: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/wordcount.vim
+239: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/keymap.vim
+240: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vimtex/autoload/vimtex.vim
+241: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/vimtex.vim
+242: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/searchcount.vim
+243: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/dirvish.vim
+244: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/section.vim
+245: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/highlighter.vim
+246: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline-themes/autoload/airline/themes/tomorrow.vim
+247: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/themes.vim
+248: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/builder.vim
+249: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/extensions/default.vim
+250: /usr/share/vim/vim91/scripts.vim
+251: /usr/share/vim/vim91/autoload/dist/script.vim
+252: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-unix/opt/vim-plugin-AnsiEsc/autoload/AnsiEsc.vim
+253: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/undotree/autoload/undotree.vim
+254: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-matchup/autoload/matchup/re.vim
+255: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ale/autoload/ale.vim
+256: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ShowTrailingWhitespace/autoload/ShowTrailingWhitespace.vim
+257: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ShowTrailingWhitespace/autoload/ShowTrailingWhitespace/Filter.vim
+258: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ingo-library/autoload/ingo/fs/path.vim
+259: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ingo-library/autoload/ingo/os.vim
+260: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ingo-library/autoload/ingo/str.vim
+261: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-ingo-library/autoload/ingo/buffer.vim
+262: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ctrlp.vim/autoload/ctrlp/utils.vim
+263: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/context.vim/autoload/context.vim
+264: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/context.vim/autoload/context/util.vim
+265: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/context.vim/autoload/context/popup.vim
+266: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-gitgutter/autoload/gitgutter.vim
+267: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-peekaboo/autoload/peekaboo.vim
+268: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern-git-status.vim/autoload/fern_git_status.vim
+269: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/vital/_fern/Async/CancellationToken.vim
+270: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/fern.vim/autoload/fern/hook.vim
+271: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-illuminate/autoload/illuminate.vim
+272: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-fugitive/autoload/fugitive.vim
+273: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-airline/autoload/airline/async.vim
+274: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-tagbar/autoload/tagbar.vim
+275: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-tagbar/autoload/tagbar/debug.vim
+276: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-tagbar/autoload/tagbar/types/uctags.vim
+277: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/vim-tagbar/autoload/tagbar/prototypes/typeinfo.vim
+278: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ale/autoload/ale/engine.vim
+279: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ale/autoload/ale/statusline.vim
+280: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/ale/autoload/ale/cursor.vim
+281: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/quick-scope/autoload/quick_scope.vim
+282: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-cp/opt/bufferize.vim/autoload/bufferize.vim

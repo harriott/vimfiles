@@ -1,6 +1,5 @@
 
 # These are the files that I want to ignore:
-*.fetl
 *.pdf
 **/*/packs-cp
 **/*/packs-nvim
@@ -8,14 +7,10 @@
 **/*/packs-win32
 .directory
 .netrwhist
-grabbed/
-plugin/fzf
-profile.log
 scratch.vim
-spell/
 tags
 tags-cn
 tags-te
-thesaurus/
-Vims-searchString.txt
+thesaurus
+vim/spell
 

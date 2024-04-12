@@ -225,11 +225,16 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     zz        " current line at centre of window
     \zz       " toggle centering current line
 
-# nvim
+# Nvim
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
     fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
+    lua =package
 
 - `:che` (`:checkhealth`)
+
+## log file
+    :echo $NVIM_LOG_FILE
+    ~/.local/state/nvim/log
 
 # replace
     :ncc           " change n lines

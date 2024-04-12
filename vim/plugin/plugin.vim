@@ -365,7 +365,7 @@ let g:vim_indent_cont = &sw
 let g:xml_syntax_folding = 1
 
 ""> grab Vim settings - all commands
-function! AllCommands()
+function! GrabAllCommands()
   silent execute 'Bufferize command'
   winc k
   normal! ggVGd
@@ -376,12 +376,26 @@ function! AllCommands()
 endfunction
 " for use in  $vimfiles/settings/*-commands-*.txt
 
-""> grab Vim settings - maps of function keys
-function! BmmFn()
+""> grab Vim settings - all functions
+function! GrabAllFunctions()
+  silent execute 'Bufferize function'
+  winc k
+  sort
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
+" for use in  $vimfiles/settings/*-commands-*.txt
+
+""> grab Vim settings - maps of Fn keys
+function! GrabBmmFn()
   silent execute 'Bufferize map|map!'
   winc k
   v/<.\=.\=F.*>/d
   nohlsearch
+  sort
   normal! ggVGd
   bdelete
   blast
@@ -391,7 +405,7 @@ endfunction
 " for use in  $vimfiles/settings/*-FnMaps-*.txt
 
 ""> grab Vim settings - mkexrc
-function! MK()
+function! GrabMK()
   cd $vimfiles/settings
   let $mkh = 'vim.exrc'
   if has('nvim')  | let $mkh =  'n'.$mkh | endif
@@ -405,6 +419,11 @@ function! MK()
   sil %s//<c-w>/g
   sil %s//<bar>/g
   norm ggO" vim: se nowrap:
+  norm o
+  norm x
+  norm o" generated from within Vim by  call GrabMK()
+  norm o
+  norm x
   write
   edit  " invokes the nowrap
   let $mkh = $host.'.exrc'
@@ -412,7 +431,7 @@ endfunction
 " call MK() makes  $vimfiles/settings/*-*.exrc - tidied settings, including all the package mappings
 
 ""> grab Vim settings - simple maps
-function! SimpleMaps()
+function! GrabSimpleMaps()
   silent execute 'Bufferize map|map!'
   winc k
   silent! exe 'g/<.\=.\=F.*>/d'
@@ -429,7 +448,7 @@ endfunction
 " for use in  $vimfiles/settings/*-simpleMaps-*.txt
 
 ""> grab Vim settings - scriptnames
-function! Scriptnames()
+function! GrabScriptnames()
   silent execute 'Bufferize scriptnames'
   winc k
   normal! ggVGd

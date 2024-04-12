@@ -1,0 +1,3 @@
+
+put =&rtp|s/,/\r/g  " pastes here below
+nvim-unix-runtimepath.fetl
