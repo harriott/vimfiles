@@ -9,8 +9,7 @@ Joseph's (g)Vim Quick Reference
     m4p QR.md 1
 
     :h quickref
-    :helpt ALL               " generate all tags
-    :helptags $HOME\vimfiles " se tags
+    :helptags ALL
 
 - Stack Exchange Vi and Vim
 
@@ -226,9 +225,12 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     \zz       " toggle centering current line
 
 # Nvim
+    :=vim.env.VIMRUNTIME
+    :=vim.fn.has("win64")
+    :echo has('nvim')
+
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
     fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
-    lua =package
 
 - `:che` (`:checkhealth`)
 
@@ -275,7 +277,7 @@ z\                    " incsearch-fuzzy-stay
 
 ## following /
 	<ctrl-v>u0000               " (0000 is replaced by the hexadecimal code point value) for combining characters
-    \\                          " TweakLS()
+    \/                          " TweakLS()
     \\q                         " search in my QuickReference notes
 	\C (anywhere)               " force case
 	\c (anywhere)               " ignore case

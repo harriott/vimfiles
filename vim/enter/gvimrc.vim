@@ -34,8 +34,8 @@ let g:solarized_contrast="high"  "default value is normal, for solarized & tomor
 "">> menubar
 set guioptions-=m  " removes it by default
 
-" shift+f1 can toggle it:
-nnoremap <S-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
+" Ctrl+f1 can toggle it:
+nnoremap <C-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
 
 "">> toggle window width
 " possibly a better size for reading prose

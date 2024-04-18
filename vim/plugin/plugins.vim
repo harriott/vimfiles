@@ -5,7 +5,7 @@
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
-""> 0 encoding
+""> encoding
 
 "">> AnsiEsc
 packadd vim-plugin-AnsiEsc
@@ -185,7 +185,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 packadd vim-closetag
 
 "">>> vim-dokuwiki
-" $vfp/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
+" $vimfiles/vim/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
 packadd vim-dokuwiki
 let dokuwiki_comment=1  " comment highlighting on
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
@@ -330,49 +330,12 @@ packadd vim-matchup
 autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
 packadd vim-ssh-annex
 
-""> 0 fzf.vim
-let g:fzf_vim = {} | let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
-packadd fzf.vim
-
-nnoremap <leader>B :BLines<CR>
-nnoremap <leader>L :Lines<CR>
-nnoremap <leader>bf :Buffers<CR>
-nnoremap <F8> :History:<CR>
-inoremap <F8> <Esc>:History:<CR>
-vnoremap <F8> <Esc>:History:<CR>
-nnoremap <F9> :History/<CR>
-inoremap <F9> <Esc>:History/<CR>
-vnoremap <F9> <Esc>:History/<CR>
-if has('win32')
-  nnoremap <S-F9> call popup_clear(1):<CR>
-  packadd fzf
-endif
-
-" :Maps  = normal mode mappings
-
-"">> \j
-" in ~/.vim: rg '>j' --no-ignore
-
-if hostname() == 'i34G1TU02'
-  nnoremap <leader>j :Files /mnt/BX200/Dropbox/JH<CR>
-elseif hostname() == 'AsusW202'
-  nnoremap <leader>j :Files /mnt/SDEP128G/Dropbox/JH<CR>
-elseif hostname() == 'sbMb'
-  nnoremap <leader>j :Files /mnt/SDU3D1TB/Dropbox/JH<CR>
-elseif hostname() == 'HPEB840G36'
-  nnoremap <leader>j :Files D:\Dropbox\JH<CR>
-elseif hostname() == 'HPEB840G37'
-  nnoremap <leader>j :Files C:\Users\jharr\Dropbox\JH<CR>
-elseif hostname() == 'T430i73520M'
-  nnoremap <leader>j :Files C:\Users\troin\Dropbox\JH<CR>
-endif
-
-""> 0 ingo-library
+""> ingo-library
 " $vfp/packs-cp/opt/vim-ingo-library/README.md
 "  required for  vim-mark  vim-ShowTrailingWhitespace
 packadd vim-ingo-library
 
-""> 0 languages
+""> languages
 
 "">> ALE
 " :ALEFix
@@ -395,8 +358,8 @@ let g:ale_sign_column_always = 1
 packadd ale
 
 " moving to ALE errors
-noremap <silent> <C-j> <Plug>(ale_next_wrap)
-noremap <silent> <C-k> <Plug>(ale_previous_wrap)
+noremap <silent> <leader>aj <Plug>(ale_next_wrap)
+noremap <silent> <leader>ak <Plug>(ale_previous_wrap)
 
 "">>> toggle ALE for buffer
 " noremap <leader>aa :ALEToggleBuffer<CR>  " doesn't report status
@@ -420,7 +383,7 @@ if has('win32')
 endif
 let g:tq_language=['en', 'fr']
 autocmd BufRead,BufNewFile */France/Scratch/* let b:tq_language=['fr']
-nnoremap <leader>th :ThesaurusQueryReplaceCurrentWord<CR>
+nnoremap <leader>tq :ThesaurusQueryReplaceCurrentWord<CR>
 packadd thesaurus_query.vim
 
 "">> vim-langtool
@@ -444,7 +407,7 @@ let g:languagetool_win_height = -1
 packadd vim-LanguageTool " then can  :h LanguageTool
 " now preferring  vim-langtool
 
-""> 0 layout
+""> layout
 
 "">> characterize.vim
 " enhances  ga
@@ -459,11 +422,7 @@ let g:colorizer_disable_bufleave = 1
 " optionally available
 
 "">>> vim-hexokinase
-" enabled in my ~/.config/nvim/init.vim
-  autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
-
-let g:Hexokinase_highlighters = ['foregroundfull']
-" $vfp/packs-unix/opt/vim-hexokinase/README.md
+" enabled in my  $vimfiles/nvim/init.vim
 
 "">> color schemes
 " no need to  packadd  for Vim
@@ -542,6 +501,7 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#fzf#enabled = 1  " adds line-number/total lines
 let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
 let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
+set noshowmode  " no need for -- INSERT -- in (lower) command line
 packadd vim-airline-themes
 if has('win32')
   let g:airline_left_sep = ''
@@ -561,31 +521,13 @@ packadd vim-fontsize
 " <Leader><Leader>- -> smaller font
 " <Leader><Leader>0 -> default font size
 
-""> 0 shell
+""> shell
 
 "">> calendar-vim
 let g:calendar_monday = 1
 let g:calendar_weeknm = 1
 noremap <leader>yy :CalendarH<CR>
 packadd calendar-vim
-
-"">> ctrlp.vim
-" $HOME/.cache/ctrlp/mru/cache.txt
-" <c-f> and <c-b> to cycle between modes
-" open selected entry in a new
-"  split horizontal <c-x>
-"  split vertical   <c-v>
-"  tab              <c-t>
-set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
-
-"">>> 0 configure
-" need to be defined before it's loaded
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_mruf_max = 500
-nnoremap <leader>bb :CtrlPBuffer<CR>
-
-"">>> 1 invoke
-packadd ctrlp.vim
 
 "">> Fern
 " vim default c-e = scroll up the window, without displacing the cursor
@@ -621,28 +563,6 @@ packadd fern-preview.vim
 "">> fern-renderer-nerdfont.vim
 let g:fern#renderer = "nerdfont"
 packadd fern-renderer-nerdfont.vim
-
-"">> MRU
-" $vfp/packs-cp/opt/mru/README.md
-" $vimfiles/syntax/mru.vim
-let MRU_Max_Entries = 1000
-let MRU_Window_Height = 20
-" - which is overriden by this:
-" let MRU_Use_Current_Window = 1
-
-nnoremap <leader>m :MRU
-packadd mru
-
-" $HOME/.vim_mru_files
-" in GNU/Linux  :FZFMru
-" :MRU \.md
-" :MruRefresh
-" in the normal MRU window
-"  d = delete from list
-"  Enter = open over current window
-"  O = open split right
-"  o = open split below
-"  u = update
 
 "">> NERDTree
 "h NERDTree
@@ -704,14 +624,7 @@ packadd vim-open-url
 packadd vim-startify
 " Startify
 
-"">> vim-picker
-if has('unix')
-  packadd vim-picker
-  nmap <unique> <leader>pe <Plug>(PickerEdit)
-  nmap <unique> <leader>pb <Plug>(PickerBuffer)
-endif
-
-""> 0 text wrangling
+""> text wrangling
 
 "">> aligning
 
@@ -854,23 +767,82 @@ nmap <leader>s <plug>(SubversiveSubstituteRangeConfirm)
 
 packadd vim-surround
 
-""> 0 vim
+""> vim
 
 "">> buffers
-
-"">>> bufexplorer
-packadd bufexplorer
-noremap <silent> <leader>be :BufExplorer<CR>
-
-"">>>> default mappings
-"  <Leader>be - Opens BufExplorer
-"  <Leader>bt - Toggles BufExplorer open or closed
-"  <Leader>bs - Opens horizontally split window BufExplorer
-"  <Leader>bv - Opens vertically split window BufExplorer
 
 "">>> bufferize.vim
 " :Bufferize <something>  is handy, but the buffer's fragile...
 packadd bufferize.vim
+
+"">>>> grab Vim settings - all commands
+function! GrabAllCommands()
+  silent execute 'Bufferize command'
+  winc k
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
+" for use in  $vimfiles/settings/*-commands-*.txt
+
+"">>>> grab Vim settings - all functions
+function! GrabAllFunctions()
+  silent execute 'Bufferize function'
+  winc k
+  sort
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
+" for use in  $vimfiles/settings/*-commands-*.txt
+
+"">>>> grab Vim settings - maps of Fn keys
+function! GrabBmmFn()
+  silent execute 'Bufferize map|map!'
+  winc k
+  v/<.\=.\=F.*>/d
+  nohlsearch
+  sort
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
+" for use in  $vimfiles/settings/*-FnMaps-*.txt
+
+"">>>> grab Vim settings - simple maps
+function! GrabSimpleMaps()
+  silent execute 'Bufferize map|map!'
+  winc k
+  silent! exe 'g/<.\=.\=F.*>/d'
+  silent! exe 'g/<Plug>/d'
+  silent! exe 'g/<SNR>/d'
+  g/ /d " non-breaking space
+  nohlsearch
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
+" for use in  $vimfiles/settings/*-simpleMaps-*.txt
+
+"">>>> grab Vim settings - scriptnames
+function! GrabScriptnames()
+  silent execute 'Bufferize scriptnames'
+  winc k
+  normal! ggVGd
+  bdelete
+  blast
+  normal! p
+  write
+endfunction
+" for use in  $vimfiles/settings/*-scriptnames-*.fetl
 
 "">>> close-buffers.vim
 "  quickly close all but current buffer
@@ -893,7 +865,8 @@ packadd vim-bufkill
 let g:BufKillCreateMappings = 0
 
 " :bd  maintaining splits
-noremap <silent> <leader><leader>d :BD<CR>
+noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
+" - has at least a chance of landing on a different buffer than already visible
 
 "">> location/quickfix list
 
@@ -925,10 +898,4 @@ packadd vim-peekaboo
 
 "">> vim-repeat
 packadd vim-repeat
-
-""> 1 nvim
-
-"">> vim-nerdtree-syntax-highlight
-
-"">> neo-tree.nvim
 

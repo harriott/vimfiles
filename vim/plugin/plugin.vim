@@ -1,26 +1,35 @@
 
-" Joseph Harriott - mar 19 mars 2024
+" Joseph Harriott - Thu 18 Apr 2024
 
 " $vimfiles/vim/plugin/plugin.vim
-" here I have things that I might, rarely, want to comment out
-" keep this file in your plugin directory so's it's automatically sourced at startup
 
-function! UnComment()
-  " set filetype=
-  " normal Vip<Esc>
-  normal Vip
-  " normal <Esc>
-  escape
-  '<,'>s/%/※/
-  " s/%/※/
-  " set filetype=tex
-endfunction
+" better searching
+set ignorecase smartcase
 
-""> buffer - finish a Git commit message
+" clear registers b-z
+command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
+
+let g:plugin_vim = 1
+
+" maxmempattern
+" set mmp=90000  " for $TeNo/TN/JH-DailyLife/Health/Ingest/Regimes.md
+set mmp=800000
+" set mmp=2000000  " = unlimited
+
+" toggle folds open/closed
+nnoremap <Space> za
+
+""> buffers
+" after a fugitive commit message
 autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ nnoremap <F4> :wa<CR>:q<CR>
 autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ inoremap <F4> <Esc>:wa<CR>:q<CR>
 
-""> buffer - nnn temporary files
+" refresh - writes all changed buffers and reloads the current one
+nnoremap <F5> :wa<CR>:edit<CR>
+inoremap <F5> <Esc>:wa<CR>:e<CR>
+vnoremap <F5> <Esc>:wa<CR>:e<CR>
+
+"">> buffer - nnn temporary files
 " clear nnn selections:
 autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
 
@@ -28,7 +37,7 @@ autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
 autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <F4> :wa<CR>:q<CR>
 autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <F4> <Esc>:wa<CR>:q<CR>
 
-""> buffer - packing msgFilterRules.dat
+"">> buffer - packing msgFilterRules.dat
 " These hooks aren't in an  ftplugin/dat.vim  because there's no such default filetype.
 
 " pack msgFilterRules.dat "name" lines:
@@ -36,14 +45,58 @@ autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name
 " unpack msgFilterRules.dat "name" lines:
 autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
 
-""> buffer - refresh
-" writes all changed buffers and reloads the current one
-nnoremap <F5> :wa<CR>:edit<CR>
-inoremap <F5> <Esc>:wa<CR>:e<CR>
-vnoremap <F5> <Esc>:wa<CR>:e<CR>
+""> comma <-> colon
+" comma is colon (colon is comma)
+"  https://konfekt.github.io/blog/2016/10/03/get-the-leader-right
 
-""> clear registers b-z
-command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
+"">> 1 last l/r character search
+" semicolon repeats forward, default
+
+"">>> colon repeats backwards
+nnoremap : ,
+xnoremap : ,
+onoremap : ,
+"  these require use of  noremap  when trying to acces  :  generically
+
+"">> 2 comma enters command-line mode
+nnoremap , :
+xnoremap , :
+onoremap , :
+"  any other mappings starting with , will slow this down
+
+"">> 3 more tweaks
+" double ampersand repeats last command
+nnoremap @@ @:
+" - covering  repeat previous macro...
+nnoremap @: <NOP>
+" - not clear why I needed this...
+
+"">>> the change list
+" g colon  repositons cursor foward
+nnoremap g: g,
+nnoremap g, <NOP>
+
+" g semicolon  repostions cursor backward
+
+"">>> the command-line window
+augroup vimHints
+  autocmd!
+  autocmd CmdwinEnter * echo 'C-c C-c  to quit'
+augroup END
+if has('nvim')
+  set cmdwinheight=20  " because it's used to preview substitutions
+else
+  set cmdwinheight=30  " good for  MRU
+endif
+
+"">>>> 1 remap to comma
+nnoremap q, q:
+xnoremap q, q:
+ " causes a slight lag in starting and ending macros, and in quitting NerdTree navigation
+
+"">>>> 2 semicolon no longer required
+nnoremap q: <NOP>
+xnoremap q: <NOP>
 
 ""> easy q macro
 if v:lang =~ 'en'
@@ -55,7 +108,47 @@ endif
 " (:reg q  shows what's been saved)
 " [count]Q plays back
 
-""> format - clear fancy glyphs
+""> format
+" capitalised last entered letter - useful for AZERTY - particularly accented letters
+if v:lang=~'fr'|inoremap ² <Esc>~a|endif
+
+function! TwiddleCase(str)
+  if a:str ==# toupper(a:str)
+    let result = tolower(a:str)
+  elseif a:str ==# tolower(a:str)
+    let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
+  else
+    let result = toupper(a:str)
+  endif
+  return result
+endfunction
+vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
+
+" lesser indentation of continuation line
+" let g:vim_indent_cont = &sw
+" - for some reason can't be in  $vimfiles/ftplugin/vim.vim
+
+" remove square bracketed text - as in Wikipedia articles
+if v:lang =~ 'fr'
+  nnoremap <leader><leader>( :s/\m\[.\{-}]//g<CR>
+else
+  nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
+endif
+
+" underline
+"  (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
+"  eg :Underline ~+-  gives underlining like ~+-~+-~+-~+-~+-~+-
+function! s:Underline(chars)
+  let chars = empty(a:chars) ? '-' : a:chars
+  let nr_columns = virtcol('$') - 1
+  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+  put =strpart(uline, 0, nr_columns)
+endfunction
+command! -nargs=? Underline call s:Underline(<q-args>)
+" map:
+nnoremap <leader>U :Underline
+
+"">> clear fancy glyphs
 " - left & right double & single quotes (as these aren't mapped to a keyboard key)
 "   en dash, which can be copied from websites
 "   more...
@@ -104,7 +197,7 @@ function! ClearFancyGlyphs()
   :sil!%s#⧸#/#g
 endfunction
 
-""> format - clear mathematical alphanumeric symbols
+"">> clear mathematical alphanumeric symbols
 nnoremap <leader><leader>2 :call ClearMAS()<cr>
 function! ClearMAS()
   :sil!s/\v𝐀|𝐴|𝑨|𝖠|𝗔|𝘈|𝘼|𝒜|𝓐|𝔄|𝕬|𝙰|𝔸/A/g
@@ -161,14 +254,14 @@ function! ClearMAS()
   :sil!s/\v𝐳|𝑧|𝒛|𝗓|𝘇|𝘻|𝙯|𝓏|𝔃|𝔷|𝖟|𝚣|𝕫/z/g
 endfunction
 
-""> format - date
+"">> date
 function! DateFr()
   exe ":norm a".strftime('%a %d %b %Y')
   norm F.x;xeee
   " - remove periods
 endfunction
 
-"">> abbreviations
+"">>> abbreviations
 iabbrev <expr> d8- strftime("%y-%m-%d")
 iabbrev <expr> d8a strftime("%Y-%m-%d-%a")
 iabbrev <expr> d8c strftime("%y%m%d")
@@ -185,7 +278,7 @@ iabbrev <expr> d8p strftime("%Y-%m-%d %H:%M")
 iabbrev <expr> d8s strftime("%d/%m/%y")
 iabbrev <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 
-"">> in other language
+"">>> in other language
 if has('unix')
   if v:lang =~ 'gb'
     noremap <leader>yp :lan fr_FR.UTF-8<CR>:call DateFr()<CR>:lan en_GB.UTF-8<CR>
@@ -200,11 +293,7 @@ elseif has('win32')
   endif
 endif
 
-""> format - capitalised last entered letter
-" useful for AZERTY - particularly accented letters
-if v:lang=~'fr'|inoremap ² <Esc>~a|endif
-
-""> format - strip Thunderbird address book csv down to just emails
+"">> strip Thunderbird address book csv down to just emails
 " decorations:  >, .\{-} <
 
 function! TbCsv()
@@ -213,11 +302,11 @@ function! TbCsv()
   '<,'>s/,.*/
 endfunction
 
-""> format - percent code
+"">> percent code
 " convert url parenthesis, and various diacritics to percent code
 " to switch the order of these substitutions, use  s#/\(.\{-}\)/\(.\{-}\)/#/\2/\1/#g
 
-"">> from
+"">>> from
 " 9 here means convert back to parentheses (eg for a quoted url in tex):
 nnoremap <leader>9 :call PercentUnicode()<cr>
 function! PercentUnicode()
@@ -254,7 +343,7 @@ function! PercentUnicode()
 endfunction
 " if you need to work on a range, use  :<selection>call PercentUnicode()
 
-"">> to
+"">>> to
 " 5 here means convert to % code (my general preference):
 if v:lang =~ 'fr'
   " AZERTY
@@ -295,122 +384,29 @@ function! UnicodePercent()
     :keepp s/—/%E2%80%94/eg
 endfunction
 
-""> format - remove square bracketed text
-" as in Wikipedia articles
-if v:lang =~ 'fr'
-  nnoremap <leader><leader>( :s/\m\[.\{-}]//g<CR>
-else
-  nnoremap <leader>[ :s/\m\[.\{-}]//g<CR>
-endif
-
-""> format - TwiddleCase
-function! TwiddleCase(str)
-  if a:str ==# toupper(a:str)
-    let result = tolower(a:str)
-  elseif a:str ==# tolower(a:str)
-    let result = substitute(a:str,'\(\<\w\+\>\)', '\u\1', 'g')
-  else
-    let result = toupper(a:str)
-  endif
-  return result
-endfunction
-vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<CR>gv""Pgv
-
-""> format - underline
-" (http://vim.wikia.com/wiki/Underline_using_dashes_automatically)
-" eg :Underline ~+-  gives underlining like ~+-~+-~+-~+-~+-~+-
-function! s:Underline(chars)
-  let chars = empty(a:chars) ? '-' : a:chars
-  let nr_columns = virtcol('$') - 1
-  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
-  put =strpart(uline, 0, nr_columns)
-endfunction
-command! -nargs=? Underline call s:Underline(<q-args>)
-" map:
-nnoremap <leader>U :Underline
-
-""> ft aesl - Thymio's Aseba code
-" I suppose that sgml filetype might be more appropriate,
-" but I use xml filetype because it has folding
-autocmd BufNewFile,BufRead *.aesl setlocal filetype=xml
-
-""> ft Emacs history
-autocmd BufNewFile,BufRead ~/.emacs.d/history setlocal filetype=lisp
-
-""> ft defaults
-set shiftwidth=4
-set tabstop=4
-set textwidth=99
-
-""> ft LaTeX syntax folding
+""> ft
+" LaTeX syntax folding
 " On before opening a buffer:
-let g:tex_fold_enabled=1
+  let g:tex_fold_enabled=1
 " Check for Pandoc template:
-autocmd BufReadPre *.cls,*.dtx,*.sty,*.tex,*.toc let b:PandocLaTeX = 0
-autocmd BufReadPre *templates/*.latex let b:PandocLaTeX = 1
+  autocmd BufReadPre *.cls,*.dtx,*.sty,*.tex,*.toc let b:PandocLaTeX = 0
+  autocmd BufReadPre *templates/*.latex let b:PandocLaTeX = 1
 
-"">> md4pdfLog.tex
-" turn off syntax folding for the long log files from md4pdf.ps1
-autocmd BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
-
-""> ft vifm
-autocmd BufNewFile,BufRead /usr/share/vifm/vifm-help.txt setlocal ft=man
-
-""> ft vimscript
-" lesser indentation of continuation line
-let g:vim_indent_cont = &sw
-
-""> ftplugin/xml.vim
 " XML syntax folding on:
 let g:xml_syntax_folding = 1
 
-""> grab Vim settings - all commands
-function! GrabAllCommands()
-  silent execute 'Bufferize command'
-  winc k
-  normal! ggVGd
-  bdelete
-  blast
-  normal! p
-  write
-endfunction
-" for use in  $vimfiles/settings/*-commands-*.txt
+""> grab Vim settings
+" also
+"  my functions using  :Bufferize
+"  r $vimfiles/settings
 
-""> grab Vim settings - all functions
-function! GrabAllFunctions()
-  silent execute 'Bufferize function'
-  winc k
-  sort
-  normal! ggVGd
-  bdelete
-  blast
-  normal! p
-  write
-endfunction
-" for use in  $vimfiles/settings/*-commands-*.txt
-
-""> grab Vim settings - maps of Fn keys
-function! GrabBmmFn()
-  silent execute 'Bufferize map|map!'
-  winc k
-  v/<.\=.\=F.*>/d
-  nohlsearch
-  sort
-  normal! ggVGd
-  bdelete
-  blast
-  normal! p
-  write
-endfunction
-" for use in  $vimfiles/settings/*-FnMaps-*.txt
-
-""> grab Vim settings - mkexrc
+" mkexrc
 function! GrabMK()
   cd $vimfiles/settings
-  let $mkh = 'vim.exrc'
+  let $mkh = 'vim'
   if has('nvim')  | let $mkh =  'n'.$mkh | endif
-  if has('unix')  | let $mkh =  'unix-'.$mkh | endif
-  if has('win32') | let $mkh = 'win32-'.$mkh | endif
+  if has('unix')  | let $mkh =  $mkh.'-unix.exrc' | endif
+  if has('win32') | let $mkh =  $mkh.'-win32.exrc' | endif
   call delete($mkh)
   mkexrc $mkh
   edit $mkh
@@ -430,68 +426,75 @@ function! GrabMK()
 endfunction
 " call MK() makes  $vimfiles/settings/*-*.exrc - tidied settings, including all the package mappings
 
-""> grab Vim settings - simple maps
-function! GrabSimpleMaps()
-  silent execute 'Bufferize map|map!'
-  winc k
-  silent! exe 'g/<.\=.\=F.*>/d'
-  silent! exe 'g/<Plug>/d'
-  silent! exe 'g/<SNR>/d'
-  g/ /d " non-breaking space
-  nohlsearch
-  normal! ggVGd
-  bdelete
-  blast
-  normal! p
-  write
-endfunction
-" for use in  $vimfiles/settings/*-simpleMaps-*.txt
-
-""> grab Vim settings - scriptnames
-function! GrabScriptnames()
-  silent execute 'Bufferize scriptnames'
-  winc k
-  normal! ggVGd
-  bdelete
-  blast
-  normal! p
-  write
-endfunction
-" for use in  $vimfiles/settings/*-scriptnames-*.fetl
-
-""> layout - clearmatches
-" see  $jtCP/Vim/plugins/csv_vim-HiColumnLeaky/issue.md
+""> layout
+" clearmatches (see  $jtCP/Vim/plugins/csv_vim-HiColumnLeaky/issue.md)
 inoremap <leader><f5> :call clearmatches()<cr>
 nnoremap <leader><f5> :call clearmatches()<cr>
 
-""> layout - tabline
-" set showtabline=1
-" because it's somehow sometimes set to 2
-" overriden by  vim-airline  extension  tabline
+" md4pdfLog.tex - turn off syntax folding for the long log files from md4pdf.ps1
+au! BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 
-""> layout - toggle centering current line
+noremap <leader><leader>ll :set list! list? <CR>
+" (:h 'list')
+
+nnoremap zr :exe ':spellrare  '.expand('<cWORD>')<CR>
+
+" set showtabline=1
+"  because it's somehow sometimes set to 2
+"  overriden by  vim-airline  extension  tabline
+
+" toggle centering current line
 nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
 
-""> layout - toggle relativenumber
+" toggle cursorcolumn:
+nnoremap <silent><leader><leader>c :set cuc! cuc? <CR>
+" toggle cursorline:
+nnoremap <silent><leader><leader>l :set cul! cul? <CR>
+
+" toggle relativenumber
 nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 
-""> layout - windows
-" new buffer split vertically
-nnoremap <leader>vn :vnew<CR>
+"">> syntax sync fromstart
+" highlighting sometimes disappears on some longer complex files after loading
+"  long dw's
+"  markdowns
+"   $ITstack/unix_like-Android/phones.md
+"   $TeNo/md-JH-DailyLife/roles/healing.md
+"   my various  .../QR.md
+nnoremap <S-F5> :syntax sync fromstart<CR>
+inoremap <S-F5> <Esc><S-F5>
 
-nnoremap <leader>hh :call SplitHtoggle()<CR>
-function! SplitHtoggle()
-  if winnr() == winnr('$') | split | else | only | endif
-endfunction
-nnoremap <leader>vv :call SplitVtoggle()<CR>
-function! SplitVtoggle()
-  if winnr() == winnr('$') | vsplit | else | only | endif
-endfunction
+"">> windows
+" close window, including quickfix-window and NerdTree navigation
+nnoremap <leader>x <C-W>c
 
-""> maxmempattern
-" set mmp=90000  " for $TeNo/TN/JH-DailyLife/Health/Ingest/Regimes.md
-set mmp=800000
-" set mmp=2000000  " = unlimited
+" move focus left
+nnoremap <c-h> <c-w>h
+" move focus right
+nnoremap <c-l> <c-w>l
+" move focus down
+nnoremap <c-j> <c-w>j
+" move focus up
+nnoremap <c-k> <c-w>k
+
+nnoremap <leader><leader>h :split<CR>
+nnoremap <leader><leader>v :vsplit<CR>
+nnoremap <leader><leader>o :close<CR>
+" - will only work on a split
+
+"">>> resize
+" decrease window height
+nnoremap <leader><down> 5<C-W>-
+" increase window height
+nnoremap <leader><up> 5<C-W>+
+" decrease window width
+nnoremap <leader><left> 10<C-W><
+" increase window width
+nnoremap <leader><right> 10<C-W>>
+" turn off winfixheight in all windows
+nnoremap <leader>c= :windo set nowfh <CR>
+
+" :h window-resize
 
 ""> neomutt
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal textwidth=0
@@ -506,11 +509,6 @@ endfunction
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
 
-"">> overcome $VIMRUNTIME/filetype.vim
-autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
-" required for  muttrc-gmx
-" (see $DJH/technos/IT1/cross-platform/Vim/muttrc-123)
-
 "">> tidy an inmail
 " swap out any crap (and go back to top):
 "  next line
@@ -524,33 +522,13 @@ autocmd BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 "  unneeded blanks
     autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/^> */>/g | go
 
-""> neovim - DiffOrig
-if has('nvim')
-  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis
-endif
-""> neovim - quit fcrontab
-if has('nvim')
-  autocmd BufRead,BufNewFile fcr-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
-  autocmd BufRead,BufNewFile fcr-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
-endif
-
-""> neovim - quit noname
-if has('nvim')
-  " for some edge cases
-  function! QuitNoName()
-    if len(getbufinfo({'buflisted':1})) == 1
-      q!
-    endif
-  endfunction
-  " noremap <F12> :call QuitNoName() <CR>
-endif
-
-""> searching - clear search highlights
+""> searching
+" clear search highlights
 nnoremap <leader>n :nohlsearch<CR>
 vnoremap <leader>n <Esc>:nohlsearch<CR>
 
-""> searching - get lower-case text of last search term in empty buffer
-" for tweaking, eg "Find find in finding."
+" get lower-case text of last search term in empty buffer
+"  for tweaking, eg 'Find find in finding.'
 function! TweakLS()
   new
   normal! "/p
@@ -560,7 +538,32 @@ function! TweakLS()
 endfunction
 nnoremap <leader>/ :call TweakLS()<CR>
 
-""> searching - grepping
+set incsearch
+nnoremap <leader>is :call IncSearchToggle()<cr>
+let g:incsearchSet = 1
+function! IncSearchToggle()
+  if g:incsearchSet
+    set noincsearch
+    let g:incsearchSet = 0
+    echo 'noincsearch'
+  else
+    set incsearch
+    let g:incsearchSet = 1
+    echo 'incsearch'
+  endif
+endfunction
+
+" re-open the quickfix-window
+"  eg to look again at results of vimgrep
+" noremap <leader>q :copen<CR>
+"  now using  ListToggle
+
+" select to end of line in unix
+if has('unix')
+  nnoremap <leader>v v$hy
+endif
+
+"">> grepping
 " Strip the current selection & store it in the l then s register:
 function! StripStoreCurSel()
   let l:lastvimsearch = getreg('/')
@@ -590,23 +593,7 @@ function! VimgrepQRs()
   copen
 endfunction
 
-""> searching - incsearch
-set incsearch
-nnoremap <leader>is :call IncSearchToggle()<cr>
-let g:incsearchSet = 1
-function! IncSearchToggle()
-  if g:incsearchSet
-    set noincsearch
-    let g:incsearchSet = 0
-    echo 'noincsearch'
-  else
-    set incsearch
-    let g:incsearchSet = 1
-    echo 'incsearch'
-  endif
-endfunction
-
-""> searching - parenthesis matching
+"">> parenthesis matching
 if !exists("g:loaded_matchparen")
   autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
 endif
@@ -625,12 +612,7 @@ function! ParenthsToggle()
   endif
 endfunction
 
-""> searching - re-open the quickfix-window
-" eg to look again at results of vimgrep
-" noremap <leader>q :copen<CR>
-" now using  ListToggle
-
-""> searching - search within a visual selection
+"">> search within a visual selection
 "  before calling this you need to search for something, then
 "   either before or any number of times after calling this function,
 "     you need to visually select an area
@@ -644,48 +626,40 @@ nnoremap <leader>vs :call ConvertSearchForVisualSelection()<CR>
 vnoremap <leader>vs <Esc>:call ConvertSearchForVisualSelection()<CR>
 " maybe should leverage  vis.vim
 
-""> searching - select to end of line in unix
-if has('unix')
-  nnoremap <leader>v v$hy
-endif
-
-""> shell - filepath into register f
+""> shell
+" filepath into register f
 nnoremap <leader>f :let@f=@%<CR>
 
-""> shell - last modification time
+" last modification time
 nnoremap <silent><leader><F11> :echo strftime('%c',getftime(expand('%')))<cr>
 inoremap <silent><leader><F11> <Esc>:echo strftime('%c',getftime(expand('%')))<cr>
 vnoremap <silent><leader><F11> <Esc>:echo strftime('%c',getftime(expand('%')))<cr>
 
-""> shell - netrw
+" netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 2
 nnoremap <leader>- :Hexplore<cr>
 
-""> shell - open in Emacs
+" open in Emacs
 nnoremap <S-F11> :call OpenInEmacs()<CR>
 inoremap <S-F11> <Esc><S-F11>
 
-""> shell - working directory to file's
+" working directory to file's
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 
-""> shell - write all changed buffers
+" write all changed buffers
 nnoremap <F2> :wa<CR>
 inoremap <F2> <Esc>:wa<CR>
 vnoremap <F2> <Esc>:wa<CR>
 
-""> shell - write & close buffer
-nnoremap <F4> :wa<CR>:bd<CR>
-inoremap <F4> <Esc>:wa<CR>:bd<CR>
+" write & close buffer
+if !has('nvim')
+  nnoremap <F4> :wa<CR>:bd<CR>
+  inoremap <F4> <Esc>:wa<CR>:bd<CR>
+endif " overriden by some autocommands
 vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 
-""> syntax sync fromstart
-" highlighting sometimes disappears on some longer complex files after loading
-"  long dw's
-"  markdowns
-"   $ITstack/unix_like-Android/phones.md
-"   $TeNo/md-JH-DailyLife/roles/healing.md
-"   my various  .../QR.md
-nnoremap <S-F5> :syntax sync fromstart<CR>
-inoremap <S-F5> <Esc><S-F5>
+""> turn off some unused Fn keys in insert mode
+inoremap <F3> <Esc>
+inoremap <S-F2> <Esc>
 

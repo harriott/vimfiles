@@ -1,4 +1,7 @@
 " vim: se nowrap:
+
+" generated from within Vim by  call GrabMK()
+
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
@@ -78,7 +81,7 @@ nnoremap \8 :call EightyTwoColumns()<cr>
 noremap \gg :call GitGutterFocus()<cr>
 nnoremap <silent> \q :QToggle<cr>
 nnoremap <silent> \l :LToggle<cr>
-noremap <silent> \dd :BD<cr>
+noremap <silent> \\d :BD<cr>
 nmap <silent> \ba <Plug>BufKillAlt
 nmap <silent> \bundo <Plug>BufKillUndo
 nmap <silent> \!bw <Plug>BufKillBangBw
@@ -257,10 +260,15 @@ nmap <silent> z% <Plug>(matchup-z%)
 nnoremap <silent> <expr> zt context#util#map_zt()
 nnoremap zr :exe ':spellrare  '.expand('<bar><cWORD>')<cr>
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<cr>gv""Pgv
+nnoremap <SNR>293_: :<bar><bar>=v:count ? v:count : ''<cr>
 nnoremap <C-F5> :call ColorLightDark()<cr>
 nnoremap <S-F1> :if &guioptions=~#'m'<bar>|set guioptions-=m<bar>|else<bar>|set guioptions+=m<bar>|endif<cr>
 xnoremap <silent> <Plug>NetrwBrowseXVis :<bar>call netrw#BrowseXVis()<cr>
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<cr>
+tnoremap <silent> <Plug>(fzf-normal) <bar><bar>
+tnoremap <silent> <Plug>(fzf-insert) <bar><bar>i
+nnoremap <silent> <Plug>(fzf-normal) <Nop>
+nnoremap <silent> <Plug>(fzf-insert) i
 xnoremap <silent> <Plug>(peekaboo) :<bar>call peekaboo#aboo()<cr>
 nnoremap <silent> <Plug>(peekaboo) :<bar>call peekaboo#aboo()<cr>
 nnoremap <silent> <Plug>SurroundRepeat .
@@ -856,12 +864,12 @@ nnoremap <silent> <Plug>(ctrlp) :<bar>CtrlPMRU<cr>
 nnoremap <silent> <Plug>CalendarT :cal calendar#show(2)<cr>
 nnoremap <silent> <Plug>CalendarH :cal calendar#show(1)<cr>
 nnoremap <silent> <Plug>CalendarV :cal calendar#show(0)<cr>
-nnoremap <silent> <SNR>124_quit :<bar>call fontsize#quit()<cr>
-nnoremap <silent> <SNR>124_setDefault :<bar>call fontsize#setDefault()<cr>
-nnoremap <silent> <SNR>124_default :<bar>call fontsize#default()<cr>
-nnoremap <silent> <SNR>124_dec :<bar>call fontsize#dec()<cr>
-nnoremap <silent> <SNR>124_inc :<bar>call fontsize#inc()<cr>
-nnoremap <silent> <SNR>124_begin :<bar>call fontsize#begin()<cr>
+nnoremap <silent> <SNR>123_quit :<bar>call fontsize#quit()<cr>
+nnoremap <silent> <SNR>123_setDefault :<bar>call fontsize#setDefault()<cr>
+nnoremap <silent> <SNR>123_default :<bar>call fontsize#default()<cr>
+nnoremap <silent> <SNR>123_dec :<bar>call fontsize#dec()<cr>
+nnoremap <silent> <SNR>123_inc :<bar>call fontsize#inc()<cr>
+nnoremap <silent> <SNR>123_begin :<bar>call fontsize#begin()<cr>
 noremap <silent> <C-K> <Plug>(ale_previous_wrap)
 noremap <silent> <C-J> <Plug>(ale_next_wrap)
 nnoremap <silent> <Plug>(ale_info_preview) :ALEInfo -preview<cr>
@@ -928,24 +936,24 @@ onoremap <silent> <Plug>(matchup-i%) :<bar>call matchup#text_obj#delimited(1, 0
 xnoremap <silent> <Plug>(matchup-a%) :<bar>call matchup#text_obj#delimited(0, 1, 'delim_all')<cr>
 xnoremap <silent> <Plug>(matchup-i%) :<bar>call matchup#text_obj#delimited(1, 1, 'delim_all')<cr>
 onoremap <silent> <Plug>(matchup-Z%) :<bar>call matchup#motion#op('Z%')<cr>
-xnoremap <silent> <SNR>97_(matchup-Z%) :<bar>call matchup#motion#jump_inside_prev(1)<cr>
+xnoremap <silent> <SNR>96_(matchup-Z%) :<bar>call matchup#motion#jump_inside_prev(1)<cr>
 nnoremap <silent> <Plug>(matchup-Z%) :<bar>call matchup#motion#jump_inside_prev(0)<cr>
 onoremap <silent> <Plug>(matchup-z%) :<bar>call matchup#motion#op('z%')<cr>
-xnoremap <silent> <SNR>97_(matchup-z%) :<bar>call matchup#motion#jump_inside(1)<cr>
+xnoremap <silent> <SNR>96_(matchup-z%) :<bar>call matchup#motion#jump_inside(1)<cr>
 nnoremap <silent> <Plug>(matchup-z%) :<bar>call matchup#motion#jump_inside(0)<cr>
 onoremap <silent> <Plug>(matchup-[%) :<bar>call matchup#motion#op('[%')<cr>
 onoremap <silent> <Plug>(matchup-]%) :<bar>call matchup#motion#op(']%')<cr>
-xnoremap <silent> <SNR>97_(matchup-[%) :<bar>call matchup#motion#find_unmatched(1, 0)<cr>
-xnoremap <silent> <SNR>97_(matchup-]%) :<bar>call matchup#motion#find_unmatched(1, 1)<cr>
+xnoremap <silent> <SNR>96_(matchup-[%) :<bar>call matchup#motion#find_unmatched(1, 0)<cr>
+xnoremap <silent> <SNR>96_(matchup-]%) :<bar>call matchup#motion#find_unmatched(1, 1)<cr>
 nnoremap <silent> <Plug>(matchup-[%) :<bar>call matchup#motion#find_unmatched(0, 0)<cr>
 nnoremap <silent> <Plug>(matchup-]%) :<bar>call matchup#motion#find_unmatched(0, 1)<cr>
 onoremap <silent> <Plug>(matchup-g%) :<bar>call matchup#motion#op('g%')<cr>
-xnoremap <silent> <SNR>97_(matchup-g%) :<bar>call matchup#motion#find_matching_pair(1, 0)<cr>
+xnoremap <silent> <SNR>96_(matchup-g%) :<bar>call matchup#motion#find_matching_pair(1, 0)<cr>
 onoremap <silent> <Plug>(matchup-%) :<bar>call matchup#motion#op('%')<cr>
-xnoremap <silent> <SNR>97_(matchup-%) :<bar>call matchup#motion#find_matching_pair(1, 1)<cr>
+xnoremap <silent> <SNR>96_(matchup-%) :<bar>call matchup#motion#find_matching_pair(1, 1)<cr>
 nnoremap <silent> <Plug>(matchup-g%) :<bar>call matchup#motion#find_matching_pair(0, 0)<cr>
 nnoremap <silent> <Plug>(matchup-%) :<bar>call matchup#motion#find_matching_pair(0, 1)<cr>
-nnoremap <silent> <expr> <SNR>97_(wise) empty(g:v_motion_force) ? 'v' : g:v_motion_force
+nnoremap <silent> <expr> <SNR>96_(wise) empty(g:v_motion_force) ? 'v' : g:v_motion_force
 nnoremap <silent> <Plug>(matchup-hi-surround) :<bar>call matchup#matchparen#highlight_surrounding()<cr>
 nnoremap <Plug>NERDCommenterAltDelims :call nerdcommenter#SwitchToAlternativeDelimiters(1)<cr>
 xnoremap <silent> <Plug>NERDCommenterUncomment :call nerdcommenter#Comment("x", "Uncomment")<cr>
@@ -1006,10 +1014,6 @@ nnoremap <F2> :wa<cr>
 nnoremap <S-F11> :call OpenInEmacs()<cr>
 vnoremap <F5> <esc>:wa<cr>:e<cr>
 nnoremap <F5> :wa<cr>:edit<cr>
-tnoremap <silent> <Plug>(fzf-normal) <bar><bar>
-tnoremap <silent> <Plug>(fzf-insert) <bar><bar>i
-nnoremap <silent> <Plug>(fzf-normal) <Nop>
-nnoremap <silent> <Plug>(fzf-insert) i
 noremap <F11> :cd %:p:h<cr><bar>|:silent !pcmanfm &<cr>
 nnoremap <Insert> :CapsLockOff <cr>
 vnoremap <F1> <esc><c-w><c-w>
@@ -1062,7 +1066,7 @@ set langnoremap
 set nolangremap
 set laststatus=2
 set linespace=2
-set listchars=eol:│,trail:·,tab:»·
+set listchars=eol:│,nbsp:?,trail:·,tab:»·
 set matchpairs=(:),{:},[:],<:>
 set maxmempattern=800000
 set modelines=4

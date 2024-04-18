@@ -2,9 +2,8 @@
 " Language: gems
 "  gem list > $ulLA/$host/gems.gems
 " Maintainer: Joseph Harriott
-" Last Change: Mon 06 Feb 2023
-" $vimfiles/syntax/gems.vim
-" configured in  $vimfiles/filetype.vim  or with  vim: ft=gems:
+" Last Change: Mon 15 Apr 2024
+" $vimfiles/vim/syntax/gems.vim  configured in  $vimfiles/vim/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 

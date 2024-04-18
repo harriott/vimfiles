@@ -2,10 +2,12 @@
 
 " Language: Vim
 " Maintainer: Joseph Harriott
-" Last Change: Mon 25 Jan 2021
-" This file should be in your  vimfiles/ftplugin  folder
-"  ( it is supplemental to  $VIMRUNTIME/ftplugin/vim.vim )
+" Last Change: Sun 14 Apr 2024
+" "$vimfiles/vim/ftplugin/vim.vim
+"  (supplemental to  $VIMRUNTIME/ftplugin/vim.vim)
+"  also  $vimfiles/vim/after/ftplugin/vim.vim
 
+let g:vim_indent = #{ line_continuation: shiftwidth(), }
 setlocal expandtab shiftwidth=2 textwidth=0
 
 ""> config-file folding by lines that start with [space(s)]"=>...

@@ -26,7 +26,7 @@ function! LuaF()
   endif
 endfunction
 
-setlocal foldcolumn=1 foldexpr=LuaF() foldmethod=expr
+setlocal expandtab foldcolumn=1 foldexpr=LuaF() foldmethod=expr shiftwidth=2
 
 ""> turn off or on a fold of commands
 source $vimfiles/vim/ftplugin/firmCommentWholeFold.vim

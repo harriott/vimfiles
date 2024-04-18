@@ -1,4 +1,3 @@
-vim: ft=leader:
 
 ..\QR.md:87:    <leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
 ..\QR.md:377:<leader>atob " base64 to a string

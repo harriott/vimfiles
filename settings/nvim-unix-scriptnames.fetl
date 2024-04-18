@@ -1,0 +1,43 @@
+vim: set nowrap:
+
+Two choices to paste below:
+
+	:call GrabScriptnames() " (in $vimfiles/vim/plugin/plugin.vim, using Bufferize)
+	:redir @s | silent scr | redir END | exe "normal! \"sp"
+
+  1: /usr/share/nvim/runtime/ftplugin.vim
+  2: /usr/share/nvim/runtime/indent.vim
+  3: /etc/xdg/nvim/sysinit.vim
+  4: /usr/share/nvim/archlinux.vim
+  5: ~/.config/nvim/init.vim
+  6: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/vimrc-Arch.vim
+  7: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/vimrc-GNULinux.vim
+  8: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/enter/vimrc.vim
+  9: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/packs-unix/opt/jellybeans.vim/colors/jellybeans.vim
+ 10: /usr/share/nvim/runtime/filetype.lua
+ 11: ~/.local/share/nvim/lazy/Comment.nvim/plugin/Comment.lua
+ 12: ~/.config/nvim/plugin/plugin.vim
+ 13: ~/.config/nvim/plugin/plugins.vim
+ 14: /usr/share/nvim/runtime/plugin/editorconfig.lua
+ 15: /usr/share/nvim/runtime/plugin/gzip.vim
+ 16: /usr/share/nvim/runtime/plugin/health.vim
+ 17: /usr/share/nvim/runtime/plugin/man.lua
+ 18: /usr/share/nvim/runtime/plugin/matchit.vim
+ 19: /usr/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+ 20: /usr/share/nvim/runtime/plugin/matchparen.vim
+ 21: /usr/share/nvim/runtime/plugin/netrwPlugin.vim
+ 22: /usr/share/nvim/runtime/plugin/nvim.lua
+ 23: /usr/share/nvim/runtime/plugin/rplugin.vim
+ 24: /usr/share/nvim/runtime/plugin/shada.vim
+ 25: /usr/share/nvim/runtime/plugin/spellfile.vim
+ 26: /usr/share/nvim/runtime/plugin/tarPlugin.vim
+ 27: /usr/share/nvim/runtime/plugin/tohtml.vim
+ 28: /usr/share/nvim/runtime/plugin/tutor.vim
+ 29: /usr/share/nvim/runtime/plugin/zipPlugin.vim
+ 30: /mnt/SDU3D1TB/Dropbox/JH/core/IT_stack/onGitHub/vimfiles/vim/after/plugin/plugins.vim
+ 31: ~/.config/nvim/filetype.vim
+ 32: /usr/share/nvim/runtime/syntax/syntax.vim
+ 33: /usr/share/nvim/runtime/syntax/synload.vim
+ 34: /usr/share/nvim/runtime/autoload/provider/clipboard.vim
+ 35: /usr/share/nvim/runtime/ftplugin/help.vim
+ 36: /usr/share/nvim/runtime/syntax/help.vim

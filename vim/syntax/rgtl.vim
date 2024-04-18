@@ -1,9 +1,9 @@
 
 " Language: rgtl  ($misc/CP/QR/QR.md)
 " Maintainer: Joseph Harriott
-" Last Change: mer 03 avr 2024
-
-" $vimfiles/syntax/rgtl.vim   configured in  $vimfiles/filetype.vim
+" Last Change: Mon 15 Apr 2024
+" solely for output of  rg --type-list > $ITscr/CP/ripgrep.rgtl
+" $vimfiles/vim/syntax/rgtl.vim   configured in  $vimfiles/vim/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 

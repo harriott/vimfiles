@@ -4,8 +4,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Thu 08 Sep 2022
 
-" "$vimfiles/ftplugin/build.vim  &  $vimfiles/syntax/build.vim
-" vim: ft=build:
+" $vimfiles/vim/ftplugin/build.vim
+"  also  $vimfiles/vim/syntax/build.vim
 
 setlocal expandtab shiftwidth=2 textwidth=0
 

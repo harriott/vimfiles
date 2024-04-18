@@ -1,5 +1,3 @@
-" vim: set fdl=1:
-
 " -------------------------
 " configurations for neovim
 " -------------------------
@@ -10,16 +8,50 @@
 "  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 
 ""> 0 nvim
+command DiffOrig vert new | set buftype=nofile | read ++edit
+" - can't recall why I reduced this definition
+
 if has('win32')
   let g:loaded_perl_provider = 0
   let g:python3_host_prog = 'C:\Python312\python.exe'
 endif " providers
+
 set termguicolors
 
-" yank full line (I prefer over  Y-default)
-nnoremap Y 0yj
+" nnoremap Y 0yj
+" yank one full line - I prefer over  Y-default, but now need  nyy  to select multiple lines
 
-""> 0 pull in Vim configuration
+""> 0 quit buffer, quit nvim
+function! F4F4()
+  if len(getbufinfo({'buflisted':1})) == 1
+    let cfd = expand('%:p:h') " current file directory
+    if has('unix')
+      edit $HOME/.config/nvim/last_directory " ~/.config/nvim/last_directory
+      normal dd
+      put=cfd
+      normal kdd
+    endif " for  nn  in  $Bash/bashrc-console
+    wall
+    quit! " close completely
+  else
+    let s:b = expand('%:t')
+    wall
+    bdelete
+    echo 'closed '.s:b
+  endif
+endfunction
+
+nnoremap <f4> :call F4F4()<CR>
+inoremap <f4> <Esc>:call F4F4()<CR>
+" - overriden by some autocommands in  $vimfiles/vim/plugin/plugin.vim
+
+vnoremap <f4> <Esc>:call F4F4()<CR>
+
+""> 0 terminal
+autocmd TermOpen * startinsert
+let $in_nvim = 1  " - for $OSAB/Bash/bashrc-generic
+
+""> 1 pull in Vim configuration
 if has('win32')
   source $HOME\vimfiles\vimrc-Win10-paths.vim  " $vimfiles\vim\enter\vimrc-Win10-paths.vim
   source $vimfiles\vim\enter\vimrc-Win10.vim
@@ -27,7 +59,7 @@ else
   source $vimfiles/vim/enter/vimrc-Arch.vim
 endif
 
-""> 1 colors
+""> 2 colors
 " for accurate colour codes
 " set termguicolors
 " can turn off with :se notgc
@@ -47,17 +79,20 @@ endif
   " colo tokyonight-moon
 
 " choose plugin for showing trailing white spaces
-let g:useSTW = 0
-packadd vim-better-whitespace
-EnableWhitespace
-highlight ExtraWhitespace ctermbg=blue
-let g:better_whitespace_operator=''
+" let g:useSTW = 0
+" packadd vim-better-whitespace
+" EnableWhitespace
+" highlight ExtraWhitespace ctermbg=blue
+" let g:better_whitespace_operator=''
 
-if has('unix')
+" if has('unix')
   " let g:Hexokinase_highlighters = ['foregroundfull']
-  packadd vim-hexokinase
-endif
+  " packadd vim-hexokinase  " won't work with  lazy.nvim
+  " autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
+  " " $vfp/packs-unix/opt/vim-hexokinase/README.md
+" endif
 
-""> 1 packages for nvim
-" packadd nvim-web-devicons
+""> 2 pull in lua configs
+lua require('init')
+" - $vimfiles/nvim/lua-init.lua
 
