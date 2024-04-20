@@ -18,7 +18,7 @@ let g:plugins_vimtest = 1
 
 "">> fzf.vim
 nnoremap <leader><leader> :Lines<CR>
-if has('win32') | packadd fzf | endif
+if has('win32') | packadd fzf | endif  " ($MSwin10\mb\symlinks-mostly.ps1)
 packadd fzf.vim
 
 " "">> vim-illuminate

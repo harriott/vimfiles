@@ -43,8 +43,11 @@ require('lazy').setup(
   {
     { 'numToStr/Comment.nvim', opts = {} },
     -- gc  to comment visual regions/lines
+    -- require 'lazy/catppuccin',
+    require 'lazy/lualine',
     require 'lazy/telescope',
     require 'lazy/telescope-fzf-native',
+    require 'lazy/nvim-notify',
   },
   {
     performance = { reset_packpath = false, },

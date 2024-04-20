@@ -54,6 +54,27 @@ nnoremap <s-f3> :Commits<CR>
 inoremap <s-f3> <Esc>:Commits<CR>
 vnoremap <s-f3> <Esc>:Commits<CR>
 
+""> layout
+
+"">> vim-airline
+let g:airline_powerline_fonts = 1
+packadd vim-airline
+let airline#extensions#ale#show_line_numbers = 0
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#fzf#enabled = 1  " adds line-number/total lines
+let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
+let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
+set noshowmode  " no need for -- INSERT -- in (lower) command line
+packadd vim-airline-themes
+if has('win32')
+  let g:airline_left_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_symbols.colnr = ' '
+  let g:airline_symbols.linenr = ' '
+  let g:airline_symbols.maxlinenr = ''
+  let g:airline_symbols.branch = ''
+endif
+
 ""> shell
 
 "">> ctrlp.vim
@@ -65,7 +86,7 @@ vnoremap <s-f3> <Esc>:Commits<CR>
 "  tab              <c-t>
 set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
 
-"">>> configure
+"">>> 0 configure
 " need to be defined before it's loaded
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_mruf_max = 500

@@ -1,5 +1,4 @@
 ../.git
-../nvim/packs-nvim/opt/tabby.nvim/.git
 ../vim/packs-cp/opt/ale/.git
 ../vim/packs-cp/opt/bufexplorer/.git
 ../vim/packs-cp/opt/bufferize.vim/.git
@@ -94,6 +93,7 @@
 ../vim/packs-cp/opt/vim-ps1/.git
 ../vim/packs-cp/opt/vim-repeat/.git
 ../vim/packs-cp/opt/vim-rhubarb/.git
+../vim/packs-cp/opt/vim-rooter/.git
 ../vim/packs-cp/opt/vim-ShowTrailingWhitespace/.git
 ../vim/packs-cp/opt/vim-startify/.git
 ../vim/packs-cp/opt/vim-subversive/.git
@@ -111,4 +111,4 @@
 ../vim/packs-unix/opt/vim-plugin-AnsiEsc/.git
 ../vim/packs-unix/opt/vim-ssh-annex/.git
 ../vim/packs-unix/opt/vim-wombat-scheme/.git
-../vim/plugin/fzf/.git
+../vim/packs-win32/opt/fzf/.git

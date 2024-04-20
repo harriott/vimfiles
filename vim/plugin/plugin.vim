@@ -160,7 +160,8 @@ else
 endif
 function! ClearFancyGlyphs()
   " nuls
-  :sil!%s/ / /g
+  :sil!%s/ / /g  " replace no-break space
+  :sil!%s/ / /g  " replace hair space
   :sil!%s/​//g
   :sil!%s/‌//g
   :sil!%s/‍//g
@@ -572,7 +573,8 @@ function! StripStoreCurSel()
   " remove any leading hyphens that somehow cause chaos in Ggrep:
   let @h = substitute(@l, "^-\\+", "", "")
   " remove '\<' & '\>' (:s#\(^\\<\|\\>$\)##g):
-  let @s = substitute(@h, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
+  let g:strippedSearch = substitute(@h, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
+  let @s = g:strippedSearch
 endfunction
 
 " cd to file's and vimgrep for last search

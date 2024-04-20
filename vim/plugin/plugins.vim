@@ -46,7 +46,7 @@ packadd gitignore.vim
 "  let g:airline_symbols.dirty
 let g:airline#extensions#branch#vcs_checks = ['untracked'] " because 'dirty' isn't accurate...
 
-" Ggrep for last search
+" Ggrep for last search (using  @s)
 nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 " gives bogus filenames if they contain accented characters
 
@@ -493,25 +493,6 @@ packadd lf-vim
 "">> nerdfont.vim
 " packadd nerdfont.vim
 
-"">> vim-airline
-let g:airline_powerline_fonts = 1
-packadd vim-airline
-let airline#extensions#ale#show_line_numbers = 0
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#fzf#enabled = 1  " adds line-number/total lines
-let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
-let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
-set noshowmode  " no need for -- INSERT -- in (lower) command line
-packadd vim-airline-themes
-if has('win32')
-  let g:airline_left_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_symbols.colnr = ' '
-  let g:airline_symbols.linenr = ' '
-  let g:airline_symbols.maxlinenr = ''
-  let g:airline_symbols.branch = ''
-endif
-
 "">> vim-devicons
 " loaded in  $vimfiles/vim/after/plugin/plugins.vim
 
@@ -619,6 +600,11 @@ endif
 
 "">> vim-open-url
 packadd vim-open-url
+
+"">> vim-rooter
+let g:rooter_buftypes = ['']  " avoiding specials
+let g:rooter_manual_only = 1  " :Rooter
+packadd vim-rooter
 
 "">> vim-startify
 packadd vim-startify
@@ -739,7 +725,7 @@ packadd vim-mark  " requires  ingo-library
 packadd supertab
 
 "">> targets.vim
-" $vfp/packs-cp/opt/targets.vim/cheatsheet.md
+" $vimfiles/vim/packs-cp/opt/targets.vim/cheatsheet.md
 packadd targets.vim
 
 "">> vim-subversive
@@ -803,7 +789,7 @@ endfunction
 "">>>> grab Vim settings - maps of Fn keys
 function! GrabBmmFn()
   silent execute 'Bufferize map|map!'
-  winc k
+  winc j  " assuming  splitbelow
   v/<.\=.\=F.*>/d
   nohlsearch
   sort

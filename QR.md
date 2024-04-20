@@ -81,6 +81,10 @@ Joseph's (g)Vim Quick Reference
     \\l           " toggle cursorline
     \\ll          " toggle listchars (:h 'list')
 
+## background
+    :h 'bg'
+    :se bg
+
 ## Colorizer
     :ColorClear         " clears colourizing
     :ColorHighlight     " impressive colourizing, but then can't be truly turned off
@@ -225,8 +229,6 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     \zz       " toggle centering current line
 
 # Nvim
-    :=vim.env.VIMRUNTIME
-    :=vim.fn.has("win64")
     :echo has('nvim')
 
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
@@ -237,6 +239,11 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
 ## log file
     :echo $NVIM_LOG_FILE
     ~/.local/state/nvim/log
+
+## lua print(...)
+    :=vim.env.VIMRUNTIME
+    :=vim.fn.has("win64")
+    :=vim.loop.cwd()
 
 # replace
     :ncc           " change n lines
@@ -489,7 +496,11 @@ vim(1)
 $misc/CP/vimtest/README.md
 ```
 
-## buffer listing your recent messages
+## messages
+- `:echo v:errmsg` - the last one
+- `g<` - review
+
+### buffer listing recents
     :Bufferize messages
 	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
 

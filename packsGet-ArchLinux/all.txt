@@ -1,8 +1,3 @@
-../nvim/packs-nvim/opt/tabby.nvim/doc
-../nvim/packs-nvim/opt/tabby.nvim/.git
-../nvim/packs-nvim/opt/tabby.nvim/lua
-../nvim/packs-nvim/opt/tabby.nvim/playground
-../nvim/packs-nvim/opt/tabby.nvim/plugin
 ../vim/packs-cp/opt/ale/ale_linters
 ../vim/packs-cp/opt/ale/autoload
 ../vim/packs-cp/opt/ale/doc
@@ -502,6 +497,10 @@
 ../vim/packs-cp/opt/vim-rhubarb/.git
 ../vim/packs-cp/opt/vim-rhubarb/.github
 ../vim/packs-cp/opt/vim-rhubarb/plugin
+../vim/packs-cp/opt/vim-rooter/doc
+../vim/packs-cp/opt/vim-rooter/.git
+../vim/packs-cp/opt/vim-rooter/plugin
+../vim/packs-cp/opt/vim-rooter/test
 ../vim/packs-cp/opt/vim-ShowTrailingWhitespace/autoload
 ../vim/packs-cp/opt/vim-ShowTrailingWhitespace/doc
 ../vim/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin
@@ -588,3 +587,12 @@
 ../vim/packs-unix/opt/vim-ssh-annex/syntax
 ../vim/packs-unix/opt/vim-wombat-scheme/colors
 ../vim/packs-unix/opt/vim-wombat-scheme/.git
+../vim/packs-win32/opt/fzf/bin
+../vim/packs-win32/opt/fzf/doc
+../vim/packs-win32/opt/fzf/.git
+../vim/packs-win32/opt/fzf/.github
+../vim/packs-win32/opt/fzf/man
+../vim/packs-win32/opt/fzf/plugin
+../vim/packs-win32/opt/fzf/shell
+../vim/packs-win32/opt/fzf/src
+../vim/packs-win32/opt/fzf/test

@@ -64,26 +64,12 @@ endif
 " set termguicolors
 " can turn off with :se notgc
 
-if has('win32')
-  colo wombat
-else
-  colo jellybeans
-endif
-" packadd nightfox.nvim
-  " colo carbonfox
-  " colo terafox
-  " colo nightfox
-  " colo nordfox
-" packadd tokyonight.nvim
-  " colo tokyonight-night
-  " colo tokyonight-moon
-
 " choose plugin for showing trailing white spaces
-" let g:useSTW = 0
-" packadd vim-better-whitespace
+let g:useSTW = 0
+packadd vim-better-whitespace
 " EnableWhitespace
-" highlight ExtraWhitespace ctermbg=blue
-" let g:better_whitespace_operator=''
+highlight ExtraWhitespace ctermbg=blue
+let g:better_whitespace_operator=''
 
 " if has('unix')
   " let g:Hexokinase_highlighters = ['foregroundfull']
@@ -91,6 +77,14 @@ endif
   " autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
   " " $vfp/packs-unix/opt/vim-hexokinase/README.md
 " endif
+
+"">> colorscheme
+if has('win32')
+  colo wombat
+else
+  colo jellybeans
+endif
+" set in   $vimfiles/nvim/lua/lazy/nvim-notify.lua
 
 ""> 2 pull in lua configs
 lua require('init')

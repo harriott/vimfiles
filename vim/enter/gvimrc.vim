@@ -1,8 +1,8 @@
 " vim: set fdl=1:
 
-" $vimfiles/gvimrc.vim
-"  sourced by  $vimfiles/gvimrc-Arch.vim
-"  sourced by  $vimfiles/gvimrc-Win10.vim
+" $vimfiles/vim/enter/gvimrc.vim
+"  sourced by  $vimfiles/vim/enter/gvimrc-Arch.vim
+"  sourced by  $vimfiles/vim/enter/gvimrc-Win10.vim
 
 ""> 0 preliminaries
 " adapted from  $VIMRUNTIME/gvimrc_example.vim
@@ -64,4 +64,5 @@ elseif has('win32') && g:monitorheight == '1080'
   set lines=60
 endif
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
+" 0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
 
