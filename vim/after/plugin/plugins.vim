@@ -2,10 +2,10 @@
 
 " Joseph Harriott - Sun 26 Feb 2023
 
-" $vimfiles/after/plugin/plugins.vim
+" $vimfiles/vim/after/plugin/plugins.vim
 
 " ""> csv.vim
-" " override  $vfp/packs-cp/opt/csv.vim/ftdetect/csv.vim
+" " override  $vimfiles/vim/packs-cp/opt/csv.vim/ftdetect/csv.vim
 " autocmd BufRead,BufNewFile *.dat set filetype=
 
 ""> vim-devicons

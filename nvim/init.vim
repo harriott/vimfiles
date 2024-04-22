@@ -78,13 +78,12 @@ let g:better_whitespace_operator=''
   " " $vfp/packs-unix/opt/vim-hexokinase/README.md
 " endif
 
-"">> colorscheme
+" colorscheme
 if has('win32')
   colo wombat
 else
   colo jellybeans
 endif
-" set in   $vimfiles/nvim/lua/lazy/nvim-notify.lua
 
 ""> 2 pull in lua configs
 lua require('init')

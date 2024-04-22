@@ -116,6 +116,7 @@ gd opt; ls
   # $gc https://github.com/harriott/vim-tagbar
   # $gc https://github.com/EdenEast/nightfox.nvim
   # $gc https://github.com/airblade/vim-rooter
+  $gc https://github.com/neomutt/neomutt.vim
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye

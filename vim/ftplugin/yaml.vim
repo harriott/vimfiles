@@ -1,12 +1,14 @@
 
 " Language: YAML
 " Maintainer: Joseph Harriott
-" Last Change: Wed 07 Dec 2022
-" $vimfiles/ftplugin/yaml.vim  - supplementary to  $VIMRUNTIME/ftplugin/yaml.vim
-"  also  $vimfiles/after/syntax/yaml.vim
+" Last Change: Sat 20 Apr 2024
+" $vimfiles/vim/ftplugin/yaml.vim  - supplementary to  $VIMRUNTIME/ftplugin/yaml.vim
+"  also  $vimfiles/vim/after/syntax/yaml.vim
 " ($VIMRUNTIME/filetype.vim  decides the various files that are detected as  yaml)
 
 let b:ale_linters = ['yamllint']
+source $vimfiles/vim/ftplugin/ALElocaleader.vim
+
 setlocal foldcolumn=1 textwidth=0
 
 " my folding tools:

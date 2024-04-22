@@ -3,9 +3,13 @@
 " Maintainer: Joseph Harriott
 " Last Change: Thu 13 Jul 2023
 " this is for extra funtionality that I like for my *.md files
-" $vimfiles/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
+" $vimfiles/vim/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
 "  this configuration file is sourced as needed by  $vimfiles/filetype.vim
+" also  $vimfiles/vim/after/ftplugin/md.vim
+
+" convert dw url
+nnoremap <buffer><localleader>[ :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>
 
 " For md's detected as  liquid:
 nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
@@ -13,8 +17,6 @@ nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
 
 " open Pandoc'd pdf
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>
-
-nnoremap <buffer><localleader>[ :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>  " convert dw url
 
 if v:lang =~ 'fr'
   nnoremap <buffer><localleader>< a<><Esc>

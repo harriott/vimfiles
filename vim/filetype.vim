@@ -36,7 +36,7 @@ au! BufRead,BufNewFile *.emdr setf text |
 au! BufRead,BufNewFile *.md source $vimfiles/vim/ftplugin/md.vim
 
 ""> 1 other filetypes
-if exists("did_load_filetypes") | finish | endif
+" if exists("did_load_filetypes") | finish | endif  " kills detection in Neovim
 aug filetypedetect
     au! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
     au! BufRead,BufNewFile *.gnudiff setf gnudiff   " $vimfiles/ftplugin/gnudiff.vim

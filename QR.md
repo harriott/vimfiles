@@ -77,9 +77,11 @@ Joseph's (g)Vim Quick Reference
     :se expandtab " allows  :retab
     :se ch        " cmdheight - I like 2 in gVim
     :se cwh       " cmdwinheight - I like 30
-    \\c           " toggle cursorcolumn
-    \\l           " toggle cursorline
-    \\ll          " toggle listchars (:h 'list')
+    \ll           " location list (ListToggle) if it's there
+    \q            " quickfix list (ListToggle)
+    \\c           " cursorcolumn toggle
+    \\l           " cursorline toggle
+    \\ll          " listchars (:h 'list') toggle
 
 ## background
     :h 'bg'
@@ -229,7 +231,12 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     \zz       " toggle centering current line
 
 # Nvim
+    /usr/share/nvim/runtime/doc/treesitter.txt
+    /usr/share/nvim/runtime/filetype.lua
+
     :echo has('nvim')
+    :echo nvim_get_runtime_file('parser', v:true)
+    r ~/.local/share/nvim
 
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
     fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
@@ -241,9 +248,19 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     ~/.local/state/nvim/log
 
 ## lua print(...)
+    :=vim.env.MYVIMRC  " path of my  init
+    :=vim.env.vimfiles  " path of my  $vimfiles
     :=vim.env.VIMRUNTIME
     :=vim.fn.has("win64")
     :=vim.loop.cwd()
+
+## plugins
+    $vimfiles/nvim/lua/lazy/telescope.lua
+
+### Comment.nvim
+- `gb[motion]`/`gc[motion]` toggles block/line comment [motion] or selection
+- `gcA`/`gco`/`gcO` begin comment at end of line / before line / after line
+- `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
 
 # replace
     :ncc           " change n lines
@@ -525,6 +542,7 @@ $misc/CP/vimtest/README.md
     :Bufferize scriptnames " list of files sourced, in order
     :Bufferize se          " all option changes
     :Bufferize se gfn      " show font
+    :Bufferize se ofu      " omnifunc
     :Bufferize version     " Vim version etc
     :colo [default]        " current colorscheme
     :let mapleader
@@ -539,20 +557,14 @@ $misc/CP/vimtest/README.md
 
 options as variable: `:echo &textwidth`
 
-### export
-1. `:cd $vimfiles/grab`
-1. `mk sbMb.exrc`
-1. in `$vimfiles/grab`,
-%s//<esc>/g
-
-mappings abbreviations settings
-
 ### mappings
     :Bufferize map                     " n s v
     :Bufferize map!                    " e i
     :Bufferize map|map!                " e i n s v
     :Bufferize verb map <localleader>q " where that mapping was set
     :map <c-n>                         " shows the mapping
+
+`alt+<key>` won't work in terminals
 
 ### runtimepath
     :Bufferize echo &rtp
@@ -597,8 +609,8 @@ mappings abbreviations settings
     c-w+r  " rotate split to right
 
 ## sizes
-    C-w+=         " equalise window sizes
-    C-w+_         " maximizes a window
+    C-w =  " equalise window sizes
+    C-w _  " maximizes a window
     Resize Splits with mouse
 
 ## split

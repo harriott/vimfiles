@@ -5,14 +5,12 @@
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
+let g:plugins_vim = 1
+
 ""> encoding
 
 "">> AnsiEsc
 packadd vim-plugin-AnsiEsc
-
-"">> minimap.vim
-" MinimapToggle
-packadd minimap.vim
 
 "">> context.vim
 " :ContextToggleWindow  mapped in
@@ -258,6 +256,8 @@ packadd vim-ps1
 " [m  or  ]m  " move to previous or next environment
 " =li  or  =lI  " vimtex-info  or  vimtex-info-full
 " =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
+
+" if has('nvim') | let g:vimtex_complete_enabled = 0 | endif
 if has('win32') | let g:vimtex_view_general_viewer = 'C:\SumatraPDF\SumatraPDF.exe' | endif
 let g:vimtex_compiler_enabled = 0
 let g:vimtex_compiler_silent = 1  " doesn't hide the «latexmk is not executable» message
@@ -292,6 +292,10 @@ let g:vimtex_syntax_custom_cmds = [
   \]
 let g:vimtex_view_enabled = 0
 packadd vimtex
+
+"">> minimap.vim
+" MinimapToggle
+packadd minimap.vim
 
 "">> The NERD Commenter
 packadd nerdcommenter
@@ -336,42 +340,40 @@ packadd vim-ssh-annex
 packadd vim-ingo-library
 
 ""> languages
+" quicker access to completions
+inoremap <c-m> <c-x><c-o>
 
 "">> ALE
 " :ALEFix
-" :Bufferize ALEInfo  " shows settings for the filetype
 " :h ale-languagetool-options
-" needs  g:languagetool_jar  defined
-" $vfp/packs-cp/opt/ale/plugin/ale.vim
+" settings for the filetype, including recommended modules
+"  :ALEInfo
+"   AlEPrreviewWindow  responds to  <c-w>+, but not to  <cw>=
+" $vimfiles/vim/packs-cp/opt/ale/plugin/ale.vim
 
 " Enabled?
 "  :let ale_enabled
 "  airline shows an orange category at right end when ALE is enabled
 "  filetypes might have  b:ale_enabled = 0
 
-" Arch's  languagetool  is found
+" \ll
+
+" Using
+"  bash-language-server
+"  languagetool
+"   needs  g:languagetool_jar  defined
+
+" :let g:ale_completion_enabled = 1  " if only using  ALE's internal engines
 let g:ale_echo_msg_format = '%linter% %code% %s'
 let g:ale_virtualtext_cursor = 'disabled'  " turns off end of line  virtual-text  messages
 let g:ale_linters_explicit = 1  " turns off all except explicity defined linters
-"  I use  let b:ale_linters = [...]  in my ftplugin configurations
+"  I use  let b:ale_linters = [...]  in my  ftplugin  configurations,
+"   and  $vimfiles/vim/ftplugin/ALElocaleader.vim
 let g:ale_sign_column_always = 1
 packadd ale
 
-" moving to ALE errors
-noremap <silent> <leader>aj <Plug>(ale_next_wrap)
-noremap <silent> <leader>ak <Plug>(ale_previous_wrap)
-
-"">>> toggle ALE for buffer
-" noremap <leader>aa :ALEToggleBuffer<CR>  " doesn't report status
-noremap <leader>aa :call ALEToggleBufferShow()<cr>
-function! ALEToggleBufferShow()
-  if b:ale_enabled
-    ALEDisableBuffer
-  else
-    ALEEnableBuffer
-  endif
-let b:ale_enabled
-endfunction
+"">> NeoMutt
+packadd neomutt.vim
 
 "">> thesaurus_query.vim
 let g:tq_map_keys=0
@@ -616,7 +618,7 @@ packadd vim-startify
 
 "">>> tabular
 " :vert h tabular
-" $vfp/packs-cp/opt/tabular/README.md
+" $vimfiles/vim/packs-cp/opt/tabular/doc/Tabular.txt
 " packadd tabular  " :Tabularize ...
 
 "">>> vim-easy-align
@@ -631,7 +633,7 @@ xmap gA <Plug>(EasyAlign)
 let g:easy_align_delimiters = {
     \ 'b': { 'pattern': '∙' },
     \ 'm': { 'pattern': ' - ' },
-    \ '>': { 'pattern': '>>\|=>\|>' }
+    \ '>': { 'pattern': '>>\|=>\|>' },
     \ }
 
 "">>> vim-textmanip
@@ -860,7 +862,7 @@ noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
 packadd cfilter
 
 "">>> ListToggle
-" $vfp/packs-cp/opt/listtoggle/README.md
+" $vimfiles/vim/packs-cp/opt/listtoggle/README.md
 
 packadd listtoggle
 let g:lt_location_list_toggle_map = '<leader>ll'

@@ -2,19 +2,20 @@
 
 " Language: html
 " Maintainer: Joseph Harriott
-" Last Change: Fri 28 Apr 2023
+" Last Change: Mon 22 Apr 2024
 " $vimfiles/vim/ftplugin/html-ft.vim, sourced by  $vimfiles/vim/ftplugin/html.vim
-
-EmmetInstall
-setlocal foldmethod=indent
 
 " For html's detected as  liquid:
 nnoremap <buffer> <localleader>h :set filetype=html<CR>
 " - then just reload the file to return to  liquid  syntax highlighting
 
-""> ALE
-let b:ale_fixers = ['prettier']
+if !has('nvim')
+  EmmetInstall
 
-"">> lint
-let b:ale_linters = ['htmlhint']
+  " ALE
+  let b:ale_linters = ['cspell', 'htmlhint',]
+  source $vimfiles/vim/ftplugin/ALElocaleader.vim
+endif
+
+setlocal foldmethod=indent
 

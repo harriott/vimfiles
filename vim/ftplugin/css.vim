@@ -1,13 +1,14 @@
+" vim: set fdl=1:
 
 " Language: css
 " Maintainer: Joseph Harriott
-" Last Change: Thu 09 Feb 2023
-" $vimfiles/ftplugin/css.vim, supplementary to  $VIMRUNTIME/ftplugin/css.vim
+" Last Change: Mon 22 Apr 2024
+" $vimfiles/vim/ftplugin/css.vim, supplementary to  $VIMRUNTIME/ftplugin/css.vim
 
 " ALE
-let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/plugin/plugins.vim
-" let g:ale_fixers = ['stylelint']
-" let g:ale_linters = ['stylelint']
+let b:ale_enabled = 0
+let b:ale_linters = ['cspell', 'stylelint']
+source $vimfiles/vim/ftplugin/ALElocaleader.vim
 
 EmmetInstall
 

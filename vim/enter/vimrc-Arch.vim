@@ -2,6 +2,7 @@
 " $vimfiles/vim/enter/vimrc-Arch.vim
 " sourced from my
 "  $ABjo/textEdit/Vim/vimrc
+"  $vimfiles/nvim/init.vim
 
 source $vimfiles/vim/enter/vimrc-GNULinux.vim  " $vimfiles/vimrc-GNULinux.vim
 

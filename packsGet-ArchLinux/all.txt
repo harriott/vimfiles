@@ -141,6 +141,11 @@
 ../vim/packs-cp/opt/mru/.github
 ../vim/packs-cp/opt/mru/plugin
 ../vim/packs-cp/opt/mru/test
+../vim/packs-cp/opt/neomutt.vim/doc
+../vim/packs-cp/opt/neomutt.vim/ftdetect
+../vim/packs-cp/opt/neomutt.vim/ftplugin
+../vim/packs-cp/opt/neomutt.vim/.git
+../vim/packs-cp/opt/neomutt.vim/syntax
 ../vim/packs-cp/opt/nerdcommenter/autoload
 ../vim/packs-cp/opt/nerdcommenter/doc
 ../vim/packs-cp/opt/nerdcommenter/.git

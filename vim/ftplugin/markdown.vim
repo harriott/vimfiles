@@ -2,11 +2,11 @@
 
 " Language: markdown
 " Maintainer: Joseph Harriott
-" Last Change: Sun 30 Jul 2023
+" Last Change: Sat 20 Apr 2024
 " $vimfiles/vim/ftplugin/markdown.vim
 "  supplementary to
 "   [ $vimfiles/vim/packs-cp/opt/vim-markdown/README.md ]
-"   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/ftplugin/html.vim )
+"   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/vim/ftplugin/html.vim )
 
 " Filetype detection:
 "  $vimfiles/vim/filetype.vim
@@ -19,8 +19,9 @@ setlocal expandtab
 vnoremap <buffer>= <Nop>
 
 " ALE
-let b:ale_enabled = 0 " and toggle it as defined in  $vimfiles/vim/plugin/plugins.vim
+let b:ale_enabled = 0
 let b:ale_linters = ['languagetool']
+source $vimfiles/vim/ftplugin/ALElocaleader.vim
 
 " demote a selected part
 vnoremap <buffer><leader>> :s/^#/##/<CR>

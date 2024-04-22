@@ -1,7 +1,7 @@
 
 -- https://harriott.github.io/ - Sat 13 Apr 2024
 
--- $vimfiles/nvim/lua-init.lua
+-- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
 --  adapted from  $GHrUse/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 --  symlinked by
@@ -39,19 +39,31 @@ vim.opt.rtp:prepend(lazypath)
 -- r $lazy.nvim/README.md
 
 -- -> 1 lazy.nvim 1 require
-require('lazy').setup(
-  {
-    { 'numToStr/Comment.nvim', opts = {} },
-    -- gc  to comment visual regions/lines
+require('lazy').setup({
+    {'numToStr/Comment.nvim',opts={}}, -- gc  to comment visual regions/lines
     -- require 'lazy/catppuccin',
-    require 'lazy/lualine',
-    require 'lazy/telescope',
-    require 'lazy/telescope-fzf-native',
-    require 'lazy/nvim-notify',
+    -- require'lazy/dropbar',
+    require'lazy/lualine',
+    require'lazy/nvim-notify',
+    require'lazy/telescope',
+    require'lazy/telescope-fzf-native',
+    require'lazy/treesitter',  -- $vimfiles/nvim/lua/lazy/treesitter.lua
+      -- 'nvim-treesitter/nvim-treesitter-context',
+        -- *.lua  not perfect, even when  parser enabled
+          -- context.vim  works better
+    {'williamboman/mason.nvim',config=function()require('mason').setup()end,},
+      -- :che mason
+      -- :LspInfo
+      -- :Mason
+      --  g?  toggles help
+      --  r ~/.local/share/nvim/mason/packages
+      {"williamboman/mason-lspconfig.nvim",config=function()require('mason-lspconfig').setup()end,},
+        require'lazy/nvim-lspconfig',
   },
   {
     performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack
+    --  if commented out will get errors about access to  plugins.vim
     ui = {
       icons = vim.g.have_nerd_font and {} or {
         -- :lua print(vim.g.have_nerd_font)

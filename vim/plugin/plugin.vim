@@ -167,6 +167,7 @@ function! ClearFancyGlyphs()
   :sil!%s/‍//g
   :sil!%s/‎//g
   :sil!%s/‏//g
+  :sil!%s/⁠//g
   " punctuations
   :sil!%s/´/'/g
   :sil!%s/ˮ/"/g
@@ -483,6 +484,11 @@ nnoremap <leader><leader>v :vsplit<CR>
 nnoremap <leader><leader>o :close<CR>
 " - will only work on a split
 
+" re-open the quickfix-window
+"  eg to look again at results of vimgrep
+" noremap <leader>q :copen<CR>
+"  now using  ListToggle
+
 "">>> resize
 " decrease window height
 nnoremap <leader><down> 5<C-W>-
@@ -553,11 +559,6 @@ function! IncSearchToggle()
     echo 'incsearch'
   endif
 endfunction
-
-" re-open the quickfix-window
-"  eg to look again at results of vimgrep
-" noremap <leader>q :copen<CR>
-"  now using  ListToggle
 
 " select to end of line in unix
 if has('unix')

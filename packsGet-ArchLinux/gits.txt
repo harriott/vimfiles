@@ -30,6 +30,7 @@
 ../vim/packs-cp/opt/mediawiki.vim/.git
 ../vim/packs-cp/opt/minimap.vim/.git
 ../vim/packs-cp/opt/mru/.git
+../vim/packs-cp/opt/neomutt.vim/.git
 ../vim/packs-cp/opt/nerdcommenter/.git
 ../vim/packs-cp/opt/nerdfont.vim/.git
 ../vim/packs-cp/opt/nerdtree/.git

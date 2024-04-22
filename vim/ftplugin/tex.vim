@@ -1,14 +1,11 @@
 
 " Language: TeX
 " Maintainer: Joseph Harriott
-" Last Change: Mon 16 Oct 2023
+" Last Change: Sun 21 Apr 2024
 " Useful adjustments for working with LaTeX documents.
 "  supplemental to  $VIMRUNTIME/ftplugin/tex.vim
 " $VIMRUNTIME/filetype.vim > TeX  to see detections
 " see also  $vimfiles/after/ftplugin/tex.vim
-
-" ALE
-let b:ale_enabled = 0 " and toggle it as defined in $vimfiles/plugin/plugins.vim
 
 " open compiled pdf
   nnoremap <buffer><F12> :call CompiledPDF()<CR>
@@ -25,12 +22,6 @@ function! TabularFullAlign()
   normal gAip*&
   silent! '<,'>s/※/%/
 endfunction
-
-" conceallevel for VimTeX
-setlocal conceallevel=2
-" toggle it
-nnoremap <localleader><f5> :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
-" - can help when using  tabular  while  VimTeX  is active
 
 ""> \command{}
 nnoremap <buffer><localleader>r :s#\\\h\+{##<bar>s/}//<bar>nohls<CR>  " remove first command
@@ -120,6 +111,22 @@ else
     endif
   endfunction
 endif
+
+""> language help
+if !has('nvim')
+  let b:ale_enabled = 0
+  let b:ale_linters = ['vale']
+  " se ofu=ale#completion#OmniFunc " omnifunc - doesn't work
+  source $vimfiles/vim/ftplugin/ALElocaleader.vim
+endif
+
+" VimTeX
+" ------
+" :se ofu  reports  vimtex#complete#omnifunc
+setlocal conceallevel=2
+  " toggle it
+  nnoremap <localleader><f5> :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
+  " - can help when using  tabular  while  VimTeX  is active
 
 ""> Tabbing
 " (lifted from syntax\dokuwiki.vim):

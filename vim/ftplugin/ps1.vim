@@ -9,9 +9,9 @@
 
 setlocal expandtab foldcolumn=1 shiftwidth=2 textwidth=0
 
-nnoremap <leader>o :ContextToggleWindow<CR>
+nnoremap <buffer><leader>o :ContextToggleWindow<CR>
 
 ""> folding
 " my preferred folding
-execute 'source 'g:vimfiles.'/ftplugin/HashEqualsFolding.vim'
+source $vimfiles/vim/ftplugin/HashEqualsFolding.vim
 

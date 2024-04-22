@@ -60,6 +60,7 @@ autocmd BufRead,BufNewFile *PowerShell/PSReadLine/ConsoleHost_history.txt setloc
 " if v:lang =~ 'fr' | let mapleader = 'ù' | endif  " only seemed reliable in  nvim
 
 ""> mappings 0 localleader
+nnoremap <c-=> <c-w>=
 let maplocalleader = '='
   " ='s filter mapping still works, so these aren't needed
   " nnoremap _ =
