@@ -1,7 +1,7 @@
 
 Joseph's (g)Vim Quick Reference
 
-    :Tabularize\ "
+terminal_mappings    :Tabularize\ "
     gA"  " align the lists in this file
 
     $vimfiles\QR.gfm
@@ -230,38 +230,6 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     zz        " current line at centre of window
     \zz       " toggle centering current line
 
-# Nvim
-    /usr/share/nvim/runtime/doc/treesitter.txt
-    /usr/share/nvim/runtime/filetype.lua
-
-    :echo has('nvim')
-    :echo nvim_get_runtime_file('parser', v:true)
-    r ~/.local/share/nvim
-
-    fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
-    fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
-
-- `:che` (`:checkhealth`)
-
-## log file
-    :echo $NVIM_LOG_FILE
-    ~/.local/state/nvim/log
-
-## lua print(...)
-    :=vim.env.MYVIMRC  " path of my  init
-    :=vim.env.vimfiles  " path of my  $vimfiles
-    :=vim.env.VIMRUNTIME
-    :=vim.fn.has("win64")
-    :=vim.loop.cwd()
-
-## plugins
-    $vimfiles/nvim/lua/lazy/telescope.lua
-
-### Comment.nvim
-- `gb[motion]`/`gc[motion]` toggles block/line comment [motion] or selection
-- `gcA`/`gco`/`gcO` begin comment at end of line / before line / after line
-- `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
-
 # replace
     :ncc           " change n lines
     :nrc           " replace n characters with c
@@ -480,7 +448,52 @@ u            " lowercase a visual block
 :%sort!   " reverse
 :sort n   " numeric
 
-# Vim
+# variants
+    r $vimfiles/settings
+
+## Nvim
+    /usr/share/nvim/runtime/doc/help.txt
+    /usr/share/nvim/runtime/doc/treesitter.txt
+    /usr/share/nvim/runtime/filetype.lua
+
+    :echo has('nvim')
+    :echo nvim_get_runtime_file('parser', v:true)
+    :lua vim.cmd.tabnew()
+    r ~/.local/share/nvim
+
+    fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
+    fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
+
+- `:che` (`:checkhealth`)
+
+### log file
+    :echo $NVIM_LOG_FILE
+    ~/.local/state/nvim/log
+
+### lua print(...)
+    :=package.config:sub(1,1)  " identify winxx by \
+    :=vim.env.MYVIMRC  " path of my  init
+    :=vim.env.vimfiles  " path of my  $vimfiles
+    :=vim.env.VIMRUNTIME
+    :=vim.fn.has("win64")
+    :=vim.loop.cwd()
+
+### plugins
+    $vimfiles/nvim/lua/lazy/telescope.lua
+
+#### Comment.nvim
+- `gb[motion]`/`gc[motion]` toggles block/line comment [motion] or selection
+- `gcA`/`gco`/`gcO` begin comment at end of line / before line / after line
+- `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
+
+#### nvim-treesitter shared objects
+    ls ~/.local/share/nvim/lazy/nvim-treesitter/parser
+
+### terminal
+    :lua vim.cmd.terminal()
+    <esc><esc> " my map to abandon the terminal buffer
+
+## Vim
 ```vim
 @@           " = @: = repeat last command-line
 \8           " toggle 82\106 columns
@@ -490,6 +503,8 @@ K            " brings up a man page (if there is one) for word under cursor
 q:           " brings up an interactive history of :commands (in an editable window)
 vi           " exit Ex mode
 :ar          " the argument list
+:echo has('win32')
+:echo has('win64')
 :h key-notation
 :h index     " lists the all of the commands
 :his         " Display command-line history
@@ -513,22 +528,22 @@ vim(1)
 $misc/CP/vimtest/README.md
 ```
 
-## messages
+### messages
 - `:echo v:errmsg` - the last one
 - `g<` - review
 
-### buffer listing recents
+#### buffer listing recents
     :Bufferize messages
 	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
 
-## quickfix
+### quickfix
     :cc n    " goto error n
     :ccl     " close
     :cn :cp  " next error  previous error
     :copen   " open
     :cw      " open if errors or close
 
-## registers
+### registers
     ":p                               " paste in last command.
     "kyy                              " copies current line into register k
     :echo @%                          " (relative) filepath
@@ -536,7 +551,7 @@ $misc/CP/vimtest/README.md
     :let@a=@_                         " sets a to (always empty) black hole register
     :let@q=@k                         " sets a to contents of register k
 
-## settings
+### settings
     :Bufferize dig!        " categorised digraphs
     :Bufferize let         " all internal variables
     :Bufferize scriptnames " list of files sourced, in order
@@ -557,7 +572,7 @@ $misc/CP/vimtest/README.md
 
 options as variable: `:echo &textwidth`
 
-### mappings
+#### mappings
     :Bufferize map                     " n s v
     :Bufferize map!                    " e i
     :Bufferize map|map!                " e i n s v
@@ -566,13 +581,13 @@ options as variable: `:echo &textwidth`
 
 `alt+<key>` won't work in terminals
 
-### runtimepath
+#### runtimepath
     :Bufferize echo &rtp
     :Bufferize se rtp
     :se pp  " packpath
     $vimfiles/grab/rtp-$host.fetl
 
-### syntax highlighting
+#### syntax highlighting
 	:h syn-region
     :windo echo b:current_syntax
     C \usr\share\vim\vim90\syntax
@@ -581,7 +596,7 @@ options as variable: `:echo &textwidth`
 
 `syntax.txt`
 
-#### settings
+##### settings
     :Bufferize sy  " :h syn-list
 	:hi
     :se synmaxcol=0  " removes 3000 character limit (:se smc)

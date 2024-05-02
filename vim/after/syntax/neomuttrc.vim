@@ -3,8 +3,8 @@
 " Language:	neomuttrc
 " Maintainer: Joseph Harriott
 " Last Change: Sun 30 Jan 2022
-" this is supplemental to  $VIMRUNTIME/syntax/neomuttrc.vim
+" $vimfiles/after/syntax/neomuttrc.vim  supplemental to  $VIMRUNTIME/syntax/neomuttrc.vim
 
 ""> folding
-execute 'source 'g:vimfiles.'/after/syntax/HashEqualsFolding.vim'
+source $vimfiles/vim/after/syntax/HashEqualsFolding.vim
 

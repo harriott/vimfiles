@@ -1,4 +1,6 @@
 
+-- $vimfiles/nvim/lua/lazy/lualine.lua
+
 return {
   { 'nvim-lualine/lualine.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -7,7 +9,10 @@ return {
       -- require('lualine').setup()
       require('lualine').setup{
         extensions = {'fzf','man','quickfix',},
-        -- not obvious what these add
+          -- 'fzf' adds what?
+          -- 'man' is helpful
+          -- 'quickfix' is helpful
+          -- 'toggleterm' is crap
       }
     end,
     }

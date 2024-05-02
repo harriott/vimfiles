@@ -317,6 +317,12 @@ let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
 packadd vim-tagbar
 
+"">> unicode.vim
+" $vimfiles\vim\packs-cp\opt\unicode.vim\doc\unicode.txt
+" :UnicodeName  for the character under the cursor
+let g:Unicode_no_default_mappings = v:true
+packadd unicode.vim
+
 "">> vim match-up
 " % = jump forward
 " g% = jumb backward
@@ -341,7 +347,8 @@ packadd vim-ingo-library
 
 ""> languages
 " quicker access to completions
-inoremap <c-m> <c-x><c-o>
+inoremap <c-x><c-x> <c-x><c-o>
+" - I'd preferred  <C-M>, but that's <CR>
 
 "">> ALE
 " :ALEFix
@@ -489,7 +496,7 @@ endfunction
 if g:useSTW | packadd vim-ShowTrailingWhitespace | endif  " requires  ingo-library
 
 "">> lf.vim
-" $vfp/packs-cp/opt/lf-vim/README.md
+" $vimfiles/vim/packs-cp/opt/lf-vim/README.md
 packadd lf-vim
 
 "">> nerdfont.vim
@@ -511,41 +518,6 @@ let g:calendar_monday = 1
 let g:calendar_weeknm = 1
 noremap <leader>yy :CalendarH<CR>
 packadd calendar-vim
-
-"">> Fern
-" vim default c-e = scroll up the window, without displacing the cursor
-noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim " $vfp/packs-cp/opt/fern.vim/README.md
-" ! -- toggles hidden
-" + -- vim-buffing-wheel override (quits)
-" <bs>/<c-h> -- fern-action-leave (goes up a directory)
-" <c-m>/<cr> -- open-or-enter
-" ? -- help
-" - -- mark
-" e/<enter> -- open
-" E -- open:side
-" p -- preview:toggle
-" t -- open:tabedit
-" x -- open:system (eg to open an image)
-
-"">> fern-git-status
-packadd fern-git-status.vim
-
-"">> fern-preview.vim
-augroup fern-settings
-  autocmd!
-  autocmd FileType fern call s:fern_settings()
-augroup END
-function! s:fern_settings() abort
-  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
-  nmap <silent> <buffer> <c-d> <Plug>(fern-action-preview:scroll:down:half)
-  nmap <silent> <buffer> <c-u> <Plug>(fern-action-preview:scroll:up:half)
-endfunction
-packadd fern-preview.vim
-
-"">> fern-renderer-nerdfont.vim
-let g:fern#renderer = "nerdfont"
-packadd fern-renderer-nerdfont.vim
 
 "">> NERDTree
 "h NERDTree
@@ -571,34 +543,8 @@ vmap <F6> <Plug>(openbrowser-smart-search)
 
 packadd open-browser.vim
 
-"">> vifm.vim
-packadd vifm.vim
-
 "">> vim-clifm
 packadd vim-clifm
-
-"">> vim-dirvish
-" h dirvish
-" can't navigate up a directory
-" takes over :e.
-
-" in dirvish
-"  -       -> out
-"  <enter> -> in
-"  a       -> open file in window left
-"  g?      -> dirvish-mappings
-"  gq      -> quit
-"  preview left
-"   p
-"    Ctrl-n -> next
-"    Ctrl-p -> previous
-
-packadd vim-dirvish
-
-"">> vim-dirvish-git
-if has('unix')
-  packadd vim-dirvish-git
-endif
 
 "">> vim-open-url
 packadd vim-open-url

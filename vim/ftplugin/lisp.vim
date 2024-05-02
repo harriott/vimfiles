@@ -4,7 +4,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 05 Sep 2022
 
-" $vimfiles/ftplugin/lisp.vim, supplementary to  $VIMRUNTIME/ftplugin/lisp.vim
+" $vimfiles/vim/ftplugin/lisp.vim, supplementary to  $VIMRUNTIME/ftplugin/lisp.vim
 " Lisp  files are decided in  $VIMRUNTIME/filetype.vim
 
   " if getline(v:lnum) =~ '^(' | return ">1" | else | return "=" | endif

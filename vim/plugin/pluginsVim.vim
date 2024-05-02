@@ -6,7 +6,10 @@
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
 ""> fzf.vim
-let g:fzf_vim = {} | let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
+" $vimfiles/vim/packs-cp/opt/fzf.vim/README.md
+let g:fzf_vim = {}
+  let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
+  let g:fzf_vim.preview_window = ['hidden,up,70%', 'f1']
 packadd fzf.vim
 
 nnoremap <leader>B :BLines<CR>
@@ -95,8 +98,43 @@ nnoremap <leader>bb :CtrlPBuffer<CR>
 "">>> 1 invoke
 packadd ctrlp.vim
 
+"">> Fern
+" vim default c-e = scroll up the window, without displacing the cursor
+noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
+packadd fern.vim " $vfp/packs-cp/opt/fern.vim/README.md
+" ! -- toggles hidden
+" + -- vim-buffing-wheel override (quits)
+" <bs>/<c-h> -- fern-action-leave (goes up a directory)
+" <c-m>/<cr> -- open-or-enter
+" ? -- help
+" - -- mark
+" e/<enter> -- open
+" E -- open:side
+" p -- preview:toggle
+" t -- open:tabedit
+" x -- open:system (eg to open an image)
+
+"">> fern-git-status
+packadd fern-git-status.vim
+
+"">> fern-preview.vim
+augroup fern-settings
+  autocmd!
+  autocmd FileType fern call s:fern_settings()
+augroup END
+function! s:fern_settings() abort
+  nmap <silent> <buffer> p     <Plug>(fern-action-preview:toggle)
+  nmap <silent> <buffer> <c-d> <Plug>(fern-action-preview:scroll:down:half)
+  nmap <silent> <buffer> <c-u> <Plug>(fern-action-preview:scroll:up:half)
+endfunction
+packadd fern-preview.vim
+
+"">> fern-renderer-nerdfont.vim
+let g:fern#renderer = "nerdfont"
+packadd fern-renderer-nerdfont.vim
+
 "">> MRU
-" $vfp/packs-cp/opt/mru/README.md
+" $vimfiles/vim/packs-cp/opt/mru/README.md
 " $vimfiles/syntax/mru.vim
 let MRU_Max_Entries = 1000
 let MRU_Window_Height = 20
@@ -116,6 +154,29 @@ packadd mru
 "  O = open split right
 "  o = open split below
 "  u = update
+
+"">> vim-dirvish
+" h dirvish
+" can't navigate up a directory
+" takes over :e.
+
+" in dirvish
+"  -       -> out
+"  <enter> -> in
+"  a       -> open file in window left
+"  g?      -> dirvish-mappings
+"  gq      -> quit
+"  preview left
+"   p
+"    Ctrl-n -> next
+"    Ctrl-p -> previous
+
+packadd vim-dirvish
+
+"">> vim-dirvish-git
+if has('unix')
+  packadd vim-dirvish-git
+endif
 
 "">> vim-picker
 if has('unix')

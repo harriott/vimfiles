@@ -1,5 +1,5 @@
 
--- https://harriott.github.io/ - Sat 13 Apr 2024
+-- https://harriott.github.io/ - Thu 02 May 2024
 
 -- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
@@ -23,10 +23,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- -> 0 nVim
-vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>:bd!<CR>', { desc = 'Exit terminal mode and drop the buffer' })
 vim.opt.hlsearch = true
 vim.opt.updatetime = 250 -- decrease swap update time
 vim.opt.inccommand = 'split' -- preview substitutions as you type
+
+-- --> terminal
+vim.keymap.set('t', '<C-h>', '<Cmd>wincmd k<CR>', {desc = 'normal mode and move focus left' })
+vim.keymap.set('t', '<C-l>', '<Cmd>wincmd k<CR>', {desc = 'normal mode and move focus right' })
+vim.keymap.set('t', '<C-j>', '<Cmd>wincmd k<CR>', {desc = 'normal mode and move focus down' })
+vim.keymap.set('t', '<C-k>', '<Cmd>wincmd k<CR>', {desc = 'normal mode and move focus up' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal (insert) mode to normal mode' })
 
 -- -> 1 lazy.nvim 0 bootstrap
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -38,12 +44,13 @@ vim.opt.rtp:prepend(lazypath)
 -- g $lazy
 -- r $lazy.nvim/README.md
 
--- -> 1 lazy.nvim 1 require
+-- -> 1 lazy.nvim 1
 require('lazy').setup({
     {'numToStr/Comment.nvim',opts={}}, -- gc  to comment visual regions/lines
     -- require 'lazy/catppuccin',
     -- require'lazy/dropbar',
     require'lazy/lualine',
+    require'lazy/oil',
     require'lazy/nvim-notify',
     require'lazy/telescope',
     require'lazy/telescope-fzf-native',
@@ -55,6 +62,14 @@ require('lazy').setup({
       -- :che mason
       -- :LspInfo
       -- :Mason
+      -- :MasonInstall bash-language-server
+      -- :MasonInstall emmet-language-server
+      -- :MasonInstall ltex-ls
+      -- :MasonInstall lua-language-server
+      -- :MasonInstall mutt-language-server
+      -- :MasonInstall perlnavigator
+      -- :MasonInstall pyright
+      -- :MasonInstall vim-language-server
       --  g?  toggles help
       --  r ~/.local/share/nvim/mason/packages
       {"williamboman/mason-lspconfig.nvim",config=function()require('mason-lspconfig').setup()end,},
@@ -87,4 +102,25 @@ require('lazy').setup({
 )
 -- somehow breaks  vim-hexokinase
 -- somehow kills nvim's access to  /usr/bin/fzf
+
+-- -> 2 nvim-treesitter
+-- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
+-- :h nvim-treesitter-commands
+
+-- --> parsers
+-- $vimfiles\settings\nvim-unix-nvim-treesitter-TSInstallInfo.txt
+-- r $lazy/nvim-treesitter/parser
+
+-- -- ---> get
+-- local function getTSParsers()
+--   TSInstall lua
+--   TSInstall markdown
+--   TSInstall python
+--   TSInstall sh
+--   TSInstall vim
+-- end
+
+-- -- on MSWin do these in  x64 Native Tools Command Prompt
+
+-- -- :TSUpdate  updates all parsers
 

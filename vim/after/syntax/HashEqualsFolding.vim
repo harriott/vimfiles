@@ -1,11 +1,11 @@
 " vim: se fdl=1:
 
 " Maintainer: Joseph Harriott
-" Last Change: Mon 01 Aug 2022
+" Last Change: mar 23 avr 2024
   " used by
-  "   $vimfiles/after/syntax/bbcode.vim
-  "   $vimfiles/after/syntax/sh.vim
-  "   $vimfiles/after/syntax/neomuttrc.vim
+  "   $vimfiles/vim/after/syntax/bbcode.vim
+  "   $vimfiles/vim/after/syntax/neomuttrc.vim
+  "   $vimfiles/vim/after/syntax/sh.vim
 
 ""> my syntax for  #=>  folding
 syntax match foldY '^ *#=.*$'

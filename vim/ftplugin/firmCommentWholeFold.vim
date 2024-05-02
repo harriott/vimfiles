@@ -5,6 +5,8 @@
   " $vimfiles/vim/ftplugin/firmCommentWholeFold.vim
   " used by
   "   $vimfiles/vim/ftplugin/HashEqualsFolding.vim
+  "   $vimfiles/vim/ftplugin/lisp.vim
+  "   $vimfiles/vim/ftplugin/lua.vim
   "   $vimfiles/vim/ftplugin/vim.vim
 
 ""> turn off or on a fold of commands
@@ -31,5 +33,6 @@ function! FirmUnComment(c)
   normal 
   " definitely close the current fold, then delete and restore to get out of visual line
   " normal! zozckjdP
+  echo 'Fold uncommented!'
 endfunction
 

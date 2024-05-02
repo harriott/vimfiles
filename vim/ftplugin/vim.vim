@@ -1,4 +1,4 @@
-" vim: fdl=1:
+" vim: fdl=2:
 
 " Language: Vim
 " Maintainer: Joseph Harriott
@@ -40,11 +40,15 @@ vnoremap <buffer><leader>> :s/"">/"">>/<CR>
 vnoremap <buffer><leader>< :s/"">>/"">/<CR>
 
 "">> turn off or on a fold of commands
-execute 'source 'g:vimfiles.'/ftplugin/firmCommentWholeFold.vim'
+source $vimfiles/vim/ftplugin/firmCommentWholeFold.vim
 
 " firmly comment out a whole fold
-nnoremap <buffer><leader><leader>> :call FirmComment('"')<cr>
+if v:lang =~ 'fr'
+  nnoremap <buffer><leader>" :call FirmComment('"')<cr>
+else
+  nnoremap <buffer><leader>> :call FirmComment('"')<cr>
+endif
 
 " remove firm comments from a whole fold
-nnoremap <buffer><leader><leader>< :call FirmUnComment('"')<cr>
+nnoremap <buffer><leader>< :call FirmUnComment('"')<cr>
 

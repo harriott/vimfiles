@@ -1,14 +1,20 @@
 # vim: set fdl=1 et tw=0:
 
-# $vfp\Win10\pulls.ps1
+# $vimfiles\packsGet-Win10\pulls.ps1
 
 # Joseph Harriott, mar. 06 févr. 2024
 # run this when you want to update your remote plugins
 
+read-host '- you''ve closed instances of vim? '
+
 #=> 0 pulls
+sl $vimfiles\vim
 # $pull = 'GO'  # comment out if setting  $start
 # $start = 'FoldText'
-$repos0 = (ls ..\*\*\* -directory)
+$start = 'fzf'
+# $start = 'vim-css-color'
+# $start = 'vimtex'
+$repos0 = (ls packs-*\opt\* -directory)
 $repos1 = $repos0 | sort
 foreach ($repo in $repos1) {
   $rn = $repo.name
@@ -20,17 +26,11 @@ foreach ($repo in $repos1) {
     git pull --depth 1; if( -not $? ) { exit }
   }
 }
-sl $vfp\Win10
-
-#=> 1 fzf
-sl $vimfiles\plugin\fzf
-ri -recurse install
-ri -recurse test/test_go.rb
-git pull --depth 1
+sl $vimfiles\packsGet-Win10
 
 #=> 2 my forks
 
 #=> 3 tidy up
-sl $vfp\Win10
+sl $vimfiles\packsGet-Win10
 .\after.ps1
 

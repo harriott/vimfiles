@@ -26,11 +26,14 @@ function! F4F4()
   if len(getbufinfo({'buflisted':1})) == 1
     let cfd = expand('%:p:h') " current file directory
     if has('unix')
+      " for  nn  in  $Bash/bashrc-console
       edit $HOME/.config/nvim/last_directory " ~/.config/nvim/last_directory
-      normal dd
-      put=cfd
-      normal kdd
-    endif " for  nn  in  $Bash/bashrc-console
+    else
+      edit $nvim/last_directory
+    endif
+    normal dd
+    put=cfd
+    normal kdd
     wall
     quit! " close completely
   else

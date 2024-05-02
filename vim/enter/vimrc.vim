@@ -28,6 +28,7 @@ set hidden  " allows working on multiple files while not visually focussing on t
 set winminheight=0  " reduce minimized windows to zero lines shown
 
 ""> get g:vimfiles location
+" deprecate this
 if empty(matchstr($HOME, '/home/'))
   let g:vimfiles = $HOME.'\vimfiles'
 else

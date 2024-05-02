@@ -1,8 +1,7 @@
 " vim: se nowrap:
 
-" generated from within Vim by  :call GrabMK()
+" generated from within Vim by  call GrabMK()
 
-if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <silent> <Plug>(peekaboo) <bar><bar>:<bar>call peekaboo#aboo()<cr>
@@ -13,40 +12,35 @@ imap <S-Tab> <Plug>SuperTabBackward
 inoremap <C-Tab> <bar>	
 inoremap <F10> <esc>:cd %:p:h<cr>:NERDTreeCWD<cr>
 inoremap <silent> <Plug>(ale_complete) <bar><bar>:ALEComplete<cr>
-inoremap <F9> <esc>:History/<cr>
-inoremap <F8> <esc>:History:<cr>
-inoremap <silent> <Plug>(fzf-maps-i) <bar>:call fzf#vim#maps('i', 0)<cr>
-inoremap <expr> <Plug>(fzf-complete-buffer-line) fzf#vim#complete#buffer_line()
-inoremap <expr> <Plug>(fzf-complete-line) fzf#vim#complete#line()
-inoremap <expr> <Plug>(fzf-complete-file-ag) fzf#vim#complete#path('ag -l -g ""')
-inoremap <expr> <Plug>(fzf-complete-file) fzf#vim#complete#path("find . -path '*/\.*' -prune -o -type f -print -o -type l -print <bar>| sed 's:^..::'")
-inoremap <expr> <Plug>(fzf-complete-path) fzf#vim#complete#path("find . -path '*/\.*' -prune -o -print <bar>| sed '1d;s:^..::'")
-inoremap <expr> <Plug>(fzf-complete-word) fzf#vim#complete#word()
+inoremap <C-X><C-X> <bar><bar>
 imap <silent> <C-G>% <Plug>(matchup-c_g%)
 inoremap <silent> <Plug>(matchup-c_g%) <bar><bar>:call matchup#motion#insert_mode()<cr>
 inoremap <silent> <Plug>NERDCommenterInsert <bar><bar>:call nerdcommenter#Comment('i', "Insert")<cr>
-inoremap <S-F5> <esc><S-F5>
-inoremap <F4> <esc>:wa<cr>:bd<cr>
-inoremap <F2> <esc>:wa<cr>
-inoremap <S-F11> <esc><S-F11>
-inoremap <F5> <esc>:wa<cr>:e<cr>
-imap <F11> <esc><F11>
-inoremap <Insert> <esc> :CapsLockOff <cr>
 inoremap <S-F2> <esc>
 inoremap <F3> <esc>
-inoremap <F1> <esc><c-w><c-w>
+inoremap <F2> <esc>:wa<cr>
+inoremap <S-F11> <esc><S-F11>
+inoremap <S-F5> <esc><S-F5>
+inoremap <F5> <esc>:wa<cr>:e<cr>
+cnoremap <silent> <Plug>(TelescopeFuzzyCommandSearch) <bar>e "lua require('telescope.builtin').command_history { default_text = [=[" . escape(getcmdline(), '"') . "]=] }"<cr><cr>
+imap <F11> <esc><F11>
+inoremap <Insert> <esc> :CapsLockOff <cr>
+inoremap <F4> <esc>:call F4F4()<cr>
+inoremap <C-W> <bar>u<c-w>
 inoremap <C-U> <bar>u<bar>
-map! <S-Insert> <MiddleMouse>
 noremap <bar> :cd %:p:h<cr>:Fern . -reveal=%<cr>
-noremap <silent> <NL> <Plug>(ale_next_wrap)
-noremap <silent> <bar> <Plug>(ale_previous_wrap)
+nnoremap <bar> <c-w>h
+nnoremap <NL> <c-w>j
+nnoremap <bar> <c-w>k
+nnoremap <bar> <c-w>l
 noremap <bar> :NERDTreeToggle<cr>
-map <bar> <Plug>(ctrlp)
+tnoremap <esc><esc> <bar><bar>:bd!<cr>
 nnoremap <bar>  za
 map # <Plug>(asterisk-#)
 omap <silent> % <Ignore><Plug>(matchup-%)
 xmap <silent> % <Plug>(matchup-%)
 nmap <silent> % <Plug>(matchup-%)
+nnoremap & :&&<cr>
 map * <Plug>(asterisk-*)
 onoremap , :
 xnoremap , :
@@ -74,14 +68,14 @@ xmap T <Plug>(QuickScopeT)
 omap T <Plug>(QuickScopeT)
 nmap T <Plug>(QuickScopeT)
 nnoremap U :CapsLockOff<cr> <bar>| U
+nnoremap Y y$
 omap <silent> [% <Plug>(matchup-[%)
 xmap <silent> [% <Plug>(matchup-[%)
 nmap <silent> [% <Plug>(matchup-[%)
-nnoremap \8 :call EightyTwoColumns()<cr>
 noremap \gg :call GitGutterFocus()<cr>
 nnoremap <silent> \q :QToggle<cr>
 nnoremap <silent> \l :LToggle<cr>
-noremap <silent> \\d :BD<cr>
+noremap <silent> \\d :BD<cr>:bp<cr>
 nmap <silent> \ba <Plug>BufKillAlt
 nmap <silent> \bundo <Plug>BufKillUndo
 nmap <silent> \!bw <Plug>BufKillBangBw
@@ -89,10 +83,10 @@ nmap <silent> \bw <Plug>BufKillBw
 nmap <silent> \!bd <Plug>BufKillBangBd
 nmap <silent> \!bun <Plug>BufKillBangBun
 nmap <silent> \bun <Plug>BufKillBun
+nmap <silent> \bf <Plug>BufKillForward
+nmap <silent> \bb <Plug>BufKillBack
 nnoremap \bd :Bdelete hidden<cr>
 nnoremap \bdd :Bdelete other<cr>
-noremap <silent> \be :BufExplorer<cr>
-nmap \s <Plug>(SubversiveSubstituteRangeConfirm)
 nmap \\n <Plug>MarkClear
 nmap \\m <Plug>MarkSet
 nnoremap \e :call EasyMotionSearchToggle()<cr>
@@ -103,26 +97,13 @@ nmap \\f <Plug>(easymotion-overwin-f)
 vmap \\f <Plug>(easymotion-bd-f)
 omap \\f <Plug>(easymotion-bd-f)
 map \\ <Plug>(easymotion-prefix)
-nmap \pb <Plug>(PickerBuffer)
-nmap \pe <Plug>(PickerEdit)
-nnoremap \m :MRU
-nnoremap \bb :CtrlPBuffer<cr>
 nmap \caL <Plug>CalendarH
 nmap \cal <Plug>CalendarV
 noremap \yy :CalendarH<cr>
-nmap <silent> \\0 <Plug>FontsizeDefault
-nmap <silent> \\- <Plug>FontsizeDec
-nmap <silent> \\+ <Plug>FontsizeInc
-nmap <silent> \\= <Plug>FontsizeBegin
 nnoremap <silent> \it :call IlluminateMoreToggle()<cr>
 nnoremap \LT :call LanguageTool_lopen() <cr>
 nnoremap \lt :LangTool <bar>| lopen 15 <cr>
-nnoremap \th :ThesaurusQueryReplaceCurrentWord<cr>
-noremap \aa :call ALEToggleBufferShow()<cr>
-nnoremap \j :Files /mnt/SDU3D1TB/Dropbox/JH<cr>
-nnoremap \bf :Buffers<cr>
-nnoremap \L :Lines<cr>
-nnoremap \B :BLines<cr>
+nnoremap \tq :ThesaurusQueryReplaceCurrentWord<cr>
 nnoremap \pp :<bar>MatchupWhereAmI??<cr>
 nmap \ca <Plug>NERDCommenterAltDelims
 xmap \cu <Plug>NERDCommenterUncomment
@@ -159,38 +140,41 @@ nnoremap \- :Hexplore<cr>
 vnoremap <silent> \<F11> <esc>:echo strftime('%c',getftime(expand('%')))<cr>
 nnoremap <silent> \<F11> :echo strftime('%c',getftime(expand('%')))<cr>
 nnoremap \f :let@f=@%<cr>
-nnoremap \v v$hy
 vnoremap \vs <esc>:call ConvertSearchForVisualSelection()<cr>
 nnoremap \vs :call ConvertSearchForVisualSelection()<cr>
 nnoremap \pt :call ParenthsToggle()<cr>
-nnoremap \is :call IncSearchToggle()<cr>
 nnoremap \\q :call VimgrepQRs()<cr>
 nnoremap \vg :call VimgrepSelection()<cr>
+nnoremap \v v$hy
+nnoremap \is :call IncSearchToggle()<cr>
 nnoremap \/ :call TweakLS()<cr>
 vnoremap \n <esc>:nohlsearch<cr>
 nnoremap \n :nohlsearch<cr>
-nnoremap \vv :call SplitVtoggle()<cr>
-nnoremap \hh :call SplitHtoggle()<cr>
-nnoremap \vn :vnew<cr>
-nnoremap <silent> \rn :set rnu! rnu? <cr>
-nnoremap \zz :let &scrolloff=999-&scrolloff<cr>
-nnoremap \<F5> :call clearmatches()<cr>
-nnoremap \U :Underline
-nnoremap \[ :s/\m\[.\{-}]//g<cr>
-nnoremap \5 :call UnicodePercent()<cr>
-nnoremap \9 :call PercentUnicode()<cr>
-noremap \yp :lan fr_FR.UTF-8<cr>:call DateFr()<cr>:lan en_GB.UTF-8<cr>
-nnoremap \\2 :call ClearMAS()<cr>
-nnoremap \2 :call ClearFancyGlyphs()<cr>
 nnoremap \c= :windo set nowfh <cr>
 nnoremap \<Right> 10<c-w>>
 nnoremap \<Left> 10<c-w><bar><
 nnoremap \<Up> 5<c-w>+
 nnoremap \<Down> 5<c-w>-
+nnoremap \\o :close<cr>
+nnoremap \\v :vsplit<cr>
+nnoremap \\h :split<cr>
+nnoremap \x <c-w>c
+nnoremap <silent> \rn :set rnu! rnu? <cr>
 nnoremap <silent> \\l :set cul! cul? <cr>
 nnoremap <silent> \\c :set cuc! cuc? <cr>
-nnoremap \x <c-w>c
-noremap \\ll :set list! list? <cr>  " (:h 'list')
+nnoremap \zz :let &scrolloff=999-&scrolloff<cr>
+noremap \\ll :set list! list? <cr>
+nnoremap \<F5> :call clearmatches()<cr>
+nnoremap \5 :call UnicodePercent()<cr>
+nnoremap \9 :call PercentUnicode()<cr>
+noremap \yp :lan fr_FR.UTF-8<cr>:call DateFr()<cr>:lan en_GB.UTF-8<cr>
+nnoremap \\2 :call ClearMAS()<cr>
+nnoremap \2 :call ClearFancyGlyphs()<cr>
+nnoremap \U :Underline
+nnoremap \[ :s/\m\[.\{-}]//g<cr>
+nmap \s <Plug>(SubversiveSubstituteRangeConfirm)
+nmap <silent> \s<bar>  :<bar>exe ".,+".v:count" StripWhitespace"<cr>
+xmap <silent> \s :StripWhitespace<cr>
 omap <silent> ]% <Plug>(matchup-]%)
 xmap <silent> ]% <Plug>(matchup-]%)
 nmap <silent> ]% <Plug>(matchup-]%)
@@ -232,6 +216,10 @@ xmap <silent> g% <Plug>(matchup-g%)
 nmap <silent> g% <Plug>(matchup-g%)
 nnoremap g, <Nop>
 nnoremap g: g,
+xnoremap gb <Plug>(comment_toggle_blockwise_visual)
+xnoremap gc <Plug>(comment_toggle_linewise_visual)
+nnoremap gb <Plug>(comment_toggle_blockwise)
+nnoremap gc <Plug>(comment_toggle_linewise)
 xmap <expr> i targets#e('o', 'i', 'i')
 omap <expr> i targets#e('o', 'i', 'i')
 omap <silent> i% <Plug>(matchup-i%)
@@ -260,15 +248,8 @@ nmap <silent> z% <Plug>(matchup-z%)
 nnoremap <silent> <expr> zt context#util#map_zt()
 nnoremap zr :exe ':spellrare  '.expand('<bar><cWORD>')<cr>
 vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<cr>gv""Pgv
-nnoremap <SNR>293_: :<bar><bar>=v:count ? v:count : ''<cr>
-nnoremap <C-F5> :call ColorLightDark()<cr>
-nnoremap <S-F1> :if &guioptions=~#'m'<bar>|set guioptions-=m<bar>|else<bar>|set guioptions+=m<bar>|endif<cr>
 xnoremap <silent> <Plug>NetrwBrowseXVis :<bar>call netrw#BrowseXVis()<cr>
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<cr>
-tnoremap <silent> <Plug>(fzf-normal) <bar><bar>
-tnoremap <silent> <Plug>(fzf-insert) <bar><bar>i
-nnoremap <silent> <Plug>(fzf-normal) <Nop>
-nnoremap <silent> <Plug>(fzf-insert) i
 xnoremap <silent> <Plug>(peekaboo) :<bar>call peekaboo#aboo()<cr>
 nnoremap <silent> <Plug>(peekaboo) :<bar>call peekaboo#aboo()<cr>
 nnoremap <silent> <Plug>SurroundRepeat .
@@ -818,18 +799,6 @@ nnoremap <silent> <Plug>(textmanip-duplicate-down) :<bar>call textmanip#start("
 nnoremap <silent> <Plug>(textmanip-duplicate-up-r) :<bar>call textmanip#start("duplicate", "^", "n", "replace")<cr>
 nnoremap <silent> <Plug>(textmanip-duplicate-up-i) :<bar>call textmanip#start("duplicate", "^", "n", "insert")<cr>
 nnoremap <silent> <Plug>(textmanip-duplicate-up) :<bar>call textmanip#start("duplicate", "^", "n", "auto")<cr>
-nnoremap <silent> <Plug>(PickerHelp) :PickerHelp<cr>
-nnoremap <silent> <Plug>(PickerBufferTag) :PickerBufferTag<cr>
-nnoremap <silent> <Plug>(PickerStag) :PickerStag<cr>
-nnoremap <silent> <Plug>(PickerTag) :PickerTag<cr>
-nnoremap <silent> <Plug>(PickerBufferVsplit) :PickerBufferVsplit<cr>
-nnoremap <silent> <Plug>(PickerBufferSplit) :PickerBufferSplit<cr>
-nnoremap <silent> <Plug>(PickerBuffer) :PickerBuffer<cr>
-nnoremap <silent> <Plug>(PickerVsplit) :PickerVsplit<cr>
-nnoremap <silent> <Plug>(PickerTabdrop) :PickerTabdrop<cr>
-nnoremap <silent> <Plug>(PickerTabedit) :PickerTabedit<cr>
-nnoremap <silent> <Plug>(PickerSplit) :PickerSplit<cr>
-nnoremap <silent> <Plug>(PickerEdit) :PickerEdit<cr>
 nnoremap <silent> <Plug>(startify-open-buffers) :<bar>call startify#open_buffers()<cr>
 xnoremap <Plug>(open-url-search-wikipedia) :<bar>OpenSearchURL wikipedia <bar>=open_url#get_selection()<cr><cr>
 nnoremap <Plug>(open-url-search-wikipedia) :OpenSearchURL wikipedia <bar><cword><cr>
@@ -859,19 +828,9 @@ nnoremap <F6> :execute "normal \<Plug>(openbrowser-smart-search)"<bar>|silent !n
 nnoremap <F10> :cd %:p:h<cr>:NERDTreeCWD<cr>
 noremap <C-N> :NERDTreeToggle<cr>
 noremap <C-E> :cd %:p:h<cr>:Fern . -reveal=%<cr>
-map <C-P> <Plug>(ctrlp)
-nnoremap <silent> <Plug>(ctrlp) :<bar>CtrlPMRU<cr>
 nnoremap <silent> <Plug>CalendarT :cal calendar#show(2)<cr>
 nnoremap <silent> <Plug>CalendarH :cal calendar#show(1)<cr>
 nnoremap <silent> <Plug>CalendarV :cal calendar#show(0)<cr>
-nnoremap <silent> <SNR>123_quit :<bar>call fontsize#quit()<cr>
-nnoremap <silent> <SNR>123_setDefault :<bar>call fontsize#setDefault()<cr>
-nnoremap <silent> <SNR>123_default :<bar>call fontsize#default()<cr>
-nnoremap <silent> <SNR>123_dec :<bar>call fontsize#dec()<cr>
-nnoremap <silent> <SNR>123_inc :<bar>call fontsize#inc()<cr>
-nnoremap <silent> <SNR>123_begin :<bar>call fontsize#begin()<cr>
-noremap <silent> <C-K> <Plug>(ale_previous_wrap)
-noremap <silent> <C-J> <Plug>(ale_next_wrap)
 nnoremap <silent> <Plug>(ale_info_preview) :ALEInfo -preview<cr>
 nnoremap <silent> <Plug>(ale_info_clipboard) :ALEInfo -clipboard<cr>
 nnoremap <silent> <Plug>(ale_info_echo) :ALEInfo -echo<cr>
@@ -921,13 +880,6 @@ nnoremap <silent> <Plug>(ale_previous_wrap_error) :ALEPrevious -wrap -error<cr>
 nnoremap <silent> <Plug>(ale_previous_error) :ALEPrevious -error<cr>
 nnoremap <silent> <Plug>(ale_previous_wrap) :ALEPreviousWrap<cr>
 nnoremap <silent> <Plug>(ale_previous) :ALEPrevious<cr>
-vnoremap <F9> <esc>:History/<cr>
-nnoremap <F9> :History/<cr>
-vnoremap <F8> <esc>:History:<cr>
-nnoremap <F8> :History:<cr>
-onoremap <silent> <Plug>(fzf-maps-o) <bar>:<bar>call fzf#vim#maps('o', 0)<cr>
-xnoremap <silent> <Plug>(fzf-maps-x) :<bar>call fzf#vim#maps('x', 0)<cr>
-nnoremap <silent> <Plug>(fzf-maps-n) :<bar>call fzf#vim#maps('n', 0)<cr>
 nmap <silent> <2-LeftMouse> <Plug>(matchup-double-click)
 nnoremap <Plug>(matchup-reload) :<bar>MatchupReload<cr>
 nnoremap <silent> <Plug>(matchup-double-click) :<bar>call matchup#text_obj#double_click()<cr>
@@ -936,24 +888,24 @@ onoremap <silent> <Plug>(matchup-i%) :<bar>call matchup#text_obj#delimited(1, 0
 xnoremap <silent> <Plug>(matchup-a%) :<bar>call matchup#text_obj#delimited(0, 1, 'delim_all')<cr>
 xnoremap <silent> <Plug>(matchup-i%) :<bar>call matchup#text_obj#delimited(1, 1, 'delim_all')<cr>
 onoremap <silent> <Plug>(matchup-Z%) :<bar>call matchup#motion#op('Z%')<cr>
-xnoremap <silent> <SNR>96_(matchup-Z%) :<bar>call matchup#motion#jump_inside_prev(1)<cr>
+xnoremap <silent> <SNR>90_(matchup-Z%) :<bar>call matchup#motion#jump_inside_prev(1)<cr>
 nnoremap <silent> <Plug>(matchup-Z%) :<bar>call matchup#motion#jump_inside_prev(0)<cr>
 onoremap <silent> <Plug>(matchup-z%) :<bar>call matchup#motion#op('z%')<cr>
-xnoremap <silent> <SNR>96_(matchup-z%) :<bar>call matchup#motion#jump_inside(1)<cr>
+xnoremap <silent> <SNR>90_(matchup-z%) :<bar>call matchup#motion#jump_inside(1)<cr>
 nnoremap <silent> <Plug>(matchup-z%) :<bar>call matchup#motion#jump_inside(0)<cr>
 onoremap <silent> <Plug>(matchup-[%) :<bar>call matchup#motion#op('[%')<cr>
 onoremap <silent> <Plug>(matchup-]%) :<bar>call matchup#motion#op(']%')<cr>
-xnoremap <silent> <SNR>96_(matchup-[%) :<bar>call matchup#motion#find_unmatched(1, 0)<cr>
-xnoremap <silent> <SNR>96_(matchup-]%) :<bar>call matchup#motion#find_unmatched(1, 1)<cr>
+xnoremap <silent> <SNR>90_(matchup-[%) :<bar>call matchup#motion#find_unmatched(1, 0)<cr>
+xnoremap <silent> <SNR>90_(matchup-]%) :<bar>call matchup#motion#find_unmatched(1, 1)<cr>
 nnoremap <silent> <Plug>(matchup-[%) :<bar>call matchup#motion#find_unmatched(0, 0)<cr>
 nnoremap <silent> <Plug>(matchup-]%) :<bar>call matchup#motion#find_unmatched(0, 1)<cr>
 onoremap <silent> <Plug>(matchup-g%) :<bar>call matchup#motion#op('g%')<cr>
-xnoremap <silent> <SNR>96_(matchup-g%) :<bar>call matchup#motion#find_matching_pair(1, 0)<cr>
+xnoremap <silent> <SNR>90_(matchup-g%) :<bar>call matchup#motion#find_matching_pair(1, 0)<cr>
 onoremap <silent> <Plug>(matchup-%) :<bar>call matchup#motion#op('%')<cr>
-xnoremap <silent> <SNR>96_(matchup-%) :<bar>call matchup#motion#find_matching_pair(1, 1)<cr>
+xnoremap <silent> <SNR>90_(matchup-%) :<bar>call matchup#motion#find_matching_pair(1, 1)<cr>
 nnoremap <silent> <Plug>(matchup-g%) :<bar>call matchup#motion#find_matching_pair(0, 0)<cr>
 nnoremap <silent> <Plug>(matchup-%) :<bar>call matchup#motion#find_matching_pair(0, 1)<cr>
-nnoremap <silent> <expr> <SNR>96_(wise) empty(g:v_motion_force) ? 'v' : g:v_motion_force
+nnoremap <silent> <expr> <SNR>90_(wise) empty(g:v_motion_force) ? 'v' : g:v_motion_force
 nnoremap <silent> <Plug>(matchup-hi-surround) :<bar>call matchup#matchparen#highlight_surrounding()<cr>
 nnoremap <Plug>NERDCommenterAltDelims :call nerdcommenter#SwitchToAlternativeDelimiters(1)<cr>
 xnoremap <silent> <Plug>NERDCommenterUncomment :call nerdcommenter#Comment("x", "Uncomment")<cr>
@@ -1006,25 +958,32 @@ onoremap <silent> <Plug>(GitGutterTextObjectInnerPending) :<bar>call gitgutter#
 nnoremap <F3> :call StripStoreCurSel()<cr>:Ggrep -i "<bar>s" <bar>|cw
 nmap <silent> <Plug>RestoreWinPosn :call RestoreWinPosn()<cr>
 nmap <silent> <Plug>SaveWinPosn :call SaveWinPosn()<cr>
-nnoremap <S-F5> :syntax sync fromstart<cr>
-vnoremap <F4> <esc>:wa<cr>:bd<cr>
-nnoremap <F4> :wa<cr>:bd<cr>
 vnoremap <F2> <esc>:wa<cr>
 nnoremap <F2> :wa<cr>
 nnoremap <S-F11> :call OpenInEmacs()<cr>
+nnoremap <C-K> <c-w>k
+nnoremap <C-J> <c-w>j
+nnoremap <C-H> <c-w>h
+nnoremap <S-F5> :syntax sync fromstart<cr>
 vnoremap <F5> <esc>:wa<cr>:e<cr>
 nnoremap <F5> :wa<cr>:edit<cr>
+nnoremap <Plug>PlenaryTestFile :lua require('plenary.test_harness').test_file(vim.fn.expand("%:p"))<cr>
+xnoremap <Plug>(comment_toggle_blockwise_visual) <esc><Cmd>lua require("Comment.api").locked("toggle.blockwise")(vim.fn.visualmode())<cr>
+xnoremap <Plug>(comment_toggle_linewise_visual) <esc><Cmd>lua require("Comment.api").locked("toggle.linewise")(vim.fn.visualmode())<cr>
 noremap <F11> :cd %:p:h<cr><bar>|:silent !pcmanfm &<cr>
 nnoremap <Insert> :CapsLockOff <cr>
-vnoremap <F1> <esc><c-w><c-w>
-nnoremap <F1> <c-w><c-w>
-map <S-Insert> <MiddleMouse>
+nnoremap <C-=> <c-w>=
+vnoremap <F4> <esc>:wa<cr>:bd<cr>
+nnoremap <F4> :call F4F4()<cr>
+nnoremap <C-L> <c-w>l
 imap <bar>S <Plug>ISurround
 imap <bar>s <Plug>Isurround
 imap <silent> <bar>% <Plug>(matchup-c_g%)
 imap <bar>	 <Plug>SuperTabForward
 imap <bar> <Plug>Isurround
 inoremap <bar> <bar>u<bar>
+inoremap <c-w> <bar>u<c-w>
+inoremap <bar><bar> <bar><bar>
 inoremap <silent> \<F11> <esc>:echo strftime('%c',getftime(expand('%')))<cr>
 inoremap \<F5> :call clearmatches()<cr>
 iabbr <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
@@ -1036,160 +995,146 @@ iabbr <expr> d8d strftime("%a %d %b %Y")
 iabbr <expr> d8c strftime("%y%m%d")
 iabbr <expr> d8a strftime("%Y-%m-%d-%a")
 iabbr <expr> d8- strftime("%y-%m-%d")
-cabbr h vert h
 let &cpo=s:cpo_save
 unlet s:cpo_save
-set autoread
-set background=dark
-set backspace=indent,eol,start
-set backupdir=~/.cache/vim/backup//
-set balloonexpr=ale#balloon#Expr()
 set clipboard=unnamedplus
-set cmdheight=2
-set cmdwinheight=30
+set cmdwinheight=20
 set completefunc=thesaurus_query#auto_complete_integrate
 set directory=~/.vimswap//
-set display=truncate
-set fileencodings=ucs-bom,utf-8,default,latin1
 set fillchars=fold:\ 
-set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 10
-set guioptions=aegirLt
 set helplang=en
-set hidden
 set history=500
-set hlsearch
 set ignorecase
-set incsearch
-set nojoinspaces
+set inccommand=split
 set keywordprg=:help
-set langnoremap
-set nolangremap
-set laststatus=2
 set linespace=2
-set listchars=eol:│,nbsp:?,trail:·,tab:»·
+set listchars=eol:│,nbsp:␣,trail:·,tab:»·
+set noloadplugins
 set matchpairs=(:),{:},[:],<:>
 set maxmempattern=800000
 set modelines=4
-set mouse=nvi
-set nrformats=bin,hex
+set mouse=a
 set redrawtime=50000
-set ruler
 set runtimepath=
-set runtimepath+=~/.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/nerdtree
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-devicons
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-repeat
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-peekaboo
-set runtimepath+=~/.vim/pack/packs-cp/opt/undotree
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-loclist-follow
-set runtimepath+=~/.vim/pack/packs-cp/opt/listtoggle
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-bufkill
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-buffing-wheel
-set runtimepath+=~/.vim/pack/packs-cp/opt/close-buffers.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/bufferize.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/bufexplorer
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-surround
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-subversive
-set runtimepath+=~/.vim/pack/packs-cp/opt/targets.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/supertab
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-mark
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-easymotion
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-asterisk
-set runtimepath+=~/.vim/pack/packs-cp/opt/quick-scope
-set runtimepath+=~/.vim/pack/packs-cp/opt/incsearch-fuzzy.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/incsearch.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-textmanip
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-easy-align
-set runtimepath+=~/.vim/pack/packs-unix/opt/vim-picker
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-startify
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-open-url
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-dirvish-git
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-dirvish
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-clifm
-set runtimepath+=~/.vim/pack/packs-cp/opt/vifm.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/open-browser.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/nerdtree-git-plugin
-set runtimepath+=~/.vim/pack/packs-cp/opt/mru
-set runtimepath+=~/.vim/pack/packs-cp/opt/fern-renderer-nerdfont.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/fern-preview.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/fern-git-status.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/fern.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/ctrlp.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/calendar-vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-fontsize
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-airline-themes
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-airline
-set runtimepath+=~/.vim/pack/packs-cp/opt/lf-vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-ShowTrailingWhitespace
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-illuminate
-set runtimepath+=~/.vim/pack/packs-cp/opt/FoldText
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-characterize
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-LanguageTool
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-langtool
-set runtimepath+=~/.vim/pack/packs-cp/opt/thesaurus_query.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/ale
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-ingo-library
-set runtimepath+=~/.vim/pack/packs-cp/opt/fzf.vim
-set runtimepath+=~/.vim/pack/packs-unix/opt/vim-ssh-annex
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-matchup
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-tagbar
-set runtimepath+=~/.vim/pack/packs-cp/opt/nerdcommenter
-set runtimepath+=~/.vim/pack/packs-cp/opt/vimtex
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-ps1
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-prettier
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-pandoc-syntax
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-mbsync
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-markdown
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-hjson
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-go
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-dokuwiki
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-closetag
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-bbcode
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-base64
-set runtimepath+=~/.vim/pack/packs-cp/opt/vader.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/tagalong.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/org.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/MatchTagAlways
-set runtimepath+=~/.vim/pack/packs-cp/opt/mediawiki.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-liquid
-set runtimepath+=~/.vim/pack/packs-cp/opt/emmet-vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/csv.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/CSS-one-line--multi-line-folding
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-rhubarb
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-gitgutter
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-fugitive
-set runtimepath+=~/.vim/pack/packs-cp/opt/gitignore.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-flog
-set runtimepath+=~/.vim/pack/packs-cp/opt/dsf.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/context.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/minimap.vim
-set runtimepath+=~/.vim/pack/packs-unix/opt/vim-plugin-AnsiEsc
-set runtimepath+=/usr/share/vim/vimfiles
-set runtimepath+=/usr/share/vim/vim91
-set runtimepath+=/usr/share/vim/vim91/pack/dist/opt/cfilter
-set runtimepath+=/usr/share/vim/vim91/pack/dist/opt/matchit
-set runtimepath+=~/.vim/pack/packs-cp/opt/nerdtree-git-plugin/after
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-matchup/after
-set runtimepath+=~/.vim/pack/packs-cp/opt/vimtex/after
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-markdown/after
-set runtimepath+=/usr/share/vim/vimfiles/after
-set runtimepath+=~/.vim/after
-set sessionoptions=buffers,curdir,folds,options,tabpages,winsize,terminal,winpos
+set runtimepath+=~/.config/nvim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/nerdtree
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-repeat
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-peekaboo
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/undotree
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-loclist-follow
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/listtoggle
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-bufkill
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-buffing-wheel
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/close-buffers.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/bufferize.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-surround
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-subversive
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/targets.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/supertab
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-mark
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-easymotion
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-asterisk
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/quick-scope
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/incsearch-fuzzy.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/incsearch.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-textmanip
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-easy-align
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-startify
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-rooter
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-open-url
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-dirvish-git
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-dirvish
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-clifm
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vifm.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/open-browser.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/nerdtree-git-plugin
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/fern-renderer-nerdfont.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/fern-preview.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/fern-git-status.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/fern.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/calendar-vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-fontsize
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/lf-vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-illuminate
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/FoldText
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-characterize
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-LanguageTool
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-langtool
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/thesaurus_query.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/neomutt.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/ale
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-ingo-library
+set runtimepath+=~/.config/nvim/pack/packs-unix/opt/vim-ssh-annex
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-matchup
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/unicode.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-tagbar
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/nerdcommenter
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/minimap.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vimtex
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-ps1
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-prettier
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-pandoc-syntax
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-mbsync
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-markdown
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-hjson
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-go
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-dokuwiki
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-closetag
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-bbcode
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-base64
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vader.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/tagalong.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/org.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/MatchTagAlways
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/mediawiki.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-liquid
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/emmet-vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/csv.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/CSS-one-line--multi-line-folding
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-rhubarb
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-gitgutter
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-fugitive
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/gitignore.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-flog
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/dsf.vim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/context.vim
+set runtimepath+=~/.config/nvim/pack/packs-unix/opt/vim-plugin-AnsiEsc
+set runtimepath+=~/.local/share/nvim/lazy/lazy.nvim
+set runtimepath+=~/.local/share/nvim/lazy/lualine.nvim
+set runtimepath+=~/.local/share/nvim/lazy/nvim-notify
+set runtimepath+=~/.local/share/nvim/lazy/telescope-live-grep-args.nvim
+set runtimepath+=~/.local/share/nvim/lazy/nvim-web-devicons
+set runtimepath+=~/.local/share/nvim/lazy/plenary.nvim
+set runtimepath+=~/.local/share/nvim/lazy/telescope.nvim
+set runtimepath+=~/.local/share/nvim/lazy/mason.nvim
+set runtimepath+=~/.local/share/nvim/lazy/mason-lspconfig.nvim
+set runtimepath+=~/.local/share/nvim/lazy/nvim-lspconfig
+set runtimepath+=~/.local/share/nvim/lazy/Comment.nvim
+set runtimepath+=~/.local/share/nvim/lazy/telescope-fzf-native.nvim
+set runtimepath+=~/.local/share/nvim/lazy/nvim-treesitter
+set runtimepath+=/usr/share/nvim/runtime
+set runtimepath+=/usr/share/nvim/runtime/pack/dist/opt/cfilter
+set runtimepath+=/usr/lib/nvim
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/nerdtree-git-plugin/after
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-matchup/after
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vimtex/after
+set runtimepath+=~/.config/nvim/pack/packs-cp/opt/vim-markdown/after
+set runtimepath+=~/.config/nvim/after
+set runtimepath+=~/.local/state/nvim/lazy/readme
+set sessionoptions=buffers,curdir,folds,tabpages,winsize,terminal,winpos
 set shiftwidth=4
-set shortmess=filnxtToOI
-set showcmd
+set shortmess=filnxtToOFI
+set noshowmode
 set smartcase
-set suffixes=.bak,~,.o,.info,.swp,.aux,.bbl,.blg,.brf,.cb,.dvi,.idx,.ilg,.ind,.inx,.jpg,.log,.out,.png,.toc
+set splitbelow
+set splitright
+set statusline=%#Normal#
 set tabstop=4
-set termencoding=utf-8
+set termguicolors
 set textwidth=99
-set ttimeout
-set ttimeoutlen=100
-set undodir=~/.cache/vim/undo//
-set visualbell
-set wildignore=NTUSER.DAT*,*.lnk
-set wildmenu
+set title
+set updatetime=250
 set wildmode=longest,full
-set window=62
+set window=36
 set winminheight=0
 " vim: set ft=vim :

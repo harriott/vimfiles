@@ -287,7 +287,7 @@ if has('unix')
   else
     noremap <leader>yp :lan en_GB.UTF-8<CR>:exe ":norm a".strftime('%a %d %b %Y')<CR>:lan fr_FR.UTF-8<CR>
   endif
-elseif has('win32')
+elseif has('win64')
   if v:lang =~ 'fr'
     noremap <leader>yp :lan tim English_United Kingdom<CR>:exe ":norm a".strftime('%a %d %b %Y')<CR>:lan tim French<CR>
   else
@@ -408,7 +408,7 @@ function! GrabMK()
   let $mkh = 'vim'
   if has('nvim')  | let $mkh =  'n'.$mkh | endif
   if has('unix')  | let $mkh =  $mkh.'-unix.exrc' | endif
-  if has('win32') | let $mkh =  $mkh.'-win32.exrc' | endif
+  if has('win64') | let $mkh =  $mkh.'-win64.exrc' | endif
   call delete($mkh)
   mkexrc $mkh
   edit $mkh

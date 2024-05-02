@@ -1,7 +1,4 @@
 
-C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\nvim\packs-nvim\opt\nvim-web-devicons
-C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\nvim\packs-nvim\opt\tabby.nvim
-C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\nvim\packs-nvim\opt\tokyonight.nvim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\ale
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\bufexplorer
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\bufferize.vim
@@ -33,6 +30,7 @@ C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\Match
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\mediawiki.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\minimap.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\mru
+C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\neomutt.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\nerdcommenter
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\nerdfont.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\nerdtree
@@ -49,6 +47,7 @@ C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\tagal
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\targets.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\thesaurus_query.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\undotree
+C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\unicode.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vader.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vifm.vim
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-airline
@@ -96,6 +95,7 @@ C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-p
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-ps1
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-repeat
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-rhubarb
+C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-rooter
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-ShowTrailingWhitespace
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-startify
 C:\Users\jharr\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs-cp\opt\vim-subversive

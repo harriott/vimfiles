@@ -6,6 +6,8 @@
 
 # close vims and in $vimfiles\packsGet-Win10  ./clones.ps1
 
+read-host '- you''ve closed instances of vim? '
+
 function dd { if ( test-path $args[0] ) { ri $args[0] -recurse -force } }
 # - needs  Vim  not to be running
 function ensurePath {
@@ -33,7 +35,6 @@ ensurePath vim\packs-cp
   # gcfbn https://github.com/haya14busa/incsearch.vim
   # gcfbn https://github.com/junegunn/limelight.vim
   # gcfbn https://github.com/junegunn/vim-easy-align
-  # gcfbn https://github.com/lervag/vimtex
   # gcfbn https://github.com/lilydjwg/colorizer
   # gcfbn https://github.com/mhinz/vim-startify
   # gcfbn https://github.com/preservim/tagbar
@@ -50,7 +51,11 @@ ensurePath vim\packs-cp
   # gcfbn https://github.com/wellle/targets.vim
   # gcfbn https://github.com/yegappan/mru
   # gcfbn https://github.com/wellle/context.vim
+  # gcfbn https://github.com/chrisbra/unicode.vim
 
+  # dd vimtex; gcfbn https://github.com/lervag/vimtex
+  # dd vim-css-color; gcfbn https://github.com/ap/vim-css-color
+  # dd ale; gcfbn https://github.com/dense-analysis/ale
   # dd dsf.vim; gcfbn https://github.com/AndrewRadev/dsf.vim
   # dd FoldText; gcfbn https://github.com/Konfekt/FoldText
   # dd vim-ShowTrailingWhitespace; gcfbn https://github.com/inkarkat/vim-ShowTrailingWhitespace
@@ -68,7 +73,6 @@ ensurePath vim\packs-win32
   # gcfbn https://github.com/bling/vim-airline
   # gcfbn https://github.com/chikamichi/mediawiki.vim
   # gcfbn https://github.com/ctrlpvim/ctrlp.vim
-  # gcfbn https://github.com/dense-analysis/ale
   # gcfbn https://github.com/easymotion/vim-easymotion
   # gcfbn https://github.com/ervandew/supertab
   # gcfbn https://github.com/godlygeek/tabular
@@ -83,11 +87,7 @@ ensurePath vim\packs-win32
   # gcfbn https://github.com/vim-airline/vim-airline-themes
   # gcfbn https://github.com/vim-syntastic/syntastic
 
-#=> 2 nvim
-ensurePath nvim\packs-nvim
-
-  # gcfbn https://github.com/folke/tokyonight.nvim
-  gcfbn https://github.com/nvim-tree/nvim-web-devicons
+  # dd fzf; gcfbn https://github.com/junegunn/fzf
 
 #=> 3 tidy off
 sl $vimfiles\packsGet-Win10

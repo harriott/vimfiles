@@ -43,8 +43,12 @@ setlocal expandtab foldcolumn=1 foldexpr=LuaF() foldmethod=expr shiftwidth=2
 source $vimfiles/vim/ftplugin/firmCommentWholeFold.vim
 
 " firmly comment out a whole fold
-nnoremap <buffer><leader><leader>> :call FirmComment('--')<cr>
+if v:lang =~ 'fr'
+  nnoremap <buffer><leader>" :call FirmComment('--')<cr>
+else
+  nnoremap <buffer><leader>> :call FirmComment('--')<cr>
+endif
 
 " remove firm comments from a whole fold
-nnoremap <buffer><leader><leader>< :call FirmUnComment('--')<cr>
+nnoremap <buffer><leader>< :call FirmUnComment('--')<cr>
 

@@ -1,14 +1,11 @@
+-- vim: set fdl=1:
 
 -- $vimfiles/nvim/lua/lazy/treesitter.lua
 --  called by  $vimfiles/nvim/lua/init.lua
 
--- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
--- :h nvim-treesitter-commands
--- r $lazy/nvim-treesitter/parser
-
 return {
   { 'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
+    -- build = ':TSUpdate',
     priority = 1000,
     opts = {
       -- auto_install = true, -- pulls in parsers without asking
@@ -26,16 +23,20 @@ return {
 
         -- no effect: bash, perl, xml
 
-        enable = { 'lua', 'markdown', 'python', 'sh', 'vim'},
-        -- md      backticks are concealed
-        -- python  is better
-        additional_vim_regex_highlighting = { 'markdown', 'vim', },
-          -- keep my highlighting changes
+        -- enable = { 'lua', 'markdown', 'python', 'sh', 'vim'},
+          -- md      backticks are concealed
+          -- python  is better
+          -- additional_vim_regex_highlighting = { 'markdown', 'vim', },
+            -- keep my highlighting changes
 
       },
     },
     config = function(_, opts)
-      require('nvim-treesitter.install').prefer_git = true
+      if package.config:sub(1,1) == "\\" then
+        require('nvim-treesitter.install').prefer_git = false
+      else
+        require('nvim-treesitter.install').prefer_git = true
+      end
       require('nvim-treesitter.configs').setup(opts)
     end,
   },

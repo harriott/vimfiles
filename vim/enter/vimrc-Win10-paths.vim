@@ -8,6 +8,7 @@
 " symlinked in  $MSwin10\mb\symlinks-mostly.ps1
 
 ""> paths
+let $lazy = $HOME.'\AppData\Local\nvim-data\lazy'
 let $nvim = $HOME.'\AppData\Local\nvim'
 let $Pandoc = $HOME.'/AppData/Roaming/Pandoc'
 let $tex = $HOME.'/AppData/Roaming/MiKTeX/tex'
