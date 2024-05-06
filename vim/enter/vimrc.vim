@@ -4,7 +4,7 @@
 
 " $vimfiles/vim/enter/vimrc.vim  sourced by
 "  $vimfiles/vim/enter/vimrc-GNULinux.vim
-"  $vimfiles\enter\vimrc-Win10.vim
+"  $vimfiles\vim\enter\vimrc-Win10.vim
 
 " ------------------------------------------------------------------
 " typically basic Vim settings here - look in plugin folder for more

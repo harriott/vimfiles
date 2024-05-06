@@ -57,6 +57,10 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 
 packadd vim-fugitive
 
+"">>>> for :GBrowse to work
+packadd fugitive-gitlab.vim  " for GitLab
+packadd vim-rhubarb  " for GitHub
+
 " "">>> vim-gfm-syntax
 " " enable this for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
 " " $vfp/packs-cp/opt/vim-gfm-syntax/README.md
@@ -74,9 +78,6 @@ packadd vim-gitgutter
 "">>>> toggle
 let g:GGF = 0
 " $vimfiles/after/plugin/plugins.vim
-
-"">>> vim-rhubarb
-packadd vim-rhubarb  " for :GBrowse to work
 
 "">> languages
 packadd CSS-one-line--multi-line-folding
@@ -380,6 +381,7 @@ let g:ale_sign_column_always = 1
 packadd ale
 
 "">> NeoMutt
+" $vimfiles/vim/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim
 packadd neomutt.vim
 
 "">> thesaurus_query.vim
@@ -518,6 +520,28 @@ let g:calendar_monday = 1
 let g:calendar_weeknm = 1
 noremap <leader>yy :CalendarH<CR>
 packadd calendar-vim
+
+"">> MRU
+" $vimfiles/vim/packs-cp/opt/mru/README.md
+" $vimfiles/syntax/mru.vim
+let MRU_Max_Entries = 1000
+let MRU_Window_Height = 20
+" - which is overriden by this:
+" let MRU_Use_Current_Window = 1
+
+nnoremap <leader>m :MRU
+packadd mru
+
+" $HOME/.vim_mru_files
+" in GNU/Linux  :FZFMru
+" :MRU \.md
+" :MruRefresh
+" in the normal MRU window
+"  d = delete from list
+"  Enter = open over current window
+"  O = open split right
+"  o = open split below
+"  u = update
 
 "">> NERDTree
 "h NERDTree

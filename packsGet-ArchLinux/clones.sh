@@ -116,7 +116,8 @@ gd opt; ls
   # $gc https://github.com/harriott/vim-tagbar
   # $gc https://github.com/EdenEast/nightfox.nvim
   # $gc https://github.com/airblade/vim-rooter
-  $gc https://github.com/neomutt/neomutt.vim
+  # $gc https://github.com/neomutt/neomutt.vim
+  # $gc https://github.com/shumphrey/fugitive-gitlab.vim
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye
@@ -124,13 +125,6 @@ gd opt; ls
 
   # [[ -d tagbar ]] && sudo rm -r tagbar; $gc https://github.com/preservim/tagbar
   # [[ -d vim-gitgutter ]] && sudo rm -r vim-gitgutter; $gc https://github.com/airblade/vim-gitgutter
-
-#==> nvim
-echo; cd $vimfiles/nvim; gd packs-nvim
-
-gd opt; ls
-
-  # $gc https://github.com/nanozuki/tabby.nvim
 
 #==> unix
 echo; cd $vimfiles/vim; gd packs-unix

@@ -108,19 +108,22 @@ require('lazy').setup({
 -- :h nvim-treesitter-commands
 
 -- --> parsers
--- $vimfiles\settings\nvim-unix-nvim-treesitter-TSInstallInfo.txt
+-- $vimfiles/settings/nvim-unix-nvim-treesitter-TSInstallInfo.txt
 -- r $lazy/nvim-treesitter/parser
 
--- -- ---> get
--- local function getTSParsers()
---   TSInstall lua
---   TSInstall markdown
---   TSInstall python
---   TSInstall sh
---   TSInstall vim
--- end
+-- ---> get
+function GetTSParsers()
+  -- vim.cmd 'TSInstall lua' -- error (vim-illuminate) if open a  *.lua  without this parser present
+  -- vim.cmd 'TSInstall markdown'
+  -- vim.cmd 'TSInstall perl'
+  -- vim.cmd 'TSInstall python'
+  -- vim.cmd 'TSInstall sh'
+  -- vim.cmd 'TSInstall vim'
+end -- lua GetTSParsers(), then update:
+  -- $vimfiles\settings\nvim-win64-TSInstallInfo-HPEB840G37.txt
+  -- $vimfiles\settings\nvim-win64-TSInstallInfo-sbMb.txt
 
--- -- on MSWin do these in  x64 Native Tools Command Prompt
+-- on MSWin do these in  x64 Native Tools Command Prompt
 
--- -- :TSUpdate  updates all parsers
+-- :TSUpdate  updates all parsers
 

@@ -22,6 +22,7 @@ return {
     config = function()
       require('telescope').setup{ -- :help telescope.setup()
         defaults = {
+          layout_config = { vertical = { preview_height = 0.3, }, },
           layout_strategy='vertical',
           path_display={'truncate'},
         },

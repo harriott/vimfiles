@@ -5,7 +5,7 @@
 " this is for extra funtionality that I like for my *.md files
 " $vimfiles/vim/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
-"  this configuration file is sourced as needed by  $vimfiles/filetype.vim
+"  this configuration file is source'd as needed by  $vimfiles/vim/filetype.vim
 " also  $vimfiles/vim/after/ftplugin/md.vim
 
 " convert dw url
@@ -37,8 +37,9 @@ endif
 if has('unix') " should really be asking if Perl is available
   nnoremap <buffer><leader><F7> :execute "silent !perl $misc/CP/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
 else
+  source $vimfiles/vim/after/ftplugin/md-win64.vim
   nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
-    " defined in  $vimfiles/after/ftplugin/md.vim
+    " defined in  $vimfiles/vim/after/ftplugin/md.vim
 endif
 " check with  :map <leader><F7>
 

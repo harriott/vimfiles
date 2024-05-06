@@ -11,10 +11,14 @@
 command DiffOrig vert new | set buftype=nofile | read ++edit
 " - can't recall why I reduced this definition
 
-if has('win32')
+if has('win64')
   let g:loaded_perl_provider = 0
   let g:python3_host_prog = 'C:\Python312\python.exe'
 endif " providers
+
+if v:lang =~ 'fr'
+  nnoremap ! /
+endif
 
 set termguicolors
 
@@ -55,7 +59,7 @@ autocmd TermOpen * startinsert
 let $in_nvim = 1  " - for $OSAB/Bash/bashrc-generic
 
 ""> 1 pull in Vim configuration
-if has('win32')
+if has('win64')
   source $HOME\vimfiles\vimrc-Win10-paths.vim  " $vimfiles\vim\enter\vimrc-Win10-paths.vim
   source $vimfiles\vim\enter\vimrc-Win10.vim
 else
@@ -82,7 +86,7 @@ let g:better_whitespace_operator=''
 " endif
 
 " colorscheme
-if has('win32')
+if has('win64')
   colo wombat
 else
   colo jellybeans

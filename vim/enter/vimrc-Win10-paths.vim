@@ -41,6 +41,7 @@ endif
             let $vfp = $vimfiles.'\pack'
     let $FrFa = $DJH.'\F+F'
       let $FFIdF = $FrFa.'\France\IdF'  " $FFIdF  used in  $TeNo
+    let $JHt = $DJH.'\technos'
     let $JHw = $DJH.'\work'
       let $JHm = $JHw.'\IT-Jekyll-harriott-minima'
     let $jtIT = $DJH.'\technos\IT'

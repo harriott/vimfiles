@@ -384,6 +384,7 @@ gf          " open file under cursor - :h gF
 \yy                          " CalendarH
 ctrl-q ctrl-m                " inserts ^M (carriage return)
 g&                           " repeat last command over the whole document
+put ='this_text'
 :.,+3s/foo/bar               " replaces on this and next 3 lines
 ```
 
@@ -452,23 +453,15 @@ u            " lowercase a visual block
     r $vimfiles/settings
 
 ## Nvim
-    /usr/share/nvim/runtime/doc/help.txt
-    /usr/share/nvim/runtime/doc/treesitter.txt
-    /usr/share/nvim/runtime/filetype.lua
-
     :echo has('nvim')
     :echo nvim_get_runtime_file('parser', v:true)
     :lua vim.cmd.tabnew()
-    r ~/.local/share/nvim
+    :Man git
 
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
     fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
 
 - `:che` (`:checkhealth`)
-
-### log file
-    :echo $NVIM_LOG_FILE
-    ~/.local/state/nvim/log
 
 ### lua print(...)
     :=package.config:sub(1,1)  " identify winxx by \
@@ -485,9 +478,6 @@ u            " lowercase a visual block
 - `gb[motion]`/`gc[motion]` toggles block/line comment [motion] or selection
 - `gcA`/`gco`/`gcO` begin comment at end of line / before line / after line
 - `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
-
-#### nvim-treesitter shared objects
-    ls ~/.local/share/nvim/lazy/nvim-treesitter/parser
 
 ### terminal
     :lua vim.cmd.terminal()
@@ -569,6 +559,7 @@ $misc/CP/vimtest/README.md
     $VIMRUNTIME
     C \usr\share\vim\vim90\ftplugin
     C:\Vim\vim90\ftplugin
+    /usr/share/vim/vim91/
 
 options as variable: `:echo &textwidth`
 

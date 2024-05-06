@@ -133,28 +133,6 @@ packadd fern-preview.vim
 let g:fern#renderer = "nerdfont"
 packadd fern-renderer-nerdfont.vim
 
-"">> MRU
-" $vimfiles/vim/packs-cp/opt/mru/README.md
-" $vimfiles/syntax/mru.vim
-let MRU_Max_Entries = 1000
-let MRU_Window_Height = 20
-" - which is overriden by this:
-" let MRU_Use_Current_Window = 1
-
-nnoremap <leader>m :MRU
-packadd mru
-
-" $HOME/.vim_mru_files
-" in GNU/Linux  :FZFMru
-" :MRU \.md
-" :MruRefresh
-" in the normal MRU window
-"  d = delete from list
-"  Enter = open over current window
-"  O = open split right
-"  o = open split below
-"  u = update
-
 "">> vim-dirvish
 " h dirvish
 " can't navigate up a directory

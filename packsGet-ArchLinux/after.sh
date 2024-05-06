@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=2:
 
-# Joseph Harriott, Mon 18 Oct 2021
+# Joseph Harriott, Sat 04 May 2024
 
 # bash $vimfiles/packsGet-ArchLinux/after.sh
 
@@ -13,11 +13,11 @@
 
 set -e
 
-#=> 0 hexokinase
-echo -e "\e[1m make hexokinase \e[0m"
-cd $vimfiles/vim/packs-unix/opt/vim-hexokinase
-make hexokinase
-cd $vimfiles/packsGet-ArchLinux
+# #=> 0 hexokinase
+# echo -e "\e[1m make hexokinase \e[0m"
+# cd $vimfiles/vim/packs-unix/opt/vim-hexokinase
+# make hexokinase
+# cd $vimfiles/packsGet-ArchLinux
 
 #=> 0 vim-ShowTrailingWhitespace
 sed -i 's/^c/" c/' $vimfiles/vim/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
