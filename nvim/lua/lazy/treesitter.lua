@@ -17,7 +17,7 @@ return {
 
       highlight = { -- parser configurations - see  $vimfiles/nvim/lua/init.lua
         enable = true,
-        disable = { 'diff', 'lua', 'markdown', 'muttrc', 'perl', 'tmux', 'tsv', 'vim', 'yaml', },
+        disable = { 'diff', 'lua', 'markdown', 'muttrc', 'perl', 'tmux', 'tsv', 'vim', 'vimdoc', 'yaml', },
           -- bad
             -- diff      layout isn't preferable
             -- markdown  backticks are concealed
@@ -26,6 +26,7 @@ return {
             -- python    is better
             -- tmux      is worse than Vim's
             -- tsv       get weird highlighting artefacts
+            -- vimdoc    is less highlighted
             -- yaml      is dulled, I prefer Vim's
           -- no effect: bash, perl, xml
         -- additional_vim_regex_highlighting = { 'markdown', },

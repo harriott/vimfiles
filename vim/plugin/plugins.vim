@@ -368,8 +368,7 @@ inoremap <c-x><c-x> <c-x><c-o>
 
 " Using
 "  bash-language-server
-"  languagetool
-"   needs  g:languagetool_jar  defined
+"  languagetool, needs  g:languagetool_jar  defined
 
 " :let g:ale_completion_enabled = 1  " if only using  ALE's internal engines
 let g:ale_echo_msg_format = '%linter% %code% %s'

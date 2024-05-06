@@ -17,13 +17,16 @@ if !has('nvim')
 endif
 
 ""> 2 mswin.vim
-source $VIMRUNTIME/mswin.vim
+source $VIMRUNTIME/mswin.vim  " *map <c-f4>  to close window
 " but revert Ctrl-A back to number increment:
 unmap <C-A>
 " and Ctrl-F back to move forward:
-if !has('nvim')
-   unmap <C-F>
-endif " (see  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim)
+if has('nvim')
+  " it was  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
+  unmap <c-v>
+else
+  unmap <C-F>
+endif
 
 ""> 3 my initial settings
 " set noloadplugins

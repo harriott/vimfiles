@@ -42,7 +42,7 @@ function! F4F4()
     quit! " close completely
   else
     let s:b = expand('%:t')
-    wall
+    silent wall
     bdelete
     echo 'closed '.s:b
   endif

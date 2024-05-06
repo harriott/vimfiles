@@ -481,8 +481,9 @@ nnoremap <c-k> <c-w>k
 
 nnoremap <leader><leader>h :split<CR>
 nnoremap <leader><leader>v :vsplit<CR>
-nnoremap <leader><leader>o :close<CR>
+nnoremap <leader><leader>o :write<bar>close<CR>
 " - will only work on a split
+"   also  <c-f4>  from  mswin.vim
 
 " re-open the quickfix-window
 "  eg to look again at results of vimgrep

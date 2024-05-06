@@ -119,6 +119,7 @@ function GetTSParsers()
   -- vim.cmd 'TSInstall python'
   -- vim.cmd 'TSInstall sh'
   -- vim.cmd 'TSInstall vim'
+  -- vim.cmd 'TSInstall vimdoc'
 end -- lua GetTSParsers(), then update:
   -- $vimfiles\settings\nvim-win64-TSInstallInfo-HPEB840G37.txt
   -- $vimfiles\settings\nvim-win64-TSInstallInfo-sbMb.txt
