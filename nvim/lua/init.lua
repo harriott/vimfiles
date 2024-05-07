@@ -22,6 +22,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- --> window title
+-- $MSWin10\PSProfile.ps1  sets  $env:TERM
+vim.opt.title = true
+vim.opt.titlelen = 25 -- 25 seems good for the little  WT  tab headers
+vim.opt.titlestring = [[%{expand("%:p")}%H%M%R%q%W]]
+
 -- -> 0 nVim
 vim.opt.hlsearch = true
 vim.opt.updatetime = 250 -- decrease swap update time
@@ -54,7 +60,7 @@ require('lazy').setup({
     require'lazy/nvim-notify',
     require'lazy/telescope',
     require'lazy/telescope-fzf-native',
-    require'lazy/treesitter',  -- $vimfiles/nvim/lua/lazy/treesitter.lua
+    require'lazy/treesitter', -- $vimfiles/nvim/lua/lazy/treesitter.lua
       -- 'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
           -- context.vim  works better
@@ -70,6 +76,7 @@ require('lazy').setup({
       -- :MasonInstall perlnavigator
       -- :MasonInstall pyright
       -- :MasonInstall vim-language-server
+      --  g $lazy\mason\packages
       --  g?  toggles help
       --  r ~/.local/share/nvim/mason/packages
       {"williamboman/mason-lspconfig.nvim",config=function()require('mason-lspconfig').setup()end,},

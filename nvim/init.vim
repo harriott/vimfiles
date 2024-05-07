@@ -25,7 +25,7 @@ set termguicolors
 " nnoremap Y 0yj
 " yank one full line - I prefer over  Y-default, but now need  nyy  to select multiple lines
 
-""> 0 quit buffer, quit nvim
+""> 0 quit buffer(s), quit nvim
 function! F4F4()
   if len(getbufinfo({'buflisted':1})) == 1
     let cfd = expand('%:p:h') " current file directory
@@ -53,6 +53,8 @@ inoremap <f4> <Esc>:call F4F4()<CR>
 " - overriden by some autocommands in  $vimfiles/vim/plugin/plugin.vim
 
 vnoremap <f4> <Esc>:call F4F4()<CR>
+
+nnoremap <s-f4> :Bdelete other<CR>:call F4F4()<CR>
 
 ""> 0 terminal
 autocmd TermOpen * startinsert

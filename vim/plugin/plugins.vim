@@ -135,8 +135,8 @@ let g:csv_highlight_column = 'y'
 let g:user_emmet_install_global = 0
 packadd emmet-vim
 
-"">>> Liquid
-packadd vim-liquid  " $vfp/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
+" "">>> Liquid
+" packadd vim-liquid  " $vfp/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
 
 "">>> mediawiki.vim
 packadd mediawiki.vim  " $vfp/packs-cp/opt/mediawiki.vim/README.md

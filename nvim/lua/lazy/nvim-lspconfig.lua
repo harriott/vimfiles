@@ -1,6 +1,8 @@
 
 -- $vimfiles/nvim/lua/lazy/nvim-lspconfig.lua
 
+-- install language servers with Mason ($vimfiles/nvim/lua/init.lua)
+
 return {
   { 'neovim/nvim-lspconfig',
     config = function()
@@ -15,7 +17,6 @@ return {
       -- try  yamlls
 
       require'lspconfig'.bashls.setup{}
-      -- install with Mason!
       -- require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
         -- but no completions...
 
