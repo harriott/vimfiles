@@ -324,7 +324,7 @@ shift+F11             " open in Emacs
 
 ## files & directories
 ```
-2c-g        " buffer number & full filename
+2c-g        " buffer number & full filename (<c-f11>  on  AZERTY)
 :e.         " dirvish (or netrw) on current directory
 :f  or  c-g " relative filename (:h :f)
 \<f11>      " last modification time
@@ -461,7 +461,7 @@ u            " lowercase a visual block
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
     fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
 
-- `:che` (`:checkhealth`)
+`:che` (`:checkhealth`)
 
 ### lua print(...)
     :=package.config:sub(1,1)  " identify winxx by \
@@ -511,7 +511,7 @@ c-r "  " (in command line) insert the unnamed register
 command-line window: C-c C-c  closes
 :echo getline(1) " contents of line 1
 
-$GHrUse/CP/Vim/vim-vim/README.md
+$DCGRs/CP/Vim/vim-vim/README.md
 vim -u NONE
 vim(1)
 
@@ -564,11 +564,11 @@ $misc/CP/vimtest/README.md
 options as variable: `:echo &textwidth`
 
 #### mappings
-    :Bufferize map                     " n s v
-    :Bufferize map!                    " e i
-    :Bufferize map|map!                " e i n s v
-    :Bufferize verb map <localleader>q " where that mapping was set
-    :map <c-n>                         " shows the mapping
+    :Bufferize map           " n s v
+    :Bufferize map!          " e i
+    :Bufferize map|map!      " e i n s v
+    :verb map <localleader>q " where that mapping was set
+    :[verb ]map <c-n>        " shows the mapping
 
 `alt+<key>` won't work in terminals
 

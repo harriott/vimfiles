@@ -1,9 +1,9 @@
 
--- https://harriott.github.io/ - Thu 02 May 2024
+-- https://harriott.githubio/ - mar 07 mai 2024
 
 -- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
---  adapted from  $GHrUse/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
+--  adapted from  $DCGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 --  symlinked by
 --   $MSwin10\mb\symlinks.ps1
 --   $OSAB/bs-symlinks/jo-2-whenWM-0.sh
@@ -23,10 +23,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- --> window title
--- $MSWin10\PSProfile.ps1  sets  $env:TERM
-vim.opt.title = true
-vim.opt.titlelen = 25 -- 25 seems good for the little  WT  tab headers
-vim.opt.titlestring = [[%{expand("%:p")}%H%M%R%q%W]]
+if package.config:sub(1,1) == "\\" then -- win64
+  -- $MSWin10\PSProfile.ps1  sets  $env:TERM
+  vim.opt.title = true
+  vim.opt.titlelen = 24 -- 24 seems good for the little  WT  tab headers
+  vim.opt.titlestring = [[%{expand("%:p")}%H%M%R%q%W]]
+end
 
 -- -> 0 nVim
 vim.opt.hlsearch = true
@@ -52,13 +54,14 @@ vim.opt.rtp:prepend(lazypath)
 
 -- -> 1 lazy.nvim 1
 require('lazy').setup({
-    {'numToStr/Comment.nvim',opts={}}, -- gc  to comment visual regions/lines
-    -- require 'lazy/catppuccin',
+    {'numToStr/Comment.nvim',opts={}}, -- $vimfiles\QR.gfm
+    -- require'lazy/catppuccin',
     -- require'lazy/dropbar',
     require'lazy/lualine',
     require'lazy/oil',
     require'lazy/nvim-notify',
     require'lazy/telescope',
+      -- something slows down initial folding of large markdown files on  HPEB840G37
     require'lazy/telescope-fzf-native',
     require'lazy/treesitter', -- $vimfiles/nvim/lua/lazy/treesitter.lua
       -- 'nvim-treesitter/nvim-treesitter-context',
@@ -76,10 +79,10 @@ require('lazy').setup({
       -- :MasonInstall perlnavigator
       -- :MasonInstall pyright
       -- :MasonInstall vim-language-server
-      --  g $lazy\mason\packages
-      --  g?  toggles help
-      --  r ~/.local/share/nvim/mason/packages
-      {"williamboman/mason-lspconfig.nvim",config=function()require('mason-lspconfig').setup()end,},
+      -- g $home\AppData\Local\nvim-data\mason\packages
+      -- g?  toggles help
+      -- r ~/.local/share/nvim/mason/packages
+     {"williamboman/mason-lspconfig.nvim",config=function()require('mason-lspconfig').setup()end,},
         require'lazy/nvim-lspconfig',
   },
   {

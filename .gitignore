@@ -4,7 +4,7 @@
 **/*/packs-cp
 **/*/packs-nvim
 **/*/packs-unix
-**/*/packs-win32
+**/*/packs-win64
 .directory
 .netrwhist
 scratch.vim

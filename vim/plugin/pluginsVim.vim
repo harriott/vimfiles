@@ -5,8 +5,20 @@
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
+""> encoding
+
+"">> The NERD Commenter
+packadd nerdcommenter
+let NERDSpaceDelims = 1
+" <leader>c<space> -> NERDCommenterToggle
+
+" extra filetypes
+" $vfp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
+let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
+
 ""> fzf.vim
-" $vimfiles/vim/packs-cp/opt/fzf.vim/README.md
+" $vimfiles/vim/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
   let g:fzf_vim.preview_window = ['hidden,up,70%', 'f1']

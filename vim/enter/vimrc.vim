@@ -57,8 +57,11 @@ set splitbelow
 autocmd BufRead,BufNewFile */sudoers setlocal ft=sudoers
 autocmd BufRead,BufNewFile *PowerShell/PSReadLine/ConsoleHost_history.txt setlocal nospell
 
-" ""> mappings 0 leader for AZERTY
-" if v:lang =~ 'fr' | let mapleader = 'ù' | endif  " only seemed reliable in  nvim
+""> mappings 0 for AZERTY
+if v:lang =~ 'fr'
+  " let mapleader = 'ù'  " only seemed reliable in  nvim, now handled by  AHK
+  nnoremap <c-f11> 2<c-g>
+endif
 
 ""> mappings 0 localleader
 nnoremap <c-=> <c-w>=

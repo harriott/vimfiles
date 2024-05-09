@@ -298,16 +298,6 @@ packadd vimtex
 " MinimapToggle
 packadd minimap.vim
 
-"">> The NERD Commenter
-packadd nerdcommenter
-let NERDSpaceDelims = 1
-" <leader>c<space> -> NERDCommenterToggle
-
-" extra filetypes
-" $vfp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
-let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
-let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
-
 "">> Tagbar
 " $vfp/packs-cp/opt/vim-tagbar/README.md
 
@@ -578,6 +568,7 @@ let g:rooter_manual_only = 1  " :Rooter
 packadd vim-rooter
 
 "">> vim-startify
+" $vimfiles/vim/packs-cp/opt/vim-startify/doc/startify.txt
 packadd vim-startify
 " Startify
 

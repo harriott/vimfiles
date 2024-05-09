@@ -47,5 +47,5 @@ endif
     let $jtIT = $DJH.'\technos\IT'
     let $Thb = $DJH.'\Thb-dr'
     let $tIs = $DJH.'\technos\IT-storage'  " $tIs\diskUsage.txt
-  let $GHrUse = $Drpbx.'\CGHrepos'
+  let $DCGRs = $Drpbx.'\CGHrepos'
 

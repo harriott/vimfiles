@@ -37,7 +37,7 @@ return {
       },
     },
     config = function(_, opts)
-      if package.config:sub(1,1) == "\\" then
+      if package.config:sub(1,1) == "\\" then -- win64
         require('nvim-treesitter.install').prefer_git = false
       else
         require('nvim-treesitter.install').prefer_git = true

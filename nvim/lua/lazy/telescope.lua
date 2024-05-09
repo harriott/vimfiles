@@ -8,6 +8,7 @@
 --  Shows keymaps:
 --   insert mode: <c-/>
 --   normal mode: ?
+
 return {
   { 'nvim-telescope/telescope.nvim',
     event = 'VimEnter',

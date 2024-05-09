@@ -5,6 +5,8 @@
 
 return {
   { 'neovim/nvim-lspconfig',
+    event = { 'BufReadPre', 'BufNewFile' },
+      -- might get over failure to find  vim-language-server  on  win64
     config = function()
 
       -- try  emmet-language-server  for  css, html, less, sass, scss
