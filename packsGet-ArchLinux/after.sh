@@ -4,6 +4,8 @@
 # Joseph Harriott, Sat 04 May 2024
 
 # bash $vimfiles/packsGet-ArchLinux/after.sh
+#  normally sourced from
+#   $vimfiles/packsGet-ArchLinux/pulls.sh
 
 # some tweaks on plugins
 

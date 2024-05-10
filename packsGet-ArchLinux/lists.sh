@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Joseph Harriott - Wed 07 Oct 2020
+# Joseph Harriott - Thu 09 May 2024
 
-# $vimfiles/packsGet-ArchLinux> bash lists.sh
-# but normally called from  $vimfiles/packsGet-ArchLinux/after.sh
+# $vimfiles/packsGet-ArchLinux/lists.sh
+#  normally called from  $vimfiles/packsGet-ArchLinux/after.sh
 
 find .. -type d -name '*.git' | sort > gits.txt
 cd=`pwd`
@@ -14,5 +14,5 @@ cd $cd; done
 
 find ../*/packs-* -mindepth 3 -maxdepth 3 -type d |sort > all.txt
 
-echo -e "don't forget to restart Vim &  \e[1m\e[95m :helptags ALL \e[0m"
+echo -e "don't forget to  \e[1m\e[95m:helptags ALL\e[0m  after a restart"
 

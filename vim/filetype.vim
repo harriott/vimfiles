@@ -39,13 +39,14 @@ au! BufRead,BufNewFile *.md source $vimfiles/vim/ftplugin/md.vim
 " if exists("did_load_filetypes") | finish | endif  " kills detection in Neovim
 aug filetypedetect
     au! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
-    au! BufRead,BufNewFile *.gnudiff setf gnudiff   " $vimfiles/ftplugin/gnudiff.vim
+    au! BufRead,BufNewFile *.cmplt    setf cmplt    " $vimfiles/vim/syntax/cmplt.vim
     au! BufRead,BufNewFile *.digs    setf digs      " $vimfiles/vim/ftplugin/digs.vim
     au! BufRead,BufNewFile *.dirl    setf dirl      " $vimfiles/vim/syntax/dirl.vim
     au! BufRead,BufNewFile *.exts    setf exts      " $vimfiles/vim/syntax/exts.vim
     au! BufRead,BufNewFile *.fetl    setf fetl      " $vimfiles/vim/syntax/fetl.vim
     au! BufRead,BufNewFile *.Fn      setf Fn        " $vimfiles/vim/syntax/Fn.vim
     au! BufRead,BufNewFile *.gems    setf gems      " $vimfiles/vim/syntax/gems.vim
+    au! BufRead,BufNewFile *.gnudiff setf gnudiff   " $vimfiles/ftplugin/gnudiff.vim
     au! BufRead,BufNewFile *.IMfo    setf IMfo      " $vimfiles/vim/ftplugin/IMfo.vim
     au! BufRead,BufNewFile *.jctl    setf jctl      " $vimfiles/vim/syntax/jctl.vim
     au! BufRead,BufNewFile *.leader  setf leader    " $vimfiles/vim/syntax/leader.vim
