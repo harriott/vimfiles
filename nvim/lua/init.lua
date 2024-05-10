@@ -1,5 +1,5 @@
 
--- https://harriott.githubio/ - mar 07 mai 2024
+-- https://harriott.githubio/ - Fri 10 May 2024
 
 -- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
@@ -21,6 +21,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+vim.api.nvim_set_hl(0, '@lsp.type.comment', {}) -- because  lua_ls  sets a symantic token...
 
 -- --> window title
 if package.config:sub(1,1) == "\\" then -- win64
@@ -54,14 +55,13 @@ vim.opt.rtp:prepend(lazypath)
 
 -- -> 1 lazy.nvim 1
 require('lazy').setup({
-    {'numToStr/Comment.nvim',opts={}}, -- $vimfiles\QR.gfm
+    {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
     -- require'lazy/catppuccin',
     -- require'lazy/dropbar',
     require'lazy/lualine',
     require'lazy/oil',
     require'lazy/nvim-notify',
     require'lazy/telescope',
-      -- something slows down initial folding of large markdown files on  HPEB840G37
     require'lazy/telescope-fzf-native',
     require'lazy/treesitter', -- $vimfiles/nvim/lua/lazy/treesitter.lua
       -- 'nvim-treesitter/nvim-treesitter-context',
@@ -77,6 +77,7 @@ require('lazy').setup({
       -- :MasonInstall lua-language-server
       -- :MasonInstall mutt-language-server
       -- :MasonInstall perlnavigator
+        -- ~/.local/share/nvim/mason/packages/perlnavigator/package.json
       -- :MasonInstall pyright
       -- :MasonInstall vim-language-server
       -- g $home\AppData\Local\nvim-data\mason\packages

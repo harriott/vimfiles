@@ -7,6 +7,7 @@ return {
   { 'nvim-treesitter/nvim-treesitter',
     -- build = ':TSUpdate',
     priority = 1000,
+
     opts = {
       -- auto_install = true, -- pull in parsers without asking
         -- can't set this because
@@ -16,12 +17,12 @@ return {
         --   would perhaps be fixed as per  tree-sitter-latex
 
       highlight = { -- parser configurations - see  $vimfiles/nvim/lua/init.lua
-        enable = true,
-        disable = { 'diff', 'lua', 'markdown', 'muttrc', 'perl', 'tmux', 'tsv', 'vim', 'vimdoc', 'yaml', },
+        -- enable = true, -- when true, large md's fold slowly
+      --   disable = { 'diff', 'lua', 'markdown', 'muttrc', 'perl', 'tmux', 'tsv', 'vim', 'vimdoc', 'yaml', },
           -- bad
             -- diff      layout isn't preferable
-            -- markdown  backticks are concealed
-            -- muttrc    is worse than Vim'.s
+            -- markdown  backticks are concealed, but large files fold slowly
+            -- muttrc    is worse than Vim's
             -- perl      aint much better than Vim's
             -- python    is better
             -- tmux      is worse than Vim's
@@ -29,13 +30,18 @@ return {
             -- vimdoc    is less highlighted
             -- yaml      is dulled, I prefer Vim's
           -- no effect: bash, perl, xml
-        -- additional_vim_regex_highlighting = { 'markdown', },
+        -- additional_vim_regex_highlighting = { 'lua', 'markdown', },
           -- keep my highlighting changes
             -- markdown : folding is delayed in big files
             -- my highlighting aint preserved: lua, perl, vim
-
       },
+
+      incremental_selection = { enable = true,
+        keymaps = { init_selection = "gn",
+          node_incremental = "gi", scope_incremental = "gs", node_decremental = "gd", }, },
+
     },
+
     config = function(_, opts)
       if package.config:sub(1,1) == "\\" then -- win64
         require('nvim-treesitter.install').prefer_git = false

@@ -429,9 +429,9 @@ endfunction
 " call MK() makes  $vimfiles/settings/*-*.exrc - tidied settings, including all the package mappings
 
 ""> layout
-" clearmatches (see  $jtCP/Vim/plugins/csv_vim-HiColumnLeaky/issue.md)
-inoremap <leader><f5> :call clearmatches()<cr>
-nnoremap <leader><f5> :call clearmatches()<cr>
+" clearmatches (see  $jtCP/Vim/plugins/csv_vim/HiColumnLeaky/issue.md)
+inoremap <leader><leader><f5> :call clearmatches()<cr>
+nnoremap <leader><leader><f5> :call clearmatches()<cr>
 
 " md4pdfLog.tex - turn off syntax folding for the long log files from md4pdf.ps1
 au! BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
@@ -463,8 +463,8 @@ nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 "   $ITstack/unix_like-Android/phones.md
 "   $TeNo/md-JH-DailyLife/roles/healing.md
 "   my various  .../QR.md
-nnoremap <S-F5> :syntax sync fromstart<CR>
-inoremap <S-F5> <Esc><S-F5>
+inoremap <leader><f5> :<Esc>syntax sync fromstart<CR>
+nnoremap <leader><f5> :syntax sync fromstart<CR>
 
 "">> windows
 " close window, including quickfix-window and NerdTree navigation
@@ -645,8 +645,8 @@ let g:netrw_liststyle = 2
 nnoremap <leader>- :Hexplore<cr>
 
 " open in Emacs
-nnoremap <S-F11> :call OpenInEmacs()<CR>
-inoremap <S-F11> <Esc><S-F11>
+nnoremap <leader><f12> :call OpenInEmacs()<CR>
+inoremap <leader><f12> :<Esc>call OpenInEmacs()<CR>
 
 " working directory to file's
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>

@@ -54,7 +54,7 @@ inoremap <f4> <Esc>:call F4F4()<CR>
 
 vnoremap <f4> <Esc>:call F4F4()<CR>
 
-nnoremap <s-f4> :Bdelete other<CR>:call F4F4()<CR>
+nnoremap <leader><f4> :Bdelete other<CR>:call F4F4()<CR>
 
 ""> 0 terminal
 autocmd TermOpen * startinsert

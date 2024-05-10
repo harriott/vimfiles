@@ -6,7 +6,7 @@
 " Last Change: Sun 21 Apr 2024
 " $vimfiles/vim/ftplugin/lua.vim
 "  supplementary to  $VIMRUNTIME/ftplugin/lua.vim
-"  I also have also  $vimfiles/vim/after/syntax/lua.vim
+"  also  $vimfiles/vim/after/syntax/lua.vim
 
 if !has('nvim')
   let b:ale_enabled = 0

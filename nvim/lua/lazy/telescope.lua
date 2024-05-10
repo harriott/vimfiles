@@ -52,7 +52,7 @@ return {
 
       vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc='telescope Oldfiles'})
 
-      vim.keymap.set({'n'},'<s-f1>',function() builtin.jumplist { fname_width=50} end,
+      vim.keymap.set({'n'},'<leader><f1>',function() builtin.jumplist { fname_width=50} end,
         {desc='telescope jump list entries'})
 
       vim.keymap.set({'i','n','v'},'<f8>',builtin.command_history,{desc='telescope command history'})

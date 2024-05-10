@@ -761,7 +761,8 @@ function! GrabBmmFn()
   normal! p
   write
 endfunction
-" for use in  $vimfiles/settings/*-FnMaps-*.txt
+" for use in  $vimfiles/settings/*-FnMaps.txt
+" won't catch buffer-specific maps
 
 "">>>> grab Vim settings - simple maps
 function! GrabSimpleMaps()
