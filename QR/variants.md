@@ -32,7 +32,9 @@ Joseph's (g)Vim Quick Reference
 
 ## terminal
     :lua vim.cmd.terminal()
-    <esc><esc> " my map to abandon the terminal buffer
+    :sp +te
+    :te  " :terminal  in current window
+    :vs +te
 
 # Vim
 ```vim
@@ -88,7 +90,7 @@ $misc/CP/vimtest/README.md
     ":p                               " paste in last command.
     "kyy                              " copies current line into register k
     :echo @%                          " (relative) filepath
-    :let@\='something to search for'  " makes that last search
+    :let@/='something to search for'  " makes that last search
     :let@a=@_                         " sets a to (always empty) black hole register
     :let@q=@k                         " sets a to contents of register k
 

@@ -5,6 +5,7 @@
 " $vimfiles\vim\enter\vimrc-Win10-paths.vim
 " source'd by
 "  $MSWin10\mb\_vimrc-AZERTY
+"  $vimfiles/nvim/init.vim
 " symlinked in  $MSwin10\mb\symlinks-mostly.ps1
 
 ""> paths

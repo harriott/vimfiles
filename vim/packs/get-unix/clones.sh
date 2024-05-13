@@ -12,7 +12,13 @@ gc='git clone'
 # gc='git clone --filter=blob:none'
 gd(){ echo $1; [[ -d $1 ]] || mkdir $1; cd $1; }
 
-#==> cp
+#==> nvim unix
+echo; cd $vimfiles/nvim; gd packs-unix
+
+gd opt; ls
+
+
+#==> vim cp
 echo; cd $vimfiles/vim; gd packs-cp
 
 gd opt; ls
@@ -126,7 +132,7 @@ gd opt; ls
   # [[ -d tagbar ]] && sudo rm -r tagbar; $gc https://github.com/preservim/tagbar
   # [[ -d vim-gitgutter ]] && sudo rm -r vim-gitgutter; $gc https://github.com/airblade/vim-gitgutter
 
-#==> unix
+#==> vim unix
 echo; cd $vimfiles/vim; gd packs-unix
 
 gd opt; ls
@@ -135,20 +141,19 @@ gd opt; ls
   # $gc https://github.com/junegunn/fzf.vim
   # $gc https://github.com/nanotech/jellybeans.vim
   # $gc https://github.com/ntpeters/vim-better-whitespace
-  # $gc https://github.com/RRethy/vim-hexokinase
   # $gc https://github.com/srstevenson/vim-picker
   # $gc https://github.com/qnighy/vim-ssh-annex
   # $gc https://github.com/sheerun/vim-wombat-scheme
   # $gc https://github.com/powerman/vim-plugin-AnsiEsc
 
-#==> win32
-echo; cd $vimfiles/vim; gd packs-win32
+#==> vim win64
+echo; cd $vimfiles/vim; gd packs-win64
 
 gd opt; ls
 
   # [[ -d fzf ]] && sudo rm -r fzf; $gc https://github.com/junegunn/fzf
 
 #=> 2 lists
-echo; $cdp
-cd $vimfiles/packsGet-ArchLinux; . after.sh
+echo
+. $vimfiles/packsGet-ArchLinux/after.sh
 

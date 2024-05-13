@@ -2,6 +2,7 @@
 
 -- $vimfiles/nvim/lua/lazy/treesitter.lua
 --  called by  $vimfiles/nvim/lua/init.lua  which also defines  GetTSParsers()
+--  $lazy/nvim-treesitter/doc/nvim-treesitter.txt
 
 return {
   { 'nvim-treesitter/nvim-treesitter',
@@ -15,31 +16,36 @@ return {
         --   even with  latex  parser disabled
         --   couldn't find any cause in a stripped-down nvim
         --   would perhaps be fixed as per  tree-sitter-latex
+      ignore_install = { 'markdown' },
 
       highlight = { -- parser configurations - see  $vimfiles/nvim/lua/init.lua
         -- enable = true, -- when true, large md's fold slowly
-      --   disable = { 'diff', 'lua', 'markdown', 'muttrc', 'perl', 'tmux', 'tsv', 'vim', 'vimdoc', 'yaml', },
+        disable = { 'lua', 'markdown', 'vim', },
+          -- large md's fold slowly
+          -- my  lua  &  vim  fold syntax are definitively lost
+        enable = { 'perl', },
           -- bad
             -- diff      layout isn't preferable
-            -- markdown  backticks are concealed, but large files fold slowly
             -- muttrc    is worse than Vim's
-            -- perl      aint much better than Vim's
             -- python    is better
             -- tmux      is worse than Vim's
             -- tsv       get weird highlighting artefacts
             -- vimdoc    is less highlighted
             -- yaml      is dulled, I prefer Vim's
+          -- markdown  backticks are concealed
           -- no effect: bash, perl, xml
-        -- additional_vim_regex_highlighting = { 'lua', 'markdown', },
+        -- additional_vim_regex_highlighting = { 'lua', },
           -- keep my highlighting changes
-            -- markdown : folding is delayed in big files
-            -- my highlighting aint preserved: lua, perl, vim
+            -- my highlighting ain't preserved: lua, vim
       },
 
-      incremental_selection = { enable = true,
+      incremental_selection = {
+        disable = { 'markdown', }, -- bad: large md's fold slowly
+        enable = { 'perl', },
         keymaps = { init_selection = "gn",
           node_incremental = "gi", scope_incremental = "gs", node_decremental = "gd", }, },
 
+      indent = { disable = { 'markdown', }, },
     },
 
     config = function(_, opts)

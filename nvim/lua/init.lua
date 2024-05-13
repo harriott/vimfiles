@@ -37,11 +37,11 @@ vim.opt.updatetime = 250 -- decrease swap update time
 vim.opt.inccommand = 'split' -- preview substitutions as you type
 
 -- --> terminal
-vim.keymap.set('t', '<C-h>', '<Cmd>wincmd k<CR>', {desc = 'normal mode and move focus left' })
-vim.keymap.set('t', '<C-l>', '<Cmd>wincmd k<CR>', {desc = 'normal mode and move focus right' })
-vim.keymap.set('t', '<C-j>', '<Cmd>wincmd k<CR>', {desc = 'normal mode and move focus down' })
-vim.keymap.set('t', '<C-k>', '<Cmd>wincmd k<CR>', {desc = 'normal mode and move focus up' })
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal (insert) mode to normal mode' })
+vim.keymap.set({'t'},'<C-h>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus left'})
+vim.keymap.set({'t'},'<C-l>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus right'})
+vim.keymap.set({'t'},'<C-j>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus down'})
+vim.keymap.set({'t'},'<C-k>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus up'})
+vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode to normal mode' })
 
 -- -> 1 lazy.nvim 0 bootstrap
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -61,7 +61,7 @@ require('lazy').setup({
     require'lazy/lualine',
     require'lazy/oil',
     require'lazy/nvim-notify',
-    require'lazy/telescope',
+    require'lazy/telescope', -- something in here slowing folding of large md's
     require'lazy/telescope-fzf-native',
     require'lazy/treesitter', -- $vimfiles/nvim/lua/lazy/treesitter.lua
       -- 'nvim-treesitter/nvim-treesitter-context',
@@ -78,6 +78,7 @@ require('lazy').setup({
       -- :MasonInstall mutt-language-server
       -- :MasonInstall perlnavigator
         -- ~/.local/share/nvim/mason/packages/perlnavigator/package.json
+      -- :MasonInstall powershell-editor-services
       -- :MasonInstall pyright
       -- :MasonInstall vim-language-server
       -- g $home\AppData\Local\nvim-data\mason\packages

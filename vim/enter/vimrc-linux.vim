@@ -1,5 +1,5 @@
 
-" $vimfiles/vim/enter/vimrc-GNULinux.vim
+" $vimfiles/vim/enter/vimrc-linux.vim
 " source'd by  $vimfiles/vim/enter/vimrc-Arch.vim
 
 if has('nvim')
@@ -7,6 +7,8 @@ if has('nvim')
 else
   " first, some general settings
   source $vimfiles/vim/enter/vimrc_example.vim
+  " easier copying to end of line (Y  in  nvim)
+  nnoremap <leader>v v$hy
 endif
 
 " link unnamed register to X-Windows clipboard:

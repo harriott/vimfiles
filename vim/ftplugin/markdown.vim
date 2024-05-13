@@ -2,10 +2,10 @@
 
 " Language: markdown
 " Maintainer: Joseph Harriott
-" Last Change: Sat 20 Apr 2024
+" Last Change: dim 12 mai 2024
 " $vimfiles/vim/ftplugin/markdown.vim
 "  supplementary to
-"   [ $vimfiles/vim/packs-cp/opt/vim-markdown/README.md ]
+"   $vimfiles/vim/packs-cp/opt/vim-markdown/README.md
 "   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/vim/ftplugin/html.vim )
 
 " Filetype detection:
@@ -32,7 +32,7 @@ vnoremap <buffer><leader>< :s/^#//<CR>
 nnoremap <buffer><localleader>b viwc****<Esc>hP
 
 " folding by header marks
-execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
+source $vimfiles/vim/ftplugin/HashFolding.vim
 
 " Vim Markdown
 setlocal conceallevel=2

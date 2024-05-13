@@ -1,7 +1,7 @@
 " vim: se fdl=1:
 
 " Maintainer: Joseph Harriott
-" Last Change: Sun 14 Apr 2024
+" Last Change: Sat 11 May 2024
 " $vimfiles/vim/filetype.vim
 "  supplemental to  $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
 
@@ -26,6 +26,9 @@ au BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
 
 ""> 0 nomacs configuration
 au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dosini
+
+""> 0 nvim lua's
+au BufRead,BufNew,BufNewFile */nvim/**/*.lua source $vimfiles/vim/ftplugin/lua-nvim.vim
 
 ""> 0 special functionality for my .emdr's
 " my email draft format, needs to be seen as  filetype text  for  ALE

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Joseph Harriott - Thu 09 May 2024
+# Joseph Harriott - mar 14 mai 2024
 
-# $vimfiles/packsGet-ArchLinux/lists.sh
-#  normally called from  $vimfiles/packsGet-ArchLinux/after.sh
+# $vimfiles/vim/packs/get-unix/lists.sh
+#  normally called from  $vimfiles/vim/packs/get-unix/after.sh
 
 find .. -type d -name '*.git' | sort > gits.txt
 cd=`pwd`

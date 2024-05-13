@@ -1,9 +1,9 @@
 
-" https://harriott.github.io/ - d8d
+" https://harriott.github.io/ - Sat 11 May 2024
 
 " $vimfiles/vim/plugin/plugins.vim
 
-" find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
+" $ ls $vimfiles -r vim/packs*/opt
 
 let g:plugins_vim = 1
 
@@ -20,7 +20,7 @@ let g:context_enabled = 0
 packadd context.vim
 
 "">> dsf
-" $vfp/packs-cp/opt/dsf.vim/README.md
+" $vfp/cp/opt/dsf.vim/README.md
 
 packadd dsf.vim
 " csf -> change surrounding function
@@ -63,7 +63,7 @@ packadd vim-rhubarb  " for GitHub
 
 " "">>> vim-gfm-syntax
 " " enable this for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
-" " $vfp/packs-cp/opt/vim-gfm-syntax/README.md
+" " $vfp/cp/opt/vim-gfm-syntax/README.md
 " let g:gfm_syntax_emoji_conceal = 1
 " let g:gfm_syntax_enable_always = 0
 " let g:gfm_syntax_enable_filetypes = ['gfm']
@@ -89,8 +89,8 @@ packadd CSS-one-line--multi-line-folding
 " configured in  $vimfiles/ftplugin/csv.vim
 " overriden in  $vimfiles/after/plugin/plugins.vim
 
-" $vfp/packs-cp/opt/csv.vim/ftdetect/csv.vim
-" :h ft-csv  ($vfp/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
+" $vfp/cp/opt/csv.vim/ftdetect/csv.vim
+" :h ft-csv  ($vfp/cp/opt/csv.vim/doc/ft-csv.txt) the help
 
 packadd csv.vim
 
@@ -136,16 +136,16 @@ let g:user_emmet_install_global = 0
 packadd emmet-vim
 
 " "">>> Liquid
-" packadd vim-liquid  " $vfp/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
+" packadd vim-liquid  " $vfp/cp/opt/vim-liquid/ftdetect/liquid.vim
 
 "">>> mediawiki.vim
-packadd mediawiki.vim  " $vfp/packs-cp/opt/mediawiki.vim/README.md
+packadd mediawiki.vim  " $vfp/cp/opt/mediawiki.vim/README.md
 
 "">>> MTA
 packadd MatchTagAlways
 " for  XML/HTML  tags
 " requires a Python 3 that corresponds to vim's compilation
-" $vfp/packs-cp/opt/MatchTagAlways/test.html
+" $vfp/cp/opt/MatchTagAlways/test.html
 
 "">>> Org.vim
 packadd org.vim
@@ -175,7 +175,7 @@ packadd vader.vim
 packadd vim-base64
 
 "">>> vim-bbcode
-" $vfp/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
+" $vfp/cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
 packadd vim-bbcode
 
 "">>> vim-closetag
@@ -197,7 +197,7 @@ packadd vim-hjson
 
 "">>> Vim Markdown
 " :h markdown
-" $vfp/packs-cp/opt/vim-markdown/maintenance.md
+" $vfp/cp/opt/vim-markdown/maintenance.md
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_conceal_code_blocks = 0  " need to see them
 let g:vim_markdown_folding_disabled = 1
@@ -218,10 +218,6 @@ packadd vim-markdown  " harriott  clone of  preservim
 " ge => open link in Vim
 " gx => open link in browser
 
-" ToC:
-" :Toc => quickfix ToC left
-" :Toch => quickfix ToC below
-
 "">>> vim-mbsync
 packadd vim-mbsync
 
@@ -233,11 +229,11 @@ packadd vim-pandoc-syntax
 packadd vim-prettier
 
 "">>> vim-ps1
-" $vfp\packs-cp\opt\vim-ps1\ftdetect\ps1.vim
+" $vfp\cp\opt\vim-ps1\ftdetect\ps1.vim
 packadd vim-ps1
 
 "">>> VimTeX
-" $vfp/packs-cp/opt/vimtex/README.md
+" $vfp/cp/opt/vimtex/README.md
 
 " dsd  " delete surrounding delimiters
 " commands
@@ -299,7 +295,7 @@ packadd vimtex
 packadd minimap.vim
 
 "">> Tagbar
-" $vfp/packs-cp/opt/vim-tagbar/README.md
+" $vfp/cp/opt/vim-tagbar/README.md
 
 " add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
 " h tagbar-contents
@@ -309,12 +305,13 @@ autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
 packadd vim-tagbar
 
 "">> unicode.vim
-" $vimfiles\vim\packs-cp\opt\unicode.vim\doc\unicode.txt
+" $vimfiles\vim\cp\opt\unicode.vim\doc\unicode.txt
 " :UnicodeName  for the character under the cursor
 let g:Unicode_no_default_mappings = v:true
 packadd unicode.vim
 
 "">> vim match-up
+" $vimfiles\vim\cp\opt\unicode.vim\doc\unicode.txt
 " % = jump forward
 " g% = jumb backward
 " jump blocks
@@ -324,7 +321,7 @@ packadd unicode.vim
 " block text objects
 "  i% = inside
 "  a% = all
-nnoremap <leader>pp :<c-u>MatchupWhereAmI??<cr>
+nnoremap <leader>ww :<c-u>MatchupWhereAmI??<cr>
 packadd vim-matchup
 
 "">> vim-ssh-annex
@@ -332,7 +329,7 @@ autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
 packadd vim-ssh-annex
 
 ""> ingo-library
-" $vfp/packs-cp/opt/vim-ingo-library/README.md
+" $vfp/cp/opt/vim-ingo-library/README.md
 "  required for  vim-mark  vim-ShowTrailingWhitespace
 packadd vim-ingo-library
 
@@ -383,7 +380,7 @@ if has('win32')
 endif
 let g:tq_language=['en', 'fr']
 autocmd BufRead,BufNewFile */France/Scratch/* let b:tq_language=['fr']
-nnoremap <leader>tq :ThesaurusQueryReplaceCurrentWord<CR>
+nnoremap <leader>wt :ThesaurusQueryReplaceCurrentWord<CR>
 packadd thesaurus_query.vim
 
 "">> vim-langtool
@@ -417,12 +414,10 @@ packadd vim-characterize
 
 "">>> Colorizer
 let g:colorizer_disable_bufleave = 1
+" see  $vimfiles/QR/QR.md
 
-"">>> colorizer
-" optionally available
-
-"">>> vim-hexokinase
-" enabled in my  $vimfiles/nvim/init.vim
+"">>> clrzr
+" see  $vimfiles/QR/QR.md
 
 "">> color schemes
 " no need to  packadd  for Vim

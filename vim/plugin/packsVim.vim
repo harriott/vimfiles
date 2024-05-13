@@ -13,7 +13,7 @@ let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
 " extra filetypes
-" $vfp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+" $vimfiles/vim/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 
@@ -21,7 +21,7 @@ let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 " $vimfiles/vim/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
-  let g:fzf_vim.preview_window = ['hidden,up,70%', 'f1']
+  let g:fzf_vim.preview_window = ['hidden,up,70%']
 packadd fzf.vim
 
 nnoremap <leader>B :BLines<CR>
@@ -41,10 +41,17 @@ vnoremap <F9> <Esc>:History/<CR>
 
 nnoremap <s-f1> :Jumps<CR>
 
-if has('win32')
+if has('win64') " junegunn/fzf
+  " at  $vimfiles\vim\plugin\fzf,
+  "  because
+  "   1 /usr/bin/fzf  is not found
+  "   2 fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
+  "                                              :set rtp+=$nvim\fzf
+  "                                              :set rtp+=$nvim\plugin\fzf
+  "      (the advice at  $vimfiles/vim/plugin/fzf/README-VIM.md  ain't correct)
+
   nnoremap <S-F9> call popup_clear(1):<CR>
-  " for when the pop window seizes - nice idea, but shift+f9 also gets blocked
-  packadd fzf
+  " - for when the pop window seizes - nice idea, but shift+f9 also gets blocked
 endif
 
 " case-sensitive
@@ -113,7 +120,7 @@ packadd ctrlp.vim
 "">> Fern
 " vim default c-e = scroll up the window, without displacing the cursor
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim " $vfp/packs-cp/opt/fern.vim/README.md
+packadd fern.vim " $vimfiles/vim/packs-cp/opt/fern.vim/README.md
 " ! -- toggles hidden
 " + -- vim-buffing-wheel override (quits)
 " <bs>/<c-h> -- fern-action-leave (goes up a directory)

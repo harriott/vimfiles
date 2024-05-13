@@ -55,6 +55,7 @@ inoremap <f4> <Esc>:call F4F4()<CR>
 vnoremap <f4> <Esc>:call F4F4()<CR>
 
 nnoremap <leader><f4> :Bdelete other<CR>:call F4F4()<CR>
+inoremap <leader><f4> <Esc>:Bdelete other<CR>:call F4F4()<CR>
 
 ""> 0 terminal
 autocmd TermOpen * startinsert
@@ -62,7 +63,7 @@ let $in_nvim = 1  " - for $OSAB/Bash/bashrc-generic
 
 ""> 1 pull in Vim configuration
 if has('win64')
-  source $HOME\vimfiles\vimrc-Win10-paths.vim  " $vimfiles\vim\enter\vimrc-Win10-paths.vim
+  source $HOME\vimfiles\Win10Paths.vim  " $vimfiles\vim\enter\Win10Paths.vim
   source $vimfiles\vim\enter\vimrc-Win10.vim
 else
   source $vimfiles/vim/enter/vimrc-Arch.vim
@@ -79,13 +80,6 @@ packadd vim-better-whitespace
 " EnableWhitespace
 highlight ExtraWhitespace ctermbg=blue
 let g:better_whitespace_operator=''
-
-" if has('unix')
-  " let g:Hexokinase_highlighters = ['foregroundfull']
-  " packadd vim-hexokinase  " won't work with  lazy.nvim
-  " autocmd BufRead,BufNewFile /tmp/.nnn* :HexokinaseTurnOff
-  " " $vfp/packs-unix/opt/vim-hexokinase/README.md
-" endif
 
 " colorscheme
 if has('win64')

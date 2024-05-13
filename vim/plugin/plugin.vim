@@ -101,6 +101,8 @@ xnoremap q: <NOP>
 ""> easy q macro
 if v:lang =~ 'en'
   noremap Q @q
+else
+  noremap Q <NOP>
 endif
 
 " qq  starts recording
@@ -560,11 +562,6 @@ function! IncSearchToggle()
     echo 'incsearch'
   endif
 endfunction
-
-" select to end of line in unix
-if has('unix')
-  nnoremap <leader>v v$hy
-endif
 
 "">> grepping
 " Strip the current selection & store it in the l then s register:

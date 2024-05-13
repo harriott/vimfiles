@@ -4,7 +4,8 @@ Joseph's (g)Vim Quick Reference
     :Tabularize\ "
     gA"  " align the lists in this file
 
-    $ $vimfiles\QR> m4ps 0 1
+    $ $vimfiles/QR> m4ps 0 1
+    $vimfiles/QR/QR.md
 
     :h quickref
     :helptags ALL
@@ -101,7 +102,7 @@ Stack Exchange Vi and Vim
 - only interprets codes
 
 ## colour test
-    $vfp/packs-unix/opt/vim-hexokinase/test_colours.txt
+    $vimfiles/nvim/packs-unix/opt/vim-hexokinase/test_colours.txt
 
 ### cterm-colors
     NR-16   NR-8    COLOR NAME
@@ -160,15 +161,6 @@ Stack Exchange Vi and Vim
 h 'fdo'
 set fdo?
 
-## Hexokinase
-    :HexokinaseTurnOn  # refresh if already on
-    :HexokinaseTurnOff
-    :packadd vim-hexokinase
-
-### handles
-    $ulLA/IM-convert-list_color.txt`
-    rgba(255,255,255,0.05)
-
 ## indentation
     :%le     " remove all indents
     :h 'sw'  " autoindentation - shiftwidth
@@ -185,7 +177,6 @@ set fdo?
 
 ```vim
 ge    " go backwards to end of word
-g:    " jump forward to position of a newer change
 g;    " jump back to position of an older change
 :h ``
 :h '.
@@ -205,9 +196,12 @@ g;    " jump back to position of an older change
     L         " go Last line (of current window display)
 
 # movements - marks
+    [g]`"  " jump to last place before closing file
+
 ```vim
 `z  " move to mark z
 'z  " move to start of line of mark z
+:h g`
 mz  " create mark z
 mJ  " put a file-specific mark in current file (can use A-Z0-9)
 ```
@@ -373,7 +367,7 @@ gf          " open file under cursor - :h gF
 
 ```vim
 &                            " repeat last substitute
-:exe
+:exe                         " :execute
 :g\^\m 0                     " reverse the entire buffer
 :ni<somecharacter><enter>    " inserts <somecharacters> n time
 :h g_CTRL-G                  " position and word info, works on a range too

@@ -23,6 +23,7 @@ return {
     config = function()
       require('telescope').setup{ -- :help telescope.setup()
         defaults = {
+          -- file_ignore_patterns={"%.md"}, -- avoids folding delay but also makes .md's not there...
           layout_config = { vertical = { preview_height = 0.3, }, },
           layout_strategy='vertical',
           mappings = { -- because  <c-v>  is hijacked by  mswin.vim
@@ -48,44 +49,66 @@ return {
       pcall(require('telescope').load_extension, 'fzf')
       local builtin = require 'telescope.builtin' -- :help telescope.builtin
 
+      --------------
+      -- keymaps --
+      -- /^\s*vim.keymap.set({.*},'\zs.*\ze',
+
+      vim.keymap.set({'n'},'<leader>tt',builtin.treesitter,{desc=':Telescope treesitter'})
+
+      -- Git ---
+      vim.keymap.set({'n'},'<leader>ic',builtin.git_commits,{desc=':Telescope git_commits'})
+      vim.keymap.set({'n'},'<leader>ib',builtin.git_bcommits,{desc=':Telescope git_bcommits'})
+      vim.keymap.set({'n'},'<leader>ii',builtin.git_status,{desc=':Telescope git_status'})
+
+
+      -- LSP --
+      vim.keymap.set({'n'},'<leader>ls',builtin.lsp_document_symbols,{desc=':Telescope lsp_document_symbols'})
+      vim.keymap.set({'n'},'<leader>lss',builtin.lsp_workspace_symbols,{desc=':Telescope lsp_workspace_symbols'})
+      -- marginally useful:
+        vim.keymap.set({'n'},'<leader>ld',builtin.lsp_definitions,{desc=':Telescope lsp_definitions'})
+        vim.keymap.set({'n'},'<leader>ldd',builtin.lsp_type_definitions,{desc=':Telescope lsp_type_definitions'})
+
       -- shell --
+      vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles'})
 
-      vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc='telescope Oldfiles'})
+      vim.keymap.set({'n'},'<leader><f1>',function() builtin.jumplist {show_line=false} end,
+        {desc='usable  :Telescope jumplist'})
 
-      vim.keymap.set({'n'},'<leader><f1>',function() builtin.jumplist { fname_width=50} end,
-        {desc='telescope jump list entries'})
+      vim.keymap.set({'i','n','v'},'<f8>',builtin.command_history,{desc=':Telescope command_history'})
 
-      vim.keymap.set({'i','n','v'},'<f8>',builtin.command_history,{desc='telescope command history'})
+      vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc=':Telescope search_history'})
 
-      vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc='telescope search history'})
+      vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc='Telescope man_pages'})
+
+      vim.keymap.set({'n'},'<leader>j',function() builtin.find_files { cwd="$DJH"} end,
+        {desc='cd $DJH  then  :Telescope find_files'})
+
+      vim.keymap.set({'n'},'<leader>ff',builtin.current_buffer_fuzzy_find,{desc='Telescope current_buffer_fuzzy_find'})
 
       vim.keymap.set({'n'},'<leader><leader>g',function()
           vim.cmd('cd %:p:h') vim.cmd('pwd') vim.fn.StripStoreCurSel()
           builtin.grep_string({search=vim.api.nvim_eval("g:strippedSearch")}) end,
-        {desc='move cwd to file\'s and telescope grep current search'})
+        {desc='move cwd to file\'s and  :Telescope grep_string  on current search'})
 
       vim.keymap.set({'n'},'<leader><leader>r',function()
           vim.cmd('Rooter') vim.fn.StripStoreCurSel()
           builtin.grep_string({search=vim.api.nvim_eval("g:strippedSearch")}) end,
-        {desc='move cwd to project Root and telescope grep current search'})
-
-      vim.keymap.set({'n'},'<leader>j',function() builtin.find_files { cwd="$DJH"} end,
-        {desc='telescope files in JH'})
-
-      vim.keymap.set({'n'},'<leader>tm',builtin.man_pages,{desc='Telescope Man pages'})
+        {desc=':Rooter  then  :Telescope grep_string  on current search'})
 
       --- telescope --
-      vim.keymap.set({'n'},'<leader>tp',builtin.resume,{desc='Telescope resume Previous picker'})
+      vim.keymap.set({'n'},'<leader>pp',builtin.resume,{desc=':Telescope resume (= previous picker)'})
 
       -- vim stuff --
-      vim.keymap.set({'n'},'<f1>',builtin.buffers,{desc='Telescope Buffers'})
-      vim.keymap.set({'n'},'<leader>td',builtin.diagnostics,{desc='Telescope Diagnostics'})
-      vim.keymap.set({'n'},'<leader>th',builtin.help_tags,{desc='Telescope Helptags'})
-      vim.keymap.set({'n'},'<leader>tk',builtin.keymaps,{desc='Telescope vim normal mode Keymaps'})
-      vim.keymap.set({'n'},'<leader>tt',builtin.filetypes,{desc='Telescope vim fileTypes'})
-      vim.keymap.set({'n'},'<leader>tv',builtin.vim_options,{desc='Telescope Vim options'})
-      vim.keymap.set({'n'},'<leader>zs',builtin.spell_suggest,
-        {desc='Telescope Spelling suggestion for current word (as opposed to  z='})
+      vim.keymap.set({'n'},'<f1>',builtin.buffers,{desc=':Telescope buffers'})
+      vim.keymap.set({'n'},'<leader>ht',builtin.help_tags,{desc=':Telescope help_tags'})
+      vim.keymap.set({'n'},'<leader>vm',builtin.keymaps,{desc=':Telescope keymaps (of normal mode)'})
+      vim.keymap.set({'n'},'<leader>vf',builtin.filetypes,{desc=':Telescope fileTypes (known to  vim)'})
+      vim.keymap.set({'n'},'<leader>vh',builtin.highlights,{desc=':Telescope highlights (known to  vim)'})
+      vim.keymap.set({'n'},'<leader>vo',builtin.vim_options,{desc=':Telescope vim_options'})
+      vim.keymap.set({'n'},'<leader>vr',builtin.registers,{desc=':Telescope registers'})
+      vim.keymap.set({'n'},'<leader>ws',builtin.spell_suggest,
+        {desc=':Telescope spell_suggest  for current word (as opposed to  z='})
+      --------------
 
     end,
   },

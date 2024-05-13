@@ -44,6 +44,10 @@ return {
             perlcriticProfile = '', perlcriticEnabled = true, } } }
             -- bung an exit in some code to see this work
 
+      require'lspconfig'.powershell_es.setup{
+        bundle_path = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
+        settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } } }
+
       require'lspconfig'.pyright.setup{}
 
       require'lspconfig'.vimls.setup{ cmd={"vim-language-server","--stdio"}, filetypes={'vim'},
@@ -56,9 +60,9 @@ return {
           vimruntime = "" } }
         -- no sign that these are achieving anything extra
 
-      vim.keymap.set('n','<localleader>[',vim.diagnostic.goto_prev,{desc='previous diagnostic'})
-      vim.keymap.set('n','<localleader>]',vim.diagnostic.goto_next,{desc='next diagnostic'})
-      vim.keymap.set('n','<localleader>s',function()vim.cmd('LspStop<cr>')end,{desc='LspStop'})
+      vim.keymap.set({'n'},'<localleader>[',vim.diagnostic.goto_prev,{desc='previous diagnostic'})
+      vim.keymap.set({'n'},'<localleader>]',vim.diagnostic.goto_next,{desc='next diagnostic'})
+      vim.keymap.set({'n'},'<localleader>s',function()vim.cmd('LspStop<cr>')end,{desc='LspStop'})
         -- language server will restart on buffer reload
 
     end,
