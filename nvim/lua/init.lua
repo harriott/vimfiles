@@ -23,6 +23,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 vim.api.nvim_set_hl(0, '@lsp.type.comment', {}) -- because  lua_ls  sets a symantic token...
 
+-- --> diagnostics
+-- :lua vim.lsp.buf.code_action()
+vim.diagnostic.config({ float = { border = 'rounded', }, })
+vim.diagnostic.config({ virtual_text = false, })
+vim.keymap.set('n', 'K', '<cmd>lua vim.diagnostic.open_float()<cr>')
+vim.lsp.handlers['textDocument/hover']=vim.lsp.with(vim.lsp.handlers.hover, {border='rounded'})
+
 -- --> window title
 if package.config:sub(1,1) == "\\" then -- win64
   -- $MSWin10\PSProfile.ps1  sets  $env:TERM
@@ -50,17 +57,19 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then -- does what?
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
--- g $lazy
--- r $lazy.nvim/README.md
+-- $lazy/lazy.nvim/doc/lazy.nvim.txt
 
 -- -> 1 lazy.nvim 1
 require('lazy').setup({
     {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
     -- require'lazy/catppuccin',
     -- require'lazy/dropbar',
+    require'lazy/leap',
+    -- require'lazy/lspsaga',
     require'lazy/lualine',
     require'lazy/oil',
     require'lazy/nvim-notify',
+    require'lazy/surround',
     require'lazy/telescope', -- something in here slowing folding of large md's
     require'lazy/telescope-fzf-native',
     require'lazy/treesitter', -- $vimfiles/nvim/lua/lazy/treesitter.lua
@@ -81,7 +90,7 @@ require('lazy').setup({
       -- :MasonInstall powershell-editor-services
       -- :MasonInstall pyright
       -- :MasonInstall vim-language-server
-      -- g $home\AppData\Local\nvim-data\mason\packages
+      -- g $HOME\AppData\Local\nvim-data\mason\packages
       -- g?  toggles help
       -- r ~/.local/share/nvim/mason/packages
      {"williamboman/mason-lspconfig.nvim",config=function()require('mason-lspconfig').setup()end,},
@@ -114,6 +123,14 @@ require('lazy').setup({
 )
 -- somehow breaks  vim-hexokinase
 -- somehow kills nvim's access to  /usr/bin/fzf
+
+-- -> 2 Lspsaga
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('LspMappings', {}),
+  callback = function(ev)
+    vim.keymap.set('n','<leader>lo','<cmd>Lspsaga outline<cr>',
+      {buffer=ev.buf,desc='Lspsaga outline'})
+  end,})
 
 -- -> 2 nvim-treesitter
 -- $lazy/nvim-treesitter/doc/nvim-treesitter.txt

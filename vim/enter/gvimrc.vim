@@ -16,7 +16,7 @@ if version >= 500
   " syntax on  is done in  $VIMRUNTIME/defaults.vim (check with  let g:syntax_on)
 endif
 
-set cmdheight=2  " make command line two lines high
+" set cmdheight=2  " make command line two lines high
 set mousehide  " hide the mouse when typing text
 
 ""> 1 my additional initial settings
@@ -27,6 +27,11 @@ set cursorline
 set guioptions-=T  "removes toolbar (se go+=T)
 set hlsearch  " switch on search pattern highlighting
 set visualbell t_vb=  " disable beeps
+
+" write & close buffer
+nnoremap <F4> :wa<CR>:bd<CR>
+inoremap <F4> <Esc>:wa<CR>:bd<CR>
+vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 
 "">> high contrast Solarized
 let g:solarized_contrast="high"  "default value is normal, for solarized & tomorrow

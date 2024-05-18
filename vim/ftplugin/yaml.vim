@@ -12,5 +12,5 @@ source $vimfiles/vim/ftplugin/ALElocaleader.vim
 setlocal foldcolumn=1 textwidth=0
 
 " my folding tools:
-execute 'source 'g:vimfiles.'/ftplugin/HashEqualsFolding.vim'
+source $vimfiles/vim/ftplugin/HashEqualsFolding.vim
 

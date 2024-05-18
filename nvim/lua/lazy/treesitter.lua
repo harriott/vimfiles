@@ -6,7 +6,7 @@
 
 return {
   { 'nvim-treesitter/nvim-treesitter',
-    -- build = ':TSUpdate',
+    build = ':TSUpdate',
     priority = 1000,
 
     opts = {
@@ -34,9 +34,10 @@ return {
             -- yaml      is dulled, I prefer Vim's
           -- markdown  backticks are concealed
           -- no effect: bash, perl, xml
-        -- additional_vim_regex_highlighting = { 'lua', },
+        additional_vim_regex_highlighting = { 'markdown','xml', },
           -- keep my highlighting changes
             -- my highlighting ain't preserved: lua, vim
+            -- keeps my xml folding
       },
 
       incremental_selection = {

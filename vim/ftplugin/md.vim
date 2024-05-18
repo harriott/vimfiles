@@ -1,12 +1,14 @@
 
 " Language: md
 " Maintainer: Joseph Harriott
-" Last Change: Thu 13 Jul 2023
+" Last Change: ven 17 mai 2024
 " this is for extra funtionality that I like for my *.md files
 " $vimfiles/vim/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
 "  this configuration file is source'd as needed by  $vimfiles/vim/filetype.vim
 " also  $vimfiles/vim/after/ftplugin/md.vim
+
+" /sanskrit\|skt
 
 " convert dw url
 nnoremap <buffer><localleader>[ :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>
@@ -19,7 +21,11 @@ nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 
 if v:lang =~ 'fr'
-  nnoremap <buffer><localleader>< a<><Esc>
+  if has('nvim')
+    nnoremap <buffer><localleader>< a<><Esc>h
+  else
+    nnoremap <buffer><localleader>< a<><Esc>
+  endif
 endif
 
 ""> convert messenger screen scrape to markdown

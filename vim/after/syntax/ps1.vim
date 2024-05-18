@@ -2,10 +2,10 @@
 
 " Language:	sh
 " Maintainer: Joseph Harriott
-" Last Change: Mon 26 Sep 2022
-" $vimfiles/after/syntax/ps1.vim, supplementary to  $vfp/packs-cp/opt/vim-ps1/syntax/ps1.vim
+" Last Change: jeu 16 mai 2024
+" $vimfiles/after/syntax/ps1.vim, supplementary to  $vfvp/packs-cp/opt/vim-ps1/syntax/ps1.vim
 
-execute 'source 'g:vimfiles.'/after/syntax/HashEqualsFolding.vim'
+source $vimfiles/vim/after/syntax/HashEqualsFolding.vim
 
 ""> PP's regions
 " syntax match regionstart '#region' " unfortunately overrides the folding...

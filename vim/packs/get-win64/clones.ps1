@@ -4,7 +4,7 @@
 
 # grab repositories
 
-# close vims for  & $vimfiles\vim\packs\get-win64\clones.ps1
+# close vims for  & $vfvp\get-win64\clones.ps1
 
 read-host '- you''ve closed instances of vim? '
 
@@ -33,7 +33,7 @@ ensurePath cp
   # dd FoldText; gcl https://github.com/Konfekt/FoldText
   # dd ale; gcl https://github.com/dense-analysis/ale
   # dd dsf.vim; gcl https://github.com/AndrewRadev/dsf.vim
-  dd vim-ShowTrailingWhitespace; gcl https://github.com/inkarkat/vim-ShowTrailingWhitespace
+  # dd vim-ShowTrailingWhitespace; gcl https://github.com/inkarkat/vim-ShowTrailingWhitespace
   # dd vim-css-color; gcl https://github.com/ap/vim-css-color
   # dd vimtex; gcl https://github.com/lervag/vimtex
   # gcl https://github.com/AndrewRadev/bufferize.vim
@@ -68,6 +68,11 @@ ensurePath cp
   # gcl https://github.com/wellle/context.vim
   # gcl https://github.com/wellle/targets.vim
   # gcl https://github.com/yegappan/mru
+  # gcl https://github.com/ajmwagar/vim-deus
+  # gcl https://github.com/doums/darcula
+  # gcl https://github.com/dracula/vim dracula
+  # gcl https://github.com/romainl/Apprentice
+  # gcl https://github.com/NLKNguyen/papercolor-theme
 
 #==> 0 unix
 ensurePath unix
@@ -94,7 +99,8 @@ ensurePath win64
   # gcl https://github.com/tpope/vim-surround
   # gcl https://github.com/vim-airline/vim-airline-themes
   # gcl https://github.com/vim-syntastic/syntastic
+  # gcl https://github.com/itchyny/lightline.vim
 
-# #=> 3 tidy off
-# . $vimfiles\packsGet-win64\after.ps1
+#=> 3 tidy off
+. $vfvp\get-win64\after.ps1
 

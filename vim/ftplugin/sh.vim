@@ -10,7 +10,7 @@
 setlocal expandtab foldcolumn=1 shiftwidth=4 textwidth=0
 
 " my folding tools:
-execute 'source 'g:vimfiles.'/ftplugin/HashEqualsFolding.vim'
+source $vimfiles/vim/ftplugin/HashEqualsFolding.vim
 
 ""> coding help
 " bash-language-server  ($vimfiles/nvim/lua/lazy/nvim-lspconfig.lua)

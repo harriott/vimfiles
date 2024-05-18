@@ -1,10 +1,10 @@
 
-" Joseph Harriott - dim 07 avr 2024
+" Joseph Harriott - ven 17 mai 2024
 
 " $vimfiles\vim\enter\vimrc-Win10.vim
 " source'd by
 "  $MSWin10\mb\_vimrc-AZERTY
-" symlinked in  $MSwin10\mb\symlinks-mostly.ps1
+"  $vimfiles/nvim/init.vim
 
 if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \
 
@@ -18,19 +18,21 @@ endif
 
 ""> 2 mswin.vim
 source $VIMRUNTIME/mswin.vim  " *map <c-f4>  to close window
-" but revert Ctrl-A back to number increment:
+
+" Undo some:
 unmap <C-A>
-" and Ctrl-F back to move forward:
+" - revert Ctrl-A back to number increment:
 if has('nvim')
   " it was  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
   unmap <c-v>
-else
-  unmap <C-F>
+elseif has('gui_running')
+  unmap <c-f>
+  " - ctrl-f back to move forward
 endif
 
 ""> 3 my initial settings
-" set noloadplugins
 let $USER = 'troin'
+" set noloadplugins
 
 "">> colorscheme
 function! STWDG()

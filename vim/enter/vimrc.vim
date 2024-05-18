@@ -1,9 +1,10 @@
 
-" my portable vimrc - settings that work in both MSWin & GNU+Linux - Joseph Harriott
-" ----------------------------------------------------------------------------------
+" my portable vimrc - settings that work on linux & MSWin
+" -------------------------------------------------------
+" - Joseph Harriott - jeu 16 mai 2024
 
 " $vimfiles/vim/enter/vimrc.vim  sourced by
-"  $vimfiles/vim/enter/vimrc-GNULinux.vim
+"  $vimfiles/vim/enter/vimrc-linux.vim
 "  $vimfiles\vim\enter\vimrc-Win10.vim
 
 " ------------------------------------------------------------------
@@ -15,7 +16,7 @@ set encoding=utf-8  " get this done early
 set mps=(:),{:},[:],<:>
 set nojoinspaces  " already off in  nvim
 set shiftwidth=4
-set ssop-=blank ssop-=help
+set sessionoptions-=blank sessionoptions-=help  " se ssop
 set ssop+=winpos
 set tabstop=4
 set textwidth=99
@@ -28,7 +29,7 @@ set hidden  " allows working on multiple files while not visually focussing on t
 set winminheight=0  " reduce minimized windows to zero lines shown
 
 ""> get g:vimfiles location
-" deprecate this
+" deprecated - kept here only for emergencies
 if empty(matchstr($HOME, '/home/'))
   let g:vimfiles = $HOME.'\vimfiles'
 else
@@ -80,4 +81,33 @@ nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
 "   packadd! matchit
 " endif  " the required features are available
 " " supplanted by  vim match-up
+
+""> quit buffer(s), quit nvim
+if !has('gui_running')
+  function! VimWriteClose()
+    if len(getbufinfo({'buflisted':1})) == 1
+      let cfd = expand('%:p:h') " current file directory
+      edit $HOME/last_directory  " for  $Bash/bashrc-console  &  $MSWin10\PSProfile.ps1
+      normal dd
+      put=cfd
+      normal kdd
+      wall
+      quit! " close completely
+    else
+      let s:b = expand('%:t')
+      silent wall
+      bdelete
+      echo 'closed '.s:b
+    endif
+  endfunction
+
+  nnoremap <f4> :call VimWriteClose()<CR>
+  inoremap <f4> <Esc>:call VimWriteClose()<CR>
+  " - overriden by some autocommands in  $vimfiles/vim/plugin/plugin.vim
+
+  vnoremap <f4> <Esc>:call VimWriteClose()<CR>
+
+  nnoremap <leader><f4> :Bdelete other<CR>:call VimWriteClose()<CR>
+  inoremap <leader><f4> <Esc>:Bdelete other<CR>:call VimWriteClose()<CR>
+endif  " terminal nvim/vim
 

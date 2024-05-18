@@ -54,6 +54,7 @@ return {
       -- /^\s*vim.keymap.set({.*},'\zs.*\ze',
 
       vim.keymap.set({'n'},'<leader>tt',builtin.treesitter,{desc=':Telescope treesitter'})
+      -- can help in Lua, Python
 
       -- Git ---
       vim.keymap.set({'n'},'<leader>ic',builtin.git_commits,{desc=':Telescope git_commits'})
@@ -62,11 +63,12 @@ return {
 
 
       -- LSP --
+      vim.keymap.set({'n'},'<leader>ld',builtin.diagnostics,{desc=':Telescope diagnostics'})
       vim.keymap.set({'n'},'<leader>ls',builtin.lsp_document_symbols,{desc=':Telescope lsp_document_symbols'})
       vim.keymap.set({'n'},'<leader>lss',builtin.lsp_workspace_symbols,{desc=':Telescope lsp_workspace_symbols'})
       -- marginally useful:
-        vim.keymap.set({'n'},'<leader>ld',builtin.lsp_definitions,{desc=':Telescope lsp_definitions'})
-        vim.keymap.set({'n'},'<leader>ldd',builtin.lsp_type_definitions,{desc=':Telescope lsp_type_definitions'})
+        vim.keymap.set({'n'},'<leader>lf',builtin.lsp_definitions,{desc=':Telescope lsp_definitions'})
+        vim.keymap.set({'n'},'<leader>lff',builtin.lsp_type_definitions,{desc=':Telescope lsp_type_definitions'})
 
       -- shell --
       vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles'})
@@ -80,10 +82,12 @@ return {
 
       vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc='Telescope man_pages'})
 
-      vim.keymap.set({'n'},'<leader>j',function() builtin.find_files { cwd="$DJH"} end,
+      vim.keymap.set({'n'},'<leader>j',function() builtin.find_files{cwd="$DJH"} vim.cmd("echo 'files in Dropbox/JH'") end,
         {desc='cd $DJH  then  :Telescope find_files'})
 
       vim.keymap.set({'n'},'<leader>ff',builtin.current_buffer_fuzzy_find,{desc='Telescope current_buffer_fuzzy_find'})
+
+      vim.keymap.set({'n'},'<leader>lg',":Telescope live_grep_args<CR>")
 
       vim.keymap.set({'n'},'<leader><leader>g',function()
           vim.cmd('cd %:p:h') vim.cmd('pwd') vim.fn.StripStoreCurSel()

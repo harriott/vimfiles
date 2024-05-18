@@ -645,6 +645,9 @@ nnoremap <leader>- :Hexplore<cr>
 nnoremap <leader><f12> :call OpenInEmacs()<CR>
 inoremap <leader><f12> :<Esc>call OpenInEmacs()<CR>
 
+" PowerShell
+nnoremap <leader><leader>t :sp term://pwsh<CR>
+
 " working directory to file's
 nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 
@@ -652,13 +655,6 @@ nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
 nnoremap <F2> :wa<CR>
 inoremap <F2> <Esc>:wa<CR>
 vnoremap <F2> <Esc>:wa<CR>
-
-" write & close buffer
-if !has('nvim')
-  nnoremap <F4> :wa<CR>:bd<CR>
-  inoremap <F4> <Esc>:wa<CR>:bd<CR>
-endif " overriden by some autocommands
-vnoremap <F4> <Esc>:wa<CR>:bd<CR>
 
 ""> turn off some unused Fn keys in insert mode
 inoremap <F3> <Esc>

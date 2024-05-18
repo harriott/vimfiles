@@ -1,6 +1,6 @@
 " vim: set fdl=1:
 
-" Joseph Harriott - dim 07 avr 2024
+" Joseph Harriott - mar 14 mai 2024
 
 " $vimfiles\vim\enter\vimrc-Win10-paths.vim
 " source'd by
@@ -39,7 +39,7 @@ endif
           let $OSAT = $onGH.'\OS-Android-Termux'
           let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\'.$computername
           let $vimfiles = $onGH.'\vimfiles'
-            let $vfp = $vimfiles.'\pack'
+            let $vfvp = $vimfiles.'\vim\packs'
     let $FrFa = $DJH.'\F+F'
       let $FFIdF = $FrFa.'\France\IdF'  " $FFIdF  used in  $TeNo
     let $JHt = $DJH.'\technos'
@@ -48,5 +48,5 @@ endif
     let $jtIT = $DJH.'\technos\IT'
     let $Thb = $DJH.'\Thb-dr'
     let $tIs = $DJH.'\technos\IT-storage'  " $tIs\diskUsage.txt
-  let $DCGRs = $Drpbx.'\CGHrepos'
+  let $DCGRs = $Drpbx.'\Cop\GRs'
 

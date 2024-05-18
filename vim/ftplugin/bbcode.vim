@@ -7,10 +7,10 @@
 
 setlocal textwidth=0
 
-execute 'source 'g:vimfiles.'/ftplugin/HashEqualsFolding.vim'
+source $vimfiles/vim/ftplugin/HashEqualsFolding.vim
 
 ""> folding by Markdown style header marks
-execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
+source $vimfiles/vim/ftplugin/HashFolding.vim
 setlocal foldcolumn=1
 
 ""> tags - bold

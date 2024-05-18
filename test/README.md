@@ -1,6 +1,6 @@
 vim: set fdl=4:
 
-    $vimfiles/test/README.md
+    C:\Vim\vim91\vim.exe $vimfiles/test/README.md
 
 # vimfiles test
 my reduced vim files for testing

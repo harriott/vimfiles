@@ -1,27 +1,38 @@
 
-" https://harriott.github.io/ - d8d
+" https://harriott.githubio/ - mer 15 mai 2024
 
 " $vimfiles/vim/plugin/plugins.vim
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
-""> encoding
-
-"">> The NERD Commenter
+""> encoding - The NERD Commenter
 packadd nerdcommenter
 let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
 " extra filetypes
-" $vimfiles/vim/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+" $vfvp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 
+""> find/replace - vim-easymotion
+" :h easymotion-default-mappings
+packadd vim-easymotion
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+" <leader>f{char} to move to {char}
+nmap <leader><leader>f <Plug>(easymotion-overwin-f)
+" s{char}{char}{label}
+autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
+"  (in an autocmd to be sure it works with Arch vim-colors-solarized)
+
 ""> fzf.vim
-" $vimfiles/vim/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
+" $vfvp/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
+" requires  :set shell  be unchanged from  cmd.exe
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
-  let g:fzf_vim.preview_window = ['hidden,up,70%']
+  " let g:fzf_vim.preview_bash = 'C:\Windows\System32\bash.exe'
+  let g:fzf_vim.preview_window = ['hidden,up,50%', 'f1']
+  " - f1  will reveal the hidden preview window
 packadd fzf.vim
 
 nnoremap <leader>B :BLines<CR>
@@ -76,26 +87,31 @@ nnoremap <s-f3> :Commits<CR>
 inoremap <s-f3> <Esc>:Commits<CR>
 vnoremap <s-f3> <Esc>:Commits<CR>
 
-""> layout
-
-"">> vim-airline
-let g:airline_powerline_fonts = 1
-packadd vim-airline
-let airline#extensions#ale#show_line_numbers = 0
-let g:airline#extensions#ale#enabled = 1
-let g:airline#extensions#fzf#enabled = 1  " adds line-number/total lines
-let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
-let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
-set noshowmode  " no need for -- INSERT -- in (lower) command line
-packadd vim-airline-themes
-if has('win32')
-  let g:airline_left_sep = ''
-  let g:airline_right_sep = ''
-  let g:airline_symbols.colnr = ' '
-  let g:airline_symbols.linenr = ' '
-  let g:airline_symbols.maxlinenr = ''
-  let g:airline_symbols.branch = ''
+""> layout - statusline
+if has('unix') " vim-airline
+  let g:airline_powerline_fonts = 1
+  packadd vim-airline " somehow breaks  fzf  on  Windows 10
+  let airline#extensions#ale#show_line_numbers = 0
+  let g:airline#extensions#ale#enabled = 1
+  let g:airline#extensions#fzf#enabled = 1  " adds line-number/total lines
+  let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
+  let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
+  packadd vim-airline-themes
+  if has('win32')
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_symbols.colnr = ' '
+    let g:airline_symbols.linenr = ' '
+    let g:airline_symbols.maxlinenr = ''
+    let g:airline_symbols.branch = ''
+  endif
+else
+  " $vfvp/packs-win64/opt/lightline.vim/doc/lightline.txt
+  let g:lightline = { 'colorscheme': 'darcula', }
+  packadd lightline.vim
 endif
+
+set noshowmode  " no need for -- INSERT -- in (lower) command line
 
 ""> shell
 
@@ -120,7 +136,7 @@ packadd ctrlp.vim
 "">> Fern
 " vim default c-e = scroll up the window, without displacing the cursor
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim " $vimfiles/vim/packs-cp/opt/fern.vim/README.md
+packadd fern.vim " $vfvp/packs-cp/opt/fern.vim/README.md
 " ! -- toggles hidden
 " + -- vim-buffing-wheel override (quits)
 " <bs>/<c-h> -- fern-action-leave (goes up a directory)
@@ -183,15 +199,27 @@ if has('unix')
   nmap <unique> <leader>pb <Plug>(PickerBuffer)
 endif
 
-""> vim
+""> text wrangling - vim-surround
+" h surround
+" optional target∙alias: )∙b ]∙B }∙r >∙a
 
-"">> buffers
+" cs'b cs'B cs'r cs'a => change surrounding '
+" cs'( cs'{ cs'[ cs'< => ...with spaces
 
-"">>> bufexplorer
+" ds' => delete surrounding '
+" dst => delete surrounding tags
+
+" on a visual selection, Sr => wrap with []
+" ysiw<q> => yes surround word in quote tags (ySiw  or  ySS  to include newlines)
+" yssb => bracket the line
+
+packadd vim-surround
+
+""> vim - buffers - bufexplorer
 packadd bufexplorer
 noremap <silent> <leader>be :BufExplorer<CR>
 
-"">>>> default mappings
+"">> default mappings
 "  <Leader>be - Opens BufExplorer
 "  <Leader>bt - Toggles BufExplorer open or closed
 "  <Leader>bs - Opens horizontally split window BufExplorer

@@ -3,12 +3,12 @@
 
 # Joseph Harriott, Thu 09 May 2024
 
-# bash $vimfiles/vim/packs/get-unix/updates.sh
+# bash $vfvp/get-unix/updates.sh
 
 set -e  # quits on error
 
 #=> 0 updates
-cd $vimfiles/vim/packs
+cd $vfvp
 # sf='vim-dokuwiki'
 # sf='vim-gfm-syntax'
 # once=yes

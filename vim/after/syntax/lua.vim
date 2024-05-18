@@ -17,7 +17,7 @@ syntax sync fromstart  " for longer build scripts
 " syntax match foldLua '-- -.*$'
 syntax match foldLua '^\s*-- -\+>.*$'
 
-hi def foldLua term=bold cterm=bold gui=bold guifg=LightGreen
+hi def foldLua term=bold cterm=bold gui=bold guifg=CursorLineNr
 " see  cterm-colors  in  $vimfiles/QR.md
 
 ""> 1 ends

@@ -5,13 +5,13 @@
 " Last Change: dim 12 mai 2024
 " $vimfiles/vim/ftplugin/markdown.vim
 "  supplementary to
-"   $vimfiles/vim/packs-cp/opt/vim-markdown/README.md
+"   $vfvp/packs-cp/opt/vim-markdown/README.md
 "   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/vim/ftplugin/html.vim )
 
 " Filetype detection:
 "  $vimfiles/vim/filetype.vim
 "  $VIMRUNTIME/filetype.vim
-"  $vimfiles/vim/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
+"  $vfvp/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
 
 setlocal expandtab
 

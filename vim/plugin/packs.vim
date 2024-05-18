@@ -1,11 +1,11 @@
 
-" https://harriott.github.io/ - Sat 11 May 2024
+" https://harriott.githubio/ - mer 15 mai 2024
 
-" $vimfiles/vim/plugin/plugins.vim
+" $vimfiles/vim/plugin/packs.vim
 
 " $ ls $vimfiles -r vim/packs*/opt
 
-let g:plugins_vim = 1
+let g:packs_vim = 1
 
 ""> encoding
 
@@ -20,7 +20,7 @@ let g:context_enabled = 0
 packadd context.vim
 
 "">> dsf
-" $vfp/cp/opt/dsf.vim/README.md
+" $vfvp/packs-cp/opt/dsf.vim/README.md
 
 packadd dsf.vim
 " csf -> change surrounding function
@@ -63,7 +63,7 @@ packadd vim-rhubarb  " for GitHub
 
 " "">>> vim-gfm-syntax
 " " enable this for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
-" " $vfp/cp/opt/vim-gfm-syntax/README.md
+" " $vfvp/packs-cp/opt/vim-gfm-syntax/README.md
 " let g:gfm_syntax_emoji_conceal = 1
 " let g:gfm_syntax_enable_always = 0
 " let g:gfm_syntax_enable_filetypes = ['gfm']
@@ -89,8 +89,8 @@ packadd CSS-one-line--multi-line-folding
 " configured in  $vimfiles/ftplugin/csv.vim
 " overriden in  $vimfiles/after/plugin/plugins.vim
 
-" $vfp/cp/opt/csv.vim/ftdetect/csv.vim
-" :h ft-csv  ($vfp/cp/opt/csv.vim/doc/ft-csv.txt) the help
+" $vfvp/packs-cp/opt/csv.vim/ftdetect/csv.vim
+" :h ft-csv  ($vfvp/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
 
 packadd csv.vim
 
@@ -136,16 +136,16 @@ let g:user_emmet_install_global = 0
 packadd emmet-vim
 
 " "">>> Liquid
-" packadd vim-liquid  " $vfp/cp/opt/vim-liquid/ftdetect/liquid.vim
+" packadd vim-liquid  " $vfvp/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
 
 "">>> mediawiki.vim
-packadd mediawiki.vim  " $vfp/cp/opt/mediawiki.vim/README.md
+packadd mediawiki.vim  " $vfvp/packs-cp/opt/mediawiki.vim/README.md
 
 "">>> MTA
 packadd MatchTagAlways
 " for  XML/HTML  tags
 " requires a Python 3 that corresponds to vim's compilation
-" $vfp/cp/opt/MatchTagAlways/test.html
+" $vfvp/packs-cp/opt/MatchTagAlways/test.html
 
 "">>> Org.vim
 packadd org.vim
@@ -175,7 +175,7 @@ packadd vader.vim
 packadd vim-base64
 
 "">>> vim-bbcode
-" $vfp/cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
+" $vfvp/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
 packadd vim-bbcode
 
 "">>> vim-closetag
@@ -184,7 +184,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 packadd vim-closetag
 
 "">>> vim-dokuwiki
-" $vimfiles/vim/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
+" $vfvp/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
 packadd vim-dokuwiki
 let dokuwiki_comment=1  " comment highlighting on
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
@@ -197,7 +197,7 @@ packadd vim-hjson
 
 "">>> Vim Markdown
 " :h markdown
-" $vfp/cp/opt/vim-markdown/maintenance.md
+" $vfvp/packs-cp/opt/vim-markdown/maintenance.md
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_conceal_code_blocks = 0  " need to see them
 let g:vim_markdown_folding_disabled = 1
@@ -229,11 +229,11 @@ packadd vim-pandoc-syntax
 packadd vim-prettier
 
 "">>> vim-ps1
-" $vfp\cp\opt\vim-ps1\ftdetect\ps1.vim
+" $vfvp\cp\opt\vim-ps1\ftdetect\ps1.vim
 packadd vim-ps1
 
 "">>> VimTeX
-" $vfp/cp/opt/vimtex/README.md
+" $vfvp/packs-cp/opt/vimtex/README.md
 
 " dsd  " delete surrounding delimiters
 " commands
@@ -295,9 +295,12 @@ packadd vimtex
 packadd minimap.vim
 
 "">> Tagbar
-" $vfp/cp/opt/vim-tagbar/README.md
+" $vfvp/packs-cp/opt/vim-tagbar/README.md
 
-" add this for relevant filetypes:  nnoremap <silent> <buffer> <leader>ct :TagbarToggle<CR>
+" :TagbarToggle  mapping set in
+"  $vimfiles/vim/ftplugin/perl.vim
+"  $vimfiles/vim/ftplugin/python.vim
+
 " h tagbar-contents
 " h tagbar-ignore
 
@@ -329,7 +332,7 @@ autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
 packadd vim-ssh-annex
 
 ""> ingo-library
-" $vfp/cp/opt/vim-ingo-library/README.md
+" $vfvp/packs-cp/opt/vim-ingo-library/README.md
 "  required for  vim-mark  vim-ShowTrailingWhitespace
 packadd vim-ingo-library
 
@@ -344,7 +347,7 @@ inoremap <c-x><c-x> <c-x><c-o>
 " settings for the filetype, including recommended modules
 "  :ALEInfo
 "   AlEPrreviewWindow  responds to  <c-w>+, but not to  <cw>=
-" $vimfiles/vim/packs-cp/opt/ale/plugin/ale.vim
+" $vfvp/packs-cp/opt/ale/plugin/ale.vim
 
 " Enabled?
 "  :let ale_enabled
@@ -367,7 +370,7 @@ let g:ale_sign_column_always = 1
 packadd ale
 
 "">> NeoMutt
-" $vimfiles/vim/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim
+" $vfvp/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim
 packadd neomutt.vim
 
 "">> thesaurus_query.vim
@@ -482,7 +485,7 @@ endfunction
 if g:useSTW | packadd vim-ShowTrailingWhitespace | endif  " requires  ingo-library
 
 "">> lf.vim
-" $vimfiles/vim/packs-cp/opt/lf-vim/README.md
+" $vfvp/packs-cp/opt/lf-vim/README.md
 packadd lf-vim
 
 "">> nerdfont.vim
@@ -506,7 +509,7 @@ noremap <leader>yy :CalendarH<CR>
 packadd calendar-vim
 
 "">> MRU
-" $vimfiles/vim/packs-cp/opt/mru/README.md
+" $vfvp/packs-cp/opt/mru/README.md
 " $vimfiles/syntax/mru.vim
 let MRU_Max_Entries = 1000
 let MRU_Window_Height = 20
@@ -543,6 +546,9 @@ inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
 packadd nerdtree-git-plugin
 
 "">> open-browser.vim
+" $vfvp/packs-cp/opt/open-browser.vim/doc/openbrowser.txt
+" requires  :set shell  be unchanged from  cmd.exe
+
 " If it looks like URI, Open URI under cursor. Otherwise, Search word under cursor.
 nnoremap <F6> :execute "normal \<Plug>(openbrowser-smart-search)"<bar>silent !nsBt<CR>
 " If it looks like URI, Open selected URI. Otherwise, Search selected word.
@@ -563,7 +569,7 @@ let g:rooter_manual_only = 1  " :Rooter
 packadd vim-rooter
 
 "">> vim-startify
-" $vimfiles/vim/packs-cp/opt/vim-startify/doc/startify.txt
+" $vfvp/packs-cp/opt/vim-startify/doc/startify.txt
 packadd vim-startify
 " Startify
 
@@ -573,7 +579,7 @@ packadd vim-startify
 
 "">>> tabular
 " :vert h tabular
-" $vimfiles/vim/packs-cp/opt/tabular/doc/Tabular.txt
+" $vfvp/packs-cp/opt/tabular/doc/Tabular.txt
 " packadd tabular  " :Tabularize ...
 
 "">>> vim-easy-align
@@ -628,40 +634,6 @@ map z* <Plug>(asterisk-z*)  " rg --no-ignore ' z\* '
 " z*cgn  make change to this first match, escape, . does same on next match
 map z# <Plug>(asterisk-z#)  " rg --no-ignore ' z# '
 
-"">>> vim-easymotion
-" :h easymotion-default-mappings
-packadd vim-easymotion
-
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-" <Leader>f{char} to move to {char}
-map  <Leader><Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader><Leader>f <Plug>(easymotion-overwin-f)
-" Move to word
-map  <Leader><Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader><Leader>w <Plug>(easymotion-overwin-w)
-" s{char}{char}{label}
-autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
-"  (in an autocmd to be sure it works with Arch vim-colors-solarized)
-
-" toggle searching functionality
-nnoremap <leader>e :call EasyMotionSearchToggle()<cr>
-let g:searchingwitheasymotion = 0
-function! EasyMotionSearchToggle()
-    if g:searchingwitheasymotion
-        unmap /
-        unmap n
-        unmap N
-        let g:searchingwitheasymotion = 0
-        echo 'searching normally'
-    else
-        map / <Plug>(easymotion-sn)
-        map n <Plug>(easymotion-next)
-        map N <Plug>(easymotion-prev)
-        let g:searchingwitheasymotion = 1
-        echo 'searching with EasyMotion'
-    endif
-endfunction
-
 "">>> vim-mark
 " :h mark.txt
 " :Mark => disable them
@@ -678,37 +650,13 @@ packadd vim-mark  " requires  ingo-library
 " " now preferring  vim-asterisk
 
 "">> supertab
+" $vfvp/packs-cp/opt/supertab/doc/supertab.txt
 " c-v tab  to insert a literal tab
 packadd supertab
 
 "">> targets.vim
-" $vimfiles/vim/packs-cp/opt/targets.vim/cheatsheet.md
+" $vfvp/packs-cp/opt/targets.vim/cheatsheet.md
 packadd targets.vim
-
-"">> vim-subversive
-packadd vim-subversive
-
-nmap S <plug>(SubversiveSubstituteRange)
-" S<motion1><motion2> => prompts for text to replace <motion1> in <motion2>
-" "zS<motion1><motion2> => replaces <motion1> in <motion2> with register z
-nmap <leader>s <plug>(SubversiveSubstituteRangeConfirm)
-" - requests confirmations
-
-"">> vim-surround
-" h surround
-" optional target∙alias: )∙b ]∙B }∙r >∙a
-
-" cs'b cs'B cs'r cs'a => change surrounding '
-" cs'( cs'{ cs'[ cs'< => ...with spaces
-
-" ds' => delete surrounding '
-" dst => delete surrounding tags
-
-" on a visual selection, Sr => wrap with []
-" ysiw<q> => yes surround word in quote tags (ySiw  or  ySS  to include newlines)
-" yssb => bracket the line
-
-packadd vim-surround
 
 ""> vim
 
@@ -818,7 +766,7 @@ noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
 packadd cfilter
 
 "">>> ListToggle
-" $vimfiles/vim/packs-cp/opt/listtoggle/README.md
+" $vfvp/packs-cp/opt/listtoggle/README.md
 
 packadd listtoggle
 let g:lt_location_list_toggle_map = '<leader>ll'

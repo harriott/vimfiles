@@ -10,6 +10,6 @@
 setlocal expandtab shiftwidth=2 textwidth=0
 
 ""> folding by Markdown style header marks
-execute 'source 'g:vimfiles.'/ftplugin/HashFolding.vim'
+source $vimfiles/vim/ftplugin/HashFolding.vim
 setlocal foldcolumn=1
 

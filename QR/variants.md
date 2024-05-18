@@ -20,6 +20,7 @@ Joseph's (g)Vim Quick Reference
     :=vim.env.MYVIMRC  " path of my  init
     :=vim.env.vimfiles  " path of my  $vimfiles
     :=vim.env.VIMRUNTIME
+    :=vim.fn.has'gui_running'
     :=vim.fn.has("win64")
     :=vim.loop.cwd()
 

@@ -3,6 +3,7 @@
 
 -- $vimfiles/nvim/lua/lazy/nvim-lspconfig.lua
 
+-- $lazy/nvim-lspconfig/doc/lspconfig.txt
 -- install language servers with Mason ($vimfiles/nvim/lua/init.lua)
 
 return {
@@ -14,28 +15,31 @@ return {
       -- try  emmet-language-server  for  css, html, less, sass, scss
       -- try  nginx_language_server
       -- try  phpactor
-      -- try  powershell_es  on  win32
       -- try  texlab
       -- try  vscode-html-languageservice  for  html
       -- try  vscode-json-languageservice  for  json
       -- try  yamlls
 
       require'lspconfig'.bashls.setup{}
+      -- $HOME\AppData\Local\nvim-data\mason\packages\bash-language-server\node_modules\bash-language-server\src\config.ts
+
       -- require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
         -- but no completions...
 
-      require('lspconfig').lua_ls.setup {
-          on_init = function(client)
-              local path = client.workspace_folders[1].name
-              if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-                  client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-                      runtime = { version = 'LuaJIT' },
-                      workspace = { library = { vim.env.VIMRUNTIME } },
-                  })
-                  client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-              end return true
-          end } -- https://www.reddit.com/r/neovim/comments/15owd43/comment/jvvswah/
-          -- and see fix in  $vimfiles/nvim/lua/init.lua
+      -- require'lspconfig'.lua_ls.setup {
+      --     on_init = function(client)
+      --         local path = client.workspace_folders[1].name
+      --         if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+      --             client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      --                 runtime = { version = 'LuaJIT' },
+      --                 workspace = { library = { vim.env.VIMRUNTIME } },
+      --             })
+      --             client.notify("workspace/didChangeConfiguration",
+      --               { settings = client.config.settings })
+      --         end return true
+      --     end, -- https://www.reddit.com/r/neovim/comments/15owd43/comment/jvvswah/
+      --     settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
+      --   } -- and see fix in  $vimfiles/nvim/lua/init.lua
 
       require'lspconfig'.mutt_ls.setup{}
 
@@ -47,6 +51,7 @@ return {
       require'lspconfig'.powershell_es.setup{
         bundle_path = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
         settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } } }
+        -- $nvim/powershell_es-mason-schemas-lsp.json
 
       require'lspconfig'.pyright.setup{}
 

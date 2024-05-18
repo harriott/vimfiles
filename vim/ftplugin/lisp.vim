@@ -25,7 +25,7 @@ function! LispExpression()
 endfunction
 
 ""> turn off or on a fold of commands
-execute 'source 'g:vimfiles.'/ftplugin/firmCommentWholeFold.vim'
+source $vimfiles/vim/ftplugin/firmCommentWholeFold.vim
 
 " firmly comment out a whole fold
 nnoremap <buffer><leader><leader>> :call FirmComment(';')<cr>

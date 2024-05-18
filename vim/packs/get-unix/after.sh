@@ -3,21 +3,21 @@
 
 # Joseph Harriott, mar 14 mai 2024
 
-# bash $vimfiles/vim/packs/get-unix/after.sh
+# bash $vfvp/get-unix/after.sh
 #  normally sourced from
-#   $vimfiles/vim/packs/get-unix/updates.sh
+#   $vfvp/get-unix/updates.sh
 
 # some tweaks on plugins
 
 # called at end of
-#  $vimfiles/packsGet-ArchLinux/clones.sh
-#  $vimfiles/packsGet-ArchLinux/pulls.sh
+#  $vfvp/get-unix/clones.sh
+#  $vfvp/get-unix/updates.sh
 
 set -e
 
 #=> 0 vim-ShowTrailingWhitespace
-sed -i 's/^c/" c/' $vimfiles/vim/packs/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
+sed -i 's/^c/" c/' $vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
 
 #=> 1 lists
-. $vimfiles/vim/packs/get-unix/lists.sh
+. $vfvp/get-unix/lists.sh
 

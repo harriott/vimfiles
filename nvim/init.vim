@@ -25,41 +25,12 @@ set termguicolors
 " nnoremap Y 0yj
 " yank one full line - I prefer over  Y-default, but now need  nyy  to select multiple lines
 
-""> 0 quit buffer(s), quit nvim
-function! F4F4()
-  if len(getbufinfo({'buflisted':1})) == 1
-    let cfd = expand('%:p:h') " current file directory
-    if has('unix')
-      " for  nn  in  $Bash/bashrc-console
-      edit $HOME/.config/nvim/last_directory " ~/.config/nvim/last_directory
-    else
-      edit $nvim/last_directory
-    endif
-    normal dd
-    put=cfd
-    normal kdd
-    wall
-    quit! " close completely
-  else
-    let s:b = expand('%:t')
-    silent wall
-    bdelete
-    echo 'closed '.s:b
-  endif
-endfunction
-
-nnoremap <f4> :call F4F4()<CR>
-inoremap <f4> <Esc>:call F4F4()<CR>
-" - overriden by some autocommands in  $vimfiles/vim/plugin/plugin.vim
-
-vnoremap <f4> <Esc>:call F4F4()<CR>
-
-nnoremap <leader><f4> :Bdelete other<CR>:call F4F4()<CR>
-inoremap <leader><f4> <Esc>:Bdelete other<CR>:call F4F4()<CR>
-
 ""> 0 terminal
 autocmd TermOpen * startinsert
 let $in_nvim = 1  " - for $OSAB/Bash/bashrc-generic
+
+" set shell=powershell  " Windows PowerShell
+" set shell=pwsh  " PowerShell
 
 ""> 1 pull in Vim configuration
 if has('win64')
@@ -81,9 +52,17 @@ packadd vim-better-whitespace
 highlight ExtraWhitespace ctermbg=blue
 let g:better_whitespace_operator=''
 
-" colorscheme
+"">> colorscheme
 if has('win64')
-  colo wombat
+  " $vfvp/packs-cp/opt/papercolor-theme/doc/PaperColor.txt
+  let g:PaperColor_Theme_Options = { 'theme': {
+      \ 'default': { 'allow_italic': 1 },
+      \ 'default.dark': { 'override' : { 'folded_bg' : ['', '00'] } }
+      \ } }
+  set background=dark | colorscheme PaperColor
+  " colo apprentice
+  " colo wombat
+  " packadd dracula | colo dracula
 else
   colo jellybeans
 endif
