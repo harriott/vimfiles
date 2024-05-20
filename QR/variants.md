@@ -15,14 +15,28 @@ Joseph's (g)Vim Quick Reference
 
 `:che` (`:checkhealth`)
 
+## lua boolean
+    lua b = true
+    lua b = not b; print(b)
+
 ## lua print(...)
     :=package.config:sub(1,1)  " identify winxx by \
     :=vim.env.MYVIMRC  " path of my  init
     :=vim.env.vimfiles  " path of my  $vimfiles
     :=vim.env.VIMRUNTIME
     :=vim.fn.has'gui_running'
-    :=vim.fn.has("win64")
     :=vim.loop.cwd()
+
+## OS
+    :=jit.os
+    :=vim.fn.has("linux")
+
+### win64 ?
+    :lua if package.config:sub(1,1) == "\\" then print('win64') end  " leveraging pure Lua
+
+#### has()
+    :=vim.fn.has("win64")
+    :lua if vim.fn.has("win64") == 1 then print('win64') else print('not win6') end
 
 ## plugins
     $vimfiles/nvim/lua/lazy/telescope.lua
@@ -104,6 +118,7 @@ $misc/CP/vimtest/README.md
     :Bufferize se ofu      " omnifunc
     :Bufferize version     " Vim version etc
     :colo [default]        " current colorscheme
+    :function <name_of_function_to_reveal>
     :let mapleader
     :se                    " show all modified options
     :se spc                " pattern for of a sentence

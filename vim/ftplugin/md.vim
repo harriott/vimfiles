@@ -33,8 +33,8 @@ endif
 if has('unix') " should really be asking if Perl is available
   nnoremap <buffer><leader><leader><F7> :execute "silent !perl $misc/CP/PerlTools/MessengerMd.pl ".expand('%:p')<CR>
 else
-  nnoremap <buffer><leader><leader><F7> :call MessengerMd()<CR>
-    " to be defined in  $vimfiles/after/ftplugin/md.vim
+  nnoremap <buffer><leader><leader><F7> :call MysmsMd()<CR>
+    " to be defined in  $vimfiles/vim/after/ftplugin/md-win64.vim
 endif
 " check with  :map <leader><leader><F7>
 

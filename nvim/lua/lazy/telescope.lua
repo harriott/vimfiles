@@ -1,13 +1,14 @@
 
 -- $vimfiles/nvim/lua/lazy/telescope.lua
 
---  :checkhealth telescope
---  :help telescope
---  :Telescope help_tags
---  $lazy/telescope.nvim/doc/telescope.txt
---  Shows keymaps:
---   insert mode: <c-/>
---   normal mode: ?
+-- :checkhealth telescope
+-- :help telescope
+-- :Telescope help_tags
+-- $lazy/telescope.nvim/doc/telescope.txt
+-- Shows keymaps:
+--  insert mode: <c-/>
+--  normal mode: ?
+-- $vimfiles/vim/ftplugin/lua-nvim.vim  maps  =k  to shoz up my keystrokes
 
 return {
   { 'nvim-telescope/telescope.nvim',
@@ -53,6 +54,9 @@ return {
       -- keymaps --
       -- /^\s*vim.keymap.set({.*},'\zs.*\ze',
 
+      -- buffers ---
+      vim.keymap.set({'n'},'<leader>ff',builtin.current_buffer_fuzzy_find,{desc='Telescope current_buffer_fuzzy_find'})
+
       vim.keymap.set({'n'},'<leader>tt',builtin.treesitter,{desc=':Telescope treesitter'})
       -- can help in Lua, Python
 
@@ -71,21 +75,15 @@ return {
         vim.keymap.set({'n'},'<leader>lff',builtin.lsp_type_definitions,{desc=':Telescope lsp_type_definitions'})
 
       -- shell --
-      vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles'})
+      vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'})
 
       vim.keymap.set({'n'},'<leader><f1>',function() builtin.jumplist {show_line=false} end,
         {desc='usable  :Telescope jumplist'})
-
-      vim.keymap.set({'i','n','v'},'<f8>',builtin.command_history,{desc=':Telescope command_history'})
-
-      vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc=':Telescope search_history'})
 
       vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc='Telescope man_pages'})
 
       vim.keymap.set({'n'},'<leader>j',function() builtin.find_files{cwd="$DJH"} vim.cmd("echo 'files in Dropbox/JH'") end,
         {desc='cd $DJH  then  :Telescope find_files'})
-
-      vim.keymap.set({'n'},'<leader>ff',builtin.current_buffer_fuzzy_find,{desc='Telescope current_buffer_fuzzy_find'})
 
       vim.keymap.set({'n'},'<leader>lg',":Telescope live_grep_args<CR>")
 
@@ -104,6 +102,8 @@ return {
 
       -- vim stuff --
       vim.keymap.set({'n'},'<f1>',builtin.buffers,{desc=':Telescope buffers'})
+      vim.keymap.set({'n','i','v'},'<f8>',builtin.command_history,{desc=':Telescope command_history'})
+      vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc=':Telescope search_history'})
       vim.keymap.set({'n'},'<leader>ht',builtin.help_tags,{desc=':Telescope help_tags'})
       vim.keymap.set({'n'},'<leader>vm',builtin.keymaps,{desc=':Telescope keymaps (of normal mode)'})
       vim.keymap.set({'n'},'<leader>vf',builtin.filetypes,{desc=':Telescope fileTypes (known to  vim)'})

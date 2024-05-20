@@ -1,6 +1,7 @@
 vim: set nowrap:
 
 	:redir @i | silent TSInstallInfo | redir END | exe "normal! \"ip"
+    /[✓] installed
 
 ada                [✗] not installed
 agda               [✗] not installed

@@ -16,8 +16,7 @@ set encoding=utf-8  " get this done early
 set mps=(:),{:},[:],<:>
 set nojoinspaces  " already off in  nvim
 set shiftwidth=4
-set sessionoptions-=blank sessionoptions-=help  " se ssop
-set ssop+=winpos
+set ssop-=blank ssop-=help ssop+=winpos  " sessionoptions
 set tabstop=4
 set textwidth=99
 
@@ -37,9 +36,11 @@ else
 endif
 
 ""> interface
+if !has('gui_running') && !has('nvim') | colorscheme deus | endif  " plain vim only
+
 set fillchars=fold:\ 
 " - '\ ' for cleaner folds
-set linebreak number relativenumber
+set linebreak number numberwidth=5 relativenumber
 set laststatus=2  "ls=2  - always display the status line, already set in nvim
 set wildmode=longest,full
 set wildmenu

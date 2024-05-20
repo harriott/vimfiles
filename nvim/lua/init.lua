@@ -27,21 +27,28 @@ vim.api.nvim_set_hl(0, '@lsp.type.comment', {}) -- because  lua_ls  sets a syman
 -- :lua vim.lsp.buf.code_action()
 vim.diagnostic.config({ float = { border = 'rounded', }, })
 vim.diagnostic.config({ virtual_text = false, })
-vim.keymap.set('n', 'K', '<cmd>lua vim.diagnostic.open_float()<cr>')
+vim.keymap.set('n', '<leader>k', '<cmd>lua vim.diagnostic.open_float()<cr>')
 vim.lsp.handlers['textDocument/hover']=vim.lsp.with(vim.lsp.handlers.hover, {border='rounded'})
 
 -- --> window title
-if package.config:sub(1,1) == "\\" then -- win64
+if vim.fn.has("win64") == 1 then
   -- $MSWin10\PSProfile.ps1  sets  $env:TERM
   vim.opt.title = true
   vim.opt.titlelen = 24 -- 24 seems good for the little  WT  tab headers
+  -- bufferline:
   vim.opt.titlestring = [[%{expand("%:p")}%H%M%R%q%W]]
+  -- no  bufferline:
+  -- vim.opt.titlestring = [[%{expand("%:p")}%H%M%R%q%W]]
 end
 
 -- -> 0 nVim
 vim.opt.hlsearch = true
 vim.opt.updatetime = 250 -- decrease swap update time
 vim.opt.inccommand = 'split' -- preview substitutions as you type
+
+-- --> disable  netrw  for  nvim-tree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- --> terminal
 vim.keymap.set({'t'},'<C-h>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus left'})
@@ -61,14 +68,19 @@ vim.opt.rtp:prepend(lazypath)
 
 -- -> 1 lazy.nvim 1
 require('lazy').setup({
+    {'akinsho/bufferline.nvim',config=function() require'bufferline'.setup() end,},
+    {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup() end,},
+    {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,},
+    -- $lazy/gitsigns.nvim/doc/gitsigns.txt
     {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
+    -- {'nanozuki/tabby.nvim',opts={}}, -- might be crashing  lualine
     -- require'lazy/catppuccin',
-    -- require'lazy/dropbar',
     require'lazy/leap',
-    -- require'lazy/lspsaga',
     require'lazy/lualine',
     require'lazy/oil',
+    -- require'lazy/nvim-hlslens',
     require'lazy/nvim-notify',
+    require'lazy/nvim-tree',
     require'lazy/surround',
     require'lazy/telescope', -- something in here slowing folding of large md's
     require'lazy/telescope-fzf-native',
@@ -76,12 +88,15 @@ require('lazy').setup({
       -- 'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
           -- context.vim  works better
-    {'williamboman/mason.nvim',config=function()require('mason').setup()end,},
+    {'williamboman/mason.nvim',config=function() require'mason'.setup() end,},
+      -- $lazy/mason.nvim/doc/mason.txt
       -- :che mason
       -- :LspInfo
       -- :Mason
+        -- g?  toggles help
       -- :MasonInstall bash-language-server
       -- :MasonInstall emmet-language-server
+      -- :MasonInstall lemminx
       -- :MasonInstall ltex-ls
       -- :MasonInstall lua-language-server
       -- :MasonInstall mutt-language-server
@@ -90,18 +105,20 @@ require('lazy').setup({
       -- :MasonInstall powershell-editor-services
       -- :MasonInstall pyright
       -- :MasonInstall vim-language-server
-      -- g $HOME\AppData\Local\nvim-data\mason\packages
-      -- g?  toggles help
-      -- r ~/.local/share/nvim/mason/packages
-     {"williamboman/mason-lspconfig.nvim",config=function()require('mason-lspconfig').setup()end,},
-        require'lazy/nvim-lspconfig',
+      -- packages directory
+        -- :echo $MASON
+        -- g $HOME\AppData\Local\nvim-data\mason\packages
+        -- r ~/.local/share/nvim/mason/packages
+    {"williamboman/mason-lspconfig.nvim",
+      -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
+      -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
+       config=function() require('mason-lspconfig').setup() end,},require'lazy/nvim-lspconfig',
+      require'lazy/lspsaga',
   },
-  {
-    performance = { reset_packpath = false, },
+  { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack
     --  if commented out will get errors about access to  plugins.vim
-    ui = {
-      icons = vim.g.have_nerd_font and {} or {
+    ui = { icons = vim.g.have_nerd_font and {} or {
         -- :lua print(vim.g.have_nerd_font)
         cmd = '⌘',
         config = '🛠',
@@ -117,9 +134,7 @@ require('lazy').setup({
         task = '📌',
         lazy = '💤 ',
       -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-      },
-    },
-  } -- no comma!
+      }, }, } -- no comma!
 )
 -- somehow breaks  vim-hexokinase
 -- somehow kills nvim's access to  /usr/bin/fzf
@@ -132,6 +147,8 @@ vim.api.nvim_create_autocmd('LspAttach', {
       {buffer=ev.buf,desc='Lspsaga outline'})
   end,})
 
+-- -> 2 nvim-tree.lua
+
 -- -> 2 nvim-treesitter
 -- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
 -- :h nvim-treesitter-commands
@@ -142,6 +159,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 -- ---> get
 function GetTSParsers()
+  -- vim.cmd 'TSInstall bash'
   -- vim.cmd 'TSInstall lua' -- error (vim-illuminate) if open a  *.lua  without this parser present
   -- vim.cmd 'TSInstall markdown'
   -- vim.cmd 'TSInstall perl'
@@ -150,8 +168,8 @@ function GetTSParsers()
   -- vim.cmd 'TSInstall vim'
   -- vim.cmd 'TSInstall vimdoc'
 end -- lua GetTSParsers(), then update:
+  -- $vimfiles/settings/nvim-unix-TSInstallInfo-sbMb.txt
   -- $vimfiles\settings\nvim-win64-TSInstallInfo-HPEB840G37.txt
-  -- $vimfiles\settings\nvim-win64-TSInstallInfo-sbMb.txt
 
 -- on MSWin do these in  x64 Native Tools Command Prompt
 

@@ -1,6 +1,7 @@
 vim: set nowrap:
 
 	:redir @i | silent TSInstallInfo | redir END | exe "normal! \"ip"
+    /[✓] installed
 
 ada                [✗] not installed
 agda               [✗] not installed
@@ -11,7 +12,7 @@ asm                [✗] not installed
 astro              [✗] not installed
 authzed            [✗] not installed
 awk                [✗] not installed
-bash               [✗] not installed
+bash               [✓] installed
 bass               [✗] not installed
 beancount          [✗] not installed
 bibtex             [✗] not installed
@@ -259,7 +260,7 @@ vento              [✗] not installed
 verilog            [✗] not installed
 vhs                [✗] not installed
 vim                [✓] installed
-vimdoc             [✗] not installed
+vimdoc             [✓] installed
 vue                [✗] not installed
 wgsl               [✗] not installed
 wgsl_bevy          [✗] not installed

@@ -6,7 +6,7 @@
 "   extra to  $vimfiles/vim/ftplugin/md.vim
 " think I separated this here to ensure call to Startify is recognised
 
-function! MysmsMD()
+function! MysmsMd()
   set fileformat=dos
   write
   execute "silent !C:\\Strawberry\\perl\\bin\\perl.exe ".$misc".\\CP\\PerlTools\\mysmsMD.pl ".expand('%:p')

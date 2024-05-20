@@ -20,10 +20,10 @@ return {
 
       highlight = { -- parser configurations - see  $vimfiles/nvim/lua/init.lua
         -- enable = true, -- when true, large md's fold slowly
-        disable = { 'lua', 'markdown', 'vim', },
+        disable = {'bash','lua','markdown','vim',},
           -- large md's fold slowly
           -- my  lua  &  vim  fold syntax are definitively lost
-        enable = { 'perl', },
+        enable = {'perl',},
           -- bad
             -- diff      layout isn't preferable
             -- muttrc    is worse than Vim's
@@ -34,9 +34,9 @@ return {
             -- yaml      is dulled, I prefer Vim's
           -- markdown  backticks are concealed
           -- no effect: bash, perl, xml
-        additional_vim_regex_highlighting = { 'markdown','xml', },
+        additional_vim_regex_highlighting = {'markdown','xml',},
           -- keep my highlighting changes
-            -- my highlighting ain't preserved: lua, vim
+            -- my highlighting ain't preserved: bash, lua, vim
             -- keeps my xml folding
       },
 
@@ -50,7 +50,7 @@ return {
     },
 
     config = function(_, opts)
-      if package.config:sub(1,1) == "\\" then -- win64
+      if vim.fn.has("win64") == 1 then
         require('nvim-treesitter.install').prefer_git = false
       else
         require('nvim-treesitter.install').prefer_git = true

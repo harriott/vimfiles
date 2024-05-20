@@ -6,6 +6,8 @@
 -- $lazy/nvim-lspconfig/doc/lspconfig.txt
 -- install language servers with Mason ($vimfiles/nvim/lua/init.lua)
 
+-- K => vim.lsp.buf.hover(), so  LspStop  to recover  keywordprg
+
 return {
   { 'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -26,20 +28,22 @@ return {
       -- require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
         -- but no completions...
 
-      -- require'lspconfig'.lua_ls.setup {
-      --     on_init = function(client)
-      --         local path = client.workspace_folders[1].name
-      --         if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-      --             client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-      --                 runtime = { version = 'LuaJIT' },
-      --                 workspace = { library = { vim.env.VIMRUNTIME } },
-      --             })
-      --             client.notify("workspace/didChangeConfiguration",
-      --               { settings = client.config.settings })
-      --         end return true
-      --     end, -- https://www.reddit.com/r/neovim/comments/15owd43/comment/jvvswah/
-      --     settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
-      --   } -- and see fix in  $vimfiles/nvim/lua/init.lua
+      require'lspconfig'.lemminx.setup{}  -- no sign of it yet...
+
+      require'lspconfig'.lua_ls.setup {
+          on_init = function(client)
+              local path = client.workspace_folders[1].name
+              if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+                  client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+                      runtime = { version = 'LuaJIT' },
+                      workspace = { library = { vim.env.VIMRUNTIME } },
+                  })
+                  client.notify("workspace/didChangeConfiguration",
+                    { settings = client.config.settings })
+              end return true
+          end, -- https://www.reddit.com/r/neovim/comments/15owd43/comment/jvvswah/
+          settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
+        } -- and see fix in  $vimfiles/nvim/lua/init.lua
 
       require'lspconfig'.mutt_ls.setup{}
 
@@ -48,8 +52,18 @@ return {
             perlcriticProfile = '', perlcriticEnabled = true, } } }
             -- bung an exit in some code to see this work
 
+      -- if vim.fn.has("win64") == 1 then
+      --   local psesbp = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services'
+      --   local psesbp = '$MASON'
+      --   local psesbp = "$MASON"
+      --   apex_jar_path = vim.fn.expand "$MASON/share/apex-language-server/apex-jorje-lsp.jar",
+      --   ajp = vim.fn.expand "$MASON/share/apex-language-server/apex-jorje-lsp.jar"
+      -- else
+      --   local psesbp = '~/.local/share/nvim/mason/packages/powershell-editor-services'
+      -- end
       require'lspconfig'.powershell_es.setup{
-        bundle_path = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
+        -- bundle_path = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
+        bundle_path = vim.fn.expand "$MASON/packages/powershell-editor-services",
         settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } } }
         -- $nvim/powershell_es-mason-schemas-lsp.json
 

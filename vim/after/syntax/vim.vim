@@ -3,8 +3,10 @@
 " Maintainer: Joseph Harriott
 " Last Change: Tue 30 Aug 2022
 
-" $vimfiles/after/syntax/vim.vim
+" $vimfiles/vim/after/syntax/vim.vim
 " put this in your modeline: " vim: ft=vim:
+
+let g:after_syntax_vim = 1
 
 " my syntax for folding
 syntax match buildN '^ \+"">.*$'

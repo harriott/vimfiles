@@ -107,6 +107,6 @@ let g:langtool_jar = $ITscc.'\CP\LanguageTool\languagetool-commandline.jar'
 let g:languagetool_jar = $ITscc.'\CP\LanguageTool\languagetool-commandline.jar'
 
 "">> Windows Explorer on current file
-nnoremap <F11> :!start explorer /select,%:p<CR>
+nnoremap <F11> :!start explorer %:p<CR><CR>
 inoremap <F11> <Esc><F11>
 

@@ -17,9 +17,15 @@ if has('win64')
 endif " providers
 
 if v:lang =~ 'fr'
+  " Easier searching:
   nnoremap ! /
+else
+  " Easier jump to last position in newly opened file:
+  nnoremap gl g`"
+  " (`"  is easy on AZERTY)
 endif
 
+set keywordprg=:help  " get  K  working in  *.lua
 set termguicolors
 
 " nnoremap Y 0yj

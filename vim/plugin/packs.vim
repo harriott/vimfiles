@@ -45,7 +45,12 @@ packadd gitignore.vim
 let g:airline#extensions#branch#vcs_checks = ['untracked'] " because 'dirty' isn't accurate...
 
 " Ggrep for last search (using  @s)
-nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
+if has('nvim')
+  nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s"
+  " or searching for  %:p  will crash  lualine - no idea why...
+else
+  nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
+endif
 " gives bogus filenames if they contain accented characters
 
 " keystrokes
@@ -68,16 +73,6 @@ packadd vim-rhubarb  " for GitHub
 " let g:gfm_syntax_enable_always = 0
 " let g:gfm_syntax_enable_filetypes = ['gfm']
 " packadd vim-gfm-syntax
-
-"">>> vim-gitgutter
-let g:gitgutter_max_signs = 600
-let g:gitgutter_enabled = 0
-packadd vim-gitgutter
-" $vimfiles/after/plugin/plugins.vim
-
-"">>>> toggle
-let g:GGF = 0
-" $vimfiles/after/plugin/plugins.vim
 
 "">> languages
 packadd CSS-one-line--multi-line-folding
@@ -529,21 +524,6 @@ packadd mru
 "  O = open split right
 "  o = open split below
 "  u = update
-
-"">> NERDTree
-"h NERDTree
-let NERDTreeWinSize = 40
-let NERDTreeHijackNetrw = 0  " liberate  e.
-noremap <C-n> :NERDTreeToggle<CR>
-
-" loaded in  $vimfiles/after/plugin/plugins.vim
-
-" Open it on buffer's directory:
-nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
-inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
-
-"">> nerdtree-git-plugin
-packadd nerdtree-git-plugin
 
 "">> open-browser.vim
 " $vfvp/packs-cp/opt/open-browser.vim/doc/openbrowser.txt

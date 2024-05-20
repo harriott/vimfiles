@@ -15,6 +15,16 @@ let NERDSpaceDelims = 1
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 
+""> encoding - vim-gitgutter
+let g:gitgutter_max_signs = 600
+let g:gitgutter_enabled = 0
+packadd vim-gitgutter
+" $vimfiles/after/plugin/plugins.vim
+
+"">>>> toggle
+let g:GGF = 0
+" $vimfiles/after/plugin/plugins.vim
+
 ""> find/replace - vim-easymotion
 " :h easymotion-default-mappings
 packadd vim-easymotion
@@ -167,6 +177,21 @@ packadd fern-preview.vim
 "">> fern-renderer-nerdfont.vim
 let g:fern#renderer = "nerdfont"
 packadd fern-renderer-nerdfont.vim
+
+"">> NERDTree
+"h NERDTree
+let NERDTreeWinSize = 40
+let NERDTreeHijackNetrw = 0  " liberate  e.
+noremap <C-n> :NERDTreeToggle<CR>
+
+" loaded in  $vimfiles/after/plugin/plugins.vim
+
+" Open it on buffer's directory:
+nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+
+"">> nerdtree-git-plugin
+packadd nerdtree-git-plugin
 
 "">> vim-dirvish
 " h dirvish

@@ -1,6 +1,8 @@
 
 -- $vimfiles/nvim/lua/lazy/lualine.lua
 
+-- $lazy/lualine.nvim/doc/lualine.txt
+
 return {
   { 'nvim-lualine/lualine.nvim',
     lazy = false,  -- for  nvim-notify
@@ -9,11 +11,14 @@ return {
     config = function()
       -- require('lualine').setup()
       require('lualine').setup{
-        extensions = {'fzf','man','quickfix',},
+        extensions = {'fzf','lazy','man','oil',},
           -- 'fzf' adds what?
           -- 'man' is helpful
-          -- 'quickfix' is helpful
+          -- 'nvim-tree' shows the full path
+          -- 'oil' shows the full path
+          -- 'quickfix' is helpful, but  $jtCP/Nvim-lualine-quickfix_extension_crashes_on_%.md
           -- 'toggleterm' is crap
+        -- options = { theme = 'gruvbox' },
       }
     end,
     }

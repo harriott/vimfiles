@@ -7,7 +7,7 @@
 
 if exists('b:current_syntax') | finish | endif
 
-syn match rgOFN '^[^:]*:'  " dim out the filename
+syn match rgOFN '^\(C:\|..\)[^:]*:'  " dim out the filename
 hi def link rgOFN LineNr
 
 let b:current_syntax = "rgo"
