@@ -74,6 +74,8 @@ else
 endif
 
 ""> 2 pull in lua configs
+let g:sqlite_clib_path = $programfiles.'\LibreOffice\program\sqlite3.dll'
+" - for  $vimfiles/nvim/lua/lazy/nvim-neoclip.lua
 lua require('init')
 " - $vimfiles/nvim/lua-init.lua
 

@@ -45,7 +45,7 @@ return {
           settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
         } -- and see fix in  $vimfiles/nvim/lua/init.lua
 
-      require'lspconfig'.mutt_ls.setup{}
+      -- require'lspconfig'.mutt_ls.setup{}
 
       require'lspconfig'.perlnavigator.setup{cmd={"perlnavigator"}, settings = {
           perlnavigator = { perlPath = 'perl', enableWarnings = true, perltidyProfile = '',

@@ -346,6 +346,8 @@ z\                    " incsearch-fuzzy-stay
 :ALEToggle
 :Bufferize python3 print(sys.path)
 :cd $DJH
+:echo expand("%:h")   " <path_of_current_file>
+:echo expand("%:p")   " <path>/file.txt
 :Locate <pattern>
 :packadd syntastic    " load the plugin from an opt directory
 :r<file>              " reads <file> into buffer
@@ -360,12 +362,13 @@ shift+F11             " open in Emacs
 
 ## files & directories
 ```
-2c-g        " buffer number & full filename (<c-f11>  on  AZERTY)
-:e.         " dirvish (or netrw) on current directory
-:f  or  c-g " relative filename (:h :f)
-\<f11>      " last modification time
-\vg         " cd to file's and vimgrep for last search
-gf          " open file under cursor - :h gF
+2c-g                            " buffer number & full filename (<c-f11>  on  AZERTY)
+:e ++ff=dos | set ff=unix | w!  " remove CRLFs
+:e.                             " dirvish (or netrw) on current directory
+:f  or  c-g                     " relative filename (:h :f)
+\<f11>                          " last modification time
+\vg                             " cd to file's and vimgrep for last search
+gf                              " open file under cursor - :h gF
 ```
 
 ### Netrw

@@ -45,13 +45,8 @@ packadd gitignore.vim
 let g:airline#extensions#branch#vcs_checks = ['untracked'] " because 'dirty' isn't accurate...
 
 " Ggrep for last search (using  @s)
-if has('nvim')
-  nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s"
-  " or searching for  %:p  will crash  lualine - no idea why...
-else
-  nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
-endif
-" gives bogus filenames if they contain accented characters
+nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
+" - gives bogus filenames if they contain accented characters
 
 " keystrokes
 "  ce  " amend the last commit without editing the message
@@ -500,7 +495,7 @@ packadd vim-fontsize
 "">> calendar-vim
 let g:calendar_monday = 1
 let g:calendar_weeknm = 1
-noremap <leader>yy :CalendarH<CR>
+noremap <leader>C :CalendarH<CR>
 packadd calendar-vim
 
 "">> MRU

@@ -40,13 +40,13 @@ endif
           let $SPD = $onGH.'/SyncPortableDrives/RoboCopy/'.$computername
           let $vimfiles = $onGH.'/vimfiles'
             let $vfvp = $vimfiles.'/vim/packs'
-    let $FrFa = $DJH.'/F+F'
+    let $FrFa = $DJH.'/Jo-F+F'
       let $FFIdF = $FrFa.'/France/IdF'  " $FFIdF  used in  $TeNo
-    let $JHt = $DJH.'/technos'
+    let $JHt = $DJH.'/Jo-technos'
+      let $jtIT = $JHt.'/IT'
+      let $tIs = $JHt.'/IT-storage'  " $tIs/diskUsage.txt
     let $JHw = $DJH.'/work'
       let $JHm = $JHw.'/IT-Jekyll-harriott-minima'
-    let $jtIT = $DJH.'/technos/IT'
     let $Thb = $DJH.'/Thb-dr'
-    let $tIs = $DJH.'/technos/IT-storage'  " $tIs/diskUsage.txt
   let $DCGRs = $Drpbx.'/Cop/GRs'
 

@@ -22,7 +22,7 @@ return {
     lazy = false,  -- for  nvim-notify
 
     config = function()
-      require('telescope').setup{ -- :help telescope.setup()
+      require'telescope'.setup{ -- :help telescope.setup()
         defaults = {
           -- file_ignore_patterns={"%.md"}, -- avoids folding delay but also makes .md's not there...
           layout_config = { vertical = { preview_height = 0.3, }, },
@@ -41,13 +41,13 @@ return {
         },
         extensions = {
           ['ui-select'] = {
-            require('telescope.themes').get_cursor(),
+            require'telescope.themes'.get_cursor(),
         -- pickers = {}
           },
         },
-        require("telescope").load_extension("live_grep_args"),
+        require"telescope".load_extension("live_grep_args"),
       }
-      pcall(require('telescope').load_extension, 'fzf')
+      pcall(require'telescope'.load_extension, 'fzf')
       local builtin = require 'telescope.builtin' -- :help telescope.builtin
 
       --------------
@@ -55,6 +55,8 @@ return {
       -- /^\s*vim.keymap.set({.*},'\zs.*\ze',
 
       -- buffers ---
+      vim.keymap.set({'n'},'<f1>',function() builtin.buffers{sort_mru=true} end,{desc=':Telescope buffers'})
+      -- can't diminish the distracting  :<line_number>  at end
       vim.keymap.set({'n'},'<leader>ff',builtin.current_buffer_fuzzy_find,{desc='Telescope current_buffer_fuzzy_find'})
 
       vim.keymap.set({'n'},'<leader>tt',builtin.treesitter,{desc=':Telescope treesitter'})
@@ -77,7 +79,7 @@ return {
       -- shell --
       vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'})
 
-      vim.keymap.set({'n'},'<leader><f1>',function() builtin.jumplist {show_line=false} end,
+      vim.keymap.set({'n'},'<leader><leader><f1>',function() builtin.jumplist{show_line=false} end,
         {desc='usable  :Telescope jumplist'})
 
       vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc='Telescope man_pages'})
@@ -101,7 +103,6 @@ return {
       vim.keymap.set({'n'},'<leader>pp',builtin.resume,{desc=':Telescope resume (= previous picker)'})
 
       -- vim stuff --
-      vim.keymap.set({'n'},'<f1>',builtin.buffers,{desc=':Telescope buffers'})
       vim.keymap.set({'n','i','v'},'<f8>',builtin.command_history,{desc=':Telescope command_history'})
       vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc=':Telescope search_history'})
       vim.keymap.set({'n'},'<leader>ht',builtin.help_tags,{desc=':Telescope help_tags'})

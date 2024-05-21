@@ -33,12 +33,25 @@ vim.lsp.handlers['textDocument/hover']=vim.lsp.with(vim.lsp.handlers.hover, {bor
 -- --> window title
 if vim.fn.has("win64") == 1 then
   -- $MSWin10\PSProfile.ps1  sets  $env:TERM
+  -- if I don't set the title, get the path to the shell executable
   vim.opt.title = true
-  vim.opt.titlelen = 24 -- 24 seems good for the little  WT  tab headers
+
+  -- vim.opt.titlelen = non-zero gets it shortened to that, good for the little  WT  tab headers
+
   -- bufferline:
-  vim.opt.titlestring = [[%{expand("%:p")}%H%M%R%q%W]]
+  vim.opt.titlelen = 19 -- and 21 is bad...
+  vim.opt.titlestring = [[%{expand("%:h")}%H%M%R%q%W]]
+
   -- no  bufferline:
+  -- vim.opt.titlelen = 24
   -- vim.opt.titlestring = [[%{expand("%:p")}%H%M%R%q%W]]
+
+  -- flags:
+  --  %H  ,HLP (help buffer)
+  --  %M  ,+ (modified)  or  ,- (non-modifiable)
+  --  %R  ,RO (read only)
+  --  %q  [Quickfix List] or [Location List]
+  --  %W  ,PRV (preview window)
 end
 
 -- -> 0 nVim
@@ -75,6 +88,8 @@ require('lazy').setup({
     {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
     -- {'nanozuki/tabby.nvim',opts={}}, -- might be crashing  lualine
     -- require'lazy/catppuccin',
+    require'lazy/fzf-lua',
+    -- require'lazy/harpoon',
     require'lazy/leap',
     require'lazy/lualine',
     require'lazy/oil',
@@ -83,7 +98,9 @@ require('lazy').setup({
     require'lazy/nvim-tree',
     require'lazy/surround',
     require'lazy/telescope', -- something in here slowing folding of large md's
-    require'lazy/telescope-fzf-native',
+      require'lazy/telescope-frecency',
+      require'lazy/telescope-fzf-native',
+      require'lazy/nvim-neoclip',
     require'lazy/treesitter', -- $vimfiles/nvim/lua/lazy/treesitter.lua
       -- 'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
@@ -112,8 +129,8 @@ require('lazy').setup({
     {"williamboman/mason-lspconfig.nvim",
       -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
       -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
-       config=function() require('mason-lspconfig').setup() end,},require'lazy/nvim-lspconfig',
-      require'lazy/lspsaga',
+       config=function() require('mason-lspconfig').setup() end,},
+       require'lazy/nvim-lspconfig',require'lazy/lspsaga',
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack

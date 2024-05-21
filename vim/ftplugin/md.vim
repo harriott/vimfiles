@@ -33,21 +33,27 @@ endif
 if has('unix') " should really be asking if Perl is available
   nnoremap <buffer><leader><leader><F7> :execute "silent !perl $misc/CP/PerlTools/MessengerMd.pl ".expand('%:p')<CR>
 else
-  nnoremap <buffer><leader><leader><F7> :call MysmsMd()<CR>
-    " to be defined in  $vimfiles/vim/after/ftplugin/md-win64.vim
+  nnoremap <buffer><leader><leader><F7> :call MessengerMd()<CR>
+    " - to be defined...
 endif
 " check with  :map <leader><leader><F7>
 
 ""> convert mysms screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available
-  nnoremap <buffer><leader><F7> :execute "silent !perl $misc/CP/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
+  nnoremap <buffer><leader><f7> :execute "silent !perl $misc/CP/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
 else
-  source $vimfiles/vim/after/ftplugin/md-win64.vim
-  nnoremap <buffer><leader><F7> :call MysmsMD()<CR>
-    " defined in  $vimfiles/vim/after/ftplugin/md.vim
+  function! MysmsMd()
+    set fileformat=dos
+    write
+    execute "silent !C:\\Strawberry\\perl\\bin\\perl.exe ".$misc."\\CP\\PerlTools\\mysmsMd.pl ".expand('%:p')
+    echo 'check that the following line of code worked'
+    e ++ff=dos | set ff=unix | w!
+    " Startify  " this just diverts vim's attention, ensuring that Perl's changes are loaded
+  endfunction
+  nnoremap <buffer><leader><f7> :call MysmsMd()<CR>
 endif
-" check with  :map <leader><F7>
+" check with  :map <leader><f7>
 
 ""> syntax highlighting fix
 " maxmempattern  is set in  $vimfiles/plugin/plugin.vim
