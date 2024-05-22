@@ -1,5 +1,5 @@
 
--- https://harriott.githubio/ - Fri 10 May 2024
+-- https://harriottgithubio/ - mer 22 mai 2024
 
 -- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
@@ -54,6 +54,18 @@ if vim.fn.has("win64") == 1 then
   --  %W  ,PRV (preview window)
 end
 
+-- -> Neovide
+if vim.g.neovide then
+  -- vim.g.neovide_cursor_vfx_mode = "railgun"
+  vim.g.neovide_cursor_vfx_mode = "torpedo"
+  vim.g.neovide_transparency = 0.9
+
+  -- These don`t change Telescope floats:
+  -- vim.g.neovide_floating_z_height = 10
+  -- vim.g.neovide_light_angle_degrees = 45
+  -- vim.g.neovide_light_radius = 5
+end
+
 -- -> 0 nVim
 vim.opt.hlsearch = true
 vim.opt.updatetime = 250 -- decrease swap update time
@@ -75,7 +87,7 @@ local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then -- does what?
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-end ---@diagnostic disable-next-line: undefined-field
+end -- @diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
 
@@ -86,12 +98,13 @@ require('lazy').setup({
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,},
     -- $lazy/gitsigns.nvim/doc/gitsigns.txt
     {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
-    -- {'nanozuki/tabby.nvim',opts={}}, -- might be crashing  lualine
+    {'nanozuki/tabby.nvim',opts={}}, -- might be crashing  lualine
     -- require'lazy/catppuccin',
     require'lazy/fzf-lua',
-    -- require'lazy/harpoon',
+    require'lazy/harpoon',
     require'lazy/leap',
     require'lazy/lualine',
+    require'lazy/neogit',
     require'lazy/oil',
     -- require'lazy/nvim-hlslens',
     require'lazy/nvim-notify',

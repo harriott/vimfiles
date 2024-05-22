@@ -11,7 +11,6 @@
 " typically basic Vim settings here - look in plugin folder for more
 " ------------------------------------------------------------------
 
-let g:useSTW=''
 set encoding=utf-8  " get this done early
 set mps=(:),{:},[:],<:>
 set nojoinspaces  " already off in  nvim
@@ -84,31 +83,30 @@ nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
 " " supplanted by  vim match-up
 
 ""> quit buffer(s), quit nvim
-if !has('gui_running')
-  function! VimWriteClose()
-    if len(getbufinfo({'buflisted':1})) == 1
-      let cfd = expand('%:p:h') " current file directory
-      edit $HOME/last_directory  " for  $Bash/bashrc-console  &  $MSWin10\PSProfile.ps1
-      normal dd
-      put=cfd
-      normal kdd
-      wall
-      quit! " close completely
-    else
-      let s:b = expand('%:t')
-      silent wall
-      bdelete
-      echo 'closed '.s:b
-    endif
-  endfunction
+" originally written for terminal nvim/vim, then realised it's handy for GUIs too
+function! VimWriteClose()
+  if len(getbufinfo({'buflisted':1})) == 1
+    let cfd = expand('%:p:h') " current file directory
+    edit $HOME/last_directory  " for  $Bash/bashrc-console  &  $MSWin10\PSProfile.ps1
+    normal dd
+    put=cfd
+    normal kdd
+    wall
+    quit! " close completely
+  else
+    let s:b = expand('%:t')
+    silent wall
+    bdelete
+    echo 'closed '.s:b
+  endif
+endfunction
 
-  nnoremap <f4> :call VimWriteClose()<CR>
-  inoremap <f4> <Esc>:call VimWriteClose()<CR>
-  " - overriden by some autocommands in  $vimfiles/vim/plugin/plugin.vim
+nnoremap <f4> :call VimWriteClose()<CR>
+inoremap <f4> <Esc>:call VimWriteClose()<CR>
+" - overriden by some autocommands in  $vimfiles/vim/plugin/plugin.vim
 
-  vnoremap <f4> <Esc>:call VimWriteClose()<CR>
+vnoremap <f4> <Esc>:call VimWriteClose()<CR>
 
-  nnoremap <leader><f4> :Bdelete other<CR>:call VimWriteClose()<CR>
-  inoremap <leader><f4> <Esc>:Bdelete other<CR>:call VimWriteClose()<CR>
-endif  " terminal nvim/vim
+nnoremap <leader><f4> :Bdelete other<CR>:call VimWriteClose()<CR>
+inoremap <leader><f4> <Esc>:Bdelete other<CR>:call VimWriteClose()<CR>
 

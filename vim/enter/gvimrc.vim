@@ -28,11 +28,6 @@ set guioptions-=T  "removes toolbar (se go+=T)
 set hlsearch  " switch on search pattern highlighting
 set visualbell t_vb=  " disable beeps
 
-" write & close buffer
-nnoremap <F4> :wa<CR>:bd<CR>
-inoremap <F4> <Esc>:wa<CR>:bd<CR>
-vnoremap <F4> <Esc>:wa<CR>:bd<CR>
-
 "">> high contrast Solarized
 let g:solarized_contrast="high"  "default value is normal, for solarized & tomorrow
 

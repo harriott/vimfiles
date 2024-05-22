@@ -72,7 +72,6 @@ Stack Exchange Vi and Vim
 
 # layout
     :Prettier     " apply  prettier  to json & others
-    :se gfn=*     " pop-up font selection
     :se expandtab " allows  :retab
     :se ch        " cmdheight
     :se cwh       " cmdwinheight - I like 30
@@ -401,6 +400,7 @@ gf                              " open file under cursor - :h gF
 # tab views
     gT  gt    " move around tabs
     :tab ball " all buffers into tabs
+    :tabclose
 
 # text objects
     ci> " change inside angle brackets

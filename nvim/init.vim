@@ -7,14 +7,23 @@
 "  $MSwin10\mb\symlinks.ps1
 "  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 
+let g:sourced_init_vim = 1
+
 ""> 0 nvim
 command DiffOrig vert new | set buftype=nofile | read ++edit
 " - can't recall why I reduced this definition
 
 if has('win64')
+  " Providers
   let g:loaded_perl_provider = 0
   let g:python3_host_prog = 'C:\Python312\python.exe'
-endif " providers
+else
+  if exists('g:neovide')
+    map! <S-Insert> <C-R>+
+    " set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 10
+    set guifont=UbuntuMono_Nerd_Font_Mono:h9
+  endif
+endif
 
 if v:lang =~ 'fr'
   " Easier searching:
@@ -26,7 +35,6 @@ else
 endif
 
 set keywordprg=:help  " get  K  working in  *.lua
-set termguicolors
 
 " nnoremap Y 0yj
 " yank one full line - I prefer over  Y-default, but now need  nyy  to select multiple lines
@@ -34,6 +42,7 @@ set termguicolors
 ""> 0 terminal
 autocmd TermOpen * startinsert
 let $in_nvim = 1  " - for $OSAB/Bash/bashrc-generic
+set termguicolors
 
 " set shell=powershell  " Windows PowerShell
 " set shell=pwsh  " PowerShell
@@ -47,24 +56,13 @@ else
 endif
 
 ""> 2 colors
-" for accurate colour codes
-" set termguicolors
-" can turn off with :se notgc
-
-" choose plugin for showing trailing white spaces
 let g:useSTW = 0
-packadd vim-better-whitespace
-" EnableWhitespace
-highlight ExtraWhitespace ctermbg=blue
-let g:better_whitespace_operator=''
 
 "">> colorscheme
 if has('win64')
-  " $vfvp/packs-cp/opt/papercolor-theme/doc/PaperColor.txt
-  let g:PaperColor_Theme_Options = { 'theme': {
-      \ 'default': { 'allow_italic': 1 },
-      \ 'default.dark': { 'override' : { 'folded_bg' : ['', '00'] } }
-      \ } }
+  " $vfvp/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
+  let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'allow_italic': 1 },
+      \ 'default.dark': { 'override' : { 'folded_bg' : ['', '00'] } } } }
   set background=dark | colorscheme PaperColor
   " colo apprentice
   " colo wombat
@@ -74,8 +72,9 @@ else
 endif
 
 ""> 2 pull in lua configs
-let g:sqlite_clib_path = $programfiles.'\LibreOffice\program\sqlite3.dll'
-" - for  $vimfiles/nvim/lua/lazy/nvim-neoclip.lua
+if has('win64')
+  let g:sqlite_clib_path = 'C:/Program Files/LibreOffice/program/sqlite3.dll'
+endif " - for  $vimfiles/nvim/lua/lazy/nvim-neoclip.lua
 lua require('init')
 " - $vimfiles/nvim/lua-init.lua
 

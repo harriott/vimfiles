@@ -7,6 +7,7 @@
 "  supplementary to
 "   $vfvp/packs-cp/opt/vim-markdown/README.md
 "   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/vim/ftplugin/html.vim )
+" $vfvp/packs-cp/opt/vim-markdown/syntax\markdown.vim - tweaked
 
 " Filetype detection:
 "  $vimfiles/vim/filetype.vim

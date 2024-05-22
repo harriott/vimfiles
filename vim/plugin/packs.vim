@@ -446,7 +446,15 @@ packadd FoldText
 " packadd limelight.vim
 
 "">>> vim-better-whitespace
-" added for neovim
+" $vfvp/packs-cp/opt/vim-better-whitespace/doc/better-whitespace.txt
+" $vfvp/packs-cp/opt/vim-better-whitespace/README.md
+" only used in  $vimfiles/nvim/init.vim
+if has('nvim')
+  let g:better_whitespace_ctermcolor='Black'
+  let g:better_whitespace_guicolor='Black'
+  let g:better_whitespace_operator=''
+  packadd vim-better-whitespace
+endif
 
 "">>> vim-illuminate
 packadd vim-illuminate
@@ -472,6 +480,7 @@ endfunction
 " let g:interestingWordsRandomiseColors = 1
 
 "">>> vim-ShowTrailingWhitespace
+" $vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/doc/ShowTrailingWhitespace.txt
 if g:useSTW | packadd vim-ShowTrailingWhitespace | endif  " requires  ingo-library
 
 "">> lf.vim

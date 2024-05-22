@@ -9,7 +9,7 @@ return { 'ThePrimeagen/harpoon', branch = 'harpoon2',
     local harpoon = require('harpoon')
     harpoon:setup({})
     vim.keymap.set({'n'},'<leader>hl',function() harpoon.ui:toggle_quick_menu(harpoon:list()) end) -- for reference
-    vim.keymap.set({'n'},'<leader>ha',function() harpoon:list():add() end)
+    vim.keymap.set({'n'},'<c-a>',function() harpoon:list():add() end) -- ephemeral...
 
     local conf = require('telescope.config').values
     local function toggle_telescope(harpoon_files)
@@ -22,7 +22,7 @@ return { 'ThePrimeagen/harpoon', branch = 'harpoon2',
         sorter = conf.generic_sorter({}),
       }):find()
     end
-    vim.keymap.set({'n'},'<c-a>',function() toggle_telescope(harpoon:list()) end,{desc='Open harpoon window' })
+    vim.keymap.set({'n'},'<c-e>',function() toggle_telescope(harpoon:list()) end,{desc='Open harpoon window' })
   end,
 }
 

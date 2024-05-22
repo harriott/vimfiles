@@ -1,10 +1,9 @@
 
 " Language:	vim
 " Maintainer: Joseph Harriott
-" Last Change: Tue 30 Aug 2022
+" Last Change: mer 22 mai 2024
 
 " $vimfiles/vim/after/syntax/vim.vim
-" put this in your modeline: " vim: ft=vim:
 
 let g:after_syntax_vim = 1
 

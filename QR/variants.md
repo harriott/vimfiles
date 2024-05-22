@@ -1,8 +1,11 @@
-vim:se fdl=1:
 
 Joseph's (g)Vim Quick Reference
 
     r $vimfiles/settings
+
+# guifont
+    :Bufferize se gfn
+    :se gfn=*         " pop-up font selection
 
 # Nvim
     :echo has('nvim')
@@ -27,7 +30,15 @@ Joseph's (g)Vim Quick Reference
     :=vim.fn.has'gui_running'
     :=vim.loop.cwd()
 
+## neovide
+    $ neovide &
+
+### g:neovide
+    :if !exists('g:neovide') | echo 'no neovide' | endif
+    :let g:neovide
+
 ## OS
+    $HOME\AppData\Local\nvim-data\shada\main.shada
     :=jit.os
     :=vim.fn.has("linux")
 
@@ -109,15 +120,22 @@ $misc/CP/vimtest/README.md
     :let@a=@_                         " sets a to (always empty) black hole register
     :let@q=@k                         " sets a to contents of register k
 
+- `"` = default regiser
+- `*` = X11 primary (mouse) regiser
+- `+` = X11 clipboard regiser
+- `0` = yank regiser
+- `1-9` = shifting delete registers
+- `_` = null regiser
+
 ## settings
     :Bufferize dig!        " categorised digraphs
     :Bufferize let         " all internal variables
-    :Bufferize scriptnames " list of files sourced, in order
+    :Bufferize scr         " (:scriptnames) list of files sourced, in order
     :Bufferize se          " all option changes
-    :Bufferize se gfn      " show font
     :Bufferize se ofu      " omnifunc
     :Bufferize version     " Vim version etc
     :colo [default]        " current colorscheme
+    :echo has ('gui_running')
     :function <name_of_function_to_reveal>
     :let mapleader
     :se                    " show all modified options
@@ -164,6 +182,7 @@ options as variable: `:echo &textwidth`
 #### settings
     :Bufferize sy  " :h syn-list
 	:hi
+    :Inspect  " to see what's highlighting under the cursor
     :se synmaxcol=0  " removes 3000 character limit (:se smc)
 	:so $VIMRUNTIME/syntax/hitest.vim
     :sy sync fromstart  " but can't find any way to check this setting

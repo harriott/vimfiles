@@ -35,31 +35,34 @@ let $USER = 'troin'
 " set noloadplugins
 
 "">> colorscheme
-function! STWDG()
-  set background=dark
-    let g:useSTW='1'
-    " highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
-    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
-  let g:CSDark = 1
-endfunction
-colorscheme tomorrow
-set background=dark
-call STWDG()
+if !has('nvim')
+  " 1) tomorrow dark
+  function! STWDG()
+    set background=dark
+      let g:useSTW='1'
+      " highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
+      highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
+    let g:CSDark = 1
+  endfunction
+  call STWDG()
+  colorscheme tomorrow
+  " set background=dark
 
-"">>> reliable light-dark toggle
-nnoremap <C-F5> :call ColorLightDark()<cr>
-function! ColorLightDark()
-  if g:CSDark
-    set background=light
-    " " if Solarized
-    " highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
-    " if Tomorrow
-    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Grey
-    let g:CSDark = 0
-  else
-    call STWDG()
-  endif
-endfunction
+  " 2) reliable light-dark toggle
+  nnoremap <C-F5> :call ColorLightDark()<cr>
+  function! ColorLightDark()
+    if g:CSDark
+      set background=light
+      " " if Solarized
+      " highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
+      " if Tomorrow
+      highlight ShowTrailingWhitespace ctermbg=Grey guibg=Grey
+      let g:CSDark = 0
+    else
+      call STWDG()
+    endif
+  endfunction
+endif
 
 "">> continue vimrc
 source $vimfiles/vim/enter/vimrc.vim

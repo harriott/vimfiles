@@ -6,7 +6,7 @@
 "  $MSWin10\mb\_vimrc-AZERTY
 "  $vimfiles/nvim/init.vim
 
-let g:test_vimrc_Win10 = 1
+let g:sourced_test_vimrc_Win10 = 1
 
 ""> 3 my initial settings
 let $USER = 'troin'

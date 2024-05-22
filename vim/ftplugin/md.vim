@@ -6,12 +6,19 @@
 " $vimfiles/vim/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
 "  this configuration file is source'd as needed by  $vimfiles/vim/filetype.vim
-" also  $vimfiles/vim/after/ftplugin/md.vim
 
 " /sanskrit\|skt
 
 " convert dw url
 nnoremap <buffer><localleader>[ :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>
+
+if v:lang =~ 'fr'
+  if has('nvim') && !exists('g:neovide') " terminal Nvim
+    nnoremap <buffer><localleader>< a<><Esc>h
+  else
+    nnoremap <buffer><localleader>< a<><Esc>
+  endif
+endif
 
 " For md's detected as  liquid:
 nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
@@ -19,14 +26,6 @@ nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
 
 " open Pandoc'd pdf
 nnoremap <buffer> <F12> :call CompiledPDF()<CR>
-
-if v:lang =~ 'fr'
-  if has('nvim')
-    nnoremap <buffer><localleader>< a<><Esc>h
-  else
-    nnoremap <buffer><localleader>< a<><Esc>
-  endif
-endif
 
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)

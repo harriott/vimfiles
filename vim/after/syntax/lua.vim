@@ -22,7 +22,7 @@ syntax match foldLua '^\s*-- -\+>.*$'
 
 " Unfolded headings:
 hi def foldLua term=bold cterm=bold gui=bold guifg=LightGreen
-" - not working in WT: $CrPl\encoding\Vim\nvim\lua_syntax_in_NVIM_0_10_0.md
+" - not working in  WT: $CrPl\encoding\Vim\nvim\lua_syntax_in_NVIM_0_10_0.md  or  Neovide
 
 ""> 1 ends
 let b:current_syntax = "lua"
