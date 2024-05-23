@@ -94,22 +94,23 @@ vim.opt.rtp:prepend(lazypath)
 -- -> 1 lazy.nvim 1
 require('lazy').setup({
     {'akinsho/bufferline.nvim',config=function() require'bufferline'.setup() end,},
+      -- shows Nvim tabs as numbers to right
     {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup() end,},
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,},
     -- $lazy/gitsigns.nvim/doc/gitsigns.txt
     {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
-    {'nanozuki/tabby.nvim',opts={}}, -- might be crashing  lualine
     -- require'lazy/catppuccin',
     require'lazy/fzf-lua',
     require'lazy/harpoon',
     require'lazy/leap',
     require'lazy/lualine',
     require'lazy/neogit',
-    require'lazy/oil',
     -- require'lazy/nvim-hlslens',
     require'lazy/nvim-notify',
     require'lazy/nvim-tree',
+    require'lazy/oil',
     require'lazy/surround',
+    -- require'lazy/tabby',
     require'lazy/telescope', -- something in here slowing folding of large md's
       require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',

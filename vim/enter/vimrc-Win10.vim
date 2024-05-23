@@ -22,12 +22,13 @@ source $VIMRUNTIME/mswin.vim  " *map <c-f4>  to close window
 " Undo some:
 unmap <C-A>
 " - revert Ctrl-A back to number increment:
-if has('nvim')
-  " it was  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
-  unmap <c-v>
-elseif has('gui_running')
+if has('gui_running') && !has('nvim')
   unmap <c-f>
   " - ctrl-f back to move forward
+endif
+if has('nvim') && !exists('g:neovide')
+  " it was  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
+  unmap <c-v>
 endif
 
 ""> 3 my initial settings

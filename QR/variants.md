@@ -148,7 +148,8 @@ $misc/CP/vimtest/README.md
     C:\Vim\vim90\ftplugin
     /usr/share/vim/vim91/
 
-options as variable: `:echo &textwidth`
+- `&&`, `||`
+- options as variable: `:echo &textwidth`
 
 ### mappings
     :Bufferize map           " n s v

@@ -494,10 +494,21 @@ packadd lf-vim
 " loaded in  $vimfiles/vim/after/plugin/plugins.vim
 
 "">> vim-fontsize
-packadd vim-fontsize
-" <Leader><Leader>+ -> bigger font
-" <Leader><Leader>- -> smaller font
-" <Leader><Leader>0 -> default font size
+" $vfvp/packs-cp/opt/vim-fontsize/doc/fontsize.txt
+if has('gui_running')
+  packadd vim-fontsize
+    let g:fontsize#timeout = 0
+    nmap <silent> <leader>fs <Plug>FontsizeBegin
+    " - enters fontsize mode
+    nmap <silent> <SID>DisableFontsizeInc     <Plug>FontsizeInc
+    nmap <silent> <SID>DisableFontsizeDec     <Plug>FontsizeDec
+    nmap <silent> <SID>DisableFontsizeDefault <Plug>FontsizeDefault
+endif
+" fontsize mode:
+"  +/=             increases
+"  -               decreases
+"  0               returns to default
+"  <CR>/<space>/q  quits
 
 ""> shell
 

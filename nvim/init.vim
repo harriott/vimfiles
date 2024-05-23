@@ -13,15 +13,20 @@ let g:sourced_init_vim = 1
 command DiffOrig vert new | set buftype=nofile | read ++edit
 " - can't recall why I reduced this definition
 
+" if exists('g:neovide') | map! <S-Insert> <C-R>+ | endif
+
 if has('win64')
   " Providers
   let g:loaded_perl_provider = 0
   let g:python3_host_prog = 'C:\Python312\python.exe'
 else
   if exists('g:neovide')
+    if hostname() == 'sbMb'
+      set guifont=UbuntuMono_Nerd_Font_Mono:h8
+    else " i34G1TU02
+      set guifont=UbuntuMono_Nerd_Font_Mono:h9
+    endif " set  $machBld/jo/Bash/exportWS  accordingly
     map! <S-Insert> <C-R>+
-    " set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 10
-    set guifont=UbuntuMono_Nerd_Font_Mono:h9
   endif
 endif
 
@@ -59,7 +64,7 @@ endif
 let g:useSTW = 0
 
 "">> colorscheme
-if has('win64')
+if has('win64') || exists('g:neovide')
   " $vfvp/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
   let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'allow_italic': 1 },
       \ 'default.dark': { 'override' : { 'folded_bg' : ['', '00'] } } } }
