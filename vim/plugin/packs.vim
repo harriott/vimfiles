@@ -646,6 +646,7 @@ packadd vim-mark  " requires  ingo-library
 
 "">> supertab
 " $vfvp/packs-cp/opt/supertab/doc/supertab.txt
+" :verb imap <tab>
 " c-v tab  to insert a literal tab
 packadd supertab
 

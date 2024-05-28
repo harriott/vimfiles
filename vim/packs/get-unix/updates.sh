@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: fdl=1 sw=1:
 
-# Joseph Harriott, Thu 09 May 2024
+# Joseph Harriott, Tue 28 May 2024
 
 # bash $vfvp/get-unix/updates.sh
 
@@ -24,5 +24,5 @@ echo 'Now check the forks!'
 echo ''
 
 #=> 2 tidy up
-. $vimfiles/packsGet-ArchLinux/after.sh
+. $vfvp/get-unix/after.sh
 

@@ -35,7 +35,7 @@ nmap <leader><leader>f <Plug>(easymotion-overwin-f)
 autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
 "  (in an autocmd to be sure it works with Arch vim-colors-solarized)
 
-""> fzf.vim
+""> fzf - fzf.vim
 " $vfvp/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
 " requires  :set shell  be unchanged from  cmd.exe
 let g:fzf_vim = {}
@@ -96,6 +96,10 @@ vnoremap <c-f3> <Esc>:BCommits<CR>
 nnoremap <s-f3> :Commits<CR>
 inoremap <s-f3> <Esc>:Commits<CR>
 vnoremap <s-f3> <Esc>:Commits<CR>
+
+""> fzf - vim-fzf-dictionary
+packadd vim-fzf-dictionary
+imap <c-d> <Plug>(fzf-dictionary-open)
 
 ""> layout - statusline
 if has('unix') " vim-airline

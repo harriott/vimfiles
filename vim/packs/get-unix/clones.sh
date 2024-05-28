@@ -3,7 +3,7 @@
 
 # Joseph Harriott
 # grab repositories
-# bash $vimfiles/packsGet-ArchLinux/clones.sh
+# bash $vfvp/get-unix/clones.sh
 
 set -e
 
@@ -18,8 +18,18 @@ echo; cd $vimfiles/nvim; gd packs-unix
 gd opt; ls
 
 
+#==> vim colo
+echo; cd $vimfiles/vim/packs; gd packs-colo
+
+gd opt; ls
+
+  # $gc https://github.com/EdenEast/nightfox.nvim
+  # $gc https://github.com/altercation/vim-colors-solarized
+  # $gc https://github.com/svermeulen/vim-colors-tomorrow
+  # $gc https://github.com/reedes/vim-colors-pencil
+
 #==> vim cp
-echo; cd $vimfiles/vim; gd packs-cp
+echo; cd $vimfiles/vim/packs; gd packs-cp
 
 gd opt; ls
 
@@ -71,8 +81,6 @@ gd opt; ls
   # $gc https://github.com/qpkorr/vim-bufkill
   # $gc https://github.com/tpope/vim-characterize
   # $gc https://github.com/harriott/vim-clifm
-  # $gc https://github.com/altercation/vim-colors-solarized
-  # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/ryanoasis/vim-devicons
   # $gc https://github.com/justinmk/vim-dirvish
   # $gc https://github.com/kristijanhusak/vim-dirvish-git
@@ -120,10 +128,10 @@ gd opt; ls
   # $gc https://github.com/vim-scripts/vis
   # $gc https://github.com/harriott/vim-markdown
   # $gc https://github.com/harriott/vim-tagbar
-  # $gc https://github.com/EdenEast/nightfox.nvim
   # $gc https://github.com/airblade/vim-rooter
   # $gc https://github.com/neomutt/neomutt.vim
   # $gc https://github.com/shumphrey/fugitive-gitlab.vim
+  # $gc https://github.com/yuki-uthman/vim-fzf-dictionary
 
   # $gc https://github.com/vim-scripts/MultipleSearch
   # $gc https://github.com/moll/vim-bbye
@@ -133,7 +141,7 @@ gd opt; ls
   # [[ -d vim-gitgutter ]] && sudo rm -r vim-gitgutter; $gc https://github.com/airblade/vim-gitgutter
 
 #==> vim unix
-echo; cd $vimfiles/vim; gd packs-unix
+echo; cd $vimfiles/vim/packs; gd packs-unix
 
 gd opt; ls
 
@@ -147,13 +155,13 @@ gd opt; ls
   # $gc https://github.com/powerman/vim-plugin-AnsiEsc
 
 #==> vim win64
-echo; cd $vimfiles/vim; gd packs-win64
+echo; cd $vimfiles/vim/packs; gd packs-win64
 
 gd opt; ls
 
   # [[ -d fzf ]] && sudo rm -r fzf; $gc https://github.com/junegunn/fzf
 
 #=> 2 lists
-echo
-. $vimfiles/packsGet-ArchLinux/after.sh
+echo; cd $vimfiles/vim/packs
+. $vfvp/get-unix/after.sh
 

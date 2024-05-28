@@ -2,7 +2,7 @@
 
 " Language:	Lua
 " Maintainer: Joseph Harriott
-" Last Change: Sat 11 May 2024
+" Last Change: Tue 28 May 2024
 " Syntax highlighting for folding my Lua scripts.
 
 " $vimfiles/vim/after/syntax/lua.vim

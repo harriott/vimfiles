@@ -2,7 +2,7 @@
 
 " Language: Vim
 " Maintainer: Joseph Harriott
-" Last Change: Sun 14 Apr 2024
+" Last Change: Tue 28 May 2024
 " "$vimfiles/vim/ftplugin/vim.vim
 "  (supplemental to  $VIMRUNTIME/ftplugin/vim.vim)
 "  also  $vimfiles/vim/after/ftplugin/vim.vim
@@ -30,7 +30,7 @@ function! VimFolds()
   endif
 endfunction
 
-setlocal fde=VimFolds() fdm=expr
+setlocal foldexpr=VimFolds() foldmethod=expr
 
 " heading strength
 "  grep -rl '"=\+' # shows that this is a good unambiguous choice

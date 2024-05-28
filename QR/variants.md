@@ -32,6 +32,7 @@ Joseph's (g)Vim Quick Reference
 
 ## neovide
     $ neovide &
+    echo g:neovide
 
 ### g:neovide
     :if !exists('g:neovide') | echo 'no neovide' | endif

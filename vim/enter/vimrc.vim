@@ -3,7 +3,7 @@
 " -------------------------------------------------------
 " - Joseph Harriott - jeu 16 mai 2024
 
-" $vimfiles/vim/enter/vimrc.vim  sourced by
+" $vimfiles/vim/enter/vimrc.vim  source'd by
 "  $vimfiles/vim/enter/vimrc-linux.vim
 "  $vimfiles\vim\enter\vimrc-Win10.vim
 
@@ -85,6 +85,9 @@ nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
 ""> quit buffer(s), quit nvim
 " originally written for terminal nvim/vim, then realised it's handy for GUIs too
 function! VimWriteClose()
+  if has('nvim')
+     NvimTreeClose
+  endif  " can't be scrunched to one line
   if len(getbufinfo({'buflisted':1})) == 1
     let cfd = expand('%:p:h') " current file directory
     edit $HOME/last_directory  " for  $Bash/bashrc-console  &  $MSWin10\PSProfile.ps1

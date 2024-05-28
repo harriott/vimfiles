@@ -65,6 +65,13 @@ Stack Exchange Vi and Vim
     c-r%     " insert relative path of current file
     c-qu201c " unicode codepoint for “
 
+## completion
+    :h ins-completion
+
+### the buffer's complete string
+    :h 'cpt'
+    :se cpt+=k
+
 ## indent of current line
     0 c-d " remove all indents
     c-d   " remove a shiftwidth
@@ -81,10 +88,6 @@ Stack Exchange Vi and Vim
     \\l           " cursorline toggle
     \\ll          " listchars (:h 'list') toggle
 
-## background
-    :h 'bg'
-    :se bg
-
 ## Colorizer
     :ColorClear         " clears colourizing
     :ColorHighlight     " impressive colourizing, but then can't be truly turned off
@@ -100,6 +103,10 @@ Stack Exchange Vi and Vim
 - deprecated: use `clrzr` on Linux
 - doesn't handle rgba's
 - only interprets codes
+
+## colorscheme background
+    :h 'bg'
+    :se bg
 
 ## colours - calmar.ws
  0 #000000  1 #800000  2 #008000  3 #808000  4 #000080  5 #800080  6 #008080  7 #c0c0c0
@@ -197,7 +204,7 @@ Stack Exchange Vi and Vim
     zm             " reduce foldlevel
     zr             " increase foldlevel (#zr -> foldlevel #)
     zv             " view cursor line (opening just enough folds)
-    zx             " set folds back to foldlevel
+    zx             " update folds
     :se fdl?       " reports the current foldlevel
 
 ### foldopen
@@ -392,6 +399,7 @@ gf                              " open file under cursor - :h gF
 
 ## Win10
 ```
+$APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :echo $computername
 :echo $programfiles
 :echo $username
@@ -484,9 +492,10 @@ u            " lowercase a visual block
 
 ## sort
 :296,349sort
-:%sort u  " removing duplicate lines
-:%sort!   " reverse
-:sort n   " numeric
+:%sort u                  " removing duplicate lines
+:%sort!                   " reverse
+:sort n                   " numeric
+:{range}sort /<regex>/ r  " sorts by matching
 
 # Visual mode commands
     V  " line-based visual SELection

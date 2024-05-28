@@ -13,12 +13,10 @@ let g:sourced_init_vim = 1
 command DiffOrig vert new | set buftype=nofile | read ++edit
 " - can't recall why I reduced this definition
 
-" if exists('g:neovide') | map! <S-Insert> <C-R>+ | endif
-
 if has('win64')
-  " Providers
-  let g:loaded_perl_provider = 0
-  let g:python3_host_prog = 'C:\Python312\python.exe'
+  " Providers:
+    let g:loaded_perl_provider = 0
+    let g:python3_host_prog = 'C:\Python312\python.exe'
 else
   if exists('g:neovide')
     if hostname() == 'sbMb'
@@ -67,13 +65,39 @@ let g:useSTW = 0
 if has('win64') || exists('g:neovide')
   " $vfvp/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
   let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'allow_italic': 1 },
-      \ 'default.dark': { 'override' : { 'folded_bg' : ['', '00'] } } } }
+    \ 'default.dark': { 'override' : { 'folded_bg' : ['', '234'], } } } }
   set background=dark | colorscheme PaperColor
   " colo apprentice
   " colo wombat
   " packadd dracula | colo dracula
 else
   colo jellybeans
+endif
+
+""> 2 mappings to toggle GUI width
+if exists('g:neovide')
+  source $vimfiles/vim/enter/GUIs.vim
+  if has('unix')
+    if hostname() == 'sbMb'
+      " se co=109  as in  $machBld/jo/Bash/exportWS
+      " se co=133  is bigger, but not covering  Conky
+      if v:lang =~ 'fr'
+        nnoremap <leader>à :call ToggleGUIwidth(109,133)<cr>
+      else
+        nnoremap <leader>0 :call ToggleGUIwidth(109,133)<cr>
+      endif
+    endif
+  else
+    if hostname() == 'HPEB840G37'
+      " se co=108  as in  $MSWin10\AZERTY.ahk
+      " se co=150  taking all rh space
+      if v:lang =~ 'fr'
+        nnoremap <leader>à :call ToggleGUIwidth(108,150)<cr>
+      else
+        nnoremap <leader>0 :call ToggleGUIwidth(108,150)<cr>
+      endif
+    endif
+  endif
 endif
 
 ""> 2 pull in lua configs

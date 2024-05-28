@@ -40,19 +40,20 @@ endif
 ""> convert mysms screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available
+  " might need to  se ff=unix  first
   nnoremap <buffer><leader><f7> :execute "silent !perl $misc/CP/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
 else
-  function! MysmsMd()
-    set fileformat=dos
+  function MysmsMd()
+    " could  use  let scrapeMd = expand('%:p')  do the transformation on  scrapeMd, then final tweaks
+    "  but requires this function to be defined before this file
+    "  eg in  $vimfiles\vim\enter\vimrc-Win10.vim
+    set fileformat=dos  " seemes to be necessary for  Perl
     write
     execute "silent !C:\\Strawberry\\perl\\bin\\perl.exe ".$misc."\\CP\\PerlTools\\mysmsMd.pl ".expand('%:p')
-    echo 'check that the following line of code worked'
-    e ++ff=dos | set ff=unix | w!
-    " Startify  " this just diverts vim's attention, ensuring that Perl's changes are loaded
   endfunction
   nnoremap <buffer><leader><f7> :call MysmsMd()<CR>
+  " - check with  :map <leader><f7>
 endif
-" check with  :map <leader><f7>
 
 ""> syntax highlighting fix
 " maxmempattern  is set in  $vimfiles/plugin/plugin.vim

@@ -58,7 +58,8 @@ end
 if vim.g.neovide then
   -- vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_cursor_vfx_mode = "torpedo"
-  vim.g.neovide_transparency = 0.9
+  vim.g.neovide_transparency = 0.93
+   -- only currently effective on win64, okay with high contrast image behind
 
   -- These don`t change Telescope floats:
   -- vim.g.neovide_floating_z_height = 10
@@ -178,11 +179,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
       {buffer=ev.buf,desc='Lspsaga outline'})
   end,})
 
--- -> 2 nvim-tree.lua
-
 -- -> 2 nvim-treesitter
 -- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
 -- :h nvim-treesitter-commands
+vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'})
 
 -- --> parsers
 -- $vimfiles/settings/nvim-unix-nvim-treesitter-TSInstallInfo.txt

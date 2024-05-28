@@ -14,6 +14,7 @@
 #  $vfvp/get-unix/updates.sh
 
 set -e
+pwd
 
 #=> 0 vim-ShowTrailingWhitespace
 sed -i 's/^c/" c/' $vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim

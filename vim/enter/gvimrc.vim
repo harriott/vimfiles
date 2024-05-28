@@ -1,8 +1,12 @@
 " vim: set fdl=1:
 
 " $vimfiles/vim/enter/gvimrc.vim
-"  sourced by  $vimfiles/vim/enter/gvimrc-Arch.vim
-"  sourced by  $vimfiles/vim/enter/gvimrc-Win10.vim
+"  not used by  Nvim
+"  source'd by
+"   $vimfiles/vim/enter/gvimrc-Arch.vim
+"   $vimfiles/vim/enter/gvimrc-Win10.vim
+
+let g:sourced_gvimrc_vim = 1
 
 ""> 0 preliminaries
 " adapted from  $VIMRUNTIME/gvimrc_example.vim
@@ -37,21 +41,7 @@ set guioptions-=m  " removes it by default
 " Ctrl+f1 can toggle it:
 nnoremap <C-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
 
-"">> toggle window width
-" possibly a better size for reading prose
-nnoremap <leader>8 :call EightyTwoColumns()<cr>
-let g:columnsdefault = 1
-function! EightyTwoColumns()
-    if g:columnsdefault
-        set columns=82
-        let g:columnsdefault = 0
-    else
-        set columns=106
-        let g:columnsdefault = 1
-    endif
-endfunction
-
-"">> window sizes
+"">> gVim siwe
 " set lines=34  " good for screen with 600 pixel height
 set lines=46  " good for screen with 768 pixel height
 if has('unix') && g:monitorheight == '900'
@@ -64,5 +54,15 @@ elseif has('win32') && g:monitorheight == '1080'
   set lines=60
 endif
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
-" 0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
+
+"">>> toggle width
+source $vimfiles/vim/enter/GUIs.vim
+if hostname() == 'sbMb'
+  " se co=160  takes all rh side
+  if v:lang =~ 'fr'
+    nnoremap <leader>à :call ToggleGUIwidth(106,160)<cr>
+  else
+    nnoremap <leader>0 :call ToggleGUIwidth(106,160)<cr>
+  endif
+endif
 

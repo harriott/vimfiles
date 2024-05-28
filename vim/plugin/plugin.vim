@@ -21,8 +21,8 @@ nnoremap <Space> za
 
 ""> buffers
 " after a fugitive commit message
-autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ nnoremap <F4> :wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ inoremap <F4> <Esc>:wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ nnoremap <buffer> <F4> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
 
 " refresh - writes all changed buffers and reloads the current one
 nnoremap <F5> :wa<CR>:edit<CR>
@@ -34,8 +34,8 @@ vnoremap <F5> <Esc>:wa<CR>:e<CR>
 autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <C-e> ggVGd:wq <CR>
 
 " finish an nnn file rename:
-autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <F4> :wa<CR>:q<CR>
-autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <F4> <Esc>:wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <F4> :wa<CR>:q<CR>
+autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
 
 "">> buffer - packing msgFilterRules.dat
 " These hooks aren't in an  ftplugin/dat.vim  because there's no such default filetype.
