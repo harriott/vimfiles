@@ -14,6 +14,9 @@ cd $vfvp
 # once=yes
 . $misc/GRs/update-depth1.sh
 
+#=> 1 msmtp-scripts-vim
+rsync -irtv --delete $DCGRs/unix/linux/marlam-msmtp/scripts/vim/ $vfvp/packs-cp/opt/msmtp-scripts-vim
+
 #=> 1 my forks
 echo ''
 xdg-open https://github.com/harriott/vim-gfm-syntax

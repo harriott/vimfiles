@@ -3,6 +3,7 @@ packs-colo/opt/Apprentice
 packs-colo/opt/darcula
 packs-colo/opt/dracula
 packs-colo/opt/jellybeans.vim
+packs-colo/opt/kanagawa.nvim
 packs-colo/opt/nightfox.nvim
 packs-colo/opt/papercolor-theme
 packs-colo/opt/vim-colors-pencil
@@ -81,6 +82,7 @@ packs-cp/opt/vim-easymotion
 packs-cp/opt/vim-flog
 packs-cp/opt/vim-fontsize
 packs-cp/opt/vim-fugitive
+packs-cp/opt/vim-fzf-dictionary
 packs-cp/opt/vim-gfm-syntax
 packs-cp/opt/vim-gitgutter
 packs-cp/opt/vim-go

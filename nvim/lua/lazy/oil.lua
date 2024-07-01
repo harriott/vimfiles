@@ -4,6 +4,7 @@
 -- g? = actions.show_help
 -- $lazy/oil.nvim/doc/oil.txt
 -- $lazy/oil.nvim/README.md
+-- :e $HOME
 -- :e $ITstack/MSWin
 
 return {

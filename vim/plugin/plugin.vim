@@ -182,6 +182,7 @@ function! ClearFancyGlyphs()
   :sil!%s/ʻ/'/g
   :sil!%s/‘/'/g
   :sil!%s/’/'/g
+  :sil!%s/·/-/g
   :sil!%s/‑/-/g
   :sil!%s/–/-/g
   :sil!%s/—/-/g
@@ -544,7 +545,7 @@ function! TweakLS()
   normal! "/p
   sil! s/\\<//  " remove \<
   sil! s/\\>//  " remove \>
-  normal! gue
+  normal! 0gue
 endfunction
 nnoremap <leader>/ :call TweakLS()<CR>
 

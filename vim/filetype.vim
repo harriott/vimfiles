@@ -1,9 +1,10 @@
-" vim: se fdl=1:
 
 " Maintainer: Joseph Harriott
 " Last Change: Sat 11 May 2024
 " $vimfiles/vim/filetype.vim
-"  supplemental to  $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
+"  supplemental to
+"   $VIMRUNTIME/filetype.lua
+"   $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
 
 ""> 0 aesl - Thymio's Aseba code
 "  I suppose that sgml filetype might be more appropriate,
@@ -20,15 +21,20 @@ au BufNewFile,BufRead ~/.emacs.d/history setlocal filetype=lisp
 au BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
 
 ""> 0 muttrc
-au BufNewFile,BufRead muttrc-* setlocal filetype=neomuttrc
+au BufNew,BufNewFile,BufRead muttrc-*,*muttrc-accounts/* setlocal filetype=neomuttrc
 " overcomes $VIMRUNTIME/filetype.vim
-"  required for  muttrc-gmx (see $DJH/technos/IT1/cross-platform/Vim/muttrc-123)
+"  I needed this for  $clMail/neomutt/muttrc-accounts/gmx ($jtCP/Vim/muttrc-123)
 
 ""> 0 nomacs configuration
 au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dosini
 
 ""> 0 nvim lua's
 au BufRead,BufNew,BufNewFile */nvim/**/*.lua source $vimfiles/vim/ftplugin/lua-nvim.vim
+
+""> 0 PKGBUILD
+if has('nvim')
+  au BufNew,BufNewFile,BufRead PKGBUILD setlocal filetype=PKGBUILD | source /usr/share/vim/vimfiles/syntax/PKGBUILD.vim
+endif
 
 ""> 0 special functionality for my .emdr's
 " my email draft format, needs to be seen as  filetype text  for  ALE
@@ -38,11 +44,16 @@ au! BufRead,BufNewFile *.emdr setf text |
 ""> 0 special functionality for my .md's
 au! BufRead,BufNewFile *.md source $vimfiles/vim/ftplugin/md.vim
 
+""> 0 SRCINFO
+if has('nvim')
+  au BufNew,BufNewFile,BufRead .SRCINFO setf SRCINFO | source /usr/share/vim/vimfiles/syntax/SRCINFO.vim
+endif
+
 ""> 1 other filetypes
 " if exists("did_load_filetypes") | finish | endif  " kills detection in Neovim
 aug filetypedetect
     au! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
-    au! BufRead,BufNewFile *.cmplt    setf cmplt    " $vimfiles/vim/syntax/cmplt.vim
+    au! BufRead,BufNewFile *.cmplt   setf cmplt    " $vimfiles/vim/syntax/cmplt.vim
     au! BufRead,BufNewFile *.digs    setf digs      " $vimfiles/vim/ftplugin/digs.vim
     au! BufRead,BufNewFile *.dirl    setf dirl      " $vimfiles/vim/syntax/dirl.vim
     au! BufRead,BufNewFile *.exts    setf exts      " $vimfiles/vim/syntax/exts.vim

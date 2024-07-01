@@ -1,7 +1,7 @@
 
-" ----------------------------------------------------------------------
-" this is sourced by  $MSWin10\user\_gvimrc
-" ----------------------------------------------------------------------
+" ------------------------------------
+" this is sourced by  $machBld\_gvimrc
+" ------------------------------------
 
 " move on ot the more portable configuration:
 source $vimfiles/vim/enter/gvimrc.vim

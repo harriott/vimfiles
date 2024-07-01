@@ -40,6 +40,7 @@ return {
           path_display={'truncate'},
         },
         extensions = {
+	      frecency = { db_safe_mode = false, matcher = "fuzzy", }, -- $vimfiles/nvim/lua/lazy/telescope-frecency.lua
           ['ui-select'] = {
             require'telescope.themes'.get_cursor(),
         -- pickers = {}

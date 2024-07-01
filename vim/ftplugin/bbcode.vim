@@ -13,12 +13,14 @@ source $vimfiles/vim/ftplugin/HashEqualsFolding.vim
 source $vimfiles/vim/ftplugin/HashFolding.vim
 setlocal foldcolumn=1
 
-""> tags - bold
+""> tags - inline code
+" [color=navy]this ain't readable in dark themes[/color]
+
 " wrap the inner word under cursor
-nnoremap <buffer> <leader><leader>] viwc[color=navy][/color]<Esc>bbp
+nnoremap <buffer> <leader><leader>] viwc[u][/u]<Esc>bbp
 
 " wrap a selection
-vnoremap <buffer> <leader><leader>] c[color=navy][/color]<Esc>bbp
+vnoremap <buffer> <leader><leader>] c[u][/u]<Esc>bbp
 
 ""> tags - code
 " wrap the inner word under cursor

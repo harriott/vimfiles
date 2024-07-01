@@ -1,6 +1,7 @@
 
 # These are the files that I want to ignore:
 *.pdf
+**/*/packs-colo
 **/*/packs-cp
 **/*/packs-nvim
 **/*/packs-unix

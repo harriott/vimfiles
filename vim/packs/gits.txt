@@ -2,6 +2,7 @@
 ../packs/packs-colo/opt/darcula/.git
 ../packs/packs-colo/opt/dracula/.git
 ../packs/packs-colo/opt/jellybeans.vim/.git
+../packs/packs-colo/opt/kanagawa.nvim/.git
 ../packs/packs-colo/opt/nightfox.nvim/.git
 ../packs/packs-colo/opt/papercolor-theme/.git
 ../packs/packs-colo/opt/vim-colors-pencil/.git

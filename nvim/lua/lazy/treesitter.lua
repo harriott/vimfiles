@@ -20,13 +20,13 @@ return {
 
       highlight = { -- parser configurations - see  $vimfiles/nvim/lua/init.lua
         -- enable = true, -- when true, large md's fold slowly
-        disable = {'bash','lua','markdown','vim',},
+        disable = {'bash','lua','markdown','muttrc','vim',},
           -- large md's fold slowly
           -- my  lua  &  vim  fold syntax are definitively lost
         enable = {'perl',},
           -- bad
             -- diff      layout isn't preferable
-            -- muttrc    is worse than Vim's
+            -- muttrc    is much worse than Vim's
             -- python    is better
             -- tmux      is worse than Vim's
             -- tsv       get weird highlighting artefacts

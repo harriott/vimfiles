@@ -11,11 +11,11 @@ else
   nnoremap <leader>v v$hy
 endif
 
-" Link unnamed register to X-Windows clipboard:
-set clipboard=unnamedplus  " se cb
-" Needed because:
-"  Nvim sets nothing
-"  Vim sets  autoselect,exclude:cons\|linux  which somehow obviates  unnamedplus
+" Include + register in c/d/y/p operations:
+set clipboard^=unnamedplus  " se cb, stackoverflow 23946289
+" - needed because:
+"    Nvim sets nothing
+"    Vim sets  autoselect,exclude:cons\|linux  which somehow obviates  unnamedplus
 " see CopyQ  settings in  $OSAB/mb-sbMb/build.txt
 
 " let g:netrw_browsex_viewer = 'xdg-open-bda'

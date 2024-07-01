@@ -16,7 +16,11 @@ command DiffOrig vert new | set buftype=nofile | read ++edit
 if has('win64')
   " Providers:
     let g:loaded_perl_provider = 0
-    let g:python3_host_prog = 'C:\Python312\python.exe'
+    if hostname() == 'HPEB840G37'
+      let g:python3_host_prog = 'C:\Python312\python.exe'
+    else
+      let g:python3_host_prog = 'C:\Users\jharr\AppData\Local\Programs\Python\Python312\python.exe'
+    endif
 else
   if exists('g:neovide')
     if hostname() == 'sbMb'
@@ -65,7 +69,8 @@ let g:useSTW = 0
 if has('win64') || exists('g:neovide')
   " $vfvp/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
   let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'allow_italic': 1 },
-    \ 'default.dark': { 'override' : { 'folded_bg' : ['', '234'], } } } }
+    \ 'default.dark': { 'override' : { 'color05':['','247'], 'error_fg':['','09'],
+      \ 'folded_bg':['','234'], 'linenumber_fg':['','243'], } } } }
   set background=dark | colorscheme PaperColor
   " colo apprentice
   " colo wombat
@@ -103,6 +108,7 @@ endif
 ""> 2 pull in lua configs
 if has('win64')
   let g:sqlite_clib_path = 'C:/Program Files/LibreOffice/program/sqlite3.dll'
+  " g $env:programfiles\LibreOffice\program\sqlite3.dll
 endif " - for  $vimfiles/nvim/lua/lazy/nvim-neoclip.lua
 lua require('init')
 " - $vimfiles/nvim/lua-init.lua

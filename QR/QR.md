@@ -363,7 +363,7 @@ z\                    " incsearch-fuzzy-stay
 :term
 <shellcmd> | gvim -   " pipes shell command output into gvim
 gx                    " open url under cursor (or all of first line of markdown link)
-shift+F11             " open in Emacs
+\<f12>                " open in Emacs
 ```
 
 ## files & directories

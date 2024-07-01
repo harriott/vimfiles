@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - mer 15 mai 2024
+" https://harriott.githubio/ - Wed 29 May 2024
 
 " $vimfiles/vim/plugin/packs.vim
 
@@ -72,12 +72,16 @@ packadd vim-rhubarb  " for GitHub
 "">> languages
 packadd CSS-one-line--multi-line-folding
 
+"">>> conky-syntax.vim
+" $vfvp/packs-cp/opt/conky-syntax.vim/ftdetect/conkyrc.vim  delete 2nd *
+if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
+
 " "">>> CSS Color
 " packadd vim-css-color  " slows down every other filetype...
 
 "">>> csv.vim
 " configured in  $vimfiles/ftplugin/csv.vim
-" overriden in  $vimfiles/after/plugin/plugins.vim
+"  & see  $vimfiles/vim/after/plugin/plugins.vim
 
 " $vfvp/packs-cp/opt/csv.vim/ftdetect/csv.vim
 " :h ft-csv  ($vfvp/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
@@ -131,11 +135,22 @@ packadd emmet-vim
 "">>> mediawiki.vim
 packadd mediawiki.vim  " $vfvp/packs-cp/opt/mediawiki.vim/README.md
 
+"">>> msmtp-scripts-vim
+" $vfvp/packs-cp/opt/msmtp-scripts-vim/ftdetect/msmtp.vim
+if has('nvim') | packadd msmtp-scripts-vim | endif
+
 "">>> MTA
 packadd MatchTagAlways
-" for  XML/HTML  tags
-" requires a Python 3 that corresponds to vim's compilation
-" $vfvp/packs-cp/opt/MatchTagAlways/test.html
+" for  XML/HTML  tags - $vfvp/packs-cp/opt/MatchTagAlways/test.html
+" Neovim: works fine. Vim: corresponding Python required.
+
+"">>> NeoMutt
+" $vfvp/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim
+" $vfvp/packs-cp/opt/neomutt.vim/syntax/neomuttrc.vim
+packadd neomutt.vim
+" superseding
+"  /usr/share/nvim/runtime/syntax/muttrc.vim
+"  /usr/share/nvim/runtime/syntax/neomuttrc.vim
 
 "">>> Org.vim
 packadd org.vim
@@ -215,6 +230,7 @@ packadd vim-mbsync
 packadd vim-pandoc-syntax
 
 "">>> vim-prettier
+" $vfvp/packs-cp/opt/vim-prettier/doc/prettier.txt
 " :Prettier
 packadd vim-prettier
 
@@ -359,10 +375,6 @@ let g:ale_linters_explicit = 1  " turns off all except explicity defined linters
 let g:ale_sign_column_always = 1
 packadd ale
 
-"">> NeoMutt
-" $vfvp/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim
-packadd neomutt.vim
-
 "">> thesaurus_query.vim
 let g:tq_map_keys=0
 let g:tq_enabled_backends=["openoffice_en","mthesaur_txt","cnrtl_fr","synonymo_fr"]
@@ -451,6 +463,8 @@ packadd FoldText
 " only used in  $vimfiles/nvim/init.vim
 if has('nvim')
   let g:better_whitespace_ctermcolor='Black'
+  let g:better_whitespace_filetypes_blacklist=['diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'fugitive']
+  " - removed  markdown
   let g:better_whitespace_guicolor='Black'
   let g:better_whitespace_operator=''
   packadd vim-better-whitespace
@@ -743,6 +757,7 @@ packadd close-buffers.vim
 "">>> vim-buffing-wheel
 packadd vim-buffing-wheel
 " - + X
+" if  netrw  has been run, keeping getting a  [No Name]  buffer created...
 
 "">>> vim-bufkill
 " :BB :BF  could be mapped to replace some of the functionality of  vim-buffing-wheel

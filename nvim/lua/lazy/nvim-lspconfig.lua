@@ -7,6 +7,7 @@
 -- install language servers with Mason ($vimfiles/nvim/lua/init.lua)
 
 -- K => vim.lsp.buf.hover(), so  LspStop  to recover  keywordprg
+-- :LspLog (~/.local/state/nvim/lsp.log)
 
 return {
   { 'neovim/nvim-lspconfig',
@@ -28,7 +29,7 @@ return {
       -- require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
         -- but no completions...
 
-      require'lspconfig'.lemminx.setup{}  -- no sign of it yet...
+      if vim.fn.has("win64") == 1 then require'lspconfig'.lemminx.setup{} end
 
       require'lspconfig'.lua_ls.setup {
           on_init = function(client)
@@ -52,15 +53,6 @@ return {
             perlcriticProfile = '', perlcriticEnabled = true, } } }
             -- bung an exit in some code to see this work
 
-      -- if vim.fn.has("win64") == 1 then
-      --   local psesbp = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services'
-      --   local psesbp = '$MASON'
-      --   local psesbp = "$MASON"
-      --   apex_jar_path = vim.fn.expand "$MASON/share/apex-language-server/apex-jorje-lsp.jar",
-      --   ajp = vim.fn.expand "$MASON/share/apex-language-server/apex-jorje-lsp.jar"
-      -- else
-      --   local psesbp = '~/.local/share/nvim/mason/packages/powershell-editor-services'
-      -- end
       require'lspconfig'.powershell_es.setup{
         -- bundle_path = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
         bundle_path = vim.fn.expand "$MASON/packages/powershell-editor-services",

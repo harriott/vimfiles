@@ -1,6 +1,6 @@
 " vim: set fdl=1:
 
-" Joseph Harriott - mar 14 mai 2024
+" Joseph Harriott - mer 19 juin 2024
 
 " $vimfiles/vim/enter/vimrc-Win10-paths.vim
 " source'd by
@@ -9,16 +9,8 @@
 " symlinked in  $MSwin10/mb/symlinks-mostly.ps1
 
 ""> paths
-let $Enc = $HOME.'\encrypted'
-let $lazy = $HOME.'\AppData\Local\nvim-data\lazy'
-let $nvim = $HOME.'\AppData\Local\nvim'
-let $Pandoc = $HOME.'\AppData\Roaming\Pandoc'
-let $tex = $HOME.'\AppData\Roaming\MiKTeX\tex'
-if hostname() == 'HPEB840G36'
-  let $Drpbx = 'D:\Dropbox'
-elseif hostname() == 'HPEB840G37'
-  let $Drpbx = $HOME.'\Dropbox'
-endif
+let $CPF = $programfiles
+let $Drpbx = 'D:\Dropbox'
   let $DJH = $Drpbx.'\JH'
     let $Cfzd = $DJH.'\Cafezoide'
       let $CzPhy = $Cfzd.'\PhysicalProperty'
@@ -43,6 +35,7 @@ endif
           let $vimfiles = $onGH.'\vimfiles'
             let $vfvp = $vimfiles.'\vim\packs'
       let $TeNo = $core.'\TextNotes'  " used in  $TeNo
+    let $DaLi = $DJH.'\Jo-now\DailyLife'
     let $FrFa = $DJH.'\Jo-F+F'
       let $FFIdF = $FrFa.'\France\IdF'  " $FFIdF  used in  $TeNo
     let $JHt = $DJH.'\Jo-technos'
@@ -52,4 +45,12 @@ endif
       let $JHm = $JHw.'\IT-Jekyll-harriott-minima'
     let $Thb = $DJH.'\Thb-dr'
   let $DCGRs = $Drpbx.'\Cop\GRs'
+let $Enc = $HOME.'\encrypted'
+let $HADL = $HOME.'\AppData\Local'
+  let $HADLM = $HADL.'\Microsoft'
+  let $lazy = $HADL.'\nvim-data\lazy'
+  let $nvim = $HADL.'\nvim'
+let $HADR = $HOME.'\AppData\Roaming'
+  let $Pandoc = $HADR.'\Pandoc'
+  let $tex = $HADR.'\MiKTeX\tex'
 

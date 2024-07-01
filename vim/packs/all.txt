@@ -13,6 +13,11 @@
 ../packs/packs-colo/opt/dracula/.github
 ../packs/packs-colo/opt/jellybeans.vim/colors
 ../packs/packs-colo/opt/jellybeans.vim/.git
+../packs/packs-colo/opt/kanagawa.nvim/assets
+../packs/packs-colo/opt/kanagawa.nvim/colors
+../packs/packs-colo/opt/kanagawa.nvim/extras
+../packs/packs-colo/opt/kanagawa.nvim/.git
+../packs/packs-colo/opt/kanagawa.nvim/lua
 ../packs/packs-colo/opt/nightfox.nvim/autoload
 ../packs/packs-colo/opt/nightfox.nvim/colors
 ../packs/packs-colo/opt/nightfox.nvim/doc
@@ -198,6 +203,9 @@
 ../packs/packs-cp/opt/mru/.github
 ../packs/packs-cp/opt/mru/plugin
 ../packs/packs-cp/opt/mru/test
+../packs/packs-cp/opt/msmtp-scripts-vim/ftdetect
+../packs/packs-cp/opt/msmtp-scripts-vim/ftplugin
+../packs/packs-cp/opt/msmtp-scripts-vim/syntax
 ../packs/packs-cp/opt/neomutt.vim/doc
 ../packs/packs-cp/opt/neomutt.vim/ftdetect
 ../packs/packs-cp/opt/neomutt.vim/ftplugin

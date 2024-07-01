@@ -197,28 +197,29 @@ inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
 "">> nerdtree-git-plugin
 packadd nerdtree-git-plugin
 
-"">> vim-dirvish
-" h dirvish
-" can't navigate up a directory
-" takes over :e.
+" "">> vim-dirvish
+" " h dirvish
+" " can't navigate up a directory
+" " takes over :e.
+" " -  breaks  vim-buffing-wheel
 
-" in dirvish
-"  -       -> out
-"  <enter> -> in
-"  a       -> open file in window left
-"  g?      -> dirvish-mappings
-"  gq      -> quit
-"  preview left
-"   p
-"    Ctrl-n -> next
-"    Ctrl-p -> previous
+" " in dirvish
+" "  -       -> out
+" "  <enter> -> in
+" "  a       -> open file in window left
+" "  g?      -> dirvish-mappings
+" "  gq      -> quit
+" "  preview left
+" "   p
+" "    Ctrl-n -> next
+" "    Ctrl-p -> previous
 
-packadd vim-dirvish
+" packadd vim-dirvish
 
-"">> vim-dirvish-git
-if has('unix')
-  packadd vim-dirvish-git
-endif
+" "">> vim-dirvish-git
+" if has('unix')
+"   packadd vim-dirvish-git
+" endif
 
 "">> vim-picker
 if has('unix')

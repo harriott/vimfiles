@@ -12,6 +12,7 @@ Joseph's (g)Vim Quick Reference
     :echo nvim_get_runtime_file('parser', v:true)
     :lua vim.cmd.tabnew()
     :Man git
+    C /usr/share/nvim/runtime
 
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
     fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
@@ -40,8 +41,10 @@ Joseph's (g)Vim Quick Reference
 
 ## OS
     $HOME\AppData\Local\nvim-data\shada\main.shada
+    & $CPF\Neovim\bin\nvim.exe -h
     :=jit.os
     :=vim.fn.has("linux")
+    where.exe nvim.exe
 
 ### win64 ?
     :lua if package.config:sub(1,1) == "\\" then print('win64') end  " leveraging pure Lua
@@ -121,12 +124,13 @@ $misc/CP/vimtest/README.md
     :let@a=@_                         " sets a to (always empty) black hole register
     :let@q=@k                         " sets a to contents of register k
 
-- `"` = default regiser
-- `*` = X11 primary (mouse) regiser
-- `+` = X11 clipboard regiser
-- `0` = yank regiser
+- `"` = unnamed (default) register
+- `*` = X11 primary (mouse) register
+- `+` = X11 clipboard register
+- `-` = small delete register
+- `0` = yank register
 - `1-9` = shifting delete registers
-- `_` = null regiser
+- `_` = null register
 
 ## settings
     :Bufferize dig!        " categorised digraphs
@@ -145,9 +149,7 @@ $misc/CP/vimtest/README.md
     :verb se tw            " shows where textwidth was set
 
     $VIMRUNTIME
-    C \usr\share\vim\vim90\ftplugin
     C:\Vim\vim90\ftplugin
-    /usr/share/vim/vim91/
 
 - `&&`, `||`
 - options as variable: `:echo &textwidth`
@@ -184,7 +186,7 @@ $misc/CP/vimtest/README.md
 #### settings
     :Bufferize sy  " :h syn-list
 	:hi
-    :Inspect  " to see what's highlighting under the cursor
+    :Bufferize Inspect  " to see what's highlighting under the cursor
     :se synmaxcol=0  " removes 3000 character limit (:se smc)
 	:so $VIMRUNTIME/syntax/hitest.vim
     :sy sync fromstart  " but can't find any way to check this setting

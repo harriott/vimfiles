@@ -44,7 +44,7 @@ set laststatus=2  "ls=2  - always display the status line, already set in nvim
 set wildmode=longest,full
 set wildmenu
 
-set listchars=eol:│,nbsp:␣,trail:·,tab:»·  "nicer settings for list mode (:h 'list')
+set listchars=eol:│,nbsp:␣,trail:·,tab:»·  "nicer settings for list mode (:se lcs)
 
 set history=500  " just guessing here...
 set modelines=4

@@ -6,6 +6,7 @@
 "  $MSWin10\mb\_vimrc-AZERTY
 "  $vimfiles/nvim/init.vim
 
+" if $computername == 'HPEB840G36' | let mapleader = 'ù' | endif  " until  $MSWin10\AZERTY.ahk
 if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \
 
 ""> 0 quit if called from Git's vim
@@ -80,7 +81,7 @@ endif
 
 "">> nicer font
 if hostname() == 'HPEB840G36'
-  set guifont=Lucida_Console:h8
+  set guifont=Lucida_Console:h8  " smallest available (for 1366x768 screen)
 else
   set guifont=Lucida_Console:h9
 endif

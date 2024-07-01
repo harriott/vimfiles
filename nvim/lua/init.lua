@@ -1,5 +1,5 @@
 
--- https://harriottgithubio/ - mer 22 mai 2024
+-- https://harriottgithubio/ - Wed 29 May 2024
 
 -- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
@@ -96,7 +96,9 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     {'akinsho/bufferline.nvim',config=function() require'bufferline'.setup() end,},
       -- shows Nvim tabs as numbers to right
-    {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup() end,},
+    {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup()
+      vim.keymap.set({'n'},'<leader>sv',"<Cmd>ScrollViewToggle<CR>") end,},
+    -- $lazy/nvim-scrollview/doc/scrollview.txt
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,},
     -- $lazy/gitsigns.nvim/doc/gitsigns.txt
     {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
@@ -122,9 +124,10 @@ require('lazy').setup({
           -- context.vim  works better
     {'williamboman/mason.nvim',config=function() require'mason'.setup() end,},
       -- $lazy/mason.nvim/doc/mason.txt
-      -- :che mason
+      -- :checkhealth mason
       -- :LspInfo
       -- :Mason
+      -- :MasonLog (~/.local/state/nvim/mason.log)
         -- g?  toggles help
       -- :MasonInstall bash-language-server
       -- :MasonInstall emmet-language-server
@@ -138,7 +141,7 @@ require('lazy').setup({
       -- :MasonInstall pyright
       -- :MasonInstall vim-language-server
       -- packages directory
-        -- :echo $MASON
+        -- :edit $MASON/packages (where defined?)
         -- g $HOME\AppData\Local\nvim-data\mason\packages
         -- r ~/.local/share/nvim/mason/packages
     {"williamboman/mason-lspconfig.nvim",
@@ -185,13 +188,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'})
 
 -- --> parsers
--- $vimfiles/settings/nvim-unix-nvim-treesitter-TSInstallInfo.txt
+-- $vimfiles/settings/nvim-unix-TSInstallInfo-sbMb.txt
+-- g $lazy\nvim-treesitter\parser
 -- r $lazy/nvim-treesitter/parser
 
 -- ---> get
 function GetTSParsers()
   -- vim.cmd 'TSInstall bash'
-  -- vim.cmd 'TSInstall lua' -- error (vim-illuminate) if open a  *.lua  without this parser present
+  -- vim.cmd 'TSInstall lua'
+    -- error (vim-illuminate) if open a  *.lua  without this parser present
   -- vim.cmd 'TSInstall markdown'
   -- vim.cmd 'TSInstall perl'
   -- vim.cmd 'TSInstall python'

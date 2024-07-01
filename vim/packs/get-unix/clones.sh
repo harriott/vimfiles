@@ -12,14 +12,8 @@ gc='git clone'
 # gc='git clone --filter=blob:none'
 gd(){ echo $1; [[ -d $1 ]] || mkdir $1; cd $1; }
 
-#==> nvim unix
-echo; cd $vimfiles/nvim; gd packs-unix
-
-gd opt; ls
-
-
 #==> vim colo
-echo; cd $vimfiles/vim/packs; gd packs-colo
+echo; cd $vfvp; gd packs-colo
 
 gd opt; ls
 
@@ -27,12 +21,14 @@ gd opt; ls
   # $gc https://github.com/altercation/vim-colors-solarized
   # $gc https://github.com/svermeulen/vim-colors-tomorrow
   # $gc https://github.com/reedes/vim-colors-pencil
+  # $gc https://github.com/rebelot/kanagawa.nvim
 
 #==> vim cp
-echo; cd $vimfiles/vim/packs; gd packs-cp
+echo; cd $vfvp; gd packs-cp
 
 gd opt; ls
 
+  # $gc https://github.com/smancill/conky-syntax.vim
   # $gc https://github.com/dense-analysis/ale
   # $gc https://github.com/jlanzarotta/bufexplorer
   # $gc https://github.com/AndrewRadev/bufferize.vim
@@ -141,7 +137,7 @@ gd opt; ls
   # [[ -d vim-gitgutter ]] && sudo rm -r vim-gitgutter; $gc https://github.com/airblade/vim-gitgutter
 
 #==> vim unix
-echo; cd $vimfiles/vim/packs; gd packs-unix
+echo; cd $vfvp; gd packs-unix
 
 gd opt; ls
 
@@ -155,13 +151,13 @@ gd opt; ls
   # $gc https://github.com/powerman/vim-plugin-AnsiEsc
 
 #==> vim win64
-echo; cd $vimfiles/vim/packs; gd packs-win64
+echo; cd $vfvp; gd packs-win64
 
 gd opt; ls
 
   # [[ -d fzf ]] && sudo rm -r fzf; $gc https://github.com/junegunn/fzf
 
 #=> 2 lists
-echo; cd $vimfiles/vim/packs
+echo; cd $vfvp
 . $vfvp/get-unix/after.sh
 
