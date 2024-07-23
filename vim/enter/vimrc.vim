@@ -65,9 +65,8 @@ if v:lang =~ 'fr'
 endif
 
 ""> mappings 0 localleader
-nnoremap <c-=> <c-w>=
 let maplocalleader = '='
-  " ='s filter mapping still works, so these aren't needed
+  " ='s filter mapping (:h =) still works, so these aren't needed
   " nnoremap _ =
   " xnoremap _ =
   " onoremap _ =

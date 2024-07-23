@@ -1,6 +1,6 @@
 " vim: set fdl=1:
 
-" Joseph Harriott - mer 19 juin 2024
+" Joseph Harriott - mar 23 juil 2024
 
 " $vimfiles/vim/enter/vimrc-Win10-paths.vim
 " source'd by
@@ -12,7 +12,9 @@
 let $CPF = $programfiles
 let $Drpbx = 'D:\Dropbox'
   let $DJH = $Drpbx.'\JH'
-    let $Cfzd = $DJH.'\Cafezoide'
+    let $Cfzd = $DJH.'\work-Cz'
+      let $CzPeo = $Cfzd.'\people'
+        let $Copil = $CzPeo.'\adherents\FA+Copil'
       let $CzPhy = $Cfzd.'\PhysicalProperty'
     let $cITh = $DJH.'copied\IT-handy'
     let $core = $DJH.'\core'
@@ -34,10 +36,12 @@ let $Drpbx = 'D:\Dropbox'
           let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\'.$computername
           let $vimfiles = $onGH.'\vimfiles'
             let $vfvp = $vimfiles.'\vim\packs'
-      let $TeNo = $core.'\TextNotes'  " used in  $TeNo
+      let $TeNo = $core.'\TextNotes'
     let $DaLi = $DJH.'\Jo-now\DailyLife'
     let $FrFa = $DJH.'\Jo-F+F'
-      let $FFIdF = $FrFa.'\France\IdF'  " $FFIdF  used in  $TeNo
+      let $FFIdF = $FrFa.'\France\IdF'
+    let $JCop = $DJH.'\Cop'
+      let $cFr = $JCop.'\France'
     let $JHt = $DJH.'\Jo-technos'
       let $jtIT = $JHt.'\IT'
       let $tIs = $JHt.'\IT-storage'  " $tIs\diskUsage.txt

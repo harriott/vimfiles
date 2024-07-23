@@ -1,5 +1,5 @@
 
--- https://harriottgithubio/ - Wed 29 May 2024
+-- https://harriottgithubio/ - mer 17 juil 2024
 
 -- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
@@ -14,13 +14,6 @@ vim.opt.cursorline = true
 vim.opt.mouse = 'a' -- enable mouse mode
 vim.opt.showmode = false -- don't show the mode, since it's already in the status line
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight selection on yank',
-  group = vim.api.nvim_create_augroup('highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
 vim.api.nvim_set_hl(0, '@lsp.type.comment', {}) -- because  lua_ls  sets a symantic token...
 
 -- --> diagnostics
@@ -54,7 +47,7 @@ if vim.fn.has("win64") == 1 then
   --  %W  ,PRV (preview window)
 end
 
--- -> Neovide
+-- -> 0 Neovide
 if vim.g.neovide then
   -- vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_cursor_vfx_mode = "torpedo"
@@ -127,7 +120,6 @@ require('lazy').setup({
       -- :checkhealth mason
       -- :LspInfo
       -- :Mason
-      -- :MasonLog (~/.local/state/nvim/mason.log)
         -- g?  toggles help
       -- :MasonInstall bash-language-server
       -- :MasonInstall emmet-language-server
@@ -139,16 +131,18 @@ require('lazy').setup({
         -- ~/.local/share/nvim/mason/packages/perlnavigator/package.json
       -- :MasonInstall powershell-editor-services
       -- :MasonInstall pyright
+      -- :MasonInstall texlab
       -- :MasonInstall vim-language-server
+      -- :MasonLog (~/.local/state/nvim/mason.log)
       -- packages directory
         -- :edit $MASON/packages (where defined?)
         -- g $HOME\AppData\Local\nvim-data\mason\packages
         -- r ~/.local/share/nvim/mason/packages
-    {"williamboman/mason-lspconfig.nvim",
-      -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
-      -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
-       config=function() require('mason-lspconfig').setup() end,},
-       require'lazy/nvim-lspconfig',require'lazy/lspsaga',
+    -- {"williamboman/mason-lspconfig.nvim",
+    --   -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
+    --   -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
+    --    config=function() require('mason-lspconfig').setup() end,},
+    --    require'lazy/nvim-lspconfig',require'lazy/lspsaga',
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack
@@ -185,7 +179,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- -> 2 nvim-treesitter
 -- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
 -- :h nvim-treesitter-commands
-vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'})
+vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vimfiles/vim/after/syntax/lua.vim
 
 -- --> parsers
 -- $vimfiles/settings/nvim-unix-TSInstallInfo-sbMb.txt

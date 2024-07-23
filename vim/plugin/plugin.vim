@@ -197,6 +197,8 @@ function! ClearFancyGlyphs()
   :sil!%s/│/|/g
   :sil!%s/⟨/</g
   :sil!%s/⟩/>/g
+  :sil!%s/【/ [/g
+  :sil!%s/】/] /g
   :sil!%s/→/-->/g
   :sil!%s/⧹/\\/g  " normalise big backslash
   :sil!%s#⧸#/#g
@@ -473,14 +475,20 @@ nnoremap <leader><f5> :syntax sync fromstart<CR>
 " close window, including quickfix-window and NerdTree navigation
 nnoremap <leader>x <C-W>c
 
-" move focus left
-nnoremap <c-h> <c-w>h
+" re-open the quickfix-window
+"  eg to look again at results of vimgrep
+" noremap <leader>q :copen<CR>
+"  now using  ListToggle
+
+"">>> splits
+" move focus left (:h ctrl-w_<left>)
+  nnoremap <c-h> <c-w>h
 " move focus right
-nnoremap <c-l> <c-w>l
+  nnoremap <c-l> <c-w>l
 " move focus down
-nnoremap <c-j> <c-w>j
+  nnoremap <c-j> <c-w>j
 " move focus up
-nnoremap <c-k> <c-w>k
+  nnoremap <c-k> <c-w>k
 
 nnoremap <leader><leader>h :split<CR>
 nnoremap <leader><leader>v :vsplit<CR>
@@ -488,22 +496,19 @@ nnoremap <leader><leader>o :write<bar>close<CR>
 " - will only work on a split
 "   also  <c-f4>  from  mswin.vim
 
-" re-open the quickfix-window
-"  eg to look again at results of vimgrep
-" noremap <leader>q :copen<CR>
-"  now using  ListToggle
-
-"">>> resize
+"">>>> resize
 " decrease window height
-nnoremap <leader><down> 5<C-W>-
+  nnoremap <leader><down> 5<C-W>-
 " increase window height
-nnoremap <leader><up> 5<C-W>+
+  nnoremap <leader><up> 5<C-W>+
 " decrease window width
-nnoremap <leader><left> 10<C-W><
+  nnoremap <leader><left> 10<C-W><
 " increase window width
-nnoremap <leader><right> 10<C-W>>
+  nnoremap <leader><right> 10<C-W>>
+" equalize windows (:h ctrl-w_=, - needed as I set = to localleader)
+  nnoremap <c-=> <c-w>=
 " turn off winfixheight in all windows
-nnoremap <leader>c= :windo set nowfh <CR>
+  nnoremap <leader>c= :windo set nowfh <CR>
 
 " :h window-resize
 
@@ -547,7 +552,11 @@ function! TweakLS()
   sil! s/\\>//  " remove \>
   normal! 0gue
 endfunction
-nnoremap <leader>/ :call TweakLS()<CR>
+if v:lang =~ 'fr'
+  nnoremap <leader>: :call TweakLS()<CR>
+else
+  nnoremap <leader>/ :call TweakLS()<CR>
+endif
 
 set incsearch
 nnoremap <leader>is :call IncSearchToggle()<cr>
@@ -591,7 +600,7 @@ endfunction
 nnoremap <leader><leader>q :call VimgrepQRs()<CR>
 function! VimgrepQRs()
   call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$misc.'/linux/QR/*.md '.$OSAB.'/QR.md'
+  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$misc.'/linux/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR.md'
   copen
 endfunction
 

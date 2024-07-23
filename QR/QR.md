@@ -215,6 +215,38 @@ set fdo?
     :%le     " remove all indents
     :h 'sw'  " autoindentation - shiftwidth
 
+## windows splits
+    :h ctrl-w
+    c-w+[h|j|k|l] " move focus to neighbouring split
+    winfixheight
+
+### move them around
+    c-w+H  " move split to far left (:h ctrl-w_h)
+    c-w+J  " move split to very bottom
+    c-w+K  " move split to very top
+    c-w+L  " move split to far right
+    c-w+r  " rotate split to right
+
+### sizes
+    $vimfiles/vim/plugin/plugin.vim > resize
+    c-w =  " equalise window sizes
+    c-w _  " maximizes a window
+    Resize Splits with mouse
+
+### split
+    :ba    " view all buffers, split horizontally
+
+#### current buffer
+    :sp    " split horizontally
+    :vsp   " split vertically
+    c-w+v  " split vertical
+
+#### new buffer
+    :new     " new buffer, split above
+    :vne[w]  " new buffer, split vertical
+    c-w n    " new buffer, split horizontal
+    c-w ^    " split horizontal and edit the alternative
+
 # movements - in buffer
     nG      " go to line n
     :n      " go to line n
@@ -352,8 +384,9 @@ z\                    " incsearch-fuzzy-stay
 :ALEToggle
 :Bufferize python3 print(sys.path)
 :cd $DJH
-:echo expand("%:h")   " <path_of_current_file>
-:echo expand("%:p")   " <path>/file.txt
+:echo expand("%:h")   " <relative_path_to_current_file>
+:echo expand("%:p")   " <path_of_current_file>
+:echo expand("%:p:h") " <path_to_current_file>
 :Locate <pattern>
 :packadd syntastic    " load the plugin from an opt directory
 :r<file>              " reads <file> into buffer
@@ -502,37 +535,6 @@ u            " lowercase a visual block
     gv " reselect the last block
     j  " in Visual mode, selects line and moves cursor down (k for up)
     v  " character-based visual selection
-
-# windows splits
-    :h ctrl-w
-    c-w+[h|j|k|l] " move focus to neighbouring split
-    winfixheight
-
-## move them around
-    c-w+H  " move split to far left
-    c-w+J  " move split to very bottom
-    c-w+K  " move split to very top
-    c-w+L  " move split to far right
-    c-w+r  " rotate split to right
-
-## sizes
-    C-w =  " equalise window sizes
-    C-w _  " maximizes a window
-    Resize Splits with mouse
-
-## split
-    :ba    " view all buffers, split horizontally
-
-### current buffer
-    :sp    " split horizontally
-    :vsp   " split vertically
-    c-w+v  " split vertical
-
-### new buffer
-    :new     " new buffer, split above
-    :vne[w]  " new buffer, split vertical
-    c-w n    " new buffer, split horizontal
-    c-w ^    " split horizontal and edit the alternative
 
 # words
 ```

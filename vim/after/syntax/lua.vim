@@ -2,7 +2,7 @@
 
 " Language:	Lua
 " Maintainer: Joseph Harriott
-" Last Change: Tue 28 May 2024
+" Last Change: mer 17 juil 2024
 " Syntax highlighting for folding my Lua scripts.
 
 " $vimfiles/vim/after/syntax/lua.vim
@@ -22,7 +22,9 @@ syntax match foldLua '^\s*-- -\+>.*$'
 
 " Unfolded headings:
 hi def foldLua term=bold cterm=bold gui=bold guifg=LightGreen
-" - not working in  WT: $CrPl\encoding\Vim\nvim\lua_syntax_in_NVIM_0_10_0.md  or  Neovide
+" - in  Neovide  or  WT  neet to disable  highlights.scm
+"   ($CrPl\encoding\Vim\nvim\lua_syntax_in_NVIM_0_10_0.md)
+"   done in  $vimfiles/nvim/lua/init.lua
 
 ""> 1 ends
 let b:current_syntax = "lua"

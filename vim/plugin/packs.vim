@@ -39,6 +39,8 @@ packadd vim-flog
 packadd gitignore.vim
 
 "">>> vim-fugitive
+" $vfvp/packs-cp/opt/vim-fugitive/README.markdown
+
 " configurations
 "  let g:airline_symbols.notexists
 "  let g:airline_symbols.dirty
@@ -140,9 +142,10 @@ packadd mediawiki.vim  " $vfvp/packs-cp/opt/mediawiki.vim/README.md
 if has('nvim') | packadd msmtp-scripts-vim | endif
 
 "">>> MTA
-packadd MatchTagAlways
+" if has('unix') || filereadable("C:/Python312/NEWS.txt") | packadd MatchTagAlways | endif
 " for  XML/HTML  tags - $vfvp/packs-cp/opt/MatchTagAlways/test.html
 " Neovim: works fine. Vim: corresponding Python required.
+" Somehow this ain't needed...
 
 "">>> NeoMutt
 " $vfvp/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim

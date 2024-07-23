@@ -1,3 +1,5 @@
+" https://harriottgithubio/ - mar 16 juil 2024
+
 " -------------------------
 " configurations for neovim
 " -------------------------
@@ -10,17 +12,13 @@
 let g:sourced_init_vim = 1
 
 ""> 0 nvim
-command DiffOrig vert new | set buftype=nofile | read ++edit
-" - can't recall why I reduced this definition
+autocmd TextYankPost * silent! lua vim.highlight.on_yank {higroup='Visual', timeout=300}
+" - briefly highlight selection on yank
+
+command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis | wincmd p | diffthis
 
 if has('win64')
-  " Providers:
     let g:loaded_perl_provider = 0
-    if hostname() == 'HPEB840G37'
-      let g:python3_host_prog = 'C:\Python312\python.exe'
-    else
-      let g:python3_host_prog = 'C:\Users\jharr\AppData\Local\Programs\Python\Python312\python.exe'
-    endif
 else
   if exists('g:neovide')
     if hostname() == 'sbMb'
@@ -103,6 +101,16 @@ if exists('g:neovide')
       endif
     endif
   endif
+endif
+
+""> 2 Python provider
+if has('win64')
+  if hostname() == 'HPEB840G37'
+    let g:python3_host_prog = 'C:\Python312\python.exe'
+  else
+    " let g:python3_host_prog = 'C:\Users\jharr\AppData\Local\Programs\Python\Python312\python.exe'
+    let g:python3_host_prog = $HADL.'/Programs/Python/Python312/python.exe'
+  endif  " for  :checkhealth
 endif
 
 ""> 2 pull in lua configs

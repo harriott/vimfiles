@@ -1,7 +1,7 @@
 
 " Language: md
 " Maintainer: Joseph Harriott
-" Last Change: ven 17 mai 2024
+" Last Change: Tue 23 Jul 2024
 " this is for extra funtionality that I like for my *.md files
 " $vimfiles/vim/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
@@ -20,12 +20,15 @@ if v:lang =~ 'fr'
   endif
 endif
 
-" For md's detected as  liquid:
-nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
+" for md's detected as  liquid
+  nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
 " - then just reload the file to return to  liquid  syntax highlighting
 
+" hack to stop accidental filtering
+  setlocal equalprg=no_filter_md_files
+
 " open Pandoc'd pdf
-nnoremap <buffer> <F12> :call CompiledPDF()<CR>
+  nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)

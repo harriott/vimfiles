@@ -106,7 +106,7 @@ $misc/CP/vimtest/README.md
 - `g<` - review
 
 ### buffer listing recents
-    :Bufferize messages
+    :Bufferize messages  " including Lua errors
 	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
 
 ## quickfix
@@ -158,6 +158,7 @@ $misc/CP/vimtest/README.md
     :Bufferize map           " n s v
     :Bufferize map!          " e i
     :Bufferize map|map!      " e i n s v
+    :h unmap
     :verb map <localleader>q " where that mapping was set
     :[verb ]map <c-n>        " shows the mapping
 
