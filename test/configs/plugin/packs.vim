@@ -7,7 +7,7 @@
 "  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 
 let g:test_packs = 1
-" source $vimfiles/vim/plugin/packs.vim
+" source $vfpl/packs.vim
 
 "">>> vim-easymotion
 " :h easymotion-default-mappings

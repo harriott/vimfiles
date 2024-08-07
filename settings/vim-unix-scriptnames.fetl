@@ -1,5 +1,5 @@
 
-call GrabScriptnames() " pastes below (see $vimfiles/vim/plugin/plugin.vim)
+call GrabScriptnames() " pastes below (see $vfpl/plugin.vim)
 
   1: /etc/vimrc
   2: /usr/share/vim/vimfiles/archlinux.vim

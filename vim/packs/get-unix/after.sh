@@ -3,22 +3,22 @@
 
 # Joseph Harriott, mar 14 mai 2024
 
-# bash $vfvp/get-unix/after.sh
+# bash $vfpa/get-unix/after.sh
 #  normally sourced from
-#   $vfvp/get-unix/updates.sh
+#   $vfpa/get-unix/updates.sh
 
 # some tweaks on plugins
 
 # called at end of
-#  $vfvp/get-unix/clones.sh
-#  $vfvp/get-unix/updates.sh
+#  $vfpa/get-unix/clones.sh
+#  $vfpa/get-unix/updates.sh
 
 set -e
 pwd
 
 #=> 0 vim-ShowTrailingWhitespace
-sed -i 's/^c/" c/' $vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
+sed -i 's/^c/" c/' $vfpa/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
 
 #=> 1 lists
-. $vfvp/get-unix/lists.sh
+. $vfpa/get-unix/lists.sh
 

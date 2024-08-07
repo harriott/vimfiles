@@ -1,14 +1,14 @@
 
 " https://harriott.githubio/ - mer 15 mai 2024
 
-" $vimfiles/test/plugin/packsVim.vim  reduced from  $vimfiles/vim/plugin/packsVim.vim
+" $vimfiles/test/plugin/packsVim.vim  reduced from  $vfpl/packsVim.vim
 
 " Test configuration - set in:
 "  $MSwin10\mb\symlinks-mostly.ps1
 "  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 
 ""> fzf.vim
-" $vfvp/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
+" $vfpa/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
   " let g:fzf_vim.preview_bash = 'C:\Windows\System32\bash.exe'
@@ -34,13 +34,13 @@ vnoremap <F9> <Esc>:History/<CR>
 nnoremap <s-f1> :Jumps<CR>
 
 if has('win64') " junegunn/fzf
-  " at  $vimfiles\vim\plugin\fzf,
+  " at  $vfpl\fzf,
   "  because
   "   1 /usr/bin/fzf  is not found
   "   2 fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
   "                                              :set rtp+=$nvim\fzf
   "                                              :set rtp+=$nvim\plugin\fzf
-  "      (the advice at  $vimfiles/vim/plugin/fzf/README-VIM.md  ain't correct)
+  "      (the advice at  $vfpl/fzf/README-VIM.md  ain't correct)
 
   nnoremap <S-F9> call popup_clear(1):<CR>
   " - for when the pop window seizes - nice idea, but shift+f9 also gets blocked

@@ -1,7 +1,7 @@
 
 " https://harriott.githubio/ - Wed 29 May 2024
 
-" $vimfiles/vim/plugin/packs.vim
+" $vfpl/packs.vim
 
 " $ ls $vimfiles -r vim/packs*/opt
 
@@ -17,10 +17,11 @@ packadd vim-plugin-AnsiEsc
 "  $vimfiles/vim/ftplugin/perl.vim
 "  $vimfiles/vim/ftplugin/ps1.vim
 let g:context_enabled = 0
+" overwrites  lspsaga's  breadcrumbs
 packadd context.vim
 
 "">> dsf
-" $vfvp/packs-cp/opt/dsf.vim/README.md
+" $vfpa/packs-cp/opt/dsf.vim/README.md
 
 packadd dsf.vim
 " csf -> change surrounding function
@@ -39,7 +40,7 @@ packadd vim-flog
 packadd gitignore.vim
 
 "">>> vim-fugitive
-" $vfvp/packs-cp/opt/vim-fugitive/README.markdown
+" $vfpa/packs-cp/opt/vim-fugitive/README.markdown
 
 " configurations
 "  let g:airline_symbols.notexists
@@ -65,7 +66,7 @@ packadd vim-rhubarb  " for GitHub
 
 " "">>> vim-gfm-syntax
 " " enable this for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
-" " $vfvp/packs-cp/opt/vim-gfm-syntax/README.md
+" " $vfpa/packs-cp/opt/vim-gfm-syntax/README.md
 " let g:gfm_syntax_emoji_conceal = 1
 " let g:gfm_syntax_enable_always = 0
 " let g:gfm_syntax_enable_filetypes = ['gfm']
@@ -75,7 +76,7 @@ packadd vim-rhubarb  " for GitHub
 packadd CSS-one-line--multi-line-folding
 
 "">>> conky-syntax.vim
-" $vfvp/packs-cp/opt/conky-syntax.vim/ftdetect/conkyrc.vim  delete 2nd *
+" $vfpa/packs-cp/opt/conky-syntax.vim/ftdetect/conkyrc.vim  delete 2nd *
 if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
 
 " "">>> CSS Color
@@ -85,8 +86,8 @@ if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
 " configured in  $vimfiles/ftplugin/csv.vim
 "  & see  $vimfiles/vim/after/plugin/plugins.vim
 
-" $vfvp/packs-cp/opt/csv.vim/ftdetect/csv.vim
-" :h ft-csv  ($vfvp/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
+" $vfpa/packs-cp/opt/csv.vim/ftdetect/csv.vim
+" :h ft-csv  ($vfpa/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
 
 packadd csv.vim
 
@@ -132,24 +133,24 @@ let g:user_emmet_install_global = 0
 packadd emmet-vim
 
 " "">>> Liquid
-" packadd vim-liquid  " $vfvp/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
+" packadd vim-liquid  " $vfpa/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
 
 "">>> mediawiki.vim
-packadd mediawiki.vim  " $vfvp/packs-cp/opt/mediawiki.vim/README.md
+packadd mediawiki.vim  " $vfpa/packs-cp/opt/mediawiki.vim/README.md
 
 "">>> msmtp-scripts-vim
-" $vfvp/packs-cp/opt/msmtp-scripts-vim/ftdetect/msmtp.vim
+" $vfpa/packs-cp/opt/msmtp-scripts-vim/ftdetect/msmtp.vim
 if has('nvim') | packadd msmtp-scripts-vim | endif
 
 "">>> MTA
 " if has('unix') || filereadable("C:/Python312/NEWS.txt") | packadd MatchTagAlways | endif
-" for  XML/HTML  tags - $vfvp/packs-cp/opt/MatchTagAlways/test.html
+" for  XML/HTML  tags - $vfpa/packs-cp/opt/MatchTagAlways/test.html
 " Neovim: works fine. Vim: corresponding Python required.
 " Somehow this ain't needed...
 
 "">>> NeoMutt
-" $vfvp/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim
-" $vfvp/packs-cp/opt/neomutt.vim/syntax/neomuttrc.vim
+" $vfpa/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim
+" $vfpa/packs-cp/opt/neomutt.vim/syntax/neomuttrc.vim
 packadd neomutt.vim
 " superseding
 "  /usr/share/nvim/runtime/syntax/muttrc.vim
@@ -183,7 +184,7 @@ packadd vader.vim
 packadd vim-base64
 
 "">>> vim-bbcode
-" $vfvp/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
+" $vfpa/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
 packadd vim-bbcode
 
 "">>> vim-closetag
@@ -192,7 +193,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 packadd vim-closetag
 
 "">>> vim-dokuwiki
-" $vfvp/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
+" $vfpa/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
 packadd vim-dokuwiki
 let dokuwiki_comment=1  " comment highlighting on
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
@@ -205,7 +206,7 @@ packadd vim-hjson
 
 "">>> Vim Markdown
 " :h markdown
-" $vfvp/packs-cp/opt/vim-markdown/maintenance.md
+" $vfpa/packs-cp/opt/vim-markdown/maintenance.md
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_conceal_code_blocks = 0  " need to see them
 let g:vim_markdown_folding_disabled = 1
@@ -233,16 +234,16 @@ packadd vim-mbsync
 packadd vim-pandoc-syntax
 
 "">>> vim-prettier
-" $vfvp/packs-cp/opt/vim-prettier/doc/prettier.txt
+" $vfpa/packs-cp/opt/vim-prettier/doc/prettier.txt
 " :Prettier
 packadd vim-prettier
 
 "">>> vim-ps1
-" $vfvp\cp\opt\vim-ps1\ftdetect\ps1.vim
+" $vfpa\cp\opt\vim-ps1\ftdetect\ps1.vim
 packadd vim-ps1
 
 "">>> VimTeX
-" $vfvp/packs-cp/opt/vimtex/README.md
+" $vfpa/packs-cp/opt/vimtex/README.md
 
 " dsd  " delete surrounding delimiters
 " commands
@@ -304,7 +305,7 @@ packadd vimtex
 packadd minimap.vim
 
 "">> Tagbar
-" $vfvp/packs-cp/opt/vim-tagbar/README.md
+" $vfpa/packs-cp/opt/vim-tagbar/README.md
 
 " :TagbarToggle  mapping set in
 "  $vimfiles/vim/ftplugin/perl.vim
@@ -341,7 +342,7 @@ autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
 packadd vim-ssh-annex
 
 ""> ingo-library
-" $vfvp/packs-cp/opt/vim-ingo-library/README.md
+" $vfpa/packs-cp/opt/vim-ingo-library/README.md
 "  required for  vim-mark  vim-ShowTrailingWhitespace
 packadd vim-ingo-library
 
@@ -356,7 +357,7 @@ inoremap <c-x><c-x> <c-x><c-o>
 " settings for the filetype, including recommended modules
 "  :ALEInfo
 "   AlEPrreviewWindow  responds to  <c-w>+, but not to  <cw>=
-" $vfvp/packs-cp/opt/ale/plugin/ale.vim
+" $vfpa/packs-cp/opt/ale/plugin/ale.vim
 
 " Enabled?
 "  :let ale_enabled
@@ -461,8 +462,8 @@ packadd FoldText
 " packadd limelight.vim
 
 "">>> vim-better-whitespace
-" $vfvp/packs-cp/opt/vim-better-whitespace/doc/better-whitespace.txt
-" $vfvp/packs-cp/opt/vim-better-whitespace/README.md
+" $vfpa/packs-cp/opt/vim-better-whitespace/doc/better-whitespace.txt
+" $vfpa/packs-cp/opt/vim-better-whitespace/README.md
 " only used in  $vimfiles/nvim/init.vim
 if has('nvim')
   let g:better_whitespace_ctermcolor='Black'
@@ -497,11 +498,11 @@ endfunction
 " let g:interestingWordsRandomiseColors = 1
 
 "">>> vim-ShowTrailingWhitespace
-" $vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/doc/ShowTrailingWhitespace.txt
+" $vfpa/packs-cp/opt/vim-ShowTrailingWhitespace/doc/ShowTrailingWhitespace.txt
 if g:useSTW | packadd vim-ShowTrailingWhitespace | endif  " requires  ingo-library
 
 "">> lf.vim
-" $vfvp/packs-cp/opt/lf-vim/README.md
+" $vfpa/packs-cp/opt/lf-vim/README.md
 packadd lf-vim
 
 "">> nerdfont.vim
@@ -511,7 +512,7 @@ packadd lf-vim
 " loaded in  $vimfiles/vim/after/plugin/plugins.vim
 
 "">> vim-fontsize
-" $vfvp/packs-cp/opt/vim-fontsize/doc/fontsize.txt
+" $vfpa/packs-cp/opt/vim-fontsize/doc/fontsize.txt
 if has('gui_running')
   packadd vim-fontsize
     let g:fontsize#timeout = 0
@@ -536,7 +537,7 @@ noremap <leader>C :CalendarH<CR>
 packadd calendar-vim
 
 "">> MRU
-" $vfvp/packs-cp/opt/mru/README.md
+" $vfpa/packs-cp/opt/mru/README.md
 " $vimfiles/syntax/mru.vim
 let MRU_Max_Entries = 1000
 let MRU_Window_Height = 20
@@ -558,7 +559,7 @@ packadd mru
 "  u = update
 
 "">> open-browser.vim
-" $vfvp/packs-cp/opt/open-browser.vim/doc/openbrowser.txt
+" $vfpa/packs-cp/opt/open-browser.vim/doc/openbrowser.txt
 " requires  :set shell  be unchanged from  cmd.exe
 
 " If it looks like URI, Open URI under cursor. Otherwise, Search word under cursor.
@@ -581,7 +582,7 @@ let g:rooter_manual_only = 1  " :Rooter
 packadd vim-rooter
 
 "">> vim-startify
-" $vfvp/packs-cp/opt/vim-startify/doc/startify.txt
+" $vfpa/packs-cp/opt/vim-startify/doc/startify.txt
 packadd vim-startify
 " Startify
 
@@ -591,7 +592,7 @@ packadd vim-startify
 
 "">>> tabular
 " :vert h tabular
-" $vfvp/packs-cp/opt/tabular/doc/Tabular.txt
+" $vfpa/packs-cp/opt/tabular/doc/Tabular.txt
 " packadd tabular  " :Tabularize ...
 
 "">>> vim-easy-align
@@ -662,13 +663,13 @@ packadd vim-mark  " requires  ingo-library
 " " now preferring  vim-asterisk
 
 "">> supertab
-" $vfvp/packs-cp/opt/supertab/doc/supertab.txt
+" $vfpa/packs-cp/opt/supertab/doc/supertab.txt
 " :verb imap <tab>
 " c-v tab  to insert a literal tab
 packadd supertab
 
 "">> targets.vim
-" $vfvp/packs-cp/opt/targets.vim/cheatsheet.md
+" $vfpa/packs-cp/opt/targets.vim/cheatsheet.md
 packadd targets.vim
 
 ""> vim
@@ -780,7 +781,7 @@ noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
 packadd cfilter
 
 "">>> ListToggle
-" $vfvp/packs-cp/opt/listtoggle/README.md
+" $vfpa/packs-cp/opt/listtoggle/README.md
 
 packadd listtoggle
 let g:lt_location_list_toggle_map = '<leader>ll'

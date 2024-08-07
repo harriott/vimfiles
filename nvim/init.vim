@@ -33,6 +33,7 @@ endif
 if v:lang =~ 'fr'
   " Easier searching:
   nnoremap ! /
+  nnoremap q! q/
 else
   " Easier jump to last position in newly opened file:
   nnoremap gl g`"
@@ -65,7 +66,7 @@ let g:useSTW = 0
 
 "">> colorscheme
 if has('win64') || exists('g:neovide')
-  " $vfvp/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
+  " $vfpa/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
   let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'allow_italic': 1 },
     \ 'default.dark': { 'override' : { 'color05':['','247'], 'error_fg':['','09'],
       \ 'folded_bg':['','234'], 'linenumber_fg':['','243'], } } } }

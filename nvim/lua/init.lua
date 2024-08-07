@@ -138,11 +138,11 @@ require('lazy').setup({
         -- :edit $MASON/packages (where defined?)
         -- g $HOME\AppData\Local\nvim-data\mason\packages
         -- r ~/.local/share/nvim/mason/packages
-    -- {"williamboman/mason-lspconfig.nvim",
-    --   -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
-    --   -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
-    --    config=function() require('mason-lspconfig').setup() end,},
-    --    require'lazy/nvim-lspconfig',require'lazy/lspsaga',
+    {"williamboman/mason-lspconfig.nvim",
+      -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
+      -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
+       config=function() require('mason-lspconfig').setup() end,},
+       require'lazy/nvim-lspconfig',require'lazy/lspsaga',
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack

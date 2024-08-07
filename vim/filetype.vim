@@ -69,7 +69,7 @@ aug filetypedetect
     au! BufRead,BufNewFile *.rgo     setf rgo       " $vimfiles/vim/syntax/rgo.vim
     au! BufRead,BufNewFile *.rgtl    setf rgtl      " $vimfiles/vim/syntax/rgtl.vim
     au! BufRead,BufNewFile *.sifw    setf sifw      " $vimfiles/vim/syntax/sifw.vim
-    au! BufRead,BufNewFile *.slJH    setf slJH      " $vimfiles/vim/plugin/slJH.vim
+    au! BufRead,BufNewFile *.slJH    setf slJH      " $vfpl/slJH.vim
     au! BufRead,BufNewFile *.tbmo    setf tbmo      " $vimfiles/vim/syntax/tbmo.vim
     au! BufRead,BufNewFile *.toc     setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
     au! BufRead,BufNewFile *.whatsapp setf whatsapp " $vimfiles/vim/syntax/whatsapp.vim

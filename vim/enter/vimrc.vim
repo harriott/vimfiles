@@ -73,7 +73,7 @@ let maplocalleader = '='
 nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
 
 ""> mappings 1
-" continued, with other stuff, in  $vimfiles/vim/plugin/plugin.vim
+" continued, with other stuff, in  $vfpl/plugin.vim
 
 " ""> matchit.vim
 " if has('syntax') && has('eval')
@@ -94,7 +94,8 @@ function! VimWriteClose()
     put=cfd
     normal kdd
     wall
-    quit! " close completely
+    quit " close completely
+    " loosing recents on Win10Pro
   else
     let s:b = expand('%:t')
     silent wall
@@ -105,7 +106,7 @@ endfunction
 
 nnoremap <f4> :call VimWriteClose()<CR>
 inoremap <f4> <Esc>:call VimWriteClose()<CR>
-" - overriden by some autocommands in  $vimfiles/vim/plugin/plugin.vim
+" - overriden by some autocommands in  $vfpl/plugin.vim
 
 vnoremap <f4> <Esc>:call VimWriteClose()<CR>
 

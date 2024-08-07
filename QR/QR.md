@@ -228,7 +228,7 @@ set fdo?
     c-w+r  " rotate split to right
 
 ### sizes
-    $vimfiles/vim/plugin/plugin.vim > resize
+    $vfpl/plugin.vim > resize
     c-w =  " equalise window sizes
     c-w _  " maximizes a window
     Resize Splits with mouse
@@ -450,7 +450,6 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 # tricks
     :%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
     :echo &bomb                  " 1 if BOM
-    :normal i" . strftime("%c")  " put date-time at cursor
     :so /usr/share/vim/vim90/tools/emoji_list.vim
 
 ```vim

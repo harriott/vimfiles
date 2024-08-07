@@ -1,7 +1,7 @@
 
 " Language: md
 " Maintainer: Joseph Harriott
-" Last Change: Tue 23 Jul 2024
+" Last Change: jeu 01 aoû24
 " this is for extra funtionality that I like for my *.md files
 " $vimfiles/vim/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
@@ -10,7 +10,11 @@
 " /sanskrit\|skt
 
 " convert dw url
-nnoremap <buffer><localleader>[ :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>
+if v:lang =~ 'fr'
+  nnoremap <buffer><localleader>( :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>
+else
+  nnoremap <buffer><localleader>[ :s/\[\[\(http\S*\) \|\(.*\)]]/[\2](\1)/<CR>
+endif
 
 if v:lang =~ 'fr'
   if has('nvim') && !exists('g:neovide') " terminal Nvim
@@ -29,6 +33,9 @@ endif
 
 " open Pandoc'd pdf
   nnoremap <buffer> <F12> :call CompiledPDF()<CR>
+
+" go file when square bracketed
+nnoremap <buffer>gF vi[gf
 
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)

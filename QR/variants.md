@@ -40,10 +40,10 @@ Joseph's (g)Vim Quick Reference
     :let g:neovide
 
 ## OS
-    $HOME\AppData\Local\nvim-data\shada\main.shada
     & $CPF\Neovim\bin\nvim.exe -h
     :=jit.os
     :=vim.fn.has("linux")
+    rm $HADL\nvim-data\shada\main.shada.tmp.*
     where.exe nvim.exe
 
 ### win64 ?
@@ -133,6 +133,7 @@ $misc/CP/vimtest/README.md
 - `_` = null register
 
 ## settings
+    $ rg -uu vim9script $vimfiles
     :Bufferize dig!        " categorised digraphs
     :Bufferize let         " all internal variables
     :Bufferize scr         " (:scriptnames) list of files sourced, in order
@@ -144,6 +145,7 @@ $misc/CP/vimtest/README.md
     :function <name_of_function_to_reveal>
     :let mapleader
     :se                    " show all modified options
+    :se fenc=utf8          " fileencoding
     :se spc                " pattern for of a sentence
     :se ttm                " ms timeout for key codes
     :verb se tw            " shows where textwidth was set

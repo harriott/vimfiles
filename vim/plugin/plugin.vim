@@ -1,7 +1,7 @@
 
 " Joseph Harriott - Thu 18 Apr 2024
 
-" $vimfiles/vim/plugin/plugin.vim
+" $vfpl/plugin.vim
 
 " better searching
 set ignorecase smartcase
@@ -41,9 +41,9 @@ autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
 " These hooks aren't in an  ftplugin/dat.vim  because there's no such default filetype.
 
 " pack msgFilterRules.dat "name" lines:
-autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1░\2░\3░\4░\5░\6#g <bar> nohlsearch <CR>
+autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1â\2â\3â\4â\5â\6#g <bar> nohlsearch <CR>
 " unpack msgFilterRules.dat "name" lines:
-autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)░(.*)░(.*)░(.*)░(.*)░(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
+autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)â(.*)â(.*)â(.*)â(.*)â(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
 
 ""> comma <-> colon
 " comma is colon (colon is comma)
@@ -195,10 +195,9 @@ function! ClearFancyGlyphs()
   :sil!%s/？/?/g
   " various
   :sil!%s/│/|/g
+  :sil!%s/｜/|/g
   :sil!%s/⟨/</g
   :sil!%s/⟩/>/g
-  :sil!%s/【/ [/g
-  :sil!%s/】/] /g
   :sil!%s/→/-->/g
   :sil!%s/⧹/\\/g  " normalise big backslash
   :sil!%s#⧸#/#g
@@ -263,9 +262,14 @@ endfunction
 
 "">> date
 function! DateFr()
-  exe ":norm a".strftime('%a %d %b %Y')
-  norm F.x;xeee
-  " - remove periods
+  pu=strftime('%a %d %b %Y')
+  " fix  août
+    write
+    edit
+  " remove periods
+    sil!s/\.//g
+  " append to previous line
+    norm kJ
 endfunction
 
 "">>> abbreviations
@@ -528,13 +532,13 @@ autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <E
 "">> tidy an inmail
 " swap out any crap (and go back to top):
 "  next line
-    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s///g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/Â//g | go
 "  non-breaking whitespaces
-    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/ / /g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/Â / /g | go
 "  'private use one'
-    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/Â/'/g | go
 "  'private use two'
-    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s//'/g | go
+    autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/Â/'/g | go
 "  unneeded blanks
     autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/^> */>/g | go
 

@@ -1,6 +1,6 @@
 " vim: set fdl=1:
 
-" Joseph Harriott - mar 23 juil 2024
+" Joseph Harriott - ven 26 juil 2024
 
 " $vimfiles/vim/enter/vimrc-Win10-paths.vim
 " source'd by
@@ -32,10 +32,14 @@ let $Drpbx = 'D:\Dropbox'
             let $machBld = $MSwin10.'\mb\'.$computername
             let $MSWSL = $MSwin10.'\WSL'
           let $OSAB = $onGH.'\OS-ArchBuilds'
+            let $ABjo = $OSAB.'\jo'
+              let $AjB = $ABjo.'\Bash'
           let $OSAT = $onGH.'\OS-Android-Termux'
+          let $OSL = $onGH.'\OS-Linux'
           let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\'.$computername
           let $vimfiles = $onGH.'\vimfiles'
-            let $vfvp = $vimfiles.'\vim\packs'
+            let $vfpa = $vimfiles.'\vim\packs'
+            let $vfpl = $vimfiles.'\vim\plugin'
       let $TeNo = $core.'\TextNotes'
     let $DaLi = $DJH.'\Jo-now\DailyLife'
     let $FrFa = $DJH.'\Jo-F+F'

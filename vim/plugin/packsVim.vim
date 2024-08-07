@@ -1,7 +1,7 @@
 
-" https://harriott.githubio/ - mer 15 mai 2024
+" https://harriott.githubio/ - ven 26 juil 2024
 
-" $vimfiles/vim/plugin/plugins.vim
+" $vfpl/plugins.vim
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
@@ -11,7 +11,7 @@ let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
 " extra filetypes
-" $vfvp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+" $vfpa/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 
@@ -35,8 +35,25 @@ nmap <leader><leader>f <Plug>(easymotion-overwin-f)
 autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
 "  (in an autocmd to be sure it works with Arch vim-colors-solarized)
 
+""> fzf - fzf
+if has('win64') " junegunn/fzf
+  " at  $vfpl\fzf,
+  "  because
+  "   1 /usr/bin/fzf  is not found
+  "   2 fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
+  "                                              :set rtp+=$nvim\fzf
+  "                                              :set rtp+=$nvim\plugin\fzf
+  "      (the advice at  $vfpl/fzf/README-VIM.md  ain't correct)
+
+  nnoremap <S-F9> call popup_clear(1):<CR>
+  " - for when the pop window seizes - nice idea, but shift+f9 also gets blocked
+endif
+
+" $vfpl/fzf/shell/completion.bash
+" $vfpl/fzf/shell/key-bindings.bash
+
 ""> fzf - fzf.vim
-" $vfvp/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
+" $vfpa/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
 " requires  :set shell  be unchanged from  cmd.exe
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
@@ -61,19 +78,6 @@ inoremap <F9> <Esc>:History/<CR>
 vnoremap <F9> <Esc>:History/<CR>
 
 nnoremap <s-f1> :Jumps<CR>
-
-if has('win64') " junegunn/fzf
-  " at  $vimfiles\vim\plugin\fzf,
-  "  because
-  "   1 /usr/bin/fzf  is not found
-  "   2 fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
-  "                                              :set rtp+=$nvim\fzf
-  "                                              :set rtp+=$nvim\plugin\fzf
-  "      (the advice at  $vimfiles/vim/plugin/fzf/README-VIM.md  ain't correct)
-
-  nnoremap <S-F9> call popup_clear(1):<CR>
-  " - for when the pop window seizes - nice idea, but shift+f9 also gets blocked
-endif
 
 " case-sensitive
 " 'search  searches for exactly that
@@ -120,7 +124,7 @@ if has('unix') " vim-airline
     let g:airline_symbols.branch = ''
   endif
 else
-  " $vfvp/packs-win64/opt/lightline.vim/doc/lightline.txt
+  " $vfpa/packs-win64/opt/lightline.vim/doc/lightline.txt
   let g:lightline = { 'colorscheme': 'darcula', }
   packadd lightline.vim
 endif
@@ -148,9 +152,12 @@ nnoremap <leader>bb :CtrlPBuffer<CR>
 packadd ctrlp.vim
 
 "">> Fern
-" vim default c-e = scroll up the window, without displacing the cursor
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim " $vfvp/packs-cp/opt/fern.vim/README.md
+packadd fern.vim " $vfpa/packs-cp/opt/fern.vim/README.md
+
+" overrides my c-h/j/k/l mappings
+" vim default c-e = scroll up the window, without displacing the cursor
+
 " ! -- toggles hidden
 " + -- vim-buffing-wheel override (quits)
 " <bs>/<c-h> -- fern-action-leave (goes up a directory)

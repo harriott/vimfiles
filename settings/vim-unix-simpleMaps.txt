@@ -1,5 +1,5 @@
 
-call GrabSimpleMaps() " pastes below (see $vimfiles/vim/plugin/plugin.vim)
+call GrabSimpleMaps() " pastes below (see $vfpl/plugin.vim)
 
 x  "            @peekaboo#peek(v:count1, '"',  1)
 n  "            @peekaboo#peek(v:count1, '"',  0)

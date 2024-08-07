@@ -121,6 +121,4 @@ D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-unix\opt\vim-picke
 D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-unix\opt\vim-plugin-AnsiEsc
 D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-unix\opt\vim-ssh-annex
 D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-win64\opt\lightline.vim
-D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-win64\opt\all.txt
-D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-win64\opt\gits.txt
 D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\plugin\fzf
