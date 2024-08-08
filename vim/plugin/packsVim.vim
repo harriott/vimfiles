@@ -1,7 +1,7 @@
 
 " https://harriott.githubio/ - ven 26 juil 2024
 
-" $vfpl/plugins.vim
+" $vfv/plugin/plugins.vim
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 
@@ -11,7 +11,7 @@ let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
 " extra filetypes
-" $vfpa/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+" $vfv/packs/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 
@@ -37,23 +37,23 @@ autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
 
 ""> fzf - fzf
 if has('win64') " junegunn/fzf
-  " at  $vfpl\fzf,
+  " at  $vfv/plugin\fzf,
   "  because
   "   1 /usr/bin/fzf  is not found
   "   2 fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
   "                                              :set rtp+=$nvim\fzf
   "                                              :set rtp+=$nvim\plugin\fzf
-  "      (the advice at  $vfpl/fzf/README-VIM.md  ain't correct)
+  "      (the advice at  $vfv/plugin/fzf/README-VIM.md  ain't correct)
 
   nnoremap <S-F9> call popup_clear(1):<CR>
   " - for when the pop window seizes - nice idea, but shift+f9 also gets blocked
 endif
 
-" $vfpl/fzf/shell/completion.bash
-" $vfpl/fzf/shell/key-bindings.bash
+" $vfv/plugin/fzf/shell/completion.bash
+" $vfv/plugin/fzf/shell/key-bindings.bash
 
 ""> fzf - fzf.vim
-" $vfpa/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
+" $vfv/packs/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
 " requires  :set shell  be unchanged from  cmd.exe
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
@@ -124,7 +124,7 @@ if has('unix') " vim-airline
     let g:airline_symbols.branch = ''
   endif
 else
-  " $vfpa/packs-win64/opt/lightline.vim/doc/lightline.txt
+  " $vfv/packs/packs-win64/opt/lightline.vim/doc/lightline.txt
   let g:lightline = { 'colorscheme': 'darcula', }
   packadd lightline.vim
 endif
@@ -153,7 +153,7 @@ packadd ctrlp.vim
 
 "">> Fern
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim " $vfpa/packs-cp/opt/fern.vim/README.md
+packadd fern.vim " $vfv/packs/packs-cp/opt/fern.vim/README.md
 
 " overrides my c-h/j/k/l mappings
 " vim default c-e = scroll up the window, without displacing the cursor

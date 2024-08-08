@@ -9,6 +9,7 @@
 .directory
 .netrwhist
 oldfiles.ps1
+nvim/FrenchDate
 scratch.vim
 tags
 tags-cn

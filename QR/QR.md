@@ -228,7 +228,7 @@ set fdo?
     c-w+r  " rotate split to right
 
 ### sizes
-    $vfpl/plugin.vim > resize
+    $vfv/plugin/plugin.vim > resize
     c-w =  " equalise window sizes
     c-w _  " maximizes a window
     Resize Splits with mouse

@@ -4,7 +4,7 @@
 
 # grab repositories
 
-# close vims for  & $vfpa\get-win64\clones.ps1
+# close vims for  & $vfv/packs\get-win64\clones.ps1
 
 read-host '- you''ve closed instances of vim? '
 
@@ -12,8 +12,8 @@ function dd { if ( test-path $args[0] ) { ri $args[0] -recurse -force } }
 # - needs  Vim  not to be running
 
 # #=> 0 fzf
-# "cd $vfpl"
-# cd $vfpl
+# "cd $vfv/plugin"
+# cd $vfv/plugin
 
 # git clone https://github.com/junegunn/fzf
 # cd fzf; git checkout 24ff66d  # last working for shell access
@@ -102,5 +102,5 @@ ensurePath win64
   # gcl https://github.com/itchyny/lightline.vim
 
 #=> 3 tidy off
-. $vfpa\get-win64\after.ps1
+. $vfv/packs\get-win64\after.ps1
 

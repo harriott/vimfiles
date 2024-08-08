@@ -5,7 +5,7 @@
 " $vimfiles/vim/after/plugin/plugins.vim
 
 " ""> csv.vim
-" " override  $vfpa/packs-cp/opt/csv.vim/ftdetect/csv.vim
+" " override  $vfv/packs/packs-cp/opt/csv.vim/ftdetect/csv.vim
 " autocmd BufRead,BufNewFile *.dat set filetype=
 
 ""> vim-devicons

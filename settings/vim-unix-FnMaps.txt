@@ -1,5 +1,5 @@
 
-call GrabBmmFn() " pastes below (see $vfpl/plugins.vim)
+call GrabBmmFn() " pastes below (see $vfv/plugin/plugins.vim)
 
    <F11>       * :cd %:p:h<CR>|:silent !pcmanfm &<CR>
 i  <C-F3>      * <Esc>:BCommits<CR>

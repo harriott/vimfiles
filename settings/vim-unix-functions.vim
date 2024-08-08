@@ -1,5 +1,5 @@
 
-call GrabAllFunctions() " pastes below (see $vfpl/plugin.vim)
+call GrabAllFunctions() " pastes below (see $vfv/plugin/plugin.vim)
 
 def <SNR>167_Qf_filter(qf: bool, searchpat: string, bang: string)
 def <SNR>17_BMAdd()

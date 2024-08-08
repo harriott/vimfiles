@@ -1,6 +1,6 @@
 vim: set nowrap:
 
-call GrabAllCommands() " pastes below (see $vfpl/plugin.vim)
+call GrabAllCommands() " pastes below (see $vfv/plugin/plugin.vim)
 
     Name              Args Address Complete    Definition
 |   ALECodeAction     0    .                   :call ale#codefix#Execute(<range>)

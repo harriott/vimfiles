@@ -1,7 +1,7 @@
 
 " Language: md
 " Maintainer: Joseph Harriott
-" Last Change: jeu 01 aoû24
+" Last Change: jeu 01 août 24
 " this is for extra funtionality that I like for my *.md files
 " $vimfiles/vim/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,

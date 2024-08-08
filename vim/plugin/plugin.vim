@@ -1,7 +1,7 @@
 
 " Joseph Harriott - Thu 18 Apr 2024
 
-" $vfpl/plugin.vim
+" $vfv/plugin/plugin.vim
 
 " better searching
 set ignorecase smartcase
@@ -262,15 +262,21 @@ endfunction
 
 "">> date
 function! DateFr()
+  edit $vimfiles/nvim/FrenchDate " not worried about  fenc
+  norm dd
   pu=strftime('%a %d %b %Y')
+  norm kdd
   " fix  août
     write
-    edit
+    edit  " in August, fenc  becomes  latin1
   " remove periods
     sil!s/\.//g
-  " append to previous line
-    norm kJ
-endfunction
+  " copy the valid date over
+    norm Y
+    write
+    bdelete
+    norm p
+endfunction  " and the fixed date's still available for further use
 
 "">>> abbreviations
 iabbrev <expr> d8- strftime("%y-%m-%d")
@@ -303,6 +309,43 @@ elseif has('win64')
     noremap <leader>yp :lan tim French<CR>:call DateFr()<CR>:lan tim English_United Kingdom<CR>
   endif
 endif
+
+"">> fix conversion to latin1
+" no clue yet as to how this conversion happens
+" se fenc=utf8
+function! FixConversionToLatin1()
+  :sil!%s/Â£/£/g
+  :sil!%s/Â±/±/g
+  :sil!%s/Â°/°/g
+  :sil!%s/Â½/½/g
+  :sil!%s/Â¾/¾/g
+  :sil!%s/Ã/Ç/g
+  :sil!%s/Ã/Î/g
+  :sil!%s/Ã/Ð/g
+  :sil!%s/Ã/Ò/g
+  :sil!%s/Ã/Ô/g
+  :sil!%s/Ã/Ö/g
+  :sil!%s/Ã /à/g
+  :sil!%s/Ã¡/á/g
+  :sil!%s/Ã¢/â/g
+  :sil!%s/Ã¤/ä/g
+  :sil!%s/Ã§/ç/g
+  :sil!%s/Ã¨/è/g
+  :sil!%s/Ã©/é/g
+  :sil!%s/Ãª/ê/g
+  :sil!%s/Ã«/ë/g
+  :sil!%s/Ã®/î/g
+  :sil!%s/Ã¯/ï/g
+  :sil!%s/Å/ō/g
+  :sil!%s/Ã³/ó/g
+  :sil!%s/Ã´/ô/g
+  :sil!%s/Ã¶/ö/g
+  :sil!%s/Ã»/û/g
+  :sil!%s/É/ɑ/g
+  :sil!%s/â¬/€/g
+  :sil!%s/â/№/g
+  :sil!%s/â¦/Ω/g
+endfunction
 
 "">> strip Thunderbird address book csv down to just emails
 " decorations:  >, .\{-} <

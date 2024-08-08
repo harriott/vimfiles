@@ -1,10 +1,10 @@
-" My adjustments
+
 " Language: dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Mon 08 Apr 2024
-" $vimfiles/ftplugin/dokuwiki.vim
+" Last Change: jeu 08 août 2024
+" $vfv/ftplugin/dokuwiki.vim
 
-" tweaked  $vfpa/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax
+" tweaked  $vfv/packs/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax
 
 function! PageTitleToHyperlink()
   let l:pagetitle = getreg('"')
@@ -61,7 +61,7 @@ nnoremap <buffer> <leader><leader>i :s/\m\(^>\+\) /\1 <wrap indent> /<CR><Bar>A 
 "    but only the last closing tag gets pasted, you have to do the other two manually.
 
 ""> folding by header marks
-" much faster than that proposed in  $vfpa/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim
+" much faster than that proposed in  $vfv/packs/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim
 " (based on http://stackoverflow.com/questions/3828606/vim-markdown-folding)
 function! DWF()
 	let j = len(matchstr(getline(v:lnum), '^=\+'))

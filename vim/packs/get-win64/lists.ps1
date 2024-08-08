@@ -2,15 +2,15 @@
 
 # Joseph Harriott - mar 14 mai 2024
 
-# & $vfpa\get-win64\lists.ps1
-# sourced by  $vfpa\get-win64\after.ps1
+# & $vfv/packs\get-win64\lists.ps1
+# sourced by  $vfv/packs\get-win64\after.ps1
 
 # make lists of cloned plugins
 # normally called from a parent script
 
-$all="$vfpa\all.txt"
+$all="$vfv/packs\all.txt"
 echo "" > $all
-cd $vfpa
+cd $vfv/packs
 foreach ($group in ls packs-*) { ls $group\opt | select -expand FullName >> $all }
 echo $vimfiles\plugin\fzf >> $all
 

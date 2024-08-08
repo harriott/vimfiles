@@ -13,6 +13,8 @@ Joseph's (g)Vim Quick Reference
     :lua vim.cmd.tabnew()
     :Man git
     C /usr/share/nvim/runtime
+    nvim -?
+    nvim -v
 
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
     fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
@@ -135,6 +137,7 @@ $misc/CP/vimtest/README.md
 ## settings
     $ rg -uu vim9script $vimfiles
     :Bufferize dig!        " categorised digraphs
+    :Bufferize lan         " language  settings
     :Bufferize let         " all internal variables
     :Bufferize scr         " (:scriptnames) list of files sourced, in order
     :Bufferize se          " all option changes

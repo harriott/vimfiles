@@ -3,7 +3,7 @@
 " Language: csv
 " Maintainer: Joseph Harriott
 " Last Change: jeu 16 mai 2024
-" $vimfiles/ftplugin/csv.vim  supplementary to  $vfpa/packs-cp/opt/csv.vim/README.md
+" $vimfiles/ftplugin/csv.vim  supplementary to  $vfv/packs/packs-cp/opt/csv.vim/README.md
 
 function! CzAdherentsCsvColumns()
     DeleteColumn 1-4

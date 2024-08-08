@@ -1,5 +1,5 @@
 
 " $vimfiles/test/plugin.vim
 
-source $vfpl/plugin.vim
+source $vfv/plugin/plugin.vim
 

@@ -66,7 +66,7 @@ let g:useSTW = 0
 
 "">> colorscheme
 if has('win64') || exists('g:neovide')
-  " $vfpa/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
+  " $vfv/packs/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
   let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'allow_italic': 1 },
     \ 'default.dark': { 'override' : { 'color05':['','247'], 'error_fg':['','09'],
       \ 'folded_bg':['','234'], 'linenumber_fg':['','243'], } } } }

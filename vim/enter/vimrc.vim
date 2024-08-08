@@ -73,7 +73,7 @@ let maplocalleader = '='
 nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
 
 ""> mappings 1
-" continued, with other stuff, in  $vfpl/plugin.vim
+" continued, with other stuff, in  $vfv/plugin/plugin.vim
 
 " ""> matchit.vim
 " if has('syntax') && has('eval')
@@ -106,7 +106,7 @@ endfunction
 
 nnoremap <f4> :call VimWriteClose()<CR>
 inoremap <f4> <Esc>:call VimWriteClose()<CR>
-" - overriden by some autocommands in  $vfpl/plugin.vim
+" - overriden by some autocommands in  $vfv/plugin/plugin.vim
 
 vnoremap <f4> <Esc>:call VimWriteClose()<CR>
 

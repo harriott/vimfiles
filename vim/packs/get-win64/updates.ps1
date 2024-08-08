@@ -1,19 +1,19 @@
 # vim: set fdl=1 et tw=0:
 
-# & $vfpa\get-win64\updates.ps1
+# & $vfv/packs\get-win64\updates.ps1
 
 # Joseph Harriott, ven 26 juil 2024
 # run this when you want to update your remote plugins
 
-$msv = "$vfpa/packs-cp/opt/msmtp-scripts-vim"
+$msv = "$vfv/packs/packs-cp/opt/msmtp-scripts-vim"
 read-host '- you''ve closed instances of vim? '
 
 # #=> 0 msmtp-scripts-vim - remove
 # if ( ( test-path $msv ) ) { remove-itemsafely $msv }
 
 #=> 1 updates
-cd $vfpa; . $misc\GRs\update-depth1.ps1
-cd $vfpl; . $misc\GRs\update-depth1.ps1
+cd $vfv/packs; . $misc\GRs\update-depth1.ps1
+cd $vfv/plugin; . $misc\GRs\update-depth1.ps1
 mv repositories get-win64\repositories -force
 
 # #=> 2 msmtp-scripts-vim - replace
@@ -28,5 +28,5 @@ mv repositories get-win64\repositories -force
 # ''
 
 #=> 3 tidy up
-. $vfpa\get-win64\after.ps1
+. $vfv/packs\get-win64\after.ps1
 

@@ -3,7 +3,7 @@
 
 # Joseph Harriott
 # grab repositories
-# bash $vfpa/get-unix/clones.sh
+# bash $vfv/packs/get-unix/clones.sh
 
 set -e
 
@@ -13,7 +13,7 @@ gc='git clone'
 gd(){ echo $1; [[ -d $1 ]] || mkdir $1; cd $1; }
 
 #==> vim colo
-echo; cd $vfpa; gd packs-colo
+echo; cd $vfv/packs; gd packs-colo
 
 gd opt; ls
 
@@ -24,7 +24,7 @@ gd opt; ls
   # $gc https://github.com/rebelot/kanagawa.nvim
 
 #==> vim cp
-echo; cd $vfpa; gd packs-cp
+echo; cd $vfv/packs; gd packs-cp
 
 gd opt; ls
 
@@ -137,7 +137,7 @@ gd opt; ls
   # [[ -d vim-gitgutter ]] && sudo rm -r vim-gitgutter; $gc https://github.com/airblade/vim-gitgutter
 
 #==> vim unix
-echo; cd $vfpa; gd packs-unix
+echo; cd $vfv/packs; gd packs-unix
 
 gd opt; ls
 
@@ -151,13 +151,13 @@ gd opt; ls
   # $gc https://github.com/powerman/vim-plugin-AnsiEsc
 
 #==> vim win64
-echo; cd $vfpa; gd packs-win64
+echo; cd $vfv/packs; gd packs-win64
 
 gd opt; ls
 
   # [[ -d fzf ]] && sudo rm -r fzf; $gc https://github.com/junegunn/fzf
 
 #=> 2 lists
-echo; cd $vfpa
-. $vfpa/get-unix/after.sh
+echo; cd $vfv/packs
+. $vfv/packs/get-unix/after.sh
 

@@ -6,6 +6,7 @@
 -- $lazy/oil.nvim/README.md
 -- :e $HOME
 -- :e $onGH
+-- :e %:h
 -- :e $ITstack/MSWin
 
 return {
