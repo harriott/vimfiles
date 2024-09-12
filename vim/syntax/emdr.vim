@@ -4,8 +4,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Fri 07 Oct 2022
 "
-" sourced by  $vimfiles/vim/filetype.vim
-" also  $vimfiles/vim/ftplugin/emdr.vim
+" sourced by  $vfv/filetype.vim
+" also  $vfv/ftplugin/emdr.vim
 
 ""> sectioning marks for emails
 " Quit when a (custom) syntax file was already loaded

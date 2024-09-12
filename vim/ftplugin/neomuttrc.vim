@@ -12,5 +12,5 @@ setlocal tw=0
 
 ""> folding
 " setlocal fdm=manual  " turns off spurious folding
-source $vimfiles/vim/ftplugin/HashEqualsFolding.vim
+source $vfv/ftplugin/HashEqualsFolding.vim
 

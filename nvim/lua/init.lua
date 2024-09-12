@@ -1,12 +1,9 @@
 
--- https://harriottgithubio/ - mer 17 juil 2024
+-- https://harriott.github.io/ - mer 17 juil 2024
 
 -- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
 --  adapted from  $DCGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
---  symlinked by
---   $MSwin10\mb\symlinks.ps1
---   $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 
 -- -> 0 layout
 -- vim.g.have_nerd_font = true
@@ -77,13 +74,7 @@ vim.keymap.set({'t'},'<C-k>','<Cmd>wincmd k<CR>',{desc='normal mode and move foc
 vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode to normal mode' })
 
 -- -> 1 lazy.nvim 0 bootstrap
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
-if not (vim.uv or vim.loop).fs_stat(lazypath) then -- does what?
-  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
-end -- @diagnostic disable-next-line: undefined-field
-vim.opt.rtp:prepend(lazypath)
--- $lazy/lazy.nvim/doc/lazy.nvim.txt
+require 'lazy/bootstrap'
 
 -- -> 1 lazy.nvim 1
 require('lazy').setup({
@@ -92,7 +83,7 @@ require('lazy').setup({
     {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup()
       vim.keymap.set({'n'},'<leader>sv',"<Cmd>ScrollViewToggle<CR>") end,},
     -- $lazy/nvim-scrollview/doc/scrollview.txt
-    {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,},
+    {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
     -- $lazy/gitsigns.nvim/doc/gitsigns.txt
     {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
     -- require'lazy/catppuccin',
@@ -126,6 +117,7 @@ require('lazy').setup({
       -- :MasonInstall lemminx
       -- :MasonInstall ltex-ls
       -- :MasonInstall lua-language-server
+        -- :MasonUninstall lua-language-server  with no lua files open instead of updating
       -- :MasonInstall mutt-language-server
       -- :MasonInstall perlnavigator
         -- ~/.local/share/nvim/mason/packages/perlnavigator/package.json
@@ -136,7 +128,7 @@ require('lazy').setup({
       -- :MasonLog (~/.local/state/nvim/mason.log)
       -- packages directory
         -- :edit $MASON/packages (where defined?)
-        -- g $HOME\AppData\Local\nvim-data\mason\packages
+        -- g $HADL\nvim-data\mason\packages
         -- r ~/.local/share/nvim/mason/packages
     {"williamboman/mason-lspconfig.nvim",
       -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
@@ -179,7 +171,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- -> 2 nvim-treesitter
 -- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
 -- :h nvim-treesitter-commands
-vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vimfiles/vim/after/syntax/lua.vim
+vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vfv/after/syntax/lua.vim
 
 -- --> parsers
 -- $vimfiles/settings/nvim-unix-TSInstallInfo-sbMb.txt

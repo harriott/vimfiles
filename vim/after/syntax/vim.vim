@@ -3,7 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: mer 22 mai 2024
 
-" $vimfiles/vim/after/syntax/vim.vim
+" $vfv/after/syntax/vim.vim
 
 let g:after_syntax_vim = 1
 

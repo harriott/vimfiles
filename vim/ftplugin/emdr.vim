@@ -1,10 +1,10 @@
 " vim: set fdl=2:
 
-" sourced by  $vimfiles/vim/filetype.vim
+" sourced by  $vfv/filetype.vim
 " Language: emdr - for my draft emails ($vimfiles/sample.emdr)
 " Maintainer: Joseph Harriott
 " Last Change: Fri 30 Sep 2022
-" also  $vimfiles/vim/syntax/emdr.vim
+" also  $vfv/syntax/emdr.vim
 
 " For lists:
 iabbrev <buffer> => ⇒

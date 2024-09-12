@@ -3,9 +3,9 @@
 " Maintainer: Joseph Harriott
 " Last Change: Tue 09 Apr 2024
 
-" $vimfiles/vim/ftplugin/IMfo.vim
-"  also  $vimfiles/vim/syntax/IMfo.vim
-"  configured in  $vimfiles/vim/filetype.vim
+" $vfv/ftplugin/IMfo.vim
+"  also  $vfv/syntax/IMfo.vim
+"  configured in  $vfv/filetype.vim
 
 set fdm=expr
 

@@ -3,9 +3,9 @@
 " Maintainer: Joseph Harriott
 " Last Change: mar 23 avr 2024
   " used by
-  "   $vimfiles/vim/after/syntax/bbcode.vim
-  "   $vimfiles/vim/after/syntax/neomuttrc.vim
-  "   $vimfiles/vim/after/syntax/sh.vim
+  "   $vfv/after/syntax/bbcode.vim
+  "   $vfv/after/syntax/neomuttrc.vim
+  "   $vfv/after/syntax/sh.vim
 
 ""> my syntax for  #=>  folding
 syntax match foldY '^ *#=.*$'

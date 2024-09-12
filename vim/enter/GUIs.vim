@@ -1,8 +1,8 @@
 " vim: set fdl=1:
 
-" $vimfiles/vim/enter/GUIs.vim
+" $vfv/enter/GUIs.vim
 "  source'd by
-"   $vimfiles/vim/enter/gvimrc.vim
+"   $vfv/enter/gvimrc.vim
 "   $vimfiles/nvim/init.vim
 
 let g:sourced_GUIs_vim = 1

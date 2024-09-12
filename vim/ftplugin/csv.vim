@@ -5,12 +5,6 @@
 " Last Change: jeu 16 mai 2024
 " $vimfiles/ftplugin/csv.vim  supplementary to  $vfv/packs/packs-cp/opt/csv.vim/README.md
 
-function! CzAdherentsCsvColumns()
-    DeleteColumn 1-4
-    DeleteColumn 3
-    DeleteColumn 5-52
-endfunction
-
 ""> for csv.vim
 " clearmatches
 

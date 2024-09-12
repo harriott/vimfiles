@@ -5,5 +5,5 @@
 " for  $OSAB/tmux/tmux.conf
 " $vimfiles/ftplugin/tmux.vim  supplemental to  $VIMRUNTIME/ftplugin/tmux.vim
 
-source $vimfiles/vim/ftplugin/HashEqualsFolding.vim
+source $vfv/ftplugin/HashEqualsFolding.vim
 

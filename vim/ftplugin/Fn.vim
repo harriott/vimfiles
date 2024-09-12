@@ -4,8 +4,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 15 Apr 2024
 
-" $vimfiles/vim/ftplugin/Fn.vim
-"  also  $vimfiles/vim/syntax/Fn.vim
+" $vfv/ftplugin/Fn.vim
+"  also  $vfv/syntax/Fn.vim
 
 setlocal nowrap textwidth=0
 

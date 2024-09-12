@@ -1,12 +1,12 @@
 
-" $vimfiles/vim/ftplugin/ALElocaleader.vim
+" $vfv/ftplugin/ALElocaleader.vim
 "  sourced by
-"   $vimfiles/vim/ftplugin/html-ft.vim
-"   $vimfiles/vim/ftplugin/markdown.vim
-"   $vimfiles/vim/ftplugin/python.vim
-"   $vimfiles/vim/ftplugin/sh.vim
-"   $vimfiles/vim/ftplugin/text.vim
-"   $vimfiles/vim/ftplugin/yaml.vim
+"   $vfv/ftplugin/html-ft.vim
+"   $vfv/ftplugin/markdown.vim
+"   $vfv/ftplugin/python.vim
+"   $vfv/ftplugin/sh.vim
+"   $vfv/ftplugin/text.vim
+"   $vfv/ftplugin/yaml.vim
 
 " jump to a definition
 noremap <silent> <localleader>d :ALEGoToDefinition<cr>

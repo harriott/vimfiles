@@ -1,12 +1,12 @@
 
-" $vimfiles/vim/enter/vimrc-linux.vim
-" source'd by  $vimfiles/vim/enter/vimrc-Arch.vim
+" $vfv/enter/vimrc-linux.vim
+" source'd by  $vfv/enter/vimrc-Arch.vim
 
 if has('nvim')
   set title  " for Alacritty
 else
   " first, some general settings
-  source $vimfiles/vim/enter/vimrc_example.vim
+  source $vfv/enter/vimrc_example.vim
   " easier copying to end of line (Y  in  nvim)
   nnoremap <leader>v v$hy
 endif
@@ -21,7 +21,7 @@ set clipboard^=unnamedplus  " se cb, stackoverflow 23946289
 " let g:netrw_browsex_viewer = 'xdg-open-bda'
 " see $HOME/.vim/xdg-open-bda.sh
 
-source $vimfiles/vim/enter/vimrc.vim  " $vimfiles/vimrc.vim
+source $vfv/enter/vimrc.vim  " $vfvrc.vim
 
 " Set keywordprg empty, to make K invoke vim's internal help:
 set kp=

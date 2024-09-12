@@ -5,7 +5,7 @@
 " Last Change: jeu 16 mai 2024
 " $vimfiles/after/syntax/ps1.vim, supplementary to  $vfv/packs/packs-cp/opt/vim-ps1/syntax/ps1.vim
 
-source $vimfiles/vim/after/syntax/HashEqualsFolding.vim
+source $vfv/after/syntax/HashEqualsFolding.vim
 
 ""> PP's regions
 " syntax match regionstart '#region' " unfortunately overrides the folding...

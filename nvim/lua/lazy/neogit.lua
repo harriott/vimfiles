@@ -20,6 +20,7 @@ return { "NeogitOrg/neogit",
 
 
 -- Diffview.nvim:
+-- $lazy/diffview.nvim/doc/diffview.txt
 -- :DiffviewFileHistory %
 -- :DiffviewClose
 -- g?

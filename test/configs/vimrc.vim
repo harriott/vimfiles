@@ -4,7 +4,7 @@
 
 " my testing vimrc
 " ----------------
-" see  $vimfiles/vim/enter/vimrc.vim
+" see  $vfv/enter/vimrc.vim
 
 ""> 0 essential: limit Vim's configuration paths
 if has('unix')
@@ -23,10 +23,10 @@ endif
 " redraw
 
 ""> 1 paths on Win10
-source ~/vimtest/vimrc-Win10-paths.vim
+source ~/vimtest/Win10Paths.vim
 
 ""> 3 Vim flavour - not nvim
-if !has('nvim') | source $vimfiles/vim/enter/vimrc_example.vim | endif
+if !has('nvim') | source $vfv/enter/vimrc_example.vim | endif
 " - implements syntax highlighting
 " - needed for  fzf.vim
 

@@ -4,12 +4,12 @@
 " Maintainer: Joseph Harriott
 " Last Change: Thu 08 Sep 2022
 
-" $vimfiles/vim/ftplugin/build.vim
-"  also  $vimfiles/vim/syntax/build.vim
+" $vfv/ftplugin/build.vim
+"  also  $vfv/syntax/build.vim
 
 setlocal expandtab shiftwidth=2 textwidth=0
 
 ""> folding by Markdown style header marks
-source $vimfiles/vim/ftplugin/HashFolding.vim
+source $vfv/ftplugin/HashFolding.vim
 setlocal foldcolumn=1
 

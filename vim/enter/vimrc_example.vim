@@ -2,9 +2,9 @@
 
 " Joseph Harriott - Thu 04 Jul 2024
 
-" $vimfiles/vim/enter/vimrc_example.vim  sourced by
-"  $vimfiles/vim/enter/vimrc-GNULinux.vim
-"  $vimfiles/vimrc-Win10.vim  but not for  nvim
+" $vfv/enter/vimrc_example.vim  sourced by
+"  $vfv/enter/vimrc-GNULinux.vim
+"  $vfvrc-Win10.vim  but not for  nvim
 "  something herein gets leader mappings working
 
 ""> 0 some recommended defaults, with adjustments

@@ -2,7 +2,9 @@
 
 " Joseph Harriott - Sun 26 Feb 2023
 
-" $vimfiles/vim/after/plugin/plugins.vim
+" $vfv/after/plugin/plugins.vim
+
+if exists('g:test') | finish | endif
 
 " ""> csv.vim
 " " override  $vfv/packs/packs-cp/opt/csv.vim/ftdetect/csv.vim

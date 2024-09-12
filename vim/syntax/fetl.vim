@@ -16,8 +16,8 @@
 if exists('b:current_syntax') | finish |  endif
 
 syn match fetl_file '^[^/^\\]\+$' contains=fetl_gdoafwe  " paths in linux & MSWin
-syn match fetl_pathish '\(\/.*\| C:\\.*\)' contains=fetl_gdoafwe  " paths in linux & MSWin
-syn match fetl_gdoafwe '\([-._0-9a-zA-Z]\+\ze\(\/\|\\\)\.git.*$\|[-,_0-9a-zA-Zé '+]\+\.[0-9a-zA-Z]\+$\)' contained " matche git directory or any file with extension
+syn match fetl_pathish '\(\/.*\| D:\\.*\)' contains=fetl_gdoafwe  " paths in linux & MSWin
+syn match fetl_gdoafwe '\([-._0-9a-zA-Z]\+\ze\(\/\|\\\)\.git.*$\|[-,_0-9a-zA-Zéï '+]\+\.[0-9a-zA-Z]\+$\)' contained " matche git directory or any file with extension
 hi def link fetl_gdoafwe DiffText
 
 let b:current_syntax = "fetl"

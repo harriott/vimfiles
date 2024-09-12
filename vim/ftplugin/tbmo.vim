@@ -14,7 +14,7 @@ nnoremap <buffer><f7> :s/\n/, / <bar> nohlsearch <CR>
 nnoremap <buffer><s-f7> :s/, /\r/g <bar> nohlsearch <CR>
 
 ""> folding by Markdown style header marks
-source $vimfiles/vim/ftplugin/HashFolding.vim
+source $vfv/ftplugin/HashFolding.vim
 setlocal foldcolumn=1
 setlocal textwidth=0
 

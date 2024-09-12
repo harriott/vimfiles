@@ -1,7 +1,7 @@
 
-" https://harriott.githubio/ - ven 26 juil 2024
+" https://harriott.githubio/ - mer 11 sept 2024
 
-" $vfv/plugin/plugins.vim
+" $vfv/plugin/packsVim.vim
 
 " find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
 

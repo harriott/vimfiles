@@ -5,7 +5,6 @@
 " Useful adjustments for working with LaTeX documents.
 "  supplemental to  $VIMRUNTIME/ftplugin/tex.vim
 " $VIMRUNTIME/filetype.vim > TeX  to see detections
-" see also  $vimfiles/after/ftplugin/tex.vim
 
 " open compiled pdf
   nnoremap <buffer><F12> :call CompiledPDF()<CR>
@@ -117,7 +116,7 @@ if !has('nvim')
   let b:ale_enabled = 0
   let b:ale_linters = ['vale']
   " se ofu=ale#completion#OmniFunc " omnifunc - doesn't work
-  source $vimfiles/vim/ftplugin/ALElocaleader.vim
+  source $vfv/ftplugin/ALElocaleader.vim
 endif
 
 " VimTeX
@@ -128,7 +127,7 @@ setlocal conceallevel=2
   nnoremap <localleader><f5> :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
   " - can help when using  tabular  while  VimTeX  is active
 
-""> Tabbing
+""> tabbing
 " (lifted from syntax\dokuwiki.vim):
 " Set shift width for indent
 setlocal shiftwidth=2

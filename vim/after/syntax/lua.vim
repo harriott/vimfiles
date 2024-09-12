@@ -5,9 +5,9 @@
 " Last Change: mer 17 juil 2024
 " Syntax highlighting for folding my Lua scripts.
 
-" $vimfiles/vim/after/syntax/lua.vim
+" $vfv/after/syntax/lua.vim
 "  supplementary to  $VIMRUNTIME/syntax/lua.vim
-"  (I set  fdm=expr  in  $vimfiles/vim/ftplugin/lua.vim)
+"  (I set  fdm=expr  in  $vfv/ftplugin/lua.vim)
 
 let g:after_syntax_lua = 1
 

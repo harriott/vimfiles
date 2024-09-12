@@ -5,6 +5,7 @@
 
 " $ ls $vimfiles -r vim/packs*/opt
 
+if exists('g:test') | finish | endif
 let g:packs_vim = 1
 
 ""> encoding
@@ -14,8 +15,8 @@ packadd vim-plugin-AnsiEsc
 
 "">> context.vim
 " :ContextToggleWindow  mapped in
-"  $vimfiles/vim/ftplugin/perl.vim
-"  $vimfiles/vim/ftplugin/ps1.vim
+"  $vfv/ftplugin/perl.vim
+"  $vfv/ftplugin/ps1.vim
 let g:context_enabled = 0
 " overwrites  lspsaga's  breadcrumbs
 packadd context.vim
@@ -83,8 +84,8 @@ if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
 " packadd vim-css-color  " slows down every other filetype...
 
 "">>> csv.vim
-" configured in  $vimfiles/ftplugin/csv.vim
-"  & see  $vimfiles/vim/after/plugin/plugins.vim
+" extra tools in  $vfv/ftplugin/csv.vim
+"  & see  $vfv/after/plugin/packs.vim
 
 " $vfv/packs/packs-cp/opt/csv.vim/ftdetect/csv.vim
 " :h ft-csv  ($vfv/packs/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
@@ -106,6 +107,7 @@ let g:csv_highlight_column = 'y'
 " - could be useful, but makes seeing the cursor difficult in  tomorrow
 
 "">>>> commands
+" :WhatColumn
 " H -> go left
 " L -> go right
 
@@ -114,6 +116,7 @@ let g:csv_highlight_column = 'y'
 " :CSVInit  " reinitialise the plugin (clears HiColumn)
 " :DeleteColumn [n[-m]]  " deleted column(s) [n[-m]]
 " :MoveColumn [n] [m]  " moves column [n] to right [of column m] (m can be $)
+" :SearchInColumn [n] <text>  " doesn't work for numbers...
 " :Sort [column}
 
 " column hiding
@@ -270,7 +273,9 @@ let g:vimtex_compiler_enabled = 0
 let g:vimtex_compiler_silent = 1  " doesn't hide the «latexmk is not executable» message
 let g:vimtex_fold_enabled = 1
 let g:vimtex_include_search_enabled = 0
-let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 1, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, }
+let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 0, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, }
+" - search for  function! s:match_conceal_  in
+"     $vfv/packs/packs-cp/opt/vimtex/autoload/vimtex/syntax/core.vim
 let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'Odr', 'hlgroup': 'CursorLineNr'},
   \ {'name': 'Eltt', 'hlgroup': 'CursorLineNr'},
@@ -308,8 +313,8 @@ packadd minimap.vim
 " $vfv/packs/packs-cp/opt/vim-tagbar/README.md
 
 " :TagbarToggle  mapping set in
-"  $vimfiles/vim/ftplugin/perl.vim
-"  $vimfiles/vim/ftplugin/python.vim
+"  $vfv/ftplugin/perl.vim
+"  $vfv/ftplugin/python.vim
 
 " h tagbar-contents
 " h tagbar-ignore
@@ -375,7 +380,7 @@ let g:ale_echo_msg_format = '%linter% %code% %s'
 let g:ale_virtualtext_cursor = 'disabled'  " turns off end of line  virtual-text  messages
 let g:ale_linters_explicit = 1  " turns off all except explicity defined linters
 "  I use  let b:ale_linters = [...]  in my  ftplugin  configurations,
-"   and  $vimfiles/vim/ftplugin/ALElocaleader.vim
+"   and  $vfv/ftplugin/ALElocaleader.vim
 let g:ale_sign_column_always = 1
 packadd ale
 
@@ -441,9 +446,9 @@ let g:colorizer_disable_bufleave = 1
 " kept in reserve, replaced by  vim-colors-tomorrow
 
 "">>> vim-colors-tomorrow
-" $vimfiles/vim/enter/gvimrc-Arch.vim
-" $vimfiles/vim/enter/vimrc-Arch.vim
-" $vimfiles/vim/enter/vimrc-Win10.vim
+" $vfv/enter/gvimrc-Arch.vim
+" $vfv/enter/vimrc-Arch.vim
+" $vfv/enter/vimrc-Win10.vim
 
 "">>> vim-wombat-scheme
 " $vimfiles/nvim/init.vim
@@ -509,7 +514,7 @@ packadd lf-vim
 " packadd nerdfont.vim
 
 "">> vim-devicons
-" loaded in  $vimfiles/vim/after/plugin/plugins.vim
+" loaded in  $vfv/after/plugin/plugins.vim
 
 "">> vim-fontsize
 " $vfv/packs/packs-cp/opt/vim-fontsize/doc/fontsize.txt

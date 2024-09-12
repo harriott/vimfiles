@@ -3,8 +3,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Tue 09 Apr 2024
 
-" $vimfiles/vim/syntax/IMfo.vim
-"  also  $vimfiles/vim/ftplugin/IMfo.vim
+" $vfv/syntax/IMfo.vim
+"  also  $vfv/ftplugin/IMfo.vim
 "  configured in  $vimfiles/filetype.vim
 
 if exists('b:current_syntax') | finish |  endif

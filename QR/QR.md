@@ -86,7 +86,7 @@ Stack Exchange Vi and Vim
     \q            " quickfix list (ListToggle)
     \\c           " cursorcolumn toggle
     \\l           " cursorline toggle
-    \\ll          " listchars (:h 'list') toggle
+    \\ll          " listchars (:h 'list') toggle (local)
 
 ## Colorizer
     :ColorClear         " clears colourizing
@@ -315,6 +315,7 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
 
 # search
     <hash>      " over a word highlights all exact instances, and jumps to last
+    :g/^#####\+           " shows lines that begin with 5 or more #'s
     :g\pattern  " list of lines containing "pattern"
 
 ```vim
@@ -326,7 +327,6 @@ g# (or g*)            " # (or *) without \< \>
 \n                    " (my mapping for) clearing yellow searched highlights
 \rn                   " (my mapping for) toggle relativenumber
 :Bufferize il <word>  " grab list of lines containing <word> in a new buffer
-:g/^#####\+           " shows lines that begin with 5 or more #'s
 :%s/pattern//ng       " reports number of occurances
 [I or ]I              " list lines containing word under cursor
 n                     " find next highlighted search result
@@ -408,6 +408,7 @@ gx                    " open url under cursor (or all of first line of markdown 
 \<f11>                          " last modification time
 \vg                             " cd to file's and vimgrep for last search
 gf                              " open file under cursor - :h gF
+se ff                           " fileformat
 ```
 
 ### Netrw
@@ -425,18 +426,21 @@ gf                              " open file under cursor - :h gF
 	gS " search word
 	gW " search Wikipedia
 
-## Python
-    :echo has('python')
+## OS
+linux: must have LF's
 
-`:version` shows what minor version of Python is expected
-
-## Win10
+### Win10
 ```
 $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :echo $computername
 :echo $programfiles
 :echo $username
-```
+:put =$PATH
+
+## Python
+    :echo has('python')
+
+`:version` shows what minor version of Python is expected
 
 # tab views
     gT  gt    " move around tabs
@@ -458,12 +462,13 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :g\^\m 0                     " reverse the entire buffer
 :ni<somecharacter><enter>    " inserts <somecharacters> n time
 :h g_CTRL-G                  " position and word info, works on a range too
+:put ='this_text'
+:sleep
 :t.                          " reproduce line
 :t.|s\.\=\g                  " setext-style header underlining
 \yy                          " CalendarH
 ctrl-q ctrl-m                " inserts ^M (carriage return)
 g&                           " repeat last command over the whole document
-put ='this_text'
 :.,+3s/foo/bar               " replaces on this and next 3 lines
 ```
 
@@ -541,21 +546,27 @@ g<Ctrl-G>  " statistics
 ```
 
 ## spell
-    $vimfiles/spell/en.utf-8.add
-    $vimfiles/spell/fr.utf-8.add
     (count)]s => move to next misspelled word after the cursor
     (count)[s => like  ]s  but search backwards
     :h nospell
     :se spell?
     z= => suggest corrections
-    zg => add good word
-        zuw => undo
 
-### rare words
+### files
+    :mksp! %
+
+#### .add files
+    $vfv/spell/en.utf-8.add
+    $vfv/spell/fr.utf-8.add
+    zg  => add good word
+    zuw => remove word
+
+#### rare words
     :h hl-SpellRare
     :h spell-RARE
     :spellra <rareword>
-    zr
+
+`z?` (`$vfv/plugin/plugin.vim`)
 
 ### spelllang
     :se spl

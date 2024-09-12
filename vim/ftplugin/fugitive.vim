@@ -2,7 +2,7 @@
 " Language: fugitive
 " Maintainer: Joseph Harriott
 " Last Change: lun 06 mai 2024
-" $vimfiles/vim/ftplugin/fugitive.vim
+" $vfv/ftplugin/fugitive.vim
 
 nnoremap <buffer><leader>gp :Git push<cr>
 nnoremap <buffer><leader>gs 4j-<cr>

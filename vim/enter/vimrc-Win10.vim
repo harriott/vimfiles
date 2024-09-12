@@ -14,7 +14,7 @@ if $VIM == '/usr/share/vim' | finish | endif  " (adapted for Git-2.8.1-64-bit.ex
 
 ""> 1 vimrc_example.vim
 if !has('nvim')
-  source $vimfiles/vim/enter/vimrc_example.vim
+  source $vfv/enter/vimrc_example.vim
 endif
 
 ""> 2 mswin.vim
@@ -67,7 +67,7 @@ if !has('nvim')
 endif
 
 "">> continue vimrc
-source $vimfiles/vim/enter/vimrc.vim
+source $vfv/enter/vimrc.vim
 
 "">> ensure vimswap
 if isdirectory($HOME.'/.vimswap') == 0

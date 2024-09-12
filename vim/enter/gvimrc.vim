@@ -1,10 +1,10 @@
 " vim: set fdl=1:
 
-" $vimfiles/vim/enter/gvimrc.vim
+" $vfv/enter/gvimrc.vim
 "  not used by  Nvim
 "  source'd by
-"   $vimfiles/vim/enter/gvimrc-Arch.vim
-"   $vimfiles/vim/enter/gvimrc-Win10.vim
+"   $vfv/enter/gvimrc-Arch.vim
+"   $vfv/enter/gvimrc-Win10.vim
 
 let g:sourced_gvimrc_vim = 1
 
@@ -56,7 +56,7 @@ endif
 set columns=106  "good for tw=99 with linenumbers up to 9999, and a foldcolumn
 
 "">>> toggle width
-source $vimfiles/vim/enter/GUIs.vim
+source $vfv/enter/GUIs.vim
 if hostname() == 'sbMb'
   " se co=160  takes all rh side
   if v:lang =~ 'fr'

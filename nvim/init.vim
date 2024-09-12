@@ -1,4 +1,4 @@
-" https://harriottgithubio/ - mar 16 juil 2024
+" https://harriott.github.io/ - mar 16 juil 2024
 
 " -------------------------
 " configurations for neovim
@@ -58,7 +58,7 @@ if has('win64')
   source $HOME\vimfiles\Win10Paths.vim  " $vimfiles\vim\enter\Win10Paths.vim
   source $vimfiles\vim\enter\vimrc-Win10.vim
 else
-  source $vimfiles/vim/enter/vimrc-Arch.vim
+  source $vfv/enter/vimrc-Arch.vim
 endif
 
 ""> 2 colors
@@ -80,7 +80,7 @@ endif
 
 ""> 2 mappings to toggle GUI width
 if exists('g:neovide')
-  source $vimfiles/vim/enter/GUIs.vim
+  source $vfv/enter/GUIs.vim
   if has('unix')
     if hostname() == 'sbMb'
       " se co=109  as in  $machBld/jo/Bash/exportWS
@@ -120,5 +120,5 @@ if has('win64')
   " g $env:programfiles\LibreOffice\program\sqlite3.dll
 endif " - for  $vimfiles/nvim/lua/lazy/nvim-neoclip.lua
 lua require('init')
-" - $vimfiles/nvim/lua-init.lua
+" - $vimfiles/nvim/lua/init.lua
 

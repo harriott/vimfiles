@@ -3,13 +3,13 @@
 " Language: markdown
 " Maintainer: Joseph Harriott
 " Last Change: dim 12 mai 2024
-" $vimfiles/vim/ftplugin/markdown.vim
+" $vfv/ftplugin/markdown.vim
 "  supplementary to
 "   $vfv/packs/packs-cp/opt/vim-markdown/README.md
-"   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vimfiles/vim/ftplugin/html.vim )
+"   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vfv/ftplugin/html.vim )
 
 " Filetype detection:
-"  $vimfiles/vim/filetype.vim
+"  $vfv/filetype.vim
 "  $VIMRUNTIME/filetype.vim
 "  $vfv/packs/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
 
@@ -21,7 +21,7 @@ vnoremap <buffer>= <Nop>
 " ALE
 let b:ale_enabled = 0
 let b:ale_linters = ['languagetool']
-source $vimfiles/vim/ftplugin/ALElocaleader.vim
+source $vfv/ftplugin/ALElocaleader.vim
 
 " demote a selected part
 vnoremap <buffer><leader>> :s/^#/##/<CR>
@@ -32,7 +32,7 @@ vnoremap <buffer><leader>< :s/^#//<CR>
 nnoremap <buffer><localleader>b viwc****<Esc>hP
 
 " folding by header marks
-source $vimfiles/vim/ftplugin/HashFolding.vim
+source $vfv/ftplugin/HashFolding.vim
 
 " Vim Markdown
 setlocal conceallevel=2

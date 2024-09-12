@@ -3,7 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 15 Apr 2024
 " for general  ripgrep  output
-" $vimfiles/vim/syntax/rgo.vim   configured in  $vimfiles/vim/filetype.vim
+" $vfv/syntax/rgo.vim   configured in  $vfv/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 

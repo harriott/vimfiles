@@ -3,9 +3,9 @@
 " Language: Vim
 " Maintainer: Joseph Harriott
 " Last Change: Tue 28 May 2024
-" "$vimfiles/vim/ftplugin/vim.vim
+" "$vfv/ftplugin/vim.vim
 "  (supplemental to  $VIMRUNTIME/ftplugin/vim.vim)
-"  also  $vimfiles/vim/after/ftplugin/vim.vim
+"  also  $vfv/after/ftplugin/vim.vim
 
 let g:vim_indent = #{ line_continuation: shiftwidth(), }
 setlocal expandtab shiftwidth=2 textwidth=0
@@ -40,7 +40,7 @@ vnoremap <buffer><leader>> :s/"">/"">>/<CR>
 vnoremap <buffer><leader>< :s/"">>/"">/<CR>
 
 "">> turn off or on a fold of commands
-source $vimfiles/vim/ftplugin/firmCommentWholeFold.vim
+source $vfv/ftplugin/firmCommentWholeFold.vim
 
 " firmly comment out a whole fold
 if v:lang =~ 'fr'

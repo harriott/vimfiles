@@ -2,7 +2,7 @@
 # vim: set cc=80 tw=79:
 
 # Turn off Caps Lock (as fixed by diegogs in askubuntu questions 80254)
-# mapped to  <insert>  in   $vimfiles/vim/enter/vimrc-linux.vim
+# mapped to  <insert>  in   $vfv/enter/vimrc-linux.vim
 
 from ctypes import *
 import subprocess

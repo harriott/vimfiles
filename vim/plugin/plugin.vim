@@ -176,6 +176,7 @@ function! ClearFancyGlyphs()
   :sil!%s/[ऀ-ॿ]/-/g  " Devanagari characters
   :sil!%s/[ก-๛]/-/g  " Thai characters
   :sil!%s/“/"/g
+  :sil!%s/„/"/g
   :sil!%s/”/"/g
   :sil!%s/″/"/g
   :sil!%s/＂/"/g
@@ -312,14 +313,23 @@ endif
 
 "">> fix conversion to latin1
 " no clue yet as to how this conversion happens
-" se fenc=utf8
+" :se fenc=utf8
+" /\vÂ|Ã|Å
 function! FixConversionToLatin1()
   :sil!%s/Â£/£/g
+  :sil!%s/Â«/«/g
   :sil!%s/Â±/±/g
   :sil!%s/Â°/°/g
+  :sil!%s/Â³/³/g
+  :sil!%s/Âµ/µ/g
+  :sil!%s/Âº/°/g
   :sil!%s/Â½/½/g
+  :sil!%s/Â»/»/g
   :sil!%s/Â¾/¾/g
+  :sil!%s/Â¼/¼/g
+  :sil!%s/Ã/Â/g
   :sil!%s/Ã/Ç/g
+  :sil!%s/Ã/É/g
   :sil!%s/Ã/Î/g
   :sil!%s/Ã/Ð/g
   :sil!%s/Ã/Ò/g
@@ -334,16 +344,27 @@ function! FixConversionToLatin1()
   :sil!%s/Ã©/é/g
   :sil!%s/Ãª/ê/g
   :sil!%s/Ã«/ë/g
+  :sil!%s/Ã¦/ë/g
   :sil!%s/Ã®/î/g
   :sil!%s/Ã¯/ï/g
+  :sil!%s/Ã±/ñ/g
   :sil!%s/Å/ō/g
   :sil!%s/Ã³/ó/g
   :sil!%s/Ã´/ô/g
   :sil!%s/Ã¶/ö/g
+  :sil!%s/Ã¸/ø/g
+  :sil!%s/Ãº/ú/g
   :sil!%s/Ã»/û/g
+  :sil!%s/Ã¼/ü/g
+  :sil!%s/Ä/ā/g
+  :sil!%s/Å«/ū/g
+  :sil!%s/Å/Œ/g
+  :sil!%s/Å/œ/g
   :sil!%s/É/ɑ/g
   :sil!%s/â¬/€/g
   :sil!%s/â/№/g
+  :sil!%s/â/⅓/g
+  :sil!%s/â/⅔/g
   :sil!%s/â¦/Ω/g
 endfunction
 
@@ -356,7 +377,7 @@ function! TbCsv()
   '<,'>s/,.*/
 endfunction
 
-"">> percent code
+"">> percent-encoding
 " convert url parenthesis, and various diacritics to percent code
 " to switch the order of these substitutions, use  s#/\(.\{-}\)/\(.\{-}\)/#/\2/\1/#g
 
@@ -491,7 +512,8 @@ au! BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 noremap <leader><leader>ll :set list! list? <CR>
 " (:h 'list')
 
-nnoremap zr :exe ':spellrare  '.expand('<cWORD>')<CR>
+nnoremap z? :exe ':spellrare  '.expand('<cWORD>')<CR>
+" - should then  :mksp! %
 
 " set showtabline=1
 "  because it's somehow sometimes set to 2

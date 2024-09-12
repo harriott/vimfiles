@@ -3,7 +3,7 @@
 " Language: html
 " Maintainer: Joseph Harriott
 " Last Change: Mon 22 Apr 2024
-" $vimfiles/vim/ftplugin/html-ft.vim, sourced by  $vimfiles/vim/ftplugin/html.vim
+" $vfv/ftplugin/html-ft.vim, sourced by  $vfv/ftplugin/html.vim
 
 " For html's detected as  liquid:
 nnoremap <buffer> <localleader>h :set filetype=html<CR>
@@ -14,7 +14,7 @@ if !has('nvim')
 
   " ALE
   let b:ale_linters = ['cspell', 'htmlhint',]
-  source $vimfiles/vim/ftplugin/ALElocaleader.vim
+  source $vfv/ftplugin/ALElocaleader.vim
 endif
 
 setlocal foldmethod=indent

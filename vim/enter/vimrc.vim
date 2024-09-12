@@ -3,15 +3,15 @@
 " -------------------------------------------------------
 " - Joseph Harriott - jeu 16 mai 2024
 
-" $vimfiles/vim/enter/vimrc.vim  source'd by
-"  $vimfiles/vim/enter/vimrc-linux.vim
+" $vfv/enter/vimrc.vim  source'd by
+"  $vfv/enter/vimrc-linux.vim
 "  $vimfiles\vim\enter\vimrc-Win10.vim
 
 " ------------------------------------------------------------------
 " typically basic Vim settings here - look in plugin folder for more
 " ------------------------------------------------------------------
 
-set encoding=utf-8  " get this done early
+set enc=utf-8  " encoding, get this done early
 set mps=(:),{:},[:],<:>
 set nojoinspaces  " already off in  nvim
 set shiftwidth=4
@@ -94,8 +94,8 @@ function! VimWriteClose()
     put=cfd
     normal kdd
     wall
-    quit " close completely
-    " loosing recents on Win10Pro
+    sleep  " see if this ensures saving of recents
+    quit " close completely, but losing recents on Win10Pro
   else
     let s:b = expand('%:t')
     silent wall

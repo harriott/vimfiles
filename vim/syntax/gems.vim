@@ -3,7 +3,7 @@
 "  gem list > $ulLA/$host/gems.gems
 " Maintainer: Joseph Harriott
 " Last Change: Mon 15 Apr 2024
-" $vimfiles/vim/syntax/gems.vim  configured in  $vimfiles/vim/filetype.vim
+" $vfv/syntax/gems.vim  configured in  $vfv/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 

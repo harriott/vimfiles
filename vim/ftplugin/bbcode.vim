@@ -3,14 +3,14 @@
 " Language: BBCode
 " Maintainer: Joseph Harriott
 " Last Change: Thu 13 May 2021
-" $vimfiles/vim/ftplugin/bbcode.vim  (see also  $vimfiles/after/syntax/bbcode.vim)
+" $vfv/ftplugin/bbcode.vim  (see also  $vimfiles/after/syntax/bbcode.vim)
 
 setlocal textwidth=0
 
-source $vimfiles/vim/ftplugin/HashEqualsFolding.vim
+source $vfv/ftplugin/HashEqualsFolding.vim
 
 ""> folding by Markdown style header marks
-source $vimfiles/vim/ftplugin/HashFolding.vim
+source $vfv/ftplugin/HashFolding.vim
 setlocal foldcolumn=1
 
 ""> tags - inline code

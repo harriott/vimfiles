@@ -56,6 +56,7 @@ Joseph's (g)Vim Quick Reference
     :lua if vim.fn.has("win64") == 1 then print('win64') else print('not win6') end
 
 ## plugins
+    $lazy
     $vimfiles/nvim/lua/lazy/telescope.lua
 
 ### Comment.nvim
@@ -158,6 +159,11 @@ $misc/CP/vimtest/README.md
 
 - `&&`, `||`
 - options as variable: `:echo &textwidth`
+
+### file formats
+    :se ff        " fileformat
+    :se ffs       " fileformats
+    :e ++ff=unix  " shows ^M at end of dos files
 
 ### mappings
     :Bufferize map           " n s v

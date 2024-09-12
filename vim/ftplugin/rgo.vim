@@ -4,8 +4,8 @@
 " Last Change: Mon 15 Apr 2024
 " for general  ripgrep  output
 
-" $vimfiles/vim/ftplugin/rgo.vim
-"  also  $vimfiles/vim/syntax/rgo.vim
+" $vfv/ftplugin/rgo.vim
+"  also  $vfv/syntax/rgo.vim
 
 setlocal nowrap textwidth=0
 

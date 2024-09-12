@@ -4,7 +4,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 05 Sep 2022
 
-" $vimfiles/vim/ftplugin/lisp.vim, supplementary to  $VIMRUNTIME/ftplugin/lisp.vim
+" $vfv/ftplugin/lisp.vim, supplementary to  $VIMRUNTIME/ftplugin/lisp.vim
 " Lisp  files are decided in  $VIMRUNTIME/filetype.vim
 
   " if getline(v:lnum) =~ '^(' | return ">1" | else | return "=" | endif
@@ -25,7 +25,7 @@ function! LispExpression()
 endfunction
 
 ""> turn off or on a fold of commands
-source $vimfiles/vim/ftplugin/firmCommentWholeFold.vim
+source $vfv/ftplugin/firmCommentWholeFold.vim
 
 " firmly comment out a whole fold
 nnoremap <buffer><leader><leader>> :call FirmComment(';')<cr>

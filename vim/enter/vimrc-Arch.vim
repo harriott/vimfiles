@@ -1,10 +1,10 @@
 
-" $vimfiles/vim/enter/vimrc-Arch.vim
+" $vfv/enter/vimrc-Arch.vim
 " sourced from my
 "  $ABjo/textEdit/Vim/vimrc
 "  $vimfiles/nvim/init.vim
 
-source $vimfiles/vim/enter/vimrc-linux.vim  " $vimfiles/vimrc-linux.vim
+source $vfv/enter/vimrc-linux.vim  " $vfvrc-linux.vim
 
 if hostname() == 'AsusW202'
   set redrawtime=4000  " for  linux-pn.dw

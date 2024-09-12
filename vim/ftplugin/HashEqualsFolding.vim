@@ -2,7 +2,7 @@
 
 " Maintainer: Joseph Harriott
 " Last Change: Mon 18 Oct 2021
-" $vimfiles/vim/ftplugin/HashEqualsFolding.vim
+" $vfv/ftplugin/HashEqualsFolding.vim
   " used by
   "   $vimfiles/ftplugin/bbcode.vim
   "   $vimfiles/ftplugin/sh.vim
@@ -37,7 +37,7 @@ setlocal foldexpr=HashEqualsFold()
 setlocal foldmethod=expr
 
 ""> turn off or on a fold of commands
-source $vimfiles/vim//ftplugin/firmCommentWholeFold.vim
+source $vfv//ftplugin/firmCommentWholeFold.vim
 
 " firmly comment out a whole fold
 if v:lang =~ 'fr'

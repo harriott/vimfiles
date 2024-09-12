@@ -4,8 +4,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 15 Apr 2024
 
-" $vimfiles/vim/ftplugin/leader.vim
-"  also  $vimfiles/vim/syntax/leader.vim
+" $vfv/ftplugin/leader.vim
+"  also  $vfv/syntax/leader.vim
 
 setlocal nowrap textwidth=0
 

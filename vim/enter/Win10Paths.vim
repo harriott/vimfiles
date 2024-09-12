@@ -2,7 +2,7 @@
 
 " Joseph Harriott - ven 26 juil 2024
 
-" $vimfiles/vim/enter/vimrc-Win10-paths.vim
+" $vfv/enter/Win10Paths.vim
 " source'd by
 "  $MSWin10/mb/_vimrc-AZERTY
 "  $vimfiles/nvim/init.vim
@@ -16,6 +16,7 @@ let $Drpbx = 'D:\Dropbox'
       let $CzPeo = $Cfzd.'\people'
         let $Copil = $CzPeo.'\adherents\FA+Copil'
       let $CzPhy = $Cfzd.'\PhysicalProperty'
+    let $CfWk = $DJH.'\Cop-work'
     let $cITh = $DJH.'copied\IT-handy'
     let $core = $DJH.'\core'
       let $ITstack = $core.'\IT_stack'
@@ -34,9 +35,12 @@ let $Drpbx = 'D:\Dropbox'
           let $OSAB = $onGH.'\OS-ArchBuilds'
             let $ABjo = $OSAB.'\jo'
               let $AjB = $ABjo.'\Bash'
+              let $Openbox = $ABjo.'\wm\Openbox'
+                  let $Obc = $Openbox.'\openbox'
           let $OSAT = $onGH.'\OS-Android-Termux'
           let $OSL = $onGH.'\OS-Linux'
           let $SPD = $onGH.'\SyncPortableDrives\RoboCopy\'.$computername
+          let $ulL = $ITstack.'\unix_like-linux'
           let $vimfiles = $onGH.'\vimfiles'
             let $vfv = $vimfiles.'\vim'
       let $TeNo = $core.'\TextNotes'

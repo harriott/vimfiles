@@ -9,5 +9,5 @@
 "   $VIMRUNTIME/syntax/neomuttrc.vim
 
 ""> folding
-source $vimfiles/vim/after/syntax/HashEqualsFolding.vim
+source $vfv/after/syntax/HashEqualsFolding.vim
 

@@ -3,9 +3,9 @@
 " Maintainer: Joseph Harriott
 " Last Change: jeu 01 août 24
 " this is for extra funtionality that I like for my *.md files
-" $vimfiles/vim/ftplugin/md.vim  supplemental to  $vimfiles/vim/ftplugin/markdown.vim
+" $vfv/ftplugin/md.vim  supplemental to  $vfv/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
-"  this configuration file is source'd as needed by  $vimfiles/vim/filetype.vim
+"  this configuration file is source'd as needed by  $vfv/filetype.vim
 
 " /sanskrit\|skt
 
@@ -51,7 +51,7 @@ endif
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available
   " might need to  se ff=unix  first
-  nnoremap <buffer><leader><f7> :execute "silent !perl $misc/CP/PerlTools/mysmsMD.pl ".expand('%:p')<CR>
+  nnoremap <buffer><leader><f7> :execute "silent !perl $misc/CP/PerlTools/mysmsMd.pl ".expand('%:p')<CR>
 else
   function MysmsMd()
     " could  use  let scrapeMd = expand('%:p')  do the transformation on  scrapeMd, then final tweaks

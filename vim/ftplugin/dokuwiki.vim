@@ -1,7 +1,7 @@
 
 " Language: dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: jeu 08 août 2024
+" Last Change: jeu 08 aoï¿½t 2024
 " $vfv/ftplugin/dokuwiki.vim
 
 " tweaked  $vfv/packs/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax

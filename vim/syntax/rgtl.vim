@@ -3,7 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Mon 15 Apr 2024
 " solely for output of  rg --type-list > $ITscr/CP/ripgrep.rgtl
-" $vimfiles/vim/syntax/rgtl.vim   configured in  $vimfiles/vim/filetype.vim
+" $vfv/syntax/rgtl.vim   configured in  $vfv/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 
