@@ -3,7 +3,7 @@
 " Language: csv
 " Maintainer: Joseph Harriott
 " Last Change: jeu 16 mai 2024
-" $vimfiles/ftplugin/csv.vim  supplementary to  $vfv/packs/packs-cp/opt/csv.vim/README.md
+" $vimfiles/ftplugin/csv.vim  supplementary to  $vfvp/packs-cp/opt/csv.vim/README.md
 
 ""> for csv.vim
 " clearmatches

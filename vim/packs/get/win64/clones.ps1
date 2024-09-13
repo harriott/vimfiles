@@ -9,7 +9,7 @@
 read-host '- you''ve closed instances of vim? '
 
 function dd { if ( test-path $args[0] ) { ri $args[0] -recurse -force } }
-# - needs  Vim  not to be running
+# - delete directory - needs  Vim  not to be running
 
 # #=> 0 fzf
 # "cd $vfv/plugin"

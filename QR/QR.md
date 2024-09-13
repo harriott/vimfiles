@@ -528,11 +528,12 @@ u            " lowercase a visual block
     <repeatable> Esc <number> .  " makes lines of repeatable
 
 ## sort
-:296,349sort
-:%sort u                  " removing duplicate lines
-:%sort!                   " reverse
-:sort n                   " numeric
-:{range}sort /<regex>/ r  " sorts by matching
+:296,349sor
+:%sor i                  " ignore case
+:%sor u                  " removing duplicate lines
+:%sor!                   " reverse
+:sor n                   " numeric
+:{range}sor /<regex>/ r  " sorts by matching
 
 # Visual mode commands
     V  " line-based visual SELection

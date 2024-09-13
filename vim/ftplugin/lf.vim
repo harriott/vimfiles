@@ -5,7 +5,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: jeu 16 mai 2024
 
-" $vfv/packs/packs-cp/opt/lf-vim/ftdetect/lf.vim
+" $vfvp/packs-cp/opt/lf-vim/ftdetect/lf.vim
 
 setlocal tw=0
 

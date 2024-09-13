@@ -11,7 +11,7 @@ let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
 " extra filetypes
-" $vfv/packs/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+" $vfvp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 
@@ -53,7 +53,7 @@ endif
 " $vfv/plugin/fzf/shell/key-bindings.bash
 
 ""> fzf - fzf.vim
-" $vfv/packs/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
+" $vfvp/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
 " requires  :set shell  be unchanged from  cmd.exe
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
@@ -124,7 +124,7 @@ if has('unix') " vim-airline
     let g:airline_symbols.branch = ''
   endif
 else
-  " $vfv/packs/packs-win64/opt/lightline.vim/doc/lightline.txt
+  " $vfvp/packs-win64/opt/lightline.vim/doc/lightline.txt
   let g:lightline = { 'colorscheme': 'darcula', }
   packadd lightline.vim
 endif
@@ -153,7 +153,7 @@ packadd ctrlp.vim
 
 "">> Fern
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim " $vfv/packs/packs-cp/opt/fern.vim/README.md
+packadd fern.vim " $vfvp/packs-cp/opt/fern.vim/README.md
 
 " overrides my c-h/j/k/l mappings
 " vim default c-e = scroll up the window, without displacing the cursor

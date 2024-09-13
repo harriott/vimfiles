@@ -52,27 +52,29 @@ endif
 ""> 1 other filetypes
 " if exists("did_load_filetypes") | finish | endif  " kills detection in Neovim
 aug filetypedetect
-    au! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
-    au! BufRead,BufNewFile *.cmplt   setf cmplt     " $vfv/syntax/cmplt.vim
-    au! BufRead,BufNewFile *.digs    setf digs      " $vfv/ftplugin/digs.vim
-    au! BufRead,BufNewFile *.dirl    setf dirl      " $vfv/syntax/dirl.vim
-    au! BufRead,BufNewFile *.exts    setf exts      " $vfv/syntax/exts.vim
-    au! BufRead,BufNewFile *.fetl    setf fetl      " $vfv/syntax/fetl.vim
-    au! BufRead,BufNewFile *.Fn      setf Fn        " $vfv/syntax/Fn.vim
-    au! BufRead,BufNewFile *.gems    setf gems      " $vfv/syntax/gems.vim
-    au! BufRead,BufNewFile *.gnudiff setf gnudiff   " $vimfiles/ftplugin/gnudiff.vim
-    au! BufRead,BufNewFile *.IMfo    setf IMfo      " $vfv/ftplugin/IMfo.vim
-    au! BufRead,BufNewFile *.jctl    setf jctl      " $vfv/syntax/jctl.vim
-    au! BufRead,BufNewFile *.leader  setf leader    " $vfv/syntax/leader.vim
-    au! BufRead,BufNewFile *.mail    setf mail      " $vfv/syntax/mail.vim
-    au! BufRead,BufNewFile *.osp     setf json      " $vfv/syntax/json.vim
-    au! BufRead,BufNewFile *.rgo     setf rgo       " $vfv/syntax/rgo.vim
-    au! BufRead,BufNewFile *.rgtl    setf rgtl      " $vfv/syntax/rgtl.vim
-    au! BufRead,BufNewFile *.sifw    setf sifw      " $vfv/syntax/sifw.vim
-    au! BufRead,BufNewFile *.slJH    setf slJH      " $vfv/plugin/slJH.vim
-    au! BufRead,BufNewFile *.tbmo    setf tbmo      " $vfv/syntax/tbmo.vim
-    au! BufRead,BufNewFile *.toc     setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
-    au! BufRead,BufNewFile *.whatsapp setf whatsapp " $vfv/syntax/whatsapp.vim
-    au! BufRead,BufNewFile .spacemacs setf lisp
+  au! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
+  au! BufRead,BufNewFile *.clones    setf clones    " $vimfiles/syntax/clones.vim
+  au! BufRead,BufNewFile *.cmplt     setf cmplt     " $vfv/syntax/cmplt.vim
+  au! BufRead,BufNewFile *.digs      setf digs      " $vfv/ftplugin/digs.vim
+  au! BufRead,BufNewFile *.dirl      setf dirl      " $vfv/syntax/dirl.vim
+  au! BufRead,BufNewFile *.exts      setf exts      " $vfv/syntax/exts.vim
+  au! BufRead,BufNewFile *.fetl      setf fetl      " $vfv/syntax/fetl.vim
+  au! BufRead,BufNewFile *.Fn        setf Fn        " $vfv/syntax/Fn.vim
+  au! BufRead,BufNewFile *.gems      setf gems      " $vfv/syntax/gems.vim
+  au! BufRead,BufNewFile *.gnudiff   setf gnudiff   " $vimfiles/ftplugin/gnudiff.vim
+  au! BufRead,BufNewFile *.IMfo      setf IMfo      " $vfv/ftplugin/IMfo.vim
+  au! BufRead,BufNewFile *.jctl      setf jctl      " $vfv/syntax/jctl.vim
+  au! BufRead,BufNewFile *.leader    setf leader    " $vfv/syntax/leader.vim
+  au! BufRead,BufNewFile *.mail      setf mail      " $vfv/syntax/mail.vim
+  au! BufRead,BufNewFile *.osp       setf json      " $vfv/syntax/json.vim
+  au! BufRead,BufNewFile *.rgo       setf rgo       " $vfv/syntax/rgo.vim
+  au! BufRead,BufNewFile *.rgtl      setf rgtl      " $vfv/syntax/rgtl.vim
+  au! BufRead,BufNewFile *.sifw      setf sifw      " $vfv/syntax/sifw.vim
+  au! BufRead,BufNewFile *.slJH      setf slJH      " $vfv/plugin/slJH.vim
+  au! BufRead,BufNewFile *.tbmo      setf tbmo      " $vfv/syntax/tbmo.vim
+  au! BufRead,BufNewFile *.toc       setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
+  au! BufRead,BufNewFile *.unix_file setf unix_file " $vimfiles/syntax/unix_file.vim
+  au! BufRead,BufNewFile *.whatsapp  setf whatsapp  " $vfv/syntax/whatsapp.vim
+  au! BufRead,BufNewFile .spacemacs  setf lisp
 aug END  " - overrides  $VIMRUNTIME/filetype.vim
 

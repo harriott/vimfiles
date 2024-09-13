@@ -1,4 +1,3 @@
-
 D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-colo\opt\Apprentice
 D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-colo\opt\darcula
 D:\Dropbox\JH\core\IT_stack\onGitHub\vimfiles\vim\packs\packs-colo\opt\dracula

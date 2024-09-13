@@ -8,7 +8,7 @@
 "  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
 
 ""> fzf.vim
-" $vfv/packs/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
+" $vfvp/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
   " let g:fzf_vim.preview_bash = 'C:\Windows\System32\bash.exe'

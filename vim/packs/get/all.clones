@@ -1,0 +1,14 @@
+vim/packs/packs-colo/opt/
+vim/packs/packs-colo/opt/Apprentice
+vim/packs/packs-colo/opt/darcula
+vim/packs/packs-colo/opt/dracula
+vim/packs/packs-colo/opt/jellybeans.vim
+vim/packs/packs-colo/opt/kanagawa.nvim
+vim/packs/packs-colo/opt/nightfox.nvim
+vim/packs/packs-colo/opt/papercolor-theme
+vim/packs/packs-colo/opt/vim-colors-pencil
+vim/packs/packs-colo/opt/vim-colors-solarized
+vim/packs/packs-colo/opt/vim-colors-tomorrow
+vim/packs/packs-colo/opt/vim-deus
+vim/plugin/fzf https://github.com/junegunn/fzf
+vim/packs/packs-cp/opt/
