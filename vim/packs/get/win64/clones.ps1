@@ -4,7 +4,7 @@
 
 # grab repositories
 
-# close vims for  & $vfv/packs\get-win64\clones.ps1
+# close vims for  & $vfvp\get/win64\clones.ps1
 
 read-host '- you''ve closed instances of vim? '
 
@@ -102,5 +102,5 @@ ensurePath win64
   # gcl https://github.com/itchyny/lightline.vim
 
 #=> 3 tidy off
-. $vfv/packs\get-win64\after.ps1
+. $vfvp\get-win64\after.ps1
 

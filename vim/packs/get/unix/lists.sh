@@ -2,8 +2,8 @@
 
 # Joseph Harriott - mar 14 mai 2024
 
-# $vfv/packs/get-unix/lists.sh
-#  normally called from  $vfv/packs/get-unix/after.sh
+# $vfvp/get/unix/lists.sh
+#  normally called from  $vfvp/get/unix/after.sh
 
 find .. -type d -name '*.git' | sort > gits.txt
 cd=`pwd`

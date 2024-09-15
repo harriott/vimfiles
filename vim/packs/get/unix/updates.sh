@@ -3,22 +3,22 @@
 
 # Joseph Harriott, ven 26 juil 2024
 
-# bash $vfv/packs/get-unix/updates.sh
+# bash $vfvp/get/unix/updates.sh
 
 set -e  # quits on error
 
 #=> 0 msmtp-scripts-vim - remove
-rm -r $vfv/packs/packs-cp/opt/msmtp-scripts-vim
+rm -r $vfvp/packs-cp/opt/msmtp-scripts-vim
 
 #=> 1 updates
-cd $vfv/packs
+cd $vfvp
 # sf='vim-dokuwiki'
 # sf='vim-gfm-syntax'
 # once=yes
 . $misc/GRs/update-depth1.sh
 
 #=> 2 msmtp-scripts-vim - replace
-rsync -irtv --delete $DCGRs/unix/linux/marlam-msmtp/scripts/vim/ $vfv/packs/packs-cp/opt/msmtp-scripts-vim
+rsync -irtv --delete $DCGRs/unix/linux/marlam-msmtp/scripts/vim/ $vfvp/packs-cp/opt/msmtp-scripts-vim
 
 #=> 2 my forks
 echo ''
@@ -30,5 +30,5 @@ echo 'Now check the forks!'
 echo ''
 
 #=> 3 tidy up
-. $vfv/packs/get-unix/after.sh
+. $vfvp/get/unix/after.sh
 
