@@ -73,7 +73,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.slJH      setf slJH      " $vfv/plugin/slJH.vim
   au! BufRead,BufNewFile *.tbmo      setf tbmo      " $vfv/syntax/tbmo.vim
   au! BufRead,BufNewFile *.toc       setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
-  au! BufRead,BufNewFile *.unix_file setf unix_file " $vimfiles/syntax/unix_file.vim
+  au! BufRead,BufNewFile *.ufco      setf ufco      " $vimfiles/syntax/ufco.vim
   au! BufRead,BufNewFile *.whatsapp  setf whatsapp  " $vfv/syntax/whatsapp.vim
   au! BufRead,BufNewFile .spacemacs  setf lisp
 aug END  " - overrides  $VIMRUNTIME/filetype.vim
