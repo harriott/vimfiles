@@ -94,8 +94,7 @@ function! VimWriteClose()
     put=cfd
     normal kdd
     wall
-    sleep  " see if this ensures saving of recents
-    quit " close completely, but losing recents on Win10Pro
+    quit  " this last file
   else
     let s:b = expand('%:t')
     silent wall
@@ -110,6 +109,7 @@ inoremap <f4> <Esc>:call VimWriteClose()<CR>
 
 vnoremap <f4> <Esc>:call VimWriteClose()<CR>
 
-nnoremap <leader><f4> :Bdelete other<CR>:call VimWriteClose()<CR>
-inoremap <leader><f4> <Esc>:Bdelete other<CR>:call VimWriteClose()<CR>
+nnoremap <leader><f4> :Bdelete other<CR>:sleep<CR>:call VimWriteClose()<CR>
+inoremap <leader><f4> <Esc>:Bdelete other<CR>::sleep<CR>call VimWriteClose()<CR>
+" - the sleeps ensure recents aren't lost on win64
 
