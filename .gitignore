@@ -1,11 +1,6 @@
 
 # These are the files that I want to ignore:
 *.pdf
-**/*/packs-colo
-**/*/packs-cp
-**/*/packs-nvim
-**/*/packs-unix
-**/*/packs-win64
 .directory
 .netrwhist
 grep_CRLF.ufco
@@ -16,5 +11,10 @@ tags
 tags-cn
 tags-te
 thesaurus
+vim/packs/packs-colo
+vim/packs/packs-cp
+vim/packs/packs-unix
+vim/packs/packs-win64
+vim/plugin/fzf
 vim/spell
 

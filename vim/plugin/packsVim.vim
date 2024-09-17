@@ -134,6 +134,7 @@ set noshowmode  " no need for -- INSERT -- in (lower) command line
 ""> shell
 
 "">> ctrlp.vim
+" $vfvp/packs-cp/opt/ctrlp.vim/readme.md
 " $HOME/.cache/ctrlp/mru/cache.txt
 " <c-f> and <c-b> to cycle between modes
 " open selected entry in a new
