@@ -5,7 +5,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Thu 08 Sep 2022
 
-" $vimfiles/syntax/build.vim  &  $vimfiles/ftplugin/build.vim
+" $vfv/syntax/build.vim  &  $vfv/ftplugin/build.vim
 " vim: ft=build:
 
 if exists("b:current_syntax") | finish | endif
