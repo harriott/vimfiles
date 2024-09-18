@@ -268,7 +268,7 @@ packadd vim-ps1
 " =lc  or  =lC  " vimtex-clean  or  vimtex-clean-full
 
 " if has('nvim') | let g:vimtex_complete_enabled = 0 | endif
-if has('win32') | let g:vimtex_view_general_viewer = 'C:\SumatraPDF\SumatraPDF.exe' | endif
+if has('win64') | let g:vimtex_view_general_viewer = 'C:\SumatraPDF\SumatraPDF.exe' | endif
 let g:vimtex_compiler_enabled = 0
 let g:vimtex_compiler_silent = 1  " doesn't hide the «latexmk is not executable» message
 let g:vimtex_fold_enabled = 1
@@ -388,7 +388,7 @@ packadd ale
 let g:tq_map_keys=0
 let g:tq_enabled_backends=["openoffice_en","mthesaur_txt","cnrtl_fr","synonymo_fr"]
 " let g:tq_enabled_backends=["openoffice_en","mthesaur_txt"]
-if has('win32')
+if has('win64')
   let g:tq_mthesaur_file="~/vimfiles/thesaurus/mthesaur.txt"
   let g:tq_openoffice_en_file="~/vimfiles/thesaurus/MyThes-1.0/th_en_US_new"
 endif

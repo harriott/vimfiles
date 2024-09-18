@@ -486,7 +486,7 @@ function! GrabMK()
   mkexrc $mkh
   edit $mkh
   sil %s//<esc>/g
-  sil %s//<cr>/g
+  sil %s//<cr>/g
   sil %s//<c-w>/g
   sil %s//<bar>/g
   norm ggO" vim: se nowrap:

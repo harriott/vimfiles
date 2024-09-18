@@ -107,6 +107,7 @@ imap <c-d> <Plug>(fzf-dictionary-open)
 
 ""> layout - statusline
 if has('unix') " vim-airline
+  " $vfvp/packs-cp/opt/vim-airline/README.md
   let g:airline_powerline_fonts = 1
   packadd vim-airline " somehow breaks  fzf  on  Windows 10
   let airline#extensions#ale#show_line_numbers = 0
@@ -115,7 +116,7 @@ if has('unix') " vim-airline
   let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
   let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
   packadd vim-airline-themes
-  if has('win32')
+  if has('win64')
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
     let g:airline_symbols.colnr = ' '
