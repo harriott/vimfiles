@@ -4,8 +4,8 @@
 " Last Change: Sun 05 Feb 2023
 
 " $vimfiles/ftplugin/dirl.vim
-"  configured in  $vimfiles/filetype.vim  or with  vim: ft=jctl:
 "  also  $vimfiles/syntax/dirl.vim
+" Detection: $vimfiles/filetype.vim
 
 setlocal tw=0 fdc=1 fde=DirlFold() fdl=1 fdm=expr
 

@@ -5,7 +5,7 @@
 
 " $vimfiles/syntax/jctl.vim
 "  see  $Bash/bash_profile
-"  configured in  $vimfiles/filetype.vim  or with  vim: ft=jctl:
+" Detection: $vimfiles/filetype.vim
 
 if exists('b:current_syntax') | finish |  endif
 

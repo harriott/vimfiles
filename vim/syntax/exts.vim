@@ -3,8 +3,9 @@
 " Maintainer: Joseph Harriott
 " Last Change: Wed 22 Mar 2023
 
-" $vimfiles/syntax/exts.vim  configured in  $vimfiles/filetype.vim
+" $vimfiles/syntax/exts.vim
 " see  $Bash/bashrc-console
+" Detection: $vimfiles/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 

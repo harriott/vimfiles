@@ -180,6 +180,8 @@ function! ClearFancyGlyphs()
   :sil!%s/”/"/g
   :sil!%s/″/"/g
   :sil!%s/＂/"/g
+  :sil!%s/⭐️/*/g
+  :sil!%s/＊/*/g
   :sil!%s/ʻ/'/g
   :sil!%s/‘/'/g
   :sil!%s/’/'/g

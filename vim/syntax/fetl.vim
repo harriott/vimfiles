@@ -9,7 +9,7 @@
 "  for
 "   dts.*  files  ($Bash/bashrc-console)
 "   lwt.*  files  ($MSWin10/PSProfile.ps1)
-" configured in  $vimfiles/filetype.vim  or with  vim: ft=fetl:
+" Detection: $vimfiles/filetype.vim
 
 " also  $vimfiles/ftplugin/fetl.vim
 

@@ -1,11 +1,10 @@
 
-" Vim syntax file
-
 " Language: ufco.vim - for output of unix command  file *
 " Maintainer: Joseph Harriott
 " Last Change: ven 13 sept 2024
+" Detection: $vfv/filetype.vim
 
-" $vimfiles/syntax/ufco.vim  configured in  $vfv/filetype.vim
+" $vimfiles/syntax/ufco.vim
 
 if exists("b:current_syntax")
   finish

@@ -4,7 +4,7 @@
 " Last Change: Wed 03 Jan 2024
 
 " $vimfiles/ftplugin/slJH.vim (& $vimfiles/syntax/slJH.vim)
-"  configured in  $vimfiles/filetype.vim  or with  vim: ft=slJH:
+" Detection: $vimfiles/filetype.vim
 
 setlocal nowrap
 

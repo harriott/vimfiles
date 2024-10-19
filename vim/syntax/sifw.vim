@@ -1,14 +1,17 @@
 
-" Language: sifw - for output of  $MSWin10\PSProfile.ps1  Function SIFWork
+" Language: sifw - for output of  $MSWin10\PSProfile.ps1  Function SIFWork,
+"  used by
+"   $MSWin10\PSProfile.ps1
+"   $vfv/syntax/rgo.vim
 " Maintainer: Joseph Harriott
-" Last Change: jeu 11 juil 2024
+" Last Change: ven 04 oct 2024
 
 " also  $vimfiles/ftplugin/sifw.vim
 
 if exists('b:current_syntax') | finish |  endif
 
-syn match sifw_pathish '^\(\/.*\|\a:\\.*\)' contains=sifw_gdoafwe,sifw_fade
-" - paths in linux & MSWin
+syn match sifw_result '^\S.*' contains=sifw_gdoafwe,sifw_fade
+" - matches any line that starts non-whitespace
 syn match sifw_gdoafwe '\([-._0-9a-zA-Z]\+\ze\/\.gitignore \|[-_0-9a-zA-Zé ]\+\.\a[0-9a-zA-Z]\+\ze \)' contained
 " - matches git directory or any file with extension that starts with a letter
 hi def link sifw_gdoafwe DiffText

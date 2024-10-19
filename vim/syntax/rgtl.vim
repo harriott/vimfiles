@@ -1,17 +1,21 @@
 
-" Language: rgtl  ($misc/CP/QR/QR.md)
+" Language: rgtl - solely for  rg --type-list > $ITscr/CP/ripgrep-type-list.rgtl
 " Maintainer: Joseph Harriott
-" Last Change: Mon 15 Apr 2024
-" solely for output of  rg --type-list > $ITscr/CP/ripgrep.rgtl
-" $vfv/syntax/rgtl.vim   configured in  $vfv/filetype.vim
+" Last Change: ven 04 oct 2024
+
+" $vfv/syntax/rgtl.vim
+" Detection: $vfv/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 
-syn match rgProgram '^.\+\ze:'  " colourise the program
-hi def link rgProgram DiffAdd
+" syn match rgOFN '^\(C:\|..\)[^:]*:'  " dim out the filename
+" hi def link rgOFN LineNr
+
+syn match rgpgn '^.\+\ze:'  " colourise the program group name
+hi def link rgpgn DiffAdd
 
 syn match rgsc '\v,|:'  " dimming out punctuation
 hi def link rgsc LineNr
 
-let b:current_syntax = "rtgl"
+let b:current_syntax = "rgtl"
 

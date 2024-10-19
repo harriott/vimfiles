@@ -3,13 +3,13 @@
 
 # Joseph Harriott, mar 14 mai 2024
 
-# bash $vfvp/get/unix/after.sh
+# bash $vfv/getRepos/unix/after.sh
 
 # some tweaks on plugins
 
 # called at end of
-#  $vfvp/get/unix/clones.sh
-#  $vfvp/get/unix/updates.sh
+#  $vfv/getRepos/unix/clones.sh
+#  $vfv/getRepos/unix/updates.sh
 
 set -e
 pwd
@@ -18,5 +18,5 @@ pwd
 sed -i 's/^c/" c/' $vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim
 
 #=> 1 lists
-. $vfvp/get/unix/lists.sh
+. $vfv/getRepos/unix/lists.sh
 

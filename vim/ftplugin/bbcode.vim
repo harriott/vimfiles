@@ -2,8 +2,8 @@
 
 " Language: BBCode
 " Maintainer: Joseph Harriott
-" Last Change: Thu 13 May 2021
-" $vfv/ftplugin/bbcode.vim  (see also  $vimfiles/after/syntax/bbcode.vim)
+" Last Change: ven 04 oct 2024
+" $vfv/ftplugin/bbcode.vim  (see also  $vfv/after/syntax/bbcode.vim)
 
 setlocal textwidth=0
 

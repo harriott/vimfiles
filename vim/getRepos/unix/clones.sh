@@ -3,7 +3,7 @@
 
 # Joseph Harriott
 # grab repositories
-# bash $vfvp/get-unix/clones.sh
+# bash $vfv/getRepos/unix/clones.sh
 
 set -e
 
@@ -157,7 +157,7 @@ gd opt; ls
 
   # [[ -d fzf ]] && sudo rm -r fzf; $gc https://github.com/junegunn/fzf
 
-#=> 2 lists
+#=> 2 packs lists
 echo; cd $vfvp
-. $vfvp/get-unix/after.sh
+. $vfv/getRepos/unix/after.sh
 

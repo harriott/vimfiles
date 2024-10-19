@@ -3,7 +3,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Thu 04 Jan 2024
 
-" $vimfiles/syntax/gnudiff.vim  configured in  $vimfiles/filetype.vim
+" $vimfiles/syntax/gnudiff.vim
+"Detection: $vimfiles/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 

@@ -4,8 +4,8 @@
 " Last Change: Sat 04 Feb 2023
 
 " $vimfiles/syntax/dirl.vim
-"  configured in  $vimfiles/filetype.vim  or with  vim: ft=jctl:
 "  also  $vimfiles/ftplugin/dirl.vim
+" Detection: $vimfiles/filetype.vim
 
 if exists("b:current_syntax") | finish | endif
 

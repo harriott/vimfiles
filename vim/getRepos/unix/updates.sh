@@ -3,7 +3,7 @@
 
 # Joseph Harriott, ven 26 juil 2024
 
-# bash $vfvp/get/unix/updates.sh
+# bash $vfv/getRepos/unix/updates.sh
 
 set -e  # quits on error
 
@@ -30,5 +30,5 @@ echo 'Now check the forks!'
 echo ''
 
 #=> 3 tidy up
-. $vfvp/get/unix/after.sh
+. $vfv/getRepos/unix/after.sh
 

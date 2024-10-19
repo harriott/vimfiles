@@ -2,7 +2,8 @@
 " Language: cmplt ($OSAB/QR.md)
 " Maintainer: Joseph Harriott
 " Last Change: Fri 10 May 2024
-" $vfv/syntax/cmplt.vim   configured in  $vfv/filetype.vim
+" $vfv/syntax/cmplt.vim
+" Detection: $vfv/filetype.vim
 
 if exists('b:current_syntax') | finish | endif
 

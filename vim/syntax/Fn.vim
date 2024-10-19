@@ -2,7 +2,8 @@
 " Language: Fn  - see  $vimfiles/settings/all-unix.sh
 " Maintainer: Joseph Harriott
 " Last Change: Mon 15 Apr 2024
-" $vfv/syntax/Fn.vim  configured in  $vfv/filetype.vim
+" $vfv/syntax/Fn.vim
+" Detection: $vfv/filetype.vim
 
 if exists('b:current_syntax') | finish |  endif
 

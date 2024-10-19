@@ -8,6 +8,7 @@ Joseph's (g)Vim Quick Reference
     :se gfn=*         " pop-up font selection
 
 # Nvim
+    $VIMRUNTIME/filetype.lua
     :echo has('nvim')
     :echo nvim_get_runtime_file('parser', v:true)
     :lua vim.cmd.tabnew()

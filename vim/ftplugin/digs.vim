@@ -4,7 +4,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Wed 22 Mar 2023
 
-" $vimfiles/ftplugin/digs.vim  (&  $vimfiles/syntax/digs.vim) configured in  $vimfiles/filetype.vim
+" $vimfiles/ftplugin/digs.vim  (&  $vimfiles/syntax/digs.vim)
+"Detection: $vimfiles/filetype.vim
 
 " folding by header marks
 " -----------------------

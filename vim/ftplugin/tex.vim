@@ -2,10 +2,18 @@
 " Language: TeX
 " Maintainer: Joseph Harriott
 " Last Change: Sun 21 Apr 2024
+
+" $vfv/ftplugin/tex.vim (& $vfv/syntax/tex.vim)
 " Useful adjustments for working with LaTeX documents.
 "  supplemental to  $VIMRUNTIME/ftplugin/tex.vim
-" $VIMRUNTIME/filetype.vim > TeX  to see detections
 
+" Detections:
+"  $vfv/filetype.vim  for *.toc
+"  $vfvp/packs-cp/opt/vimtex/ftdetect/tex.vim
+"  $VIMRUNTIME/filetype.vim > TeX
+
+" Syntax: can't seem to add my own supplemental  tex.vim
+"
 " open compiled pdf
   nnoremap <buffer><F12> :call CompiledPDF()<CR>
 " convert md url

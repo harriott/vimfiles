@@ -246,6 +246,8 @@ packadd vim-prettier
 packadd vim-ps1
 
 "">>> VimTeX
+" $vfvp/packs-cp/opt/vimtex/doc/vimtex.txt
+" $vfvp/packs-cp/opt/vimtex/ftdetect/tex.vim
 " $vfvp/packs-cp/opt/vimtex/README.md
 
 " dsd  " delete surrounding delimiters
@@ -273,7 +275,7 @@ let g:vimtex_compiler_enabled = 0
 let g:vimtex_compiler_silent = 1  " doesn't hide the «latexmk is not executable» message
 let g:vimtex_fold_enabled = 1
 let g:vimtex_include_search_enabled = 0
-let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 0, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, }
+let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 0, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, } " set cole=0
 " - search for  function! s:match_conceal_  in
 "     $vfvp/packs-cp/opt/vimtex/autoload/vimtex/syntax/core.vim
 let g:vimtex_syntax_custom_cmds = [
@@ -303,7 +305,7 @@ let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'section', 'hlgroup': 'Todo'},
   \]
 let g:vimtex_view_enabled = 0
-packadd vimtex
+" packadd vimtex
 
 "">> minimap.vim
 " MinimapToggle

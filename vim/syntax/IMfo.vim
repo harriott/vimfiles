@@ -5,7 +5,7 @@
 
 " $vfv/syntax/IMfo.vim
 "  also  $vfv/ftplugin/IMfo.vim
-"  configured in  $vimfiles/filetype.vim
+" Detection: $vimfiles/filetype.vim
 
 if exists('b:current_syntax') | finish |  endif
 

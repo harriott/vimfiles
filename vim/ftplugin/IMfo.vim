@@ -2,10 +2,10 @@
 " Language: IMfo - see $OSAB/QR.md
 " Maintainer: Joseph Harriott
 " Last Change: Tue 09 Apr 2024
+" Detection: $vfv/filetype.vim
 
 " $vfv/ftplugin/IMfo.vim
 "  also  $vfv/syntax/IMfo.vim
-"  configured in  $vfv/filetype.vim
 
 set fdm=expr
 

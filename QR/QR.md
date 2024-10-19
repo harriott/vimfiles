@@ -81,6 +81,7 @@ Stack Exchange Vi and Vim
     :Prettier     " apply  prettier  to json & others
     :se expandtab " allows  :retab
     :se ch        " cmdheight
+    :set cole=0   " conceallevel
     :se cwh       " cmdwinheight - I like 30
     \ll           " location list (ListToggle) if it's there
     \q            " quickfix list (ListToggle)

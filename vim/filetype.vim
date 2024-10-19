@@ -25,6 +25,9 @@ au BufNew,BufNewFile,BufRead muttrc-*,*muttrc-accounts/* setlocal filetype=neomu
 " overcomes $VIMRUNTIME/filetype.vim
 "  I needed this for  $clMail/neomutt/muttrc-accounts/gmx ($jtCP/Vim/muttrc-123)
 
+""> 0 my Arch Bash history
+au BufNewFile,BufRead ~/Arch/bash_history setlocal filetype=sh
+
 ""> 0 nomacs configuration
 au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dosini
 

@@ -1,11 +1,10 @@
 
-" Vim syntax file
-
 " Language: clones - for my  $misc/GRs/all.clones
 " Maintainer: Joseph Harriott
-" Last Change: ven 13 sept 2024
+" Last Change: Sat 19 Oct 2024
+" Detection: $vfv/filetype.vim
 
-" $vimfiles/syntax/clones.vim  configured in  $vfv/filetype.vim
+" $vimfiles/syntax/clones.vim
 
 if exists("b:current_syntax")
   finish
