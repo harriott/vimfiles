@@ -1,5 +1,7 @@
 
-" Language: clones - for my  $misc/GRs/all.clones
+" Language: clones  for
+"  $misc/GRs/all.clones
+"  $vfv/getRepos/all.clones
 " Maintainer: Joseph Harriott
 " Last Change: Sat 19 Oct 2024
 " Detection: $vfv/filetype.vim

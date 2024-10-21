@@ -1,6 +1,6 @@
 packs/packs-colo/opt/Apprentice https://github.com/romainl/Apprentice
 packs/packs-colo/opt/darcula https://github.com/doums/darcula
-packs/packs-colo/opt/dracula https://github.com/dracula/vim dracula
+packs/packs-colo/opt/dracula https://github.com/dracula/vim
 packs/packs-colo/opt/jellybeans.vim https://github.com/nanotech/jellybeans.vim
 packs/packs-colo/opt/kanagawa.nvim https://github.com/rebelot/kanagawa.nvim
 packs/packs-colo/opt/nightfox.nvim https://github.com/EdenEast/nightfox.nvim
@@ -44,8 +44,8 @@ packs/packs-cp/opt/mru https://github.com/yegappan/mru
 packs/packs-cp/opt/neomutt.vim https://github.com/neomutt/neomutt.vim
 packs/packs-cp/opt/nerdcommenter https://github.com/scrooloose/nerdcommenter
 packs/packs-cp/opt/nerdfont.vim https://github.com/lambdalisue/nerdfont.vim
-packs/packs-cp/opt/nerdtree https://github.com/scrooloose/nerdtree
 packs/packs-cp/opt/nerdtree-git-plugin https://github.com/Xuyuanp/nerdtree-git-plugin
+packs/packs-cp/opt/nerdtree https://github.com/scrooloose/nerdtree
 packs/packs-cp/opt/open-browser.vim https://github.com/tyru/open-browser.vim
 packs/packs-cp/opt/org.vim https://github.com/axvr/org.vim
 packs/packs-cp/opt/quick-scope https://github.com/unblevable/quick-scope
@@ -73,16 +73,16 @@ packs/packs-cp/opt/vim-clifm https://github.com/harriott/vim-clifm
 packs/packs-cp/opt/vim-closetag https://github.com/alvan/vim-closetag
 packs/packs-cp/opt/vim-css-color https://github.com/ap/vim-css-color
 packs/packs-cp/opt/vim-devicons https://github.com/ryanoasis/vim-devicons
-packs/packs-cp/opt/vim-dirvish https://github.com/justinmk/vim-dirvish
 packs/packs-cp/opt/vim-dirvish-git https://github.com/kristijanhusak/vim-dirvish-git
-packs/packs-cp/opt/vim-dokuwiki https://github.com/harriott/vim-dokuwiki
+packs/packs-cp/opt/vim-dirvish https://github.com/justinmk/vim-dirvish
+packs/packs-cp/opt/vim-dokuwiki git@github.com:harriott/vim-dokuwiki.git
 packs/packs-cp/opt/vim-easy-align https://github.com/junegunn/vim-easy-align
 packs/packs-cp/opt/vim-easymotion https://github.com/easymotion/vim-easymotion
 packs/packs-cp/opt/vim-flog https://github.com/rbong/vim-flog
 packs/packs-cp/opt/vim-fontsize https://github.com/drmikehenry/vim-fontsize
 packs/packs-cp/opt/vim-fugitive https://github.com/tpope/vim-fugitive
 packs/packs-cp/opt/vim-fzf-dictionary https://github.com/yuki-uthman/vim-fzf-dictionary
-packs/packs-cp/opt/vim-gfm-syntax https://github.com/rhysd/vim-gfm-syntax
+packs/packs-cp/opt/vim-gfm-syntax git@github.com:harriott/vim-gfm-syntax.git
 packs/packs-cp/opt/vim-gitgutter https://github.com/airblade/vim-gitgutter
 packs/packs-cp/opt/vim-go https://github.com/fatih/vim-go
 packs/packs-cp/opt/vim-hjson https://github.com/hjson/vim-hjson
@@ -93,8 +93,8 @@ packs/packs-cp/opt/vim-langtool https://github.com/Konfekt/vim-langtool
 packs/packs-cp/opt/vim-LanguageTool https://github.com/dpelle/vim-LanguageTool
 packs/packs-cp/opt/vim-liquid https://github.com/tpope/vim-liquid
 packs/packs-cp/opt/vim-loclist-follow https://github.com/elbeardmorez/vim-loclist-follow
+packs/packs-cp/opt/vim-markdown git@github.com:harriott/vim-markdown
 packs/packs-cp/opt/vim-mark https://github.com/inkarkat/vim-mark
-packs/packs-cp/opt/vim-markdown https://github.com/harriott/vim-markdown
 packs/packs-cp/opt/vim-matchup https://github.com/andymass/vim-matchup
 packs/packs-cp/opt/vim-mbsync https://github.com/chunkhang/vim-mbsync
 packs/packs-cp/opt/vim-open-url https://github.com/dhruvasagar/vim-open-url
@@ -108,11 +108,11 @@ packs/packs-cp/opt/vim-rooter https://github.com/airblade/vim-rooter
 packs/packs-cp/opt/vim-ShowTrailingWhitespace https://github.com/inkarkat/vim-ShowTrailingWhitespace
 packs/packs-cp/opt/vim-startify https://github.com/mhinz/vim-startify
 packs/packs-cp/opt/vim-surround https://github.com/tpope/vim-surround
-packs/packs-cp/opt/vim-tagbar https://github.com/harriott/vim-tagbar
+packs/packs-cp/opt/vim-tagbar git@github.com:harriott/vim-tagbar
+packs/packs-cp/opt/vimtex https://github.com/lervag/vimtex
 packs/packs-cp/opt/vim-textmanip https://github.com/t9md/vim-textmanip
 packs/packs-cp/opt/vim-visual-star-search https://github.com/bronson/vim-visual-star-search
 packs/packs-cp/opt/vim-wombat-scheme https://github.com/sheerun/vim-wombat-scheme
-packs/packs-cp/opt/vimtex https://github.com/lervag/vimtex
 packs/packs-cp/opt/vis https://github.com/vim-scripts/vis
 packs/packs-unix/opt/clrzr https://github.com/BourgeoisBear/clrzr
 packs/packs-unix/opt/vim-picker https://github.com/srstevenson/vim-picker

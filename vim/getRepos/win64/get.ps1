@@ -1,44 +1,57 @@
 # vim: set fdl=1 et tw=0:
 
-# & $vfvp/get/win64/get.ps1
+# & $vfv/getRepos/win64/get.ps1
 
-# Joseph Harriott, lun 16 sept 2024
-# run this when you want to update your remote plugins
+# Joseph Harriott, Sat 19 Oct 2024
 
-#=> 0 clones
-$clones = gc $vfvp/get/all.clones
+#=> 1 clones 0 update  all.clones
+
+#=> 1 clones 1 remove
+
+#=> 1 clones 2 get
+$clones = gc $vfv/getRepos/all.clones
 foreach ($clone in $clones) {
   $rrp = $clone -replace ' .*', ''  # repository relative path
   if ( ! ( test-path "$vfv/$rrp" ) ) {
     "$vfv/$rrp not there so"
     $url = $clone -replace '.* ', ''  # repository url
-    $gcc = "  git clone --depth 1 $url $vfv\$rrp"
-    $gcc
+    $gcc = "git clone --depth 1 $url $vfv\$rrp"
+    "  $gcc"
     iex $gcc
   }
 } # fd -td <part_of_path>
 
-#=> 1 msmtp-scripts-vim
-robocopy /mir $DCGRs/unix/linux/marlam-msmtp/scripts/vim/ $vfvp/packs-cp/opt/msmtp-scripts-vim
+#=> 1 clones 3 msmtp-scripts-vim
+#=> 2 updates 0 warn
+read-host 'Going to update repositories - you''ve closed instances of vim? '
 
-# #=> 2 updates
-# read-host '- you''ve closed instances of vim? '
+#=> 2 updates 1 packs
+cd $vfvp; . $misc/GRs/update-depth1.ps1
+# mv repositories $vfvp/ -force
 
-# # #==> 1 updates - packs
-# # cd $vfvp; . $misc\GRs\update-depth1.ps1
-# # mv repositories get\win64\packs -force
+#=> 2 updates 2 plugins
+cd $vfv/plugin; . $misc/GRs/update-depth1.ps1
 
-# # #==> 1 updates - plugins
-# # cd $vfv/plugin; . $misc\GRs\update-depth1.ps1
+#=> 2 updates 3 my forks
+''
+start https://github.com/harriott/vim-gfm-syntax
+start https://github.com/harriott/vim-markdown
+start https://github.com/harriott/vim-tagbar
+echo 'Now check the forks!' # incase they've fallen behind their upstreams
+''
 
-# # #==> 2 my forks
-# # ''
-# # start https://github.com/harriott/vim-gfm-syntax
-# # start https://github.com/harriott/vim-markdown
-# # start https://github.com/harriott/vim-tagbar
-# # echo 'Now check the forks!' # incase they've fallen behind their upstreams
-# # ''
+#=> 3 tweak vim-ShowTrailingWhitespace
+$md = "$vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim"
+(((gc $md) -join "`n") + "`n") -replace 'call', '" call' | seco -NoNewline $md
 
-# #=> 3 tidy up
-# # . $vfvp\get\win64\after.ps1
+#=> 5 all.txt
+$all="$vfv/getRepos/win64/all.txt"
+echo "" > $all
+cd $vfvp
+foreach ($group in ls packs-*) { ls $group\opt | select -expand FullName >> $all }
+echo $vfv\plugin\fzf >> $all
+
+#=> 5 helptags
+Write-Host " try to " -nonewline
+  Write-Host ":helptags ALL" -foregroundcolor red -backgroundcolor yellow -nonewline
 

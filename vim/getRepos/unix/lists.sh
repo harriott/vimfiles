@@ -12,7 +12,10 @@ for file in `cat gits.txt`; do cd $file;
     git config core.symlinks false
 cd $cd; done
 
-find ../*/packs-* -mindepth 3 -maxdepth 3 -type d |sort > all.txt
+[ -f all.txt ] && rm all.txt
+# find ../*/packs-* -mindepth 2 -maxdepth 2 -type d |sort > all.txt
+find packs-* -mindepth 2 -maxdepth 2 -type d |sort > all.txt
+# superseded by  repositories
 
 echo -e "don't forget to  \e[1m\e[95m:helptags ALL\e[0m  after a restart"
 
