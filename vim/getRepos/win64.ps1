@@ -22,11 +22,14 @@ foreach ($clone in $clones) {
 } # fd -td <part_of_path>
 
 #=> 1 clones 3 msmtp-scripts-vim
+
 #=> 2 updates 0 warn
 read-host 'Going to update repositories - you''ve closed instances of vim? '
 
 #=> 2 updates 1 packs
-cd $vfvp; . $misc/GRs/update-depth1.ps1
+cd $vfvp
+rm --recurse $vfvp/packs-cp/opt/msmtp-scripts-vim
+. $misc/GRs/update-depth1.ps1
 # mv repositories $vfvp/ -force
 
 #=> 2 updates 2 plugins
@@ -44,14 +47,7 @@ echo 'Now check the forks!' # incase they've fallen behind their upstreams
 $md = "$vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim"
 (((gc $md) -join "`n") + "`n") -replace 'call', '" call' | seco -NoNewline $md
 
-#=> 5 all.txt
-$all="$vfv/getRepos/win64/all.txt"
-echo "" > $all
-cd $vfvp
-foreach ($group in ls packs-*) { ls $group\opt | select -expand FullName >> $all }
-echo $vfv\plugin\fzf >> $all
-
-#=> 5 helptags
+#=> 4 helptags
 Write-Host " try to " -nonewline
   Write-Host ":helptags ALL" -foregroundcolor red -backgroundcolor yellow -nonewline
 
