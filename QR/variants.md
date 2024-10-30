@@ -2,6 +2,7 @@
 Joseph's (g)Vim Quick Reference
 
     r $vimfiles/settings
+    let v=6 | echo g:v | =vim.g.v
 
 # guifont
     :Bufferize se gfn
@@ -11,7 +12,6 @@ Joseph's (g)Vim Quick Reference
     $VIMRUNTIME/filetype.lua
     :echo has('nvim')
     :echo nvim_get_runtime_file('parser', v:true)
-    :lua vim.cmd.tabnew()
     :Man git
     C /usr/share/nvim/runtime
     nvim -?
@@ -22,12 +22,23 @@ Joseph's (g)Vim Quick Reference
 
 `:che` (`:checkhealth`)
 
-## lua boolean
+## diagnostics
+- `<C-W>d` (= `vim.diagnostic.open_float()`)
+- `[d` (= `vim.diagnostic.goto_prev()`)
+- `]d` (= `vim.diagnostic.goto_next()`)
+
+## lua
+    :lua if x==nil then print("x is nil") end
+    :lua vim.cmd.tabnew()
+
+### boolean
     lua b = true
     lua b = not b; print(b)
 
-## lua print(...)
-    :=package.config:sub(1,1)  " identify winxx by \
+### print(...)
+    :lua print("Hello!")
+    :=package.config:sub(1,1) " identify winxx by \
+    :=vim.api.nvim_eval('g:') " all global variables
     :=vim.env.MYVIMRC  " path of my  init
     :=vim.env.vimfiles  " path of my  $vimfiles
     :=vim.env.VIMRUNTIME
@@ -43,9 +54,13 @@ Joseph's (g)Vim Quick Reference
     :let g:neovide
 
 ## OS
-    & $CPF\Neovim\bin\nvim.exe -h
     :=jit.os
     :=vim.fn.has("linux")
+
+`Arch`, if `handlr get .texty_extension`  returns `vim.desktop`, both `gVim` & `Vim` launch with `$VIM` & `$VIMRUNTIM` set as for `Nvim`!
+
+### MSWin
+    & $CPF\Neovim\bin\nvim.exe -h
     rm $HADL\nvim-data\shada\main.shada.tmp.*
     where.exe nvim.exe
 
@@ -74,6 +89,7 @@ Joseph's (g)Vim Quick Reference
 ```vim
 @@           " = @: = repeat last command-line
 \8           " toggle 82\106 columns
+echo g:      " list of all variable"
 ga           " returns code values for character under cursor
 gQ           " enter Ex mode
 K            " brings up a man page (if there is one) for word under cursor
@@ -96,7 +112,9 @@ vi           " exit Ex mode
 c-k<non-text-key> " enters the Vim value of a non-text-key
 c-r "  " (in command line) insert the unnamed register
 command-line window: C-c C-c  closes
+:echo $HOME
 :echo getline(1) " contents of line 1
+:echo hostname()
 
 $DCGRs/CP/Vim/vim-vim/README.md
 vim -u NONE

@@ -164,6 +164,7 @@ function! ClearFancyGlyphs()
   " nuls
   :sil!%s/ / /g  " replace no-break space
   :sil!%s/ / /g  " replace hair space
+  :sil!%s/ / /g  " replace LS
   :sil!%s/​//g
   :sil!%s/‌//g
   :sil!%s/‍//g

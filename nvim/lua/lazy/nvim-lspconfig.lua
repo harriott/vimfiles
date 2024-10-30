@@ -71,8 +71,8 @@ return {
           vimruntime = "" } }
         -- no sign that these are achieving anything extra
 
-      vim.keymap.set({'n'},'<localleader>[',vim.diagnostic.goto_prev,{desc='previous diagnostic'})
-      vim.keymap.set({'n'},'<localleader>]',vim.diagnostic.goto_next,{desc='next diagnostic'})
+      vim.keymap.set({'n'},'<localleader>[',vim.diagnostic.goto_prev,{desc='jump to & show previous diagnostic'})
+      vim.keymap.set({'n'},'<localleader>]',vim.diagnostic.goto_next,{desc='jump to & show next diagnostic'})
       vim.keymap.set({'n'},'<localleader>s',function()vim.cmd('LspStop<cr>')end,{desc='LspStop'})
         -- language server will restart on buffer reload
 

@@ -96,6 +96,7 @@ Stack Exchange Vi and Vim
 
 - rgba(255, 255, 255, 0.05) - no
 - rgba(255, 255, 255, 5) - yes
+" works for  $ulLA/IM-magick-list_color.txt
 
 ## colorizer
     <leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
@@ -436,6 +437,7 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :echo $computername
 :echo $programfiles
 :echo $username
+:put =$HOME
 :put =$PATH
 
 ## Python

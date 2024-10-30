@@ -1,9 +1,11 @@
 
--- https://harriott.github.io/ - mer 17 juil 2024
+-- https://harriott.github.io/ - Wed 30 Oct 2024
 
 -- $vimfiles/nvim/lua/init.lua
 --  required by  $vimfiles/nvim/init.vim
 --  adapted from  $DCGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
+
+vim.g.djh = vim.api.nvim_eval('$DJH') -- :lua print(vim.api.nvim_eval('exists("g:djh")'))
 
 -- -> 0 layout
 -- vim.g.have_nerd_font = true

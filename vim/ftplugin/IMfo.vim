@@ -23,5 +23,5 @@ function! FontTree()
     endif
 endfunction
 
-setlocal fde=FontTree() fdc=1
+setlocal fde=FontTree() fdc=1 fdl=1
 

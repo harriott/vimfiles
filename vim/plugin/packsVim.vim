@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - mer 11 sept 2024
+" https://harriott.githubio/ - Mon 28 Oct 2024
 
 " $vfv/plugin/packsVim.vim
 
@@ -104,6 +104,10 @@ vnoremap <s-f3> <Esc>:Commits<CR>
 ""> fzf - vim-fzf-dictionary
 packadd vim-fzf-dictionary
 imap <c-d> <Plug>(fzf-dictionary-open)
+
+""> layout - clrzr
+" just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt
+" doesn't work for  $ulLA/IM-magick-list_color.txt
 
 ""> layout - statusline
 if has('unix') " vim-airline

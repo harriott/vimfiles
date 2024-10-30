@@ -12,8 +12,8 @@
 noremap <silent> <localleader>d :ALEGoToDefinition<cr>
 
 " moving to ALE errors
-noremap <silent> <localleader>] <Plug>(ale_next_wrap)
-noremap <silent> <localleader>[ <Plug>(ale_previous_wrap)
+noremap <silent> <localleader><localleader>] <Plug>(ale_next_wrap)
+noremap <silent> <localleader><localleader>[ <Plug>(ale_previous_wrap)
 
 " toggle ALE for buffer
 " ---------------------

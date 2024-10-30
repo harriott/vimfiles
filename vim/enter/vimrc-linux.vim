@@ -5,7 +5,12 @@
 if has('nvim')
   set title  " for Alacritty
 else
-  " first, some general settings
+  " these're getting detected as per Nvim when Vim launched from PCManFM, so could fix here  with
+    " let $VIM = '/usr/share/vim'
+    " let $VIMRUNTIME = $VIM.'/vim91'
+    " but it's not enough, ongoing Nvim pollution occurs
+    " $jtUL/linux/Arch/encoding/Vim_erroneously_seeking_Nvim_sources.bbcode
+  " some general settings
   source $vfv/enter/vimrc_example.vim
   " easier copying to end of line (Y  in  nvim)
   nnoremap <leader>v v$hy

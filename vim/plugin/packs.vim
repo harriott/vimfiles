@@ -365,6 +365,7 @@ inoremap <c-x><c-x> <c-x><c-o>
 "  :ALEInfo
 "   AlEPrreviewWindow  responds to  <c-w>+, but not to  <cw>=
 " $vfvp/packs-cp/opt/ale/plugin/ale.vim
+" $vfvp/packs-cp/opt/ale/doc/ale.txt
 
 " Enabled?
 "  :let ale_enabled
@@ -426,15 +427,6 @@ packadd vim-LanguageTool " then can  :h LanguageTool
 " enhances  ga
 packadd vim-characterize
 
-"">> color codes
-
-"">>> Colorizer
-let g:colorizer_disable_bufleave = 1
-" see  $vimfiles/QR/QR.md
-
-"">>> clrzr
-" see  $vimfiles/QR/QR.md
-
 "">> color schemes
 " no need to  packadd  for Vim
 
@@ -454,6 +446,10 @@ let g:colorizer_disable_bufleave = 1
 
 "">>> vim-wombat-scheme
 " $vimfiles/nvim/init.vim
+
+"">> Colorizer
+" $vfvp/packs-cp/opt/Colorizer/README.md  but see  $vimfiles/QR/QR.md
+let g:colorizer_disable_bufleave = 1
 
 "">> FastFold
 " let g:fastfold_fold_command_suffixes = []

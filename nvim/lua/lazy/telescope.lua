@@ -85,8 +85,15 @@ return {
 
       vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc='Telescope man_pages'})
 
-      vim.keymap.set({'n'},'<leader>j',function() builtin.find_files{cwd="$DJH"} vim.cmd("echo 'files in Dropbox/JH'") end,
-        {desc='cd $DJH  then  :Telescope find_files'})
+      vim.keymap.set({'n'},'<leader>j',function()
+        if vim.g.djh == nil then
+          builtin.find_files{cwd="$ITstack"}
+          vim.cmd("echo 'files in $ITstack'")
+        else
+          builtin.find_files{cwd="$DJH"}
+          vim.cmd("echo 'files in Dropbox/JH'")
+        end
+      end, {desc='cd $DJH (or just $ITstack)  then  :Telescope find_files'})
 
       vim.keymap.set({'n'},'<leader>lg',":Telescope live_grep_args<CR>")
 

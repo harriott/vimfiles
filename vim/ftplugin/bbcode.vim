@@ -17,10 +17,10 @@ setlocal foldcolumn=1
 " [color=navy]this ain't readable in dark themes[/color]
 
 " wrap the inner word under cursor
-nnoremap <buffer> <leader><leader>] viwc[u][/u]<Esc>bbp
+nnoremap <buffer> <leader><leader>] viwc[ins][/ins]<Esc>bbp
 
 " wrap a selection
-vnoremap <buffer> <leader><leader>] c[u][/u]<Esc>bbp
+vnoremap <buffer> <leader><leader>] c[ins][/ins]<Esc>bbp
 
 ""> tags - code
 " wrap the inner word under cursor

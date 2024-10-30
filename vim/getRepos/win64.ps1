@@ -5,8 +5,10 @@
 # Joseph Harriott, Sat 19 Oct 2024
 
 #=> 1 clones 0 update  all.clones
+# see  $vfv/getRepos/unix.sh
 
 #=> 1 clones 1 remove
+# see  $vfv/getRepos/unix.sh
 
 #=> 1 clones 2 get
 $clones = gc $vfv/getRepos/all.clones
@@ -19,31 +21,31 @@ foreach ($clone in $clones) {
     "  $gcc"
     iex $gcc
   }
-} # fd -td <part_of_path>
-
-#=> 1 clones 3 msmtp-scripts-vim
+}
 
 #=> 2 updates 0 warn
 read-host 'Going to update repositories - you''ve closed instances of vim? '
 
 #=> 2 updates 1 packs
 cd $vfvp
-rm --recurse $vfvp/packs-cp/opt/msmtp-scripts-vim
+rm --recurse $vfvp/packs-cp/opt/msmtp-scripts-vim  # temporarily, because it's got no .git
 . $misc/GRs/update-depth1.ps1
-# mv repositories $vfvp/ -force
+robocopy /mir $DCGRs/unix/linux/marlam-msmtp/scripts/vim/ $vfvp/packs-cp/opt/msmtp-scripts-vim
+cd $vfv
 
 #=> 2 updates 2 plugins
-cd $vfv/plugin; . $misc/GRs/update-depth1.ps1
+cd $vfv/plugin; . $misc/GRs/update-depth1.ps1; cd $vfv
 
 #=> 2 updates 3 my forks
+# update this as per  $vfv/getRepos/unix.sh
 ''
 start https://github.com/harriott/vim-gfm-syntax
 start https://github.com/harriott/vim-markdown
 start https://github.com/harriott/vim-tagbar
-echo 'Now check the forks!' # incase they've fallen behind their upstreams
+echo '- now check the forks!' # incase they've fallen behind their upstreams
 ''
 
-#=> 3 tweak vim-ShowTrailingWhitespace
+#=> 3 fix vim-ShowTrailingWhitespace
 $md = "$vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim"
 (((gc $md) -join "`n") + "`n") -replace 'call', '" call' | seco -NoNewline $md
 

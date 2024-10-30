@@ -52,6 +52,9 @@ if has('nvim')
   au BufNew,BufNewFile,BufRead .SRCINFO setf SRCINFO | source /usr/share/vim/vimfiles/syntax/SRCINFO.vim
 endif
 
+""> 0 Thunderbird dosini files
+au BufNewFile,BufRead *thunderbird/installs.ini,*thunderbird/profiles.ini,*Thb-dr/compatibility.ini setlocal fdl=1
+
 ""> 1 other filetypes
 " if exists("did_load_filetypes") | finish | endif  " kills detection in Neovim
 aug filetypedetect
