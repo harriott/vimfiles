@@ -142,8 +142,9 @@ packadd emmet-vim
 packadd mediawiki.vim  " $vfvp/packs-cp/opt/mediawiki.vim/README.md
 
 "">>> msmtp-scripts-vim
+" see  bash $vfv/getRepos/unix.sh > marlam
 " $vfvp/packs-cp/opt/msmtp-scripts-vim/ftdetect/msmtp.vim
-" if has('nvim') | packadd msmtp-scripts-vim | endif
+if has('nvim') | packadd msmtp-scripts-vim | endif
 
 "">>> MTA
 " if has('unix') || filereadable("C:/Python312/NEWS.txt") | packadd MatchTagAlways | endif
