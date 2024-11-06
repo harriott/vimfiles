@@ -537,7 +537,7 @@ nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 " highlighting sometimes disappears on some longer complex files after loading
 "  long dw's
 "  markdowns
-"   $ITstack/unix_like-Android/phones.md
+"   $ITstack/ulAndroid/phones.md
 "   $TeNo/md-JH-DailyLife/roles/healing.md
 "   my various  .../QR.md
 inoremap <leader><f5> :<Esc>syntax sync fromstart<CR>

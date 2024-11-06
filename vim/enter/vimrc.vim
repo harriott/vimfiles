@@ -89,7 +89,7 @@ function! VimWriteClose()
   endif  " can't be scrunched to one line
   if len(getbufinfo({'buflisted':1})) == 1
     let cfd = expand('%:p:h') " current file directory
-    edit $HOME/lastVimDirectory  " for  $Bash/bashrc-console  &  $MSWin10\PSProfile.ps1
+    edit $HOME/lastVimDirectory  " for  $Bash/bashrc-console  &  $MSn\PS\PSProfile.ps1
     normal dd
     put=cfd
     normal kdd

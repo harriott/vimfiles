@@ -1,19 +1,11 @@
 
-" https://harriott.githubio/ - Mon 28 Oct 2024
+" https://harriott.githubio/ - ven 01 nov 2024
 
-" $vfv/plugin/packsVim.vim
+" $vfv/plugin/packsVimFull.vim
+"  needs recent Vim
+"  $vfvp/packs-cp-full
 
-" find . -mindepth 3 -maxdepth 3 -type d | sort | tr '\n' ' ' | sed 's#./packs-##g' | xcol cp/opt/ unix/opt/; echo
-
-""> encoding - The NERD Commenter
-packadd nerdcommenter
-let NERDSpaceDelims = 1
-" <leader>c<space> -> NERDCommenterToggle
-
-" extra filetypes
-" $vfvp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
-let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
-let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
+let g:packsVimAll = 1
 
 ""> encoding - vim-gitgutter
 let g:gitgutter_max_signs = 600
@@ -21,19 +13,9 @@ let g:gitgutter_enabled = 0
 packadd vim-gitgutter
 " $vimfiles/after/plugin/plugins.vim
 
-"">>>> toggle
+"">> toggle
 let g:GGF = 0
-" $vimfiles/after/plugin/plugins.vim
-
-""> find/replace - vim-easymotion
-" :h easymotion-default-mappings
-packadd vim-easymotion
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-" <leader>f{char} to move to {char}
-nmap <leader><leader>f <Plug>(easymotion-overwin-f)
-" s{char}{char}{label}
-autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
-"  (in an autocmd to be sure it works with Arch vim-colors-solarized)
+" $vfv/after/plugin/packs.vim
 
 ""> fzf - fzf
 if has('win64') " junegunn/fzf
@@ -53,7 +35,7 @@ endif
 " $vfv/plugin/fzf/shell/key-bindings.bash
 
 ""> fzf - fzf.vim
-" $vfvp/packs-cp/opt/fzf.vim/doc/fzf-vim.txt
+" $vfvp/packs-cp-full/opt/fzf.vim/doc/fzf-vim.txt
 " requires  :set shell  be unchanged from  cmd.exe
 let g:fzf_vim = {}
   let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
@@ -109,57 +91,11 @@ imap <c-d> <Plug>(fzf-dictionary-open)
 " just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt
 " doesn't work for  $ulLA/IM-magick-list_color.txt
 
-""> layout - statusline
-if has('unix') " vim-airline
-  " $vfvp/packs-cp/opt/vim-airline/README.md
-  let g:airline_powerline_fonts = 1
-  packadd vim-airline " somehow breaks  fzf  on  Windows 10
-  let airline#extensions#ale#show_line_numbers = 0
-  let g:airline#extensions#ale#enabled = 1
-  let g:airline#extensions#fzf#enabled = 1  " adds line-number/total lines
-  let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
-  let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
-  packadd vim-airline-themes
-  if has('win64')
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_symbols.colnr = ' '
-    let g:airline_symbols.linenr = ' '
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.branch = ''
-  endif
-else
-  " $vfvp/packs-win64/opt/lightline.vim/doc/lightline.txt
-  let g:lightline = { 'colorscheme': 'darcula', }
-  packadd lightline.vim
-endif
-
-set noshowmode  " no need for -- INSERT -- in (lower) command line
-
 ""> shell
-
-"">> ctrlp.vim
-" $vfvp/packs-cp/opt/ctrlp.vim/readme.md
-" $HOME/.cache/ctrlp/mru/cache.txt
-" <c-f> and <c-b> to cycle between modes
-" open selected entry in a new
-"  split horizontal <c-x>
-"  split vertical   <c-v>
-"  tab              <c-t>
-set wildignore+=NTUSER.DAT*,*.lnk " helps when in my Win7 %USERPROFILE%
-
-"">>> 0 configure
-" need to be defined before it's loaded
-let g:ctrlp_cmd = 'CtrlPMRU'
-let g:ctrlp_mruf_max = 500
-nnoremap <leader>bb :CtrlPBuffer<CR>
-
-"">>> 1 invoke
-packadd ctrlp.vim
 
 "">> Fern
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
-packadd fern.vim " $vfvp/packs-cp/opt/fern.vim/README.md
+packadd fern.vim " $vfvp/packs-cp-full/opt/fern.vim/README.md
 
 " overrides my c-h/j/k/l mappings
 " vim default c-e = scroll up the window, without displacing the cursor
@@ -195,18 +131,6 @@ packadd fern-preview.vim
 let g:fern#renderer = "nerdfont"
 packadd fern-renderer-nerdfont.vim
 
-"">> NERDTree
-"h NERDTree
-let NERDTreeWinSize = 40
-let NERDTreeHijackNetrw = 0  " liberate  e.
-noremap <C-n> :NERDTreeToggle<CR>
-
-" loaded in  $vimfiles/after/plugin/plugins.vim
-
-" Open it on buffer's directory:
-nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
-inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
-
 "">> nerdtree-git-plugin
 packadd nerdtree-git-plugin
 
@@ -241,6 +165,10 @@ if has('unix')
   " - files in cwd
   nmap <unique> <leader>pb <Plug>(PickerBuffer)
 endif
+
+""> text wrangling - Highlight.vim
+" $vfvp/packs-cp-full/opt/Highlight.vim/README.md
+if !has('gui_running') | packadd Highlight.vim | endif  " plain vim only
 
 ""> text wrangling - vim-surround
 " h surround

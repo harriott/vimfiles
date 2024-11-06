@@ -118,6 +118,7 @@ command-line window: C-c C-c  closes
 
 $DCGRs/CP/Vim/vim-vim/README.md
 vim -u NONE
+vim --version
 vim(1)
 
 $misc/CP/vimtest/README.md

@@ -1,7 +1,7 @@
 
-" Joseph Harriott - ven 17 mai 2024
+" Joseph Harriott - ven 01 nov 2024
 
-" $vimfiles\vim\enter\vimrc-Win10.vim
+" $vfv\enter\vimrc-Win10.vim
 " source'd by
 "  $MSWin10\mb\_vimrc-AZERTY
 "  $vimfiles/nvim/init.vim
@@ -33,7 +33,6 @@ if has('nvim') && !exists('g:neovide')
 endif
 
 ""> 3 my initial settings
-let $USER = 'troin'
 " set noloadplugins
 
 "">> colorscheme

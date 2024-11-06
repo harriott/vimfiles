@@ -9,6 +9,5 @@
 let g:sourced_test_vimrc_Win10 = 1
 
 ""> my initial settings
-let $USER = 'troin'
 " set noloadplugins
 

@@ -25,6 +25,7 @@ return {
 
       require'lspconfig'.bashls.setup{}
       -- $HOME\AppData\Local\nvim-data\mason\packages\bash-language-server\node_modules\bash-language-server\src\config.ts
+      -- reports Error for CLRFs
 
       -- require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
         -- but no completions...
