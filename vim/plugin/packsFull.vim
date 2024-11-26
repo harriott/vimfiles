@@ -7,7 +7,7 @@
 if has('unix') | packadd vim-plugin-AnsiEsc | endif
 
 ""> encoding - dsf
-" $vfvp/packs-cp/opt/dsf.vim/README.md
+" $vfvp/packs-cp-full/opt/dsf.vim/README.md
 
 packadd dsf.vim
 " csf -> change surrounding function
@@ -16,17 +16,15 @@ packadd dsf.vim
 " dsf -> delete surrounding function
 " dsnf -> delete next surrounding function
 
-""> encoding - Git
-
-"">> Flog
+""> encoding - Git - Flog
 " :Flog  " tab of commits
 packadd vim-flog
 
-"">> gitignore.vim
+""> encoding - Git - gitignore.vim
 packadd gitignore.vim
 
-"">> vim-fugitive
-" $vfvp/packs-cp/opt/vim-fugitive/README.markdown
+""> encoding - Git - vim-fugitive
+" $vfvp/packs-cp-full/opt/vim-fugitive/README.markdown
 
 " configurations
 "  let g:airline_symbols.notexists
@@ -46,23 +44,22 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 
 packadd vim-fugitive
 
-"">>> for :GBrowse to work
+"">> for :GBrowse to work
 packadd fugitive-gitlab.vim  " for GitLab
 packadd vim-rhubarb  " for GitHub
 
-" "">> vim-gfm-syntax
-" " enable this for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
-" " $vfvp/packs-cp/opt/vim-gfm-syntax/README.md
-" let g:gfm_syntax_emoji_conceal = 1
-" let g:gfm_syntax_enable_always = 0
-" let g:gfm_syntax_enable_filetypes = ['gfm']
-" packadd vim-gfm-syntax
+""> encoding - Git - vim-gfm-syntax
+" $vfvp/packs-cp-full/opt/vim-gfm-syntax/README.md
+let g:gfm_syntax_emoji_conceal = 1
+let g:gfm_syntax_enable_always = 0
+let g:gfm_syntax_enable_filetypes = ['gfm']
+" packadd vim-gfm-syntax  " for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
 
 ""> encoding - languages
 packadd CSS-one-line--multi-line-folding
 
 "">> conky-syntax.vim
-" $vfvp/packs-cp/opt/conky-syntax.vim/ftdetect/conkyrc.vim  delete 2nd *
+" $vfvp/packs-cp-full/opt/conky-syntax.vim/ftdetect/conkyrc.vim  delete 2nd *
 if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
 
 " "">> CSS Color
@@ -72,8 +69,8 @@ if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
 " extra tools in  $vfv/ftplugin/csv.vim
 "  & see  $vfv/after/plugin/packs.vim
 
-" $vfvp/packs-cp/opt/csv.vim/ftdetect/csv.vim
-" :h ft-csv  ($vfvp/packs-cp/opt/csv.vim/doc/ft-csv.txt) the help
+" $vfvp/packs-cp-full/opt/csv.vim/ftdetect/csv.vim
+" :h ft-csv  ($vfvp/packs-cp-full/opt/csv.vim/doc/ft-csv.txt) the help
 
 packadd csv.vim
 
@@ -121,25 +118,25 @@ let g:user_emmet_install_global = 0
 packadd emmet-vim
 
 " "">> Liquid
-" packadd vim-liquid  " $vfvp/packs-cp/opt/vim-liquid/ftdetect/liquid.vim
+" packadd vim-liquid  " $vfvp/packs-cp-full/opt/vim-liquid/ftdetect/liquid.vim
 
 "">> mediawiki.vim
-packadd mediawiki.vim  " $vfvp/packs-cp/opt/mediawiki.vim/README.md
+packadd mediawiki.vim  " $vfvp/packs-cp-full/opt/mediawiki.vim/README.md
 
 "">> msmtp-scripts-vim
 " see  bash $vfv/getRepos/unix.sh > marlam
-" $vfvp/packs-cp/opt/msmtp-scripts-vim/ftdetect/msmtp.vim
+" $vfvp/packs-cp-full/opt/msmtp-scripts-vim/ftdetect/msmtp.vim
 if has('nvim') | packadd msmtp-scripts-vim | endif
 
 "">> MTA
 " if has('unix') || filereadable("C:/Python312/NEWS.txt") | packadd MatchTagAlways | endif
-" for  XML/HTML  tags - $vfvp/packs-cp/opt/MatchTagAlways/test.html
+" for  XML/HTML  tags - $vfvp/packs-cp-full/opt/MatchTagAlways/test.html
 " Neovim: works fine. Vim: corresponding Python required.
 " Somehow this ain't needed...
 
 "">> NeoMutt
-" $vfvp/packs-cp/opt/neomutt.vim/ftdetect/neomuttrc.vim
-" $vfvp/packs-cp/opt/neomutt.vim/syntax/neomuttrc.vim
+" $vfvp/packs-cp-full/opt/neomutt.vim/ftdetect/neomuttrc.vim
+" $vfvp/packs-cp-full/opt/neomutt.vim/syntax/neomuttrc.vim
 packadd neomutt.vim
 " superseding
 "  /usr/share/nvim/runtime/syntax/muttrc.vim
@@ -173,7 +170,7 @@ packadd vader.vim
 packadd vim-base64
 
 "">> vim-bbcode
-" $vfvp/packs-cp/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
+" $vfvp/packs-cp-full/opt/vim-bbcode/example.bbcode - [code] & [pre] aren't highlighted
 packadd vim-bbcode
 
 "">> vim-closetag
@@ -182,7 +179,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
 packadd vim-closetag
 
 "">> vim-dokuwiki
-" $vfvp/packs-cp/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
+" $vfvp/packs-cp-full/opt/vim-dokuwiki/ftdetect/dokuwiki.vim
 packadd vim-dokuwiki
 let dokuwiki_comment=1  " comment highlighting on
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
@@ -191,11 +188,12 @@ let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
 packadd vim-go
 
 "">> vim-hjson
+" $vfvp/packs-cp-full/opt/vim-hjson/ftdetect/hjson.vim
 packadd vim-hjson
 
 "">> Vim Markdown
 " :h markdown
-" $vfvp/packs-cp/opt/vim-markdown/maintenance.md
+" $vfvp/packs-cp-full/opt/vim-markdown/maintenance.md
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_conceal_code_blocks = 0  " need to see them
 let g:vim_markdown_folding_disabled = 1
@@ -223,7 +221,7 @@ packadd vim-mbsync
 packadd vim-pandoc-syntax
 
 "">> vim-prettier
-" $vfvp/packs-cp/opt/vim-prettier/doc/prettier.txt
+" $vfvp/packs-cp-full/opt/vim-prettier/doc/prettier.txt
 " :Prettier
 packadd vim-prettier
 
@@ -232,9 +230,9 @@ packadd vim-prettier
 packadd vim-ps1
 
 "">> VimTeX
-" $vfvp/packs-cp/opt/vimtex/doc/vimtex.txt
-" $vfvp/packs-cp/opt/vimtex/ftdetect/tex.vim
-" $vfvp/packs-cp/opt/vimtex/README.md
+" $vfvp/packs-cp-full/opt/vimtex/doc/vimtex.txt
+" $vfvp/packs-cp-full/opt/vimtex/ftdetect/tex.vim
+" $vfvp/packs-cp-full/opt/vimtex/README.md
 
 " dsd  " delete surrounding delimiters
 " commands
@@ -263,7 +261,7 @@ let g:vimtex_fold_enabled = 1
 let g:vimtex_include_search_enabled = 0
 let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 0, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, } " set cole=0
 " - search for  function! s:match_conceal_  in
-"     $vfvp/packs-cp/opt/vimtex/autoload/vimtex/syntax/core.vim
+"     $vfvp/packs-cp-full/opt/vimtex/autoload/vimtex/syntax/core.vim
 let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'Odr', 'hlgroup': 'CursorLineNr'},
   \ {'name': 'Eltt', 'hlgroup': 'CursorLineNr'},
@@ -298,8 +296,8 @@ let g:vimtex_view_enabled = 0
 if ! exists('g:WSL') | packadd minimap.vim | endif
 
 ""> encoding - Tagbar
-" $vfvp/packs-cp/opt/vim-tagbar/doc/tagbar.txt
-" $vfvp/packs-cp/opt/vim-tagbar/README.md
+" $vfvp/packs-cp-full/opt/vim-tagbar/doc/tagbar.txt
+" $vfvp/packs-cp-full/opt/vim-tagbar/README.md
 
 " :TagbarToggle  mapping set in
 "  $vfv/ftplugin/perl.vim
@@ -312,13 +310,13 @@ autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
 packadd vim-tagbar
 
 ""> encoding - unicode.vim
-" $vfvp/packs-cp/opt/unicode.vim/doc/unicode.txt
+" $vfvp/packs-cp-full/opt/unicode.vim/doc/unicode.txt
 " :UnicodeName  for the character under the cursor
 let g:Unicode_no_default_mappings = v:true
 packadd unicode.vim
 
 ""> encoding - vim match-up
-" $vfvp/packs-cp/opt/vim-matchup/doc/matchup.txt
+" $vfvp/packs-cp-full/opt/vim-matchup/doc/matchup.txt
 " % = jump forward
 " g% = jumb backward
 " jump blocks
@@ -336,7 +334,7 @@ autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
 packadd vim-ssh-annex
 
 ""> ingo-library
-" $vfvp/packs-cp/opt/vim-ingo-library/README.md
+" $vfvp/packs-cp-full/opt/vim-ingo-library/README.md
 "  required for  vim-mark  vim-ShowTrailingWhitespace
 packadd vim-ingo-library
 
@@ -346,8 +344,8 @@ packadd vim-ingo-library
 " settings for the filetype, including recommended modules
 "  :ALEInfo
 "   AlEPrreviewWindow  responds to  <c-w>+, but not to  <cw>=
-" $vfvp/packs-cp/opt/ale/plugin/ale.vim
-" $vfvp/packs-cp/opt/ale/doc/ale.txt
+" $vfvp/packs-cp-full/opt/ale/plugin/ale.vim
+" $vfvp/packs-cp-full/opt/ale/doc/ale.txt
 
 " Enabled?
 "  :let ale_enabled
@@ -424,7 +422,7 @@ packadd vim-LanguageTool " then can  :h LanguageTool
 " $vimfiles/nvim/init.vim
 
 ""> layout - Colorizer
-" $vfvp/packs-cp/opt/Colorizer/README.md  but see  $vimfiles/QR/QR.md
+" $vfvp/packs-cp-full/opt/Colorizer/README.md  but see  $vimfiles/QR/QR.md
 let g:colorizer_disable_bufleave = 1
 
 ""> layout - FastFold
@@ -441,8 +439,8 @@ packadd FoldText
 " packadd limelight.vim
 
 "">> vim-better-whitespace
-" $vfvp/packs-cp/opt/vim-better-whitespace/doc/better-whitespace.txt
-" $vfvp/packs-cp/opt/vim-better-whitespace/README.md
+" $vfvp/packs-cp-full/opt/vim-better-whitespace/doc/better-whitespace.txt
+" $vfvp/packs-cp-full/opt/vim-better-whitespace/README.md
 " only used in  $vimfiles/nvim/init.vim
 if has('nvim')
   let g:better_whitespace_ctermcolor='Black'
@@ -460,18 +458,18 @@ endif
 " let g:interestingWordsRandomiseColors = 1
 
 "">> vim-ShowTrailingWhitespace
-" $vfvp/packs-cp/opt/vim-ShowTrailingWhitespace/doc/ShowTrailingWhitespace.txt
+" $vfvp/packs-cp-full/opt/vim-ShowTrailingWhitespace/doc/ShowTrailingWhitespace.txt
 if g:useSTW | packadd vim-ShowTrailingWhitespace | endif  " requires  ingo-library
 
 ""> layout - lf.vim
-" $vfvp/packs-cp/opt/lf-vim/README.md
+" $vfvp/packs-cp-full/opt/lf-vim/README.md
 packadd lf-vim
 
 ""> layout - nerdfont.vim
 " packadd nerdfont.vim
 
 ""> layout - vim-fontsize
-" $vfvp/packs-cp/opt/vim-fontsize/doc/fontsize.txt
+" $vfvp/packs-cp-full/opt/vim-fontsize/doc/fontsize.txt
 if has('gui_running')
   packadd vim-fontsize
     let g:fontsize#timeout = 0
@@ -494,7 +492,7 @@ noremap <leader>C :CalendarH<CR>
 packadd calendar-vim
 
 ""> shell - open-browser.vim
-" $vfvp/packs-cp/opt/open-browser.vim/doc/openbrowser.txt
+" $vfvp/packs-cp-full/opt/open-browser.vim/doc/openbrowser.txt
 " requires  :set shell  be unchanged from  cmd.exe
 
 " If it looks like URI, Open URI under cursor. Otherwise, Search word under cursor.
@@ -520,7 +518,7 @@ packadd vim-rooter
 
 "">> tabular
 " :vert h tabular
-" $vfvp/packs-cp/opt/tabular/doc/Tabular.txt
+" $vfvp/packs-cp-full/opt/tabular/doc/Tabular.txt
 " packadd tabular  " :Tabularize ...
 
 "">> vim-easy-align
@@ -572,7 +570,7 @@ packadd vim-mark  " requires  ingo-library
 " " now preferring  vim-asterisk
 
 ""> text wrangling - targets.vim
-" $vfvp/packs-cp/opt/targets.vim/cheatsheet.md
+" $vfvp/packs-cp-full/opt/targets.vim/cheatsheet.md
 packadd targets.vim
 
 ""> vim - buffers
@@ -669,7 +667,7 @@ noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
 packadd cfilter
 
 "">> ListToggle
-" $vfvp/packs-cp/opt/listtoggle/README.md
+" $vfvp/packs-cp-full/opt/listtoggle/README.md
 
 packadd listtoggle
 let g:lt_location_list_toggle_map = '<leader>ll'

@@ -14,6 +14,9 @@ au BufNewFile,BufRead *.aesl setlocal filetype=xml
 ""> 0 default applications
 au BufRead,BufNew,BufNewFile mimeapps.list setlocal ft=dosini
 
+""> 0 Dropbox Paper
+au BufRead,BufNew,BufNewFile *.paper setlocal ft=json
+
 ""> 0 ft Emacs history
 au BufNewFile,BufRead ~/.emacs.d/history setlocal filetype=lisp
 

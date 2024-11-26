@@ -7,7 +7,7 @@
 set -e  # quits on error
 
 # #=> 1 clones 0 update  all.clones
-# . $misc/GRs/getClones.sh getRepos/all.clones
+# . $misc/GRs/getClonesList.sh getRepos/all.clones
 
 # #=> 1 clones 1 remove
 # sudo rm -r $vfv/plugin/fzf
@@ -30,9 +30,8 @@ read -p "Going to update repositories - you've closed instances of vim? "
 
 #=> 2 updates 1 packs
 cd $vfvp
-msv=$vfvp/packs-cp/opt/msmtp-scripts-vim
+msv="$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
 [ -f $msv ] && rm -r $msv  # temporarily, because it's got no .git
-# rm -r $vfvp/packs-cp/opt/msmtp-scripts-vim
 # sf='vim-dokuwiki'
 # sf='vim-gfm-syntax'
 # once=yes

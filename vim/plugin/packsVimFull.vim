@@ -91,9 +91,7 @@ imap <c-d> <Plug>(fzf-dictionary-open)
 " just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt
 " doesn't work for  $ulLA/IM-magick-list_color.txt
 
-""> shell
-
-"">> Fern
+""> shell - Fern
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>
 packadd fern.vim " $vfvp/packs-cp-full/opt/fern.vim/README.md
 
@@ -112,10 +110,10 @@ packadd fern.vim " $vfvp/packs-cp-full/opt/fern.vim/README.md
 " t -- open:tabedit
 " x -- open:system (eg to open an image)
 
-"">> fern-git-status
+""> shell - fern-git-status
 packadd fern-git-status.vim
 
-"">> fern-preview.vim
+""> shell - fern-preview.vim
 augroup fern-settings
   autocmd!
   autocmd FileType fern call s:fern_settings()
@@ -127,14 +125,14 @@ function! s:fern_settings() abort
 endfunction
 packadd fern-preview.vim
 
-"">> fern-renderer-nerdfont.vim
+""> shell - fern-renderer-nerdfont.vim
 let g:fern#renderer = "nerdfont"
 packadd fern-renderer-nerdfont.vim
 
-"">> nerdtree-git-plugin
+""> shell - nerdtree-git-plugin
 packadd nerdtree-git-plugin
 
-" "">> vim-dirvish
+" ""> shell - vim-dirvish
 " " h dirvish
 " " can't navigate up a directory
 " " takes over :e.
@@ -153,12 +151,12 @@ packadd nerdtree-git-plugin
 
 " packadd vim-dirvish
 
-" "">> vim-dirvish-git
+" ""> shell - vim-dirvish-git
 " if has('unix')
 "   packadd vim-dirvish-git
 " endif
 
-"">> vim-picker
+""> shell - vim-picker
 if has('unix')
   packadd vim-picker
   nmap <unique> <leader>pe <Plug>(PickerEdit)

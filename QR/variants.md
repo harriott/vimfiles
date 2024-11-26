@@ -125,6 +125,8 @@ $misc/CP/vimtest/README.md
 ```
 
 ## messages
+    :mess
+
 - `:echo v:errmsg` - the last one
 - `g<` - review
 

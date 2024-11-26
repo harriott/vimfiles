@@ -1,7 +1,7 @@
 
 " Language: md
 " Maintainer: Joseph Harriott
-" Last Change: jeu 01 août 24
+" Last Change: Thu 07 Nov 2024
 " this is for extra funtionality that I like for my *.md files
 " $vfv/ftplugin/md.vim  supplemental to  $vfv/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
@@ -23,10 +23,6 @@ if v:lang =~ 'fr'
     nnoremap <buffer><localleader>< a<><Esc>
   endif
 endif
-
-" for md's detected as  liquid
-  nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
-" - then just reload the file to return to  liquid  syntax highlighting
 
 " hack to stop accidental filtering
   setlocal equalprg=no_filter_md_files
@@ -64,6 +60,11 @@ else
   nnoremap <buffer><leader><f7> :call MysmsMd()<CR>
   " - check with  :map <leader><f7>
 endif
+
+""> reset filetype
+nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
+" when  ft=liquid
+" when  $JHm/_posts  have  fdm=syntax
 
 ""> syntax highlighting fix
 " maxmempattern  is set in  $vimfiles/plugin/plugin.vim

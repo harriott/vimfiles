@@ -96,7 +96,7 @@ Stack Exchange Vi and Vim
 
 - rgba(255, 255, 255, 0.05) - no
 - rgba(255, 255, 255, 5) - yes
-" works for  $ulLA/IM-magick-list_color.txt
+- works for  $ulLA/IM-magick-list_color.txt
 
 ## colorizer
     <leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
@@ -207,6 +207,7 @@ Stack Exchange Vi and Vim
     zr             " increase foldlevel (#zr -> foldlevel #)
     zv             " view cursor line (opening just enough folds)
     zx             " update folds
+    :h fold-methods
     :se fdl?       " reports the current foldlevel
 
 ### foldopen
