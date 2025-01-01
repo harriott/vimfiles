@@ -60,6 +60,7 @@ Joseph's (g)Vim Quick Reference
 `Arch`, if `handlr get .texty_extension`  returns `vim.desktop`, both `gVim` & `Vim` launch with `$VIM` & `$VIMRUNTIM` set as for `Nvim`!
 
 ### MSWin
+    $CPF\Neovim\share\nvim\runtime\filetype.lua
     & $CPF\Neovim\bin\nvim.exe -h
     rm $HADL\nvim-data\shada\main.shada.tmp.*
     where.exe nvim.exe
@@ -203,10 +204,12 @@ $misc/CP/vimtest/README.md
 - `<s-fn>` from  Alacritty  or xterm
 
 ### runtimepath
-    :Bufferize echo &rtp
     :Bufferize se rtp
+    :echo match(&runtimepath, 'mru') " returns -1 if MRU is not loaded
     :se pp  " packpath
     $vimfiles/grab/rtp-$host.fetl
+
+`:Bufferize echo &rtp`, then `:s/,/\r/g`
 
 ### syntax highlighting
 	:h syn-region

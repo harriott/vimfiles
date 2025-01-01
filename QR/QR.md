@@ -10,7 +10,8 @@ Joseph's (g)Vim Quick Reference
     :h quickref
     :helptags ALL
 
-Stack Exchange Vi and Vim
+- modeline: `vim: tw=77`
+- Stack Exchange Vi and Vim
 
 # buffers
     'J      " bring up file marked with J (as saved in viminfo) into buffer
@@ -188,7 +189,7 @@ Stack Exchange Vi and Vim
 
 ## filter
     :h =
-    :set equalprg   " empty by default
+    :set equalprg   " empty by default, or see  $vfv/ftplugin/md.vim
     :set indentexpr " empty by default
     gg=G            " indent a file
 
@@ -237,7 +238,8 @@ set fdo?
     Resize Splits with mouse
 
 ### split
-    :ba    " view all buffers, split horizontally
+    :ba      " view all buffers, split horizontally
+    :vert ba " view all buffers, split vertically
 
 #### current buffer
     :sp    " split horizontally
@@ -440,6 +442,12 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :echo $username
 :put =$HOME
 :put =$PATH
+```
+
+#### shada file
+    ri $HADL\nvim-data\shada\main.shada.tmp.*
+
+> ...shada.tmp.X files exist, fixes "cannot write ShaDa file!"
 
 ## Python
     :echo has('python')

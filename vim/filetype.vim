@@ -1,6 +1,6 @@
 
 " Maintainer: Joseph Harriott
-" Last Change: lun 09 sept 2024
+" Last Change: jeu 12 déc 2024
 " $vfv/filetype.vim
 "  supplemental to
 "   $VIMRUNTIME/filetype.lua
@@ -22,11 +22,6 @@ au BufNewFile,BufRead ~/.emacs.d/history setlocal filetype=lisp
 
 ""> 0 GitHub Flavored Markdown
 au BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
-
-""> 0 muttrc
-au BufNew,BufNewFile,BufRead muttrc-*,*muttrc-accounts/* setlocal filetype=neomuttrc
-" overcomes $VIMRUNTIME/filetype.vim
-"  I needed this for  $clMail/neomutt/muttrc-accounts/gmx ($jtCP/Vim/muttrc-123)
 
 ""> 0 my Arch Bash history
 au BufNewFile,BufRead ~/Arch/bash_history setlocal filetype=sh

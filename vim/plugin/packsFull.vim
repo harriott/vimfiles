@@ -289,7 +289,7 @@ let g:vimtex_syntax_custom_cmds = [
   \ {'name': 'section', 'hlgroup': 'Todo'},
   \]
 let g:vimtex_view_enabled = 0
-" packadd vimtex
+packadd vimtex
 
 ""> encoding - minimap.vim
 " MinimapToggle
@@ -372,7 +372,7 @@ let g:tq_map_keys=0
 let g:tq_enabled_backends=["openoffice_en","mthesaur_txt","cnrtl_fr","synonymo_fr"]
 " let g:tq_enabled_backends=["openoffice_en","mthesaur_txt"]
 if has('win64')
-  let g:tq_mthesaur_file="~/vimfiles/thesaurus/mthesaur.txt"
+  let g:tq_mthesaur_file="~/vimfiles/thesaurus/mthesaur.txt" " $vfv/thesaurus/mthesaur.txt
   let g:tq_openoffice_en_file="~/vimfiles/thesaurus/MyThes-1.0/th_en_US_new"
 endif
 let g:tq_language=['en', 'fr']

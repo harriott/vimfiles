@@ -9,7 +9,7 @@
 
 " Detections:
 "  $vfv/filetype.vim  for *.toc
-"  $vfvp/packs-cp/opt/vimtex/ftdetect/tex.vim
+"  $vfvp/packs-cp-full/opt/vimtex/ftdetect/tex.vim
 "  $VIMRUNTIME/filetype.vim > TeX
 
 " Syntax: can't seem to add my own supplemental  tex.vim
@@ -95,7 +95,7 @@ if b:PandocLaTeX
     endif
   endfunction
 elseif match(&runtimepath, 'vimtex') != -1
-  setlocal fdc=1 tw=0
+  setlocal fdc=1 tw=0  " VimTeX
 else
   " For folding to be handled by  $VIMRUNTIME/syntax/tex.vim,
   "  let g:tex_fold_enabled=1

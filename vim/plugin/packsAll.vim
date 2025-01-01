@@ -23,8 +23,6 @@ packadd context.vim
 inoremap <c-x><c-x> <c-x><c-o>
 " - I'd preferred  <C-M>, but that's <CR>
 
-""> layout
-
 ""> layout - characterize.vim
 " enhances  ga
 packadd vim-characterize

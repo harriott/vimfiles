@@ -1,7 +1,7 @@
 
 " Language: dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: jeu 08 ao�t 2024
+" Last Change: jeu 08 août 2024
 " $vfv/ftplugin/dokuwiki.vim
 
 " tweaked  $vfvp/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax
@@ -16,7 +16,6 @@ vnoremap <buffer><leader>hy :call PageTitleToHyperlink()<CR>
 nnoremap <buffer><leader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
 
 let b:match_words = '<:>'
-" convert <title> <url> to DokuWiki hyperlink
 set nospell
 setlocal textwidth=0 foldexpr=DWF() fdl=0
 setlocal foldmethod=expr
@@ -101,4 +100,10 @@ nnoremap <buffer> <leader>' viwc''''<Esc>hP
 
 " wrap a selection with ''
 vnoremap <buffer> <leader>' c''''<Esc>hP
+
+""> for verse
+" append \\:
+vnoremap <buffer> <leader>v1 :s#^\v(.+)$#> \1 \\\\#g <bar> nohlsearch <CR>
+" remove   from the last line of a stanza:
+vnoremap <buffer> <leader>v2 :s#^\v(.+) \\\\$\n^$#\1\r#g <CR>
 

@@ -205,6 +205,7 @@ function! ClearFancyGlyphs()
   :sil!%s/→/-->/g
   :sil!%s/⧹/\\/g  " normalise big backslash
   :sil!%s#⧸#/#g
+  :sil!%s/×/x/g
 endfunction
 
 "">> clear mathematical alphanumeric symbols

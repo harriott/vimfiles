@@ -7,7 +7,12 @@
 " also  $vfv/syntax/emdr.vim
 
 " For lists:
-iabbrev <buffer> => ⇒
+if v:lang =~ 'fr'
+  " AZERTY
+  iabbrev <buffer> =< ⇒
+else
+  iabbrev <buffer> => ⇒
+endif
 "  s/^- /⇒ 
 
 ""> sectioning marks for emails
