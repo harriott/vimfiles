@@ -57,6 +57,7 @@ au BufNewFile,BufRead *thunderbird/installs.ini,*thunderbird/profiles.ini,*Thb-d
 " if exists("did_load_filetypes") | finish | endif  " kills detection in Neovim
 aug filetypedetect
   au! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
+  au! BufRead,BufNewFile *.asc       setf pem       " $vfv/ftplugin/pem.vim
   au! BufRead,BufNewFile *.clones    setf clones    " $vfv/syntax/clones.vim
   au! BufRead,BufNewFile *.cmplt     setf cmplt     " $vfv/syntax/cmplt.vim
   au! BufRead,BufNewFile *.digs      setf digs      " $vfv/ftplugin/digs.vim

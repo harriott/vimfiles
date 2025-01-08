@@ -11,6 +11,7 @@ Joseph's (g)Vim Quick Reference
 # Nvim
     $VIMRUNTIME/filetype.lua
     :echo has('nvim')
+    :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
     :Man git
     C /usr/share/nvim/runtime
@@ -178,6 +179,7 @@ $misc/CP/vimtest/README.md
     :verb se tw            " shows where textwidth was set
 
     $VIMRUNTIME
+    /usr/share/vim/vim91/filetype.vim
     C:\Vim\vim90\ftplugin
 
 - `&&`, `||`

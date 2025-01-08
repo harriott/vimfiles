@@ -28,6 +28,7 @@ else
         let $ITstack = $core.'\IT_stack'
         let $TeNo = $core.'\TextNotes'
       let $DaLi = $DJH.'\Jo-now\DailyLife'
+      let $ess = $DJH.'\Jo-now\essential'
       let $FrFa = $DJH.'\Jo-F+F'
         let $FFIdF = $FrFa.'\France\IdF'
       let $JCop = $DJH.'\Cop'
