@@ -13,7 +13,7 @@ Joseph's (g)Vim Quick Reference
     :echo has('nvim')
     :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
-    :Man git
+    :h Man
     C /usr/share/nvim/runtime
     nvim -?
     nvim -v
@@ -224,11 +224,10 @@ $misc/CP/vimtest/README.md
 
 #### settings
     :Bufferize sy  " :h syn-list
-	:hi
     :Bufferize Inspect  " to see what's highlighting under the cursor
+	:hi
     :se synmaxcol=0  " removes 3000 character limit (:se smc)
 	:so $VIMRUNTIME/syntax/hitest.vim
     :sy sync fromstart  " but can't find any way to check this setting
-
 	$VIMRUNTIME/syntax/syncolor.vim
 

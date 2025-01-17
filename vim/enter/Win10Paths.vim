@@ -10,9 +10,9 @@
 
 ""> paths
 let $CPF = $programfiles
-"">> 0 $Drpbx, or just $ITstack
+"">> 0 $Drpbx, or just $coreIT
 if $HOME == 'C:\Users\deaur'
-  let $ITstack = 'D:\IT_stack'
+  let $coreIT = 'D:\IT'
 else
   let $Drpbx = 'D:\Dropbox'
     let $DJH = $Drpbx.'\JH'
@@ -23,9 +23,8 @@ else
             let $d1ad = $Copil.'\data-1-adh'
         let $CzPhy = $Cfzd.'\PhysicalProperty'
       let $CfWk = $DJH.'\Cop-work'
-      let $cITh = $DJH.'copied\IT-handy'
       let $core = $DJH.'\core'
-        let $ITstack = $core.'\IT_stack'
+        let $coreIT = $core.'\IT_stack'
         let $TeNo = $core.'\TextNotes'
       let $DaLi = $DJH.'\Jo-now\DailyLife'
       let $ess = $DJH.'\Jo-now\essential'
@@ -53,14 +52,14 @@ let $HADR = $HOME.'\AppData\Roaming'
   let $Pandoc = $HADR.'\Pandoc'
   let $tex = $HADR.'\MiKTeX\tex'
 
-  "">> 1 rooting on $ITstack
-  let $CrPl = $ITstack.'\CP'
-    let $LTXj = $CrPl.'\documenting\LaTeX\jo'
-  let $DWp = $ITstack.'\DokuWiki\pages'
-  let $ITscc = $ITstack.'\copied-code'
-  let $ITscr = $ITstack.'\copied-reference'
-  let $machLg = $ITstack.'\MSWin\ml-'.$computername
-  let $onGH = $ITstack.'\onGitHub'
+  "">> 1 rooting on $coreIT
+  let $ITsCP = $coreIT.'\CP'
+    let $LTXj = $ITsCP.'\documenting\LaTeX\jo'
+  let $DWp = $coreIT.'\DokuWiki\pages'
+  let $ITscc = $coreIT.'\copied-code'
+  let $ITscr = $coreIT.'\copied-reference'
+  let $machLg = $coreIT.'\MSWin\ml-'.$computername
+  let $onGH = $coreIT.'\onGitHub'
     let $MD4PDF = $onGH.'\pandoc-md4pdf'
     let $misc = $onGH.'\misc'
     let $MSwin10 = $onGH.'\OS-MSWin10'
@@ -74,7 +73,7 @@ let $HADR = $HOME.'\AppData\Roaming'
     let $OSL = $onGH.'\OS-Linux'
       let $clMail = $OSL.'\jo\clm'
         let $clMn = $clMail.'\neomutt'
-    let $ulL = $ITstack.'\ulLinux'
+    let $ulL = $coreIT.'\ulLinux'
       let $lclm = $ulL.'\clm'
       let $ulLA = $ulL.'\Arch'
     let $vimfiles = $onGH.'\vimfiles'

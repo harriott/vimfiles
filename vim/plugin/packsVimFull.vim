@@ -22,7 +22,7 @@ if has('win64') " junegunn/fzf
   " at  $vfv/plugin\fzf,
   "  because
   "   1 /usr/bin/fzf  is not found
-  "   2 fzf  is not found externally inspite of  :set rtp+=$CrPl\fzf
+  "   2 fzf  is not found externally inspite of  :set rtp+=$ITsCP\fzf
   "                                              :set rtp+=$nvim\fzf
   "                                              :set rtp+=$nvim\plugin\fzf
   "      (the advice at  $vfv/plugin/fzf/README-VIM.md  ain't correct)

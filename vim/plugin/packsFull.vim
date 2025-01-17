@@ -53,7 +53,7 @@ packadd vim-rhubarb  " for GitHub
 let g:gfm_syntax_emoji_conceal = 1
 let g:gfm_syntax_enable_always = 0
 let g:gfm_syntax_enable_filetypes = ['gfm']
-" packadd vim-gfm-syntax  " for viewing  $ITstack/CP/encoding/EMOJI_CHEAT_SHEET.gfm
+" packadd vim-gfm-syntax  " for viewing  $coreIT/CP/encoding/EMOJI_CHEAT_SHEET.gfm
 
 ""> encoding - languages
 packadd CSS-one-line--multi-line-folding
@@ -514,14 +514,12 @@ let g:rooter_buftypes = ['']  " avoiding specials
 let g:rooter_manual_only = 1  " :Rooter
 packadd vim-rooter
 
-""> text wrangling - aligning
-
-"">> tabular
+""> text wrangling - aligning - tabular
 " :vert h tabular
 " $vfvp/packs-cp-full/opt/tabular/doc/Tabular.txt
 " packadd tabular  " :Tabularize ...
 
-"">> vim-easy-align
+""> text wrangling - aligning - vim-easy-align
 packadd vim-easy-align
 nmap gA <Plug>(EasyAlign)
 xmap gA <Plug>(EasyAlign)
@@ -536,7 +534,7 @@ let g:easy_align_delimiters = {
     \ '>': { 'pattern': '>>\|=>\|>' },
     \ }
 
-"">> vim-textmanip
+""> text wrangling - aligning - vim-textmanip
 packadd vim-textmanip
 xmap <c-down> <Plug>(textmanip-move-down)
 xmap <c-up> <Plug>(textmanip-move-up)

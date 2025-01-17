@@ -114,24 +114,12 @@ require('lazy').setup({
       -- :LspInfo
       -- :Mason
         -- g?  toggles help
-      -- :MasonInstall bash-language-server
-      -- :MasonInstall emmet-language-server
-      -- :MasonInstall lemminx
-      -- :MasonInstall ltex-ls
-      -- :MasonInstall lua-language-server
-        -- :MasonUninstall lua-language-server  with no lua files open instead of updating
-      -- :MasonInstall mutt-language-server
-      -- :MasonInstall perlnavigator
-        -- ~/.local/share/nvim/mason/packages/perlnavigator/package.json
-      -- :MasonInstall powershell-editor-services
-      -- :MasonInstall pyright
-      -- :MasonInstall texlab
-      -- :MasonInstall vim-language-server
       -- :MasonLog (~/.local/state/nvim/mason.log)
+      -- for  $vimfiles/nvim/lua/lazy/nvim-lspconfig.lua
       -- packages directory
         -- :edit $MASON/packages (where defined?)
-        -- g $HADL\nvim-data\mason\packages
-        -- r ~/.local/share/nvim/mason/packages
+        -- g $mason
+        -- r $mason
     {"williamboman/mason-lspconfig.nvim",
       -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
       -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs

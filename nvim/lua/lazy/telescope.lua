@@ -87,13 +87,13 @@ return {
 
       vim.keymap.set({'n'},'<leader>j',function()
         if vim.g.djh == nil then
-          builtin.find_files{cwd="$ITstack"}
-          vim.cmd("echo 'files in $ITstack'")
+          builtin.find_files{cwd="$coreIT"}
+          vim.cmd("echo 'files in $coreIT'")
         else
           builtin.find_files{cwd="$DJH"}
           vim.cmd("echo 'files in Dropbox/JH'")
         end
-      end, {desc='cd $DJH (or just $ITstack)  then  :Telescope find_files'})
+      end, {desc='cd $DJH (or just $coreIT)  then  :Telescope find_files'})
 
       vim.keymap.set({'n'},'<leader>lg',":Telescope live_grep_args<CR>")
 

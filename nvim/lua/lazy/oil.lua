@@ -7,7 +7,7 @@
 -- :e $HOME
 -- :e $onGH
 -- :e %:h
--- :e $ITstack/MSWin
+-- :e $coreIT/MSWin
 
 return {
   { 'stevearc/oil.nvim',

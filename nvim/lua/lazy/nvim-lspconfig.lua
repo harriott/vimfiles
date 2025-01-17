@@ -15,23 +15,34 @@ return {
       -- might get over failure to find  vim-language-server  on  win64
     config = function()
 
-      -- try  emmet-language-server  for  css, html, less, sass, scss
-      -- try  nginx_language_server
+      -- try
+        -- :MasonInstall emmet-language-server
+          -- for  css, html, less, sass, scss
+        -- :MasonInstall mdx-analyzer
+        -- :MasonInstall mutt-language-server
+        -- :MasonInstall texlab
+        -- :MasonInstall typescript-language-server
+        -- nginx_language_server
       -- try  phpactor
-      -- try  texlab
       -- try  vscode-html-languageservice  for  html
       -- try  vscode-json-languageservice  for  json
       -- try  yamlls
 
-      require'lspconfig'.bashls.setup{}
-      -- $HOME\AppData\Local\nvim-data\mason\packages\bash-language-server\node_modules\bash-language-server\src\config.ts
+      require'lspconfig'.astro.setup{} -- :MasonInstall astro-language-server
+
+      require'lspconfig'.bashls.setup{} -- :MasonInstall bash-language-server
+      -- $mason/bash-language-server/node_modules/bash-language-server/src/config.ts
       -- reports Error for CLRFs
 
+      -- :MasonInstall ltex-ls
       -- require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
         -- but no completions...
 
+      -- :MasonInstall lemminx
       if vim.fn.has("win64") == 1 then require'lspconfig'.lemminx.setup{} end
 
+      -- :MasonInstall lua-language-server
+        -- :MasonUninstall lua-language-server  with no lua files open instead of updating
       require'lspconfig'.lua_ls.setup {
           on_init = function(client)
               local path = client.workspace_folders[1].name
@@ -47,21 +58,27 @@ return {
           settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
         } -- and see fix in  $vimfiles/nvim/lua/init.lua
 
+      require'lspconfig'.mdx_analyzer.setup{}
+
       -- require'lspconfig'.mutt_ls.setup{}
 
+      -- :MasonInstall perlnavigator
+        -- $mason/perlnavigator/package.json
       require'lspconfig'.perlnavigator.setup{cmd={"perlnavigator"}, settings = {
           perlnavigator = { perlPath = 'perl', enableWarnings = true, perltidyProfile = '',
             perlcriticProfile = '', perlcriticEnabled = true, } } }
             -- bung an exit in some code to see this work
 
+      -- :MasonInstall powershell-editor-services
       require'lspconfig'.powershell_es.setup{
         -- bundle_path = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
         bundle_path = vim.fn.expand "$MASON/packages/powershell-editor-services",
         settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } } }
         -- $nvim/powershell_es-mason-schemas-lsp.json
 
-      require'lspconfig'.pyright.setup{}
+      require'lspconfig'.pyright.setup{} -- :MasonInstall pyright
 
+      -- :MasonInstall vim-language-server
       require'lspconfig'.vimls.setup{ cmd={"vim-language-server","--stdio"}, filetypes={'vim'},
         init_options = { diagnostic = { enable = true },
           indexes = { count = 3, gap = 100,

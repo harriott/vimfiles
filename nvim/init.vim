@@ -7,7 +7,7 @@
 " $vimfiles/nvim/init.vim
 " symlinked by
 "  $MSwin10\mb\symlinks.ps1
-"  $OSAB/bs-symlinks/jo-2-whenWM-0.sh
+"  $OSAB/nodes-set/jo-2-whenWM-0.sh
 
 let g:sourced_init_vim = 1
 

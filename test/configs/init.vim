@@ -1,7 +1,7 @@
 " vim: fdl=1:
 
 " nvim -u $vimfiles/test/configs/init.vim <file_to_test>
-"  (unneccessarily symlinked by  $OSAB/bs-symlinks/jo-2-whenWM-0.sh)
+"  (unneccessarily symlinked by  $OSAB/nodes-set/jo-2-whenWM-0.sh)
 
 ""> 1 pull in Vim configuration
 if has('win64')
