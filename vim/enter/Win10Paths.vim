@@ -1,6 +1,6 @@
 " vim: set fdl=1:
 
-" Joseph Harriott - ven 26 juil 2024
+" Joseph Harriott - Sat 18 Jan 2025
 
 " $vfv/enter/Win10Paths.vim
 " source'd by
@@ -24,7 +24,7 @@ else
         let $CzPhy = $Cfzd.'\PhysicalProperty'
       let $CfWk = $DJH.'\Cop-work'
       let $core = $DJH.'\core'
-        let $coreIT = $core.'\IT_stack'
+        let $coreIT = $core.'\IT'
         let $TeNo = $core.'\TextNotes'
       let $DaLi = $DJH.'\Jo-now\DailyLife'
       let $ess = $DJH.'\Jo-now\essential'

@@ -220,9 +220,6 @@ set fdo?
     :h 'sw'  " autoindentation - shiftwidth
 
 ## windows splits
-    :h ctrl-w
-    c-w+[h|j|k|l] " move focus to neighbouring split
-    winfixheight
 
 ### move them around
     c-w+H  " move split to far left (:h ctrl-w_h)
@@ -236,6 +233,7 @@ set fdo?
     c-w =  " equalise window sizes
     c-w _  " maximizes a window
     Resize Splits with mouse
+    se wfh?  " winfixheight - resists  c-w =, so  se nowfh
 
 ### split
     :ba      " view all buffers, split horizontally
@@ -359,8 +357,9 @@ z\                    " incsearch-fuzzy-stay
     planet\(Awesome\|Terrible\) " planetAwesome or planetTerrible
 	text\|alt                   " searches for text & alt
 
-## regex
-    [^"]*  " match until quote
+### regex
+    ^[^"]*  " match until quote
+    [^\\]  " all but \
 
 ```vim
 \(alt1\|alt2\|alt3\)
@@ -379,7 +378,7 @@ z\                    " incsearch-fuzzy-stay
 
 `set magic` is the default, `\v` goes very
 
-### searching before and after
+#### searching before and after
     \ze<endPatternToDiscard>
     <startPatternToDiscard>\zs
 

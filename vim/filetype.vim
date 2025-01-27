@@ -60,6 +60,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.asc       setf pem       " $vfv/ftplugin/pem.vim
   au! BufRead,BufNewFile *.clones    setf clones    " $vfv/syntax/clones.vim
   au! BufRead,BufNewFile *.cmplt     setf cmplt     " $vfv/syntax/cmplt.vim
+  au! BufRead,BufNewFile *.dcc       setf dcc       " $vfv/ftplugin/dcc.vim
   au! BufRead,BufNewFile *.digs      setf digs      " $vfv/ftplugin/digs.vim
   au! BufRead,BufNewFile *.dirl      setf dirl      " $vfv/syntax/dirl.vim
   au! BufRead,BufNewFile *.exts      setf exts      " $vfv/syntax/exts.vim

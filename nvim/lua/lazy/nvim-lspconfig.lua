@@ -18,15 +18,13 @@ return {
       -- try
         -- :MasonInstall emmet-language-server
           -- for  css, html, less, sass, scss
-        -- :MasonInstall mdx-analyzer
-        -- :MasonInstall mutt-language-server
         -- :MasonInstall texlab
         -- :MasonInstall typescript-language-server
         -- nginx_language_server
-      -- try  phpactor
-      -- try  vscode-html-languageservice  for  html
-      -- try  vscode-json-languageservice  for  json
-      -- try  yamlls
+        -- phpactor
+        -- vscode-html-languageservice  for  html
+        -- vscode-json-languageservice  for  json
+        -- yamlls
 
       require'lspconfig'.astro.setup{} -- :MasonInstall astro-language-server
 
@@ -58,9 +56,10 @@ return {
           settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
         } -- and see fix in  $vimfiles/nvim/lua/init.lua
 
+      -- :MasonInstall mdx-analyzer
       require'lspconfig'.mdx_analyzer.setup{}
 
-      -- require'lspconfig'.mutt_ls.setup{}
+      -- require'lspconfig'.mutt_ls.setup{} -- :MasonInstall mutt-language-server
 
       -- :MasonInstall perlnavigator
         -- $mason/perlnavigator/package.json
