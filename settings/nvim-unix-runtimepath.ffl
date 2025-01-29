@@ -1,4 +1,4 @@
-$vimfiles/settings/nvim-unix-runtimepath.fetl
+$vimfiles/settings/nvim-unix-runtimepath.ffl
 
 put =&rtp|s/,/\r/g  " pastes here below
 

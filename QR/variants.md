@@ -209,7 +209,6 @@ $misc/CP/vimtest/README.md
     :Bufferize se rtp
     :echo match(&runtimepath, 'mru') " returns -1 if MRU is not loaded
     :se pp  " packpath
-    $vimfiles/grab/rtp-$host.fetl
 
 `:Bufferize echo &rtp`, then `:s/,/\r/g`
 

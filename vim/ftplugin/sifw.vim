@@ -3,7 +3,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Sat 28 Jan 2023
 
-" also  $vimfiles/syntax/sifw.vim
+" also  $vfv/syntax/sifw.vim
 
 setlocal nowrap textwidth=0
 

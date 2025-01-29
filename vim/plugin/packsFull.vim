@@ -645,7 +645,7 @@ function! GrabScriptnames()
   normal! p
   write
 endfunction
-" for use in  $vimfiles/settings/*-scriptnames-*.fetl
+" for use in  $vimfiles/settings/*-scriptnames-*.ffl
 
 "">> vim-bufkill
 " :BB :BF  could be mapped to replace some of the functionality of  vim-buffing-wheel

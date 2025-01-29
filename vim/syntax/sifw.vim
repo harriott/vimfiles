@@ -1,12 +1,9 @@
 
 " Language: sifw - for output of  $MSWin10\PSProfile.ps1  Function SIFWork,
-"  used by
-"   $MSWin10\PSProfile.ps1
-"   $vfv/syntax/rgo.vim
 " Maintainer: Joseph Harriott
 " Last Change: ven 04 oct 2024
 
-" also  $vimfiles/ftplugin/sifw.vim
+" also  $vfv/ftplugin/sifw.vim
 
 if exists('b:current_syntax') | finish |  endif
 

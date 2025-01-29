@@ -33,7 +33,7 @@ When I somehow managed, from `PowerShell` to convert hundreds of files in my con
     & $vimfiles/vim/packs/get/unix/get.sh  # - not ready yet, see  $vimfiles/vim/packs/get/win64/get.ps1  which downloads all the plugins that I use
 
 ### fix 2: convert the snagging files to LF
-1. name for the dos files list: `df="$ITsCP/encoding/Vim/grep_CRLF.fetl"` (using my [$vimfiles/syntax/fetl.vim](https://github.com/harriott/vimfiles/blob/master/vim/syntax/fetl.vim))
+1. name for the dos files list: `df="$ITsCP/encoding/Vim/grep_CRLF.ffl"` (using my [$vimfiles/syntax/ffl.vim](https://github.com/harriott/vimfiles/blob/master/vim/syntax/ffl.vim))
 1. `cd $vimfiles`
 1. list the culprits: `fd -Itf -x grep -rIl -m 1 $'\r' > $df`
 1. do the conversions: `while read CRLFfile; do sed -i 's/\r//' "${CRLFfile/:*}"; done <$df`
