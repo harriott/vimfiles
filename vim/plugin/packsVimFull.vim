@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - ven 01 nov 2024
+" https://harriott.githubio/ - Thu 06 Mar 2025
 
 " $vfv/plugin/packsVimFull.vim
 "  needs recent Vim
@@ -11,7 +11,7 @@ let g:packsVimAll = 1
 let g:gitgutter_max_signs = 600
 let g:gitgutter_enabled = 0
 packadd vim-gitgutter
-" $vimfiles/after/plugin/plugins.vim
+" toggle is in  $vfv/after/plugin/packs.vim
 
 "">> toggle
 let g:GGF = 0

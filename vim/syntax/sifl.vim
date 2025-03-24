@@ -1,9 +1,9 @@
 
-" Language: sifw - for output of  $MSWin10\PSProfile.ps1  Function SIFWork,
+" Language: sifl - for string in files functions in  $MSn\PS\Profile.ps1
 " Maintainer: Joseph Harriott
 " Last Change: ven 04 oct 2024
 
-" also  $vfv/ftplugin/sifw.vim
+" also  $vfv/ftplugin/sifl.vim
 
 if exists('b:current_syntax') | finish |  endif
 
@@ -20,5 +20,5 @@ syn match sifw_fade '^stackexchange'
 syn match sifw_fade '^vim.\+'
 hi def link sifw_fade LineNr
 
-let b:current_syntax = "sifw"
+let b:current_syntax = "sifl"
 

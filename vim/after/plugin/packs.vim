@@ -1,8 +1,8 @@
 " vim: fdl=2:
 
-" Joseph Harriott - Sun 26 Feb 2023
+" Joseph Harriott - Thu 06 Mar 2025
 
-" $vfv/after/plugin/plugins.vim
+" $vfv/after/plugin/packs.vim
 
 if exists('g:test') | finish | endif
 
@@ -10,14 +10,15 @@ if exists('g:test') | finish | endif
 " " override  $vfvp/packs-cp/opt/csv.vim/ftdetect/csv.vim
 " autocmd BufRead,BufNewFile *.dat set filetype=
 
-""> vim-devicons
+""> layout - NERDtree & vim-devicons
+" $vfvp/packs-cp-all/opt/vim-devicons/README.md
 if !has('nvim')
   packadd vim-devicons  " recommended after many others
 endif
 packadd nerdtree  " $jtCP/Vim/plugins/vim-devicons/issue428.md
 
-""> vim-gitgutter
-" $vimfiles/plugin/plugins.vim
+""> encoding - vim-gitgutter
+" $vfv/plugin/packsVimFull.vim
 
 "">> toggle
 function! GitGutterFocus()

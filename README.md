@@ -20,8 +20,9 @@ Some of my `vim` configuraton files are long, but they don't appear so to me as 
 ## prerequisites
 - a `Vim` flavour, of course
 - The relevant files of this repository correctly symlinked, as in:
-    - [ $MSwin10\mb\symlinks-mostly.ps1 ](https://github.com/harriott/OS-MSWin10/blob/master/mb/symlinks-mostly.ps1)
-    - [$MSWin10\mb\neededNodes-2.ps1](https://github.com/harriott/OS-MSWin10/blob/master/mb/neededNodes-2.ps1)
+    - [$OSAB/nodes/set/jo-2-whenWM-0.sh](https://github.com/harriott/OS-ArchBuilds/blob/master/nodes/set/jo-2-whenWM-0.sh)
+    - [$MSn/set/3.ps1](https://github.com/harriott/OS-MSWin10/blob/master/nodes/set/3.ps1)
+    - [$MSn/set/6-WSL-nodes.sh](https://github.com/harriott/OS-MSWin10/blob/master/nodes/set/6-WSL-nodes.sh)
 
 ## snag: CRLF line endings on Arch
 When I somehow managed, from `PowerShell` to convert hundreds of files in my configuration to CRLF line endings all the Vim variants on my `Arch Linux` machines were broken.

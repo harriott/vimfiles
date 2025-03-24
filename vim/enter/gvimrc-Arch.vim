@@ -36,11 +36,8 @@ endfunction
 
 ""> guifont
 " first font is always applied
-" set guifont=DejaVu\ Sans\ Mono\ 10
-" set guifont=DejaVuSansMono\ Nerd\ Font\ Mono\ 9
-" set guifont=Droid\ Sans\ Mono\ 10
-" set guifont=JetBrainsMonoNL\ Nerd\ Font\ Mono\ 9
+" set guifont=DejaVuSansM\ Nerd\ Font\ Mono\ 9
+" set guifont=JetBrainsMono\ NFM\ 9
 " set guifont=MesloLGS\ Nerd\ Font\ Mono\ 9
-" set guifont=Ubuntu\ Mono\ 10
 set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 10
 

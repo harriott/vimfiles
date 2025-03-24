@@ -2,9 +2,10 @@
 
 " Maintainer: Joseph Harriott
 " Last Change: Sun 30 Jan 2022
-  " used by
-  "   $vimfiles/ftplugin/markdown.vim
-  "   $vimfiles/ftplugin/build.vim
+" $vfv/ftplugin/HashFolding.vim
+"  used by
+"   $vfv/ftplugin/markdown.vim
+"   $vfv/ftplugin/build.vim
 
 " demote a selected part
 vnoremap <buffer><leader>> :s/^#/##/<CR>

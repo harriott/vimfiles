@@ -7,7 +7,7 @@
 " $vimfiles/nvim/init.vim
 " symlinked by
 "  $MSwin10\mb\symlinks.ps1
-"  $OSAB/nodes-set/jo-2-whenWM-0.sh
+"  $OSAB/nodes/set/jo-2-whenWM-0.sh
 
 let g:sourced_init_vim = 1
 
@@ -23,7 +23,7 @@ else
   if exists('g:neovide')
     if hostname() == 'sbMb'
       set guifont=UbuntuMono_Nerd_Font_Mono:h8
-    else " i34G1TU02
+    else " DOP3040D11S
       set guifont=UbuntuMono_Nerd_Font_Mono:h9
     endif " set  $machBld/jo/Bash/exportWS  accordingly
     map! <S-Insert> <C-R>+

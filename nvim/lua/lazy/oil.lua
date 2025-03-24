@@ -17,8 +17,8 @@ return {
       delete_to_trash = true,
       view_options = { show_hidden = true, },
       win_options = { wrap = true, },
-    vim.keymap.set({'i','n','v'},'<leader><f10>',
-      function() vim.cmd(':cd %:p:h') vim.cmd(':e.') end, {desc='cd to file\'s & open oil'})
+      vim.keymap.set({'i','n','v'},'<leader><f10>',
+        function() vim.cmd(':cd %:p:h') vim.cmd(':e.') end, {desc='cd to file\'s & open oil'})
     },
   }
 }

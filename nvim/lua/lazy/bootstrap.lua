@@ -1,3 +1,4 @@
+-- vim: fdl=1:
 
 -- https://harriott.github.io/ - mer 11 sept 2024
 

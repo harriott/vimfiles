@@ -80,7 +80,7 @@ Joseph's (g)Vim Quick Reference
 
 # layout
     :Prettier     " apply  prettier  to json & others
-    :se expandtab " allows  :retab
+    :se et        " expandtab - allows  :retab
     :se ch        " cmdheight
     :set cole=0   " conceallevel
     :se cwh       " cmdwinheight - I like 30
@@ -219,32 +219,30 @@ set fdo?
     :%le     " remove all indents
     :h 'sw'  " autoindentation - shiftwidth
 
-## windows splits
-
-### move them around
+## windows splits - move them around
     c-w+H  " move split to far left (:h ctrl-w_h)
     c-w+J  " move split to very bottom
     c-w+K  " move split to very top
     c-w+L  " move split to far right
     c-w+r  " rotate split to right
 
-### sizes
+## windows splits - sizes
     $vfv/plugin/plugin.vim > resize
     c-w =  " equalise window sizes
     c-w _  " maximizes a window
     Resize Splits with mouse
     se wfh?  " winfixheight - resists  c-w =, so  se nowfh
 
-### split
+## windows splits - split
     :ba      " view all buffers, split horizontally
     :vert ba " view all buffers, split vertically
 
-#### current buffer
+### current buffer
     :sp    " split horizontally
     :vsp   " split vertically
     c-w+v  " split vertical
 
-#### new buffer
+### new buffer
     :new     " new buffer, split above
     :vne[w]  " new buffer, split vertical
     c-w n    " new buffer, split horizontal
@@ -325,15 +323,13 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
 %                     " find opposing bracket in a line
 *                     " highlight all instances of exactly the word under the cursor
 g# (or g*)            " # (or *) without \< \>
-\B                    " :BLines
-\L                    " :Lines
 \n                    " (my mapping for) clearing yellow searched highlights
 \rn                   " (my mapping for) toggle relativenumber
 :Bufferize il <word>  " grab list of lines containing <word> in a new buffer
 :%s/pattern//ng       " reports number of occurances
 [I or ]I              " list lines containing word under cursor
 n                     " find next highlighted search result
-z\                    " incsearch-fuzzy-stay
+z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.vim)
 ```
 
     vim-mark
@@ -362,7 +358,6 @@ z\                    " incsearch-fuzzy-stay
     [^\\]  " all but \
 
 ```vim
-\(alt1\|alt2\|alt3\)
 \a    " alphabetic character [A-Za-z]
 \d    " digit
 \D    " non-digit
@@ -377,6 +372,12 @@ z\                    " incsearch-fuzzy-stay
 ```
 
 `set magic` is the default, `\v` goes very
+
+#### multiple targets
+```vim
+\(alt1\|alt2\|alt3\)
+\v(alt1|alt2|alt3)
+```
 
 #### searching before and after
     \ze<endPatternToDiscard>
@@ -394,7 +395,7 @@ z\                    " incsearch-fuzzy-stay
 :Locate <pattern>
 :packadd syntastic    " load the plugin from an opt directory
 :r<file>              " reads <file> into buffer
-:r!<shell_command>    " reads shell command output into buffer
+:r!<shell_command>    " reads shell command output into current buffer
 :se sh                " returns the path to the shell
 :tabe $HOME\_vimrc    " bring up my vimrc in a new tab
 :term
@@ -565,7 +566,7 @@ g<Ctrl-G>  " statistics
     z= => suggest corrections
 
 ### files
-    :mksp! %
+    :spelld  " (= spelldump) from a file with  spell  active, splits down a buffer with the vast list and filenames
 
 #### .add files
     $vfv/spell/en.utf-8.add
@@ -578,7 +579,7 @@ g<Ctrl-G>  " statistics
     :h spell-RARE
     :spellra <rareword>
 
-`z?` (`$vfv/plugin/plugin.vim`)
+`z?` (`$vfv/plugin/plugin.vim`) works on well separated words
 
 ### spelllang
     :se spl

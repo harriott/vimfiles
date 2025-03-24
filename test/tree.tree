@@ -1,0 +1,26 @@
+.
+├── configs
+│   ├── filetype.vim
+│   ├── init.vim
+│   ├── plugin
+│   │   ├── packs.vim
+│   │   ├── packsVim.vim
+│   │   └── plugin.vim
+│   ├── vimrc.vim
+│   │   └── plugin.vim
+│   └── vimrc-Win10.vim
+├── filetypes
+│   ├── test.bbcode
+│   ├── test_bbcode.md
+│   ├── test.csv
+│   ├── test_csv_0.md
+│   ├── test_csv_1.md
+│   ├── test.dw
+│   ├── test_ps1.md
+│   ├── test.tex
+│   └── test_tex.md
+├── README.md
+├── scratch.vim
+└── tree.tree
+
+4 directories, 19 files

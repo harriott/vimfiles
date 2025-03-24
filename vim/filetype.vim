@@ -70,6 +70,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.gems      setf gems      " $vfv/syntax/gems.vim
   au! BufRead,BufNewFile *.gnudiff   setf gnudiff   " $vfv/syntax/gnudiff.vim
   au! BufRead,BufNewFile *.IMfo      setf IMfo      " $vfv/ftplugin/IMfo.vim
+  au! BufRead,BufNewFile *.info      setf info      " $vfv/ftplugin/info.vim
   au! BufRead,BufNewFile *.jctl      setf jctl      " $vfv/syntax/jctl.vim
   au! BufRead,BufNewFile *.leader    setf leader    " $vfv/syntax/leader.vim
   au! BufRead,BufNewFile *.mail      setf mail      " $vfv/syntax/mail.vim
@@ -80,6 +81,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.slJH      setf slJH      " $vfv/plugin/slJH.vim
   au! BufRead,BufNewFile *.tbmo      setf tbmo      " $vfv/syntax/tbmo.vim
   au! BufRead,BufNewFile *.toc       setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
+  au! BufRead,BufNewFile *.tree      setf tree      " $vfv/ftplugin/tree.vim
   au! BufRead,BufNewFile *.ufco      setf ufco      " $vfv/syntax/ufco.vim
   au! BufRead,BufNewFile *.whatsapp  setf whatsapp  " $vfv/syntax/whatsapp.vim
   au! BufRead,BufNewFile .spacemacs  setf lisp

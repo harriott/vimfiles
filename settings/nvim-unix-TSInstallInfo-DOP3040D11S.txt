@@ -32,15 +32,15 @@ cooklang           [✗] not installed
 corn               [✗] not installed
 cpon               [✗] not installed
 cpp                [✗] not installed
-css                [✓] installed
-csv                [✓] installed
+css                [✗] not installed
+csv                [✗] not installed
 cuda               [✗] not installed
 cue                [✗] not installed
 d                  [✗] not installed
 dart               [✗] not installed
 devicetree         [✗] not installed
 dhall              [✗] not installed
-diff               [✓] installed
+diff               [✗] not installed
 disassembly        [✗] not installed
 djot               [✗] not installed
 dockerfile         [✗] not installed
@@ -75,7 +75,7 @@ git_config         [✗] not installed
 git_rebase         [✗] not installed
 gitattributes      [✗] not installed
 gitcommit          [✗] not installed
-gitignore          [✓] installed
+gitignore          [✗] not installed
 gleam              [✗] not installed
 glimmer            [✗] not installed
 glsl               [✗] not installed
@@ -103,12 +103,14 @@ hlsl               [✗] not installed
 hlsplaylist        [✗] not installed
 hocon              [✗] not installed
 hoon               [✗] not installed
-html               [✓] installed
+html               [✗] not installed
 htmldjango         [✗] not installed
 http               [✗] not installed
 hurl               [✗] not installed
 hyprlang           [✗] not installed
+idl                [✗] not installed
 ini                [✗] not installed
+inko               [✗] not installed
 ispc               [✗] not installed
 janet_simple       [✗] not installed
 java               [✗] not installed
@@ -124,6 +126,7 @@ just               [✗] not installed
 kconfig            [✗] not installed
 kdl                [✗] not installed
 kotlin             [✗] not installed
+koto               [✗] not installed
 kusto              [✗] not installed
 lalrpop            [✗] not installed
 ledger             [✗] not installed
@@ -144,7 +147,7 @@ matlab             [✗] not installed
 menhir             [✗] not installed
 mermaid            [✗] not installed
 meson              [✗] not installed
-muttrc             [✓] installed
+muttrc             [✗] not installed
 nasm               [✗] not installed
 nickel             [✗] not installed
 nim                [✗] not installed
@@ -162,7 +165,7 @@ org                [✗] not installed
 pascal             [✗] not installed
 passwd             [✗] not installed
 pem                [✗] not installed
-perl               [✓] installed
+perl               [✗] not installed
 php                [✗] not installed
 php_only           [✗] not installed
 phpdoc             [✗] not installed
@@ -229,6 +232,7 @@ sxhkdrc            [✗] not installed
 systemtap          [✗] not installed
 t32                [✗] not installed
 tablegen           [✗] not installed
+tact               [✗] not installed
 tcl                [✗] not installed
 templ              [✗] not installed
 terraform          [✗] not installed
@@ -236,14 +240,15 @@ textproto          [✗] not installed
 thrift             [✗] not installed
 tiger              [✗] not installed
 tlaplus            [✗] not installed
-tmux               [✓] installed
+tmux               [✗] not installed
 todotxt            [✗] not installed
-toml               [✓] installed
-tsv                [✓] installed
+toml               [✗] not installed
+tsv                [✗] not installed
 tsx                [✗] not installed
 turtle             [✗] not installed
 twig               [✗] not installed
 typescript         [✗] not installed
+typespec           [✗] not installed
 typoscript         [✗] not installed
 typst              [✗] not installed
 udev               [✗] not installed
@@ -263,8 +268,8 @@ wgsl_bevy          [✗] not installed
 wing               [✗] not installed
 wit                [✗] not installed
 xcompose           [✗] not installed
-xml                [✓] installed
-yaml               [✓] installed
+xml                [✗] not installed
+yaml               [✗] not installed
 yang               [✗] not installed
 yuck               [✗] not installed
 zathurarc          [✗] not installed

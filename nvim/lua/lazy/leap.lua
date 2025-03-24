@@ -13,6 +13,6 @@ return {
         vim.keymap.set('n', 'S', '<Plug>(leap-from-window)'),
       }
     end,
-    }
+  }
 }
 

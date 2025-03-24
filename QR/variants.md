@@ -2,7 +2,7 @@
 Joseph's (g)Vim Quick Reference
 
     r $vimfiles/settings
-    let v=6 | echo g:v | =vim.g.v
+    let v=6 | echo g:v | =vim.g.v  " lua print(vim.api.nvim_eval('exists("g:v")'))
 
 # guifont
     :Bufferize se gfn
@@ -13,7 +13,6 @@ Joseph's (g)Vim Quick Reference
     :echo has('nvim')
     :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
-    :h Man
     C /usr/share/nvim/runtime
     nvim -?
     nvim -v
@@ -21,7 +20,7 @@ Joseph's (g)Vim Quick Reference
     fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
     fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
 
-`:che` (`:checkhealth`)
+`:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
 
 ## diagnostics
 - `<C-W>d` (= `vim.diagnostic.open_float()`)
@@ -46,6 +45,10 @@ Joseph's (g)Vim Quick Reference
     :=vim.fn.has'gui_running'
     :=vim.loop.cwd()
 
+## manpages
+    :h Man
+    :Man Bash
+
 ## neovide
     $ neovide &
     echo g:neovide
@@ -63,7 +66,7 @@ Joseph's (g)Vim Quick Reference
 ### MSWin
     $CPF\Neovim\share\nvim\runtime\filetype.lua
     & $CPF\Neovim\bin\nvim.exe -h
-    rm $HADL\nvim-data\shada\main.shada.tmp.*
+    rm $HADL\nvim-data\shada\main.shada.tmp.*  # works while nvim is running
     where.exe nvim.exe
 
 ### win64 ?
@@ -124,6 +127,12 @@ vim --version
 vim(1)
 
 $misc/CP/vimtest/README.md
+```
+
+## fzf.vim
+```vim
+\B                    " :BLines
+\L                    " :Lines
 ```
 
 ## messages
@@ -226,7 +235,7 @@ $misc/CP/vimtest/README.md
     :Bufferize Inspect  " to see what's highlighting under the cursor
 	:hi
     :se synmaxcol=0  " removes 3000 character limit (:se smc)
-	:so $VIMRUNTIME/syntax/hitest.vim
+	:so $VIMRUNTIME/syntax/hitest.vim  " wait for it to load!
     :sy sync fromstart  " but can't find any way to check this setting
 	$VIMRUNTIME/syntax/syncolor.vim
 

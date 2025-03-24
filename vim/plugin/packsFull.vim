@@ -89,17 +89,20 @@ let g:csv_highlight_column = 'y'
 " - could be useful, but makes seeing the cursor difficult in  tomorrow
 
 "">>> commands
+" :%Substitute 4,12/\./,/g
 " :WhatColumn
 " H -> go left
 " L -> go right
 
 " %ArrangeColumn  " is slow, and makes changes
 " %UnArrangeColumn  " undoes
+" :AddColumn  " after current
 " :CSVInit  " reinitialise the plugin (clears HiColumn)
 " :DeleteColumn [n[-m]]  " deleted column(s) [n[-m]]
 " :MoveColumn [n] [m]  " moves column [n] to right [of column m] (m can be $)
 " :SearchInColumn [n] <text>  " doesn't work for numbers...
 " :Sort [column}
+" :SumCol
 
 " column hiding
 "  :VertFold  " hides from left to current
@@ -541,18 +544,17 @@ xmap <c-up> <Plug>(textmanip-move-up)
 xmap <c-left> <Plug>(textmanip-move-left)
 xmap <c-right> <Plug>(textmanip-move-right)
 
-""> text wrangling - find/replace
-
-"">> incsearch.vim
+""> text wrangling - find/replace - incsearch.vim
 " :h incsearch.vim
 map g/ <Plug>(incsearch-stay)
 packadd incsearch.vim  " needed for  incsearch-fuzzy.vim
 
-"">> incsearch-fuzzy.vim
+""> text wrangling - find/replace - incsearch-fuzzy.vim
+" $vfvp/packs-cp-full/opt/incsearch-fuzzy.vim/README.md
 map z/ <Plug>(incsearch-fuzzy-stay)
 packadd incsearch-fuzzy.vim
 
-"">> vim-mark
+""> text wrangling - find/replace - vim-mark
 " :h mark.txt
 " :Mark => disable them
 " :Mark /arbitrary/
@@ -563,7 +565,7 @@ nmap <leader><leader>m <Plug>MarkSet
 nmap <leader><leader>n <Plug>MarkClear
 packadd vim-mark  " requires  ingo-library
 
-" "">> vim-visual-star-search
+""> text wrangling - find/replace - vim-visual-star-search
 " packadd vim-visual-star-search
 " " now preferring  vim-asterisk
 

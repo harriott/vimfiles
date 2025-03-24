@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - ven 01 nov 2024
+" https://harriott.githubio/ - mar 04 févr 2025
 
 " $vfv/plugin/packsAll.vim
 "  all instances of Vim, including WSL
@@ -50,6 +50,7 @@ endfunction
 ""> shell - MRU
 " $vfvp/packs-cp-all/opt/mru/README.md
 " $vimfiles/syntax/mru.vim
+" ~/.vim_mru_files
 let MRU_Max_Entries = 1000
 let MRU_Window_Height = 20
 " - which is overriden by this:
@@ -84,7 +85,7 @@ packadd quick-scope
 ""> text wrangling - supertab
 " $vfvp/packs-cp-all/opt/supertab/doc/supertab.txt
 " :verb imap <tab>
-" c-v tab  to insert a literal tab
+" c-q tab  to insert a literal tab
 packadd supertab
 
 ""> text wrangling - vim-asterisk

@@ -162,9 +162,12 @@ else
 endif
 function! ClearFancyGlyphs()
   " nuls
-  :sil!%s/ / /g  " replace no-break space
-  :sil!%s/ / /g  " replace hair space
-  :sil!%s/ / /g  " replace LS
+  :sil!%s/	/ /g  " character tabulation
+  :sil!%s/ / /g  " em space
+  :sil!%s/ / /g  " no-break space
+  :sil!%s/ / /g  " hair space
+  :sil!%s/ / /g  " LS
+  :sil!%s/ / /g  " thin space
   :sil!%s/​//g
   :sil!%s/‌//g
   :sil!%s/‍//g
@@ -187,11 +190,13 @@ function! ClearFancyGlyphs()
   :sil!%s/‘/'/g
   :sil!%s/’/'/g
   :sil!%s/·/-/g
+  :sil!%s/‐/-/g  " hyphen (U+2010)
   :sil!%s/‑/-/g
   :sil!%s/–/-/g
   :sil!%s/—/-/g
+  :sil!%s/⎯/-/g  " horizontal line extension
   :sil!%s/―/-/g
-  :sil!%s/‐/-/g  " hyphen (U+2010)
+  :sil!%s/−/-/g
   :sil!%s/­//g  " remove soft hyphen
   :sil!%s/…/.../g
   :sil!%s/，/,/g
@@ -205,6 +210,8 @@ function! ClearFancyGlyphs()
   :sil!%s/→/-->/g
   :sil!%s/⧹/\\/g  " normalise big backslash
   :sil!%s#⧸#/#g
+  :sil!%s/ﬁ/fi/g  " latin small ligature fi
+  :sil!%s/ﬂ/fl/g  " latin small ligature fl
   :sil!%s/×/x/g
 endfunction
 
@@ -509,6 +516,9 @@ endfunction
 " clearmatches (see  $jtCP/Vim/plugins/csv_vim/HiColumnLeaky/issue.md)
 inoremap <leader><leader><f5> :call clearmatches()<cr>
 nnoremap <leader><leader><f5> :call clearmatches()<cr>
+
+" foldtree.vim
+" source $vfv/plugin/foldtree.vim
 
 " md4pdfLog.tex - turn off syntax folding for the long log files from md4pdf.ps1
 au! BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual

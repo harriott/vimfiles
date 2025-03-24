@@ -2,7 +2,10 @@
 -- $vimfiles/nvim/lua/lazy/telescope-frecency.lua
 
 -- $lazy/telescope-frecency.nvim/doc/telescope-frecency.txt
+-- :FrecencyDelete  " a file from the database
 -- :Telescope frecency
+
+-- $HADL\nvim-data\file_frecency.bin.lock  wouldn't delete until a reboot
 
 return { 'nvim-telescope/telescope-frecency.nvim',
   lazy = false,  -- for  db_safe_mode

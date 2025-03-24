@@ -5,10 +5,10 @@
 --  required by  $vimfiles/nvim/init.vim
 --  adapted from  $DCGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 
-vim.g.djh = vim.api.nvim_eval('$DJH') -- :lua print(vim.api.nvim_eval('exists("g:djh")'))
+vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
 
 -- -> 0 layout
--- vim.g.have_nerd_font = true
+vim.g.have_nerd_font = true  -- :=vim.g.have_nerd_font
 vim.opt.cursorline = true
 vim.opt.mouse = 'a' -- enable mouse mode
 vim.opt.showmode = false -- don't show the mode, since it's already in the status line
@@ -76,10 +76,13 @@ vim.keymap.set({'t'},'<C-k>','<Cmd>wincmd k<CR>',{desc='normal mode and move foc
 vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode to normal mode' })
 
 -- -> 1 lazy.nvim 0 bootstrap
+-- $lazy/lazy.nvim/doc/lazy.nvim.txt
+-- :Lazy
 require 'lazy/bootstrap'
 
 -- -> 1 lazy.nvim 1
-require('lazy').setup({
+require('lazy').setup(
+  {
     {'akinsho/bufferline.nvim',config=function() require'bufferline'.setup() end,},
       -- shows Nvim tabs as numbers to right
     {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup()
@@ -97,20 +100,21 @@ require('lazy').setup({
     -- require'lazy/nvim-hlslens',
     require'lazy/nvim-notify',
     require'lazy/nvim-tree',
+    require'lazy/nvim-web-devicons',
     require'lazy/oil',
     require'lazy/surround',
     -- require'lazy/tabby',
     require'lazy/telescope', -- something in here slowing folding of large md's
-      require'lazy/telescope-frecency',
+      -- require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',
       require'lazy/nvim-neoclip',
     require'lazy/treesitter', -- $vimfiles/nvim/lua/lazy/treesitter.lua
-      -- 'nvim-treesitter/nvim-treesitter-context',
+      'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
-          -- context.vim  works better
+        -- context.vim  works better
     {'williamboman/mason.nvim',config=function() require'mason'.setup() end,},
       -- $lazy/mason.nvim/doc/mason.txt
-      -- :checkhealth mason
+      -- :che mason
       -- :LspInfo
       -- :Mason
         -- g?  toggles help
@@ -124,7 +128,8 @@ require('lazy').setup({
       -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
       -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
        config=function() require('mason-lspconfig').setup() end,},
-       require'lazy/nvim-lspconfig',require'lazy/lspsaga',
+    require'lazy/nvim-lspconfig',require'lazy/lspsaga',
+      -- :che lspsaga
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack
@@ -150,7 +155,7 @@ require('lazy').setup({
 -- somehow breaks  vim-hexokinase
 -- somehow kills nvim's access to  /usr/bin/fzf
 
--- -> 2 Lspsaga
+-- -> 2 for lspsaga
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('LspMappings', {}),
   callback = function(ev)
@@ -158,17 +163,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
       {buffer=ev.buf,desc='Lspsaga outline'})
   end,})
 
--- -> 2 nvim-treesitter
+-- -> 2 for nvim-treesitter
 -- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
+-- :che treesitter
 -- :h nvim-treesitter-commands
 vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vfv/after/syntax/lua.vim
 
--- --> parsers
--- $vimfiles/settings/nvim-unix-TSInstallInfo-sbMb.txt
--- g $lazy\nvim-treesitter\parser
--- r $lazy/nvim-treesitter/parser
+-- --> parsers 0 unix
+  -- $vimfiles/settings/nvim-unix-TSInstallInfo-DOP3040D11S.txt
+  -- $vimfiles/settings/nvim-unix-TSInstallInfo-sbMb.txt
+  -- /usr/lib/tree_sitter
+  -- r $lazy/nvim-treesitter/parser
 
--- ---> get
+-- --> parsers 0 win64
+  -- $vimfiles/settings/nvim-win64-TSInstallInfo-HPEB840G37.txt
+  -- g $lazy\nvim-treesitter\parser
+
+-- --> parsers 1 get
 function GetTSParsers()
   -- vim.cmd 'TSInstall bash'
   -- vim.cmd 'TSInstall lua'
@@ -176,12 +187,11 @@ function GetTSParsers()
   -- vim.cmd 'TSInstall markdown'
   -- vim.cmd 'TSInstall perl'
   -- vim.cmd 'TSInstall python'
+  -- vim.cmd 'TSInstall query'
   -- vim.cmd 'TSInstall sh'
   -- vim.cmd 'TSInstall vim'
   -- vim.cmd 'TSInstall vimdoc'
-end -- lua GetTSParsers(), then update:
-  -- $vimfiles/settings/nvim-unix-TSInstallInfo-sbMb.txt
-  -- $vimfiles\settings\nvim-win64-TSInstallInfo-HPEB840G37.txt
+end -- lua GetTSParsers(), then update the TSInstallInfo lists
 
 -- on MSWin do these in  x64 Native Tools Command Prompt
 
