@@ -3,7 +3,7 @@
 " $vfv/enter/GUIs.vim
 "  source'd by
 "   $vfv/enter/gvimrc.vim
-"   $vimfiles/nvim/init.vim
+"   $vfn/init.vim
 
 let g:sourced_GUIs_vim = 1
 

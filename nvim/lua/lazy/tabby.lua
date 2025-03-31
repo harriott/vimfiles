@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/tabby.lua
+-- $vfn/lua/lazy/tabby.lua
 -- not showing in  unix Neovide...
 
 -- $lazy/tabby.nvim/doc/tabby.txt

@@ -1,13 +1,15 @@
 
 -- https://harriott.githubio/ - Fri 10 May 2024
 
--- $vimfiles/nvim/lua/lazy/nvim-lspconfig.lua
+-- $vfn/lua/lazy/nvim-lspconfig.lua
 
 -- $lazy/nvim-lspconfig/doc/lspconfig.txt
--- install language servers with Mason ($vimfiles/nvim/lua/init.lua)
+-- install language servers with Mason ($vfn/lua/init.lua)
 
--- K => vim.lsp.buf.hover(), so  LspStop  to recover  keywordprg
 -- :LspLog (~/.local/state/nvim/lsp.log)
+-- :LspStop
+-- K => vim.lsp.buf.hover()
+-- KK => enters hover window, q quits
 
 return {
   { 'neovim/nvim-lspconfig',
@@ -54,7 +56,7 @@ return {
               end return true
           end, -- https://www.reddit.com/r/neovim/comments/15owd43/comment/jvvswah/
           settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
-        } -- and see fix in  $vimfiles/nvim/lua/init.lua
+        } -- and see fix in  $vfn/lua/init.lua
 
       -- :MasonInstall mdx-analyzer
       require'lspconfig'.mdx_analyzer.setup{}
@@ -69,6 +71,7 @@ return {
             -- bung an exit in some code to see this work
 
       -- :MasonInstall powershell-editor-services
+      --  might need to close nvim and manually Delete it to be able to re-install a newer version
       require'lspconfig'.powershell_es.setup{
         -- bundle_path = '~/AppData/Local/nvim-data/mason/packages/powershell-editor-services',
         bundle_path = vim.fn.expand "$MASON/packages/powershell-editor-services",

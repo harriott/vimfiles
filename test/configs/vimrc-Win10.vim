@@ -4,7 +4,7 @@
 " $vimfiles\test\vimrc-Win10.vim
 " source'd by
 "  $MSWin10\mb\_vimrc-AZERTY
-"  $vimfiles/nvim/init.vim
+"  $vfn/init.vim
 
 let g:sourced_test_vimrc_Win10 = 1
 

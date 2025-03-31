@@ -1,7 +1,7 @@
 
 " https://harriott.githubio/ - Thu 06 Mar 2025
 
-" $vfv/plugin/packsVimFull.vim
+" $vfv/plugin/packsVimFull.vim  optionally sourced by  $vfv/plugin/packs.vim
 "  needs recent Vim
 "  $vfvp/packs-cp-full
 

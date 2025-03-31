@@ -1,5 +1,5 @@
 #!/bin/bash
-# vim: fdl=1 sw=2:
+# vim: sw=2:
 
 # Joseph Harriott - Sat 19 Oct 2024
 # cd $vfv; bash $vfv/getRepos/unix.sh
@@ -29,23 +29,23 @@ done <"$vfv/getRepos/all.clones"
 #=> 2 updates 0 warn
 read -p "Going to update repositories - you've closed instances of vim? "
 
-# #=> 2 updates 1 packs
-# cd $vfvp
-# msv="$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
-# [ -f $msv ] && rm -r $msv  # temporarily, because it's got no .git
-# # sf='vim-dokuwiki'
-# # sf='vim-gfm-syntax'
-# # once=yes
-# rd=$pwd; . $misc/GRs/update-depth1.sh
-# # $vfvp/repos  can be checked against  $vfv/getRepos/all.clones
-# echo 'Put back  marlam-msmtp/scripts/vim:'
-# rsync -irtv --delete $DCGRs/d-unix/d-linux/r-marlam-msmtp/scripts/vim/ $msv
-# cd $vfv
+#=> 2 updates 1 packs
+cd $vfvp
+msv="$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
+[ -f $msv ] && rm -r $msv  # temporarily, because it's got no .git
+# sf='vim-dokuwiki'
+# sf='vim-gfm-syntax'
+# once=yes
+rd=$pwd; . $misc/GRs/update-depth1.sh
+# $vfvp/repos  can be checked against  $vfv/getRepos/all.clones
+echo 'Put back  marlam-msmtp/scripts/vim:'
+rsync -irtv --delete $DCGRs/d-unix/d-linux/r-marlam-msmtp/scripts/vim/ $msv
+cd $vfv
 
-# #=> 2 updates 2 plugins
-# cd $vfv/plugin
-# rd=$pwd; . $misc/GRs/update-depth1.sh; rm repos
-# cd $vfv
+#=> 2 updates 2 plugins
+cd $vfv/plugin
+rd=$pwd; . $misc/GRs/update-depth1.sh; rm repos
+cd $vfv
 
 #=> 2 updates 3 my forks
 echo

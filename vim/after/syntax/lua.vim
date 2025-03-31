@@ -24,7 +24,7 @@ syntax match foldLua '^\s*-- -\+>.*$'
 hi def foldLua term=bold cterm=bold gui=bold guifg=LightGreen
 " - in  Neovide  or  WT  neet to disable  highlights.scm
 "   ($ITsCP\encoding\Vim\nvim\lua_syntax_in_NVIM_0_10_0.md)
-"   done in  $vimfiles/nvim/lua/init.lua
+"   done in  $vfn/lua/init.lua
 
 ""> 1 ends
 let b:current_syntax = "lua"

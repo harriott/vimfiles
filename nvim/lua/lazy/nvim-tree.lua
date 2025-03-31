@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/nvim-tree.lua
+-- $vfn/lua/lazy/nvim-tree.lua
 
 -- $lazy/nvim-tree.lua/doc/nvim-tree-lua.txt
 --  Git Integration:

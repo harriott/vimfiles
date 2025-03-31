@@ -1,7 +1,7 @@
--- vim: set fdl=1:
+-- vim: set fdl=3:
 
--- $vimfiles/nvim/lua/lazy/treesitter.lua
---  called by  $vimfiles/nvim/lua/init.lua  which also defines  GetTSParsers()
+-- $vfn/lua/lazy/treesitter.lua
+--  called by  $vfn/lua/init.lua  which also defines  GetTSParsers()
 --  $lazy/nvim-treesitter/doc/nvim-treesitter.txt
 
 return {
@@ -18,7 +18,7 @@ return {
         --   would perhaps be fixed as per  tree-sitter-latex
       ignore_install = { 'markdown' },
 
-      highlight = { -- parser configurations - see  $vimfiles/nvim/lua/init.lua
+      highlight = { -- parser configurations - see  $vfn/lua/init.lua
         -- enable = true, -- when true, large md's fold slowly
         disable = {'bash','lua','markdown','muttrc','vim',},
           -- large md's fold slowly

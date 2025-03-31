@@ -2,7 +2,7 @@
 " $vfv/enter/vimrc-Arch.vim
 " sourced from my
 "  $ABjo/textEdit/Vim/vimrc
-"  $vimfiles/nvim/init.vim
+"  $vfn/init.vim
 
 source $vfv/enter/vimrc-linux.vim  " $vfvrc-linux.vim
 

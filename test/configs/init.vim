@@ -10,5 +10,5 @@ endif
 
 ""> 2 pull in lua configs
 lua require('test')
-" - $vimfiles/nvim/lua/test.lua
+" - $vfn/lua/test.lua
 

@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/nvim-web-devicons
+-- $vfn/lua/lazy/nvim-web-devicons
 
 -- $lazy/nvim-web-devicons/README.md
 

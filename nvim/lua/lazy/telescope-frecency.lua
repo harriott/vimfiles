@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/telescope-frecency.lua
+-- $vfn/lua/lazy/telescope-frecency.lua
 
 -- $lazy/telescope-frecency.nvim/doc/telescope-frecency.txt
 -- :FrecencyDelete  " a file from the database
@@ -11,7 +11,7 @@ return { 'nvim-telescope/telescope-frecency.nvim',
   lazy = false,  -- for  db_safe_mode
   config = function()
     require('telescope').load_extension 'frecency'
-    -- configuration is done in  $vimfiles/nvim/lua/lazy/telescope.lua
+    -- configuration is done in  $vfn/lua/lazy/telescope.lua
 
     -- vim.keymap.set('n','<c-p>',"<Cmd>echo 'frecent files'<bar>Telescope frecency<CR>")
     vim.keymap.set('n','<c-p>',function() vim.cmd("echo 'frecent files'")

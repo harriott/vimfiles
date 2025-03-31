@@ -1,6 +1,6 @@
 
 " Maintainer: Joseph Harriott
-" Last Change: jeu 12 déc 2024
+" Last Change: dim 30 mars 2025
 " $vfv/filetype.vim
 "  supplemental to
 "   $VIMRUNTIME/filetype.lua
@@ -76,6 +76,8 @@ aug filetypedetect
   au! BufRead,BufNewFile *.mail      setf mail      " $vfv/syntax/mail.vim
   au! BufRead,BufNewFile *.osp       setf json      " $vfv/syntax/json.vim
   au! BufRead,BufNewFile *.rgo       setf rgo       " $vfv/syntax/rgo.vim
+  au! BufRead,BufNewFile *.rgou      setf rgou      " $vfv/syntax/rgou.vim
+  au! BufRead,BufNewFile *.rgov      setf rgov      " $vfv/syntax/rgov.vim
   au! BufRead,BufNewFile *.rgtl      setf rgtl      " $vfv/syntax/rgtl.vim
   au! BufRead,BufNewFile *.sifw      setf sifw      " $vfv/syntax/sifw.vim
   au! BufRead,BufNewFile *.slJH      setf slJH      " $vfv/plugin/slJH.vim

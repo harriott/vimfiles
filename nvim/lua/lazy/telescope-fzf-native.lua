@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/telescope-fzf-native.lua
+-- $vfn/lua/lazy/telescope-fzf-native.lua
 
 -- fzf exact match syntax (',^,$):
 --  !'not

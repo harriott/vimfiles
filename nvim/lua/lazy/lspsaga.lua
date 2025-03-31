@@ -1,6 +1,6 @@
 
 -- $lazy/lspsaga.nvim/doc/lspsaga.nvim.txt
--- $vimfiles/nvim/lua/lazy/lspsaga.lua
+-- $vfn/lua/lazy/lspsaga.lua
 
 return {
   { 'nvimdev/lspsaga.nvim',

@@ -2,10 +2,10 @@
 
 -- https://harriott.github.io/ - mer 11 sept 2024
 
--- $vimfiles/nvim/lua/init.lua
+-- $vfn/lua/init.lua
 --  required by
---   $vimfiles/nvim/lua/init.lua
---   $vimfiles/nvim/lua/test.lua
+--   $vfn/lua/init.lua
+--   $vfn/lua/test.lua
 
 -- -> 1 lazy.nvim 0 bootstrap
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'

@@ -1,7 +1,7 @@
 
 Joseph's (g)Vim Quick Reference
 
-    r $vimfiles/settings
+    r $vfs
     let v=6 | echo g:v | =vim.g.v  " lua print(vim.api.nvim_eval('exists("g:v")'))
 
 # guifont
@@ -17,10 +17,15 @@ Joseph's (g)Vim Quick Reference
     nvim -?
     nvim -v
 
-    fd health\.lua $vimfiles/nvim/packs-nvim  " health.lua
-    fd init\.lua $vimfiles/nvim/packs-nvim  " init.lua
+    fd health\.lua $vfn/packs-nvim  " health.lua
+    fd init\.lua $vfn/packs-nvim  " init.lua
 
 `:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
+
+```vim
+K  " vim.lsp.buf.hover()
+KK " enters hover window, q quits
+```
 
 ## diagnostics
 - `<C-W>d` (= `vim.diagnostic.open_float()`)
@@ -78,7 +83,7 @@ Joseph's (g)Vim Quick Reference
 
 ## plugins
     $lazy
-    $vimfiles/nvim/lua/lazy/telescope.lua
+    $vfn/lua/lazy/telescope.lua
 
 ### Comment.nvim
 - `gb[motion]`/`gc[motion]` toggles block/line comment [motion] or selection
@@ -136,14 +141,14 @@ $misc/CP/vimtest/README.md
 ```
 
 ## messages
-    :mess
+    :mes
 
 - `:echo v:errmsg` - the last one
 - `g<` - review
 
 ### buffer listing recents
-    :Bufferize messages  " including Lua errors
-	:redir @m | silent messages | redir END | new | exe "normal! \"mp"
+    :Bufferize mes  " including Lua errors
+	:redi @m | sil mes | redi END | new | exe "norm! \"mp"  " in a split below
 
 ## quickfix
     :cc n    " goto error n
@@ -217,9 +222,12 @@ $misc/CP/vimtest/README.md
 ### runtimepath
     :Bufferize se rtp
     :echo match(&runtimepath, 'mru') " returns -1 if MRU is not loaded
-    :se pp  " packpath
 
 `:Bufferize echo &rtp`, then `:s/,/\r/g`
+
+#### packpath
+    :echo &pp
+    :se pp
 
 ### syntax highlighting
 	:h syn-region

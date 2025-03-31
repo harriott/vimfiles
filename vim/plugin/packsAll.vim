@@ -1,7 +1,7 @@
 
 " https://harriott.githubio/ - mar 04 févr 2025
 
-" $vfv/plugin/packsAll.vim
+" $vfv/plugin/packsAll.vim  sourced by  $vfv/plugin/packs.vim
 "  all instances of Vim, including WSL
 "  $vfvp/packs-cp-all
 
@@ -82,11 +82,11 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 packadd quick-scope
 
-""> text wrangling - supertab
-" $vfvp/packs-cp-all/opt/supertab/doc/supertab.txt
-" :verb imap <tab>
-" c-q tab  to insert a literal tab
-packadd supertab
+" ""> text wrangling - supertab
+" " $vfvp/packs-cp-all/opt/supertab/doc/supertab.txt
+" " :verb imap <tab>
+" " c-q tab  to insert a literal tab
+" packadd supertab
 
 ""> text wrangling - vim-asterisk
 packadd vim-asterisk

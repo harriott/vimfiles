@@ -1,7 +1,7 @@
 
 " https://harriott.githubio/ - ven 01 nov 2024
 
-" $vfv/plugin/packsFull.vim - only full installations
+" $vfv/plugin/packsFull.vim - only sourced by  $vfv/plugin/packs.vim  for full installations
 
 ""> encoding - AnsiEsc
 if has('unix') | packadd vim-plugin-AnsiEsc | endif
@@ -127,7 +127,7 @@ packadd emmet-vim
 packadd mediawiki.vim  " $vfvp/packs-cp-full/opt/mediawiki.vim/README.md
 
 "">> msmtp-scripts-vim
-" see  bash $vfv/getRepos/unix.sh > marlam
+" marlam  in  $vfv/getRepos/unix.sh, $vfv/getRepos/win64.ps1
 " $vfvp/packs-cp-full/opt/msmtp-scripts-vim/ftdetect/msmtp.vim
 if has('nvim') | packadd msmtp-scripts-vim | endif
 
@@ -408,10 +408,10 @@ packadd vim-LanguageTool " then can  :h LanguageTool
 " no need to  packadd  for Vim
 
 "">> jellybeans.vim
-" $vimfiles/nvim/init.vim
+" $vfn/init.vim
 
 "">> nightfox.nvim
-" $vimfiles/nvim/init.vim
+" $vfn/init.vim
 
 "">> vim-colors-solarized
 " kept in reserve, replaced by  vim-colors-tomorrow
@@ -422,7 +422,7 @@ packadd vim-LanguageTool " then can  :h LanguageTool
 " $vfv/enter/vimrc-Win10.vim
 
 "">> vim-wombat-scheme
-" $vimfiles/nvim/init.vim
+" $vfn/init.vim
 
 ""> layout - Colorizer
 " $vfvp/packs-cp-full/opt/Colorizer/README.md  but see  $vimfiles/QR/QR.md
@@ -444,7 +444,7 @@ packadd FoldText
 "">> vim-better-whitespace
 " $vfvp/packs-cp-full/opt/vim-better-whitespace/doc/better-whitespace.txt
 " $vfvp/packs-cp-full/opt/vim-better-whitespace/README.md
-" only used in  $vimfiles/nvim/init.vim
+" only used in  $vfn/init.vim
 if has('nvim')
   let g:better_whitespace_ctermcolor='Black'
   let g:better_whitespace_filetypes_blacklist=['diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'fugitive']
@@ -589,7 +589,7 @@ function! GrabAllCommands()
   normal! p
   write
 endfunction
-" for use in  $vimfiles/settings/*-commands-*.txt
+" for use in  $vfs/*-commands-*.txt
 
 "">>> grab Vim settings - all functions
 function! GrabAllFunctions()
@@ -602,7 +602,7 @@ function! GrabAllFunctions()
   normal! p
   write
 endfunction
-" for use in  $vimfiles/settings/*-commands-*.txt
+" for use in  $vfs/*-commands-*.txt
 
 "">>> grab Vim settings - maps of Fn keys
 function! GrabBmmFn()
@@ -617,7 +617,7 @@ function! GrabBmmFn()
   normal! p
   write
 endfunction
-" for use in  $vimfiles/settings/*-FnMaps.txt
+" for use in  $vfs/*-FnMaps.txt
 " won't catch buffer-specific maps
 
 "">>> grab Vim settings - simple maps
@@ -635,7 +635,7 @@ function! GrabSimpleMaps()
   normal! p
   write
 endfunction
-" for use in  $vimfiles/settings/*-simpleMaps-*.txt
+" for use in  $vfs/*-simpleMaps-*.txt
 
 "">>> grab Vim settings - scriptnames
 function! GrabScriptnames()
@@ -647,7 +647,7 @@ function! GrabScriptnames()
   normal! p
   write
 endfunction
-" for use in  $vimfiles/settings/*-scriptnames-*.ffl
+" for use in  $vfs/*-scriptnames-*.ffl
 
 "">> vim-bufkill
 " :BB :BF  could be mapped to replace some of the functionality of  vim-buffing-wheel

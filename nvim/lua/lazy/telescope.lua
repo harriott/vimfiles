@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/telescope.lua
+-- $vfn/lua/lazy/telescope.lua
 
 -- :checkhealth telescope
 -- :help telescope
@@ -40,7 +40,7 @@ return {
           path_display={'truncate'},
         },
         extensions = {
-	      frecency = { db_safe_mode = false, matcher = "fuzzy", }, -- $vimfiles/nvim/lua/lazy/telescope-frecency.lua
+	      frecency = { db_safe_mode = false, matcher = "fuzzy", }, -- $vfn/lua/lazy/telescope-frecency.lua
           ['ui-select'] = {
             require'telescope.themes'.get_cursor(),
         -- pickers = {}

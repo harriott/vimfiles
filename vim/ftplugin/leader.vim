@@ -1,6 +1,6 @@
 " vim: se fdl=1:
 
-" Language: leader  - see  $vimfiles/settings/all-unix.sh
+" Language: leader  - see  $vfs/all-unix.sh
 " Maintainer: Joseph Harriott
 " Last Change: Mon 15 Apr 2024
 

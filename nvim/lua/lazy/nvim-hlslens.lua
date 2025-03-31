@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/nvim-hlslens.lua
+-- $vfn/lua/lazy/nvim-hlslens.lua
 
 return {
   {  'kevinhwang91/nvim-hlslens',

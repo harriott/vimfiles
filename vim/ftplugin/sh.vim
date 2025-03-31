@@ -13,7 +13,7 @@ setlocal expandtab foldcolumn=1 shiftwidth=4 textwidth=0
 source $vfv/ftplugin/HashEqualsFolding.vim
 
 ""> coding help
-" bash-language-server  ($vimfiles/nvim/lua/lazy/nvim-lspconfig.lua)
+" bash-language-server  ($vfn/lua/lazy/nvim-lspconfig.lua)
 
 "">> ALE
 let b:ale_enabled = 0

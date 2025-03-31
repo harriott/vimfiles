@@ -1,8 +1,8 @@
 
 -- https://harriott.github.io/ - Wed 30 Oct 2024
 
--- $vimfiles/nvim/lua/init.lua
---  required by  $vimfiles/nvim/init.vim
+-- $vfn/lua/init.lua
+--  required by  $vfn/init.vim
 --  adapted from  $DCGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 
 vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
@@ -77,7 +77,7 @@ vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode
 
 -- -> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
--- :Lazy
+-- :Lazy update
 require 'lazy/bootstrap'
 
 -- -> 1 lazy.nvim 1
@@ -105,10 +105,10 @@ require('lazy').setup(
     require'lazy/surround',
     -- require'lazy/tabby',
     require'lazy/telescope', -- something in here slowing folding of large md's
-      -- require'lazy/telescope-frecency',
+      require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',
       require'lazy/nvim-neoclip',
-    require'lazy/treesitter', -- $vimfiles/nvim/lua/lazy/treesitter.lua
+    require'lazy/treesitter', -- $vfn/lua/lazy/treesitter.lua
       'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
         -- context.vim  works better
@@ -119,7 +119,7 @@ require('lazy').setup(
       -- :Mason
         -- g?  toggles help
       -- :MasonLog (~/.local/state/nvim/mason.log)
-      -- for  $vimfiles/nvim/lua/lazy/nvim-lspconfig.lua
+      -- for  $vfn/lua/lazy/nvim-lspconfig.lua
       -- packages directory
         -- :edit $MASON/packages (where defined?)
         -- g $mason
@@ -170,13 +170,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vfv/after/syntax/lua.vim
 
 -- --> parsers 0 unix
-  -- $vimfiles/settings/nvim-unix-TSInstallInfo-DOP3040D11S.txt
-  -- $vimfiles/settings/nvim-unix-TSInstallInfo-sbMb.txt
+  -- $vfs/nvim-unix-TSInstallInfo-DOP3040D11S.txt
+  -- $vfs/nvim-unix-TSInstallInfo-sbMb.txt
   -- /usr/lib/tree_sitter
   -- r $lazy/nvim-treesitter/parser
 
 -- --> parsers 0 win64
-  -- $vimfiles/settings/nvim-win64-TSInstallInfo-HPEB840G37.txt
+  -- $vfs/nvim-win64-TSInstallInfo-HPEB840G37.txt
   -- g $lazy\nvim-treesitter\parser
 
 -- --> parsers 1 get

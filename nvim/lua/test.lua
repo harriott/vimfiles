@@ -3,7 +3,7 @@
 -- configurations for neovim
 -- -------------------------
 
--- $vimfiles/nvim/lua/test.lua
+-- $vfn/lua/test.lua
 --  required by  $vimfiles/test/configs/init.vim
 
 vim.g.test = 1

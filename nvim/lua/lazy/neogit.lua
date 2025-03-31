@@ -1,7 +1,7 @@
 
 -- https://harriott.githubio/ - mer 22 mai 2024
 
--- $vimfiles/nvim/lua/lazy/neogit.lua
+-- $vfn/lua/lazy/neogit.lua
 
 -- $lazy/neogit/doc/neogit.txt
 -- ? => help

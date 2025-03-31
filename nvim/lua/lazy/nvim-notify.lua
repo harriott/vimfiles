@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/nvim-notify.lua
+-- $vfn/lua/lazy/nvim-notify.lua
 
 -- :lua vim.notify("a test error message", "error")
 -- $lazy/nvim-notify/doc/nvim-notify.txt

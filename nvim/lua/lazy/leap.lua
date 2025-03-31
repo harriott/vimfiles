@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/leap.lua
+-- $vfn/lua/lazy/leap.lua
 
 -- $lazy/leap.nvim/doc/leap.txt
 

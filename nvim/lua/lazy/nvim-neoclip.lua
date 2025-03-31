@@ -1,7 +1,7 @@
 
 -- https://harriott.githubio/ - Wed 29 May 2024
 
--- $vimfiles/nvim/lua/lazy/nvim-neoclip.lua
+-- $vfn/lua/lazy/nvim-neoclip.lua
 
 -- $lazy/nvim-neoclip.lua/doc/neoclip.txt
 -- :Telescope neoclip

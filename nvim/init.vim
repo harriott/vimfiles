@@ -4,7 +4,7 @@
 " configurations for neovim
 " -------------------------
 
-" $vimfiles/nvim/init.vim
+" $vfn/init.vim
 " symlinked by
 "  $MSwin10\mb\symlinks.ps1
 "  $OSAB/nodes/set/jo-2-whenWM-0.sh
@@ -118,7 +118,7 @@ endif
 if has('win64')
   let g:sqlite_clib_path = 'C:/Program Files/LibreOffice/program/sqlite3.dll'
   " g $env:programfiles\LibreOffice\program\sqlite3.dll
-endif " - for  $vimfiles/nvim/lua/lazy/nvim-neoclip.lua
+endif " - for  $vfn/lua/lazy/nvim-neoclip.lua
 lua require('init')
-" - $vimfiles/nvim/lua/init.lua
+" - $vfn/lua/init.lua
 

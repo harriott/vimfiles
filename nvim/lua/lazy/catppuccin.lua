@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/catppuccin.lua
+-- $vfn/lua/lazy/catppuccin.lua
 
 return {
   { 'catppuccin/nvim',

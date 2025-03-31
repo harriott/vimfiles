@@ -1,4 +1,4 @@
-$vimfiles/settings/neovide-unix-runtimepath.ffl
+$vfs/neovide-unix-runtimepath.ffl
 
 put =&rtp|s/,/\r/g  " pastes here below
 

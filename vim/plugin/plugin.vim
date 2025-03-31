@@ -274,7 +274,7 @@ endfunction
 
 "">> date
 function! DateFr()
-  edit $vimfiles/nvim/FrenchDate " not worried about  fenc
+  edit $vfn/FrenchDate " not worried about  fenc
   norm dd
   pu=strftime('%a %d %b %Y')
   norm kdd
@@ -484,11 +484,11 @@ let g:xml_syntax_folding = 1
 ""> grab Vim settings
 " also
 "  my functions using  :Bufferize
-"  r $vimfiles/settings
+"  r $vfs
 
 " mkexrc
 function! GrabMK()
-  cd $vimfiles/settings
+  cd $vfs
   let $mkh = 'vim'
   if has('nvim')  | let $mkh =  'n'.$mkh | endif
   if has('unix')  | let $mkh =  $mkh.'-unix.exrc' | endif
@@ -510,7 +510,7 @@ function! GrabMK()
   edit  " invokes the nowrap
   let $mkh = $host.'.exrc'
 endfunction
-" call MK() makes  $vimfiles/settings/*-*.exrc - tidied settings, including all the package mappings
+" call MK() makes  $vfs/*-*.exrc - tidied settings, including all the package mappings
 
 ""> layout
 " clearmatches (see  $jtCP/Vim/plugins/csv_vim/HiColumnLeaky/issue.md)

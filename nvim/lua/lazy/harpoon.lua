@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/harpoon.lua
+-- $vfn/lua/lazy/harpoon.lua
 
 -- $lazy//harpoon/README.md, no doc, no Vim commands
 

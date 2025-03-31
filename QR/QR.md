@@ -346,16 +346,21 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
     \\q                         " search in my QuickReference notes
 	\C (anywhere)               " force case
 	\c (anywhere)               " ignore case
-	\M                          " nomagic (for what follows), eg returning . & * to themselves
-	\V                          " very nomagic (for what follows), eg (also) returning $ to itself
-	\v                          " very magic (for what follows), eg making | separate alternatives
     \vs                         " last search in escaped visual selection
     planet\(Awesome\|Terrible\) " planetAwesome or planetTerrible
 	text\|alt                   " searches for text & alt
 
+### magic levels
+	\M  " nomagic (for what follows), eg returning . & * to themselves
+	\V  " very nomagic (for what follows), eg (also) returning $ to itself
+	\v  " very magic (for what follows), eg making | separate alternatives, but  $vfv/syntax/ffl.vim
+
 ### regex
     ^[^"]*  " match until quote
-    [^\\]  " all but \
+    [^/\\]  " all but / & \
+    *       " 0 or more
+    \=      " 0 or 1 more
+    \+      " 1 or more
 
 ```vim
 \a    " alphabetic character [A-Za-z]
@@ -381,7 +386,8 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 
 #### searching before and after
     \ze<endPatternToDiscard>
-    <startPatternToDiscard>\zs
+
+`<startPatternToDiscard>\zs` doesn't always work in `syntax match ...`
 
 # shell
 ```

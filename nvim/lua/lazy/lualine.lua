@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/lualine.lua
+-- $vfn/lua/lazy/lualine.lua
 
 -- $lazy/lualine.nvim/doc/lualine.txt
 

@@ -4,7 +4,7 @@
 " $vfv\enter\vimrc-Win10.vim
 " source'd by
 "  $MSWin10\mb\_vimrc-AZERTY
-"  $vimfiles/nvim/init.vim
+"  $vfn/init.vim
 
 " if $computername == 'HPEB840G36' | let mapleader = 'ù' | endif  " until  $MSWin10\AZERTY.ahk
 if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \

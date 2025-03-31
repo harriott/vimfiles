@@ -5,7 +5,7 @@
 " $vfv/enter/Win10Paths.vim
 " source'd by
 "  $MSWin10/mb/_vimrc-AZERTY
-"  $vimfiles/nvim/init.vim
+"  $vfn/init.vim
 " symlinked in  $MSwin10/mb/symlinks-mostly.ps1
 
 ""> paths
@@ -79,6 +79,8 @@ let $HADR = $HOME.'\AppData\Roaming'
       let $lclm = $ulL.'\clm'
       let $ulLA = $ulL.'\Arch'
     let $vimfiles = $onGH.'\vimfiles'
+      let $vfn = $vimfiles.'\nvim'
+      let $vfs = $vimfiles.'\settings'
       let $vfv = $vimfiles.'\vim'
         let $vfvp = $vfv.'\packs'
 

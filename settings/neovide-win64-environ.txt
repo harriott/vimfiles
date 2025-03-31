@@ -1,5 +1,5 @@
 
-$vimfiles/settings/neovide-win64-environ.txt
+$vfs/neovide-win64-environ.txt
 echo $APPDATA
 let evars  =  environ() | for var in evars->keys()->sort() | put =var.'='.evars[var] | endfor
 

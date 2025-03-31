@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/oil.lua
+-- $vfn/lua/lazy/oil.lua
 
 -- g? = actions.show_help
 -- $lazy/oil.nvim/doc/oil.txt

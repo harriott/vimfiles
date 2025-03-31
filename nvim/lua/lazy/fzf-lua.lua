@@ -1,5 +1,5 @@
 
--- $vimfiles/nvim/lua/lazy/fzf-lua.lua
+-- $vfn/lua/lazy/fzf-lua.lua
 
 -- :FzfLua Command
 -- :FzfLua args
