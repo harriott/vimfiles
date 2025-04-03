@@ -7,7 +7,7 @@
 --   $vfn/lua/init.lua
 --   $vfn/lua/test.lua
 
--- -> 1 lazy.nvim 0 bootstrap
+-- ▩-> 1 lazy.nvim 0 bootstrap
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then -- does what?
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'

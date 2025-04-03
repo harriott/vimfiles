@@ -52,7 +52,10 @@ KK " enters hover window, q quits
 
 ## manpages
     :h Man
+
+### unix
     :Man Bash
+    :Man rg
 
 ## neovide
     $ neovide &
@@ -69,10 +72,17 @@ KK " enters hover window, q quits
 `Arch`, if `handlr get .texty_extension`  returns `vim.desktop`, both `gVim` & `Vim` launch with `$VIM` & `$VIMRUNTIM` set as for `Nvim`!
 
 ### MSWin
+    $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
     $CPF\Neovim\share\nvim\runtime\filetype.lua
-    & $CPF\Neovim\bin\nvim.exe -h
+    g $HOME\.vimswap
+    g $lazy
+    g 'C:\Program Files\Neovim\share\nvim\runtime'
+
+#### shada file
+    g $HADL\nvim-data\shada
     rm $HADL\nvim-data\shada\main.shada.tmp.*  # works while nvim is running
-    where.exe nvim.exe
+
+> ...shada.tmp.X files exist, fixes "cannot write ShaDa file!"
 
 ### win64 ?
     :lua if package.config:sub(1,1) == "\\" then print('win64') end  " leveraging pure Lua
@@ -123,6 +133,7 @@ c-k<non-text-key> " enters the Vim value of a non-text-key
 c-r "  " (in command line) insert the unnamed register
 command-line window: C-c C-c  closes
 :echo $HOME
+:echo expand('<cword>')  " echos the word under the cursor
 :echo getline(1) " contents of line 1
 :echo hostname()
 

@@ -187,6 +187,8 @@ packadd vim-dokuwiki
 let dokuwiki_comment=1  " comment highlighting on
 let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
 
+" also  $vfv/ftplugin/dokuwiki.vim
+
 "">> vim-go
 packadd vim-go
 
@@ -435,13 +437,11 @@ let g:colorizer_disable_bufleave = 1
 ""> layout - FoldText
 packadd FoldText
 
-""> layout - highlighting
-
-" "">> limelight.vim
+""> layout - highlighting - limelight.vim
 " " Limelight!!
 " packadd limelight.vim
 
-"">> vim-better-whitespace
+""> layout - highlighting - vim-better-whitespace
 " $vfvp/packs-cp-full/opt/vim-better-whitespace/doc/better-whitespace.txt
 " $vfvp/packs-cp-full/opt/vim-better-whitespace/README.md
 " only used in  $vfn/init.vim
@@ -454,18 +454,19 @@ if has('nvim')
   packadd vim-better-whitespace
 endif
 
-" "">> vim-interestingwords
-" " \k -> new highlight
-" " \K -> all off
+""> layout - highlighting - vim-interestingwords
+" \k -> new highlight
+" \K -> all off
 " packadd vim-interestingwords
-" let g:interestingWordsRandomiseColors = 1
+let g:interestingWordsRandomiseColors = 1
 
-"">> vim-ShowTrailingWhitespace
+""> layout - highlighting - vim-ShowTrailingWhitespace
 " $vfvp/packs-cp-full/opt/vim-ShowTrailingWhitespace/doc/ShowTrailingWhitespace.txt
 if g:useSTW | packadd vim-ShowTrailingWhitespace | endif  " requires  ingo-library
 
 ""> layout - lf.vim
 " $vfvp/packs-cp-full/opt/lf-vim/README.md
+" syntax for  $MSn\lf\lfrc
 packadd lf-vim
 
 ""> layout - nerdfont.vim
@@ -573,13 +574,11 @@ packadd vim-mark  " requires  ingo-library
 " $vfvp/packs-cp-full/opt/targets.vim/cheatsheet.md
 packadd targets.vim
 
-""> vim - buffers
-
-"">> bufferize.vim
+""> vim - buffers - bufferize.vim
 " :Bufferize <something>  is handy, but the buffer's fragile...
 packadd bufferize.vim
 
-"">>> grab Vim settings - all commands
+"">> grab Vim settings - all commands
 function! GrabAllCommands()
   silent execute 'Bufferize command'
   winc k
@@ -591,7 +590,7 @@ function! GrabAllCommands()
 endfunction
 " for use in  $vfs/*-commands-*.txt
 
-"">>> grab Vim settings - all functions
+"">> grab Vim settings - all functions
 function! GrabAllFunctions()
   silent execute 'Bufferize function'
   winc k
@@ -604,7 +603,7 @@ function! GrabAllFunctions()
 endfunction
 " for use in  $vfs/*-commands-*.txt
 
-"">>> grab Vim settings - maps of Fn keys
+"">> grab Vim settings - maps of Fn keys
 function! GrabBmmFn()
   silent execute 'Bufferize map|map!'
   winc j  " assuming  splitbelow
@@ -620,7 +619,7 @@ endfunction
 " for use in  $vfs/*-FnMaps.txt
 " won't catch buffer-specific maps
 
-"">>> grab Vim settings - simple maps
+"">> grab Vim settings - simple maps
 function! GrabSimpleMaps()
   silent execute 'Bufferize map|map!'
   winc k
@@ -637,7 +636,7 @@ function! GrabSimpleMaps()
 endfunction
 " for use in  $vfs/*-simpleMaps-*.txt
 
-"">>> grab Vim settings - scriptnames
+"">> grab Vim settings - scriptnames
 function! GrabScriptnames()
   silent execute 'Bufferize scriptnames'
   winc k
@@ -649,12 +648,12 @@ function! GrabScriptnames()
 endfunction
 " for use in  $vfs/*-scriptnames-*.ffl
 
-"">> vim-bufkill
+""> vim - buffers - vim-bufkill
 " :BB :BF  could be mapped to replace some of the functionality of  vim-buffing-wheel
 
 packadd vim-bufkill
 
-"">>> mappings
+"">> mappings
 let g:BufKillCreateMappings = 0
 
 " :bd  maintaining splits

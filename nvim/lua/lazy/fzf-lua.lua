@@ -1,6 +1,9 @@
 
 -- $vfn/lua/lazy/fzf-lua.lua
 
+-- $lazy/fzf-lua/README-Win.md
+-- $lazy/fzf-lua/doc/fzf-lua-opts.txt
+
 -- :FzfLua Command
 -- :FzfLua args
 -- :FzfLua autocmds

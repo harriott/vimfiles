@@ -6,8 +6,10 @@
 
 set -e  # quits on error
 
-#=> 1 clones 0 update  all.clones
-. $misc/GRs/getClonesList.sh getRepos/all.clones
+$cf = "$vfv/getRepos/packs.clones"
+
+#=> 1 clones 0 update  packs.clones
+cd $vfvp; . $misc/GRs/getClonesList.sh $cf; cd $vfv
 
 # #=> 1 clones 1 remove
 # sudo rm -r $vfv/plugin/fzf
@@ -16,7 +18,7 @@ set -e  # quits on error
 # # these will be re-cloned in the next step
 
 #=> 1 clones 2 get
-# from  $vfv/getRepos/all.clones - can prefix  test https://github.com/test
+# from  $cf - can prefix  test https://github.com/test
 while read cl; do
   clone="${cl%% *}"
   if ! [ -d $clone ]; then
@@ -24,7 +26,7 @@ while read cl; do
     echo "${tpf3b}$clone${tpfn}  not there, so  ${tpf2b}$gcc${tpfn}"
     $gcc
   fi
-done <"$vfv/getRepos/all.clones"
+done <"$cf"
 
 #=> 2 updates 0 warn
 read -p "Going to update repositories - you've closed instances of vim? "
@@ -37,7 +39,7 @@ msv="$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
 # sf='vim-gfm-syntax'
 # once=yes
 rd=$pwd; . $misc/GRs/update-depth1.sh
-# $vfvp/repos  can be checked against  $vfv/getRepos/all.clones
+# $vfvp/repos  can be checked against  $cf
 echo 'Put back  marlam-msmtp/scripts/vim:'
 rsync -irtv --delete $DCGRs/d-unix/d-linux/r-marlam-msmtp/scripts/vim/ $msv
 cd $vfv
@@ -52,7 +54,7 @@ echo
 # fd -HI -tf ^config$ | xargs rg -l 'harriott'
 while read cl; do
   if [[ "$cl" =~ "harriott" ]]; then xdg-open "${cl#* }"; fi
-done <"$vfv/getRepos/all.clones"
+done <"$cf"
 echo 'Now check the forks!' # incase they've fallen behind their upstreams
 echo
 

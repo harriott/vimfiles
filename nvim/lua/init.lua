@@ -1,5 +1,5 @@
 
--- https://harriott.github.io/ - Wed 30 Oct 2024
+-- https://harriott.github.io/ - mer 02 avr 2025
 
 -- $vfn/lua/init.lua
 --  required by  $vfn/init.vim
@@ -7,7 +7,7 @@
 
 vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
 
--- -> 0 layout
+-- ▩-> 0 layout
 vim.g.have_nerd_font = true  -- :=vim.g.have_nerd_font
 vim.opt.cursorline = true
 vim.opt.mouse = 'a' -- enable mouse mode
@@ -15,14 +15,14 @@ vim.opt.showmode = false -- don't show the mode, since it's already in the statu
 
 vim.api.nvim_set_hl(0, '@lsp.type.comment', {}) -- because  lua_ls  sets a symantic token...
 
--- --> diagnostics
+-- ▩--> diagnostics
 -- :lua vim.lsp.buf.code_action()
 vim.diagnostic.config({ float = { border = 'rounded', }, })
 vim.diagnostic.config({ virtual_text = false, })
 vim.keymap.set('n', '<leader>k', '<cmd>lua vim.diagnostic.open_float()<cr>')
 vim.lsp.handlers['textDocument/hover']=vim.lsp.with(vim.lsp.handlers.hover, {border='rounded'})
 
--- --> window title
+-- ▩--> window title
 if vim.fn.has("win64") == 1 then
   -- $MSWin10\PSProfile.ps1  sets  $env:TERM
   -- if I don't set the title, get the path to the shell executable
@@ -46,7 +46,7 @@ if vim.fn.has("win64") == 1 then
   --  %W  ,PRV (preview window)
 end
 
--- -> 0 Neovide
+-- ▩-> 0 Neovide
 if vim.g.neovide then
   -- vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_cursor_vfx_mode = "torpedo"
@@ -59,28 +59,28 @@ if vim.g.neovide then
   -- vim.g.neovide_light_radius = 5
 end
 
--- -> 0 nVim
+-- ▩-> 0 nVim
 vim.opt.hlsearch = true
 vim.opt.updatetime = 250 -- decrease swap update time
 vim.opt.inccommand = 'split' -- preview substitutions as you type
 
--- --> disable  netrw  for  nvim-tree
+-- ▩--> disable  netrw  for  nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- --> terminal
+-- ▩--> terminal
 vim.keymap.set({'t'},'<C-h>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus left'})
 vim.keymap.set({'t'},'<C-l>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus right'})
 vim.keymap.set({'t'},'<C-j>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus down'})
 vim.keymap.set({'t'},'<C-k>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus up'})
 vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode to normal mode' })
 
--- -> 1 lazy.nvim 0 bootstrap
+-- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
 -- :Lazy update
 require 'lazy/bootstrap'
 
--- -> 1 lazy.nvim 1
+-- ▩-> 1 lazy.nvim 1
 require('lazy').setup(
   {
     {'akinsho/bufferline.nvim',config=function() require'bufferline'.setup() end,},
@@ -112,6 +112,7 @@ require('lazy').setup(
       'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
         -- context.vim  works better
+    require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
     {'williamboman/mason.nvim',config=function() require'mason'.setup() end,},
       -- $lazy/mason.nvim/doc/mason.txt
       -- :che mason
@@ -155,7 +156,7 @@ require('lazy').setup(
 -- somehow breaks  vim-hexokinase
 -- somehow kills nvim's access to  /usr/bin/fzf
 
--- -> 2 for lspsaga
+-- ▩-> 2 for lspsaga
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('LspMappings', {}),
   callback = function(ev)
@@ -163,23 +164,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
       {buffer=ev.buf,desc='Lspsaga outline'})
   end,})
 
--- -> 2 for nvim-treesitter
+-- ▩-> 2 for nvim-treesitter
 -- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
 -- :che treesitter
 -- :h nvim-treesitter-commands
 vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vfv/after/syntax/lua.vim
 
--- --> parsers 0 unix
+-- ▩--> 2 for lspsaga
+-- ▩--> parsers 0 unix
   -- $vfs/nvim-unix-TSInstallInfo-DOP3040D11S.txt
   -- $vfs/nvim-unix-TSInstallInfo-sbMb.txt
   -- /usr/lib/tree_sitter
   -- r $lazy/nvim-treesitter/parser
 
--- --> parsers 0 win64
+-- ▩--> parsers 0 win64
   -- $vfs/nvim-win64-TSInstallInfo-HPEB840G37.txt
   -- g $lazy\nvim-treesitter\parser
 
--- --> parsers 1 get
+-- ▩--> parsers 1 get
 function GetTSParsers()
   -- vim.cmd 'TSInstall bash'
   -- vim.cmd 'TSInstall lua'

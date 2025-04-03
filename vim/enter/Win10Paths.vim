@@ -6,7 +6,7 @@
 " source'd by
 "  $MSWin10/mb/_vimrc-AZERTY
 "  $vfn/init.vim
-" symlinked in  $MSwin10/mb/symlinks-mostly.ps1
+" symlinked in  $MSWin10/mb/symlinks-mostly.ps1
 
 ""> paths
 let $CPF = $programfiles
@@ -64,7 +64,7 @@ let $HADR = $HOME.'\AppData\Roaming'
   let $onGH = $coreIT.'\onGitHub'
     let $MD4PDF = $onGH.'\pandoc-md4pdf'
     let $misc = $onGH.'\misc'
-    let $MSwin10 = $onGH.'\OS-MSWin10'
+    let $MSWin10 = $onGH.'\OS-MSWin10'
       let $MSn = $MSWin10.'\nodes'
     let $OSAB = $onGH.'\OS-ArchBuilds'
       let $ABjo = $OSAB.'\nodes-jo'

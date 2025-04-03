@@ -5,7 +5,7 @@
 "  needs recent Vim
 "  $vfvp/packs-cp-full
 
-let g:packsVimAll = 1
+let g:packsVimFull = 1
 
 ""> encoding - vim-gitgutter
 let g:gitgutter_max_signs = 600
@@ -17,61 +17,85 @@ packadd vim-gitgutter
 let g:GGF = 0
 " $vfv/after/plugin/packs.vim
 
+""> fuzzyy
+if has('win64')
+  nnoremap <f1> :FuzzyBuffers<CR>
+  inoremap <f1> <Esc>:FuzzyBuffers<CR>
+  vnoremap <f1> <Esc>:BuffFuzzyers<CR>
+  nnoremap <F8> :FuzzyCmdHistory<CR>
+  inoremap <F8> <Esc>:FuzzyCmdHistory<CR>
+  vnoremap <F8> <Esc>:FuzzyCmdHistory<CR>
+endif
+packadd fuzzyy
+" :FuzzyCmdHistory
+" :FuzzyHighlights - ctrl+k toggles light/dark
+" \fb = :FuzzyBuffers
+" \fc = :FuzzyCommands
+" \ff = :FuzzyFiles - in cwd - crap in  $DJH
+" \fh = :FuzzyHelp
+" \fi = :FuzzyInBuffer [string]
+" \fm = :FuzzyMru - ctrl+k toggles all/cwd
+" ctrl+s/v = open selection in horizontal/vertical split
+
 ""> fzf - fzf
 if has('win64') " junegunn/fzf
-  " at  $vfv/plugin\fzf,
-  "  because
-  "   1 /usr/bin/fzf  is not found
-  "   2 fzf  is not found externally inspite of  :set rtp+=$ITsCP\fzf
-  "                                              :set rtp+=$nvim\fzf
-  "                                              :set rtp+=$nvim\plugin\fzf
-  "      (the advice at  $vfv/plugin/fzf/README-VIM.md  ain't correct)
+  " $vfv/plugin/fzf/README-VIM.md
+  set rtp+=~/vimfiles/plugin/fzf  " no quotes!
 
   nnoremap <S-F9> call popup_clear(1):<CR>
   " - for when the pop window seizes - nice idea, but shift+f9 also gets blocked
 endif
 
+" doesn't supply  fzf.exe
+" FZF  is the only command, hence  fzf.vim
 " $vfv/plugin/fzf/shell/completion.bash
 " $vfv/plugin/fzf/shell/key-bindings.bash
 
+""> fzf - fzf.exe
+" :!fzf  to check that it's interactively finding files
+" :!fzf --version
+" $HADL\Microsoft\WinGet\Links\fzf.exe  is found
+
 ""> fzf - fzf.vim
-" $vfvp/packs-cp-full/opt/fzf.vim/doc/fzf-vim.txt
-" requires  :set shell  be unchanged from  cmd.exe
-let g:fzf_vim = {}
-  let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
-  " let g:fzf_vim.preview_bash = 'C:\Windows\System32\bash.exe'
-  let g:fzf_vim.preview_window = ['hidden,up,50%', 'f1']
-  " - f1  will reveal the hidden preview window
-packadd fzf.vim
+if has('unix')
+  " $vfvp/packs-cp-full/opt/fzf.vim/doc/fzf-vim.txt
+  " requires  :set shell  be unchanged from  cmd.exe
+  let g:fzf_vim = {}
+    let g:fzf_vim.preview_bash = 'C:\Git\bin\bash.exe'
+    " let g:fzf_vim.preview_bash = 'C:\Git\usr\bin\bash.exe'
+    " let g:fzf_vim.preview_bash = 'C:\Users\jharr\AppData\Local\Microsoft\WindowsApps\bash.exe'
+    " let g:fzf_vim.preview_bash = 'C:\Windows\System32\bash.exe'
+    let g:fzf_vim.preview_window = ['hidden,up,50%', 'f1']
+    " - f1  will reveal the hidden preview window
+  packadd fzf.vim
 
-nnoremap <leader>B :BLines<CR>
-nnoremap <leader>L :Lines<CR>
+  nnoremap <leader>B :BLines<CR>
+  nnoremap <leader>L :Lines<CR>
 
-nnoremap <f1> :Buffers<CR>
-inoremap <f1> <Esc>:Buffers<CR>
-vnoremap <f1> <Esc>:Buffers<CR>
+  " in ~/.vim: rg '>j' --no-ignore
+  nnoremap <leader>j :Files $DJH<CR>
 
-nnoremap <F8> :History:<CR>
-inoremap <F8> <Esc>:History:<CR>
-vnoremap <F8> <Esc>:History:<CR>
+  nnoremap <f1> :Buffers<CR>
+  inoremap <f1> <Esc>:Buffers<CR>
+  vnoremap <f1> <Esc>:Buffers<CR>
 
-nnoremap <F9> :History/<CR>
-inoremap <F9> <Esc>:History/<CR>
-vnoremap <F9> <Esc>:History/<CR>
+  nnoremap <F8> :History:<CR>
+  inoremap <F8> <Esc>:History:<CR>
+  vnoremap <F8> <Esc>:History:<CR>
 
-nnoremap <s-f1> :Jumps<CR>
+  nnoremap <F9> :History/<CR>
+  inoremap <F9> <Esc>:History/<CR>
+  vnoremap <F9> <Esc>:History/<CR>
 
-" case-sensitive
-" 'search  searches for exactly that
+  nnoremap <s-f1> :Jumps<CR>
 
-" :Commits
-" :Helptags
-" :Maps  = normal mode mappings
+  " case-sensitive
+  " 'search  searches for exactly that
 
-"">> \j
-" in ~/.vim: rg '>j' --no-ignore
-
-nnoremap <leader>j :Files $DJH<CR>
+  " :Commits
+  " :Helptags
+  " :Maps  = normal mode mappings
+endif
 
 "">> fugitive
 

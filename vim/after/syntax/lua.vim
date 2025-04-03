@@ -2,7 +2,7 @@
 
 " Language:	Lua
 " Maintainer: Joseph Harriott
-" Last Change: mer 17 juil 2024
+" Last Change: mer 02 avr 2025
 " Syntax highlighting for folding my Lua scripts.
 
 " $vfv/after/syntax/lua.vim
@@ -17,8 +17,8 @@ syntax sync fromstart  " for longer build scripts
 " overriding  :hi def link luaComment Comment
 " eg for  $ulLA/old/mb-AsusW202/jo/awesome/rc.lua
 
-" syntax match foldLua '-- -.*$'
-syntax match foldLua '^\s*-- -\+>.*$'
+" syntax match foldLua '-- ▩-.*$'
+syntax match foldLua '^\s*-- ▩-\+>.*$'
 
 " Unfolded headings:
 hi def foldLua term=bold cterm=bold gui=bold guifg=LightGreen

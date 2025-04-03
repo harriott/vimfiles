@@ -68,10 +68,24 @@ Joseph's (g)Vim Quick Reference
 
 ## completion
     :h ins-completion
+    c-x-c-n  " keywords in file
+    c-x-c-f  " files in cwd
+    c-x-c-k  " keywords in dictionary
+    c-x-c-l  " whole lines
+    c-x-c-v  " commands
 
-### the buffer's complete string
-    :h 'cpt'
+### complete
+    :echo &cpt
+    :h cpt
     :se cpt+=k
+    c-n/p  " next/previous, then again to navigate
+
+### omni completion
+    c-x-c-x  " c-x-c-o ($vfv/plugin/packsAll.vim)
+
+#### omnifunc
+    :echo &ofu
+    :se ofu
 
 ## indent of current line
     0 c-d " remove all indents
@@ -79,6 +93,7 @@ Joseph's (g)Vim Quick Reference
     c-t   " insert a shiftwidth
 
 # layout
+    :h CTRL-L
     :Prettier     " apply  prettier  to json & others
     :se et        " expandtab - allows  :retab
     :se ch        " cmdheight
@@ -449,11 +464,6 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :put =$HOME
 :put =$PATH
 ```
-
-#### shada file
-    ri $HADL\nvim-data\shada\main.shada.tmp.*
-
-> ...shada.tmp.X files exist, fixes "cannot write ShaDa file!"
 
 ## Python
     :echo has('python')

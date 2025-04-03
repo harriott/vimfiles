@@ -1,9 +1,10 @@
 
-" Language: sifl - for string in files functions in  $MSn\PS\Profile.ps1
+" Language: sifl - for string in files functions in  $MSn/PS/Profile.ps1
 " Maintainer: Joseph Harriott
 " Last Change: ven 04 oct 2024
+" Detection: $vfv/filetype.vim
 
-" also  $vfv/ftplugin/sifl.vim
+" $vfv/syntax/sifl.vim  also  $vfv/ftplugin/sifl.vim
 
 if exists('b:current_syntax') | finish |  endif
 

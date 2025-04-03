@@ -1,7 +1,7 @@
 
 -- $vfn/lua/lazy/harpoon.lua
 
--- $lazy//harpoon/README.md, no doc, no Vim commands
+-- $lazy/harpoon/README.md, no doc, no Vim commands
 
 return { 'ThePrimeagen/harpoon', branch = 'harpoon2',
   dependencies = { 'nvim-lua/plenary.nvim','nvim-telescope/telescope.nvim', },

@@ -25,9 +25,29 @@ nmap <leader><leader>f <Plug>(easymotion-overwin-f)
 autocmd VimEnter * nmap s <Plug>(easymotion-overwin-f2)
 "  (in an autocmd to be sure it works with Arch vim-colors-solarized)
 
+""> layout - highlighting - vim-illuminate
+" :IlluminateToggle
+packadd vim-illuminate
+" $vfvp/packs-cp-all/opt/vim-illuminate/README.md
+
+" toggle illuminate more visible
+nnoremap <silent><leader>it :call IlluminateMoreToggle()<cr>
+let g:illuminatedWordMoreVisible = 0
+function! IlluminateMoreToggle()
+  if g:illuminatedWordMoreVisible
+    hi link illuminatedWord CursorLine
+    let g:illuminatedWordMoreVisible = 0
+    " echo 'illuminatedWord CursorLine - refresh the buffer'
+  else
+    hi link illuminatedWord buildN
+    let g:illuminatedWordMoreVisible = 1
+    " echo 'illuminatedWord buildN - refresh the buffer'
+  endif
+endfunction
+
 ""> layout - statusline
 if has('unix') " vim-airline
-  " $vfvp/packs-cp/opt/vim-airline/README.md
+  " $vfvp/packs-cp-all/opt/vim-airline/README.md
   let g:airline_powerline_fonts = 1
   packadd vim-airline " somehow breaks  fzf  on  Windows 10
   let airline#extensions#ale#show_line_numbers = 0
@@ -36,14 +56,6 @@ if has('unix') " vim-airline
   let g:airline#extensions#whitespace#trailing_format = 'tr[%s]'
   let g:airline#extensions#whitespace#mixed_indent_file_format = 'mif[%s]'
   packadd vim-airline-themes
-  if has('win64')
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_symbols.colnr = ' '
-    let g:airline_symbols.linenr = ' '
-    let g:airline_symbols.maxlinenr = ''
-    let g:airline_symbols.branch = ''
-  endif
 else
   " $vfvp/packs-win64/opt/lightline.vim/doc/lightline.txt
   let g:lightline = { 'colorscheme': 'darcula', }
@@ -53,9 +65,9 @@ endif
 set noshowmode  " no need for -- INSERT -- in (lower) command line
 
 ""> shell - ctrlp.vim
-" $vfvp/packs-cp/opt/ctrlp.vim/readme.md
-" $HOME/.cache/ctrlp/mru/cache.txt
+" $vfvp/packs-cp-all/opt/ctrlp.vim/readme.md
 " <c-f> and <c-b> to cycle between modes
+" <f5>  cleans  $HOME/.cache/ctrlp/mru/cache.txt
 " open selected entry in a new
 "  split horizontal <c-x>
 "  split vertical   <c-v>
@@ -82,4 +94,10 @@ noremap <C-n> :NERDTreeToggle<CR>
 " Open it on buffer's directory:
 nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
 inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+
+""> text wrangling - supertab
+" $vfvp/packs-cp-all/opt/supertab/doc/supertab.txt
+" :verb imap <tab>
+" c-q tab  to insert a literal tab
+packadd supertab
 

@@ -3,7 +3,7 @@
 
 " Language: Lua
 " Maintainer: Joseph Harriott
-" Last Change: Sun 21 Apr 2024
+" Last Change: mer 02 avr 2025
 " $vfv/ftplugin/lua.vim
 "  supplementary to  $VIMRUNTIME/ftplugin/lua.vim
 "  also  $vfv/after/syntax/lua.vim
@@ -26,18 +26,22 @@ vnoremap <buffer><leader>< :s/-- --/-- -/<CR>  " promote
 ""> foldexpr
 function! LuaF()
 " adapted from $vfv/ftplugin/HashEqualsFolding.vim
-  let l:foldMark = matchstr(getline(v:lnum), '-- -\+>') " defined l:foldMark, even in no match
+  let l:foldMark = matchstr(getline(v:lnum), '-- ▩-\+>') " defined l:foldMark, even in no match
   " Now, if there's a heading set an equivalent fold start:
   if empty(l:foldMark)
     return "="
   else
-    let l:foldCount = matchstr(l:foldMark, '-- \zs-\+>')
+    let l:foldCount = matchstr(l:foldMark, '-- ▩\zs-\+>')
     let l:headerLevel = len(l:foldCount) - 1
     return ">".l:headerLevel
   endif
 endfunction
 
 setlocal expandtab foldcolumn=1 foldexpr=LuaF() foldmethod=expr shiftwidth=2
+
+" pull away from nvim-treesitter foldexpr
+nnoremap <localleader>e :set foldexpr=LuaF()<cr>
+" - reverts back after any kind of refresh
 
 ""> turn off or on a fold of commands
 source $vfv/ftplugin/firmCommentWholeFold.vim

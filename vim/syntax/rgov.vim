@@ -1,5 +1,8 @@
 
-" Language: rgov - see  $vfs/all-win64.ps1
+" Language: rgov
+"  for output of
+"   $vfs/all-unix-maps.ps1
+"   $vfs/all-win64-maps.ps1
 " Maintainer: Joseph Harriott
 " Last Change: dim 30 mars 2025
 " $vfv/syntax/rgov.vim  also  $vfv/ftplugin/rgov.vim
@@ -25,7 +28,7 @@ syn match rgovml ' ⋮.\+$' contains=rgovf,rgovl,rgovm,rgovmv,rgovp
   syn match rgovm '\<map ' contained
   " - map word is also frequent in other contexts
   hi def link rgovmv MoreMsg
-  syn match rgovmv '\v<(imap|inoremap|nmap|noremap|nnoremap|omap|onoremap|vmap|vnoremap|xmap|xnoremap)>' contained
+  syn match rgovmv '\v<(imap|inoremap|keymap|nmap|noremap|nnoremap|omap|onoremap|vmap|vnoremap|xmap|xnoremap)>' contained
   " - map variants
   hi def link rgovp Normal | syn match rgovp '\c<plug>' contained
 

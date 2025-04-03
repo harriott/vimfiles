@@ -496,10 +496,10 @@ function! GrabMK()
   call delete($mkh)
   mkexrc $mkh
   edit $mkh
-  sil %s//<esc>/g
-  sil %s//<cr>/g
-  sil %s//<c-w>/g
-  sil %s//<bar>/g
+  sil! %s//<esc>/g
+  sil! %s//<cr>/g
+  sil! %s//<c-w>/g
+  sil! %s//<bar>/g
   norm ggO" vim: se nowrap:
   norm o
   norm x
@@ -510,7 +510,7 @@ function! GrabMK()
   edit  " invokes the nowrap
   let $mkh = $host.'.exrc'
 endfunction
-" call MK() makes  $vfs/*-*.exrc - tidied settings, including all the package mappings
+" call GrabMK() makes  $vfs/*-*.exrc - tidied settings, including all the package mappings
 
 ""> layout
 " clearmatches (see  $jtCP/Vim/plugins/csv_vim/HiColumnLeaky/issue.md)

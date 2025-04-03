@@ -8,7 +8,7 @@
 -- Shows keymaps:
 --  insert mode: <c-/>
 --  normal mode: ?
--- $vfv/ftplugin/lua-nvim.vim  maps  =k  to shoz up my keystrokes
+-- $vfv/ftplugin/lua-nvim.vim  maps  =m  to show up my mappings
 
 return {
   { 'nvim-telescope/telescope.nvim',

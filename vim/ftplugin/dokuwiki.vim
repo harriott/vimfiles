@@ -4,7 +4,7 @@
 " Last Change: jeu 08 août 2024
 " $vfv/ftplugin/dokuwiki.vim
 
-" tweaked  $vfvp/packs-cp/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax
+" tweaked  $vfvp/packs-cp-full/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax
 
 function! PageTitleToHyperlink()
   let l:pagetitle = getreg('"')

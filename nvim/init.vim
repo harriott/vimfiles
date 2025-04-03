@@ -6,7 +6,7 @@
 
 " $vfn/init.vim
 " symlinked by
-"  $MSwin10\mb\symlinks.ps1
+"  $MSWin10\mb\symlinks.ps1
 "  $OSAB/nodes/set/jo-2-whenWM-0.sh
 
 let g:sourced_init_vim = 1
@@ -39,6 +39,8 @@ else
   nnoremap gl g`"
   " (`"  is easy on AZERTY)
 endif
+
+noremap <localleader>k :exe 'h '.expand('<cword>')<cr>
 
 set keywordprg=:help  " get  K  working in  *.lua
 

@@ -19,30 +19,13 @@ let g:context_enabled = 0
 packadd context.vim
 
 ""> languages
-" quicker access to completions
+" quicker access to omni completion
 inoremap <c-x><c-x> <c-x><c-o>
 " - I'd preferred  <C-M>, but that's <CR>
 
 ""> layout - characterize.vim
 " enhances  ga
 packadd vim-characterize
-
-""> layout - highlighting - vim-illuminate
-packadd vim-illuminate
-
-" toggle illuminate more visible
-nnoremap <silent><leader>it :call IlluminateMoreToggle()<cr>
-let g:illuminatedWordMoreVisible = 0
-function! IlluminateMoreToggle()
-  if g:illuminatedWordMoreVisible
-    hi link illuminatedWord CursorLine
-    let g:illuminatedWordMoreVisible = 0
-  else
-    hi link illuminatedWord buildN
-    let g:illuminatedWordMoreVisible = 1
-  endif
-  hi illuminatedWord
-endfunction
 
 ""> layout - NERDtree & vim-devicons
 " loaded in  $vfv/after/plugin/packs.vim
@@ -81,12 +64,6 @@ packadd vim-startify
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 packadd quick-scope
-
-" ""> text wrangling - supertab
-" " $vfvp/packs-cp-all/opt/supertab/doc/supertab.txt
-" " :verb imap <tab>
-" " c-q tab  to insert a literal tab
-" packadd supertab
 
 ""> text wrangling - vim-asterisk
 packadd vim-asterisk
