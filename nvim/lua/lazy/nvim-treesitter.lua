@@ -1,6 +1,6 @@
 -- vim: set fdl=3:
 
--- $vfn/lua/lazy/treesitter.lua
+-- $vfn/lua/lazy/nvim-treesitter.lua
 --  called by  $vfn/lua/init.lua  which also defines  GetTSParsers()
 --  $lazy/nvim-treesitter/doc/nvim-treesitter.txt
 

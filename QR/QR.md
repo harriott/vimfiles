@@ -494,10 +494,10 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :sleep
 :t.                          " reproduce line
 :t.|s\.\=\g                  " setext-style header underlining
+:.,+3s/foo/bar               " replaces on this and next 3 lines
 \yy                          " CalendarH
 ctrl-q ctrl-m                " inserts ^M (carriage return)
 g&                           " repeat last command over the whole document
-:.,+3s/foo/bar               " replaces on this and next 3 lines
 ```
 
 in command-line `\t` inserts a tab character

@@ -23,14 +23,25 @@ Joseph's (g)Vim Quick Reference
 `:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
 
 ```vim
-K  " vim.lsp.buf.hover()
-KK " enters hover window, q quits
+:verb ve  " :verbose version
+K         " vim.lsp.buf.hover()
+KK        " enters hover window, q quits
 ```
 
 ## diagnostics
 - `<C-W>d` (= `vim.diagnostic.open_float()`)
 - `[d` (= `vim.diagnostic.goto_prev()`)
 - `]d` (= `vim.diagnostic.goto_next()`)
+
+## help
+    \K  " $vfn/init.vim
+
+### manpages
+    :h Man
+
+#### unix
+    :Man Bash
+    :Man rg
 
 ## lua
     :lua if x==nil then print("x is nil") end
@@ -50,13 +61,6 @@ KK " enters hover window, q quits
     :=vim.fn.has'gui_running'
     :=vim.loop.cwd()
 
-## manpages
-    :h Man
-
-### unix
-    :Man Bash
-    :Man rg
-
 ## neovide
     $ neovide &
     echo g:neovide
@@ -68,8 +72,6 @@ KK " enters hover window, q quits
 ## OS
     :=jit.os
     :=vim.fn.has("linux")
-
-`Arch`, if `handlr get .texty_extension`  returns `vim.desktop`, both `gVim` & `Vim` launch with `$VIM` & `$VIMRUNTIM` set as for `Nvim`!
 
 ### MSWin
     $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
@@ -83,6 +85,11 @@ KK " enters hover window, q quits
     rm $HADL\nvim-data\shada\main.shada.tmp.*  # works while nvim is running
 
 > ...shada.tmp.X files exist, fixes "cannot write ShaDa file!"
+
+### unix
+    n ~/.vimswap
+
+`Arch`, if `handlr get .texty_extension`  returns `vim.desktop`, both `gVim` & `Vim` launch with `$VIM` & `$VIMRUNTIM` set as for `Nvim`!
 
 ### win64 ?
     :lua if package.config:sub(1,1) == "\\" then print('win64') end  " leveraging pure Lua
@@ -192,7 +199,7 @@ $misc/CP/vimtest/README.md
     :Bufferize scr         " (:scriptnames) list of files sourced, in order
     :Bufferize se          " all option changes
     :Bufferize se ofu      " omnifunc
-    :Bufferize version     " Vim version etc
+    :Bufferize ve          " Vim version etc
     :colo [default]        " current colorscheme
     :echo has ('gui_running')
     :function <name_of_function_to_reveal>

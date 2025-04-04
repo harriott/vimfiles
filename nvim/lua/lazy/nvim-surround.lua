@@ -1,5 +1,5 @@
 
--- $vfn/lua/lazy/surround.lua
+-- $vfn/lua/lazy/nvim-surround.lua
 
 -- $lazy/nvim-surround/doc/nvim-surround.txt
 -- cs'"  => change surround single quotes to double quotes

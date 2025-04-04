@@ -40,9 +40,9 @@ else
   " (`"  is easy on AZERTY)
 endif
 
-noremap <localleader>k :exe 'h '.expand('<cword>')<cr>
+noremap <leader>K :exe 'h '.expand('<cword>')<cr>
 
-set keywordprg=:help  " get  K  working in  *.lua
+set keywordprg=:help  " doesn't trigger old use of  K
 
 " nnoremap Y 0yj
 " yank one full line - I prefer over  Y-default, but now need  nyy  to select multiple lines
@@ -50,7 +50,7 @@ set keywordprg=:help  " get  K  working in  *.lua
 ""> 0 terminal
 autocmd TermOpen * startinsert
 let $in_nvim = 1  " - for $OSAB/Bash/bashrc-generic
-set termguicolors
+set tgc  "  termguicolors  somehow impacts  bufferline.nvim  in  Neovide
 
 " set shell=powershell  " Windows PowerShell
 " set shell=pwsh  " PowerShell

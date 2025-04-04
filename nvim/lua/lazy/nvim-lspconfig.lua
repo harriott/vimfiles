@@ -12,6 +12,10 @@
 -- KK => enters hover window, q quits
 
 return {
+  { 'folke/lazydev.nvim', -- recommended
+    ft = 'lua',
+    opts = { library = { { path = '${3rd}/luv/library', words = { 'vim%.uv' } }, }, },
+  }, -- $DCGRs/d-CP/d-Vim-Nvim/r-dam9000-kickstart-modular.nvim/lua/kickstart/plugins/lspconfig.lua
   { 'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
       -- might get over failure to find  vim-language-server  on  win64

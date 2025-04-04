@@ -50,8 +50,9 @@ end
 if vim.g.neovide then
   -- vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_cursor_vfx_mode = "torpedo"
-  vim.g.neovide_transparency = 0.93
+  vim.g.neovide_opacity = 0.93
    -- only currently effective on win64, okay with high contrast image behind
+  -- vim.g.neovide_normal_opacity = 0.8  -- defaults to 1
 
   -- These don`t change Telescope floats:
   -- vim.g.neovide_floating_z_height = 10
@@ -83,8 +84,18 @@ require 'lazy/bootstrap'
 -- ▩-> 1 lazy.nvim 1
 require('lazy').setup(
   {
-    {'akinsho/bufferline.nvim',config=function() require'bufferline'.setup() end,},
+    {'akinsho/bufferline.nvim',config=function() require'bufferline'.setup()
+      options = {
+        themable = true, -- ensures current buffer name is visible
+      } end,},
+      -- :BufferLineCloseOthers
+      -- :BufferLinePickClose
+      -- :BufferLinePick
+      -- :h bufferline
+      -- :h bufferline-highlights
       -- shows Nvim tabs as numbers to right
+      -- l-mouse  selects
+      -- r-mouse  drops
     {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup()
       vim.keymap.set({'n'},'<leader>sv',"<Cmd>ScrollViewToggle<CR>") end,},
     -- $lazy/nvim-scrollview/doc/scrollview.txt
@@ -98,17 +109,18 @@ require('lazy').setup(
     require'lazy/lualine',
     require'lazy/neogit',
     -- require'lazy/nvim-hlslens',
+    require'lazy/nvim-cmp', -- $vfn/lua/lazy/nvim-cmp.lua
     require'lazy/nvim-notify',
     require'lazy/nvim-tree',
     require'lazy/nvim-web-devicons',
     require'lazy/oil',
-    require'lazy/surround',
+    require'lazy/nvim-surround',
     -- require'lazy/tabby',
     require'lazy/telescope', -- something in here slowing folding of large md's
       require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',
       require'lazy/nvim-neoclip',
-    require'lazy/treesitter', -- $vfn/lua/lazy/treesitter.lua
+    require'lazy/nvim-treesitter', -- $vfn/lua/lazy/nvim-treesitter.lua
       'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
         -- context.vim  works better

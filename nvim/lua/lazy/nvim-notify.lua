@@ -3,6 +3,7 @@
 
 -- :lua vim.notify("a test error message", "error")
 -- $lazy/nvim-notify/doc/nvim-notify.txt
+-- :Notifications
 -- :Telescope notify
 
 return {

@@ -5,7 +5,7 @@
 " Last Change: dim 12 mai 2024
 " $vfv/ftplugin/markdown.vim
 "  supplementary to
-"   $vfvp/packs-cp/opt/vim-markdown/README.md
+"   $vfvp/packs-cp-full/opt/vim-markdown/README.md
 "   $VIMRUNTIME/ftplugin/markdown.vim (which includes  $vfv/ftplugin/html.vim )
 
 " Filetype detection:

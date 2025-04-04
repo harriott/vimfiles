@@ -13,7 +13,7 @@ endfunction
 vnoremap <buffer><leader>hy :call PageTitleToHyperlink()<CR>
 
 " convert  '^page_title  http...'  to external link ([[http... |page_title]])
-nnoremap <buffer><leader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
+nnoremap <buffer><localleader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
 
 let b:match_words = '<:>'
 set nospell
