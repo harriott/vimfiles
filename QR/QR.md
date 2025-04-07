@@ -37,12 +37,12 @@ Joseph's (g)Vim Quick Reference
     C-o     " jump back (to where you've been)
 
 ## BufExplorer
-\bd  " close all but visible buffers
-\bdd " close all but current buffer
-\be  " Opens BufExplorer
-\bs  " Opens horizontally split window BufExplorer
-\bt  " Toggles BufExplorer open or closed
-\bv  " Opens vertically split window BufExplorer
+    \bd  " close all but visible buffers
+    \bdd " close all but current buffer
+    \be  " Opens BufExplorer
+    \bs  " Opens horizontally split window BufExplorer
+    \bt  " Toggles BufExplorer open or closed
+    \bv  " Opens vertically split window BufExplorer
 
 # diff
     :dif                    " diffupdate
@@ -61,18 +61,22 @@ Joseph's (g)Vim Quick Reference
 
 # insert mode commands
     c-ke'    " digraph code for é
+    c-a      " repeats last recorded insert
     c-o      " moves to normal mode for just one command
-    c-p      " keyword completion
     c-r%     " insert relative path of current file
     c-qu201c " unicode codepoint for “
 
 ## completion
     :h ins-completion
-    c-x-c-n  " keywords in file
-    c-x-c-f  " files in cwd
-    c-x-c-k  " keywords in dictionary
-    c-x-c-l  " whole lines
-    c-x-c-v  " commands
+    c-e      " quits c-x mode
+    c-n/p    " next/previous, then again to navigate
+    c-x c-n  " from current file
+    c-x c-f  " files in cwd
+    c-x c-l  " whole lines
+    c-x c-t  " thesaurus
+    c-x c-v  " vim commands
+    c-x s    " spelling
+    c-y      " accept suggestion
 
 ### complete
     :echo &cpt
@@ -80,12 +84,20 @@ Joseph's (g)Vim Quick Reference
     :se cpt+=k
     c-n/p  " next/previous, then again to navigate
 
+### dictionary
+    :h dict
+    c-x c-k  " keywords in dictionary - needs  spell
+
 ### omni completion
-    c-x-c-x  " c-x-c-o ($vfv/plugin/packsAll.vim)
+    c-x c-x  " c-x c-o ($vfv/plugin/packsAll.vim)
 
 #### omnifunc
     :echo &ofu
     :se ofu
+
+### thesaurus
+    :h tsr
+    c-x c-t  " keywords in thesaurus
 
 ## indent of current line
     0 c-d " remove all indents
@@ -571,18 +583,22 @@ u            " lowercase a visual block
 
 # words
 ```
+\wt        " thesaurus_query.vim
 g<Ctrl-G>  " statistics
 ```
 
 ## spell
     (count)]s => move to next misspelled word after the cursor
     (count)[s => like  ]s  but search backwards
+    :echo &spell  " 0 = nospell, 1 = spell
     :h nospell
     :se spell?
+    :setl spell
     z= => suggest corrections
 
 ### files
-    :spelld  " (= spelldump) from a file with  spell  active, splits down a buffer with the vast list and filenames
+    :spelld  " (= spelldump) from a file with  spell  active, splits down a buffer with the vast list (en > 174k, fr > 667k) and source filenames
+
 
 #### .add files
     $vfv/spell/en.utf-8.add
@@ -598,6 +614,6 @@ g<Ctrl-G>  " statistics
 `z?` (`$vfv/plugin/plugin.vim`) works on well separated words
 
 ### spelllang
+    :echo &spl
     :se spl
-    echo &spelllang
 

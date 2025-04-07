@@ -20,7 +20,7 @@ vim.api.nvim_set_hl(0, '@lsp.type.comment', {}) -- because  lua_ls  sets a syman
 vim.diagnostic.config({ float = { border = 'rounded', }, })
 vim.diagnostic.config({ virtual_text = false, })
 vim.keymap.set('n', '<leader>k', '<cmd>lua vim.diagnostic.open_float()<cr>')
-vim.lsp.handlers['textDocument/hover']=vim.lsp.with(vim.lsp.handlers.hover, {border='rounded'})
+vim.o.winborder = 'rounded'
 
 -- ▩--> window title
 if vim.fn.has("win64") == 1 then
@@ -75,6 +75,23 @@ vim.keymap.set({'t'},'<C-l>','<Cmd>wincmd k<CR>',{desc='normal mode and move foc
 vim.keymap.set({'t'},'<C-j>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus down'})
 vim.keymap.set({'t'},'<C-k>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus up'})
 vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode to normal mode' })
+
+-- ▩-> 0 toggles
+vim.g.cmp_on = true -- $vfn/lua/lazy/nvim-cmp.lua
+-- vim.cmd([[ autocmd FileType TelescopePrompt let g:cmp_on = v:false ]])
+
+-- ▩--> 0 generic boolean option toggle function
+function vim_opt_toggle(opt)
+  local message = opt
+  if vim.opt[opt]:get() == false then
+    message = message .. " on"
+    vim.opt[opt] = true
+  else
+    message = message .. " off"
+    vim.opt[opt] = false
+  end
+  vim.notify(message)
+end
 
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt

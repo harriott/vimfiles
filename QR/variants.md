@@ -55,6 +55,7 @@ KK        " enters hover window, q quits
     :lua print("Hello!")
     :=package.config:sub(1,1) " identify winxx by \
     :=vim.api.nvim_eval('g:') " all global variables
+    :=vim.bo.filetype
     :=vim.env.MYVIMRC  " path of my  init
     :=vim.env.vimfiles  " path of my  $vimfiles
     :=vim.env.VIMRUNTIME

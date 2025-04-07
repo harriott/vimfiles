@@ -110,6 +110,7 @@ vnoremap <s-f3> <Esc>:Commits<CR>
 ""> fzf - vim-fzf-dictionary
 packadd vim-fzf-dictionary
 imap <c-d> <Plug>(fzf-dictionary-open)
+" no longer having any effect
 
 ""> layout - clrzr
 " just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt

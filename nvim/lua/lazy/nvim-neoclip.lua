@@ -1,3 +1,4 @@
+-- vim: se fdl=3:
 
 -- https://harriott.githubio/ - Wed 29 May 2024
 

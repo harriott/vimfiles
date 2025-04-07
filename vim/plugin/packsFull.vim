@@ -381,7 +381,7 @@ if has('win64')
   let g:tq_openoffice_en_file="~/vimfiles/thesaurus/MyThes-1.0/th_en_US_new"
 endif
 let g:tq_language=['en', 'fr']
-autocmd BufRead,BufNewFile */France/Scratch/* let b:tq_language=['fr']
+autocmd BufRead,BufNewFile */France/scratch/* let b:tq_language=['fr']
 nnoremap <leader>wt :ThesaurusQueryReplaceCurrentWord<CR>
 packadd thesaurus_query.vim
 
@@ -494,6 +494,14 @@ let g:calendar_monday = 1
 let g:calendar_weeknm = 1
 noremap <leader>C :CalendarH<CR>
 packadd calendar-vim
+
+""> shell - vim-Grammalecte
+" $vfvp/packs-cp-full/opt/vim-Grammalecte/README.md
+" $vfvp/packs-cp-full/opt/vim-Grammalecte/doc/Grammalecte.txt
+" :GrammalecteCheck
+" :GrammalecteClear
+let g:grammalecte_cli_py="$ITscc/CP/Grammalecte-fr-v2_1_1/grammalecte-cli.py"
+packadd vim-Grammalecte
 
 ""> shell - open-browser.vim
 " $vfvp/packs-cp-full/opt/open-browser.vim/doc/openbrowser.txt

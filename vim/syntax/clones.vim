@@ -1,7 +1,7 @@
 
 " Language: clones  for
 "  $misc/GRs/all.clones
-"  $vfv/getRepos/all.clones
+"  $vfv/getRepos/packs.clones
 " Maintainer: Joseph Harriott
 " Last Change: Sat 19 Oct 2024
 " Detection: $vfv/filetype.vim

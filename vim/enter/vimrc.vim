@@ -11,6 +11,7 @@
 " typically basic Vim settings here - look in plugin folder for more
 " ------------------------------------------------------------------
 
+set cot+=longest  " completeopt
 set enc=utf-8  " encoding, get this done early
 set mps=(:),{:},[:],<:>
 set nojoinspaces  " already off in  nvim

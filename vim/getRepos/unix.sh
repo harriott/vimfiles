@@ -6,7 +6,7 @@
 
 set -e  # quits on error
 
-$cf = "$vfv/getRepos/packs.clones"
+cf="$vfv/getRepos/packs.clones"
 
 #=> 1 clones 0 update  packs.clones
 cd $vfvp; . $misc/GRs/getClonesList.sh $cf; cd $vfv
@@ -19,6 +19,7 @@ cd $vfvp; . $misc/GRs/getClonesList.sh $cf; cd $vfv
 
 #=> 1 clones 2 get
 # from  $cf - can prefix  test https://github.com/test
+cd $vfvp
 while read cl; do
   clone="${cl%% *}"
   if ! [ -d $clone ]; then
@@ -27,6 +28,7 @@ while read cl; do
     $gcc
   fi
 done <"$cf"
+cd $vfv
 
 #=> 2 updates 0 warn
 read -p "Going to update repositories - you've closed instances of vim? "
