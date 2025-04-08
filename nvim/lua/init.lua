@@ -101,7 +101,7 @@ require 'lazy/bootstrap'
 -- ▩-> 1 lazy.nvim 1
 require('lazy').setup(
   {
-    {'akinsho/bufferline.nvim',config=function() require'bufferline'.setup()
+    {'akinsho/bufferline.nvim', config=function() require'bufferline'.setup()
       options = {
         themable = true, -- ensures current buffer name is visible
       } end,},
@@ -115,13 +115,19 @@ require('lazy').setup(
       -- r-mouse  drops
     {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup()
       vim.keymap.set({'n'},'<leader>sv',"<Cmd>ScrollViewToggle<CR>") end,},
-    -- $lazy/nvim-scrollview/doc/scrollview.txt
+      -- $lazy/nvim-scrollview/doc/scrollview.txt
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
-    -- $lazy/gitsigns.nvim/doc/gitsigns.txt
-    {'numToStr/Comment.nvim',opts={}}, -- $vimfiles/QR/variants.md
+      -- $lazy/gitsigns.nvim/doc/gitsigns.txt
+    {'MagicDuck/grug-far.nvim', config = function() require('grug-far').setup({}); end, },
+      -- $lazy/grug-far.nvim/README.md
+      -- :GrugFar
+    {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
+    {'numToStr/Comment.nvim', opts={}, }, -- $vimfiles/QR/variants.md
+    require'lazy/boole_nvim',
     -- require'lazy/catppuccin',
     require'lazy/fzf-lua',
     require'lazy/harpoon',
+    require'lazy/helpview_nvim',
     require'lazy/leap',
     require'lazy/lualine',
     require'lazy/neogit',
@@ -137,29 +143,30 @@ require('lazy').setup(
       require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',
       require'lazy/nvim-neoclip',
+    require'lazy/nvim-lspconfig',require'lazy/lspsaga',
+      -- :che lspsaga
+      {'williamboman/mason.nvim',config=function() require'mason'.setup() end,},
+        -- $lazy/mason.nvim/doc/mason.txt
+        -- :che mason
+        -- :LspInfo
+        -- :Mason
+          -- g?  toggles help
+        -- :MasonLog (~/.local/state/nvim/mason.log)
+        -- for  $vfn/lua/lazy/nvim-lspconfig.lua
+        -- packages directory
+          -- :edit $MASON/packages (where defined?)
+          -- g $mason
+          -- r $mason
+      {"williamboman/mason-lspconfig.nvim",
+        -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
+        -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
+         config=function() require('mason-lspconfig').setup() end,},
     require'lazy/nvim-treesitter', -- $vfn/lua/lazy/nvim-treesitter.lua
       'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
         -- context.vim  works better
     require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
-    {'williamboman/mason.nvim',config=function() require'mason'.setup() end,},
-      -- $lazy/mason.nvim/doc/mason.txt
-      -- :che mason
-      -- :LspInfo
-      -- :Mason
-        -- g?  toggles help
-      -- :MasonLog (~/.local/state/nvim/mason.log)
-      -- for  $vfn/lua/lazy/nvim-lspconfig.lua
-      -- packages directory
-        -- :edit $MASON/packages (where defined?)
-        -- g $mason
-        -- r $mason
-    {"williamboman/mason-lspconfig.nvim",
-      -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
-      -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
-       config=function() require('mason-lspconfig').setup() end,},
-    require'lazy/nvim-lspconfig',require'lazy/lspsaga',
-      -- :che lspsaga
+    { "wurli/visimatch.nvim", opts = {} },
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack

@@ -1,3 +1,4 @@
+-- vim: fdl=4:
 
 -- $vfn/lua/lazy/lualine.lua
 

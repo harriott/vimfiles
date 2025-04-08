@@ -1,3 +1,4 @@
+-- vim: fdl=2:
 
 -- $vfn/lua/lazy/telescope-fzf-native.lua
 

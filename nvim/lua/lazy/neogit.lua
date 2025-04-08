@@ -1,9 +1,11 @@
+-- vim: fdl=2:
 
 -- https://harriott.githubio/ - mer 22 mai 2024
 
 -- $vfn/lua/lazy/neogit.lua
 
 -- $lazy/neogit/doc/neogit.txt
+-- :Neogit
 -- ? => help
 -- q => quits
 
@@ -20,8 +22,8 @@ return { "NeogitOrg/neogit",
 
 
 -- Diffview.nvim:
--- $lazy/diffview.nvim/doc/diffview.txt
--- :DiffviewFileHistory %
--- :DiffviewClose
--- g?
+--  $lazy/diffview.nvim/doc/diffview.txt
+--  :DiffviewFileHistory %
+--  :DiffviewClose
+--  g?
 

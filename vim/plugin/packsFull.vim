@@ -77,7 +77,7 @@ packadd csv.vim
 "">>> column highlighting
 " :HiColumn [n]  " highlight column [n] using  WildMenu  syntax colour
 " :HiColumn!  " removes
-" - f7 toggle define in  $vimfiles/ftplugin/csv.vim
+" - f7 toggle defined in  $vfv/ftplugin/csv.vim
 
 " my preferred syntax colour
 let g:csv_hiGroup = 'Directory'  " good in my  Vim

@@ -1,3 +1,4 @@
+-- vim: set fdl=4:
 
 -- $vfn/lua/lazy/harpoon.lua
 
@@ -9,7 +10,7 @@ return { 'ThePrimeagen/harpoon', branch = 'harpoon2',
     local harpoon = require('harpoon')
     harpoon:setup({})
     vim.keymap.set({'n'},'<leader>hl',function() harpoon.ui:toggle_quick_menu(harpoon:list()) end) -- for reference
-    vim.keymap.set({'n'},'<c-a>',function() harpoon:list():add() end) -- ephemeral...
+    vim.keymap.set({'n'},'<leader>ha',function() harpoon:list():add() end) -- ephemeral...
 
     local conf = require('telescope.config').values
     local function toggle_telescope(harpoon_files)

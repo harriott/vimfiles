@@ -5,7 +5,6 @@
 return {
   { 'hrsh7th/nvim-cmp',
     dependencies = {
-      'dmitmel/cmp-cmdline-history',
       'f3fora/cmp-spell',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp',
@@ -22,6 +21,7 @@ return {
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-nvim-lsp-signature-help',
     },
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       -- See `:h cmp`
       local capabilities = require('cmp_nvim_lsp').default_capabilities() -- cmp-nvim-lsp
@@ -85,9 +85,6 @@ return {
           { name = 'vimtex', },
         }), -- triggers the popups
       }
-
-      cmp.setup.cmdline('/', { sources = { { name = 'cmdline_history' }, }, })
-      cmp.setup.cmdline(':', { sources = { { name = 'cmdline_history' }, }, })
 
       vim.keymap.set("n", "<leader>cp", function() -- useful for testing
         vim.g.cmp_on = not vim.g.cmp_on
