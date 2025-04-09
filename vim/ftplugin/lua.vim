@@ -6,7 +6,9 @@
 " Last Change: mer 02 avr 2025
 " $vfv/ftplugin/lua.vim
 "  supplementary to  $VIMRUNTIME/ftplugin/lua.vim
-"  also  $vfv/after/syntax/lua.vim
+"  also
+"   $vfv/after/syntax/lua.vim
+"   $vfv/ftplugin/lua-nvim.vim
 
 if !has('nvim')
   let b:ale_enabled = 0

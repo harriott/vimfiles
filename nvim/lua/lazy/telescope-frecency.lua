@@ -1,3 +1,4 @@
+-- vim: set fdl=4:
 
 -- $vfn/lua/lazy/telescope-frecency.lua
 
@@ -14,7 +15,7 @@ return { 'nvim-telescope/telescope-frecency.nvim',
     -- configuration is done in  $vfn/lua/lazy/telescope.lua
 
     -- vim.keymap.set('n','<c-p>',"<Cmd>echo 'frecent files'<bar>Telescope frecency<CR>")
-    vim.keymap.set('n','<c-p>',function() vim.cmd("echo 'frecent files'")
+    vim.keymap.set({'n'},'<c-p>',function() vim.cmd("echo 'frecent files'")
       -- require'telescope'.extensions.frecency.frecency{ignore_patterns={"*lastVimDirectory",},} end, -- doesn't have any effect, and anyway would clobber the system-dependent defaults...
       require'telescope'.extensions.frecency.frecency{} end,
       {desc='Telescope frecency'})

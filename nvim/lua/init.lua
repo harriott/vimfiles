@@ -139,6 +139,7 @@ require('lazy').setup(
     require'lazy/oil',
     require'lazy/nvim-surround',
     -- require'lazy/tabby',
+    require'lazy/snipe_nvim',
     require'lazy/telescope', -- something in here slowing folding of large md's
       require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',

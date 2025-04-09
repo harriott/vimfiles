@@ -2,7 +2,7 @@
 
 -- $vfn/lua/lazy/telescope-fzf-native.lua
 
--- fzf exact match syntax (',^,$):
+-- fzf exact match syntax (',^,$) for Telescope :
 --  !'not
 --  !^not_begin
 --  !not_end$

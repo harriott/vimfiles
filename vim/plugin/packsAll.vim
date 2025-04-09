@@ -39,7 +39,7 @@ let MRU_Window_Height = 20
 " - which is overriden by this:
 " let MRU_Use_Current_Window = 1
 
-nnoremap <leader>m :MRU
+if !has('nvim') | nnoremap <leader>m :MRU | endif
 packadd mru
 
 " $HOME/.vim_mru_files

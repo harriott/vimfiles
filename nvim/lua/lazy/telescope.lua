@@ -2,8 +2,10 @@
 -- $vfn/lua/lazy/telescope.lua
 
 -- :checkhealth telescope
--- :help telescope
--- :Telescope help_tags
+-- :h telescope  then  /^builtin.
+-- :Telescope colorscheme
+-- :Telescope command_history default_text=MRU\ \.
+-- :Telescope symbols
 -- $lazy/telescope.nvim/doc/telescope.txt
 -- Shows keymaps:
 --  insert mode: <c-/>
@@ -56,7 +58,7 @@ return {
       -- /^\s*vim.keymap.set({.*},'\zs.*\ze',
 
       -- buffers ---
-      vim.keymap.set({'n'},'<f1>',function() builtin.buffers{sort_mru=true} end,{desc=':Telescope buffers'})
+      vim.keymap.set({'n'},'<leader><f1>',function() builtin.buffers{sort_mru=true} end,{desc=':Telescope buffers'})
       -- can't diminish the distracting  :<line_number>  at end
       vim.keymap.set({'n'},'<leader>ff',builtin.current_buffer_fuzzy_find,{desc='Telescope current_buffer_fuzzy_find'})
 
@@ -66,6 +68,7 @@ return {
       -- Git ---
       vim.keymap.set({'n'},'<leader>ic',builtin.git_commits,{desc=':Telescope git_commits'})
       vim.keymap.set({'n'},'<leader>ib',builtin.git_bcommits,{desc=':Telescope git_bcommits'})
+      vim.keymap.set({'n'},'<leader>if',builtin.git_files,{desc=':Telescope git_files'})
       vim.keymap.set({'n'},'<leader>ii',builtin.git_status,{desc=':Telescope git_status'})
 
 
@@ -87,11 +90,9 @@ return {
 
       vim.keymap.set({'n'},'<leader>j',function()
         if vim.g.djh == nil then
-          builtin.find_files{cwd="$coreIT"}
-          vim.cmd("echo 'files in $coreIT'")
+          builtin.fd{cwd="$coreIT"}; vim.cmd("echo 'find_files in $coreIT'")
         else
-          builtin.find_files{cwd="$DJH"}
-          vim.cmd("echo 'files in Dropbox/JH'")
+          builtin.fd{cwd="$DJH"}; vim.cmd("echo 'find_files in Dropbox/JH'")
         end
       end, {desc='cd $DJH (or just $coreIT)  then  :Telescope find_files'})
 
@@ -101,6 +102,9 @@ return {
           vim.cmd('cd %:p:h') vim.cmd('pwd') vim.fn.StripStoreCurSel()
           builtin.grep_string({search=vim.api.nvim_eval("g:strippedSearch")}) end,
         {desc='move cwd to file\'s and  :Telescope grep_string  on current search'})
+
+      local function tch_MRU() builtin.command_history({default_text="MRU",}) end
+      vim.keymap.set({'n'},'<leader>m',tch_MRU,{desc=':Telescope command_history MRU .'})
 
       vim.keymap.set({'n'},'<leader><leader>r',function()
           vim.cmd('Rooter') vim.fn.StripStoreCurSel()
@@ -114,9 +118,11 @@ return {
       vim.keymap.set({'n','i','v'},'<f8>',builtin.command_history,{desc=':Telescope command_history'})
       vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc=':Telescope search_history'})
       vim.keymap.set({'n'},'<leader>ht',builtin.help_tags,{desc=':Telescope help_tags'})
-      vim.keymap.set({'n'},'<leader>vm',builtin.keymaps,{desc=':Telescope keymaps (of normal mode)'})
+      vim.keymap.set({'n'},'<leader>va',builtin.marks,{desc=':Telescope marks'})
+      vim.keymap.set({'n'},'<leader>vc',builtin.commands,{desc=':Telescope commands'})
       vim.keymap.set({'n'},'<leader>vf',builtin.filetypes,{desc=':Telescope fileTypes (known to  vim)'})
       vim.keymap.set({'n'},'<leader>vh',builtin.highlights,{desc=':Telescope highlights (known to  vim)'})
+      vim.keymap.set({'n'},'<leader>vm',builtin.keymaps,{desc=':Telescope keymaps (of normal mode)'})
       vim.keymap.set({'n'},'<leader>vo',builtin.vim_options,{desc=':Telescope vim_options'})
       vim.keymap.set({'n'},'<leader>vr',builtin.registers,{desc=':Telescope registers'})
       vim.keymap.set({'n'},'<leader>ws',builtin.spell_suggest,

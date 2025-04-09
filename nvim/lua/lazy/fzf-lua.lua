@@ -40,7 +40,7 @@
 return { "ibhagwan/fzf-lua",
   config = function()
     require("fzf-lua").setup({})
-    vim.keymap.set({'n'},'<leader><f1>','<Cmd>FzfLua buffers<CR>')
+    vim.keymap.set({'n'},'<s-f1>','<Cmd>FzfLua buffers<CR>')
     vim.keymap.set({'n'},'<leader>zd',"<Cmd>FzfLua files cwd=$DWp<CR>",{desc=':FzfLua files cwd=$DWp'})
     vim.keymap.set({'n'},'<leader>zt',"<Cmd>FzfLua files cwd=$TeNo<CR>",{desc=':FzfLua files cwd=$TeNo'})
     vim.keymap.set({'n'},'<leader>zg',"<Cmd>FzfLua files cwd=$onGH<CR>",{desc=':FzfLua files cwd=$onGH'})

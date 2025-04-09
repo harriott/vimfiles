@@ -10,5 +10,6 @@
 " for  $vfn/lua/lazy/telescope.lua
 " if set as a highlight, this regex gets overriden in nvim,
 "  so with  =m  I can invoke it manually as a search
-noremap <localleader>m :let@/="^\\s*vim.keymap.set({.*},'\\zs[^']*"<cr>:set hlsearch<cr>:echo 'search set to your mapped keys'<cr>
+noremap <localleader>c :let@/=":Telescope \\zs[^']*" <cr>:set hlsearch<cr>:echo 'search set to Telescope commands'<cr>
+noremap <localleader>k :let@/="^\\s*vim.keymap.set({.*},'\\zs[^']*"<cr>:set hlsearch<cr>:echo 'search set to your mapped keys'<cr>
 

@@ -30,6 +30,8 @@ function! VimFolds()
   endif
 endfunction
 
+noremap <silent><localleader>m :let@/='\v<(imap\|inoremap\|keymap\|nmap\|noremap\|nnoremap\|omap\|onoremap\|vmap\|vnoremap\|xmap\|xnoremap)>'<cr>:set hlsearch<cr>:echo 'search set to variants of map command'<cr>
+
 setlocal foldexpr=VimFolds() foldmethod=expr
 
 " heading strength
