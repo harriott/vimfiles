@@ -95,6 +95,7 @@ end
 
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
+-- :h lazy.nvim
 -- :Lazy update
 require 'lazy/bootstrap'
 
@@ -123,27 +124,6 @@ require('lazy').setup(
       -- :GrugFar
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
     {'numToStr/Comment.nvim', opts={}, }, -- $vimfiles/QR/variants.md
-    require'lazy/boole_nvim',
-    -- require'lazy/catppuccin',
-    require'lazy/fzf-lua',
-    require'lazy/harpoon',
-    require'lazy/helpview_nvim',
-    require'lazy/leap',
-    require'lazy/lualine',
-    require'lazy/neogit',
-    -- require'lazy/nvim-hlslens',
-    require'lazy/nvim-cmp', -- $vfn/lua/lazy/nvim-cmp.lua
-    require'lazy/nvim-notify',
-    require'lazy/nvim-tree',
-    require'lazy/nvim-web-devicons',
-    require'lazy/oil',
-    require'lazy/nvim-surround',
-    -- require'lazy/tabby',
-    require'lazy/snipe_nvim',
-    require'lazy/telescope', -- something in here slowing folding of large md's
-      require'lazy/telescope-frecency',
-      require'lazy/telescope-fzf-native',
-      require'lazy/nvim-neoclip',
     require'lazy/nvim-lspconfig',require'lazy/lspsaga',
       -- :che lspsaga
       {'williamboman/mason.nvim',config=function() require'mason'.setup() end,},
@@ -168,6 +148,29 @@ require('lazy').setup(
         -- context.vim  works better
     require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
     { "wurli/visimatch.nvim", opts = {} },
+    -- ▩--> moduled
+    require'lazy/boole_nvim',
+    -- require'lazy/catppuccin',
+    require'lazy/fzf-lua',
+    require'lazy/harpoon',
+    require'lazy/helpview_nvim',
+    require'lazy/leap',
+    require'lazy/lualine',
+    require'lazy/neogit',
+    -- require'lazy/nvim-hlslens',
+    require'lazy/nvim-cmp', -- $vfn/lua/lazy/nvim-cmp.lua
+    require'lazy/nvim-notify',
+    require'lazy/nvim-tree',
+    require'lazy/nvim-web-devicons',
+    require'lazy/oil',
+    require'lazy/nvim-surround',
+    require'lazy/render-markdown_nvim',
+    -- require'lazy/tabby',
+    require'lazy/snipe_nvim',
+    require'lazy/telescope', -- something in here slowing folding of large md's
+      require'lazy/telescope-frecency',
+      require'lazy/telescope-fzf-native',
+      require'lazy/nvim-neoclip',
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack
@@ -199,40 +202,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
     vim.keymap.set('n','<leader>lo','<cmd>Lspsaga outline<cr>',
       {buffer=ev.buf,desc='Lspsaga outline'})
-  end,})
-
--- ▩-> 2 for nvim-treesitter
--- $lazy/nvim-treesitter/doc/nvim-treesitter.txt
--- :che treesitter
--- :h nvim-treesitter-commands
-vim.keymap.set({'n'},'<localleader>t',function()vim.treesitter.stop()end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vfv/after/syntax/lua.vim
-
--- ▩--> 2 for lspsaga
--- ▩--> parsers 0 unix
-  -- $vfs/nvim-unix-TSInstallInfo-DOP3040D11S.txt
-  -- $vfs/nvim-unix-TSInstallInfo-sbMb.txt
-  -- /usr/lib/tree_sitter
-  -- r $lazy/nvim-treesitter/parser
-
--- ▩--> parsers 0 win64
-  -- $vfs/nvim-win64-TSInstallInfo-HPEB840G37.txt
-  -- g $lazy\nvim-treesitter\parser
-
--- ▩--> parsers 1 get
-function GetTSParsers()
-  -- vim.cmd 'TSInstall bash'
-  -- vim.cmd 'TSInstall lua'
-    -- error (vim-illuminate) if open a  *.lua  without this parser present
-  -- vim.cmd 'TSInstall markdown'
-  -- vim.cmd 'TSInstall perl'
-  -- vim.cmd 'TSInstall python'
-  -- vim.cmd 'TSInstall query'
-  -- vim.cmd 'TSInstall sh'
-  -- vim.cmd 'TSInstall vim'
-  -- vim.cmd 'TSInstall vimdoc'
-end -- lua GetTSParsers(), then update the TSInstallInfo lists
-
--- on MSWin do these in  x64 Native Tools Command Prompt
-
--- :TSUpdate  updates all parsers
+  end,}) -- q
+-- can't figure how to include this in  $vfn/lua/lazy/lspsaga.lua
 

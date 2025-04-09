@@ -22,8 +22,8 @@ endif
 nnoremap <buffer><leader>o :ContextToggleWindow<CR>
 
 " select one or more headings, then
-vnoremap <buffer><leader>> :s/-- -/-- --/<CR>  " demote
-vnoremap <buffer><leader>< :s/-- --/-- -/<CR>  " promote
+vnoremap <buffer><leader>> :s/-- ▩-/-- ▩--/<CR>  " demote
+vnoremap <buffer><leader>< :s/-- ▩--/-- ▩-/<CR>  " promote
 
 ""> foldexpr
 function! LuaF()

@@ -1,6 +1,10 @@
+-- vim: fdl=3:
+
+-- $vfn/lua/lazy/lspsaga.lua
 
 -- $lazy/lspsaga.nvim/doc/lspsaga.nvim.txt
--- $vfn/lua/lazy/lspsaga.lua
+
+-- \lo = Lspsaga outline ($vfn/lua/init.lua)
 
 return {
   { 'nvimdev/lspsaga.nvim',

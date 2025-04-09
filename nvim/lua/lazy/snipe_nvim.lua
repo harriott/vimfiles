@@ -4,7 +4,6 @@
 -- begun with  $DCGRs/d-unix/r-linkarzu-dotfiles-latest/neovim/neobean/lua/plugins/snipe.lua
 
 return { "leath-dub/snipe.nvim",
-  -- keys = { { '<f1>', function() require("snipe").open_buffer_menu() end, desc = "Open Snipe buffer menu", }, },
   config = function()
     local snipe = require("snipe")
     snipe.setup({
