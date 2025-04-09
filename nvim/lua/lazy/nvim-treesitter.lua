@@ -10,6 +10,7 @@ return {
     build = ':TSUpdate',
     priority = 1000,
 
+    -- ▩--> opts
     opts = {
       -- auto_install = true, -- pull in parsers without asking
         -- can't set this because
@@ -50,6 +51,7 @@ return {
       indent = { disable = { 'markdown', }, },
     },
 
+    -- ▩--> config
     config = function(_, opts)
 
       function GetTSParsers()

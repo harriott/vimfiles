@@ -101,7 +101,9 @@ require 'lazy/bootstrap'
 
 -- ▩-> 1 lazy.nvim 1
 require('lazy').setup(
+  -- ▩--> nvim packages
   {
+    -- ▩---> direct calls
     {'akinsho/bufferline.nvim', config=function() require'bufferline'.setup()
       options = {
         themable = true, -- ensures current buffer name is visible
@@ -124,31 +126,8 @@ require('lazy').setup(
       -- :GrugFar
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
     {'numToStr/Comment.nvim', opts={}, }, -- $vimfiles/QR/variants.md
-    require'lazy/nvim-lspconfig',require'lazy/lspsaga',
-      -- :che lspsaga
-      {'williamboman/mason.nvim',config=function() require'mason'.setup() end,},
-        -- $lazy/mason.nvim/doc/mason.txt
-        -- :che mason
-        -- :LspInfo
-        -- :Mason
-          -- g?  toggles help
-        -- :MasonLog (~/.local/state/nvim/mason.log)
-        -- for  $vfn/lua/lazy/nvim-lspconfig.lua
-        -- packages directory
-          -- :edit $MASON/packages (where defined?)
-          -- g $mason
-          -- r $mason
-      {"williamboman/mason-lspconfig.nvim",
-        -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
-        -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
-         config=function() require('mason-lspconfig').setup() end,},
-    require'lazy/nvim-treesitter', -- $vfn/lua/lazy/nvim-treesitter.lua
-      'nvim-treesitter/nvim-treesitter-context',
-        -- *.lua  not perfect, even when  parser enabled
-        -- context.vim  works better
-    require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
     { "wurli/visimatch.nvim", opts = {} },
-    -- ▩--> moduled
+    -- ▩---> moduled
     require'lazy/boole_nvim',
     -- require'lazy/catppuccin',
     require'lazy/fzf-lua',
@@ -171,6 +150,32 @@ require('lazy').setup(
       require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',
       require'lazy/nvim-neoclip',
+    require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
+    -- ▩---> nvim-lspconfig
+    require('lazy/nvim-lspconfig'),
+    require("lazy/lspsaga"),
+      {'williamboman/mason.nvim', config=function() require'mason'.setup() end,},
+        -- $lazy/mason.nvim/doc/mason.txt
+        -- :che mason
+        -- :LspInfo
+        -- :Mason
+          -- g?  toggles help
+        -- :MasonLog (~/.local/state/nvim/mason.log)
+        -- for  $vfn/lua/lazy/nvim-lspconfig.lua
+        -- packages directory
+          -- :edit $MASON/packages (where defined?)
+          -- g $mason
+          -- r $mason
+      {"williamboman/mason-lspconfig.nvim",
+        -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
+        -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
+         config=function() require('mason-lspconfig').setup() end,},
+    -- ▩---> nvim-treesitter
+    require'lazy/nvim-treesitter', -- $vfn/lua/lazy/nvim-treesitter.lua
+      'nvim-treesitter/nvim-treesitter-context',
+        -- *.lua  not perfect, even when  parser enabled
+        -- context.vim  works better
+  -- ▩--> more stuff
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack

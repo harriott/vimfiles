@@ -6,8 +6,8 @@
 -- $lazy/nvim-lspconfig/doc/lspconfig.txt
 -- install language servers with Mason ($vfn/lua/init.lua)
 
+-- :LspInfo  then  q
 -- :LspLog (~/.local/state/nvim/lsp.log)
--- :LspStop
 -- K => vim.lsp.buf.hover()
 -- KK => enters hover window, q quits
 
@@ -32,19 +32,24 @@ return {
         -- vscode-json-languageservice  for  json
         -- yamlls
 
+      -- ▩-> astro
       require'lspconfig'.astro.setup{} -- :MasonInstall astro-language-server
 
+      -- ▩-> bashls
       require'lspconfig'.bashls.setup{} -- :MasonInstall bash-language-server
       -- $mason/bash-language-server/node_modules/bash-language-server/src/config.ts
       -- reports Error for CLRFs
 
+      -- ▩-> ltex
       -- :MasonInstall ltex-ls
       -- require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
         -- but no completions...
 
+      -- ▩-> lemminx
       -- :MasonInstall lemminx
       if vim.fn.has("win64") == 1 then require'lspconfig'.lemminx.setup{} end
 
+      -- ▩-> lua_ls
       -- :MasonInstall lua-language-server
         -- :MasonUninstall lua-language-server  with no lua files open instead of updating
       require'lspconfig'.lua_ls.setup {
@@ -62,11 +67,14 @@ return {
           settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
         } -- and see fix in  $vfn/lua/init.lua
 
+      -- ▩-> mdx_analyzer
       -- :MasonInstall mdx-analyzer
       require'lspconfig'.mdx_analyzer.setup{}
 
+      -- ▩-> mutt_ls
       -- require'lspconfig'.mutt_ls.setup{} -- :MasonInstall mutt-language-server
 
+      -- ▩-> perlnavigator
       -- :MasonInstall perlnavigator
         -- $mason/perlnavigator/package.json
       require'lspconfig'.perlnavigator.setup{cmd={"perlnavigator"}, settings = {
@@ -74,6 +82,7 @@ return {
             perlcriticProfile = '', perlcriticEnabled = true, } } }
             -- bung an exit in some code to see this work
 
+      -- ▩-> powershell_es
       -- :MasonInstall powershell-editor-services
       --  might need to close nvim and manually Delete it to be able to re-install a newer version
       require'lspconfig'.powershell_es.setup{
@@ -82,8 +91,10 @@ return {
         settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } } }
         -- $nvim/powershell_es-mason-schemas-lsp.json
 
+      -- ▩-> pyright
       require'lspconfig'.pyright.setup{} -- :MasonInstall pyright
 
+      -- ▩-> vimls
       -- :MasonInstall vim-language-server
       require'lspconfig'.vimls.setup{ cmd={"vim-language-server","--stdio"}, filetypes={'vim'},
         init_options = { diagnostic = { enable = true },
@@ -95,11 +106,14 @@ return {
           vimruntime = "" } }
         -- no sign that these are achieving anything extra
 
+      -- ▩-> keymaps
       vim.keymap.set({'n'},'<localleader>[',vim.diagnostic.goto_prev,{desc='jump to & show previous diagnostic'})
       vim.keymap.set({'n'},'<localleader>]',vim.diagnostic.goto_next,{desc='jump to & show next diagnostic'})
-      vim.keymap.set({'n'},'<localleader>s',function()vim.cmd('LspStop<cr>')end,{desc='LspStop'})
-        -- language server will restart on buffer reload
 
+      vim.keymap.set({'n'},'<localleader>r', function() vim.cmd('LspRestart') print('LspRestart\'d') end,{desc=':LspRestart'})
+      vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'})
+
+    -- ▩-> end
     end,
   },
 } -- sets  omnifunc=v:lua.vim.lsp.omnifunc
