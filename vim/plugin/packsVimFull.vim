@@ -25,8 +25,8 @@ if has('win64')
   nnoremap <F8> :FuzzyCmdHistory<CR>
   inoremap <F8> <Esc>:FuzzyCmdHistory<CR>
   vnoremap <F8> <Esc>:FuzzyCmdHistory<CR>
-endif
 packadd fuzzyy
+endif
 " :FuzzyCmdHistory
 " :FuzzyHighlights - ctrl+k toggles light/dark
 " \fb = :FuzzyBuffers

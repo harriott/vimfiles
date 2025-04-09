@@ -561,7 +561,7 @@ nnoremap <leader>x <C-W>c
 " re-open the quickfix-window
 "  eg to look again at results of vimgrep
 " noremap <leader>q :copen<CR>
-"  now using  ListToggle
+"  now usin g  ListToggle
 
 "">>> splits
 " move focus left (:h ctrl-w_<left>)
@@ -676,6 +676,14 @@ function! VimgrepSelection()
   call StripStoreCurSel()
   let l:filetypes = '*.{cls,md,dw,sh,sty,tex,txt,vim}'
   execute 'silent! vimgrep #'.@l.'#j '.l:filetypes' **/'.l:filetypes
+  copen
+endfunction
+
+" search in my Bash & PowerShell configurations
+nnoremap <leader>bp :call VimgrepBcPc()<CR>
+function! VimgrepBcPc()
+  call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@l.'#j '.$AjB.'/* '.$MSWin10.'/nodes/PS/Env.ps1 '.$MSWin10.'/nodes/PS/Profile.ps1 '.$OSAB.'/nodes/Bash* '.$OSL.'/nodes/bashrc-*'
   copen
 endfunction
 

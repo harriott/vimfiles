@@ -96,14 +96,14 @@ return {
         end
       end, {desc='cd $DJH (or just $coreIT)  then  :Telescope find_files'})
 
-      vim.keymap.set({'n'},'<leader>lg',":Telescope live_grep_args<CR>")
+      vim.keymap.set({'n'},'<leader>lg',":Telescope live_grep_args<CR>") -- rg based on cwd
 
       vim.keymap.set({'n'},'<leader><leader>g',function()
           vim.cmd('cd %:p:h') vim.cmd('pwd') vim.fn.StripStoreCurSel()
           builtin.grep_string({search=vim.api.nvim_eval("g:strippedSearch")}) end,
         {desc='move cwd to file\'s and  :Telescope grep_string  on current search'})
 
-      local function tch_MRU() builtin.command_history({default_text="MRU",}) end
+      local function tch_MRU() builtin.command_history({default_text="MRU \\.",}) end
       vim.keymap.set({'n'},'<leader>m',tch_MRU,{desc=':Telescope command_history MRU .'})
 
       vim.keymap.set({'n'},'<leader><leader>r',function()
