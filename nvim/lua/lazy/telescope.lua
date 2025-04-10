@@ -23,7 +23,10 @@ return {
     },
     lazy = false,  -- for  nvim-notify
 
+    -- ▩-> config
     config = function()
+
+      -- ▩--> setup
       require'telescope'.setup{ -- :help telescope.setup()
         defaults = {
           -- file_ignore_patterns={"%.md"}, -- avoids folding delay but also makes .md's not there...
@@ -53,26 +56,24 @@ return {
       pcall(require'telescope'.load_extension, 'fzf')
       local builtin = require 'telescope.builtin' -- :help telescope.builtin
 
-      --------------
-      -- keymaps --
+      -- ▩--> keymaps
       -- /^\s*vim.keymap.set({.*},'\zs.*\ze',
 
-      -- buffers ---
+      -- ▩---> buffers
       vim.keymap.set({'n'},'<leader><f1>',function() builtin.buffers{sort_mru=true} end,{desc=':Telescope buffers'})
       -- can't diminish the distracting  :<line_number>  at end
-      vim.keymap.set({'n'},'<leader>ff',builtin.current_buffer_fuzzy_find,{desc='Telescope current_buffer_fuzzy_find'})
+      vim.keymap.set({'n'},'<leader>ff',builtin.current_buffer_fuzzy_find,{desc=':Telescope current_buffer_fuzzy_find'})
 
       vim.keymap.set({'n'},'<leader>tt',builtin.treesitter,{desc=':Telescope treesitter'})
       -- can help in Lua, Python
 
-      -- Git ---
+      -- ▩---> Git
       vim.keymap.set({'n'},'<leader>ic',builtin.git_commits,{desc=':Telescope git_commits'})
       vim.keymap.set({'n'},'<leader>ib',builtin.git_bcommits,{desc=':Telescope git_bcommits'})
       vim.keymap.set({'n'},'<leader>if',builtin.git_files,{desc=':Telescope git_files'})
       vim.keymap.set({'n'},'<leader>ii',builtin.git_status,{desc=':Telescope git_status'})
 
-
-      -- LSP --
+      -- ▩---> LSP
       vim.keymap.set({'n'},'<leader>ld',builtin.diagnostics,{desc=':Telescope diagnostics'})
       vim.keymap.set({'n'},'<leader>ls',builtin.lsp_document_symbols,{desc=':Telescope lsp_document_symbols'})
       vim.keymap.set({'n'},'<leader>lss',builtin.lsp_workspace_symbols,{desc=':Telescope lsp_workspace_symbols'})
@@ -80,19 +81,19 @@ return {
         vim.keymap.set({'n'},'<leader>lf',builtin.lsp_definitions,{desc=':Telescope lsp_definitions'})
         vim.keymap.set({'n'},'<leader>lff',builtin.lsp_type_definitions,{desc=':Telescope lsp_type_definitions'})
 
-      -- shell --
+      -- ▩---> shell
       vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'})
 
       vim.keymap.set({'n'},'<leader><leader><f1>',function() builtin.jumplist{show_line=false} end,
         {desc='usable  :Telescope jumplist'})
 
-      vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc='Telescope man_pages'})
+      vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc=':Telescope man_pages'})
 
       vim.keymap.set({'n'},'<leader>j',function()
         if vim.g.djh == nil then
-          builtin.fd{cwd="$coreIT"}; vim.cmd("echo 'find_files in $coreIT'")
+          builtin.fd{cwd="$coreIT"}; vim.cmd("echo ':Telescope find_files in $coreIT'")
         else
-          builtin.fd{cwd="$DJH"}; vim.cmd("echo 'find_files in Dropbox/JH'")
+          builtin.fd{cwd="$DJH"}; vim.cmd("echo ':Telescope find_files in Dropbox/JH'")
         end
       end, {desc='cd $DJH (or just $coreIT)  then  :Telescope find_files'})
 
@@ -111,10 +112,10 @@ return {
           builtin.grep_string({search=vim.api.nvim_eval("g:strippedSearch")}) end,
         {desc=':Rooter  then  :Telescope grep_string  on current search'})
 
-      --- telescope --
+      -- ▩---> telescope
       vim.keymap.set({'n'},'<leader>pp',builtin.resume,{desc=':Telescope resume (= previous picker)'})
 
-      -- vim stuff --
+      -- ▩---> vim stuff
       vim.keymap.set({'n','i','v'},'<f8>',builtin.command_history,{desc=':Telescope command_history'})
       vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc=':Telescope search_history'})
       vim.keymap.set({'n'},'<leader>ht',builtin.help_tags,{desc=':Telescope help_tags'})
@@ -127,8 +128,8 @@ return {
       vim.keymap.set({'n'},'<leader>vr',builtin.registers,{desc=':Telescope registers'})
       vim.keymap.set({'n'},'<leader>ws',builtin.spell_suggest,
         {desc=':Telescope spell_suggest  for current word (as opposed to  z='})
-      --------------
 
+    -- ▩-> end
     end,
   },
 }

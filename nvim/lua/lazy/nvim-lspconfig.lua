@@ -1,5 +1,5 @@
 
--- https://harriott.githubio/ - Fri 10 May 2024
+-- https://harriott.githubio/ - Thu 10 Apr 2025
 
 -- $vfn/lua/lazy/nvim-lspconfig.lua
 
@@ -8,8 +8,13 @@
 
 -- :LspInfo  then  q
 -- :LspLog (~/.local/state/nvim/lsp.log)
--- K => vim.lsp.buf.hover()
--- KK => enters hover window, q quits
+
+-- Diagnostics:
+--  also $vfn/lua/init.lua
+--  K => vim.lsp.buf.hover()
+--  KK => enters hover window, q quits
+--  [d / ]d => prev / next diagnostic
+--  <c-w>k => vim.diagnostic.open_float()
 
 return {
   { 'folke/lazydev.nvim', -- recommended
@@ -107,8 +112,8 @@ return {
         -- no sign that these are achieving anything extra
 
       -- ▩-> keymaps
-      vim.keymap.set({'n'},'<localleader>[',vim.diagnostic.goto_prev,{desc='jump to & show previous diagnostic'})
-      vim.keymap.set({'n'},'<localleader>]',vim.diagnostic.goto_next,{desc='jump to & show next diagnostic'})
+      vim.keymap.set({'n'},'<localleader>[', function() vim.diagnostic.jump({count= -1,float = true}) end, {desc='jump to & show previous diagnostic'})
+      vim.keymap.set({'n'},'<localleader>]', function() vim.diagnostic.jump({count= 1,float = true}) end, {desc='jump to & show next diagnostic'})
 
       vim.keymap.set({'n'},'<localleader>r', function() vim.cmd('LspRestart') print('LspRestart\'d') end,{desc=':LspRestart'})
       vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'})

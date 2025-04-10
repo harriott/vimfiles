@@ -1,6 +1,51 @@
-vim: set fdl=4:
+vim: set fdl=6:
 
     C:\Vim\vim91\vim.exe $vimfiles/test/README.md
+
+```bash
+echo hello
+```
+
+```python
+def main() -> None:
+    print("Hello, World!")
+```
+
+```rust
+fn main() {
+    println!("Hello, World!");
+```
+
+
+- list level 1
+- list level 1
+- list level 1
+    - list level 2
+    - list level 2
+    - list level 2
+        - list level 3
+            - list level 4
+            - list level 4
+            - list level 4
+                - list level 5
+                - list level 5
+                - list level 5
+                    - list level 6
+                        - list level 7
+                        - list level 7
+                        - list level 7
+
+# heading level 1
+
+## heading level 2
+
+### heading level 3
+
+#### heading level 4
+
+##### heading level 5
+
+###### heading level 6
 
 # vimfiles test
 my reduced vim files for testing

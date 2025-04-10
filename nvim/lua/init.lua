@@ -7,8 +7,22 @@
 
 vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
 
+-- ▩-> 0 generic boolean option toggle function
+function vim_opt_toggle(opt)
+  local message = opt
+  if vim.opt[opt]:get() == false then
+    message = message .. " on"
+    vim.opt[opt] = true
+  else
+    message = message .. " off"
+    vim.opt[opt] = false
+  end
+  vim.notify(message)
+end
+
 -- ▩-> 0 layout
 vim.g.have_nerd_font = true  -- :=vim.g.have_nerd_font
+vim.o.winborder = 'rounded'
 vim.opt.cursorline = true
 vim.opt.mouse = 'a' -- enable mouse mode
 vim.opt.showmode = false -- don't show the mode, since it's already in the status line
@@ -16,11 +30,9 @@ vim.opt.showmode = false -- don't show the mode, since it's already in the statu
 vim.api.nvim_set_hl(0, '@lsp.type.comment', {}) -- because  lua_ls  sets a symantic token...
 
 -- ▩--> diagnostics
--- :lua vim.lsp.buf.code_action()
-vim.diagnostic.config({ float = { border = 'rounded', }, })
-vim.diagnostic.config({ virtual_text = false, })
-vim.keymap.set('n', '<leader>k', '<cmd>lua vim.diagnostic.open_float()<cr>')
-vim.o.winborder = 'rounded'
+-- :lua vim.lsp.buf.code_action() " on a flagged line
+vim.diagnostic.config({ jump = { float = true }}) -- opens the float
+vim.diagnostic.config({ virtual_text = false, }) -- no messy stuff
 
 -- ▩--> window title
 if vim.fn.has("win64") == 1 then
@@ -76,22 +88,9 @@ vim.keymap.set({'t'},'<C-j>','<Cmd>wincmd k<CR>',{desc='normal mode and move foc
 vim.keymap.set({'t'},'<C-k>','<Cmd>wincmd k<CR>',{desc='normal mode and move focus up'})
 vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode to normal mode' })
 
--- ▩-> 0 toggles
+-- ▩-> 0 nvim-cmp on
 vim.g.cmp_on = true -- $vfn/lua/lazy/nvim-cmp.lua
--- vim.cmd([[ autocmd FileType TelescopePrompt let g:cmp_on = v:false ]])
-
--- ▩--> 0 generic boolean option toggle function
-function vim_opt_toggle(opt)
-  local message = opt
-  if vim.opt[opt]:get() == false then
-    message = message .. " on"
-    vim.opt[opt] = true
-  else
-    message = message .. " off"
-    vim.opt[opt] = false
-  end
-  vim.notify(message)
-end
+vim.g.rmn_on = true -- $vfn/lua/lazy/nvim-cmp.lua
 
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt

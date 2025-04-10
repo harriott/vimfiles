@@ -9,6 +9,7 @@ Joseph's (g)Vim Quick Reference
     :se gfn=*         " pop-up font selection
 
 # Nvim
+    $vfn/lua/lazy/nvim-lspconfig.lua
     $VIMRUNTIME/filetype.lua
     :echo has('nvim')
     :echo matchstr('source_to_match','match')
@@ -24,14 +25,7 @@ Joseph's (g)Vim Quick Reference
 
 ```vim
 :verb ve  " :verbose version
-K         " vim.lsp.buf.hover()
-KK        " enters hover window, q quits
 ```
-
-## diagnostics
-- `<C-W>d` (= `vim.diagnostic.open_float()`)
-- `[d` (= `vim.diagnostic.goto_prev()`)
-- `]d` (= `vim.diagnostic.goto_next()`)
 
 ## help
     \K  " $vfn/init.vim
