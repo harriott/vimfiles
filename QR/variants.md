@@ -21,8 +21,6 @@ Joseph's (g)Vim Quick Reference
     fd health\.lua $vfn/packs-nvim  " health.lua
     fd init\.lua $vfn/packs-nvim  " init.lua
 
-`:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
-
 ```vim
 :verb ve  " :verbose version
 ```
@@ -38,8 +36,10 @@ Joseph's (g)Vim Quick Reference
     :Man rg
 
 ## lua
+    :h vim.cmd
     :lua if x==nil then print("x is nil") end
     :lua vim.cmd.tabnew()
+    :lua vim.cmd('wshada')
 
 ### boolean
     lua b = true
@@ -84,6 +84,10 @@ Joseph's (g)Vim Quick Reference
 ### unix
     n ~/.vimswap
 
+#### shada file
+    cp ~/.local/share/nvim/shada/main.shada ~/nvim.shada
+    r ~/.local/share/nvim/shada
+
 `Arch`, if `handlr get .texty_extension`  returns `vim.desktop`, both `gVim` & `Vim` launch with `$VIM` & `$VIMRUNTIM` set as for `Nvim`!
 
 ### win64 ?
@@ -100,6 +104,16 @@ Joseph's (g)Vim Quick Reference
 ### Comment.nvim
 - `gb[motion]`/`gc[motion]` toggles block/line comment [motion] or selection
 - `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
+
+## settings
+
+`:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
+
+### default-mappings
+    :h default-mappings
+
+- `<c-w>k` => `vim.diagnostic.open_float()`
+- `[d`/`]d`=> previous/next diagnostic
 
 ## terminal
     :lua vim.cmd.terminal()
@@ -122,6 +136,7 @@ vi           " exit Ex mode
 :echo has('win64')
 :h key-notation
 :h index     " lists the all of the commands
+:h split()
 :his         " Display command-line history
 :his s       " Display search string history
 :profile ... " for speed tests
@@ -235,6 +250,7 @@ $misc/CP/vimtest/README.md
 ### runtimepath
     :Bufferize se rtp
     :echo match(&runtimepath, 'mru') " returns -1 if MRU is not loaded
+    :put =&rtp
 
 `:Bufferize echo &rtp`, then `:s/,/\r/g`
 
@@ -243,13 +259,19 @@ $misc/CP/vimtest/README.md
     :se pp
 
 ### syntax highlighting
+	:h ownsyntax
 	:h syn-region
     :windo echo b:current_syntax
     C \usr\share\vim\vim90\syntax
     C:\Vim\vim90\syntax
-    let g:syntax_on
 
 `syntax.txt`
+
+#### state
+    :h syn-off
+    :let g:syntax_on
+    :sy off
+    :sy on
 
 #### settings
     :Bufferize sy  " :h syn-list

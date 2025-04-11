@@ -13,8 +13,6 @@
 --  also $vfn/lua/init.lua
 --  K => vim.lsp.buf.hover()
 --  KK => enters hover window, q quits
---  [d / ]d => prev / next diagnostic
---  <c-w>k => vim.diagnostic.open_float()
 
 return {
   { 'folke/lazydev.nvim', -- recommended
@@ -45,14 +43,16 @@ return {
       -- $mason/bash-language-server/node_modules/bash-language-server/src/config.ts
       -- reports Error for CLRFs
 
-      -- ▩-> ltex
-      -- :MasonInstall ltex-ls
-      -- require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
-        -- but no completions...
-
       -- ▩-> lemminx
       -- :MasonInstall lemminx
       if vim.fn.has("win64") == 1 then require'lspconfig'.lemminx.setup{} end
+
+      -- ▩-> ltex
+      -- for human language inside a few markup languages
+      -- :MasonInstall ltex-ls
+      -- :MasonUninstall ltex-ls
+      require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
+      -- can take a while, then underlines possible errors
 
       -- ▩-> lua_ls
       -- :MasonInstall lua-language-server
@@ -77,7 +77,9 @@ return {
       require'lspconfig'.mdx_analyzer.setup{}
 
       -- ▩-> mutt_ls
-      -- require'lspconfig'.mutt_ls.setup{} -- :MasonInstall mutt-language-server
+      -- Doesn't seem to do anything...
+      -- :MasonInstall mutt-language-server
+      require'lspconfig'.mutt_ls.setup{}
 
       -- ▩-> perlnavigator
       -- :MasonInstall perlnavigator
@@ -101,15 +103,30 @@ return {
 
       -- ▩-> vimls
       -- :MasonInstall vim-language-server
-      require'lspconfig'.vimls.setup{ cmd={"vim-language-server","--stdio"}, filetypes={'vim'},
-        init_options = { diagnostic = { enable = true },
-          indexes = { count = 3, gap = 100,
+      -- $mason/vim-language-server/node_modules/vim-language-server/README.md
+      vim.g.markdown_fenced_languages = { 'vim' }
+      require'lspconfig'.vimls.setup{
+        cmd={"vim-language-server","--stdio"},
+        filetypes={'vim'},
+        init_options = {
+          diagnostic = { enable = true },
+          indexes = {
+            count = 3, gap = 100,
             projectRootPatterns = { "runtime", "nvim", ".git", "autoload", "plugin" },
-            runtimepath = true },
-          isNeovim = true, iskeyword = "@,48-57,_,192-255,-#", runtimepath = "",
+            runtimepath = true
+          },
+          isNeovim = true,
+          iskeyword = "@,48-57,_,192-255,-#",
+          runtimepath = "", -- no need to specify, all is found
           suggest = { fromRuntimepath = true, fromVimruntime = true },
-          vimruntime = "" } }
-        -- no sign that these are achieving anything extra
+          vimruntime = ""
+        }
+      } -- no sign that these are achieving anything extra
+
+      -- ▩-> texlab
+      -- \fuck}  gets an Error, \fuck  is ignored
+      -- :MasonInstall texlab
+      require'lspconfig'.texlab.setup{}
 
       -- ▩-> keymaps
       vim.keymap.set({'n'},'<localleader>[', function() vim.diagnostic.jump({count= -1,float = true}) end, {desc='jump to & show previous diagnostic'})

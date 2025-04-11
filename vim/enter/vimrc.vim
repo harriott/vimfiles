@@ -67,11 +67,18 @@ endif
 
 ""> mappings 0 localleader
 let maplocalleader = '='
-  " ='s filter mapping (:h =) still works, so these aren't needed
-  " nnoremap _ =
-  " xnoremap _ =
-  " onoremap _ =
-nnoremap <localleader>h :echo 'you just hit <localleader>h'<cr>
+  " ='s filter mapping (:h =) still works, so these wouldn't be needed
+    " nnoremap _ =
+    " xnoremap _ =
+    " onoremap _ =
+
+"">> filter off
+" These don't achieve it:
+  " se ep=dummy  " equalprg
+  " se inde=-1  " indentexpr
+" These do:
+  nnoremap <localleader>= :echo 'you just hit <localleader>='<cr>
+  vnoremap <localleader>= <esc>:echo 'you just hit <localleader>='<cr>
 
 ""> mappings 1
 " continued, with other stuff, in  $vfv/plugin/plugin.vim

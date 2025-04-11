@@ -40,6 +40,7 @@ nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
 "  U   " unstages all
 "  :GB :GBrowse
 "  :Gclog  " load commit history,  (  &  )  to navigate
+"  :Gdiffsplit  " staged to left of current
 "  :Git pull
 
 packadd vim-fugitive
@@ -227,7 +228,8 @@ packadd vim-pandoc-syntax
 
 "">> vim-prettier
 " $vfvp/packs-cp-full/opt/vim-prettier/doc/prettier.txt
-" :Prettier
+" files that have '@format' annotation in the header of the file.
+" :Prettier  " css graphql javascript json less scss typescript
 packadd vim-prettier
 
 "">> vim-ps1

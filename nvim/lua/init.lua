@@ -29,10 +29,13 @@ vim.opt.showmode = false -- don't show the mode, since it's already in the statu
 
 vim.api.nvim_set_hl(0, '@lsp.type.comment', {}) -- because  lua_ls  sets a symantic token...
 
--- ▩--> diagnostics
+-- ▩--> vim.diagnostic
 -- :lua vim.lsp.buf.code_action() " on a flagged line
-vim.diagnostic.config({ jump = { float = true }}) -- opens the float
-vim.diagnostic.config({ virtual_text = false, }) -- no messy stuff
+vim.diagnostic.config({
+  float = { header = 'vim.diagnostic', source = true, },
+  jump = { float = true, }, -- opens the float
+  virtual_text = false, -- no messy stuff
+}) -- lua vim.diagnostic.setqflist()  " quickfix of recents
 
 -- ▩--> window title
 if vim.fn.has("win64") == 1 then
@@ -72,10 +75,14 @@ if vim.g.neovide then
   -- vim.g.neovide_light_radius = 5
 end
 
--- ▩-> 0 nVim
+-- ▩-> 0 Nvim
 vim.opt.hlsearch = true
 vim.opt.updatetime = 250 -- decrease swap update time
 vim.opt.inccommand = 'split' -- preview substitutions as you type
+
+-- Easier diagnostics:
+vim.keymap.set({'n'},'ç(', vim.diagnostic.goto_prev)
+vim.keymap.set({'n'},'ç)', vim.diagnostic.goto_next)
 
 -- ▩--> disable  netrw  for  nvim-tree
 vim.g.loaded_netrw = 1
@@ -131,7 +138,7 @@ require('lazy').setup(
     -- require'lazy/catppuccin',
     require'lazy/fzf-lua',
     require'lazy/harpoon',
-    require'lazy/helpview_nvim',
+    require'lazy/helpview_nvim', -- :h helpview.nvim-commands  :Helpview toggle
     require'lazy/leap',
     require'lazy/lualine',
     require'lazy/neogit',
@@ -149,6 +156,7 @@ require('lazy').setup(
       require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',
       require'lazy/nvim-neoclip',
+    require'lazy/trouble_nvim',
     require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
     -- ▩---> nvim-lspconfig
     require('lazy/nvim-lspconfig'),

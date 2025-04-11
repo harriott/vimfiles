@@ -98,18 +98,6 @@ xnoremap q, q:
 nnoremap q: <NOP>
 xnoremap q: <NOP>
 
-""> easy q macro
-if v:lang =~ 'en'
-  noremap Q @q
-else
-  noremap Q <NOP>
-endif
-
-" qq  starts recording
-" end recording in normal/visual with q
-" (:reg q  shows what's been saved)
-" [count]Q plays back
-
 ""> format
 " capitalised last entered letter - useful for AZERTY - particularly accented letters
 if v:lang=~'fr'|inoremap ² <Esc>~a|endif
@@ -517,9 +505,6 @@ endfunction
 inoremap <leader><leader><f5> :call clearmatches()<cr>
 nnoremap <leader><leader><f5> :call clearmatches()<cr>
 
-" foldtree.vim
-" source $vfv/plugin/foldtree.vim
-
 " md4pdfLog.tex - turn off syntax folding for the long log files from md4pdf.ps1
 au! BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 
@@ -620,6 +605,43 @@ autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <E
     autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/Â/'/g | go
 "  unneeded blanks
     autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/^> */>/g | go
+
+""> registers - named
+" call ClearNamedRegisters()
+function! ClearNamedRegisters()
+  let nrs=split('a b c d e f g h i j k l m n o p q r s t u v w x y z')
+  for nr in nrs
+    call setreg(nr, [])
+    if has('nvim')
+      wsh! " wshada
+    else
+      wv!  " wviminfo
+    endif " (unfortunately clears  startify)
+  endfor
+endfunction
+
+" call SetNamedRegisters()
+function! SetNamedRegisters()
+  let nrs=split('a b c d e f g h i j k l m n o p q r s t u v w x y z')
+  for nr in nrs | exec 'let @'.nr.'="'.nr.'"' | endfor
+endfunction
+
+" reg abcdefghijklmnopqrstuvwxyz
+
+""> registers - easy q macro
+if v:lang =~ 'en'
+  noremap Q @q
+else
+  noremap Q <NOP>
+endif
+
+" Usage:
+"  qq  starts recording
+"  end recording in normal/visual with q
+"  (:reg q  shows what's been saved)
+"  [count]Q plays back
+"  try  qqMq  then  Q
+"  qqq  clears it
 
 ""> searching
 " clear search highlights

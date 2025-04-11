@@ -1,9 +1,9 @@
 
 " Language:	JSON
 " Maintainer: Joseph Harriott
-" Last Change: Sat 01 Apr 2023
+" Last Change: Fri 11 Apr 2025
 
-" $vimfiles/after/syntax/json.vim, supplementary to  $VIMRUNTIME/syntax/json.vim
+" $vfv/after/syntax/json.vim, supplementary to  $VIMRUNTIME/syntax/json.vim
 " $VIMRUNTIME/filetype.vim  decides the various files that are detected as  json
 
 set synmaxcol=0

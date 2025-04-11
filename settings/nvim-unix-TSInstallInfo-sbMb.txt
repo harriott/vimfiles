@@ -18,12 +18,16 @@ beancount          [✗] not installed
 bibtex             [✗] not installed
 bicep              [✗] not installed
 bitbake            [✗] not installed
+blade              [✗] not installed
 blueprint          [✗] not installed
+bp                 [✗] not installed
 c                  [✓] installed
 c_sharp            [✗] not installed
+caddy              [✗] not installed
 cairo              [✗] not installed
 capnp              [✗] not installed
 chatito            [✗] not installed
+circom             [✗] not installed
 clojure            [✗] not installed
 cmake              [✗] not installed
 comment            [✗] not installed
@@ -36,8 +40,10 @@ css                [✓] installed
 csv                [✓] installed
 cuda               [✗] not installed
 cue                [✗] not installed
+cylc               [✗] not installed
 d                  [✗] not installed
 dart               [✗] not installed
+desktop            [✗] not installed
 devicetree         [✗] not installed
 dhall              [✗] not installed
 diff               [✓] installed
@@ -49,6 +55,7 @@ doxygen            [✗] not installed
 dtd                [✗] not installed
 earthfile          [✗] not installed
 ebnf               [✗] not installed
+editorconfig       [✗] not installed
 eds                [✗] not installed
 eex                [✗] not installed
 elixir             [✗] not installed
@@ -56,6 +63,7 @@ elm                [✗] not installed
 elsa               [✗] not installed
 elvish             [✗] not installed
 embedded_template  [✗] not installed
+enforce            [✗] not installed
 erlang             [✗] not installed
 facility           [✗] not installed
 faust              [✗] not installed
@@ -67,8 +75,11 @@ foam               [✗] not installed
 forth              [✗] not installed
 fortran            [✗] not installed
 fsh                [✗] not installed
+fsharp             [✗] not installed
 func               [✗] not installed
 fusion             [✗] not installed
+gap                [✗] not installed
+gaptst             [✗] not installed
 gdscript           [✗] not installed
 gdshader           [✗] not installed
 git_config         [✗] not installed
@@ -78,10 +89,13 @@ gitcommit          [✗] not installed
 gitignore          [✓] installed
 gleam              [✗] not installed
 glimmer            [✗] not installed
+glimmer_javascript [✗] not installed
+glimmer_typescript [✗] not installed
 glsl               [✗] not installed
 gn                 [✗] not installed
-gnuplot            [✗] not installed
+gnuplot            [✓] installed
 go                 [✗] not installed
+goctl              [✗] not installed
 godot_resource     [✗] not installed
 gomod              [✗] not installed
 gosum              [✗] not installed
@@ -89,6 +103,7 @@ gotmpl             [✗] not installed
 gowork             [✗] not installed
 gpg                [✗] not installed
 graphql            [✗] not installed
+gren               [✗] not installed
 groovy             [✗] not installed
 gstlaunch          [✗] not installed
 hack               [✗] not installed
@@ -108,11 +123,18 @@ htmldjango         [✗] not installed
 http               [✗] not installed
 hurl               [✗] not installed
 hyprlang           [✗] not installed
+idl                [✗] not installed
+idris              [✗] not installed
 ini                [✗] not installed
+inko               [✗] not installed
+ipkg               [✗] not installed
 ispc               [✗] not installed
 janet_simple       [✗] not installed
 java               [✗] not installed
+javadoc            [✗] not installed
 javascript         [✗] not installed
+jinja              [✗] not installed
+jinja_inline       [✗] not installed
 jq                 [✗] not installed
 jsdoc              [✗] not installed
 json               [✗] not installed
@@ -121,9 +143,11 @@ jsonc              [✗] not installed
 jsonnet            [✗] not installed
 julia              [✗] not installed
 just               [✗] not installed
+kcl                [✗] not installed
 kconfig            [✗] not installed
 kdl                [✗] not installed
 kotlin             [✗] not installed
+koto               [✗] not installed
 kusto              [✗] not installed
 lalrpop            [✗] not installed
 ledger             [✗] not installed
@@ -146,6 +170,7 @@ mermaid            [✗] not installed
 meson              [✗] not installed
 muttrc             [✓] installed
 nasm               [✗] not installed
+nginx              [✗] not installed
 nickel             [✗] not installed
 nim                [✗] not installed
 nim_format_string  [✗] not installed
@@ -153,12 +178,12 @@ ninja              [✗] not installed
 nix                [✗] not installed
 norg               [✗] not installed
 nqc                [✗] not installed
+nu                 [✗] not installed
 objc               [✗] not installed
 objdump            [✗] not installed
 ocaml              [✗] not installed
 ocaml_interface    [✗] not installed
 odin               [✗] not installed
-org                [✗] not installed
 pascal             [✗] not installed
 passwd             [✗] not installed
 pem                [✗] not installed
@@ -171,8 +196,11 @@ po                 [✗] not installed
 pod                [✗] not installed
 poe_filter         [✗] not installed
 pony               [✗] not installed
+powershell         [✗] not installed
 printf             [✗] not installed
 prisma             [✗] not installed
+problog            [✗] not installed
+prolog             [✗] not installed
 promql             [✗] not installed
 properties         [✗] not installed
 proto              [✗] not installed
@@ -189,24 +217,31 @@ qmljs              [✗] not installed
 query              [✓] installed
 r                  [✗] not installed
 racket             [✗] not installed
+ralph              [✗] not installed
 rasi               [✗] not installed
+razor              [✗] not installed
 rbs                [✗] not installed
 re2c               [✗] not installed
 readline           [✗] not installed
 regex              [✗] not installed
 rego               [✗] not installed
 requirements       [✗] not installed
+rescript           [✗] not installed
 rnoweb             [✗] not installed
 robot              [✗] not installed
+robots             [✗] not installed
 roc                [✗] not installed
 ron                [✗] not installed
 rst                [✗] not installed
 ruby               [✗] not installed
+runescript         [✗] not installed
 rust               [✗] not installed
 scala              [✗] not installed
 scheme             [✗] not installed
 scss               [✗] not installed
+sflog              [✗] not installed
 slang              [✗] not installed
+slim               [✗] not installed
 slint              [✗] not installed
 smali              [✗] not installed
 smithy             [✗] not installed
@@ -223,14 +258,18 @@ starlark           [✗] not installed
 strace             [✗] not installed
 styled             [✗] not installed
 supercollider      [✗] not installed
+superhtml          [✗] not installed
 surface            [✗] not installed
 svelte             [✗] not installed
+sway               [✗] not installed
 sxhkdrc            [✗] not installed
 systemtap          [✗] not installed
 t32                [✗] not installed
 tablegen           [✗] not installed
+tact               [✗] not installed
 tcl                [✗] not installed
 templ              [✗] not installed
+tera               [✗] not installed
 terraform          [✗] not installed
 textproto          [✗] not installed
 thrift             [✗] not installed
@@ -244,6 +283,7 @@ tsx                [✗] not installed
 turtle             [✗] not installed
 twig               [✗] not installed
 typescript         [✗] not installed
+typespec           [✗] not installed
 typoscript         [✗] not installed
 typst              [✗] not installed
 udev               [✗] not installed
@@ -254,9 +294,11 @@ v                  [✗] not installed
 vala               [✗] not installed
 vento              [✗] not installed
 verilog            [✗] not installed
+vhdl               [✗] not installed
 vhs                [✗] not installed
 vim                [✓] installed
 vimdoc             [✓] installed
+vrl                [✗] not installed
 vue                [✗] not installed
 wgsl               [✗] not installed
 wgsl_bevy          [✗] not installed
@@ -264,8 +306,11 @@ wing               [✗] not installed
 wit                [✗] not installed
 xcompose           [✗] not installed
 xml                [✓] installed
+xresources         [✗] not installed
 yaml               [✓] installed
 yang               [✗] not installed
 yuck               [✗] not installed
 zathurarc          [✗] not installed
 zig                [✗] not installed
+ziggy              [✗] not installed
+ziggy_schema       [✗] not installed

@@ -59,51 +59,6 @@ Joseph's (g)Vim Quick Reference
     :h :g         " global
     :h :v         " vglobal (=  :g!)
 
-# insert mode commands
-    c-ke'    " digraph code for é
-    c-a      " repeats last recorded insert
-    c-o      " moves to normal mode for just one command
-    c-r%     " insert relative path of current file
-    c-qu201c " unicode codepoint for “
-
-## completion
-    :h ins-completion
-    c-e      " quits c-x mode
-    c-n/p    " next/previous, then again to navigate
-    c-x c-n  " from current file
-    c-x c-f  " files in cwd
-    c-x c-l  " whole lines
-    c-x c-t  " thesaurus
-    c-x c-v  " vim commands
-    c-x s    " spelling
-    c-y      " accept suggestion
-
-### complete
-    :echo &cpt
-    :h cpt
-    :se cpt+=k
-    c-n/p  " next/previous, then again to navigate
-
-### dictionary
-    :h dict
-    c-x c-k  " keywords in dictionary - needs  spell
-
-### omni completion
-    c-x c-x  " c-x c-o ($vfv/plugin/packsAll.vim)
-
-#### omnifunc
-    :echo &ofu
-    :se ofu
-
-### thesaurus
-    :h tsr
-    c-x c-t  " keywords in thesaurus
-
-## indent of current line
-    0 c-d " remove all indents
-    c-d   " remove a shiftwidth
-    c-t   " insert a shiftwidth
-
 # layout
     :h CTRL-L
     :Prettier     " apply  prettier  to json & others
@@ -275,6 +230,60 @@ set fdo?
     c-w n    " new buffer, split horizontal
     c-w ^    " split horizontal and edit the alternative
 
+# modes
+`Ex`: `gQ` begins persistent command-line, `:vi` (`:visual`) quits
+
+## Insert
+    c-ke'    " digraph code for é
+    c-a      " repeats last recorded insert
+    c-o      " moves to normal mode for just one command
+    c-r%     " insert relative path of current file
+    c-qu201c " unicode codepoint for “
+
+### completion
+    :h ins-completion
+    c-e      " quits c-x mode
+    c-n/p    " next/previous, then again to navigate
+    c-x c-n  " from current file
+    c-x c-f  " files in cwd
+    c-x c-l  " whole lines
+    c-x c-t  " thesaurus
+    c-x c-v  " vim commands
+    c-x s    " spelling
+    c-y      " accept suggestion
+
+#### complete
+    :echo &cpt
+    :h cpt
+    :se cpt+=k
+    c-n/p  " next/previous, then again to navigate
+
+#### dictionary
+    :h dict
+    c-x c-k  " keywords in dictionary - needs  spell
+
+#### omni completion
+    c-x c-x  " c-x c-o ($vfv/plugin/packsAll.vim)
+
+##### omnifunc
+    :echo &ofu
+    :se ofu
+
+#### thesaurus
+    :h tsr
+    c-x c-t  " keywords in thesaurus
+
+### indent of current line
+    0 c-d " remove all indents
+    c-d   " remove a shiftwidth
+    c-t   " insert a shiftwidth
+
+## Visual
+    V  " line-based visual SELection
+    gv " reselect the last block
+    j  " in Visual mode, selects line and moves cursor down (k for up)
+    v  " character-based visual selection
+
 # movements - in buffer
     nG      " go to line n
     :n      " go to line n
@@ -332,7 +341,27 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     zz        " current line at centre of window
     \zz       " toggle centering current line
 
+# registers
+    :h registers
+    :let @a = 'a'|let @A ='a'|reg a
+
+`"` also triggers `vim-peekaboo`
+
+## clear
+- `call ClearNamedRegisters()`
+- `qaq` clears the `a` register (but still listed until `shada` is rewritten)
+
+## macros
+- `@` also triggers `vim-peekaboo`
+- `qj` begins recording macro in `j`, `q` ends recording, `@j` runs it
+- `Q` (`$vfv/plugin/plugin.vim`)
+
+## show
+    :reg
+    :reg abcdefghijklmnopqrstuvwxyz
+
 # replace
+    &              " repeat last substitute
     :ncc           " change n lines
     :nrc           " replace n characters with c
     :s/jpg\C/JPG/  " force case
@@ -417,6 +446,8 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 `<startPatternToDiscard>\zs` doesn't always work in `syntax match ...`
 
 # shell
+    $vfv/ftplugin/tree.vim
+
 ```
 :!<shellcmd>          " runs the external shell command
 :ALEToggle
@@ -436,6 +467,10 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 gx                    " open url under cursor (or all of first line of markdown link)
 \<f12>                " open in Emacs
 ```
+
+## Git
+    :Flog
+    vim-fugitive
 
 ## files & directories
 ```
@@ -493,23 +528,23 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 
 # tricks
     :%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
-    :echo &bomb                  " 1 if BOM
+    :echo &bomb " 1 if BOM
+    :exe        " :execute
     :so /usr/share/vim/vim90/tools/emoji_list.vim
 
 ```vim
-&                            " repeat last substitute
-:exe                         " :execute
-:g\^\m 0                     " reverse the entire buffer
-:ni<somecharacter><enter>    " inserts <somecharacters> n time
-:h g_CTRL-G                  " position and word info, works on a range too
+:g\^\m 0                                           " reverse the entire buffer
+:if 0 | echo 'true' | else | echo 'false' | endif  " try  if 1
+:ni<somecharacter><enter>                          " inserts <somecharacters> n time
+:h g_CTRL-G                                        " position and word info, works on a range too
 :put ='this_text'
 :sleep
-:t.                          " reproduce line
-:t.|s\.\=\g                  " setext-style header underlining
-:.,+3s/foo/bar               " replaces on this and next 3 lines
-\yy                          " CalendarH
-ctrl-q ctrl-m                " inserts ^M (carriage return)
-g&                           " repeat last command over the whole document
+:t.                                                " reproduce line
+:t.|s\.\=\g                                        " setext-style header underlining
+:.,+3s/foo/bar                                     " replaces on this and next 3 lines
+\yy                                                " CalendarH
+ctrl-q ctrl-m                                      " inserts ^M (carriage return)
+g&                                                 " repeat last command over the whole document
 ```
 
 in command-line `\t` inserts a tab character
@@ -547,11 +582,6 @@ u            " lowercase a visual block
     Entering special characters
     ^Vu03b2  " gets greek small letter beta
 
-## macros
-    @j  " run macro j
-    q   " end recording macro
-    qj  " begin recording macro in j
-
 ## number lists
     :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
     :h v_g_CTRL-A
@@ -574,12 +604,6 @@ u            " lowercase a visual block
     :%sor!                   " reverse
     :sor n                   " numeric
     :{range}sor /<regex>/ r  " sorts by matching
-
-# Visual mode commands
-    V  " line-based visual SELection
-    gv " reselect the last block
-    j  " in Visual mode, selects line and moves cursor down (k for up)
-    v  " character-based visual selection
 
 # words
 ```

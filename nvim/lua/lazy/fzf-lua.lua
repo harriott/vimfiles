@@ -4,39 +4,55 @@
 -- $lazy/fzf-lua/README-Win.md
 -- $lazy/fzf-lua/doc/fzf-lua-opts.txt
 
--- :FzfLua Command
--- :FzfLua args
--- :FzfLua autocmds
--- :FzfLua blines
--- :FzfLua buffers
--- :FzfLua changes
--- :FzfLua command_history
--- :FzfLua commands
--- :FzfLua filetypes
--- :FzfLua helptags
--- :FzfLua highlights
--- :FzfLua jumps
--- :FzfLua keymaps
--- :FzfLua lines
--- :FzfLua loclist
--- :FzfLua manpages
--- :FzfLua marks
--- :FzfLua menus
--- :FzfLua oldfiles
--- :FzfLua packadd
--- :FzfLua quickfix
--- :FzfLua registers
--- :FzfLua resume
--- :FzfLua search_history
--- :FzfLua spell_suggest
--- :FzfLua tabs
--- :FzfLua tagstack
+-- ▩-> commands
+-- :FzfLua  " opens command picker
+-- :FzfLua resume  " last picker
 -- picker commands:
 --  c-g = toggle gitignore
 --  f1 = toggle help
 --  f2 = toggle fullscreen
 --  f4 = toggle preview
 
+-- ▩--> buffers
+-- :FzfLua blines
+-- :FzfLua buffers
+-- :FzfLua lines
+-- :FzfLua marks
+
+-- ▩--> edits
+-- :FzfLua changes
+-- :FzfLua jumps
+-- :FzfLua quickfix
+-- :FzfLua spell_suggest
+-- :FzfLua tagstack
+
+-- ▩--> shell
+-- :exec 'FzfLua grep_cword search_paths='.$DWp
+-- :exec 'lua FzfLua.grep_cword({search_paths={"'.$DWp.'","'.$TeNo.'",}})'
+-- :FzfLua git_bcommits  " select and open a previous version of the buffer, as another buffer
+-- :FzfLua git_files
+-- :FzfLua git_status
+-- :FzfLua lsp_document_diagnostics  " showing the code
+-- :FzfLua lsp_definitions
+-- :FzfLua manpages
+-- :FzfLua oldfiles
+
+-- ▩--> Vim
+-- :FzfLua command_history
+-- :FzfLua commands
+-- :FzfLua args
+-- :FzfLua autocmds
+-- :FzfLua filetypes
+-- :FzfLua helptags
+-- :FzfLua highlights  " colourful
+-- :FzfLua keymaps  " showing context from where they're set
+-- :FzfLua loclist
+-- :FzfLua nvim_options
+-- :FzfLua packadd
+-- :FzfLua registers
+-- :FzfLua search_history
+
+-- ▩-> configure
 return { "ibhagwan/fzf-lua",
   config = function()
     require("fzf-lua").setup({})

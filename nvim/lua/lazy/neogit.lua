@@ -5,6 +5,7 @@
 -- $vfn/lua/lazy/neogit.lua
 
 -- $lazy/neogit/doc/neogit.txt
+-- :h neogit_diff_popup
 -- :Neogit
 -- ? => help
 -- q => quits
