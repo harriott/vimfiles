@@ -1,6 +1,6 @@
 vim: set nowrap:
 
-call GrabAllCommands() " pastes below (see $vfv/plugin/packsFull.vim)
+pu=execute('command') " pastes list of all Vim commands below (with inconsistent columnisation)
 
     Name              Args Address Complete    Definition
 |   ALECodeAction     0    .                   :call ale#codefix#Execute(<range>)

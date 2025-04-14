@@ -612,18 +612,6 @@ packadd targets.vim
 " :Bufferize <something>  is handy, but the buffer's fragile...
 packadd bufferize.vim
 
-"">> grab Vim settings - all commands
-function! GrabAllCommands()
-  silent execute 'Bufferize command'
-  winc k
-  normal! ggVGd
-  bdelete
-  blast
-  normal! p
-  write
-endfunction
-" used in  $vimfiles/settings-active-nvim/unix-maps-fn.txt
-
 "">> grab Vim settings - all functions
 function! GrabAllFunctions()
   silent execute 'Bufferize function'

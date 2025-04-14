@@ -236,7 +236,6 @@ $misc/CP/vimtest/README.md
     :se wop                " wildoptions
     :verb se tw            " shows where textwidth was set
 
-    $VIMRUNTIME
     /usr/share/vim/vim91/filetype.vim
     C:\Vim\vim90\ftplugin
 
@@ -264,6 +263,7 @@ $misc/CP/vimtest/README.md
 - `<s-fn>` from  Alacritty  or xterm
 
 ### runtimepath
+    $VIMRUNTIME
     :Bufferize se rtp
     :echo match(&runtimepath, 'mru') " returns -1 if MRU is not loaded
     :put =&rtp

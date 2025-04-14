@@ -1,5 +1,10 @@
+vim: set nowrap:
 
-call GrabScriptnames() " pastes below (see $vfv/plugin/plugin.vim)
+Three choices to paste below:
+
+	:call GrabScriptnames() " (in  $vfv/plugin/packsFull.vim, using  Bufferize)
+	:enew|pu=execute('scriptnames')
+	:redir @s | silent scr | redir END | exe "normal! \"sp"
 
   1: /etc/vimrc
   2: /usr/share/vim/vimfiles/archlinux.vim

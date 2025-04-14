@@ -1,2331 +1,3023 @@
 
-call GrabAllFunctions() " pastes below (see $vfv/plugin/plugin.vim)
+pu=execute('function') " pastes list of all Vim commands below (with inconsistent columnisation)
 
-def <SNR>167_Qf_filter(qf: bool, searchpat: string, bang: string)
-def <SNR>17_BMAdd()
-def <SNR>17_BMCanAdd(name: string, num: number): bool
-def <SNR>17_BMFilename(name: string, num: number)
-def <SNR>17_BMHash(name: string): number
-def <SNR>17_BMHash2(name: string): string
-def <SNR>17_BMMunge(fname: string, bnum: number): string
-def <SNR>17_BMRemove()
-def <SNR>17_BMShow()
-def <SNR>17_BMTruncName(fname: string): string
-def <SNR>17_EditVimrc()
-def <SNR>17_FileFormat()
-def <SNR>17_FixFText(): string
-def <SNR>17_Helpfind()
-def <SNR>17_LoadVimSesn()
-def <SNR>17_SaveVimSesn()
-def <SNR>17_SearchP()
-def <SNR>17_SelectAll()
-def <SNR>17_SetupColorSchemes()
-def <SNR>17_SetupCompilers()
-def <SNR>17_SetupKeymaps()
-def <SNR>17_SetupLazyloadMenus()
-def <SNR>17_SpellDel()
-def <SNR>17_SpellLang(encChanged: unknown = false)
-def <SNR>17_SpellPopup()
-def <SNR>17_SpellReplace(n: number)
-def <SNR>17_SynOnOff()
-def <SNR>17_TagFiles()
-def <SNR>17_TextWidth()
-def <SNR>17_ToggleGuiOption(option: string)
-def <SNR>17_XxdBack()
-def <SNR>17_XxdConv()
-def <SNR>17_XxdFind()
-def <SNR>21_LoadFTPlugin()
-def <SNR>22_LoadIndent()
-def FlogGetVimBinGraph(git_cmd: string): dict<any>
-def FlogGetVimInternalGraph(git_cmd: string): dict<any>
-def FlogUpdateVimBinGraph(graph: dict<any>): dict<any>
-def FlogUpdateVimInternalGraph(graph: dict<any>): dict<any>
-def MenuExplOpen()
-function <SNR>102_conf(name, default)
-function <SNR>102_defs(commands)
-function <SNR>102_fzf_restore_colors()
-function <SNR>102_fzf_vim_term()
-function <SNR>102_history(arg, extra, bang)
-function <SNR>105_ChangeCmp(left, right) abort
-function <SNR>105_EscapeMenuName(text) abort
-function <SNR>105_GetCodeActions(linter, options) abort
-function <SNR>105_Setup(enabled) abort
-function <SNR>105_UpdateCursor(cursor, start, end, offset) abort
-function <SNR>105_UpdateMenu(data, menu_items) abort
-function <SNR>10_StarSetf(ft)
-function <SNR>110_info(arg) abort
-function <SNR>114_HasVisibleBackground(syntaxId) abort
-function <SNR>117_FocusGainedHandler(timer)
-function <SNR>117_airline_extensions()
-function <SNR>117_airline_refresh(...)
-function <SNR>117_airline_theme(...)
-function <SNR>117_airline_toggle()
-function <SNR>117_get_airline_themes(a, l, p)
-function <SNR>117_init()
-function <SNR>117_on_colorscheme_changed()
-function <SNR>117_on_cursor_moved()
-function <SNR>117_on_focus_gained()
-function <SNR>117_on_window_changed(event)
-function <SNR>117_rand(max) abort
-function <SNR>117_random_theme() abort
-function <SNR>118_check_defined(variable, default)
-function <SNR>126_addtomrufs(fname)
-function <SNR>126_chop(mrufs)
-function <SNR>126_excl(fn)
-function <SNR>126_mergelists()
-function <SNR>126_record(bufnr)
-function <SNR>126_reformat(mrufs, ...)
-function <SNR>126_savetofile(mrufs)
-function <SNR>127_BufReadCmd() abort
-function <SNR>127_SessionLoadPost() abort
-function <SNR>127_warn(message) abort
-function <SNR>130_auto_buffer_delete(bufutil_paths) abort
-function <SNR>130_auto_buffer_rename(bufutil_pairs) abort
-function <SNR>130_call(name, ...) abort
-function <SNR>130_call_without_guard(name, ...) abort
-function <SNR>130_map_cd(helper, command) abort
-function <SNR>130_map_copy(helper) abort
-function <SNR>130_map_move(helper) abort
-function <SNR>130_map_new_dir(helper) abort
-function <SNR>130_map_new_file(helper) abort
-function <SNR>130_map_new_path(helper) abort
-function <SNR>130_map_open_system(helper) abort
-function <SNR>130_map_remove(helper) abort
-function <SNR>130_map_trash(helper) abort
-function <SNR>130_new_dir(helper, name) abort
-function <SNR>130_new_file(helper, name) abort
-function <SNR>131__dot_to_sharp(name) abort
-function <SNR>131__extract_files(pattern, files) abort
-function <SNR>131__file2module(file) abort
-function <SNR>131__format_throwpoint(throwpoint) abort
-function <SNR>131__get_builtin_module(name) abort
-function <SNR>131__get_func_info(name) abort
-function <SNR>131__get_module(name) abort dict
-function <SNR>131__global_vital_files() abort
-function <SNR>131__import(name) abort dict
-function <SNR>131__import_func_name(plugin_name, module_name) abort
-function <SNR>131__module_path(name) abort
-function <SNR>131__module_sid(name) abort
-function <SNR>131__module_sid_base_dir() abort
-function <SNR>131__self_vital_files() abort
-function <SNR>131__sfuncname(sid, funcname) abort
-function <SNR>131__sid(path, filter_pattern) abort
-function <SNR>131__source(path) abort
-function <SNR>131__unify_path(path) abort
-function <SNR>131_exists(name) abort dict
-function <SNR>131_import(name, ...) abort dict
-function <SNR>131_load(...) abort dict
-function <SNR>131_new(plugin_name) abort
-function <SNR>131_plugin_name() abort dict
-function <SNR>131_search(pattern) abort dict
-function <SNR>131_sid2sfuncs(sid) abort
-function <SNR>131_unload() abort dict
-function <SNR>131_vital_files() abort
-function <SNR>132__all(promises, resolve, reject) abort
-function <SNR>132__chain(promise_factories, results) abort
-function <SNR>132__fulfill(promise, value) abort
-function <SNR>132__handle_thenable(promise, thenable) abort
-function <SNR>132__invoke_callback(settled, promise, callback, result, ...) abort
-function <SNR>132__next_id() abort
-function <SNR>132__notify_done(wg, index, value) abort
-function <SNR>132__on_finally(CB, parent, Result) abort
-function <SNR>132__promise_catch(...) abort dict
-function <SNR>132__promise_finally(...) abort dict
-function <SNR>132__promise_then(...) abort dict
-function <SNR>132__publish(promise, ...) abort
-function <SNR>132__race(promises, resolve, reject) abort
-function <SNR>132__reject(promise, ...) abort
-function <SNR>132__resolve(promise, ...) abort
-function <SNR>132__subscribe(parent, child, on_fulfilled, on_rejected) abort
-function <SNR>132__vital_created(module) abort
-function <SNR>132__vital_depends() abort
-function <SNR>132__vital_loaded(V) abort
-function <SNR>132_all(promises) abort
-function <SNR>132_chain(promise_factories) abort
-function <SNR>132_is_available() abort
-function <SNR>132_is_promise(maybe_promise) abort
-function <SNR>132_new(resolver) abort
-function <SNR>132_noop(...) abort
-function <SNR>132_on_unhandled_rejection(on_unhandled_rejection) abort
-function <SNR>132_race(promises) abort
-function <SNR>132_reject(...) abort
-function <SNR>132_resolve(...) abort
-function <SNR>132_wait(promise, ...) abort
-function <SNR>134__default_error_handler() abort
-function <SNR>134__worker(...) abort
-function <SNR>134_call(fn, ...) abort
-function <SNR>134_get_error_handler() abort
-function <SNR>134_get_max_workers() abort
-function <SNR>134_set_error_handler(handler) abort
-function <SNR>134_set_max_workers(n) abort
-function <SNR>137_config(scriptfile, default) abort
-function <SNR>137_define(prefix, default) abort
-function <SNR>137_translate(scriptfile) abort
-function <SNR>138_MRU_AddFile(acmd_bufnr) abort
-function <SNR>138_MRU_Cmd(pat, splitdir, winsz) abort
-function <SNR>138_MRU_Complete(ArgLead, CmdLine, CursorPos) abort
-function <SNR>138_MRU_Delete_From_List()
-function <SNR>138_MRU_Edit_File(filename, sanitized, splitdir) abort
-function <SNR>138_MRU_FZF_EditFile(fname) abort
-function <SNR>138_MRU_FZF_Run() abort
-function <SNR>138_MRU_LoadList() abort
-function <SNR>138_MRU_Open_File_In_Tab(fname, esc_fname) abort
-function <SNR>138_MRU_Open_Window(pat, splitdir, winsz) abort
-function <SNR>138_MRU_Refresh()
-function <SNR>138_MRU_Refresh_Menu() abort
-function <SNR>138_MRU_SaveList() abort
-function <SNR>138_MRU_Select_File_Cmd(opt) abort range
-function <SNR>138_MRU_Toggle(pat, splitdir) abort
-function <SNR>138_MRU_Warn_Msg(msg) abort
-function <SNR>138_MRU_Window_Edit_File(fname, multi, edit_type, open_type) abort
-function <SNR>138_MRU_add_files_to_menu(prefix, file_list) abort
-function <SNR>138_MRU_escape_filename(fname) abort
-function <SNR>139_add_menu() abort
-function <SNR>140_DetermineTermEnv() abort
-function <SNR>140_DisplayVifmHelp() abort
-function <SNR>140_DropGoneBuffers(buffer_snapshot) abort
-function <SNR>140_GetVifmHelpTopic() abort
-function <SNR>140_HandleCwdOut(data) abort
-function <SNR>140_HandleRunResults(exitcode, listf, typef, editcmd, bufsnapshot) abort
-function <SNR>140_PreparePath(path) abort
-function <SNR>140_StartCwdJob() abort
-function <SNR>140_StartVifm(mods, count, editcmd, ...) abort
-function <SNR>140_TakeBufferSnapshot() abort
-function <SNR>140_UniqueBufferName(name) abort
-function <SNR>145_isdir(dir)
-function <SNR>146_get_git_root(current_dir) abort
-function <SNR>146_get_highlight_group(us, them, is_directory) abort
-function <SNR>146_get_indicator(us, them) abort
-function <SNR>146_get_indicator_name(us, them) abort
-function <SNR>146_get_status_list(current_dir) abort
-function <SNR>146_highlight_file(dir, file_name, us, them, is_directory) abort
-function <SNR>146_is_in_arglist(file) abort
-function <SNR>146_set_mappings() abort
-function <SNR>146_setup_highlighting() abort
-function <SNR>146_unmerged_status_comparator(a, b) abort
-function <SNR>147_FindAndOpen() abort
-function <SNR>147_SetGlobalOpt(opt, val)
-function <SNR>148_on_vimenter()
-function <SNR>148_on_vimleavepre()
-function <SNR>148_update_oldfiles(file)
-function <SNR>150_abs(v)
-function <SNR>150_easy_align_op(type, ...)
-function <SNR>150_easy_align_repeat()
-function <SNR>150_generic_easy_align_op(type, vmode, live)
-function <SNR>150_live_easy_align_op(type, ...)
-function <SNR>150_remember_visual(mode)
-function <SNR>150_repeat_in_visual()
-function <SNR>150_repeat_visual()
-function <SNR>150_set_repeat()
-function <SNR>151_keymap(mode, action, dir)
-function <SNR>151_obsolete(what)
-function <SNR>151_set_default(dict)
-function <SNR>152_as_keymapping(key) abort
-function <SNR>152_key_mapping(lhs, rhs, noremap) abort
-function <SNR>153_config_fuzzy(...) abort
-function <SNR>153_config_fuzzyspell(...) abort
-function <SNR>153_config_fuzzyword(...) abort
-function <SNR>154_set_highlight_colors()
-function <SNR>156_default_mapping(motions, do_mapping)
-function <SNR>156_motion_map_helper(motions)
-function <SNR>157_DefineHighlightings(palette, isOverride)
-function <SNR>157_GetPalette()
-function <SNR>157_MarkPaletteComplete(ArgLead, CmdLine, CursorPos)
-function <SNR>157_SetPalette(paletteName)
-function <SNR>158_CaptureKeyMap(key)
-function <SNR>158_CaptureKeyPresses()
-function <SNR>158_ClosePreview()
-function <SNR>158_CommandLineCompletion()
-function <SNR>158_CompletionMode()
-function <SNR>158_CompletionReset(char)
-function <SNR>158_ContextCompletion()
-function <SNR>158_ContextDiscover()
-function <SNR>158_ContextText()
-function <SNR>158_EnableLongestEnhancement()
-function <SNR>158_EnableNoCompleteAfterReset()
-function <SNR>158_ExpandMap(map)
-function <SNR>158_Init()
-function <SNR>158_InitBuffer()
-function <SNR>158_IsNoCompleteAfterReset()
-function <SNR>158_IsPreviewOpen()
-function <SNR>158_ManualCompletionEnter()
-function <SNR>158_ReleaseKeyPresses()
-function <SNR>158_SetCompletionType()
-function <SNR>158_SetDefaultCompletionType()
-function <SNR>158_StartCompletionMode()
-function <SNR>158_SuperTabHelp()
-function <SNR>158_WillComplete(...)
-function <SNR>159_addAllMappings()
-function <SNR>159_getKeysAsList(keys)
-function <SNR>161_beep()
-function <SNR>161_changesurround(...)
-function <SNR>161_closematch(str)
-function <SNR>161_dosurround(...)
-function <SNR>161_extractafter(str)
-function <SNR>161_extractbefore(str)
-function <SNR>161_fixindent(str, spc)
-function <SNR>161_getchar()
-function <SNR>161_inputreplacement()
-function <SNR>161_inputtarget()
-function <SNR>161_insert(...)
-function <SNR>161_opfunc(type, ...) abort
-function <SNR>161_opfunc2(...) abort
-function <SNR>161_process(string)
-function <SNR>161_redraw()
-function <SNR>161_reindent() abort
-function <SNR>161_wrap(string, char, type, removed, special)
-function <SNR>161_wrapreg(reg, char, removed, special)
-function <SNR>162_ActivateBuffer()
-function <SNR>162_AddBufToCurrentTab(bufnr)
-function <SNR>162_AssociatedTab(bufnr)
-function <SNR>162_BuildBufferList()
-function <SNR>162_CatalogBuffers()
-function <SNR>162_Cleanup()
-function <SNR>162_Close()
-function <SNR>162_CreateHelp()
-function <SNR>162_DeactivateBuffer(remove)
-function <SNR>162_DeleteBuffer(buf, mode)
-function <SNR>162_DisplayBufferList()
-function <SNR>162_Error(msg)
-function <SNR>162_GetBufferInfo(bufnr)
-function <SNR>162_GetHelpStatus()
-function <SNR>162_GetTabNbr(bufNbr)
-function <SNR>162_GetWinNbr(tabNbr, bufNbr)
-function <SNR>162_Initialize()
-function <SNR>162_IsInCurrentTab(bufnr)
-function <SNR>162_ListedAndCurrentTab(buf)
-function <SNR>162_MRUCmp(line1, line2)
-function <SNR>162_MRUListShow()
-function <SNR>162_MRUPop(bufnr)
-function <SNR>162_MRUPush(buf)
-function <SNR>162_MapKeys()
-function <SNR>162_ReSortListing()
-function <SNR>162_RebuildBufferList(...)
-function <SNR>162_RemoveBufFromOtherTabs(bufnr)
-function <SNR>162_RemoveBuffer(mode)
-function <SNR>162_Reset()
-function <SNR>162_ReverseSortSelect()
-function <SNR>162_SelectBuffer(...)
-function <SNR>162_Set(var, default)
-function <SNR>162_SetLocalSettings()
-function <SNR>162_Setup()
-function <SNR>162_SetupSyntax()
-function <SNR>162_ShouldIgnore(buf)
-function <SNR>162_SortListing()
-function <SNR>162_SortReverse()
-function <SNR>162_SortSelect()
-function <SNR>162_StringWidth(s)
-function <SNR>162_ToggleFindActive()
-function <SNR>162_ToggleHelp()
-function <SNR>162_ToggleOnlyOneTab()
-function <SNR>162_ToggleShowRelativePath()
-function <SNR>162_ToggleShowTabBuffer()
-function <SNR>162_ToggleShowUnlisted()
-function <SNR>162_ToggleSplitOutPathName()
-function <SNR>162_UpdateHelpStatus()
-function <SNR>162_UpdateTabBufData(bufnr)
-function <SNR>162_Warning(msg)
-function <SNR>164_append_bang(command, bang)
-function <SNR>164_bclose(command, bang, option)
-function <SNR>164_bclose_completion_options(ArgLead, CmdLine, CursorPos) abort
-function <SNR>164_bclose_menu(command, bang)
-function <SNR>164_close_buffers(command, bang, buffer_numbers)
-function <SNR>164_get_menu_confirm_string()
-function <SNR>164_get_relevant_bufinfo(command)
-function <SNR>165_buf(c)
-function <SNR>166_BufKill(cmd, bang)
-function <SNR>166_CreateUniqueCommand(lhs, rhs)
-function <SNR>166_CreateUniqueMapping(lhs, rhs, ...)
-function <SNR>166_Debug(level, ...)
-function <SNR>166_GotoBuffer(cmd, bang)
-function <SNR>166_IsBufferNew(buf)
-function <SNR>166_RestoreView()
-function <SNR>166_RestoreWindowPos()
-function <SNR>166_SaveView()
-function <SNR>166_SaveWindowPos()
-function <SNR>166_SwitchToNewBuffer(bang)
-function <SNR>166_UndoKill()
-function <SNR>166_UpdateLastColumn(event)
-function <SNR>166_UpdateList(event)
-function <SNR>168_BufferCount() abort
-function <SNR>168_LListToggle() abort
-function <SNR>168_QListToggle() abort
-function <SNR>169_BufDeleteHook(bnr, file_) abort
-function <SNR>169_BufReadPostHook(bnr, file_) abort
-function <SNR>169_LoclistFollow(scope, bnr) abort
-function <SNR>169_LoclistFollowGlobalToggle(...)
-function <SNR>169_LoclistFollowHookEvents()
-function <SNR>169_LoclistFollowPos(scope) abort
-function <SNR>169_LoclistFollowSize(scope) abort
-function <SNR>169_LoclistFollowTarget()
-function <SNR>169_LoclistFollowTargetToggle()
-function <SNR>169_LoclistFollowToggle(bnr, ...)
-function <SNR>169_LoclistsFollow(bnr) abort
-function <SNR>173_border_opt(window)
-function <SNR>173_calc_size(max, val, dict)
-function <SNR>173_callback(dict, lines) abort
-function <SNR>173_cmd(bang, ...) abort
-function <SNR>173_collect(temps) abort
-function <SNR>173_common_sink(action, lines) abort
-function <SNR>173_compare_binary_versions(a, b)
-function <SNR>173_compare_versions(a, b)
-function <SNR>173_create_popup(opts) abort
-function <SNR>173_default_layout()
-function <SNR>173_defaults()
-function <SNR>173_dopopd()
-function <SNR>173_enc_to_cp(str)
-function <SNR>173_error(msg)
-function <SNR>173_escape(path)
-function <SNR>173_evaluate_opts(options)
-function <SNR>173_execute(dict, command, use_height, temps) abort
-function <SNR>173_execute_term(dict, command, temps) abort
-function <SNR>173_execute_tmux(dict, command, temps) abort
-function <SNR>173_exit_handler(code, command, ...)
-function <SNR>173_extract_option(opts, name)
-function <SNR>173_fzf_call(fn, ...)
-function <SNR>173_fzf_expand(fmt)
-function <SNR>173_fzf_fnamemodify(fname, mods)
-function <SNR>173_fzf_getcwd()
-function <SNR>173_fzf_tempname()
-function <SNR>173_fzf_tmux(dict)
-function <SNR>173_get_color(attr, ...)
-function <SNR>173_get_version(bin)
-function <SNR>173_getpos()
-function <SNR>173_handle_ambidouble(dict)
-function <SNR>173_has_any(dict, keys)
-function <SNR>173_open(cmd, target)
-function <SNR>173_popup(opts) abort
-function <SNR>173_popup_support()
-function <SNR>173_present(dict, ...)
-function <SNR>173_pushd(dict)
-function <SNR>173_shellesc_cmd(arg)
-function <SNR>173_shortpath()
-function <SNR>173_split(dict)
-function <SNR>173_splittable(dict)
-function <SNR>173_tmux_enabled()
-function <SNR>173_use_sh()
-function <SNR>173_validate_layout(layout)
-function <SNR>173_warn(msg)
-function <SNR>173_wrap_cmds(cmds)
-function <SNR>173_writefile(...)
-function <SNR>173_xterm_launcher()
-function <SNR>174_CheckArgsRedact()
-function <SNR>177_LP_And(pat1, pat2)
-function <SNR>177_LP_Execute(preclvl)
-function <SNR>177_LP_Not(pat)
-function <SNR>177_LP_OpPush(op)
-function <SNR>177_LP_Or(pat1, pat2)
-function <SNR>177_LP_PatPop(lookup)
-function <SNR>177_LP_PatPush(pat)
-function <SNR>177_StackLook(description)
-function <SNR>177_String(str)
-function <SNR>178_ManPager()
-function <SNR>179_LocalBrowse(dirname)
-function <SNR>179_VimEnter(dirname)
-function <SNR>189_CursorHoldUpdate()
-function <SNR>189_DevIconsGetArtifactFix()
-function <SNR>189_getDistro()
-function <SNR>189_hardRefreshNerdTree()
-function <SNR>189_initialize()
-function <SNR>189_isDarwin()
-function <SNR>189_set(var, default) abort
-function <SNR>189_setCursorHold()
-function <SNR>189_setDictionaries()
-function <SNR>189_setSyntax()
-function <SNR>189_softRefreshNerdTree()
-function <SNR>189_strip(input)
-function <SNR>190_invoke_funcrefs(context, funcrefs)
-function <SNR>194_reuseWin(dir) abort
-function <SNR>209_SID() abort
-function <SNR>209_activateAll() abort
-function <SNR>209_activateBookmark(bm) abort
-function <SNR>209_activateDirNode(directoryNode, ...) abort
-function <SNR>209_activateFileNode(node) abort
-function <SNR>209_chCwd(node) abort
-function <SNR>209_chRoot(node) abort
-function <SNR>209_closeChildren(node) abort
-function <SNR>209_closeCurrentDir(node) abort
-function <SNR>209_closeTreeWindow() abort
-function <SNR>209_customOpenBookmark(node) abort
-function <SNR>209_customOpenDir(node) abort
-function <SNR>209_customOpenFile(node) abort
-function <SNR>209_deleteBookmark(bookmark) abort
-function <SNR>209_displayHelp() abort
-function <SNR>209_findAndRevealPath(pathStr) abort
-function <SNR>209_handleLeftClick() abort
-function <SNR>209_handleMiddleMouse() abort
-function <SNR>209_initCustomOpenArgs() abort
-function <SNR>209_jumpToChild(node, last) abort
-function <SNR>209_jumpToFirstChild(node) abort
-function <SNR>209_jumpToLastChild(node) abort
-function <SNR>209_jumpToNextSibling(node) abort
-function <SNR>209_jumpToParent(node) abort
-function <SNR>209_jumpToPrevSibling(node) abort
-function <SNR>209_jumpToRoot() abort
-function <SNR>209_jumpToSibling(node, forward) abort
-function <SNR>209_openExplorer(node) abort
-function <SNR>209_openHSplit(target) abort
-function <SNR>209_openHSplitBookmark(bm) abort
-function <SNR>209_openInNewTab(target) abort
-function <SNR>209_openInNewTabSilent(target) abort
-function <SNR>209_openNodeRecursively(node) abort
-function <SNR>209_openVSplit(target) abort
-function <SNR>209_openVSplitBookmark(bm) abort
-function <SNR>209_previewBookmark(bookmark) abort
-function <SNR>209_previewNodeCurrent(node) abort
-function <SNR>209_previewNodeHSplit(node) abort
-function <SNR>209_previewNodeHSplitBookmark(bookmark) abort
-function <SNR>209_previewNodeVSplit(node) abort
-function <SNR>209_previewNodeVSplitBookmark(bookmark) abort
-function <SNR>209_refreshCurrent(node) abort
-function <SNR>209_refreshRoot() abort
-function <SNR>209_showMenu(node) abort
-function <SNR>209_toggleIgnoreFilter() abort
-function <SNR>209_toggleShowBookmarks() abort
-function <SNR>209_toggleShowFileLines() abort
-function <SNR>209_toggleShowFiles() abort
-function <SNR>209_toggleShowHidden() abort
-function <SNR>209_toggleZoom() abort
-function <SNR>209_upDirCurrentRootClosed() abort
-function <SNR>209_upDirCurrentRootOpen() abort
-function <SNR>211_inputPrompt(action)
-function <SNR>211_promptToDelBuffer(bufnum, msg)
-function <SNR>211_renameBuffer(bufNum, newNodeName, isDirectory)
-function <SNR>212_CreateTabTreeVCS(name)
-function <SNR>212_FindParentVCSRoot(path)
-function <SNR>212_ToggleTabTreeVCS(name)
-function <SNR>213_Refresh()
-function <SNR>213_SetupListeners()
-function <SNR>214_SID()
-function <SNR>214_buildGitStatusCommand(workdir) abort
-function <SNR>214_buildGitWorkdirCommand(root) abort
-function <SNR>214_deprecated(oldv, newv) abort
-function <SNR>214_disableLiveUpdate() abort
-function <SNR>214_enableLiveUpdate() abort
-function <SNR>214_findHunk(node, direction) abort
-function <SNR>214_getGitWorkdir(ntRoot) abort
-function <SNR>214_hasPrefix(text, prefix) abort
-function <SNR>214_initVariable(var, value) abort
-function <SNR>214_jumpToNextHunk(node)
-function <SNR>214_jumpToPrevHunk(node)
-function <SNR>214_migrateVariable(oldv, newv) abort
-function <SNR>214_onCursorHold(fname)
-function <SNR>214_onFileUpdate(fname)
-function <SNR>214_onGitStatusFailedCB(job) abort
-function <SNR>214_onGitStatusSuccessCB(job) abort
-function <SNR>214_onGitWorkdirFailedCB(job) abort
-function <SNR>214_onGitWorkdirSuccessCB(job) abort
-function <SNR>214_onNERDTreeDirChanged(path) abort
-function <SNR>214_onNERDTreeInit(path) abort
-function <SNR>214_path2str(path) abort
-function <SNR>214_refreshGitStatus(name, workdir) abort
-function <SNR>214_setupNERDTreeKeyMappings()
-function <SNR>214_setupNERDTreeListeners(listener) abort
-function <SNR>222_Lint(buffer, should_lint_file, timer_id) abort
-function <SNR>223_DeleteMatch()
-function <SNR>223_DetectAll()
-function <SNR>223_UpdateMatch(isInsertMode)
-function <SNR>224_GetFilespec()
-function <SNR>224_IsBlacklisted()
-function <SNR>224_IsContainedInPersistedBlacklist(filespec)
-function <SNR>224_IsContainedInSessionBlacklist(filespec)
-function <SNR>224_IsForcedShow()
-function <SNR>224_IsScratchBuffer()
-function <SNR>225_Canonicalize(filespec, isResolveLinks) abort
-function <SNR>229_check_defined_section(name)
-function <SNR>229_is_excluded_window()
-function <SNR>234_GetAirlineSection()
-function <SNR>234_neoterm_id(bufnr) abort
-function <SNR>234_termname(bufnr) abort
-function <SNR>237_coc_git_enabled() abort
-function <SNR>237_get_hunks_changes() abort
-function <SNR>237_get_hunks_coc() abort
-function <SNR>237_get_hunks_empty() abort
-function <SNR>237_get_hunks_gitgutter() abort
-function <SNR>237_get_hunks_gitsigns() abort
-function <SNR>237_get_hunks_signify() abort
-function <SNR>237_parse_hunk_status_decorated(hunks) abort
-function <SNR>237_parse_hunk_status_dict(hunks) abort
-function <SNR>240_config_fugitive_branch() abort
-function <SNR>240_config_gina_branch() abort
-function <SNR>240_display_git_branch()
-function <SNR>240_display_hg_branch()
-function <SNR>240_format_name(name)
-function <SNR>240_init_buffer()
-function <SNR>240_reset_untracked_cache(shellcmdpost)
-function <SNR>240_sh_autocmd_handler()
-function <SNR>240_update_branch()
-function <SNR>240_update_git_branch()
-function <SNR>240_update_hg_branch()
-function <SNR>240_update_untracked()
-function <SNR>241_sh_autocmd_handler()
-function <SNR>242_airline_ale_count(cnt, symbol)
-function <SNR>242_airline_ale_get_line_number(cnt, type) abort
-function <SNR>242_ale_refresh()
-function <SNR>242_legacy_airline_ale_get_line_number(cnt, type) abort
-function <SNR>242_new_airline_ale_get_line_number(cnt, type) abort
-function <SNR>243_check_mixed_indent()
-function <SNR>243_check_mixed_indent_file()
-function <SNR>243_conflict_marker()
-function <SNR>243_ws_refresh()
-function <SNR>244_autocmd_handler()
-function <SNR>245_format_wordcount(wordcount)
-function <SNR>245_get_wordcount(visual_mode_active)
-function <SNR>245_update_wordcount(force_update)
-function <SNR>247_buffer_deleted(reason) abort
-function <SNR>247_filename_changed_post() abort
-function <SNR>247_filename_changed_pre() abort
-function <SNR>247_init_buffer() abort
-function <SNR>247_init_buffer_bib() abort
-function <SNR>247_init_buffer_tex() abort
-function <SNR>247_init_default_mappings() abort
-function <SNR>247_init_state() abort
-function <SNR>247_map(ftype, mode, lhs, rhs, ...) abort
-function <SNR>247_map_prefixed(ftype, mode, lhs, rhs) abort
-function <SNR>247_quit() abort
-function <SNR>248_SetDefault(var, val)
-function <SNR>249_search_term()
-function <SNR>24_SynSet()
-function <SNR>251_create(parts, append)
-function <SNR>251_wrap_accent(part, value)
-function <SNR>252_CheckDefined(colors) abort
-function <SNR>252_GetHiCmd(list) abort
-function <SNR>252_exec_separator(dict, from, to, inverse, suffix) abort
-function <SNR>252_get_array(guifg, guibg, ctermfg, ctermbg, opts) abort
-function <SNR>252_get_syn(group, what, mode) abort
-function <SNR>252_group_not_done(list, name) abort
-function <SNR>252_gui2cui(rgb, fallback) abort
-function <SNR>252_hl_group_exists(group) abort
-function <SNR>255_get_accented_line(self, group, contents)
-function <SNR>255_get_separator(self, prev_group, group, side)
-function <SNR>255_get_transitioned_separator(self, prev_group, group, side)
-function <SNR>255_section_is_empty(self, content)
-function <SNR>256_add_section(builder, context, key)
-function <SNR>256_build_sections(builder, context, keys)
-function <SNR>256_get_section(winnr, key, ...)
-function <SNR>257_set_enabled(arg, enabled) abort
-function <SNR>258_set_fix_strategy(context, message, strategy) abort
-function <SNR>259_close(popup) abort
-function <SNR>259_open() abort
-function <SNR>259_show() abort
-function <SNR>259_show_cursor() abort
-function <SNR>260_clear(bufnr)
-function <SNR>260_has_fresh_changes(bufnr) abort
-function <SNR>260_reset_tick(bufnr) abort
-function <SNR>260_setup_path(bufnr, continuation)
-function <SNR>260_toggle_each_buffer(enable)
-function <SNR>261_append_group(title, regs)
-function <SNR>261_close()
-function <SNR>261_feed(count, mode, reg, rest)
-function <SNR>261_getpos()
-function <SNR>261_gv(visualmode, visible)
-function <SNR>261_is_open()
-function <SNR>261_is_visible(pos)
-function <SNR>261_open(mode)
-function <SNR>261_wait_with_timeout(timeout)
-function <SNR>262_handle_error(err) abort
-function <SNR>262_on_highlight(...) abort
-function <SNR>262_on_redraw(helper) abort
-function <SNR>262_on_syntax(...) abort
-function <SNR>262_redraw(helper) abort
-function <SNR>262_update_node(status_map, node) abort
-function <SNR>263__can_be_canceled() abort dict
-function <SNR>263__cancellation_requested() abort dict
-function <SNR>263__register(callback) abort dict
-function <SNR>263__throw_if_cancellation_requested() abort dict
-function <SNR>263__unregister() abort dict
-function <SNR>263__vital_created(module) abort
-function <SNR>263_new(source) abort
-function <SNR>265_cd_cmd() abort
-function <SNR>265_cd_to_vcs_root(path) abort
-function <SNR>265_check_user_options(path) abort
-function <SNR>265_close() abort
-function <SNR>265_compare_by_index(foo, bar)
-function <SNR>265_create_last_session_link(session_path)
-function <SNR>265_display_by_path(path_prefix, path_format, use_env) abort
-function <SNR>265_filter_oldfiles(path_prefix, path_format, use_env) abort
-function <SNR>265_filter_oldfiles_unsafe(path_prefix, path_format, use_env) abort
-function <SNR>265_get_index_as_string() abort
-function <SNR>265_get_lists() abort
-function <SNR>265_hide_endofbuffer_markers()
-function <SNR>265_init_env()
-function <SNR>265_is_in_skiplist(arg) abort
-function <SNR>265_leftmouse()
-function <SNR>265_open_buffer(entry)
-function <SNR>265_print_section_header() abort
-function <SNR>265_register(line, index, type, cmd, path)
-function <SNR>265_set_cursor() abort
-function <SNR>265_set_custom_section(section) abort
-function <SNR>265_set_mappings() abort
-function <SNR>265_show_bookmarks() abort
-function <SNR>265_show_commands() abort
-function <SNR>265_show_dir() abort
-function <SNR>265_show_files() abort
-function <SNR>265_show_lists(lists) abort
-function <SNR>265_show_sessions() abort
-function <SNR>265_sort_by_tick(one, two)
-function <SNR>265_transform(absolute_path)
-function <SNR>265_warn(msg) abort
-function <SNR>266_draw_box(lines) abort
-function <SNR>266_get_random_offset(max) abort
-function <SNR>268_GetEnclosingTagLocations()
-function <SNR>268_HighlightEnclosingTags()
-function <SNR>268_HighlightEnclosingTagsIfPossible()
-function <SNR>269_ApplyPartialTimer(timer_id) abort
-function <SNR>269_LoadArgCount(function) abort
-function <SNR>26_AddColors(cnames) abort
-function <SNR>26_Cleanup()
-function <SNR>270_dict_has_key_pat(d, key) abort
-function <SNR>270_get_cur_word() abort
-function <SNR>270_illuminate(...) abort
-function <SNR>270_list_contains_pat(list, val) abort
-function <SNR>270_match_word(word) abort
-function <SNR>270_remove_illumination() abort
-function <SNR>270_should_illuminate_file() abort
-function <SNR>270_should_illuminate_word() abort
-function <SNR>271_GetAliasedFiletype(original_filetype) abort
-function <SNR>271_GetLinterNames(original_filetype) abort
-function <SNR>271_IsBoolean(value) abort
-function <SNR>271_IsCallback(value) abort
-function <SNR>284_foldable(...) abort
-function <SNR>284_run_syntax_fold(args) abort
-function <SNR>287_Ansi2Gui(code)
-function <SNR>287_MultiElementHandler()
-function <SNR>288_ObserveOptions()
-function <SNR>288_exec(cmd) abort
-function <SNR>288_exec_silent(cmd) abort
-function <SNR>288_exitIfLast() abort
-function <SNR>288_getUniqueID() abort
-function <SNR>288_gettime(time) abort
-function <SNR>288_log(msg) abort
-function <SNR>288_new(obj) abort
-function <SNR>288_undotreeAction(action) abort
-function <SNR>289_GetALEProjectDir(buffer) abort
-function <SNR>28_SetOption(name, default)
-function <SNR>28_TomorrowOptions()
-function <SNR>28_TormorrowHiTrail()
-function <SNR>292_lash(...)
-function <SNR>293_AbsoluteVimPath(...) abort
-function <SNR>293_AddDiffSection(to, stat, label, files) abort
-function <SNR>293_AddHeader(to, key, value) abort
-function <SNR>293_AddLogSection(to, label, log) abort
-function <SNR>293_AddSection(to, label, lines, ...) abort
-function <SNR>293_ArgSplit(string) abort
-function <SNR>293_AskPassArgs(dir) abort
-function <SNR>293_BlameBufnr(...) abort
-function <SNR>293_BlameCommit(cmd, ...) abort
-function <SNR>293_BlameCommitFileLnum(...) abort
-function <SNR>293_BlameCursorSync(bufnr, line) abort
-function <SNR>293_BlameJump(suffix, ...) abort
-function <SNR>293_BlameLeave() abort
-function <SNR>293_BlameMaps(is_ftplugin) abort
-function <SNR>293_BlameQuit() abort
-function <SNR>293_BlameRehighlight() abort
-function <SNR>293_BlameSubcommand(line1, count, range, bang, mods, options) abort
-function <SNR>293_BlobTemp(url) abort
-function <SNR>293_BlurStatus() abort
-function <SNR>293_BranchCfile(result) abort
-function <SNR>293_BrowserOpen(url, mods, echo_copy) abort
-function <SNR>293_BufName(var) abort
-function <SNR>293_BuildEnvPrefix(env) abort
-function <SNR>293_BuildShell(dir, env, git, args) abort
-function <SNR>293_CfilePorcelain(...) abort
-function <SNR>293_ChompDefault(default, ...) abort
-function <SNR>293_ChompStderr(...) abort
-function <SNR>293_CommitInteractive(line1, line2, range, bang, mods, options, patch) abort
-function <SNR>293_CommitSubcommand(line1, line2, range, bang, mods, options) abort
-function <SNR>293_CompletableSubcommands(dir) abort
-function <SNR>293_CompleteBisect(A, L, P, ...) abort
-function <SNR>293_CompleteHeads(dir) abort
-function <SNR>293_CompletePush(A, L, P, ...) abort
-function <SNR>293_CompleteRemote(A, L, P, ...) abort
-function <SNR>293_CompleteRevision(A, L, P, ...) abort
-function <SNR>293_CompleteSub(subcommand, A, L, P, ...) abort
-function <SNR>293_ConfigCallback(r, into) abort
-function <SNR>293_ConfigLengthSort(i1, i2) abort
-function <SNR>293_ConfigTimestamps(dir, dict) abort
-function <SNR>293_ContainingCommit() abort
-function <SNR>293_CurlResponse(result) abort
-function <SNR>293_DiffModifier(count, default) abort
-function <SNR>293_DifftoolSubcommand(line1, line2, range, bang, mods, options) abort
-function <SNR>293_Dir(...) abort
-function <SNR>293_DirCheck(...) abort
-function <SNR>293_DirCommitFile(path) abort
-function <SNR>293_DirRev(url) abort
-function <SNR>293_DirUrlPrefix(dir) abort
-function <SNR>293_Do(action, visual) abort
-function <SNR>293_DoAutocmd(...) abort
-function <SNR>293_DoAutocmdChanged(dir) abort
-function <SNR>293_DoStagePushHeader(value) abort
-function <SNR>293_DoStageUnpushed(record) abort
-function <SNR>293_DoStageUnpushedHeading(heading) abort
-function <SNR>293_DoStageUnstaged(record) abort
-function <SNR>293_DoStageUnstagedHeading(heading) abort
-function <SNR>293_DoStageUntracked(record) abort
-function <SNR>293_DoStageUntrackedHeading(heading) abort
-function <SNR>293_DoToggleHeadHeader(value) abort
-function <SNR>293_DoToggleHelpHeader(value) abort
-function <SNR>293_DoTogglePushHeader(value) abort
-function <SNR>293_DoToggleStaged(record) abort
-function <SNR>293_DoToggleStagedHeading(...) abort
-function <SNR>293_DoToggleUnpulled(record) abort
-function <SNR>293_DoToggleUnpulledHeading(heading) abort
-function <SNR>293_DoToggleUnpushed(record) abort
-function <SNR>293_DoToggleUnpushedHeading(heading) abort
-function <SNR>293_DoToggleUnstaged(record) abort
-function <SNR>293_DoToggleUnstagedHeading(...) abort
-function <SNR>293_DoToggleUntracked(record) abort
-function <SNR>293_DoToggleUntrackedHeading(...) abort
-function <SNR>293_DoUnstageStaged(record) abort
-function <SNR>293_DoUnstageStagedHeading(heading) abort
-function <SNR>293_DoUnstageUnpulled(record) abort
-function <SNR>293_DoUnstageUnpulledHeading(heading) abort
-function <SNR>293_DoUnstageUnpushed(record) abort
-function <SNR>293_DoUnstageUnstaged(record) abort
-function <SNR>293_DotRelative(path, ...) abort
-function <SNR>293_ExecPath() abort
-function <SNR>293_Expand(rev, ...) abort
-function <SNR>293_ExpandVar(other, var, flags, esc, ...) abort
-function <SNR>293_ExpireStatus(bufnr) abort
-function <SNR>293_FetchSubcommand(...) abort
-function <SNR>293_FileIgnoreCase(for_completion) abort
-function <SNR>293_FilterEscape(items, ...) abort
-function <SNR>293_Format(val) abort
-function <SNR>293_FormatFile(dict) abort
-function <SNR>293_FormatLog(dict) abort
-function <SNR>293_FormatRebase(dict) abort
-function <SNR>293_GF(mode) abort
-function <SNR>293_Generate(object, ...) abort
-function <SNR>293_GitCmd() abort
-function <SNR>293_GitDir(...) abort
-function <SNR>293_GitIndexFileEnv() abort
-function <SNR>293_GitShellCmd() abort
-function <SNR>293_GlobComplete(lead, pattern, ...) abort
-function <SNR>293_GrepCfile(result) abort
-function <SNR>293_GrepOptions(args, dir) abort
-function <SNR>293_GrepParseLine(options, quiet, dir, line) abort
-function <SNR>293_GrepSubcommand(line1, line2, range, bang, mods, options) abort
-function <SNR>293_HasOpt(args, ...) abort
-function <SNR>293_HunkPosition(lnum) abort
-function <SNR>293_InitializeBuffer(repo) abort
-function <SNR>293_IsConflicted() abort
-function <SNR>293_JobExecute(argv, jopts, stdin, callback, ...) abort
-function <SNR>293_JobNvimCallback(lines, job, data, type) abort
-function <SNR>293_JobNvimExit(dict, callback, job, data, type) abort dict
-function <SNR>293_JobOpts(cmd, env) abort
-function <SNR>293_JobVimExit(dict, callback, temp, job, status) abort
-function <SNR>293_JoinChomp(list) abort
-function <SNR>293_Keywordprg() abort
-function <SNR>293_LinesError(...) abort
-function <SNR>293_LogFlushQueue(state, dir) abort
-function <SNR>293_LogParse(state, dir, prefix, line) abort
-function <SNR>293_Map(mode, lhs, rhs, ...) abort
-function <SNR>293_MapGitOps(is_ftplugin) abort
-function <SNR>293_MapMotion(lhs, rhs) abort
-function <SNR>293_MapStatus() abort
-function <SNR>293_MergeHead(dir) abort
-function <SNR>293_MergeSubcommand(line1, line2, range, bang, mods, options) abort
-function <SNR>293_MergetoolSubcommand(line1, line2, range, bang, mods, options) abort
-function <SNR>293_Mods(mods, ...) abort
-function <SNR>293_Move(force, rename, destination) abort
-function <SNR>293_NavigateUp(count) abort
-function <SNR>293_NextExpandedHunk(count) abort
-function <SNR>293_NextFile(count) abort
-function <SNR>293_NextHunk(count) abort
-function <SNR>293_NextItem(count) abort
-function <SNR>293_NextSection(count) abort
-function <SNR>293_NextSectionEnd(count) abort
-function <SNR>293_OpenExpand(dir, file, wants_cmd) abort
-function <SNR>293_OpenParse(string, wants_cmd, wants_multiple) abort
-function <SNR>293_OriginBufnr(...) abort
-function <SNR>293_Owner(path, ...) abort
-function <SNR>293_ParseDiffHeader(str) abort
-function <SNR>293_PatchSearchExpr(reverse) abort
-function <SNR>293_PathInfo(url) abort
-function <SNR>293_PathJoin(prefix, str) abort
-function <SNR>293_PathUrlEncode(str) abort
-function <SNR>293_PlusEscape(string) abort
-function <SNR>293_PrepareEnv(env, dir) abort
-function <SNR>293_PrepareJob(opts) abort
-function <SNR>293_PreparePathArgs(cmd, dir, literal, explicit) abort
-function <SNR>293_PreviousFile(count) abort
-function <SNR>293_PreviousHunk(count) abort
-function <SNR>293_PreviousItem(count) abort
-function <SNR>293_PreviousSection(count) abort
-function <SNR>293_PreviousSectionEnd(count) abort
-function <SNR>293_PushSubcommand(...) abort
-function <SNR>293_QueryLog(refspec, limit, dir) abort
-function <SNR>293_QueryLogRange(old, new, dir) abort
-function <SNR>293_QuickfixCreate(nr, opts) abort
-function <SNR>293_QuickfixGet(nr, ...) abort
-function <SNR>293_QuickfixOpen(nr, mods) abort
-function <SNR>293_QuickfixSet(nr, ...) abort
-function <SNR>293_QuickfixStream(nr, event, title, cmd, first, mods, callback, ...) abort
-function <SNR>293_Quote(string) abort
-function <SNR>293_ReadPrepare(line1, count, range, mods) abort
-function <SNR>293_RebaseArgument() abort
-function <SNR>293_RebaseSubcommand(line1, line2, range, bang, mods, options) abort
-function <SNR>293_Relative(...) abort
-function <SNR>293_ReloadStatus() abort
-function <SNR>293_ReloadStatusBuffer() abort
-function <SNR>293_ReloadTabStatus() abort
-function <SNR>293_ReloadWinStatus(...) abort
-function <SNR>293_Remote(dir, remote, flags, cb) abort
-function <SNR>293_RemoteCallback(config, into, flags, cb) abort
-function <SNR>293_RemoteDefault(dir) abort
-function <SNR>293_RemoteParseArgs(args) abort
-function <SNR>293_RemoteRefToLocalRef(repo, remote_url, ref_path) abort
-function <SNR>293_RemoteResolve(url, flags) abort
-function <SNR>293_RemoteUrlCallback(remote, callback) abort
-function <SNR>293_Remove(after, force) abort
-function <SNR>293_ReplaceCmd(cmd) abort
-function <SNR>293_Resolve(path) abort
-function <SNR>293_ResolveUrl(target, ...) abort
-function <SNR>293_RevertSubcommand(line1, line2, range, bang, mods, options) abort
-function <SNR>293_RunBufDelete(bufnr) abort
-function <SNR>293_RunClose(state, tmp, job, ...) abort
-function <SNR>293_RunCloseIn(job) abort
-function <SNR>293_RunEcho(tmp) abort
-function <SNR>293_RunEdit(state, tmp, job) abort
-function <SNR>293_RunExit(state, tmp, job, exit_status) abort
-function <SNR>293_RunFinished(state, ...) abort
-function <SNR>293_RunReceive(state, tmp, type, job, data, ...) abort
-function <SNR>293_RunSave(state) abort
-function <SNR>293_RunSend(job, str) abort
-function <SNR>293_RunTick(job) abort
-function <SNR>293_RunWait(state, tmp, job, ...) abort
-function <SNR>293_SameRepo(one, two) abort
-function <SNR>293_Selection(arg1, ...) abort
-function <SNR>293_Slash(path) abort
-function <SNR>293_SplitExpandChain(string, ...) abort
-function <SNR>293_SquashArgument(...) abort
-function <SNR>293_SshParseConfig(into, root, file) abort
-function <SNR>293_SshParseHost(value) abort
-function <SNR>293_StageApply(info, reverse, extra) abort
-function <SNR>293_StageArgs(visual) abort
-function <SNR>293_StageDelete(lnum1, lnum2, count) abort
-function <SNR>293_StageDiff(diff) abort
-function <SNR>293_StageDiffEdit() abort
-function <SNR>293_StageIgnore(lnum1, lnum2, count) abort
-function <SNR>293_StageInfo(...) abort
-function <SNR>293_StageInline(mode, ...) abort
-function <SNR>293_StageInlineGetDiff(diff_section, info) abort
-function <SNR>293_StageJump(offset, section, ...) abort
-function <SNR>293_StagePatch(lnum1, lnum2) abort
-function <SNR>293_StageReveal() abort
-function <SNR>293_StageSeek(info, fallback) abort
-function <SNR>293_StatusCfile(...) abort
-function <SNR>293_StatusCommand(line1, line2, range, count, bang, mods, reg, arg, args, ...) abort
-function <SNR>293_StatusSectionFile(heading, filename) abort
-function <SNR>293_StdoutToFile(out, cmd, ...) abort
-function <SNR>293_SystemError(cmd, ...) abort
-function <SNR>293_SystemList(cmd) abort
-function <SNR>293_TempDelete(file) abort
-function <SNR>293_TempDotMap() abort
-function <SNR>293_TempReadPost(file) abort
-function <SNR>293_TempReadPre(file) abort
-function <SNR>293_TempScript(...) abort
-function <SNR>293_TempState(...) abort
-function <SNR>293_ToolItems(state, from, to, offsets, text, ...) abort
-function <SNR>293_ToolParse(state, line) abort
-function <SNR>293_ToolStream(line1, line2, range, bang, mods, options, args, state) abort
-function <SNR>293_ToolToFrom(str) abort
-function <SNR>293_Tree(...) abort
-function <SNR>293_TreeChomp(...) abort
-function <SNR>293_TreeInfo(dir, commit) abort
-function <SNR>293_Uniq(list) abort
-function <SNR>293_UpdateIndex(dir, info) abort
-function <SNR>293_UrlEncode(str) abort
-function <SNR>293_UrlParse(url) abort
-function <SNR>293_UrlPopulate(string, into) abort
-function <SNR>293_UsableWin(nr) abort
-function <SNR>293_UserCommandCwd(dir) abort
-function <SNR>293_UserCommandList(...) abort
-function <SNR>293_VersionCheck() abort
-function <SNR>293_VimExecPath() abort
-function <SNR>293_VimSlash(path) abort
-function <SNR>293_WinShellEsc(arg) abort
-function <SNR>293_add_methods(namespace, method_names) abort
-function <SNR>293_can_diffoff(buf) abort
-function <SNR>293_cfile() abort
-function <SNR>293_config_Get(name, ...) abort dict
-function <SNR>293_config_GetAll(name) abort dict
-function <SNR>293_config_GetRegexp(pattern) abort dict
-function <SNR>293_cpath(path, ...) abort
-function <SNR>293_diff_window_count() abort
-function <SNR>293_diffoff() abort
-function <SNR>293_diffoff_all(dir) abort
-function <SNR>293_diffthis() abort
-function <SNR>293_executable(binary) abort
-function <SNR>293_fnameescape(file) abort
-function <SNR>293_function(name) abort
-function <SNR>293_gsub(str, pat, rep) abort
-function <SNR>293_linechars(pattern) abort
-function <SNR>293_repo_bare() abort dict
-function <SNR>293_repo_config(name) abort dict
-function <SNR>293_repo_dir(...) abort dict
-function <SNR>293_repo_find(object) abort dict
-function <SNR>293_repo_git_chomp(...) abort dict
-function <SNR>293_repo_git_chomp_in_tree(...) abort dict
-function <SNR>293_repo_git_command(...) abort dict
-function <SNR>293_repo_head(...) abort dict
-function <SNR>293_repo_rev_parse(rev) abort dict
-function <SNR>293_repo_translate(rev) abort dict
-function <SNR>293_repo_tree(...) abort dict
-function <SNR>293_shellesc(arg) abort
-function <SNR>293_sub(str, pat, rep) abort
-function <SNR>293_throw(string) abort
-function <SNR>293_winshell() abort
-function <SNR>294_on_exit_clean(...) abort dict
-function <SNR>294_on_exit_mq(channel) abort dict
-function <SNR>294_on_exit_po(channel) abort dict
-function <SNR>294_on_exit_untracked(channel) abort dict
-function <SNR>294_on_stdout(channel, msg) abort dict
-function <SNR>294_po_output(buf, file)
-function <SNR>294_set_clean_jobs_variable(vcs, file, id)
-function <SNR>294_set_clean_variables(file, vcs, val)
-function <SNR>294_untracked_output(dict, buf)
-function <SNR>294_valid_dir(dir)
-function <SNR>295_AutoUpdate(fname, force, ...) abort
-function <SNR>295_ChangeFoldLevel(diff, force) abort
-function <SNR>295_CheckExCtagsVersion(output) abort
-function <SNR>295_CheckFTCtags(bin, ftype) abort
-function <SNR>295_CheckForExCtags(silent) abort
-function <SNR>295_CheckMouseClick() abort
-function <SNR>295_CloseFold() abort
-function <SNR>295_CloseWindow() abort
-function <SNR>295_CorrectFocusOnStartup() abort
-function <SNR>295_CreateAutocommands() abort
-function <SNR>295_CtagsErrMsg(errmsg, infomsg, silent, ...) abort
-function <SNR>295_DetectFiletype(bufnr) abort
-function <SNR>295_EscapeCtagsCmd(ctags_bin, args, ...) abort
-function <SNR>295_ExecuteCtags(ctags_cmd) abort
-function <SNR>295_ExecuteCtagsOnFile(fname, realfname, typeinfo) abort
-function <SNR>295_GetFileWinnr(fileinfo) abort
-function <SNR>295_GetNearbyTag(request, forcecurrent, ...) abort
-function <SNR>295_GetSupportedFiletypes() abort
-function <SNR>295_GetTagInfo(linenr, ignorepseudo) abort
-function <SNR>295_GotoFileWindow(fileinfo, ...) abort
-function <SNR>295_GotoNextFold() abort
-function <SNR>295_GotoNextToplevelTag(direction) abort
-function <SNR>295_GotoPrevFold() abort
-function <SNR>295_HandleBufDelete(bufname, bufnr) abort
-function <SNR>295_HandleBufWrite(fname) abort
-function <SNR>295_HandleOnlyWindow() abort
-function <SNR>295_HasOpenFileWindows() abort
-function <SNR>295_HighlightTag(openfolds, ...) abort
-function <SNR>295_Init(silent) abort
-function <SNR>295_InitTypes() abort
-function <SNR>295_InitWindow(autoclose) abort
-function <SNR>295_IsLineVisible(line) abort
-function <SNR>295_IsValidFile(fname, ftype) abort
-function <SNR>295_JumpToNearbyTag(direction, request, flags) abort
-function <SNR>295_JumpToTag(stay_in_tagbar, ...) abort
-function <SNR>295_LoadUserTypeDefs(...) abort
-function <SNR>295_MapKeys() abort
-function <SNR>295_MinimizeMaxFoldLevel(fileinfo, tags) abort
-function <SNR>295_OpenFold() abort
-function <SNR>295_OpenParents(...) abort
-function <SNR>295_OpenWindow(flags) abort
-function <SNR>295_ParseTagline(part1, part2, typeinfo, fileinfo) abort
-function <SNR>295_PrintHelp() abort
-function <SNR>295_PrintKinds(typeinfo, fileinfo) abort
-function <SNR>295_PrintTag(tag, depth, output, fileinfo, typeinfo) abort
-function <SNR>295_ProcessFile(fname, ftype) abort
-function <SNR>295_ProcessTag(name, filename, pattern, fields, is_split, typeinfo, fileinfo) abort
-function <SNR>295_RenderContent(...) abort
-function <SNR>295_RenderKeepView(...) abort
-function <SNR>295_ReopenWindow(delbufname) abort
-function <SNR>295_RestoreSession() abort
-function <SNR>295_SetFoldLevel(level, force) abort
-function <SNR>295_SetFoldLevelRecursive(fileinfo, tags, level) abort
-function <SNR>295_SetStatusLine() abort
-function <SNR>295_ShowInPreviewWin() abort
-function <SNR>295_ShowPrototype(short) abort
-function <SNR>295_ShrinkIfExpanded() abort
-function <SNR>295_TagbarBufName() abort
-function <SNR>295_ToggleAutoclose() abort
-function <SNR>295_ToggleCaseInsensitive() abort
-function <SNR>295_ToggleFold() abort
-function <SNR>295_ToggleHelp() abort
-function <SNR>295_ToggleHideNonPublicTags() abort
-function <SNR>295_TogglePause() abort
-function <SNR>295_ToggleSort() abort
-function <SNR>295_ToggleWindow(flags) abort
-function <SNR>295_TransformUserTypeDef(def) abort
-function <SNR>295_ZoomWindow() abort
-function <SNR>295_add_tag_recursive(parent, taginfo, pathlist) abort
-function <SNR>295_create_pseudotag(name, parent, kind, typeinfo, fileinfo) abort
-function <SNR>295_do_delayed_update() abort
-function <SNR>295_get_map_str(map) abort
-function <SNR>295_goto_markedwin(...) abort
-function <SNR>295_goto_tagbar(...) abort
-function <SNR>295_goto_win(winnr, ...) abort
-function <SNR>295_mark_window() abort
-function <SNR>295_run_system(cmd, version) abort
-function <SNR>295_warning(msg) abort
-function <SNR>296_gettime() abort
-function <SNR>298_add_snr(funcname) abort
-function <SNR>298_createKinddict() abort dict
-function <SNR>298_getKind(kind) abort dict
-function <SNR>299_addTag(tag) abort dict
-function <SNR>299_add_snr(funcname) abort
-function <SNR>299_clearOldFolds() abort dict
-function <SNR>299_closeKindFold(kind) abort dict
-function <SNR>299_getTags() abort dict
-function <SNR>299_getTagsByName(tagname) abort dict
-function <SNR>299_openKindFold(kind) abort dict
-function <SNR>299_removeTag(tag) abort dict
-function <SNR>299_reset() abort dict
-function <SNR>299_sortTags(compare_typeinfo) abort dict
-function <SNR>29_Underline(chars)
-function <SNR>300_add_snr(funcname) abort
-function <SNR>300_getDataType() abort dict
-function <SNR>300_getPrototype(short) abort dict
-function <SNR>300_isNormalTag() abort dict
-function <SNR>300_maybe_map_scope(scopestr) abort
-function <SNR>300_str(longsig, full) abort dict
-function <SNR>300_strfmt() abort dict
-function <SNR>301__getPrefix() abort dict
-function <SNR>301_addChild(tag) abort dict
-function <SNR>301_add_snr(funcname) abort
-function <SNR>301_closeFold() abort dict
-function <SNR>301_getChildren() abort dict
-function <SNR>301_getChildrenByName(tagname) abort dict
-function <SNR>301_getClosedParentTline() abort dict
-function <SNR>301_getDataType() abort dict
-function <SNR>301_getPrototype(short) abort dict
-function <SNR>301_initFoldState(known_files) abort dict
-function <SNR>301_isFoldable() abort dict
-function <SNR>301_isFolded() abort dict
-function <SNR>301_isKindheader() abort dict
-function <SNR>301_isNormalTag() abort dict
-function <SNR>301_isPseudoTag() abort dict
-function <SNR>301_isSplitTag() abort dict
-function <SNR>301_openFold() abort dict
-function <SNR>301_openParents() abort dict
-function <SNR>301_removeChild(tag) abort dict
-function <SNR>301_setFolded(folded) abort dict
-function <SNR>302_add_snr(funcname) abort
-function <SNR>302_closeFold() abort dict
-function <SNR>302_getPrototype(short) abort dict
-function <SNR>302_isFoldable() abort dict
-function <SNR>302_isFolded() abort dict
-function <SNR>302_isKindheader() abort dict
-function <SNR>302_openFold() abort dict
-function <SNR>302_toggleFold(fileinfo) abort dict
-function <SNR>303_compare_by_kind(tag1, tag2) abort
-function <SNR>303_compare_by_line(tag1, tag2) abort
-function <SNR>304_get() abort
-function <SNR>305_AddProblemsFromOtherBuffers(buffer, linters) abort
-function <SNR>305_GetLintFileSlots(buffer, linters) abort
-function <SNR>305_GetLintFileValues(slots, Callback) abort
-function <SNR>305_HandleExit(job_info, buffer, output, data) abort
-function <SNR>305_RemapItemTypes(type_map, loclist) abort
-function <SNR>305_RemoveProblemsForDisabledLinters(buffer, linters) abort
-function <SNR>305_RunIfExecutable(buffer, linter, lint_file, executable) abort
-function <SNR>305_RunJob(command, options) abort
-function <SNR>305_RunLinter(buffer, linter, lint_file) abort
-function <SNR>305_RunLinters(buffer, linters, slots, should_lint_file, new_buffer) abort
-function <SNR>305_StopCurrentJobs(buffer, clear_lint_file_jobs, linter_slots) abort
-function <SNR>306_BufferCacheExists(buffer) abort
-function <SNR>306_CreateCountDict() abort
-function <SNR>306_GetCounts(buffer) abort
-function <SNR>306_GetFirstProblems(buffer) abort
-function <SNR>306_UpdateCacheIfNecessary(buffer) abort
-function <SNR>307_ShowCursorDetailForItem(loc, options) abort
-function <SNR>307_StopCursorTimer() abort
-function <SNR>308_SetBufferUpdater(bufnr, callback, interval)
-function <SNR>30_fern_settings() abort
-function <SNR>32_WinLineRestore(swwline)
-function <SNR>35_indent(line) abort
-function <SNR>36_ChangeNextSurroundingFunctionCall()
-function <SNR>36_ChangeSurroundingFunctionCall()
-function <SNR>36_Delete(opening_bracket)
-function <SNR>36_DeleteNextSurroundingFunctionCall()
-function <SNR>36_DeleteSurroundingFunctionCall()
-function <SNR>36_FunctionCallTextObject(mode)
-function <SNR>40_CeilingDirectories() abort
-function <SNR>40_Map(mode, lhs, rhs, flags) abort
-function <SNR>40_ProjectionistDetect() abort
-function <SNR>40_ReadFile(path, line_count) abort
-function <SNR>40_ResolveGitDir(git_dir) abort
-function <SNR>40_Slash(path) abort
-function <SNR>40_Tree(path) abort
-function <SNR>40_VimSlash(path) abort
-function <SNR>42_next_tick(cmd)
-function <SNR>42_obsolete(var)
-function <SNR>42_on_bufenter()
-function <SNR>42_on_buffilepost(bufnr)
-function <SNR>42_on_buffilepre(bufnr)
-function <SNR>43_abs_path(bufnr, shellesc)
-function <SNR>43_dir(bufnr) abort
-function <SNR>43_dos_shell()
-function <SNR>43_exists_file(bufnr) abort
-function <SNR>43_is_file_buffer(bufnr) abort
-function <SNR>43_not_git_dir(bufnr) abort
-function <SNR>43_obtain_file_renames(bufnr, base)
-function <SNR>43_restore_shell() abort
-function <SNR>43_strip_trailing_new_line(line) abort
-function <SNR>43_unc_path(bufnr)
-function <SNR>43_use_known_shell() abort
-function <SNR>43_winshell()
-function <SNR>44_define_sign_line_highlights() abort
-function <SNR>44_define_sign_linenr_highlights() abort
-function <SNR>44_define_sign_text() abort
-function <SNR>44_get_background_colors(group) abort
-function <SNR>44_get_foreground_colors(group) abort
-function <SNR>44_get_foreground_fallback_colors(type)
-function <SNR>44_get_hl(group, what, mode) abort
-function <SNR>44_useful_diff_colours()
-function <SNR>45_SetUpMessage(filename) abort
-function <SNR>46_CSVArrange(arrange)
-function <SNR>46_CSVDoBufLoadAutocmd()
-function <SNR>46_Table(bang, line1, line2, delim)
-function <SNR>48_install_plugin(mode, buffer)
-function <SNR>48_setup_styledEmmetAbbreviation() abort
-function <SNR>53_InitIfSupportedFiletype(filetype_string)
-function <SNR>54_vader(...) range
-function <SNR>58_AsEmpty()
-function <SNR>58_CloseIt()
-function <SNR>58_Declare(var, def)
-function <SNR>58_FindTag()
-function <SNR>58_Handler(xml_tag, isHtml)
-function <SNR>58_HaveAtt()
-function <SNR>58_InValidRegion()
-function <SNR>58_InitBuf()
-function <SNR>58_Initial()
-function <SNR>58_SavePos()
-function <SNR>58_TagName(from)
-function <SNR>60_CheckBinaries()
-function <SNR>60_GoInstallBinaries(updateBinaries, ...)
-function <SNR>60_checkVersion() abort
-function <SNR>60_complete(lead, cmdline, cursor)
-function <SNR>60_gofiletype_post()
-function <SNR>60_gofiletype_pre()
-function <SNR>60_noop(...) abort
-function <SNR>60_register()
-function <SNR>62_clear_group_from_matches(group) abort
-function <SNR>62_echo(msg, hi)
-function <SNR>62_exec(cmd, ...) abort
-function <SNR>62_matchaddpos(group, pos) abort
-function <SNR>62_noop(...) abort dict
-function <SNR>62_system(cmd, ...) abort
-function <SNR>62_unset(name) abort
-function <SNR>63_gomod()
-function <SNR>88_parse_args(args) abort
-function <SNR>92_CreateMaps(modes, target, desc, combo)
-function <SNR>92_InitVariable(var, value)
-function <SNR>93_init_var(var, value) abort
-function <SNR>93_setup_keymaps() abort
-function <SNR>93_setup_options() abort
-function <SNR>95_DoMatchParen()
-function <SNR>95_Highlight_Matching_Pair()
-function <SNR>95_NoMatchParen()
-function <SNR>95_Remove_Matches()
-function <SNR>96_force(wise)
-function <SNR>96_init_default_mappings()
-function <SNR>96_init_modules()
-function <SNR>96_init_oldstyle_ops()
-function <SNR>96_init_option(option, default)
-function <SNR>96_init_options()
-function <SNR>96_make_oldstyle_omaps(lhs, rhs)
-function <SNR>96_map(mode, lhs, rhs, ...)
-function <SNR>96_misc_init_module()
-function <SNR>96_motion_init_module()
-function <SNR>96_omap(mode, lhs, rhs, ...)
-function <SNR>96_snr()
-function <SNR>96_surround_init_module()
-function <SNR>96_text_obj_init_module()
-function <SNR>96_treesitter_init_module()
-function <SNR>96_where_init_module()
-function <SNR>97_sort_by_last(a, b)
-function <SNR>98_Nsort_func(a, b) abort
-function <SNR>98_capture_group_sort(a, b) abort dict
-function <SNR>98_init_delim_lists(no_words, filter_words) abort
-function <SNR>98_init_delim_lists_fast(mps) abort
-function <SNR>98_init_delim_regexes() abort
-function <SNR>98_init_delim_regexes_generator(list_name) abort
-function <SNR>98_init_delim_skip() abort
-function <SNR>98_matchstrpos(expr, pat, start) abort
-function <SNR>99_add_background_matches_1(line1, col1, line2, col2)
-function <SNR>99_add_matches(corrlist, ...)
-function <SNR>99_close_floating_win()
-function <SNR>99_do_offscreen(current, method)
-function <SNR>99_do_offscreen_popup(offscreen) abort
-function <SNR>99_do_offscreen_popup_nvim(offscreen) abort
-function <SNR>99_do_offscreen_statusline(offscreen, manual)
-function <SNR>99_do_popup_autocmd_enter(win_context) abort
-function <SNR>99_do_popup_autocmd_leave(win_context) abort
-function <SNR>99_ensure_match_popup() abort
-function <SNR>99_ensure_scroll_timer()
-function <SNR>99_fade_timer_callback(win_id, timer_id) abort
-function <SNR>99_format_gutter(lnum, ...)
-function <SNR>99_highlight_background(corrlist)
-function <SNR>99_highlight_surrounding(insertmode, current)
-function <SNR>99_pi_paren_sid()
-function <SNR>99_populate_floating_win(offscreen, text_method) abort
-function <SNR>99_pumvisible() abort
-function <SNR>99_set_popup_text(lnum, adjust, offscreen) abort
-function <SNR>99_set_popup_text_2(lnum, adjust, offscreen) abort
-function <SNR>99_synID(lnum, col, trans)
-function <SNR>99_timer_callback(win_id, timer_id) abort
-function <SNR>99_wordish(delim)
-function ALEToggleBufferShow()
-function AirlineWebDevIcons(...)
-function AnsiEsc#AnsiEsc(rebuild)
-function AnsiEsc#BufReadPost()
-function BackupQuit()
-function BlackComplete(ArgLead, CmdLine, CursorPos)
-function BmmFn()
-function BufExplorer()
-function BufExplorerHorizontalSplit()
-function BufExplorerVerticalSplit()
-function BufExplorer_IsValid()
-function BufExplorer_ReSize()
-function BufExplorer_Refresh()
-function BufExplorer_Start()
-function ClearFancyGlyphs()
-function ClearMAS()
-function ColorLightDark()
-function CompiledPDF()
-function ConvertSearchForVisualSelection()
-function CustomFoldText(...)
-function DateFr()
-function DestroyMark(markname)
-function DoRemoteReply(id, cnt, group, file)
-function EasyMotionSearchToggle()
-function EightyTwoColumns()
-function FirmComment(c)
-function FirmUnComment(c)
-function FugitiveActualDir(...) abort
-function FugitiveCommonDir(...) abort
-function FugitiveConfig(...) abort
-function FugitiveConfigGet(name, ...) abort
-function FugitiveConfigGetAll(name, ...) abort
-function FugitiveConfigGetRegexp(pattern, ...) abort
-function FugitiveDetect(...) abort
-function FugitiveDidChange(...) abort
-function FugitiveExecute(args, ...) abort
+function <SNR>306_ExecuteCtags(ctags_cmd) abort
+function <SNR>336_ToggleMRURelative()
+function <SNR>265_build_sections(builder, context, keys)
+function <SNR>304_NextExpandedHunk(count) abort
 function FugitiveExtractGitDir(path) abort
-function FugitiveFind(...) abort
-function FugitiveGitDir(...) abort
-function FugitiveGitPath(path) abort
-function FugitiveGitVersion(...) abort
-function FugitiveHead(...) abort
-function FugitiveIsGitDir(...) abort
-function FugitiveParse(...) abort
-function FugitivePath(...) abort
-function FugitiveReal(...) abort
-function FugitiveRemote(...) abort
-function FugitiveRemoteUrl(...) abort
-function FugitiveResult(...) abort
-function FugitiveShellCommand(...) abort
-function FugitiveStatusline(...) abort
-function FugitiveVimPath(path) abort
-function FugitiveWorkTree(...) abort
-function GitGutterFocus()
-function GitGutterGetHunkSummary()
-function GitGutterGetHunks()
-function GoWinbufnr(bufnum)
-function GrabAllCommands()
-function GrabAllFunctions()
-function GrabMK()
-function GrabScriptnames()
-function GrabSimpleMaps()
-function IlluminateMoreToggle()
-function IncSearchToggle()
-function LanguageTool_lopen()
-function LogiPat(pat, ...)
-function MatchTagAlways#GoToEnclosingTag()
-function MatchTagAlways#Setup()
-function MatchupStatusOffscreen()
-function MruGetFiles(...)
-function NERDComment(mode, type) range
-function NERDCommentIsCharCommented(line, col)
-function NERDCommentIsLineCommented(lineNo)
-function NERDTreeAddKeyMap(options)
-function NERDTreeAddMenuItem(options)
-function NERDTreeAddMenuSeparator(...)
-function NERDTreeAddNode()
-function NERDTreeAddPathFilter(callback)
-function NERDTreeAddSubmenu(options)
-function NERDTreeCWD()
-function NERDTreeChangePermissions()
-function NERDTreeCopyNode()
-function NERDTreeCopyPath()
-function NERDTreeDeleteNode()
-function NERDTreeExecFile()
-function NERDTreeExecFileActive()
-function NERDTreeExecuteFile()
-function NERDTreeExecuteFileLinux()
-function NERDTreeExecuteFileWindows()
-function NERDTreeFocus()
-function NERDTreeListNode()
-function NERDTreeListNodeWin32()
-function NERDTreeMoveNode()
-function NERDTreeQuickLook()
-function NERDTreeRender()
-function NERDTreeRevealFileLinux()
-function NERDTreeRevealInExplorer()
-function NERDTreeRevealInFinder()
-function NERDTreeSystemCommand()
-function NERDTreeWebDevIconsRefreshListener(event)
-function NetUserPass(...)
-function NetrwStatusLine()
-function OpenBrowser(...) abort
-function OpenBrowserSearch(...) abort
-function OpenInEmacs()
-function ParenthsToggle()
-function PercentUnicode()
-function QArgSplitter(qarg)
-function RestoreMark(markname)
-function RestoreUserMaps(suffix)
-function RestoreWinPosn(...)
-function SaveMark(markname)
-function SaveUserMaps(mapmode, maplead, mapchx, suffix)
-function SaveWinPosn(...)
-function SetupRemoteReplies()
-function ShowTrailingWhitespace#Color#EnsureVisibleBackgroundColor() abort
-function ShowTrailingWhitespace#Detect(isInsertMode)
-function ShowTrailingWhitespace#Filter#BlacklistFile(isPermanent)
-function ShowTrailingWhitespace#Filter#Default()
-function ShowTrailingWhitespace#Filter#RemoveFileFromBlacklist()
-function ShowTrailingWhitespace#IsSet()
-function ShowTrailingWhitespace#NotFiltered()
-function ShowTrailingWhitespace#Pattern(isInsertMode)
-function ShowTrailingWhitespace#Reset()
-function ShowTrailingWhitespace#Set(isTurnOn, isGlobal)
-function ShowTrailingWhitespace#SetLocalExtraPattern(pattern)
-function ShowTrailingWhitespace#Toggle(isGlobal)
-function SplitHtoggle()
-function SplitVtoggle()
-function StartifyEntryFormat() abort
-function StripStoreCurSel()
-function SuperTab(command)
-function SuperTabAlternateCompletion(type)
-function SuperTabChain(completefunc, completekeys, ...)
-function SuperTabCodeComplete(findstart, base)
-function SuperTabLongestHighlight(dir)
-function SuperTabSetCompletionType(type)
-function SuperTabSetDefaultCompletionType(type)
-function TWSDark()
-function TagbarBalloonExpr() abort
-function TbCsv()
-function TestFiletypeFuncs(testlist)
-function TestSuperTabCodeComplete(findstart, base)
-function ToggleBufExplorer()
-function TomorrowMenu()
-function TweakLS()
-function TwiddleCase(str)
-function UnComment()
-function UnicodePercent()
-function VifmExitCb(data, job, code) abort
-function VimFolds()
-function VimFtpluginUndo()
-function VimgrepQRs()
-function VimgrepSelection()
-function WebDevIconsGetFileFormatSymbol(...)
-function WebDevIconsGetFileTypeSymbol(...) abort
-function WebDevIconsNERDTreeChangeRootHandler(node)
-function WebDevIconsNERDTreeDirClose(node)
-function WebDevIconsNERDTreeDirCloseChildren(node)
-function WebDevIconsNERDTreeDirCloseRecursively(node)
-function WebDevIconsNERDTreeDirOpen(node)
-function WebDevIconsNERDTreeDirOpenRecursively(node)
-function WebDevIconsNERDTreeDirUpdateFlags(node, glyph)
-function WebDevIconsNERDTreeMapActivateNode(node)
-function WebDevIconsNERDTreeMapActivateNodeSingleMode(node)
-function WebDevIconsNERDTreeMapCloseChildren(node)
-function WebDevIconsNERDTreeMapCloseDir(node)
-function WebDevIconsNERDTreeMapOpenRecursively(node)
-function WebDevIconsNERDTreeMapUpdirKeepOpen()
-function WebDevIconsNERDTreeUpDirCurrentRootClosedHandler()
-function airline#add_inactive_statusline_func(name, ...)
-function airline#add_inactive_statusline_funcref(function, ...)
-function airline#add_statusline_func(name, ...)
-function airline#add_statusline_funcref(function, ...)
-function airline#async#get_mq_async(cmd, file)
-function airline#async#get_msgfmt_stat(cmd, file)
-function airline#async#mq_output(buf, file)
-function airline#async#nvim_vcs_untracked(cfg, file, vcs)
-function airline#async#vcs_clean(cmd, file, vcs)
-function airline#async#vcs_untracked(config, file, vcs)
-function airline#async#vim7_vcs_clean(cmd, file, vcs)
-function airline#async#vim_vcs_clean(cmd, file, vcs)
-function airline#async#vim_vcs_untracked(config, file)
-function airline#builder#get_next_group(sections, i)
-function airline#builder#get_prev_group(sections, i)
-function airline#builder#new(context)
-function airline#builder#should_change_group(group1, group2)
-function airline#check_mode(winnr)
-function airline#cmdwinenter(...)
-function airline#extensions#ale#get(type)
-function airline#extensions#ale#get_error()
-function airline#extensions#ale#get_warning()
-function airline#extensions#ale#init(ext)
-function airline#extensions#append_to_section(name, value)
-function airline#extensions#apply(...)
-function airline#extensions#apply_left_override(section1, section2)
-function airline#extensions#branch#get_head()
-function airline#extensions#branch#head()
-function airline#extensions#branch#init(ext)
-function airline#extensions#branch#update_untracked_config(file, vcs)
-function airline#extensions#csv#apply(...)
-function airline#extensions#csv#get_column()
-function airline#extensions#csv#init(ext)
-function airline#extensions#ctrlp#apply(...)
-function airline#extensions#ctrlp#ctrlp_airline(...)
-function airline#extensions#ctrlp#ctrlp_airline_status(...)
-function airline#extensions#ctrlp#generate_color_map(dark, light, white)
-function airline#extensions#ctrlp#init(ext)
-function airline#extensions#ctrlp#load_theme(palette)
-function airline#extensions#default#apply(builder, context) abort
-function airline#extensions#dirvish#apply(...) abort
-function airline#extensions#dirvish#init(ext) abort
-function airline#extensions#fern#apply(...) abort
-function airline#extensions#fern#init(ext) abort
-function airline#extensions#fugitiveline#bufname() abort
-function airline#extensions#fugitiveline#init(ext) abort
-function airline#extensions#fzf#apply(...) abort
-function airline#extensions#fzf#inactive_apply(...) abort
-function airline#extensions#fzf#init(ext) abort
-function airline#extensions#fzf#statusline(...) abort
-function airline#extensions#get_loaded_extensions()
-function airline#extensions#hunks#get_hunks() abort
-function airline#extensions#hunks#get_raw_hunks() abort
-function airline#extensions#hunks#init(ext) abort
-function airline#extensions#keymap#init(ext)
-function airline#extensions#keymap#status()
-function airline#extensions#load()
-function airline#extensions#load_theme()
-function airline#extensions#netrw#apply(...)
-function airline#extensions#netrw#init(ext)
-function airline#extensions#netrw#sortstring()
-function airline#extensions#po#apply(...)
-function airline#extensions#po#init(ext)
-function airline#extensions#po#on_winenter()
-function airline#extensions#po#shorten()
-function airline#extensions#po#stats()
-function airline#extensions#prepend_to_section(name, value)
-function airline#extensions#quickfix#apply(...)
-function airline#extensions#quickfix#get_type()
+function <SNR>306_ToggleSort() abort
+function fzf#vim#colors(...)
+function <SNR>338_black(str, ...)
+function airline#extensions#unicode#init(ext)
 function airline#extensions#quickfix#inactive_qf_window(...)
-function airline#extensions#quickfix#init(ext)
-function airline#extensions#searchcount#apply(...) abort
-function airline#extensions#searchcount#init(ext) abort
-function airline#extensions#searchcount#status() abort
-function airline#extensions#tagbar#currenttag()
-function airline#extensions#tagbar#get_status(...)
-function airline#extensions#tagbar#inactive_apply(...)
-function airline#extensions#tagbar#init(ext)
-function airline#extensions#term#apply(...) abort
-function airline#extensions#term#inactive_apply(...) abort
-function airline#extensions#term#init(ext) abort
-function airline#extensions#term#termmode() abort
-function airline#extensions#undotree#apply(...)
-function airline#extensions#undotree#init(ext)
-function airline#extensions#vimtex#apply(...)
-function airline#extensions#vimtex#get_scope()
-function airline#extensions#vimtex#init(ext)
-function airline#extensions#whitespace#check()
-function airline#extensions#whitespace#disable()
-function airline#extensions#whitespace#init(...)
-function airline#extensions#whitespace#toggle()
-function airline#extensions#wordcount#apply(...)
-function airline#extensions#wordcount#get()
-function airline#extensions#wordcount#init(ext)
-function airline#formatter#short_path#format(val) abort
-function airline#highlighter#add_accent(accent) abort
-function airline#highlighter#add_separator(from, to, inverse) abort
-function airline#highlighter#exec(group, colors) abort
-function airline#highlighter#get_highlight(group, ...) abort
-function airline#highlighter#get_highlight2(fg, bg, ...) abort
-function airline#highlighter#highlight(modes, ...) abort
-function airline#highlighter#highlight_modified_inactive(bufnr) abort
-function airline#highlighter#load_theme() abort
-function airline#highlighter#reset_hlcache() abort
-function airline#init#bootstrap()
-function airline#init#sections()
-function airline#load_theme()
-function airline#mode_changed()
-function airline#parts#crypt()
-function airline#parts#define(key, config)
-function airline#parts#define_accent(key, accent)
-function airline#parts#define_condition(key, predicate)
-function airline#parts#define_empty(keys)
-function airline#parts#define_function(key, name)
-function airline#parts#define_minwidth(key, width)
-function airline#parts#define_raw(key, raw)
-function airline#parts#define_text(key, text)
-function airline#parts#ffenc()
-function airline#parts#filetype()
-function airline#parts#get(key)
-function airline#parts#iminsert()
-function airline#parts#mode()
-function airline#parts#paste()
-function airline#parts#readonly()
-function airline#parts#spell()
-function airline#remove_statusline_func(name)
-function airline#section#create(parts)
-function airline#section#create_left(parts)
-function airline#section#create_right(parts)
-function airline#statusline(winnr)
-function airline#switch_matching_theme()
-function airline#switch_theme(name, ...)
-function airline#themes#generate_color_map(sect1, sect2, sect3, ...)
-function airline#themes#get_highlight(group, ...)
-function airline#themes#get_highlight2(fg, bg, ...)
-function airline#themes#patch(palette)
-function airline#themes#tomorrow#refresh()
-function airline#update_statusline()
-function airline#update_statusline_focuslost()
-function airline#update_statusline_inactive(range)
-function airline#update_tabline()
-function airline#util#append(text, minwidth)
-function airline#util#doautocmd(event)
-function airline#util#exec_funcrefs(list, ...)
-function airline#util#getbufvar(bufnr, key, def)
-function airline#util#getwinvar(winnr, key, def)
-function airline#util#has_custom_scm()
-function airline#util#has_fugitive()
-function airline#util#has_gina()
-function airline#util#has_lawrencium()
-function airline#util#has_vcscommand()
-function airline#util#has_vim9_script()
-function airline#util#ignore_buf(name)
-function airline#util#ignore_next_focusgain()
-function airline#util#is_popup_window(winnr)
-function airline#util#prepend(text, minwidth)
-function airline#util#shorten(text, winwidth, minwidth, ...)
-function airline#util#stl_disabled(winnr)
-function airline#util#strcharpart(...)
-function airline#util#strchars(str)
-function airline#util#themes(match)
-function airline#util#try_focusgained()
-function airline#util#warning(msg)
-function airline#util#winwidth(...) abort
-function airline#util#wrap(text, minwidth)
-function ale#Env(variable_name, value) abort
-function ale#Escape(str) abort
-function ale#FileTooLarge(buffer) abort
-function ale#GetFilenameMappings(buffer, name) abort
-function ale#GetLocItemMessage(item, format_string) abort
-function ale#Has(feature) abort
-function ale#Pad(string) abort
-function ale#Queue(delay, ...) abort
-function ale#Set(variable_name, default) abort
-function ale#ShouldDoNothing(buffer) abort
-function ale#Var(buffer, variable_name) abort
-function ale#balloon#Disable() abort
-function ale#balloon#Enable() abort
-function ale#balloon#Expr() abort
-function ale#balloon#MessageForPos(bufnr, lnum, col) abort
-function ale#code_action#ApplyChanges(filename, changes, options) abort
-function ale#code_action#BuildChangesList(changes_map) abort
-function ale#code_action#DisablePopUpMenu() abort
-function ale#code_action#EnablePopUpMenu() abort
-function ale#code_action#GetChanges(workspace_edit) abort
-function ale#code_action#GetCodeActions(options) abort
-function ale#code_action#HandleCodeAction(code_action, options) abort
-function ale#code_action#ReloadBuffer() abort
-function ale#cursor#EchoCursorWarning(...) abort
-function ale#cursor#EchoCursorWarningWithDelay() abort
-function ale#cursor#Echom(message) abort
-function ale#cursor#ShowCursorDetail() abort
-function ale#cursor#TruncatedEcho(original_message) abort
-function ale#engine#Cleanup(buffer) abort
-function ale#engine#CleanupEveryBuffer() abort
-function ale#engine#EscapeCommandPart(command_part) abort
-function ale#engine#FixLocList(buffer, linter_name, from_other_source, loclist) abort
-function ale#engine#GetLoclist(buffer) abort
-function ale#engine#HandleLoclist(linter_name, buffer, loclist, from_other_source) abort
-function ale#engine#InitBufferInfo(buffer) abort
-function ale#engine#IsCheckingBuffer(buffer) abort
-function ale#engine#IsExecutable(buffer, executable) abort
-function ale#engine#MarkLinterActive(info, linter) abort
-function ale#engine#MarkLinterInactive(info, linter_name) abort
-function ale#engine#ResetExecutableCache() abort
-function ale#engine#RunLinters(buffer, linters, should_lint_file) abort
-function ale#engine#SendResultsToNeovimDiagnostics(buffer, loclist) abort
-function ale#engine#SetResults(buffer, loclist) abort
-function ale#engine#Stop(buffer) abort
-function ale#events#ClockMilliseconds() abort
-function ale#events#EmulateInsertLeave(buffer) abort
-function ale#events#FileChangedEvent(buffer) abort
-function ale#events#FileTypeEvent(buffer, new_filetype) abort
-function ale#events#Init() abort
-function ale#events#InsertEnterEvent(buffer) abort
-function ale#events#InsertLeaveEvent(buffer) abort
-function ale#events#LintOnEnter(buffer) abort
-function ale#events#QuitEvent(buffer) abort
-function ale#events#QuitRecently(buffer) abort
-function ale#events#ReadOrEnterEvent(buffer) abort
-function ale#events#SaveEvent(buffer) abort
-function ale#linter#Define(filetype, linter) abort
-function ale#linter#Get(original_filetypes) abort
-function ale#linter#GetAddress(buffer, linter) abort
-function ale#linter#GetAll(filetypes) abort
-function ale#linter#GetCommand(buffer, linter) abort
-function ale#linter#GetCwd(buffer, linter) abort
-function ale#linter#GetExecutable(buffer, linter) abort
-function ale#linter#GetLanguage(buffer, linter) abort
-function ale#linter#GetLintersLoaded() abort
-function ale#linter#PreProcess(filetype, linter) abort
-function ale#linter#PreventLoading(filetype) abort
-function ale#linter#Reset() abort
-function ale#linter#ResolveFiletype(original_filetype) abort
-function ale#statusline#Count(buffer) abort
-function ale#statusline#FirstProblem(buffer, type) abort
-function ale#statusline#Update(buffer, loclist) abort
-function ale#util#BinarySearch(loclist, buffer, line, column) abort
-function ale#util#Col(str, chr) abort
-function ale#util#EscapePCRE(unsafe_string) abort
-function ale#util#EscapeVim(unsafe_string) abort
-function ale#util#Execute(expr) abort
-function ale#util#FeedKeys(...) abort
-function ale#util#FindItemAtCursor(buffer) abort
-function ale#util#FunctionArgCount(function) abort
-function ale#util#FuzzyJSONDecode(data, default) abort
-function ale#util#GetBufferContents(buffer) abort
-function ale#util#GetFunction(string_or_ref) abort
-function ale#util#GetItemPriority(item) abort
-function ale#util#GetLineCount(buffer) abort
-function ale#util#GetMatches(lines, patterns) abort
-function ale#util#HasBuflineApi() abort
-function ale#util#InSandbox() abort
-function ale#util#Input(message, value, ...) abort
-function ale#util#JoinNeovimOutput(job, last_line, data, mode, callback) abort
-function ale#util#LocItemCompare(left, right) abort
-function ale#util#LocItemCompareWithText(left, right) abort
-function ale#util#MapMatches(lines, patterns, Callback) abort
-function ale#util#Mode(...) abort
-function ale#util#Open(filename, line, column, options) abort
-function ale#util#SetBufferContents(buffer, lines) abort
-function ale#util#ShowMessage(string, ...) abort
-function ale#util#StartPartialTimer(delay, callback, args) abort
-function ale#util#StopPartialTimer(timer_id) abort
-function ale#util#Tempname() abort
-function ale#util#ToResource(uri) abort
-function ale#util#ToURI(resource) abort
-function ale#util#Writefile(buffer, lines, filename) abort
-function ale_linters#vim#ale_custom_linting_rules#GetCommand(buffer) abort
-function ale_linters#vim#ale_custom_linting_rules#GetCwd(buffer) abort
-function ale_linters#vim#ale_custom_linting_rules#GetExecutable(buffer) abort
-function ale_linters#vim#ale_custom_linting_rules#Handle(buffer, lines) abort
-function ale_linters#vim#vimls#GetProjectRoot(buffer) abort
-function ale_linters#vim#vint#GetCommand(buffer, version) abort
-function ale_linters#vim#vint#Handle(buffer, lines) abort
-function bufferize#Bufnr(command)
-function bufferize#Run(cmd, mods)
-function bufferize#RunWithTimer(args, mods)
-function context#activate() abort
-function context#disable(all) abort
-function context#enable(all) abort
-function context#peek() abort
-function context#popup#clear() abort
-function context#popup#close() abort
-function context#popup#get_context() abort
-function context#popup#layout() abort
-function context#popup#redraw(winid) abort
-function context#popup#update_context() abort
-function context#settings#parse() abort
-function context#toggle(all) abort
-function context#update(...) abort
-function context#util#active() abort
-function context#util#echof(...) abort
-function context#util#filter(context, line_number, consider_height) abort
-function context#util#get_border_line(lines, level, indent, winid) abort
-function context#util#limit_join_parts(lines) abort
-function context#util#log_indent(amount) abort
-function context#util#map(arg) abort
-function context#util#map_H() abort
-function context#util#map_zt() abort
-function context#util#update_line_state() abort
-function context#util#update_state() abort
-function context#util#update_window_state(winid) abort
-function ctrlp#mrufiles#add(fn)
-function ctrlp#mrufiles#bufs()
-function ctrlp#mrufiles#cachefile()
-function ctrlp#mrufiles#init()
-function ctrlp#mrufiles#list(...)
-function ctrlp#mrufiles#opts()
-function ctrlp#mrufiles#refresh(...)
-function ctrlp#mrufiles#remove(files)
-function ctrlp#mrufiles#tgrel()
-function ctrlp#utils#cachedir()
-function ctrlp#utils#cachefile(...)
-function ctrlp#utils#fnesc(path, type, ...)
-function ctrlp#utils#glob(...)
-function ctrlp#utils#globpath(...)
-function ctrlp#utils#lash()
-function ctrlp#utils#mkdir(dir)
-function ctrlp#utils#opts()
-function ctrlp#utils#readfile(file)
-function ctrlp#utils#writecache(lines, ...)
-function devicons#plugins#ctrlp#init() abort
-function devicons#plugins#startify#init() abort
-function dirvish_git#init() abort
-function dirvish_git#jump_to_next_file() abort
-function dirvish_git#jump_to_prev_file() abort
-function dirvish_git#reload() abort
-function fern#hook#add(name, callback, ...) abort
-function fern#hook#emit(name, ...) abort
-function fern#hook#promise(name) abort
-function fern#hook#remove(name, ...) abort
-function fern#scheme#file#mapping#init(disable_default_mappings) abort
-function fern#version() abort
-function fern_git_status#init() abort
-function fugitive#Autowrite() abort
-function fugitive#BisectComplete(A, L, P, ...) abort
-function fugitive#BlameComplete(A, L, P) abort
-function fugitive#BlameFileType() abort
-function fugitive#BlameSyntax() abort
-function fugitive#BrowseCommand(line1, count, range, bang, mods, arg, ...) abort
-function fugitive#BufReadCmd(...) abort
-function fugitive#BufReadStatus(cmdbang) abort
-function fugitive#BufWriteCmd(...) abort
-function fugitive#CanDiffoff(buf) abort
-function fugitive#CanPty() abort
-function fugitive#Cd(path, ...) abort
-function fugitive#CdComplete(A, L, P) abort
-function fugitive#Cfile() abort
-function fugitive#Command(line1, line2, range, bang, mods, arg, ...) abort
-function fugitive#CommitComplete(A, L, P, ...) abort
 function fugitive#Complete(lead, ...) abort
-function fugitive#CompleteForWorkingDir(A, L, P, ...) abort
-function fugitive#CompleteObject(base, ...) abort
-function fugitive#CompletePath(base, ...) abort
-function fugitive#Config(...) abort
-function fugitive#ConfigGetAll(name, ...) abort
-function fugitive#ConfigGetRegexp(pattern, ...) abort
-function fugitive#Cwindow() abort
-function fugitive#DeleteCommand(line1, line2, range, bang, mods, arg, ...) abort
-function fugitive#DidChange(...) abort
-function fugitive#DiffClose() abort
-function fugitive#Diffsplit(autodir, keepfocus, mods, arg, ...) abort
-function fugitive#DropCommand(line1, count, range, bang, mods, arg, ...) abort
-function fugitive#EditComplete(A, L, P) abort
-function fugitive#EfmDir(...) abort
-function fugitive#Execute(...) abort
-function fugitive#Expand(object) abort
-function fugitive#ExpireConfig(...) abort
-function fugitive#FetchComplete(A, L, P, ...) abort
-function fugitive#FileReadCmd(...) abort
-function fugitive#FileWriteCmd(...) abort
-function fugitive#Find(object, ...) abort
-function fugitive#Foldtext() abort
-function fugitive#GX() abort
-function fugitive#GitVersion(...) abort
-function fugitive#GrepCommand(line1, line2, range, bang, mods, arg) abort
-function fugitive#GrepComplete(A, L, P) abort
-function fugitive#Head(...) abort
-function fugitive#LogCommand(line1, count, range, bang, mods, args, type) abort
-function fugitive#LogComplete(A, L, P) abort
-function fugitive#MapCfile(...) abort
-function fugitive#MapJumps(...) abort
-function fugitive#MergeComplete(A, L, P, ...) abort
-function fugitive#MessageCfile() abort
-function fugitive#MoveCommand(line1, line2, range, bang, mods, arg, ...) abort
-function fugitive#Object(...) abort
-function fugitive#Open(cmd, bang, mods, arg, ...) abort
-function fugitive#PagerFor(argv, ...) abort
-function fugitive#Parse(url) abort
-function fugitive#Path(url, ...) abort
-function fugitive#PathComplete(...) abort
-function fugitive#PorcelainCfile() abort
-function fugitive#PrepareDirEnvGitFlagsArgs(...) abort
-function fugitive#PrepareJob(...) abort
-function fugitive#PullComplete(A, L, P, ...) abort
-function fugitive#PushComplete(A, L, P, ...) abort
-function fugitive#ReadCommand(line1, count, range, bang, mods, arg, ...) abort
-function fugitive#ReadComplete(A, L, P) abort
-function fugitive#Real(url) abort
-function fugitive#RebaseComplete(A, L, P, ...) abort
-function fugitive#ReloadStatus(...) abort
-function fugitive#Remote(...) abort
-function fugitive#RemoteHttpHeaders(remote) abort
-function fugitive#RemoteUrl(...) abort
-function fugitive#RemoveCommand(line1, line2, range, bang, mods, arg, ...) abort
-function fugitive#RenameCommand(line1, line2, range, bang, mods, arg, ...) abort
-function fugitive#RenameComplete(A, L, P) abort
-function fugitive#ResolveUrl(target, ...) abort
-function fugitive#Result(...) abort
-function fugitive#Resume() abort
-function fugitive#RevParse(rev, ...) abort
-function fugitive#RevertComplete(A, L, P, ...) abort
-function fugitive#ShellCommand(...) abort
-function fugitive#SourceCmd(...) abort
-function fugitive#SshConfig(host, ...) abort
-function fugitive#SshHostAlias(authority) abort
-function fugitive#Statusline(...) abort
-function fugitive#UnlinkCommand(line1, line2, range, bang, mods, arg, ...) abort
-function fugitive#Unquote(string) abort
-function fugitive#UrlDecode(str) abort
-function fugitive#Wait(job_or_jobs, ...) abort
-function fugitive#WqCommand(...) abort
-function fugitive#WriteCommand(line1, line2, range, bang, mods, arg, ...) abort
-function fugitive#delete(url, ...) abort
-function fugitive#filereadable(url) abort
-function fugitive#filewritable(url) abort
-function fugitive#foldtext() abort
-function fugitive#getfperm(url) abort
-function fugitive#getfsize(url) abort
-function fugitive#getftime(url) abort
-function fugitive#getftype(url) abort
-function fugitive#glob(url, ...) abort
-function fugitive#isdirectory(url) abort
-function fugitive#readfile(url, ...) abort
-function fugitive#repo(...) abort
-function fugitive#resolve(url) abort
-function fugitive#setfperm(url, perm) abort
-function fugitive#simplify(url) abort
-function fugitive#statusline(...) abort
-function fugitive#writefile(lines, url, ...) abort
-function fzf#complete(...)
-function fzf#exec(...)
-function fzf#install()
-function fzf#run(...) abort
-function fzf#shellescape(arg, ...)
-function fzf#wrap(...)
-function gitgutter#all(force) abort
-function gitgutter#buffer_disable(...) abort
-function gitgutter#buffer_enable(...) abort
-function gitgutter#buffer_toggle(...) abort
-function gitgutter#difforig()
-function gitgutter#disable() abort
-function gitgutter#enable() abort
-function gitgutter#git()
-function gitgutter#highlight#define_highlights() abort
-function gitgutter#highlight#define_sign_text_highlights() abort
-function gitgutter#highlight#define_signs() abort
-function gitgutter#highlight#line_disable() abort
-function gitgutter#highlight#line_enable() abort
-function gitgutter#highlight#line_toggle() abort
-function gitgutter#highlight#linenr_disable() abort
-function gitgutter#highlight#linenr_enable() abort
-function gitgutter#highlight#linenr_toggle() abort
-function gitgutter#process_buffer(bufnr, force) abort
-function gitgutter#quickfix(current_file)
-function gitgutter#setup_maps()
-function gitgutter#toggle() abort
-function gitgutter#utility#base_path(bufnr)
-function gitgutter#utility#cd_cmd(bufnr, cmd) abort
-function gitgutter#utility#clean_smudge_filter_applies(bufnr)
-function gitgutter#utility#extension(bufnr) abort
-function gitgutter#utility#file(bufnr)
-function gitgutter#utility#filename(bufnr) abort
-function gitgutter#utility#get_diff_base(bufnr)
-function gitgutter#utility#getbufvar(buffer, varname, ...)
-function gitgutter#utility#git_supports_command_line_config_override() abort
-function gitgutter#utility#has_repo_path(bufnr)
-function gitgutter#utility#is_active(bufnr) abort
-function gitgutter#utility#repo_path(bufnr, shellesc) abort
-function gitgutter#utility#set_repo_path(bufnr, continuation) abort
-function gitgutter#utility#setbufvar(buffer, varname, val)
-function gitgutter#utility#shellescape(arg) abort
-function gitgutter#utility#supports_overscore_sign()
-function gitgutter#utility#system(cmd, ...) abort
-function gitgutter#utility#warn(message) abort
-function gitgutter#utility#warn_once(bufnr, message, key) abort
-function gitgutter#utility#windows()
-function gitstatus#getIndicator(status) abort
-function gitstatus#isWin() abort
-function gitstatus#listener#New(opts) abort
-function gitstatus#log#NewLogger(level) abort
-function gitstatus#shouldConceal() abort
-function go#config#AddtagsSkipUnexported() abort
-function go#config#AddtagsTransform() abort
-function go#config#AlternateMode() abort
-function go#config#AsmfmtAutosave() abort
-function go#config#AutoSameids() abort
-function go#config#AutoTypeInfo() abort
-function go#config#BinPath() abort
-function go#config#BuildTags() abort
-function go#config#CodeCompletionEnabled() abort
-function go#config#CodeCompletionIcase() abort
-function go#config#Debug() abort
-function go#config#DebugAddress() abort
-function go#config#DebugBreakpointSignText() abort
-function go#config#DebugCommands() abort
-function go#config#DebugLogDelay() abort
-function go#config#DebugLogOutput() abort
-function go#config#DebugMappings() abort
-function go#config#DebugPreserveLayout() abort
-function go#config#DebugSubstitutePaths() abort
-function go#config#DebugWindows() abort
-function go#config#DeclsIncludes() abort
-function go#config#DeclsMode() abort
-function go#config#DefMode() abort
-function go#config#DefReuseBuffer() abort
-function go#config#DiagnosticsEnabled() abort
-function go#config#DiagnosticsLevel() abort
-function go#config#DocBalloon() abort
-function go#config#DocMaxHeight() abort
-function go#config#DocPopupWindow() abort
-function go#config#DocUrl() abort
-function go#config#EchoCommandInfo() abort
-function go#config#EchoGoInfo() abort
-function go#config#ErrcheckBin() abort
-function go#config#FillStructMode() abort
-function go#config#FmtAutosave() abort
-function go#config#FmtCommand() abort
-function go#config#FmtExperimental() abort
-function go#config#FmtFailSilently() abort
-function go#config#FmtOptions() abort
-function go#config#FoldEnable(...) abort
-function go#config#GolintBin() abort
-function go#config#GoplsAnalyses() abort
-function go#config#GoplsCompleteUnimported() abort
-function go#config#GoplsDeepCompletion() abort
-function go#config#GoplsEnabled() abort
-function go#config#GoplsGofumpt() abort
-function go#config#GoplsLocal() abort
-function go#config#GoplsMatcher() abort
-function go#config#GoplsOptions() abort
-function go#config#GoplsSettings() abort
-function go#config#GoplsStaticCheck() abort
-function go#config#GoplsTempModfile() abort
-function go#config#GoplsUsePlaceholders() abort
-function go#config#GorenameBin() abort
-function go#config#GorenamePrefill() abort
-function go#config#HighlightArrayWhitespaceError() abort
-function go#config#HighlightBuildConstraints() abort
-function go#config#HighlightChanWhitespaceError() abort
-function go#config#HighlightDebug() abort
-function go#config#HighlightDiagnosticErrors() abort
-function go#config#HighlightDiagnosticWarnings() abort
-function go#config#HighlightExtraTypes() abort
-function go#config#HighlightFields() abort
-function go#config#HighlightFormatStrings() abort
-function go#config#HighlightFunctionCalls() abort
-function go#config#HighlightFunctionParameters() abort
-function go#config#HighlightFunctions() abort
-function go#config#HighlightGenerateTags() abort
-function go#config#HighlightOperators() abort
-function go#config#HighlightSpaceTabError() abort
-function go#config#HighlightStringSpellcheck() abort
-function go#config#HighlightTrailingWhitespaceError() abort
-function go#config#HighlightTypes() abort
-function go#config#HighlightVariableAssignments() abort
-function go#config#HighlightVariableDeclarations() abort
-function go#config#ImplementsMode() abort
-function go#config#ImportsAutosave() abort
-function go#config#ImportsMode() abort
-function go#config#ListAutoclose() abort
-function go#config#ListHeight() abort
-function go#config#ListType() abort
-function go#config#ListTypeCommands() abort
-function go#config#LspLog() abort
-function go#config#MetalinterAutosave() abort
-function go#config#MetalinterAutosaveEnabled() abort
-function go#config#MetalinterCommand() abort
-function go#config#MetalinterDeadline() abort
-function go#config#MetalinterEnabled() abort
-function go#config#ModFmtAutosave() abort
-function go#config#PlayBrowserCommand() abort
-function go#config#PlayOpenBrowser() abort
-function go#config#ReferrersMode() abort
-function go#config#RenameCommand() abort
-function go#config#SearchBinPathFirst() abort
-function go#config#SetAsmfmtAutosave(value) abort
-function go#config#SetAutoSameids(value) abort
-function go#config#SetAutoTypeInfo(value) abort
-function go#config#SetBuildTags(value) abort
-function go#config#SetDebugDiag(value) abort
-function go#config#SetFmtAutosave(value) abort
-function go#config#SetMetalinterAutosave(value) abort
-function go#config#SetModFmtAutosave(value) abort
-function go#config#SetTemplateAutocreate(value) abort
-function go#config#SetTermCloseOnExit(value) abort
-function go#config#SetTermEnabled(value) abort
-function go#config#SnippetEngine() abort
-function go#config#StatuslineDuration() abort
-function go#config#TemplateAutocreate() abort
-function go#config#TemplateFile() abort
-function go#config#TemplateTestFile() abort
-function go#config#TemplateUsePkg() abort
-function go#config#TermCloseOnExit() abort
-function go#config#TermEnabled() abort
-function go#config#TermHeight() abort
-function go#config#TermMode() abort
-function go#config#TermReuse() abort
-function go#config#TermWidth() abort
-function go#config#TestShowName() abort
-function go#config#TestTimeout() abort
-function go#config#TextobjIncludeFunctionDoc() abort
-function go#config#TextobjIncludeVariable() abort
-function go#config#Updatetime() abort
-function go#config#VersionWarning() abort
-function go#util#Chdir(dir) abort
-function go#util#ClearHighlights(group) abort
-function go#util#EchoError(msg)
-function go#util#EchoInfo(msg)
-function go#util#EchoProgress(msg)
-function go#util#EchoSuccess(msg)
-function go#util#EchoWarning(msg)
-function go#util#Exec(cmd, ...) abort
-function go#util#ExecInDir(cmd, ...) abort
-function go#util#ExecInWorkDir(cmd, wd, ...) abort
-function go#util#ExpandPattern(...) abort
-function go#util#GetLines()
-function go#util#HasDebug(flag)
-function go#util#HighlightPositions(group, pos) abort
-function go#util#IsMac() abort
-function go#util#IsUsingCygwinShell()
-function go#util#IsWin() abort
-function go#util#Join(...) abort
-function go#util#LineEnding() abort
-function go#util#ModuleRoot(...) abort
-function go#util#Offset(line, col) abort
-function go#util#OffsetCursor() abort
-function go#util#OpenBrowser(url) abort
-function go#util#ParseErrors(lines) abort
-function go#util#PathListSep() abort
-function go#util#PathSep() abort
-function go#util#SetEnv(name, value) abort
-function go#util#ShellError() abort
-function go#util#Shelljoin(arglist, ...) abort
-function go#util#Shelllist(arglist, ...) abort
-function go#util#ShowInfo(info)
+function <SNR>107_wordish(delim)
+function <SNR>336_SpecInputs(str)
 function go#util#StripPathSep(path) abort
-function go#util#StripTrailingSlash(paths) abort
-function go#util#System(str, ...) abort
-function go#util#TestName() abort
-function go#util#TestNamesInFile() abort
-function go#util#Windo(command) abort
-function go#util#archive()
-function go#util#camelcase(word) abort
-function go#util#env(key) abort
-function go#util#goarch() abort
-function go#util#gobin() abort
-function go#util#gomod() abort
-function go#util#gomodcache() abort
-function go#util#goos() abort
-function go#util#gopath() abort
-function go#util#goroot() abort
-function go#util#has_job(...) abort
-function go#util#hostosarch() abort
-function go#util#pascalcase(word) abort
-function go#util#snakecase(word) abort
-function go#util#snippetcase(word) abort
-function go#util#tempdir(prefix) abort
-function go#util#testLine() abort
-function illuminate#disable_illumination(bufonly) abort
-function illuminate#enable_illumination(bufonly) abort
-function illuminate#on_cursor_moved() abort
-function illuminate#on_cursor_moved_i() abort
-function illuminate#on_insert_entered() abort
-function illuminate#on_leaving_autocmds() abort
-function illuminate#toggle_illumination(bufonly) abort
-function ingo#buffer#ExistOtherBuffers(targetBufNr)
-function ingo#buffer#ExistOtherLoadedBuffers(targetBufNr)
-function ingo#buffer#IsBlank(...)
-function ingo#buffer#IsEmpty(...)
-function ingo#buffer#IsEmptyVim()
-function ingo#buffer#IsPersisted(...)
-function ingo#buffer#IsScratch(...)
-function ingo#buffer#IsWritable(...)
-function ingo#buffer#NameOrDefault(bufName) abort
-function ingo#buffer#VisibleList(...)
-function ingo#fs#path#Canonicalize(filespec, ...)
-function ingo#fs#path#Combine(first, ...)
-function ingo#fs#path#Equals(p1, p2, ...)
-function ingo#fs#path#Exists(filespec)
-function ingo#fs#path#GetRootDir(filespec)
-function ingo#fs#path#IsAbsolute(filespec)
-function ingo#fs#path#IsCaseInsensitive(...)
-function ingo#fs#path#IsPath(filespec) abort
-function ingo#fs#path#IsUncPathRoot(filespec)
-function ingo#fs#path#IsUpwards(filespec)
-function ingo#fs#path#Normalize(filespec, ...)
-function ingo#fs#path#Separator()
-function ingo#hlgroup#GetApplicableColorModes() abort
-function ingo#hlgroup#GetBackgroundColor(syntaxId, ...) abort
-function ingo#hlgroup#GetColor(isBackground, syntaxId, ...) abort
-function ingo#hlgroup#GetForegroundColor(syntaxId, ...) abort
-function ingo#hlgroup#LinksTo(name)
-function ingo#os#IsCygwin()
-function ingo#os#IsWinOrDos()
-function ingo#os#IsWindows()
-function ingo#os#IsWindowsShell()
-function ingo#os#PathSeparator()
-function ingo#str#Contains(string, part, ...)
-function ingo#str#EndsWith(string, substring, ...)
-function ingo#str#Equals(string1, string2, ...)
-function ingo#str#GetVirtCols(string, virtcol, width, isAllowSmaller)
-function ingo#str#Reverse(string)
-function ingo#str#StartsWith(string, substring, ...)
-function ingo#str#Trim(string)
-function ingo#str#TrimPattern(string, pattern, ...)
-function ingo#str#TrimTrailing(string)
-function ingo#str#Wrap(string, commonOrPrefix, ...) abort
-function ingo#str#trcd(src, fromstr)
-function ingo#str#trd(src, fromstr)
-function matchup#init() abort
-function matchup#loader#_treesitter_may_be_supported() abort
-function matchup#loader#bufwinenter() abort
-function matchup#loader#capture_group_replacement_order(cg) abort
-function matchup#loader#get_capture_groups(str, ...) abort
-function matchup#loader#init_buffer() abort
-function matchup#loader#init_module() abort
-function matchup#loader#refresh_match_words() abort
-function matchup#loader#remove_capture_groups(re) abort
-function matchup#loader#sidedict() abort
-function matchup#matchparen#disable()
-function matchup#matchparen#enable()
-function matchup#matchparen#highlight_surrounding() abort
-function matchup#matchparen#init_module() abort
-function matchup#matchparen#reload()
-function matchup#matchparen#scroll_callback(tid) abort
-function matchup#matchparen#scroll_update(lnum) abort
-function matchup#matchparen#scroll_update_float(lnum, position) abort
-function matchup#matchparen#status_str(offscreen, ...) abort
-function matchup#matchparen#toggle(...)
-function matchup#matchparen#update()
-function matchup#motion_force() abort
-function matchup#motion_sid() abort
-function matchup#perf#show_times()
-function matchup#perf#tic(context)
-function matchup#perf#timeout()
-function matchup#perf#timeout_check()
-function matchup#perf#timeout_start(timeout)
-function matchup#perf#toc(context, state)
-function matchup#util#append_match_words(str) abort
-function matchup#util#check_match_words(sha256) abort
-function matchup#util#command(cmd)
-function matchup#util#has_duplicate_str(list)
-function matchup#util#in_comment(...)
-function matchup#util#in_comment_or_string(...)
-function matchup#util#in_indent(...)
-function matchup#util#in_string(...)
-function matchup#util#in_synstack(name, ...) abort
-function matchup#util#in_syntax(name, ...)
-function matchup#util#in_whitespace(...)
-function matchup#util#matchpref(id, default) abort
-function matchup#util#patch_match_words(from, to, ...) abort
-function matchup#util#standard_html(...) abort
-function matchup#util#standard_xml(...) abort
-function nerdtree#caseSensitiveFS() abort
-function nerdtree#checkForBrowse(dir) abort
-function nerdtree#closeBookmarksOnOpen() abort
-function nerdtree#closeTreeOnOpen() abort
-function nerdtree#compareNodePaths(p1, p2) abort
-function nerdtree#compareNodes(n1, n2) abort
-function nerdtree#completeBookmarks(A, L, P) abort
-function nerdtree#deprecated(func, ...) abort
-function nerdtree#echo(msg) abort
-function nerdtree#echoError(msg) abort
-function nerdtree#echoWarning(msg) abort
-function nerdtree#exec(cmd, ignoreAll) abort
-function nerdtree#has_opt(options, name) abort
-function nerdtree#loadClassFiles() abort
-function nerdtree#onBufLeave() abort
-function nerdtree#osDefaultCaseSensitiveFS() abort
-function nerdtree#pathEquals(lhs, rhs) abort
-function nerdtree#postSourceActions() abort
-function nerdtree#renderView() abort
-function nerdtree#runningCygwin() abort
-function nerdtree#runningMac() abort
-function nerdtree#runningWindows() abort
-function nerdtree#slash() abort
-function nerdtree#ui_glue#bookmarkNode(...) abort
-function nerdtree#ui_glue#chRootCwd() abort
-function nerdtree#ui_glue#clearBookmarks(bookmarks) abort
-function nerdtree#ui_glue#createDefaultBindings() abort
-function nerdtree#ui_glue#invokeKeyMap(key) abort
-function nerdtree#ui_glue#openBookmark(name) abort
-function nerdtree#ui_glue#revealBookmark(name) abort
-function nerdtree#ui_glue#setupCommands() abort
-function nerdtree#ui_glue#upDir(preserveState) abort
-function nerdtree#version(...) abort
-function paste#Paste()
-function peekaboo#aboo()
-function peekaboo#off()
-function peekaboo#on()
-function peekaboo#peek(count, mode, visualmode)
-function picker#IsNumber(variable) abort
-function picker#IsString(variable) abort
-function startify#center(lines) abort
-function startify#debug()
-function startify#fortune#boxed(...) abort
+function <SNR>146_airline_toggle()
+function <SNR>336_bufwins(bufnr)
+function fugitive#GitVersion(...) abort
+function <SNR>218_openHSplitBookmark(bm) abort
+function <SNR>304_Resolve(path) abort
+function <SNR>272_print_section_header() abort
+function gitgutter#highlight#linenr_disable() abort
+function <SNR>253_autocmd_handler()
+function <SNR>179_calc_size(max, val, dict)
+function <SNR>28_SetOption(name, default)
+function <SNR>336_strwidth(str)
+function <SNR>279__cancellation_requested() abort dict
+def dist#script#DetectFiletype()
+function go#util#ExecInWorkDir(cmd, wd, ...) abort
+function go#util#ModuleRoot(...) abort
+function <SNR>336_CloseCustomFuncs()
+function <SNR>304_executable(binary) abort
+function fugitive#setfperm(url, perm) abort
+function <SNR>179_enc_to_cp(str)
+function <SNR>174_MRUEnsureTabId(tabNbr)
+function <SNR>338_format_mark(line)
+function context#popup#close() abort
+function <SNR>306_ToggleHelp() abort
+function <SNR>104_make_oldstyle_omaps(lhs, rhs)
 function startify#fortune#cowsay(...) abort
-function startify#fortune#predefined_quotes() abort
-function startify#fortune#quote() abort
-function startify#get_lastline() abort
-function startify#get_separator() abort
-function startify#get_session_path() abort
-function startify#insane_in_the_membrane(on_vimenter) abort
-function startify#open_buffers(...) abort
+function <SNR>312_RunJob(command, options) abort
+function matchup#motion_force() abort
 function startify#pad(lines) abort
-function startify#session_close() abort
-function startify#session_delete(bang, ...) abort
-function startify#session_delete_buffers()
-function startify#session_list(lead, ...) abort
-function startify#session_list_as_string(lead, ...) abort
-function startify#session_load(source_last_session, ...) abort
-function startify#session_save(bang, ...) abort
-function startify#session_write(session_path)
-function startify#set_batchmode(batchmode) abort
-function startify#set_mark(type, ...) abort
-function tagbar#CloseWindow() abort
-function tagbar#ForceUpdate() abort
-function tagbar#GetTagNearLine(lnum, ...) abort
-function tagbar#IsOpen() abort
-function tagbar#OpenWindow(...) abort
-function tagbar#RestoreSession() abort
-function tagbar#SetFoldLevel(level, force) abort
-function tagbar#StopAutoUpdate() abort
-function tagbar#ToggleWindow(...) abort
-function tagbar#Update() abort
-function tagbar#autoopen(...) abort
-function tagbar#currentfile() abort
-function tagbar#currenttag(fmt, default, ...) abort
-function tagbar#currenttagtype(fmt, default) abort
-function tagbar#debug#enabled() abort
-function tagbar#debug#log(msg) abort
-function tagbar#debug#log_ctags_output(output) abort
-function tagbar#debug#start_debug(...) abort
-function tagbar#debug#stop_debug() abort
-function tagbar#gettypeconfig(type) abort
-function tagbar#getusertypes() abort
-function tagbar#highlighttag(openfolds, force) abort
-function tagbar#inspect(var) abort
-function tagbar#is_paused() abort
-function tagbar#jump() abort
-function tagbar#jumpToNearbyTag(direction, ...) abort
-function tagbar#printfileinfo() abort
-function tagbar#prototypes#basetag#new(name) abort
-function tagbar#prototypes#fileinfo#new(fname, ftype, typeinfo) abort
-function tagbar#prototypes#kindheadertag#new(name) abort
-function tagbar#prototypes#normaltag#new(name) abort
-function tagbar#prototypes#typeinfo#new(...) abort
-function tagbar#sorting#sort(tags, compareby, compare_typeinfo) abort
-function tagbar#state#get_current_file(force_current) abort
-function tagbar#state#set_current_file(fileinfo) abort
-function tagbar#state#set_paused() abort
-function tagbar#toggle_pause() abort
-function tagbar#types#uctags#init(supported_types) abort
-function undotree#UndotreeFocus() abort
-function undotree#UndotreeHide() abort
-function undotree#UndotreeIsVisible() abort
-function undotree#UndotreePersistUndo(goSetUndofile) abort
-function undotree#UndotreeShow() abort
-function undotree#UndotreeToggle() abort
-function undotree#UndotreeUpdate() abort
-function vifm#globals#Init()
-function vifm#synnames(...) abort
-function vimtex#init() abort
-function vital#_fern#Async#CancellationToken#import() abort
-function vital#_fern#Async#Later#import() abort
-function vital#_fern#Async#Promise#import() abort
+function <SNR>247_get_hunks_gitsigns() abort
+function <SNR>174_BuildBufferList()
+function <SNR>174_ActionArgs(ArgLead, CmdLine, CursorPos)
+function <SNR>299_exec(cmd) abort
+function airline#parts#define_raw(key, raw)
+function <SNR>174_MRUGarbageCollectBufs()
+def <SNR>17_SaveVimSesn()
+function <SNR>107_pi_paren_sid()
+function fzf#vim#command_history(...)
+function <SNR>157_restore_shell() abort
+function fugitive#SshConfig(host, ...) abort
+function <SNR>304_BlameBufnr(...) abort
+function <SNR>154_StartCompletionMode()
+function airline#extensions#ale#get_error()
+function gitgutter#utility#system(cmd, ...) abort
+function <SNR>304_ReloadTabStatus() abort
+function fern#hook#promise(name) abort
+function devicons#plugins#ctrlp#init() abort
+function paste#Paste()
+function matchup#util#standard_html(...) abort
+function fzf#exec(...)
+function rainbow_csv#set_statusline_columns()
+function <SNR>336_mixedsort(...)
+function <SNR>257_quit() abort
+function ale#linter#Get(original_filetypes) abort
+function <SNR>304_Selection(arg1, ...) abort
+function <SNR>138_QListToggle() abort
+function <SNR>218_openNodeRecursively(node) abort
+function <SNR>304_ToolStream(line1, line2, range, bang, mods, options, args, state) abort
+function FugitiveConfig(...) abort
+function fzf#vim#windows(...)
+function ctrlp#switchtype(id)
+function <SNR>304_InitializeBuffer(repo) abort
+function <SNR>64_Declare(var, def)
+def <SNR>290_EndsWithCurlyBlock(line_B: dict<any>): bool
+function gitstatus#log#NewLogger(level) abort
+function <SNR>179_shellesc_cmd(arg)
+function <SNR>304_Tree(...) abort
+function <SNR>304_config_Get(name, ...) abort dict
+function <SNR>271_reset_tick(bufnr) abort
+function <SNR>281_list_contains_pat(list, val) abort
+function devicons#plugins#startify#init() abort
+function <SNR>274_get_delim_multi(opts) abort
+function ctrlp#acceptfile(...)
+function <SNR>304_QueryLogRange(old, new, dir) abort
+function <SNR>321_maybe_map_scope(scopestr) abort
+function airline#switch_theme(name, ...)
+function <SNR>166_is_promise(maybe_promise) abort
+function ingo#buffer#IsEmptyVim()
+function startify#fortune#boxed(...) abort
+function airline#highlighter#get_highlight2(fg, bg, ...) abort
+function go#config#HighlightBuildConstraints() abort
+function fugitive#RevertComplete(A, L, P, ...) abort
+function go#config#GoplsAnalyses() abort
+function <SNR>177_fzf_fnamemodify(fname, mods)
+function <SNR>218_showMenu(node) abort
+function <SNR>336_execextvar(key)
+function ale#engine#GetLoclist(buffer) abort
+function <SNR>282_GetAliasedFiletype(original_filetype) abort
 function vital#_fern#Config#import() abort
-function vital#_fern#function(funcname) abort
-function vital#_fern#new() abort
-function vital#fern#import(...) abort
-function vital#fern#new() abort
+function <SNR>306_GotoFileWindow(fileinfo, ...) abort
+function airline#check_mode(winnr)
+function <SNR>340_reset_summary(bufnr) abort
+function NERDComment(mode, type) range
+function <SNR>173_dosurround(...)
+function <SNR>94_parse_args(args) abort
+function matchup#delim#fill_backrefs(re, groups, warn) abort
+function <SNR>107_synID(lnum, col, trans)
+function airline#async#mq_output(buf, file)
+function <SNR>179_skim_call(fn, ...)
+function fugitive#RenameComplete(A, L, P) abort
+function quick_scope#DoubleTap() abort
+function go#util#gomodcache() abort
+function <SNR>166__vital_depends() abort
+function <SNR>336_KeyLoop()
+function go#config#TermWidth() abort
+function <SNR>218_previewBookmark(bookmark) abort
+function <SNR>179_callback(dict, lines) abort
+function <SNR>179_validate_layout(layout)
+function matchup#perf#timeout_start(timeout)
+function <SNR>223_deprecated(oldv, newv) abort
+function context#disable(all) abort
+function tagbar#GetTagNearLine(lnum, ...) abort
+function <SNR>304_UrlParse(url) abort
+function airline#extensions#fzf#statusline(...) abort
+function <SNR>272_open_buffer(entry)
+function VimFtpluginUndo()
+function <SNR>304_StageReveal() abort
+function tagbar#debug#stop_debug() abort
+function <SNR>153_excl(fn)
+function <SNR>203_reuseWin(dir) abort
+function <SNR>304_OpenExpand(dir, file, wants_cmd) abort
+function ingo#buffer#IsPersisted(...)
+function <SNR>64_FindTag()
+function fugitive#Statusline(...) abort
+function <SNR>37_save_secondary_highlight() abort
+function NERDTreeMoveNode()
+function <SNR>177_fzf_tmux(dict)
+function <SNR>173_insert(...)
+function skim#run(...) abort
+function go#util#testLine() abort
+function <SNR>318_getIndicator(status) abort
+function <SNR>154_IsPreviewOpen()
+function <SNR>269_test_coverage()
+function airline#extensions#branch#update_untracked_config(file, vcs)
+function <SNR>304_StageDelete(lnum1, lnum2, count) abort
+function <SNR>304_DoUnstageUnstaged(record) abort
+function <SNR>174_GetHelpStatus()
+function <SNR>136_CreateUniqueCommand(lhs, rhs)
+function <SNR>107_do_popup_autocmd_leave(win_context) abort
+function <SNR>139_LoclistFollowTargetToggle()
+function tagbar#state#set_paused() abort
+function <SNR>100_UNCompleteList(A, C, P)
+function ale#handlers#writegood#Handle(buffer, lines) abort
+function <SNR>338_helptag_sink(line)
+function <SNR>179_skim_fnamemodify(fname, mods)
+function fzf#vim#grep(grep_command, ...)
+function <SNR>272_compare_by_index(foo, bar)
+function <SNR>174_ReSortListing()
+function ale#linter#GetLintersLoaded() abort
+function <SNR>106_Nsort_func(a, b) abort
+function tagbar#debug#start_debug(...) abort
+function ShowTrailingWhitespace#Filter#BlacklistFile(isPermanent)
+function SaveMark(markname)
+function <SNR>249_reset_untracked_cache(shellcmdpost)
+function ingo#str#GetVirtCols(string, virtcol, width, isAllowSmaller)
+function ctrlp#nosy()
+function <SNR>338_strip(str)
+function <SNR>336_NotifySearch()
+function startify#session_delete_buffers()
+function SuperTabSetDefaultCompletionType(type)
+function <SNR>306_CheckExCtagsVersion(output) abort
+function <SNR>54_neomutt_log()
+function WebDevIconsNERDTreeDirUpdateFlags(node, glyph)
+function <SNR>40_buf(c)
+function <SNR>165_exists(name) abort dict
+function fzf#vim#_buflisted_sorted()
+function context#util#echof(...) abort
+function <SNR>304_fnameescape(file) abort
+function <SNR>112_UpdateCursor(cursor, start, end, offset) abort
+function <SNR>338_blue(str, ...)
+function <SNR>146_on_focus_gained()
+function ale#handlers#cspell#GetExecutable(buffer) abort
+function NERDTreeAddNode()
+function go#util#archive()
+function go#config#TermHeight() abort
+function <SNR>104_snr()
+function <SNR>107_format_gutter(lnum, ...)
+function <SNR>166_chain(promise_factories) abort
+function gitstatus#util#BuildGitWorkdirCommand(root, opts) abort
+function <SNR>336_matchtabe(item, pat)
+function go#util#goroot() abort
+function <SNR>250_sh_autocmd_handler()
+function <SNR>340_adjust_hunk_summary(hunk_diff) abort
+function <SNR>269_converged_select(table_buf_number, rb_script_path, query_buf_nr)
+function <SNR>338_excmds()
+function go#config#Debug() abort
+function <SNR>322_isNormalTag() abort dict
+function rainbow_csv#manual_set(arg_policy, is_multidelim)
+function <SNR>34_MRU_Complete(ArgLead, CmdLine, CursorPos) abort
+function <SNR>299_getUniqueID() abort
+function <SNR>269_hex_to_string(src)
+function <SNR>304_DoUnstageUnpushed(record) abort
+function airline#section#create_left(parts)
+function nerdtree#slash() abort
+function quick_scope#HighlightLine(direction, targets) abort
+function <SNR>336_delent(rfunc)
+function fern#hook#add(name, callback, ...) abort
+function <SNR>323_closeFold() abort dict
+function <SNR>218_activateDirNode(directoryNode, ...) abort
+function <SNR>336_Reset(args)
+function VimgrepQRs()
+function illuminate#disable_illumination(bufonly) abort
+function gitgutter#buffer_toggle(...) abort
+function <SNR>146_airline_refresh(...)
+function <SNR>304_diffthis() abort
+function <SNR>128_parent(dir)
+function <SNR>306_GetFileWinnr(fileinfo) abort
+function <SNR>305_po_output(buf, file)
+function NERDTreeRevealFileLinux()
+function matchup#matchparen#scroll_callback(tid) abort
+function go#util#tempdir(prefix) abort
+function SuperTabAlternateCompletion(type)
+def <SNR>17_SetupCompilers()
+function rainbow_csv#rstrip(line)
+function airline#util#has_fugitive()
+function WebDevIconsNERDTreeDirClose(node)
+function FugitiveStatusline(...) abort
+function <SNR>218_openVSplit(target) abort
+function <SNR>174_ToggleSplitOutPathName()
+function rainbow_csv#parse_document_range_rfc(neighboring_lines, neighboring_line_nums, delim, comment_prefix)
+function ctrlp#normcmd(cmd, ...)
+function ingo#os#IsCygwin()
+function fugitive#CompletePath(base, ...) abort
+function <SNR>337_count_char(from, to) abort
+function ale#code_action#BuildChangesList(changes_map) abort
+function <SNR>35_on_vimleavepre()
+function rainbow_csv#csv_align()
+function <SNR>272_sort_by_tick(one, two)
+function IncSearchToggle()
+function go#config#DebugLogOutput() abort
+function go#config#SearchBinPathFirst() abort
+function <SNR>35_on_vimenter()
+function WebDevIconsNERDTreeChangeRootHandler(node)
+function startify#open_buffers(...) abort
+function <SNR>299_gettime(time) abort
+function ale#events#FileChangedEvent(buffer) abort
+function <SNR>44_Delete(opening_bracket)
+function matchup#matchparen#reload()
+def MenuExplOpen()
+function gitgutter#utility#windows()
+function <SNR>223_SID()
+function <SNR>136_RestoreView()
+function <SNR>312_HandleExit(job_info, buffer, output, data) abort
+function context#popup#get_context() abort
+function <SNR>178_CheckArgsRedact()
+function <SNR>272_is_in_skiplist(arg) abort
+function <SNR>223_buildGitWorkdirCommand(root) abort
+function go#config#SetTermCloseOnExit(value) abort
+function BlackComplete(ArgLead, CmdLine, CursorPos)
+function <SNR>306_InitWindow(autoclose) abort
+function airline#util#stl_disabled(winnr)
+function <SNR>304_AbsoluteVimPath(...) abort
+function go#config#DebugSubstitutePaths() abort
+function go#config#PlayOpenBrowser() abort
+function fugitive#DidChange(...) abort
+function <SNR>275_draw_box(lines) abort
+function airline#parts#filetype()
+function airline#extensions#netrw#apply(...)
+function go#config#HighlightFormatStrings() abort
+function <SNR>136_BufKill(cmd, bang)
+function airline#parts#iminsert()
+function <SNR>157_strip_trailing_new_line(line) abort
+function gitgutter#hunk#summary(bufnr) abort
+function gitgutter#highlight#define_highlights() abort
+def <SNR>17_SpellDel()
+function <SNR>64_SavePos()
+def <SNR>290_BracketBlockIndent(line_A: dict<any>, block: dict<any>): number
+function airline#extensions#term#apply(...) abort
+function <SNR>107_set_popup_text(lnum, adjust, offscreen) abort
+function NetrwStatusLine()
+function ale#util#MapMatches(lines, patterns, Callback) abort
+function <SNR>166__promise_finally(...) abort dict
+function fzf#vim#commits(...) range
+function tagbar#sorting#sort(tags, compareby, compare_typeinfo) abort
+function <SNR>304_DoAutocmdChanged(dir) abort
+function gitgutter#hunk#undo() abort
+function matchup#pos#get_cursor_line() abort
+function <SNR>322_removeChild(tag) abort dict
+function go#util#ExpandPattern(...) abort
+function <SNR>304_CfilePorcelain(...) abort
+function <SNR>274_parser_delim_new(lnum, cnum, opts)
+function <SNR>129_set_repeat()
+function <SNR>182_LP_Not(pat)
+function <SNR>306_ToggleCaseInsensitive() abort
+function <SNR>323_openFold() abort dict
+function <SNR>185_VimEnter(dirname)
+function <SNR>336_ToggleFocus()
+function gitgutter#process_buffer(bufnr, force) abort
+function <SNR>269_EnsurePythonInitialization()
+function <SNR>177_popup(opts) abort
+function <SNR>336_PrtFocusMap(char)
+function go#util#snakecase(word) abort
+function rainbow_csv#restore_statusline()
+function <SNR>304_RunExit(state, tmp, job, exit_status) abort
+function tagbar#types#uctags#init(supported_types) abort
+function <SNR>146_airline_extensions()
+function go#util#HasDebug(flag)
+function <SNR>174_MRUAdd(mru, item)
+function <SNR>278_on_highlight(...) abort
+function go#config#FoldEnable(...) abort
+function <SNR>338_wrap(name, opts, bang)
+function fern#version() abort
+function ale#events#ReadOrEnterEvent(buffer) abort
+function <SNR>166__reject(promise, ...) abort
+function <SNR>304_repo_git_chomp_in_tree(...) abort dict
+def <SNR>17_SetupKeymaps()
+function <SNR>130_set_default(dict)
+function <SNR>336_findroot(curr, mark, depth, type)
 function webdevicons#hardRefresh()
-function webdevicons#pluginHome()
-function webdevicons#refresh()
+function <SNR>257_init_buffer_tex() abort
+function <SNR>247_get_hunks_coc() abort
+function <SNR>304_RunBufDelete(bufnr) abort
+function <SNR>304_RunClose(state, tmp, job, ...) abort
+function airline#util#warning(msg)
+function illuminate#on_insert_entered() abort
+function ale#Env(variable_name, value) abort
+function <SNR>144_motion_map_helper(motions)
+function FugitiveActualDir(...) abort
+function <SNR>270_is_open()
+function gitgutter#utility#has_repo_path(bufnr)
+function <SNR>269_get_rbql_trim_spaces()
+function go#config#HighlightSpaceTabError() abort
+function <SNR>282_GetLinterNames(original_filetype) abort
+function go#config#GoplsUsePlaceholders() abort
+function <SNR>174_MRURemoveBuf(bufNbr)
+function <SNR>164_map_preview(helper, prefix) abort
+function airline#mode_changed()
+function fzf#vim#_uniq(list)
+function <SNR>218_chRoot(node) abort
+function <SNR>174_StringWidth(s)
+function <SNR>174_SortReverse()
+function <SNR>136_UndoKill()
+function <SNR>336_bufnrfilpath(line)
+function <SNR>247_get_hunks_gitgutter() abort
+def <SNR>186_GetWordUnderCursor(): string
+function ctrlp#setlines(...)
+function <SNR>304_HunkPosition(lnum) abort
+function quick_scope#HighlightLineDelay(direction, targets) abort
+function <SNR>179_popup(opts) abort
+def <SNR>17_BMAdd()
+function <SNR>268_close(popup) abort
+function <SNR>337_set_view(view) abort
+function ale#Var(buffer, variable_name) abort
+function <SNR>304_RemoteRefToLocalRef(repo, remote_url, ref_path) abort
+function ale#code_action#ReloadBuffer() abort
+function <SNR>139_LoclistFollowSize(scope) abort
+function <SNR>270_append_group(title, regs)
+function ctrlp#getmarkedlist()
+function <SNR>128_current_file()
+function <SNR>252_check_mixed_indent()
+function <SNR>154_ContextCompletion()
+function <SNR>173_beep()
+function FugitiveVimPath(path) abort
+function go#config#CodeCompletionEnabled() abort
+function <SNR>173_changesurround(...)
+function NERDTreeListNode()
+function rainbow_csv#quoted_split(line, delim)
+function airline#async#vim_vcs_clean(cmd, file, vcs)
+function <SNR>339_next_sign_id() abort
+function go#config#MetalinterDeadline() abort
+function <SNR>336_match_window_opts()
+function ctrlp#modfilecond(w)
+def <SNR>290_CacheBracketBlock(line_A: dict<any>)
+function <SNR>177_default_layout()
+function <SNR>43_WinLineRestore(swwline)
+function <SNR>269_EnsureJavaScriptInitialization()
+function <SNR>336_MatchIt(items, pat, limit, exc)
+function <SNR>338_btags_source(tag_cmds)
+function <SNR>269_string_to_hex(src)
+function <SNR>338_winpath(path)
+function <SNR>177_tmux_enabled()
+function go#config#DocMaxHeight() abort
+function <SNR>336_PrtExit()
+function <SNR>338_format_change_offset(current, index, cursor)
+function <SNR>223_migrateVariable(oldv, newv) abort
+function <SNR>306_TogglePause() abort
+function matchup#loader#bufwinenter() abort
+function <SNR>300_GetALEProjectDir(buffer) abort
+function AnsiEsc#AnsiEsc(rebuild)
+function <SNR>340_stage(hunk_diff)
+function <SNR>174_MRUGetOrdering(mru, maxItems)
+function <SNR>154_ContextText()
+function <SNR>174_Key_extension(buf)
+function <SNR>306_OpenFold() abort
+function go#config#AlternateMode() abort
+function airline#util#doautocmd(event)
+function illuminate#on_cursor_moved() abort
+function go#util#pascalcase(word) abort
+function <SNR>174_Close()
+function <SNR>336_sublist(l, s, e)
+def <SNR>17_BMCanAdd(name: string, num: number): bool
+function <SNR>154_ReleaseKeyPresses()
+function <SNR>34_MRU_Delete_From_List()
+function <SNR>128_clear_cache(bufnr)
+function <SNR>179_skim_tmux(dict)
+function <SNR>304_OpenParse(string, wants_cmd, wants_multiple) abort
+function <SNR>338_highlight_keys(str)
+function <SNR>154_SetCompletionType()
+function <SNR>281_match_word(word) abort
+function go#config#ErrcheckBin() abort
+function <SNR>177_xterm_launcher()
+function rainbow_csv#manual_disable()
+function ctrlp#mrufiles#cachefile()
+function gitgutter#highlight#define_sign_text_highlights() abort
+function rainbow_csv#manual_set_comment_prefix(is_multi_comment_prefix)
+function gitgutter#sign#enable() abort
+function <SNR>66_complete(lead, cmdline, cursor)
+function fzf#vim#files(dir, ...)
+function FugitiveIsGitDir(...) abort
+function fzf#complete(...)
+function matchup#pos#smaller(pos1, pos2) abort
+function ale#util#Writefile(buffer, lines, filename) abort
+function matchup#matchparen#init_module() abort
+function <SNR>177_get_version(bin)
+function matchup#util#standard_xml(...) abort
+function tagbar#is_paused() abort
+function <SNR>269_has_python_27()
+function <SNR>127_FindAndOpen() abort
+function <SNR>304_GitShellCmd() abort
+function <SNR>269_make_select_line(num_fields)
+function ShowTrailingWhitespace#Pattern(isInsertMode)
+function fugitive#PrepareJob(...) abort
+function <SNR>48_Map(mode, lhs, rhs, flags) abort
+function BufExplorer(...)
+function <SNR>304_UserCommandCwd(dir) abort
+function <SNR>304_JobOpts(cmd, env) abort
+function quick_scope#Wallhacks(motion = 2) abort
+function <SNR>166__handle_thenable(promise, thenable) abort
+function <SNR>174_MRUTabShouldShowBuf(tabId, bufNbr)
+function <SNR>174_GetTabId(tabNbr)
+function <SNR>304_PrepareEnv(env, dir) abort
+function quick_scope#SetMode(mode) abort
+function go#config#FmtOptions() abort
+function gitstatus#util#FormatPath(path) abort
+function <SNR>306_SetFoldLevelRecursive(fileinfo, tags, level) abort
+function <SNR>218_toggleShowFiles() abort
+function matchup#util#in_syntax(name, ...)
+function <SNR>304_MergeSubcommand(line1, line2, range, bang, mods, options) abort
+function go#util#gopath() abort
+function <SNR>337_generate_echo_cmd(message) abort
+function fzf#install()
+function gitgutter#highlight#linenr_toggle() abort
+function rainbow_csv#parse_report(report_content)
+function <SNR>223_onNERDTreeInit(path) abort
+function airline#extensions#fern#configure_sections(win, context) abort
+function <SNR>306_RenderKeepView(...) abort
+function airline#parts#define_empty(keys)
+function rainbow_csv#get_current_dialect()
+function <SNR>139_LoclistFollowTarget()
+function <SNR>336_isabs(path)
+function <SNR>304_WinShellEsc(arg) abort
+function <SNR>310_reset() abort dict
+function ingo#buffer#ExistOtherLoadedBuffers(targetBufNr)
+function WebDevIconsNERDTreeMapActivateNode(node)
+function go#config#TemplateUsePkg() abort
+function <SNR>279__vital_created(module) abort
+function TwiddleCase(str)
+function <SNR>218_jumpToBookmarks() abort
+function <SNR>336_PrtDeleteEnt()
+function <SNR>104_where_init_module()
+function go#config#SetTemplateAutocreate(value) abort
+function fzf#vim#grep2(command_prefix, query, ...)
+function <SNR>182_LP_PatPush(pat)
+function fugitive#delete(url, ...) abort
+def <SNR>17_XxdBack()
+function <SNR>218_toggleShowBookmarks() abort
+function vital#_fern#Async#CancellationToken#import() abort
+function ClearMAS()
+function fugitive#ReadCommand(line1, count, range, bang, mods, arg, ...) abort
+function fugitive#resolve(url) abort
+function vital#fern#import(...) abort
+function <SNR>165__import(name) abort dict
+function <SNR>321_str(longsig, full) abort dict
+function <SNR>304_sub(str, pat, rep) abort
+function <SNR>304_BranchCfile(result) abort
+function NERDTreeExecuteFileWindows()
+function <SNR>247_get_hunks_empty() abort
+function go#config#TemplateTestFile() abort
+function <SNR>166__all(promises, resolve, reject) abort
+function fugitive#getftype(url) abort
+function fugitive#CommitComplete(A, L, P, ...) abort
+function matchup#matchparen#update()
+function <SNR>304_BlameRehighlight() abort
+function ale#engine#CleanupEveryBuffer() abort
+function FugitivePath(...) abort
+function <SNR>32_indent(line) abort
+function <SNR>159_defs(commands)
+function <SNR>247_coc_git_enabled() abort
+function <SNR>338_chomp(str)
+def FlogUpdateVimInternalGraph(graph: dict<any>): dict<any>
+function go#util#PathSep() abort
+function <SNR>340_in_hunk_preview_window()
+def <SNR>17_Helpfind()
+function CompiledPDF()
+function <SNR>161_BufReadCmd() abort
+function ale#linter#Reset() abort
+function rainbow_csv#buffer_enable_rainbow_features()
+function <SNR>336_ExitIfSingleCandidate()
+function illuminate#toggle_illumination(bufonly) abort
+function <SNR>107_ensure_match_popup() abort
+function <SNR>174_MRUGetItems(mru, maxItems)
+function <SNR>157_not_git_dir(bufnr) abort
+function <SNR>166_noop(...) abort
+function <SNR>179_common_sink(action, lines) abort
+function <SNR>66_noop(...) abort
+function <SNR>305_on_exit_po(channel) abort dict
+function go#config#HighlightFunctionCalls() abort
+function fugitive#BlameSyntax() abort
+function <SNR>179_tmux_enabled()
+function go#config#DebugMappings() abort
+function <SNR>164_map_cd(helper, command) abort
+function <SNR>336_sanstail(str)
+function <SNR>336_opts(...)
+function ale#statusline#Count(buffer) abort
+function <SNR>39_close_buffers(command, bang, buffer_numbers)
+function <SNR>336_buildpat(lst)
+function <SNR>218_customOpenDir(node) abort
+function gitgutter#utility#clean_smudge_filter_applies(bufnr)
+def FlogGetVimInternalGraph(git_cmd: string): dict<any>
+function <SNR>272_show_files() abort
+function fugitive#BufWriteCmd(...) abort
+function go#config#SetTermEnabled(value) abort
+function undotree#UndotreeFocus() abort
+function fugitive#BlameFileType() abort
+function <SNR>104_force(wise)
+function ale#code_action#GetChanges(workspace_edit) abort
+function ale#engine#MarkLinterInactive(info, linter_name) abort
+function go#util#gobin() abort
+function matchup#matchparen#scroll_update(lnum) abort
+function <SNR>337_compare_pos(x, y) abort
+function tagbar#state#get_current_file(force_current) abort
+function <SNR>272_filter_oldfiles_unsafe(path_prefix, path_format, use_env) abort
+def <SNR>17_SpellReplace(n: number)
+function <SNR>304_NavigateUp(count) abort
+function <SNR>104_misc_init_module()
+function <SNR>304_StageArgs(visual) abort
+function <SNR>269_display_progress_bar(cur_progress_pos)
+function go#config#ListType() abort
+function <SNR>323_toggleFold(fileinfo) abort dict
+function <SNR>338_tags_sink(lines)
+function ingo#str#StartsWith(string, substring, ...)
+function rainbow_csv#select_from_file()
+function matchup#util#append_match_words(str) abort
+function <SNR>336_PrtExpandDir()
+function tagbar#autoopen(...) abort
+function gitstatus#getIndicator(status) abort
+function fzf#vim#changes(...)
+function gitgutter#git(...)
+function <SNR>177_dopopd()
+function <SNR>336_dohighlight()
+function <SNR>304_repo_head(...) abort dict
+function airline#extensions#fugitiveline#bufname() abort
+function ingo#fs#path#IsAbsolute(filespec)
+function NERDTreeRevealInExplorer()
+function <SNR>304_SplitExpandChain(string, ...) abort
+function <SNR>304_RemoteUrlCallback(remote, callback) abort
+function <SNR>249_format_name(name)
+function <SNR>304_RunEdit(state, tmp, job) abort
+function ale#linter#GetAddress(buffer, linter) abort
+function rainbow_csv#update_subcomponent_stats(field, is_first_line, max_field_components_lens)
+function <SNR>165__module_path(name) abort
+def <SNR>290_IsInInterface(): bool
+function <SNR>272_show_lists(lists) abort
+function <SNR>277_LoadArgCount(function) abort
+function NERDTreeWebDevIconsRefreshListener(event)
+function <SNR>128_activate()
+function airline#extensions#ale#get(type)
+function ingo#hlgroup#GetForegroundColor(syntaxId, ...) abort
+function go#config#HighlightStringSpellcheck() abort
+function <SNR>337_is_exclusive() abort
+function airline#extensions#fern#init(ext) abort
+function <SNR>304_QuickfixOpen(nr, mods) abort
+function <SNR>336_settype(type)
+function FugitiveConfigGet(name, ...) abort
+function <SNR>304_StdoutToFile(out, cmd, ...) abort
+function go#config#FmtAutosave() abort
+function go#config#PlayBrowserCommand() abort
+function <SNR>182_StackLook(description)
+function <SNR>304_repo_dir(...) abort dict
+function FugitiveGitDir(...) abort
+function <SNR>304_NextItem(count) abort
+function <SNR>304_CompleteRevision(A, L, P, ...) abort
+function <SNR>48_VimSlash(path) abort
+function <SNR>269_run_cmd_query(query)
+function <SNR>337_set_search(pattern) abort
+function ale#events#FileTypeEvent(buffer, new_filetype) abort
+function <SNR>112_UpdateMenu(data, menu_items) abort
+function fugitive#GX() abort
+function airline#util#has_vim9_script()
+function ctrlp#tabcount()
+function OpenInEmacs()
+function fugitive#Path(url, ...) abort
+function <SNR>340_populate_hunk_preview_window(header, body)
+function fugitive#getftime(url) abort
+function <SNR>336_stop_timer_if_exists()
+function quick_scope#Ready() abort
+function <SNR>179_getpos()
+function <SNR>336_dismrk()
+function <SNR>198_setCursorHold()
+function <SNR>304_FetchSubcommand(...) abort
+function <SNR>304_ReloadWinStatus(...) abort
+function ctrlp#rmbasedir(items)
+function <SNR>157_use_known_shell() abort
+function <SNR>338_check_requirements()
+function <SNR>104_treesitter_init_module()
+function <SNR>268_show() abort
+function rainbow_csv#generate_tab_statusline(tabstop_val, delim_len, template_fields)
+function <SNR>338_align_pairs(list)
+function gitgutter#utility#extension(bufnr) abort
+function airline#async#nvim_vcs_untracked(cfg, file, vcs)
+function airline#extensions#term#inactive_apply(...) abort
+function fugitive#getfperm(url) abort
+function <SNR>158_useful_diff_colours()
+function IlluminateMoreToggle()
+function <SNR>306_IsValidFile(fname, ftype) abort
+function <SNR>304_DoToggleStagedHeading(...) abort
+function WebDevIconsNERDTreeMapCloseDir(node)
+function <SNR>269_is_opening_rfc_line(line_text, delim)
+function VimgrepBcPc()
+function <SNR>336_buffunc(e)
+function airline#builder#get_prev_group(sections, i)
+function ingo#str#TrimPattern(string, pattern, ...)
+function <SNR>336_GlobPath(dirs, depth)
+function <SNR>234_IsBlacklisted()
+function <SNR>166__notify_done(wg, index, value) abort
+function tagbar#OpenWindow(...) abort
+function <SNR>338_first_line(lines)
+function <SNR>340_fix_file_references(filepath, hunk_diff)
+function <SNR>336_setlines_pre(...)
+function ctrlp#exit()
+function fugitive#Parse(url) abort
+function <SNR>304_PreparePathArgs(cmd, dir, literal, explicit) abort
+function ShowTrailingWhitespace#Filter#RemoveFileFromBlacklist()
+function <SNR>304_StatusCfile(...) abort
+function <SNR>270_wait_with_timeout(timeout)
+function airline#extensions#apply_left_override(section1, section2)
+function <SNR>336_MatchedItems(items, pat, limit)
+function ShowTrailingWhitespace#Filter#Default()
+function <SNR>304_StatusSectionFile(heading, filename) abort
+function <SNR>304_UsableWin(nr) abort
+function <SNR>304_ConfigCallback(r, into) abort
+function gitstatus#job#Spawn(name, cmd, opts) abort
+function airline#extensions#whitespace#check()
+function <SNR>304_DoToggleUnstaged(record) abort
+function gitgutter#hunk#cursor_in_hunk(hunk) abort
+def <SNR>290_IsFirstLineOfCommand(line_1: dict<any>, line_2: dict<any>): bool
+function vital#_fern#function(funcname) abort
+function fugitive#filewritable(url) abort
+function <SNR>304_diffoff_all(dir) abort
+function ctrlp#syntax()
+function go#config#EchoGoInfo() abort
+function <SNR>218_activateBookmark(bm) abort
+function fzf#vim#_lines(all)
+function <SNR>166__promise_then(...) abort dict
+function NERDCommentIsCharCommented(line, col)
+function <SNR>311_get() abort
+function <SNR>336_PrtSelectJump(char)
+function <SNR>338_red(str, ...)
+function <SNR>44_DeleteSurroundingFunctionCall()
+function ingo#str#Contains(string, part, ...)
+function <SNR>218_toggleShowHidden() abort
+function <SNR>166__chain(promise_factories, results) abort
+function <SNR>339_highlight_name_for_change(text) abort
+function <SNR>313_GetFirstProblems(buffer) abort
+function matchup#pos#(...) abort
+function <SNR>105_sort_by_last(a, b)
+function <SNR>258_SetDefault(var, val)
+function <SNR>131_as_keymapping(key) abort
+function <SNR>304_QuickfixSet(nr, ...) abort
+function fzf#shellescape(arg, ...)
+function ColorLightDark()
+function <SNR>174_ToggleOnlyOneTab()
+function <SNR>107_add_background_matches_1(line1, col1, line2, col2)
+function <SNR>306_HighlightTag(openfolds, ...) abort
+function airline#themes#patch(palette)
+function TomorrowMenu()
+function <SNR>168_set_error_handler(handler) abort
+function <SNR>165__format_throwpoint(throwpoint) abort
+function <SNR>304_DoUnstageUnpulledHeading(heading) abort
+function go#config#BuildTags() abort
+function <SNR>304_GlobComplete(lead, pattern, ...) abort
+function <SNR>158_define_sign_text() abort
+function vital#_fern#new() abort
+function fzf#vim#marks(...)
+function <SNR>336_PrtClear()
+function <SNR>252_conflict_marker()
+def <SNR>17_SearchP()
+function <SNR>338_fzf(name, opts, extra)
+function <SNR>165__module_sid(name) abort
+function <SNR>304_JobNvimExit(dict, callback, job, data, type) abort dict
+function <SNR>339_handle_double_hunk(modified_lines)
+function airline#extensions#hunks#get_raw_hunks() abort
+function fugitive#PorcelainCfile() abort
+function <SNR>174_GetTabNbr(bufNbr)
+function <SNR>337_is_head_of_cword(cword) abort
+function tagbar#SetFoldLevel(level, force) abort
+function <SNR>304_StageDiffEdit() abort
+function <SNR>154_SetDefaultCompletionType()
+function <SNR>304_RunCloseIn(job) abort
+function <SNR>174_MRUTabForBuf(bufNbr)
+function <SNR>306_add_tag_recursive(parent, taginfo, pathlist) abort
+function fugitive#PushComplete(A, L, P, ...) abort
+function <SNR>218_toggleIgnoreFilter() abort
+function NERDTreeExecFile()
+function <SNR>106_init_delim_regexes_generator(list_name) abort
+function gitgutter#hunk#increment_lines_modified(bufnr, count) abort
+function <SNR>304_CompleteHeads(dir) abort
+function <SNR>198_getDistro()
+function ale#Queue(delay, ...) abort
+function ale#engine#Cleanup(buffer) abort
+function <SNR>50_SetUpMessage(filename) abort
+function <SNR>322_isFolded() abort dict
+function <SNR>174_CalculateBufferDetails(buf)
+function ale#handlers#cspell#GetLanguageId(buffer) abort
+function <SNR>303_lash(...)
+function <SNR>28_TomorrowOptions()
+function context#util#limit_join_parts(lines) abort
+function <SNR>336_offset(lines, height)
+function go#config#DiagnosticsLevel() abort
+function rainbow_csv#handle_syntax_change()
+function <SNR>278_redraw(helper) abort
+function <SNR>174_UpdateHelpStatus()
+function tagbar#highlighttag(openfolds, force) abort
+function <SNR>64_InValidRegion()
+function go#util#ShowInfo(info)
+function <SNR>336_modevar()
+function <SNR>304_JobVimExit(dict, callback, temp, job, status) abort
+function <SNR>166__next_id() abort
+function <SNR>244_GetAirlineSection()
+function <SNR>306_GotoNextToplevelTag(direction) abort
+function <SNR>306_goto_tagbar(...) abort
+function fugitive#BufReadCmd(...) abort
+function <SNR>340_enable_staging_from_hunk_preview_window()
+function <SNR>338_given_range(line1, line2)
+function <SNR>218_openInNewTabSilent(target) abort
+function go#config#CodeCompletionIcase() abort
+function NERDTreeCopyNode()
+function ale#engine#IsExecutable(buffer, executable) abort
+function airline#util#themes(match)
+function undotree#UndotreeHide() abort
+function <SNR>174_MRUListedBuffersForTab(tabId, maxBuffers)
+function <SNR>104_text_obj_init_module()
+function matchup#delim#get_prev(type, side, ...) abort
+function go#config#SetMetalinterAutosave(value) abort
+function <SNR>146_on_window_changed(event)
+function <SNR>269_update_table_record(table_path, delim, policy, comment_prefix)
+function <SNR>337_sort_pos(pos_list) abort
+function <SNR>272_filter_oldfiles(path_prefix, path_format, use_env) abort
+function airline#update_statusline_inactive(range)
+function <SNR>304_UpdateIndex(dir, info) abort
+function <SNR>338_windows_sink(line)
+function go#config#AddtagsTransform() abort
+function SuperTabSetCompletionType(type)
+function <SNR>304_RebaseArgument() abort
+function BufExplorerHorizontalSplit()
+function gitgutter#hunk#prev_hunk(count) abort
+function <SNR>165_load(...) abort dict
+function FirmComment(c)
+function <SNR>103_Highlight_Matching_Pair()
+function gitgutter#hunk#preview() abort
+function <SNR>173_reindent() abort
+function matchup#loader#sidedict() abort
+function fern#hook#emit(name, ...) abort
+function go#config#ModFmtAutosave() abort
+function quick_scope#Toggle() abort
+function <SNR>234_IsForcedShow()
+function <SNR>304_BlameCommit(cmd, ...) abort
+function <SNR>138_LListToggle() abort
+def <SNR>290_PrevCodeLine(lnum: number): dict<any>
+function <SNR>338_function(name)
+function ingo#os#IsWindowsShell()
+function <SNR>218_SID() abort
+function <SNR>299_undotreeAction(action) abort
+function <SNR>168__default_error_handler() abort
+function <SNR>221_ToggleTabTreeVCS(name)
+function go#config#HighlightVariableDeclarations() abort
+function <SNR>107_fade_timer_callback(win_id, timer_id) abort
+function <SNR>318_highlightFromGroup(group) abort
+function ctrlp#utils#cachefile(...)
+function <SNR>257_map(ftype, mode, lhs, rhs, ...) abort
+function <SNR>336_PrtCurRight()
+function <SNR>304_function(name) abort
+function <SNR>304_HasOpt(args, ...) abort
+function <SNR>244_termname(bufnr) abort
+function <SNR>322_getChildren() abort dict
+function <SNR>66_GoInstallBinaries(updateBinaries, ...)
+function tagbar#currenttagtype(fmt, default) abort
+function gitgutter#highlight#line_toggle() abort
+function context#util#map(arg) abort
+function <SNR>304_DotRelative(path, ...) abort
+function tagbar#Update() abort
+function <SNR>304_DirCheck(...) abort
+function <SNR>143_InitVariable(var, value)
+function <SNR>305_on_stdout(channel, msg) abort dict
+function <SNR>304_RemoteDefault(dir) abort
+function <SNR>304_DoToggleUnpulledHeading(heading) abort
+function ale#handlers#writegood#DefineLinter(filetype) abort
+function airline#extensions#keymap#init(ext)
+function CustomFoldText(...)
+function <SNR>164_map_move(helper) abort
+function airline#builder#get_next_group(sections, i)
+function <SNR>304_RunSend(job, str) abort
+function VimWriteClose()
+function <SNR>304_PathInfo(url) abort
+function ingo#str#Trim(string)
+function <SNR>304_ConfigTimestamps(dir, dict) abort
+function NERDTreeRevealInFinder()
+function ingo#buffer#VisibleList(...)
+function <SNR>146_on_colorscheme_changed()
+function <SNR>304_GitIndexFileEnv() abort
+function <SNR>322_getDataType() abort dict
+def <SNR>290_InCommentOrString(): bool
+function ale#linter#GetCommand(buffer, linter) abort
+function <SNR>304_StageDiff(diff) abort
+function <SNR>336_SplitPattern(str)
+function <SNR>223_getGitWorkdir(ntRoot) abort
+function <SNR>338_btags_sink(lines)
+def <SNR>21_LoadFTPlugin()
+function matchup#pos#equal(p1, p2) abort
+function airline#parts#paste()
+function fugitive#GrepComplete(A, L, P) abort
+function <SNR>338_execute_silent(cmd)
+function go#config#MetalinterCommand() abort
+function <SNR>179_execute(dict, command, use_height, temps) abort
+function go#config#AddtagsSkipUnexported() abort
+function <SNR>269_try_read_index(src_path)
+function context#peek() abort
+function <SNR>112_GetCodeActions(linter, options) abort
+function go#util#StripTrailingSlash(paths) abort
+def <SNR>290_IsRightBelow(lnum: number, syntax: string): bool
+function WebDevIconsNERDTreeDirOpen(node)
+function <SNR>336_PrtHistory(...)
+function <SNR>304_UrlPopulate(string, into) abort
+function go#config#SetAutoSameids(value) abort
+function <SNR>336_PrtSelectMove(dir)
+def <SNR>17_SetupLazyloadMenus()
+function gitgutter#quickfix(current_file)
+function ale#util#StopPartialTimer(timer_id) abort
+function <SNR>177_error(msg)
+function <SNR>154_WillComplete(...)
+function ale#handlers#alex#GetExecutable(buffer) abort
+function <SNR>306_IsLineVisible(line) abort
+function fzf#vim#commands(...)
+function rainbow_csv#handle_new_file()
+function WebDevIconsGetFileTypeSymbol(...) abort
+function <SNR>179_get_color(attr, ...)
+function <SNR>158_define_sign_line_highlights() abort
+def <SNR>316_DetectFromText(line1: string)
+function <SNR>271_clear(bufnr)
+function <SNR>174_SortListing()
+function <SNR>304_GitCmd() abort
+function NERDTreeFocus()
+function startify#debug()
+function <SNR>218_jumpToLastChild(node) abort
+function <SNR>174_DoBufDelete()
+function airline#util#ignore_next_focusgain()
+function fugitive#DropCommand(line1, count, range, bang, mods, arg, ...) abort
+function <SNR>164_map_new_dir(helper) abort
+function LanguageTool_lopen()
+function airline#parts#get(key)
+function fugitive#RenameCommand(line1, line2, range, bang, mods, arg, ...) abort
+function <SNR>336_getinput(...)
+function <SNR>338_rstrip(str)
+function <SNR>336_PrtCurEnd()
+function RestoreUserMaps(suffix)
+function <SNR>338_history_sink(type, lines)
+function startify#set_mark(type, ...) abort
+function <SNR>306_HandleOnlyWindow() abort
+function <SNR>177_pushd(dict)
+function <SNR>179_skim_expand(fmt)
+function airline#extensions#load_theme()
+function <SNR>164_map_open_system(helper) abort
+function <SNR>139_LoclistFollowHookEvents()
+function go#config#HighlightTrailingWhitespaceError() abort
+function go#config#DocBalloon() abort
+function gitgutter#difforig()
+function ale#events#InsertEnterEvent(buffer) abort
+function matchup#loader#remove_capture_groups(re) abort
+function airline#update_statusline()
+function FindRootDirectory()
+function fugitive#repo(...) abort
+function <SNR>175_Underline(chars)
+function <SNR>165__sid(path, filter_pattern) abort
+function <SNR>174_ToggleHelp()
+function context#util#update_window_state(winid) abort
+def <SNR>290_RegisterCacheInvalidation()
+function <SNR>340_hunk_op(op, ...)
+function <SNR>323_getPrototype(short) abort dict
+function <SNR>165__file2module(file) abort
+function <SNR>218_upDirCurrentRootOpen() abort
+function gitstatus#util#BuildGitStatusCommand(root, opts) abort
+function fzf#vim#buffer_lines(...)
+function matchup#delim#skip0()
+function matchup#delim#skip1(val, def)
+function matchup#delim#skip2(strike, def)
+function go#config#TextobjIncludeFunctionDoc() abort
+function rainbow_csv#get_csv_header(delim, policy, comment_prefix)
+function ale#events#SaveEvent(buffer) abort
+function airline#extensions#fzf#init(ext) abort
+function <SNR>270_gv(visualmode, visible)
+function <SNR>269_get_auto_policy_for_delim(delim)
+function go#config#DebugCommands() abort
+function go#util#GetLines()
+def <SNR>290_IsInThisBlock(line_A: dict<any>, lnum: number): bool
+function ale_linters#vim#vimls#GetProjectRoot(buffer) abort
+function NERDTreeChangePermissions()
+function <SNR>336_headntail(str)
+function <SNR>312_RunIfExecutable(buffer, linter, lint_file, executable) abort
+function TagbarBalloonExpr() abort
+function <SNR>223_path2str(path) abort
+function <SNR>218_chCwd(node) abort
+function <SNR>338_buffer_lines(query)
+function tagbar#IsOpen() abort
+function airline#extensions#tagbar#get_status(...)
+function <SNR>249_config_fugitive_branch() abort
+function <SNR>304_ChompDefault(default, ...) abort
+function ale#engine#FixLocList(buffer, linter_name, from_other_source, loclist) abort
+function <SNR>44_ChangeNextSurroundingFunctionCall()
+function ctrlp#getvar(var)
+function <SNR>223_refreshGitStatus(name, workdir) abort
+function <SNR>322_isPseudoTag() abort dict
+function go#config#GorenameBin() abort
+function ctrlp#utils#writecache(lines, ...)
+function <SNR>174_MRUNew(head)
+function gitgutter#utility#setbufvar(buffer, varname, val)
+function vital#fern#new() abort
+function <SNR>306_GotoPrevFold() abort
+function <SNR>337_getcoord(expr) abort
+function <SNR>179_pushd(dict)
+function <SNR>304_repo_translate(rev) abort dict
+function nerdtree#osDefaultCaseSensitiveFS() abort
+function fugitive#BrowseCommand(line1, count, range, bang, mods, arg, ...) abort
+function <SNR>106_init_delim_lists_fast(mps) abort
+function airline#highlighter#exec(group, colors) abort
+function <SNR>338_green(str, ...)
+function <SNR>336_PrtDeleteMRU()
+function <SNR>128_current()
+function <SNR>136_SaveWindowPos()
+function <SNR>174_MRURemove(mru, item)
+function NERDTreeListNodeWin32()
+function fugitive#BufReadStatus(cmdbang) abort
+function <SNR>338_jump_format(line)
+function <SNR>304_DoUnstageStagedHeading(heading) abort
+function <SNR>164_map_remove(helper) abort
+function <SNR>336_PrtCurStart()
+function <SNR>99_init_var(var, value) abort
+function <SNR>323_add_snr(funcname) abort
+function FixConversionToLatin1()
+function fugitive#MessageCfile() abort
+function ctrlp#mrufiles#init()
+function matchup#matchparen#status_str(offscreen, ...) abort
+function <SNR>218_activateFileNode(node) abort
+function <SNR>306_ExecuteCtagsOnFile(fname, realfname, typeinfo) abort
+function <SNR>304_MapStatus() abort
+function <SNR>37_handle_extra_highlight(state) abort
+function go#config#TermMode() abort
+function <SNR>179_splittable(dict)
+function <SNR>218_jumpToSibling(node, forward) abort
+def <SNR>290_NonCommentedMatch(line: dict<any>, pat: string): bool
+function <SNR>336_OpenNoMarks(md, line)
+function <SNR>44_ChangeSurroundingFunctionCall()
+function <SNR>177_compare_versions(a, b)
+function <SNR>336_regisfilter(reg)
+function <SNR>304_DoToggleHelpHeader(value) abort
+function <SNR>304_throw(string) abort
+function <SNR>269_update_records(records, key, new_record)
+function <SNR>269_guess_table_params_from_content()
+function <SNR>304_PathJoin(prefix, str) abort
+function go#config#HighlightArrayWhitespaceError() abort
+function <SNR>133_GetPalette()
+def <SNR>17_BMHash2(name: string): string
+function <SNR>257_filename_changed_pre() abort
+function <SNR>179_cmd(bang, ...) abort
+function airline#extensions#append_to_section(name, value)
+function <SNR>174_RemoveBuffer(mode)
+function fugitive#Command(line1, line2, range, bang, mods, arg, ...) abort
+function ale#util#FeedKeys(...) abort
+function airline#parts#define_text(key, text)
+function <SNR>338_jump(t, w)
+function <SNR>223_onFileUpdate(fname)
+function rainbow_csv#dialect_to_ft(delim, policy, comment_prefix)
+function <SNR>336_tail()
+function <SNR>39_bclose(command, bang, option)
+function GitGutterGetHunkSummary()
+function FugitiveConfigGetRegexp(pattern, ...) abort
+function tagbar#currentfile() abort
+function <SNR>306_OpenParents(...) abort
+function <SNR>198_initialize()
+function gitgutter#hunk#hunks(bufnr) abort
+function ale#util#StartPartialTimer(delay, callback, args) abort
+function tagbar#jumpToNearbyTag(direction, ...) abort
+function <SNR>337_escape_pattern(str) abort
+function <SNR>174_SortByKeyFunc(keyFunc)
+function <SNR>336_compmreb(...)
+function quick_scope#UnhighlightLine() abort
+function <SNR>304_Relative(...) abort
+function <SNR>336_compmref(...)
+function fugitive#Object(...) abort
+function rainbow_csv#strip_spaces(input_string)
+function fugitive#CompleteObject(base, ...) abort
+function <SNR>304_ToolItems(state, from, to, offsets, text, ...) abort
+function <SNR>139_LoclistFollowGlobalToggle(...)
+function <SNR>338_commits(range, buffer_local, args)
+function MruGetFiles(...)
+function <SNR>306_ParseTagline(part1, part2, typeinfo, fileinfo) abort
+function <SNR>223_setupNERDTreeListeners(listener) abort
+function <SNR>223_onGitStatusFailedCB(job) abort
+function ingo#hlgroup#GetColor(isBackground, syntaxId, ...) abort
+function airline#extensions#netrw#init(ext)
+function fugitive#Config(...) abort
+function <SNR>154_EnableNoCompleteAfterReset()
+function <SNR>166_is_available() abort
+function <SNR>165_unload() abort dict
+function airline#util#is_popup_window(winnr)
+function ctrlp#getcline()
+function gitgutter#disable() abort
+def <SNR>290_IndentMoreInBracketBlock(): number
+function nerdtree#ui_glue#bookmarkNode(...) abort
+function matchup#pos#larger(pos1, pos2) abort
+function <SNR>269_calc_column_stats(delim, policy, comment_prefix, progress_bucket_size)
+function <SNR>304_ToolParse(state, line) abort
+function NERDTreeAddSubmenu(options)
+function <SNR>304_CompleteRemote(A, L, P, ...) abort
+def <SNR>17_XxdFind()
+function <SNR>173_fixindent(str, spc)
+function <SNR>198_hardRefreshNerdTree()
+function <SNR>339_obsolete_gitgutter_signs_to_remove(bufnr, new_gitgutter_signs_line_numbers) abort
+function matchup#matchparen#disable()
+function <SNR>338_bash()
+function <SNR>338_fill_quickfix(name, list)
+function ale#code_action#GetCodeActions(options) abort
+function <SNR>340_goto_original_window()
+function gitgutter#utility#git_supports_command_line_config_override() abort
+function undotree#UndotreePersistUndo(goSetUndofile) abort
+function <SNR>304_TreeChomp(...) abort
+function SaveWinPosn(...)
+function <SNR>336_PrtClearCache()
+function <SNR>304_FilterEscape(items, ...) abort
+function airline#extensions#tagbar#currenttag()
+function context#popup#clear() abort
+function <SNR>336_highlight(pat, grp)
+function ale_linters#vim#vint#GetCommand(buffer, version) abort
+function ale#events#Init() abort
+function nerdtree#loadClassFiles() abort
+function rainbow_csv#preserving_quoted_split(line, delim)
+function OpenBrowserSearch(...) abort
+function <SNR>304_StageInfo(...) abort
+function go#config#TermCloseOnExit() abort
+function <SNR>340_cursor_in_two_hunks()
+function <SNR>336_at(str)
+function <SNR>274_geteffline(expr)
+function <SNR>304_TempReadPre(file) abort
+function airline#extensions#searchcount#apply(...) abort
+function rainbow_csv#finish_query_editing()
+function <SNR>313_GetCounts(buffer) abort
+function fzf#vim#ag(query, ...)
+function fzf#wrap(...)
+function <SNR>274_get_delim(opts) abort
+function airline#themes#tomorrow#refresh()
+function <SNR>218_closeChildren(node) abort
+function fugitive#MapJumps(...) abort
+function airline#parts#spell()
+function GoWinbufnr(bufnum)
+function gitgutter#hunk#in_hunk(lnum)
+function DestroyMark(markname)
+function ale#linter#GetAll(filetypes) abort
+function <SNR>103_NoMatchParen()
+function <SNR>322_initFoldState(known_files) abort dict
+function <SNR>281_should_illuminate_word() abort
+function <SNR>281_remove_illumination() abort
+function <SNR>261_GetHiCmd(list) abort
+function <SNR>312_AddProblemsFromOtherBuffers(buffer, linters) abort
+function <SNR>182_LP_And(pat1, pat2)
+function matchup#loader#refresh_match_words() abort
+function <SNR>166__resolve(promise, ...) abort
+function FugitiveGitPath(path) abort
+function <SNR>304_Expand(rev, ...) abort
+function <SNR>338_merge_opts(dict, eopts)
+function <SNR>165__unify_path(path) abort
+function <SNR>174_ToggleFindActive()
+function <SNR>336_maxf(len)
+function matchup#util#in_synstack(name, ...) abort
+function ctrlp#progress(enum, ...)
+function ale#linter#ResolveFiletype(original_filetype) abort
+function <SNR>177_handle_ambidouble(dict)
+function <SNR>146_on_cursor_moved()
+function <SNR>179_popup_support()
+function GrabScriptnames()
+function <SNR>164_new_dir(helper, name) abort
+function FugitiveExecute(args, ...) abort
+function <SNR>310_sortTags(compare_typeinfo) abort dict
+function <SNR>198_setDictionaries()
+function <SNR>336_Close()
+function <SNR>218_customOpenBookmark(node) abort
+function go#config#RenameCommand() abort
+function fugitive#Autowrite() abort
+function go#config#GoplsMatcher() abort
+function <SNR>336_UserCmd(lscmd)
+function FugitiveFind(...) abort
+function <SNR>100_ToggleUnicodeCompletion()
+function ctrlp#mrufiles#add(fn)
+function <SNR>304_ReadPrepare(line1, count, range, mods) abort
+function airline#extensions#wordcount#init(ext)
+function <SNR>128_sub(dir, identifier)
+function <SNR>269_write_index(records, dst_path)
+function fugitive#ResolveUrl(target, ...) abort
+function <SNR>269_cell_jump_simple(direction, delim, policy, comment_prefix)
+function fugitive#PathComplete(...) abort
+function <SNR>314_ShowCursorDetailForItem(loc, options) abort
+function ale#handlers#cspell#Handle(buffer, lines) abort
+function <SNR>321_getDataType() abort dict
+function <SNR>304_ToolToFrom(str) abort
+function rainbow_csv#is_rainbow_table()
+function tagbar#StopAutoUpdate() abort
+function go#util#Join(...) abort
+function <SNR>338_buflisted()
+function <SNR>338_buffer_line_handler(lines)
+function <SNR>336_MapSpecs()
+function AnsiEsc#BufReadPost()
+function <SNR>340_part_of_diff(hunk_diff, first, last)
+function <SNR>223_initVariable(var, value) abort
+function rainbow_csv#buffer_disable_rainbow_features()
+function <SNR>278_update_node(status_map, node) abort
+function ShowTrailingWhitespace#IsSet()
+function <SNR>234_GetFilespec()
+function ParenthsToggle()
+function fugitive#ConfigGetAll(name, ...) abort
+function <SNR>48_ProjectionistDetect() abort
+function <SNR>64_CloseIt()
+def <SNR>17_LoadVimSesn()
+function <SNR>222_Refresh()
+function fugitive#SourceCmd(...) abort
+function ale#handlers#writegood#GetExecutable(buffer) abort
+function ale#util#Input(message, value, ...) abort
+function <SNR>305_untracked_output(dict, buf)
+function airline#extensions#branch#head()
+function NERDTreeQuickLook()
+function <SNR>146_random_theme() abort
+function gitstatus#listener#New(opts) abort
+function <SNR>131_key_mapping(lhs, rhs, noremap) abort
+function <SNR>39_get_relevant_bufinfo(command)
+function <SNR>271_setup_path(bufnr, continuation)
+function <SNR>106_capture_group_sort(a, b) abort dict
+function NERDTreeCWD()
+function <SNR>133_MarkPaletteComplete(ArgLead, CmdLine, CursorPos)
+function fugitive#Expand(object) abort
+function ale#util#GetLineCount(buffer) abort
+function <SNR>154_Init()
+function undotree#UndotreeUpdate() abort
+function <SNR>269_ShowImportantMessage(msg_header, msg_lines)
+function go#util#SetEnv(name, value) abort
+function <SNR>306_goto_markedwin(...) abort
+function <SNR>218_closeCurrentDir(node) abort
+function <SNR>304_PreviousSectionEnd(count) abort
+function <SNR>304_RunSave(state) abort
+function <SNR>340_preview(hunk_diff)
+function PercentUnicode()
+def <SNR>290_IsInside(lnum: number, syntax: string): bool
+function <SNR>337_get_pos_char(...) abort
+function <SNR>218_jumpToFirstChild(node) abort
+function <SNR>304_PrepareJob(opts) abort
+function <SNR>336_hiupdate()
+function <SNR>156_next_tick(cmd)
+function <SNR>323_isKindheader() abort dict
+function ctrlp#mrufiles#tgrel()
+function <SNR>304_StagePatch(lnum1, lnum2, ...) abort
+function airline#parts#mode()
+function <SNR>269_get_num_columns_if_delimited(delim, policy)
+function matchup#pos#next(...) abort
+function fzf#vim#history(...)
+function <SNR>304_BlameJump(suffix, ...) abort
+function go#config#SetBuildTags(value) abort
+function <SNR>306_ProcessTag(name, filename, pattern, fields, is_split, typeinfo, fileinfo) abort
+function <SNR>304_StageInline(mode, ...) abort
+function go#util#HighlightPositions(group, pos) abort
+function <SNR>39_bclose_menu(command, bang)
+function <SNR>261_get_array(guifg, guibg, ctermfg, ctermbg, opts) abort
+function <SNR>161_SessionLoadPost() abort
+function NERDTreeAddPathFilter(callback)
+function <SNR>304_CompletePush(A, L, P, ...) abort
+function <SNR>304_AddHeader(to, key, value) abort
+function <SNR>305_valid_dir(dir)
+function <SNR>304_Do(action, visual) abort
+function ale#code_action#EnablePopUpMenu() abort
+function <SNR>306_OpenWindow(flags) abort
+function <SNR>336_DetectFileType(type, ft)
+function <SNR>304_DirCommitFile(path) abort
+function <SNR>336_choices(str, choices, func, args)
+function <SNR>336_gethistdata()
+function <SNR>10_StarSetf(ft)
+function NetUserPass(...)
+function gitgutter#hunk#increment_lines_removed(bufnr, count) abort
+function tagbar#printfileinfo() abort
+function airline#util#strchars(str)
+function GrabAllFunctions()
+function <SNR>220_renameBuffer(bufNum, newNodeName, isDirectory)
+function <SNR>306_TransformUserTypeDef(def) abort
+function <SNR>304_PreviousItem(count) abort
+function <SNR>177_create_popup(opts) abort
+function fugitive#Find(object, ...) abort
+function <SNR>177_border_opt(window)
+function <SNR>304_DoTogglePushHeader(value) abort
+function <SNR>304_repo_tree(...) abort dict
+function <SNR>177_getpos()
+function go#config#DebugAddress() abort
+function <SNR>232_Lint(buffer, should_lint_file, timer_id) abort
+function matchup#matchparen#highlight_surrounding() abort
+function airline#extensions#wordcount#apply(...)
+function <SNR>304_DoStagePushHeader(value) abort
+function <SNR>270_is_visible(pos)
+function <SNR>177_execute_term(dict, command, temps) abort
+function <SNR>218_previewNodeHSplit(node) abort
+function ctrlp#input()
+def <SNR>17_BMRemove()
+function <SNR>198_CursorHoldUpdate()
+function <SNR>218_handleMiddleMouse() abort
+function ale#util#GetMatches(lines, patterns) abort
+function <SNR>218_displayHelp() abort
+function ale#balloon#Disable() abort
+function <SNR>177_splittable(dict)
+function gitgutter#setup_maps()
+function tagbar#prototypes#kindheadertag#new(name) abort
+function <SNR>259_search_term()
+function <SNR>174_MRUTabHasSeenBuf(tabId, bufNbr)
+function <SNR>165_plugin_name() abort dict
+function <SNR>338_remove_layout(opts)
+function <SNR>34_MRU_Refresh()
+function <SNR>338_prepend_opts(dict, eopts)
+function ctrlp#prtclear()
+function <SNR>324_compare_by_line(tag1, tag2) abort
+function <SNR>269_ensure_storage_exists()
+function fzf#vim#buffer_commits(...) range
+function <SNR>282_IsBoolean(value) abort
+function <SNR>173_wrap(string, char, type, removed, special)
+function <SNR>336_shortest(lens)
+function <SNR>274_process_hlend(re, cursorpos)
+function <SNR>218_findAndRevealPath(pathStr) abort
+function <SNR>304_Owner(path, ...) abort
+function rainbow_csv#generate_named_dialects()
+function <SNR>272_show_sessions() abort
+function <SNR>336_nocache(...)
+function fugitive#Execute(...) abort
+function <SNR>304_CurlResponse(result) abort
+function <SNR>173_inputtarget()
+function <SNR>321_isNormalTag() abort dict
+function <SNR>336_pathshorten(str)
+function <SNR>336_mixedsort2(ct, ...)
+function airline#async#vim7_vcs_clean(cmd, file, vcs)
+function <SNR>336_async_glob_on_stdout(job, data, ...)
+function <SNR>336_InitCustomFuncs()
+function context#popup#update_context() abort
+function fzf#vim#buffer_tags(query, ...)
+function <SNR>336_delbuf()
+function <SNR>166__on_finally(CB, parent, Result) abort
+function <SNR>304_ExpandVar(other, var, flags, esc, ...) abort
+function <SNR>336_gethistloc()
+def <SNR>17_BMTruncName(fname: string): string
+function <SNR>37_save_chars_with_secondary_highlights(chars) abort
+function <SNR>323_isFoldable() abort dict
+function gitstatus#shouldConceal() abort
+function <SNR>257_init_state() abort
+function go#config#DiagnosticsEnabled() abort
+function nerdtree#completeBookmarks(A, L, P) abort
+function <SNR>168_get_error_handler() abort
+function skim#exec()
+function <SNR>261_gui2cui(rgb, fallback) abort
+function go#config#EchoCommandInfo() abort
+function airline#statusline(winnr)
+function rainbow_csv#copy_data_back()
+function <SNR>304_BlameCursorSync(bufnr, line) abort
+function <SNR>312_RunLinters(buffer, linters, slots, should_lint_file, new_buffer) abort
+function <SNR>304_DoStageUnpushedHeading(heading) abort
+function <SNR>304_JoinChomp(list) abort
+function airline#async#get_msgfmt_stat(cmd, file)
+function <SNR>304_GF(mode) abort
+function <SNR>177_execute_tmux(dict, command, temps) abort
+function matchup#delim#get_surrounding_impl(type, ...) abort
+function airline#extensions#wordcount#formatters#default#to_string(wordcount)
+function fugitive#DiffClose() abort
+function <SNR>60_vader(...) range
+function <SNR>261_CheckDefined(colors) abort
+function <SNR>309_add_snr(funcname) abort
+function rainbow_csv#generate_rainbow_syntax(delim)
+function airline#extensions#po#shorten()
+function <SNR>336_openfile(cmd, fid, tail, chkmod, ...)
+def <SNR>17_BMHash(name: string): number
+function airline#extensions#whitespace#disable()
+function go#config#GoplsSettings() abort
+function ale#Set(variable_name, default) abort
+function <SNR>34_MRU_SaveList() abort
+function <SNR>313_UpdateCacheIfNecessary(buffer) abort
+function <SNR>157_obtain_file_renames(bufnr, base)
+function <SNR>340_open_hunk_preview_window()
+function <SNR>104_map(mode, lhs, rhs, ...)
+function <SNR>279_new(source) abort
+function <SNR>337_convert_2_word_pattern_4_visual(pattern, config) abort
+function <SNR>34_MRU_Window_Edit_File(fname, multi, edit_type, open_type) abort
+function rainbow_csv#get_field_offset_single_line(fields, delim, field_num)
+function <SNR>337_cword_pattern(cword, config) abort
+function fugitive#BlameComplete(A, L, P) abort
+function <SNR>336_setupblank()
+function <SNR>129_abs(v)
+function <SNR>306_CreateAutocommands() abort
 function webdevicons#softRefresh()
+function <SNR>338_search_history_sink(lines)
+function matchup#perf#timeout_check()
+function <SNR>304_PatchSearchExpr(reverse) abort
+function airline#extensions#apply(...)
+function <SNR>336_buftab(bufnr, md)
+function <SNR>128_rooter(...)
+function <SNR>319_getStatusKey(x, y) abort
+function <SNR>338_jump_sink(lines)
+function <SNR>161_warn(message) abort
+function ctrlp#call(func, ...)
+function <SNR>304_BlurStatus() abort
+function <SNR>304_FormatLog(dict) abort
+function airline#highlighter#load_theme() abort
+function <SNR>274_effcol(expr)
+function context#util#map_H() abort
+function BufExplorer_Refresh()
+function <SNR>139_BufDeleteHook(bnr, file_) abort
+function <SNR>177_get_color(attr, ...)
+function ShowTrailingWhitespace#Toggle(isGlobal)
+function <SNR>166__vital_loaded(V) abort
+function <SNR>304_BlameLeave() abort
+function <SNR>35_update_oldfiles(file)
+function ingo#os#IsWindows()
+function ale#cursor#EchoCursorWarning(...) abort
+function <SNR>218_customOpenFile(node) abort
+function <SNR>179_skim_getcwd()
+function go#config#ListHeight() abort
+function tagbar#debug#log_ctags_output(output) abort
+function <SNR>177_defaults()
+function airline#highlighter#get_highlight(group, ...) abort
+function ale#GetFilenameMappings(buffer, name) abort
+function <SNR>270_close()
+function go#util#System(str, ...) abort
+function tagbar#getusertypes() abort
+function ale#util#JoinNeovimOutput(job, last_line, data, mode, callback) abort
+function <SNR>313_CreateCountDict() abort
+function ingo#fs#path#Normalize(filespec, ...)
+function airline#util#shorten(text, winwidth, minwidth, ...)
+function ctrlp#utils#glob(...)
+function <SNR>322_openFold() abort dict
+function ctrlp#setdir(path, ...)
+function <SNR>223_findHunk(node, direction) abort
+function <SNR>304_DoToggleStaged(record) abort
+function ale#engine#ResetExecutableCache() abort
+function <SNR>318_setHightlighting() abort
+function startify#fortune#predefined_quotes() abort
+function gitgutter#hunk#next_hunk(count) abort
+function go#config#DocUrl() abort
+def <SNR>17_SelectAll()
+function <SNR>154_CommandLineCompletion()
+function go#config#DebugWindows() abort
+function matchup#delim#jump_target(delim) abort
+function <SNR>153_savetofile(mrufs)
+function <SNR>304_CompletableSubcommands(dir) abort
+function FugitiveReal(...) abort
+function <SNR>34_MRU_Open_Window(pat, splitdir, winsz) abort
+function <SNR>159_fzf_restore_colors()
+function <SNR>310_add_snr(funcname) abort
+function fugitive#Wait(job_or_jobs, ...) abort
+function tagbar#ForceUpdate() abort
+function <SNR>336_lastvisual()
+function <SNR>304_FormatFile(dict) abort
+function airline#extensions#branch#init(ext)
+function gitgutter#sign#toggle() abort
+function fugitive#Cd(path, ...) abort
+function <SNR>165__source(path) abort
+function airline#highlighter#highlight_modified_inactive(bufnr) abort
+function tagbar#prototypes#fileinfo#new(fname, ftype, typeinfo) abort
+function airline#add_inactive_statusline_funcref(function, ...)
+function <SNR>261_get_syn(group, what, mode) abort
+function <SNR>338_format_change(bufnr, offset, item)
+function fzf#vim#helptags(...)
+function <SNR>304_DoAutocmd(...) abort
+function gitstatus#util#UpdateParentDirsStatus(cache, root, pathStr, statusKey, opts) abort
+function airline#extensions#branch#get_head()
+function <SNR>270_open(mode)
+function matchup#motion_sid() abort
+function airline#extensions#po#stats()
+function <SNR>103_Remove_Matches()
+function matchup#util#in_comment(...)
+function <SNR>177_writefile(...)
+function go#util#Offset(line, col) abort
+function <SNR>154_InitBuffer()
+function <SNR>177_exit_handler(dict, code, command, ...)
+function <SNR>336_SetDefTxt()
+function go#config#DeclsIncludes() abort
+function context#activate() abort
+function ale#handlers#alex#Handle(buffer, lines) abort
+function <SNR>174_MapKeys()
+function <SNR>272_close() abort
+function <SNR>295_run_syntax_fold(args) abort
+function <SNR>304_VimSlash(path) abort
+function <SNR>233_UpdateMatch(isInsertMode)
+function go#config#FmtExperimental() abort
+function <SNR>304_config_GetRegexp(pattern) abort dict
+function <SNR>272_get_index_as_string() abort
+function go#config#BinPath() abort
+function ctrlp#complen(...)
+function <SNR>223_onCursorHold(fname)
+function airline#extensions#ctrlp#generate_color_map(dark, light, white)
+function <SNR>99_setup_options() abort
+function <SNR>304_BuildShell(dir, env, git, args) abort
+function <SNR>340_undo(hunk_diff)
+function <SNR>299_exitIfLast() abort
+function illuminate#enable_illumination(bufonly) abort
+function rainbow_csv#run_update_cmd_query(query_string)
+function startify#get_session_path() abort
+function go#config#TestTimeout() abort
+function NERDTreeAddMenuItem(options)
+function <SNR>177_execute(dict, command, use_height, temps) abort
+function <SNR>34_MRU_Open_File_In_Tab(fname, esc_fname) abort
+function <SNR>269_has_custom_links()
+function <SNR>336_dircompl(be, sd)
+function BufExplorer_redisplay()
+function ale#handlers#cspell#DefineLinter(filetype) abort
+function ingo#buffer#IsBlank(...)
+function airline#extensions#po#on_winenter()
+function gitgutter#utility#getbufvar(buffer, varname, ...)
+function <SNR>177_fzf_tempname()
+function go#util#EchoError(msg)
+function <SNR>340_adjust_header(bufnr, hunk_diff)
+def <SNR>290_MatchingOpenBracket(line: dict<any>): number
+function <SNR>277_ApplyPartialTimer(timer_id) abort
+function matchup#util#has_duplicate_str(list)
+function VimFolds()
+function FugitiveParse(...) abort
+function fugitive#CanPty() abort
+function <SNR>336_stop_job_if_exists()
+function ale#Escape(str) abort
+function ingo#str#Wrap(string, commonOrPrefix, ...) abort
+function skim#install()
+function go#config#GoplsStaticCheck() abort
+function airline#add_inactive_statusline_func(name, ...)
+function go#util#Windo(command) abort
+function <SNR>304_RebaseSubcommand(line1, line2, range, bang, mods, options) abort
+function matchup#pos#get_cursor() abort
+function go#config#HighlightFields() abort
+function <SNR>304_PreviousFile(count) abort
+function <SNR>304_GitDir(...) abort
+function <SNR>128_child(dir, identifier)
+function airline#extensions#po#init(ext)
+function <SNR>34_MRU_Warn_Msg(msg) abort
+function rainbow_csv#do_set_rainbow_filetype(rainbow_ft)
+function <SNR>304_SameRepo(one, two) abort
+function airline#util#prepend(text, minwidth)
+function <SNR>267_set_fix_strategy(context, message, strategy) abort
+function ingo#fs#path#Equals(p1, p2, ...)
+function fugitive#DeleteCommand(line1, line2, range, bang, mods, arg, ...) abort
+function matchup#init() abort
+function vital#_fern#Async#Later#import() abort
+function illuminate#on_leaving_autocmds() abort
+function <SNR>322_isFoldable() abort dict
+def <SNR>290_Unshorten(kwd: string): string
+function <SNR>336_matchbuf(item, pat)
+function <SNR>336_argmaps(md, i)
+function <SNR>336_MapNorms()
+function <SNR>304_UrlEncode(str) abort
+function go#config#GoplsCompleteUnimported() abort
+function <SNR>336_walker(m, p, d)
+function <SNR>304_RevertSubcommand(line1, line2, range, bang, mods, options) abort
+function go#config#GoplsTempModfile() abort
+function airline#util#has_vcscommand()
+function ale#cursor#EchoCursorWarningWithDelay() abort
+function <SNR>306_ToggleWindow(flags) abort
+function <SNR>269_get_rbql_with_headers()
+function BackupQuit()
+function <SNR>218_jumpToRoot() abort
+function ingo#os#PathSeparator()
+function airline#util#getbufvar(bufnr, key, def)
+function nerdtree#runningWindows() abort
+function <SNR>282_IsCallback(value) abort
+function fugitive#Real(url) abort
+function GitGutterFocus()
+function <SNR>164_new_file(helper, name) abort
+function <SNR>306_CheckForExCtags(silent) abort
+function startify#session_list(lead, ...) abort
+function <SNR>174_RedisplayBufferList()
+function airline#parts#define_minwidth(key, width)
+function BufExplorer_Start()
+function <SNR>304_Dir(...) abort
+function <SNR>247_get_hunks_changes() abort
+function <SNR>146_get_airline_themes(a, l, p)
+function <SNR>306_HandleBufDelete(bufname, bufnr) abort
+function <SNR>336_remarksigns()
+function quick_scope#StopTimer() abort
+function fzf#vim#jumps(...)
+def <SNR>17_ToggleGuiOption(option: string)
+function <SNR>336_PrtDeleteWord()
+function <SNR>274_anchor_regex(re, cnum, method)
+function <SNR>177_fzf_call(fn, ...)
+function <SNR>304_OriginBufnr(...) abort
+function fugitive#RemoteUrl(...) abort
+function <SNR>174_SetLocalSettings()
+function <SNR>304_RunFinished(state, ...) abort
+function <SNR>306_CtagsErrMsg(errmsg, infomsg, silent, ...) abort
+function nerdtree#caseSensitiveFS() abort
+function context#settings#parse() abort
+function startify#session_delete(bang, ...) abort
+function ale#util#Col(str, chr) abort
+function <SNR>337_should_plus_one_count(cword, config, mode) abort
+function <SNR>270_getpos()
+function gitstatus#util#ParseGitStatusLine(statusLine, opts) abort
+def <SNR>22_LoadIndent()
+function airline#extensions#get_loaded_extensions()
+function <SNR>269_make_rbql_demo(num_fields, rbql_welcome_path)
+function ingo#fs#path#IsPath(filespec) abort
+def <SNR>17_XxdConv()
+function <SNR>68_clear_group_from_matches(group) abort
+function go#config#GolintBin() abort
+function <SNR>164_map_copy(helper) abort
+function <SNR>312_StopCurrentJobs(buffer, clear_lint_file_jobs, linter_slots) abort
+function <SNR>304_gsub(str, pat, rep) abort
+function matchup#util#check_match_words(sha256) abort
+function <SNR>336_log(m)
+function <SNR>34_MRU_AddFile(acmd_bufnr) abort
+function go#config#HighlightExtraTypes() abort
+function <SNR>306_PrintTag(tag, depth, output, fileinfo, typeinfo) abort
+function <SNR>338_yellow(str, ...)
+function <SNR>247_get_hunks_signify() abort
+function <SNR>174_Initialize()
+function <SNR>336_dosigns()
+function skim#shellescape(arg, ...)
+function <SNR>306_CloseWindow() abort
+function <SNR>338_pluck(dict, key, default)
+function <SNR>269_read_virtual_header(delim, policy)
+function go#config#VersionWarning() abort
+function <SNR>337_set_event_ignore() abort
+function ingo#fs#path#GetRootDir(filespec)
+function <SNR>249_update_untracked()
+function <SNR>139_LoclistsFollow(bnr) abort
+function airline#extensions#undotree#apply(...)
+function <SNR>166_all(promises) abort
+function airline#async#vcs_untracked(config, file, vcs)
+function <SNR>128_remove_ignored(patterns, dir, file)
+function ale#events#LintOnEnter(buffer) abort
+function WebDevIconsNERDTreeDirCloseChildren(node)
+function <SNR>136_SwitchToNewBuffer(bang)
+function <SNR>306_get_map_str(map) abort
+function <SNR>304_VersionCheck() abort
+function <SNR>177_shortpath()
+function <SNR>304_BlameCommitFileLnum(...) abort
+function airline#util#exec_funcrefs(list, ...)
+function ale#util#GetBufferContents(buffer) abort
+function airline#extensions#tagbar#init(ext)
+function <SNR>338_colors_exit(code)
+function <SNR>336_IsBuiltin()
+function <SNR>154_ManualCompletionEnter()
+function <SNR>322_closeFold() abort dict
+function context#util#filter(context, line_number, consider_height) abort
+function ctrlp#mrufiles#list(...)
+function <SNR>185_LocalBrowse(dirname)
+function ale#util#HasBuflineApi() abort
+function AirlineWebDevIcons(...)
+function <SNR>39_get_menu_confirm_string()
+function <SNR>221_FindParentVCSRoot(path)
+function <SNR>304_DoToggleUntracked(record) abort
+function ingo#fs#path#Canonicalize(filespec, ...)
+function <SNR>157_winshell()
+function <SNR>306_SetStatusLine() abort
+function startify#get_lastline() abort
+function FugitiveResult(...) abort
+function <SNR>136_IsBufferNew(buf)
+function <SNR>306_JumpToNearbyTag(direction, request, flags) abort
+function airline#extensions#netrw#sortstring()
+function <SNR>304_DirUrlPrefix(dir) abort
+function <SNR>261_hl_group_exists(group) abort
+function <SNR>155_fern_settings() abort
+function <SNR>174_ReverseSortSelect()
+function <SNR>323_isFolded() abort dict
+function go#config#AutoSameids() abort
+def <SNR>290_Offset(line_A: dict<any>, line_B: dict<any>): number
+function <SNR>336_lash(...)
+function <SNR>218_upDirCurrentRootClosed() abort
+function <SNR>223_onGitStatusSuccessCB(job) abort
+def dist#script#Exe2filetype(name: string, line1: string): string
+function <SNR>136_UpdateList(event)
+function <SNR>306_GetSupportedFiletypes() abort
+function go#config#DefReuseBuffer() abort
+function <SNR>34_MRU_add_files_to_menu(prefix, file_list) abort
+function <SNR>305_set_clean_jobs_variable(vcs, file, id)
+function <SNR>165__import_func_name(plugin_name, module_name) abort
+function <SNR>306_AutoUpdate(fname, force, ...) abort
+function <SNR>340_current_hunk() abort
+function <SNR>173_opfunc2(...) abort
+function ingo#buffer#IsWritable(...)
+function matchup#util#in_comment_or_string(...)
+function vimtex#init() abort
+def <SNR>290_SearchPairEnd(start: string, middle: string, end: string, stopline: unknown = 0): number
+function <SNR>104_init_option(option, default)
+function QArgSplitter(qarg)
+function fugitive#FileReadCmd(...) abort
+function go#config#ListTypeCommands() abort
+function <SNR>274_get_backref(groups, bref, warn)
+function FugitiveRemote(...) abort
+function fugitive#glob(url, ...) abort
+function <SNR>34_MRU_Refresh_Menu() abort
+function <SNR>174_SortSelect()
+function <SNR>339_upsert_new_gitgutter_signs(bufnr, modified_lines) abort
+function WebDevIconsNERDTreeMapOpenRecursively(node)
+function go#config#HighlightVariableAssignments() abort
+function <SNR>322_getChildrenByName(tagname) abort dict
+function <SNR>304_CommitSubcommand(line1, line2, range, bang, mods, options) abort
+function <SNR>338_escape_for_bash(path)
+function <SNR>338_yank_to_register(data)
+def <SNR>17_TextWidth()
+function ale#handlers#writegood#ResetOptions() abort
+function <SNR>336_iscmdwin()
+function nerdtree#runningCygwin() abort
+function ingo#fs#path#IsCaseInsensitive(...)
+function WebDevIconsNERDTreeDirOpenRecursively(node)
+function go#config#StatuslineDuration() abort
+function rainbow_csv#set_rainbow_filetype(delim, policy, comment_prefix)
+function <SNR>310_removeTag(tag) abort dict
+function rainbow_csv#get_field_num_single_line(fields, delim, kb_pos)
+function fugitive#RemoteHttpHeaders(remote) abort
+function <SNR>146_airline_theme(...)
+function <SNR>119_HasVisibleBackground(syntaxId) abort
+function <SNR>59_InitIfSupportedFiletype(filetype_string)
+function go#util#has_job(...) abort
+function nerdtree#ui_glue#openBookmark(name) abort
+function <SNR>269_get_output_format_params(input_delim, input_policy)
+function <SNR>128_match(dir, pattern)
+function <SNR>336_getregs()
+function ale#engine#IsCheckingBuffer(buffer) abort
+function <SNR>218_openHSplit(target) abort
+function fzf#vim#ag_raw(command_suffix, ...)
+function <SNR>179_has_any(dict, keys)
+function startify#session_write(session_path)
+function NERDTreeAddKeyMap(options)
+function fugitive#UrlDecode(str) abort
+function ale#engine#SetResults(buffer, loclist) abort
+function <SNR>304_PreviousSection(count) abort
+function airline#util#append(text, minwidth)
+function <SNR>304_MergeHead(dir) abort
+function <SNR>257_buffer_deleted(reason) abort
+function ingo#fs#path#Combine(first, ...)
+function ctrlp#setlcdir()
+function airline#extensions#vimtex#apply(...)
+function fugitive#ShellCommand(...) abort
+function airline#add_statusline_funcref(function, ...)
+function ale#events#QuitRecently(buffer) abort
+function <SNR>177_callback(dict, lines) abort
+function <SNR>107_do_offscreen_statusline(offscreen, manual)
+function <SNR>304_DoToggleUnpushedHeading(heading) abort
+function <SNR>338_history_source(type)
+function <SNR>249_display_git_branch()
+function <SNR>338_action_for(key, ...)
+function <SNR>338_get_color(attr, ...)
+function nerdtree#onBufLeave() abort
+function ale#cursor#TruncatedEcho(original_message) abort
+function <SNR>64_InitBuf()
+function NERDTreeAddMenuSeparator(...)
+function <SNR>336_YankLine(...)
+function matchup#loader#get_capture_groups(str, ...) abort
+function ctrlp#buffers(...)
+function <SNR>304_repo_bare() abort dict
+function NERDTreeCopyPath()
+function airline#init#sections()
+function airline#util#try_focusgained()
+function <SNR>336_findcommon(items, seed)
+function <SNR>304_linechars(pattern) abort
+function fugitive#MergeComplete(A, L, P, ...) abort
+function <SNR>106_init_delim_skip() abort
+function <SNR>158_get_background_colors(group) abort
+function ale#cursor#Echom(message) abort
+function <SNR>66_CheckBinaries()
+def <SNR>290_EndsWithComma(line: dict<any>): bool
+function <SNR>338_format_win(tab, win, buf)
+function matchup#pos#next_eol(...) abort
+function rainbow_csv#preserving_smart_split(line, delim, policy)
+function <SNR>179_escape(path)
+function airline#themes#get_highlight(group, ...)
+function <SNR>306_MinimizeMaxFoldLevel(fileinfo, tags) abort
+function ctrlp#mrufiles#opts()
+function <SNR>107_highlight_surrounding(insertmode, current)
+function <SNR>312_RemoveProblemsForDisabledLinters(buffer, linters) abort
+function DateFr()
+function fern#hook#remove(name, ...) abort
+function FugitiveWorkTree(...) abort
+function <SNR>68_noop(...) abort dict
+function go#config#Updatetime() abort
+function ingo#str#Equals(string1, string2, ...)
+function gitgutter#utility#supports_overscore_sign()
+function fugitive#UnlinkCommand(line1, line2, range, bang, mods, arg, ...) abort
+function <SNR>134_addAllMappings()
+function matchup#perf#timeout()
+function ingo#fs#path#IsUpwards(filespec)
+function <SNR>112_Setup(enabled) abort
+function tagbar#prototypes#typeinfo#new(...) abort
+function FugitiveDidChange(...) abort
+function fugitive#Diffsplit(autodir, keepfocus, mods, arg, ...) abort
+function <SNR>166__invoke_callback(settled, promise, callback, result, ...) abort
+def <SNR>17_BMShow()
+function <SNR>129_remember_visual(mode)
+function nerdtree#ui_glue#chRootCwd() abort
+function gitgutter#sign#update_signs(bufnr, modified_lines) abort
+function fugitive#EfmDir(...) abort
+function <SNR>338_command_sink(lines)
+function airline#util#has_custom_scm()
+function ale#util#Execute(expr) abort
+function <SNR>251_airline_ale_get_line_number(cnt, type) abort
+function <SNR>336_PrtSwitcher()
+function <SNR>104_init_options()
+function airline#extensions#quickfix#get_type()
+function airline#parts#define_accent(key, accent)
+function quick_scope#Reload() abort
+function BufExplorer_eval(expr)
+function go#config#HighlightTypes() abort
+function ingo#fs#path#Exists(filespec)
+function <SNR>154_ContextDiscover()
+function matchup#util#in_string(...)
+function ale#util#FuzzyJSONDecode(data, default) abort
+function <SNR>336_checkbuf()
+function gitgutter#sign#disable() abort
+function <SNR>337_get_multi_col(pos) abort
+function ctrlp#dirnfile(entries)
+function gitgutter#utility#set_repo_path(bufnr, continuation) abort
+function <SNR>336_BuildPrompt(upd)
+function <SNR>304_DirRev(url) abort
+function <SNR>299_log(msg) abort
+function tagbar#CloseWindow() abort
+function FugitiveRemoteUrl(...) abort
+function <SNR>265_add_section(builder, context, key)
+function <SNR>261_group_not_done(list, name) abort
+function nerdtree#pathEquals(lhs, rhs) abort
+function context#update(...) abort
+function airline#extensions#searchcount#status() abort
+function <SNR>139_BufReadPostHook(bnr, file_) abort
+function go#config#TermEnabled() abort
+function <SNR>336_formatline2(ct, key, str)
+function tagbar#prototypes#basetag#new(name) abort
+function <SNR>168_set_max_workers(n) abort
+function fugitive#CompleteForWorkingDir(A, L, P, ...) abort
+function <SNR>177_popup_support()
+function <SNR>129_generic_easy_align_op(type, vmode, live)
+function <SNR>338_eval(dict, key, arg)
+function fzf#vim#with_preview(...)
+function <SNR>304_TempReadPost(file) abort
+function <SNR>132_config_fuzzyword(...) abort
+function <SNR>322_openParents() abort dict
+function <SNR>179_collect(temps) abort
+function <SNR>249_update_git_branch()
+function go#util#goarch() abort
+function <SNR>336_samerootsyml(each, isfile, cwd)
+function <SNR>249_update_hg_branch()
+function go#util#OffsetCursor() abort
+function StartifyEntryFormat() abort
+function airline#extensions#term#init(ext) abort
+function fzf#vim#buffers(...)
+function webdevicons#pluginHome()
+function OpenBrowser(...) abort
+function matchup#pos#prev_eol(...) abort
+function go#util#EchoWarning(msg)
+function gitgutter#utility#warn_once(bufnr, message, key) abort
+function <SNR>154_CompletionReset(char)
+function <SNR>165__self_vital_files() abort
+function gitgutter#utility#get_diff_base(bufnr)
+function <SNR>249_config_gina_branch() abort
+function <SNR>218_previewNodeHSplitBookmark(bookmark) abort
+function <SNR>304_DifftoolSubcommand(line1, line2, range, bang, mods, options) abort
+function go#config#TemplateFile() abort
+function <SNR>307_gettime() abort
+function gitgutter#hunk#text_object(inner) abort
+function <SNR>158_get_foreground_colors(group) abort
+function <SNR>107_do_offscreen_popup(offscreen) abort
+function ctrlp#update(...)
+function <SNR>269_cell_jump_rfc(direction, delim, comment_prefix)
+function <SNR>64_TagName(from)
+function <SNR>304_ExpireStatus(bufnr) abort
+function <SNR>321_strfmt() abort dict
+function <SNR>336_fnesc(...)
+function <SNR>129_easy_align_repeat()
+function <SNR>274_get_matching_delims(down, stopline) abort dict
+function <SNR>304_GrepOptions(args, dir) abort
+function <SNR>166_wait(promise, ...) abort
+function <SNR>218_activateAll() abort
+function <SNR>174_ToggleShowUnlisted()
+function go#config#AsmfmtAutosave() abort
+function <SNR>322_getPrototype(short) abort dict
+function <SNR>173_redraw()
+function context#popup#redraw(winid) abort
+function VimgrepSelection()
+function <SNR>174_DoTabClosed()
+function <SNR>174_DoBufEnter()
+function matchup#pos#set_cursor(...) abort
+function ClearNamedRegisters()
+function FugitiveShellCommand(...) abort
+function <SNR>279__register(callback) abort dict
+function airline#section#create_right(parts)
+function <SNR>304_UserCommandList(...) abort
+function go#util#EchoSuccess(msg)
+function <SNR>260_create(parts, append)
+function <SNR>304_Keywordprg() abort
+function <SNR>48_Slash(path) abort
+function <SNR>306_GetTagInfo(linenr, ignorepseudo) abort
+function go#util#IsUsingCygwinShell()
+function <SNR>154_ExpandMap(map)
+function fugitive#getfsize(url) abort
+function tagbar#jump() abort
+function <SNR>223_disableLiveUpdate() abort
+function <SNR>320_isEOF(data) abort
+function airline#extensions#ctrlp#ctrlp_airline(...)
+function <SNR>154_SuperTabHelp()
+function <SNR>306_GotoNextFold() abort
+function <SNR>272_warn(msg) abort
+function undotree#UndotreeShow() abort
+function gitgutter#utility#is_active(bufnr) abort
+function <SNR>153_mergelists()
+function <SNR>304_Map(mode, lhs, rhs, ...) abort
+function fugitive#CanDiffoff(buf) abort
+function go#util#Shelljoin(arglist, ...) abort
+function airline#formatter#short_path#format(val) abort
+def FlogGetVimBinGraph(git_cmd: string): dict<any>
+function <SNR>336_comptime(...)
+function ale#engine#Stop(buffer) abort
+function <SNR>164_map_trash(helper) abort
+function <SNR>269_generate_microlang_syntax(nfields)
+function peekaboo#on()
+function ctrlp#igncwd(cwd)
+function <SNR>298_MultiElementHandler()
+function <SNR>269_get_rb_script_path_for_this_table()
+function <SNR>306_CheckMouseClick() abort
+function go#util#Chdir(dir) abort
+function <SNR>336_ToggleKeyLoop()
+function ctrlp#statusline()
+function <SNR>304_QueryLog(refspec, limit, dir) abort
+function <SNR>338_bufopen(lines)
+function <SNR>165_vital_files() abort
+function go#config#GoplsLocal() abort
+function FugitiveCommonDir(...) abort
+function <SNR>336_CreateNewFile(...)
+function rainbow_csv#csv_lint()
+function fugitive#isdirectory(url) abort
+function ctrlp#mrufiles#bufs()
+function go#config#ReferrersMode() abort
+function ctrlp#utils#readfile(file)
+function airline#util#strcharpart(...)
+function go#config#GoplsOptions() abort
+function <SNR>133_DefineHighlightings(palette, isOverride)
+function <SNR>199_invoke_funcrefs(context, funcrefs)
+function <SNR>166_new(resolver) abort
+function <SNR>310_getTags() abort dict
+function <SNR>310_addTag(tag) abort dict
+function airline#extensions#term#termmode() abort
+function ShowTrailingWhitespace#Color#EnsureVisibleBackgroundColor() abort
+function go#config#SetModFmtAutosave(value) abort
+function <SNR>66_register()
+function <SNR>304_FileIgnoreCase(for_completion) abort
+function <SNR>44_FunctionCallTextObject(mode)
+function ale#ShouldDoNothing(buffer) abort
+function <SNR>174_SelectBuffer(...)
+function <SNR>338_shortpath()
+function matchup#util#command(cmd)
+function ctrlp#utils#fnesc(path, type, ...)
+function SetNamedRegisters()
+function <SNR>182_LP_OpPush(op)
+function <SNR>179_shortpath()
+function BufExplorer_execute(statement)
+function airline#extensions#po#apply(...)
+function rainbow_csv#run_select_cmd_query(query_string)
+function <SNR>164_call_without_guard(name, ...) abort
+function fzf#vim#search_history(...)
+function go#config#MetalinterEnabled() abort
+function <SNR>285_Help(topic) abort
+function RestoreMark(markname)
+function <SNR>306_ZoomWindow() abort
+function <SNR>304_RemoteCallback(config, into, flags, cb) abort
+function <SNR>106_init_delim_lists(no_words, filter_words) abort
+def <SNR>290_RemovePastBracketBlock(line_A: dict<any>): dict<any>
+function go#util#PathListSep() abort
+function matchup#loader#init_module() abort
+function <SNR>107_do_popup_autocmd_enter(win_context) abort
+function go#util#IsMac() abort
+function <SNR>174_ToggleShowRelativePath()
+function <SNR>304_repo_git_command(...) abort dict
+function tagbar#debug#log(msg) abort
+function ingo#str#Reverse(string)
+function go#util#ExecInDir(cmd, ...) abort
+function startify#session_list_as_string(lead, ...) abort
+function <SNR>173_extractafter(str)
+function <SNR>269_status_escape_string(src)
+function matchup#delim#end_pos(delim) abort
+function <SNR>305_on_exit_untracked(channel) abort dict
+function <SNR>220_promptToDelBuffer(bufnum, msg)
+function rainbow_csv#set_table_name_for_buffer(table_name)
+function <SNR>129_easy_align_op(type, ...)
+function airline#util#winwidth(...) abort
+function <SNR>174_CreateHelp()
+function <SNR>174_MakeLines(table)
+function <SNR>165_sid2sfuncs(sid) abort
+function <SNR>26_Cleanup()
+function ale#util#ToURI(resource) abort
+function <SNR>177_extract_option(opts, name)
+def <SNR>17_FileFormat()
+function <SNR>257_map_prefixed(ftype, mode, lhs, rhs) abort
+function matchup#pos#smaller_or_equal(pos1, pos2) abort
+function fugitive#Unquote(string) abort
+function matchup#delim#set_invert_skip(val) abort
+function <SNR>336_CurTypeName()
+function go#config#FmtCommand() abort
+function fzf#vim#maps(mode, ...)
+function FugitiveGitVersion(...) abort
+function <SNR>257_init_default_mappings() abort
+function <SNR>322_setFolded(folded) abort dict
+function <SNR>269_get_neighboring_lines(anchor_line_num)
+function <SNR>165__module_sid_base_dir() abort
+function NERDTreeExecuteFile()
+function <SNR>304_AddLogSection(to, label, log) abort
+function <SNR>34_MRU_Select_File_Cmd(opt) abort range
+function <SNR>310_openKindFold(kind) abort dict
+function <SNR>304_RunReceive(state, tmp, type, job, data, ...) abort
+def <SNR>290_CacheFuncHeader(startlnum: number)
+function <SNR>106_matchstrpos(expr, pat, start) abort
+function <SNR>166__publish(promise, ...) abort
+function <SNR>304_GrepParseLine(options, quiet, dir, line) abort
+function <SNR>320_newJob(name, opts) abort
+function ale#handlers#cspell#GetCommand(buffer) abort
+function <SNR>153_reformat(mrufs, ...)
+function GitGutterGetHunks()
+function <SNR>249_update_branch()
+function ale#Pad(string) abort
+function <SNR>218_handleLeftClick() abort
+function gitgutter#utility#warn(message) abort
+function <SNR>39_append_bang(command, bang)
+function nerdtree#checkForBrowse(dir) abort
+function <SNR>166_on_unhandled_rejection(on_unhandled_rejection) abort
+function <SNR>34_MRU_Edit_File(filename, sanitized, splitdir) abort
+function nerdtree#ui_glue#revealBookmark(name) abort
+function ingo#hlgroup#GetApplicableColorModes() abort
+function go#util#env(key) abort
+function <SNR>304_AskPassArgs(dir) abort
+function matchup#delim#get_matching(delim, ...) abort
+function go#config#HighlightFunctions() abort
+function <SNR>48_Tree(path) abort
+function <SNR>165__global_vital_files() abort
+function ale#code_action#HandleCodeAction(code_action, options) abort
+function matchup#delim#skip_default()
+function fugitive#ConfigGetRegexp(pattern, ...) abort
+function matchup#util#matchpref(id, default) abort
+function <SNR>177_validate_layout(layout)
+function <SNR>304_Generate(object, ...) abort
+function <SNR>304_StageIgnore(lnum1, lnum2, count) abort
+function rainbow_csv#clear_current_buf_content()
+function <SNR>257_init_buffer_bib() abort
+function <SNR>198_strip(input)
+function <SNR>247_parse_hunk_status_decorated(hunks) abort
+function <SNR>306_CheckFTCtags(bin, ftype) abort
+function go#util#ParseErrors(lines) abort
+function <SNR>165__sfuncname(sid, funcname) abort
+function <SNR>34_MRU_FZF_Run(bang) abort
+function go#config#TemplateAutocreate() abort
+function <SNR>304_repo_git_chomp(...) abort dict
+function ale#engine#SendResultsToNeovimDiagnostics(buffer, loclist) abort
+function <SNR>304_ConfigLengthSort(i1, i2) abort
+function fugitive#readfile(url, ...) abort
+function <SNR>338_warn(message)
+function <SNR>336_matchlens(str, pat, ...)
+function go#config#DebugPreserveLayout() abort
+function <SNR>336_matchfname(item, pat)
+function <SNR>218_jumpToPrevSibling(node) abort
+function <SNR>143_CreateMaps(modes, target, desc, combo)
+function ale#util#Open(filename, line, column, options) abort
+function <SNR>174_ToggleShowTerminal()
+function <SNR>107_pumvisible() abort
+function <SNR>269_get_table_record(table_path)
+function ConvertSearchForVisualSelection()
+function <SNR>146_init()
+function <SNR>304_StatusRetrieve(bufnr, ...) abort
+function NERDTreeExecuteFileLinux()
+function matchup#matchparen#scroll_update_float(lnum, position) abort
+function fugitive#foldtext() abort
+function <SNR>322__getPrefix() abort dict
+function <SNR>37_get_highlight_patterns(line, cursor, end, targets) abort
+function fugitive#ExpireConfig(...) abort
+function ale#GetLocItemMessage(item, format_string) abort
+function <SNR>128_rootless()
+function ingo#buffer#NameOrDefault(bufName) abort
+function <SNR>174_RebuildBufferList()
+function gitgutter#enable() abort
+function ale#events#QuitEvent(buffer) abort
+function <SNR>314_StopCursorTimer() abort
+function <SNR>306_mark_window() abort
+function tagbar#ToggleWindow(...) abort
+function <SNR>336_async_glob_update_progress(timer)
+function <SNR>305_on_exit_clean(...) abort dict
+function <SNR>304_DoUnstageUnpulled(record) abort
+function nerdtree#compareNodePaths(p1, p2) abort
+function ale#linter#PreProcess(filetype, linter) abort
+function <SNR>306_PrintHelp() abort
+def <SNR>290_EndsWithCommaOrDictKey(line_A: dict<any>): bool
+function <SNR>174_Key_number(buf)
+function <SNR>68_matchaddpos(group, pos) abort
+function <SNR>322_isSplitTag() abort dict
+function gitgutter#buffer_disable(...) abort
+function <SNR>304_BuildEnvPrefix(env) abort
+function <SNR>166_race(promises) abort
+function <SNR>264_get_accented_line(self, group, contents)
+function <SNR>179_present(dict, ...)
+function <SNR>306_ReopenWindow(delbufname) abort
+function gitgutter#utility#filename(bufnr) abort
+function airline#extensions#fern#apply_active(...) abort
+function startify#session_close() abort
+function ale#engine#InitBufferInfo(buffer) abort
+function <SNR>156_on_bufenter()
+function ale#util#SetBufferContents(buffer, lines) abort
+function <SNR>168_get_max_workers() abort
+function <SNR>304_TempDotMap() abort
+function <SNR>304_LinesError(...) abort
+function <SNR>252_check_mixed_indent_file()
+function <SNR>306_PrintKinds(typeinfo, fileinfo) abort
+function rainbow_csv#unescape_quoted_fields(src)
+function <SNR>304_NextFile(count) abort
+function <SNR>37_reset_saved_secondary_highlight() abort
+function <SNR>304_Quote(string) abort
+function <SNR>272_set_mappings() abort
+function <SNR>133_SetPalette(paletteName)
+function <SNR>164_auto_buffer_delete(bufutil_paths) abort
+function <SNR>168__worker(...) abort
+function airline#section#create(parts)
+function matchup#util#patch_match_words(from, to, ...) abort
+function <SNR>304_QuickfixCreate(nr, opts) abort
+function <SNR>339_remove_signs(bufnr, sign_ids, all_signs) abort
+function <SNR>304_winshell() abort
+function go#util#ClearHighlights(group) abort
+function <SNR>166__vital_created(module) abort
+function ingo#str#TrimTrailing(string)
+function <SNR>223_onGitWorkdirFailedCB(job) abort
+function <SNR>179_use_sh()
+function go#util#Exec(cmd, ...) abort
+function <SNR>304_Slash(path) abort
+function fugitive#filereadable(url) abort
+function <SNR>136_RestoreWindowPos()
+function <SNR>336_matchtabs(item, pat)
+function rainbow_csv#handle_buffer_enter()
+function airline#extensions#default#apply(builder, context) abort
+function ale#FileTooLarge(buffer) abort
+function <SNR>257_init_buffer() abort
+function gitgutter#hunk#is_preview_window_open()
+function undotree#UndotreeIsVisible() abort
+function airline#add_statusline_func(name, ...)
+function <SNR>66_gofiletype_post()
+function fern#scheme#file#mapping#init(disable_default_mappings) abort
+function <SNR>304_AddDiffSection(to, stat, label, files) abort
+function ale#handlers#alex#CreateCommandCallback(flags) abort
+function airline#remove_statusline_func(name)
+function peekaboo#aboo()
+function <SNR>68_system(cmd, ...) abort
+function ale#Has(feature) abort
+function <SNR>164_auto_buffer_rename(bufutil_pairs) abort
+function <SNR>304_DoStageUnstagedHeading(heading) abort
+function <SNR>322_addChild(tag) abort dict
+function airline#extensions#wordcount#formatters#default#update_fmt(...)
+function <SNR>112_EscapeMenuName(text) abort
+function go#util#TestNamesInFile() abort
+function matchup#loader#_treesitter_may_be_supported() abort
+function <SNR>128_toggle()
+function ingo#str#EndsWith(string, substring, ...)
+function <SNR>268_show_cursor() abort
+function <SNR>173_inputreplacement()
+def <SNR>290_Is_IN_KeywordForLoop(line_1: string, line_2: string): bool
+function fzf#vim#filetypes(...)
+function <SNR>159_conf(name, default)
+function <SNR>174_Warning(msg)
+function fugitive#RebaseComplete(A, L, P, ...) abort
+function <SNR>174_Cleanup()
+function <SNR>306_GetNearbyTag(request, forcecurrent, ...) abort
+function <SNR>336_glbpath(...)
+function <SNR>33_info(arg) abort
+function NERDTreeRender()
+function <SNR>269_has_custom_colors()
+function airline#highlighter#add_separator(from, to, inverse) abort
+function go#config#TermReuse() abort
+function <SNR>264_get_transitioned_separator(self, prev_group, group, side)
+function <SNR>136_Debug(level, ...)
+function fugitive#CdComplete(A, L, P) abort
+function <SNR>272_transform(absolute_path)
+function <SNR>313_BufferCacheExists(buffer) abort
+function <SNR>171_translate(scriptfile) abort
+function airline#extensions#tagbar#inactive_apply(...)
+function <SNR>304_StageApply(info, reverse, extra) abort
+function <SNR>338_format_cmd(line)
+function <SNR>336_nosort()
+function <SNR>304_QuickfixGet(nr, ...) abort
+function <SNR>272_show_bookmarks() abort
+function ale#util#EscapePCRE(unsafe_string) abort
+function <SNR>306_SetFoldLevel(level, force) abort
+function ctrlp#clearmarkedlist()
+function <SNR>220_inputPrompt(action)
+function ale#cursor#ShowCursorDetail() abort
+function airline#util#wrap(text, minwidth)
+function GrabMK()
+function <SNR>304_config_GetAll(name) abort dict
+function ale#events#ClockMilliseconds() abort
+function <SNR>173_closematch(str)
+function illuminate#on_cursor_moved_i() abort
+function <SNR>306_HasOpenFileWindows() abort
+def <SNR>290_IsInCurlyBlock(): bool
+function <SNR>304_Move(force, rename, destination) abort
+function <SNR>174_MRURemoveTab(tabId)
+function rainbow_csv#generate_whitespace_syntax()
+function <SNR>336_Render(lines, pat)
+function <SNR>104_init_modules()
+function <SNR>171_config(scriptfile, default) abort
+function <SNR>129_repeat_visual()
+function <SNR>136_UpdateLastColumn(event)
+function nerdtree#echo(msg) abort
+function <SNR>174_GetWinNbr(tabNbr, bufNbr)
+function ctrlp#recordhist()
+function <SNR>166__fulfill(promise, value) abort
+function gitstatus#isWin() abort
+function matchup#perf#show_times()
+function matchup#matchparen#enable()
+function go#config#GoplsGofumpt() abort
+def <SNR>290_NextCodeLine(): number
+function fugitive#Cwindow() abort
+function airline#extensions#fern#apply_inactive(...) abort
+function <SNR>304_JobNvimCallback(lines, job, data, type) abort
+function airline#parts#define_function(key, name)
+function <SNR>336_PrtBS()
+function <SNR>272_register(line, index, type, cmd, path)
+function <SNR>128_has(dir, identifier)
+function <SNR>337_is_visual(mode) abort
+function <SNR>107_do_offscreen(current, method)
+function <SNR>182_LP_Execute(preclvl)
+function rainbow_csv#make_multiline_record_ranges(delim_length, newline_marker, record_fields, start_line, expected_last_line_for_control)
+function <SNR>295_foldable(...) abort
+function ale#handlers#alex#DefineLinter(filetype, flags) abort
+function <SNR>306_CorrectFocusOnStartup() abort
+function <SNR>222_SetupListeners()
+function <SNR>128_cd(dir)
+function ingo#hlgroup#GetBackgroundColor(syntaxId, ...) abort
+function <SNR>269_get_meta_language()
+function <SNR>221_CreateTabTreeVCS(name)
+function airline#async#get_mq_async(cmd, file)
+function <SNR>338_csi(color, fg)
+function <SNR>24_SynSet()
+function airline#util#getwinvar(winnr, key, def)
+function FugitiveDetect(...) abort
+function <SNR>281_illuminate(...) abort
+def <SNR>290_EndsWithOpeningBracket(line: dict<any>): bool
+function picker#IsNumber(variable) abort
+function startify#insane_in_the_membrane(on_vimenter) abort
+function <SNR>271_toggle_each_buffer(enable)
+function nerdtree#ui_glue#setupCommands() abort
+function <SNR>128_root()
+function <SNR>251_legacy_airline_ale_get_line_number(cnt, type) abort
+function <SNR>104_omap(mode, lhs, rhs, ...)
+function <SNR>107_timer_callback(win_id, timer_id) abort
+function airline#themes#get_highlight2(fg, bg, ...)
+function <SNR>304_ExecPath() abort
+function <SNR>279__unregister() abort dict
+function <SNR>338_extend_opts(dict, eopts, prepend)
+function <SNR>139_LoclistFollowPos(scope) abort
+function <SNR>336_compfnlen(...)
+function <SNR>304_AddSection(to, label, lines, ...) abort
+function <SNR>304_BlameQuit() abort
+function <SNR>336_curtype()
+function <SNR>336_Open()
+function context#util#get_border_line(lines, level, indent, winid) abort
+function tagbar#inspect(var) abort
+function BufExplorerVerticalSplit()
+function <SNR>336_mtype()
+function <SNR>48_ResolveGitDir(git_dir) abort
+function ale_linters#vim#ale_custom_linting_rules#GetCommand(buffer) abort
+function <SNR>174_DeleteBuffer(bufNbr, mode)
+function <SNR>68_echo(msg, hi)
+function <SNR>233_DeleteMatch()
+function <SNR>28_TormorrowHiTrail()
+function <SNR>304_Remote(dir, remote, flags, cb) abort
+function <SNR>153_chop(mrufs)
+function ale#util#LocItemCompareWithText(left, right) abort
+function <SNR>338_magenta(str, ...)
+function <SNR>306_RestoreSession() abort
+function <SNR>281_should_illuminate_file() abort
+function airline#extensions#whitespace#toggle()
+function ingo#str#trd(src, fromstr)
+function <SNR>306_ProcessFile(fname, ftype) abort
+function <SNR>165__extract_files(pattern, files) abort
+function <SNR>223_jumpToPrevHunk(node)
+function <SNR>336_autocmds()
+function <SNR>336_AcceptSelection(action)
+function <SNR>183_ManPager()
+function <SNR>177_has_any(dict, keys)
+function <SNR>337_default_config() abort
+function matchup#loader#init_buffer() abort
+function <SNR>336_mfunc()
+function <SNR>179_evaluate_opts(options)
+function <SNR>306_InitTypes() abort
+function <SNR>306_create_pseudotag(name, parent, kind, typeinfo, fileinfo) abort
+function fugitive#MoveCommand(line1, line2, range, bang, mods, arg, ...) abort
+function rainbow_csv#start_or_finish_query_editing()
+function <SNR>218_closeTreeWindow() abort
+function <SNR>304_StatusCommand(line1, line2, range, count, bang, mods, reg, arg, args, ...) abort
+function <SNR>164_call(name, ...) abort
+function ShowTrailingWhitespace#Reset()
+function <SNR>304_cpath(path, ...) abort
+function gitgutter#hunk#increment_lines_added(bufnr, count) abort
+function startify#session_load(source_last_session, ...) abort
+function <SNR>107_populate_floating_win(offscreen, text_method) abort
+def FlogUpdateVimBinGraph(graph: dict<any>): dict<any>
+function <SNR>272_leftmouse()
+function <SNR>158_get_hl(group, what, mode) abort
+function TestFiletypeFuncs(testlist)
+function <SNR>179_defaults()
+function <SNR>336_mmode()
+function <SNR>336_ignore()
+function <SNR>177_shellesc_cmd(arg)
+function <SNR>304_NextSectionEnd(count) abort
+function matchup#util#in_whitespace(...)
+def <SNR>17_SpellLang(encChanged: unknown = false)
+function <SNR>306_JumpToTag(stay_in_tagbar, ...) abort
+function <SNR>164_map_new_file(helper) abort
+function go#util#snippetcase(word) abort
+function <SNR>223_hasPrefix(text, prefix) abort
+function ctrlp#hicheck(grp, defgrp)
+function <SNR>336_dictindex(dict, expr)
+function <SNR>304_DoStageUntracked(record) abort
+function ctrlp#utils#mkdir(dir)
+function <SNR>310_clearOldFolds() abort dict
+function <SNR>223_jumpToNextHunk(node)
+function <SNR>171_define(prefix, default) abort
+function fzf#vim#snippets(...)
+function <SNR>336_insertcache(str)
+function fzf#vim#lines(...)
+function <SNR>304_TempScript(...) abort
+function peekaboo#off()
+function <SNR>168_call(fn, ...) abort
+function <SNR>128_is(dir, identifier)
+function skim#wrap(...)
+function go#util#goos() abort
+function <SNR>269_get_field_coordinates_rfc(table_ranges, relative_record_num, field_num)
+function rainbow_csv#provide_column_info_on_hover()
+function <SNR>99_setup_keymaps() abort
+function <SNR>336_multipliers(...)
+function <SNR>37_apply_highlight_patterns(patterns) abort
+function NERDTreeSystemCommand()
+function BufExplorer_defaultColumns()
+function <SNR>312_GetLintFileValues(slots, Callback) abort
+function <SNR>338_get_git_root(dir)
+function ale_linters#vim#ale_custom_linting_rules#Handle(buffer, lines) abort
+function <SNR>177_escape(path)
+function context#util#update_line_state() abort
+function go#config#HighlightGenerateTags() abort
+function <SNR>337_generate_set_search_cmd(pattern, mode, config) abort
+function <SNR>174_Key_name(buf)
+function gitgutter#all(force) abort
+function <SNR>26_AddColors(cnames) abort
+function <SNR>257_filename_changed_post() abort
+function matchup#delim#get_next(type, side, ...) abort
+function ToggleBufExplorer(...)
+function fugitive#writefile(lines, url, ...) abort
+function ale#code_action#ApplyChanges(filename, changes, options) abort
+function gitgutter#buffer_enable(...) abort
+function gitgutter#hunk#stage(...) abort
+function airline#async#vcs_clean(cmd, file, vcs)
+function nerdtree#closeBookmarksOnOpen() abort
+function go#config#GoplsEnabled() abort
+function <SNR>338_ansi(str, group, default, ...)
+function <SNR>304_ReloadStatus() abort
+function <SNR>306_HandleBufWrite(fname) abort
+function airline#extensions#load()
+function <SNR>336_byfname()
+function <SNR>304_Format(val) abort
+function <SNR>336_async_glob_abort(upd)
+function <SNR>336_insertstr()
+function <SNR>254_update_wordcount(force_update)
+function FugitiveHead(...) abort
+function <SNR>336_Update(str)
+function fzf#vim#_recent_files()
+function <SNR>304_PlusEscape(string) abort
+function airline#extensions#undotree#init(ext)
+function <SNR>136_SaveView()
+function <SNR>218_deleteBookmark(bookmark) abort
+function airline#highlighter#highlight(modes, ...) abort
+function ale#balloon#Enable() abort
+function DoRemoteReply(id, cnt, group, file)
+function tagbar#state#set_current_file(fileinfo) abort
+function <SNR>177_warn(msg)
+function go#util#OpenBrowser(url) abort
+function <SNR>34_MRU_LoadList() abort
+function ctrlp#utils#globpath(...)
+function <SNR>66_gofiletype_pre()
+function <SNR>198_softRefreshNerdTree()
+def GetVimIndent(): number
+function airline#parts#ffenc()
+function <SNR>336_comparent(...)
+function <SNR>106_init_delim_regexes() abort
+function <SNR>312_RunLinter(buffer, linter, lint_file) abort
+function <SNR>304_CompleteSub(subcommand, A, L, P, ...) abort
+function <SNR>264_get_separator(self, prev_group, group, side)
+function <SNR>165__get_func_info(name) abort
+function <SNR>182_String(str)
+function <SNR>239_is_excluded_window()
+function <SNR>177_collect(temps) abort
+function <SNR>304_SquashArgument(...) abort
+function gitgutter#utility#shellescape(arg) abort
+function matchup#matchparen#toggle(...)
+function rainbow_csv#get_relative_record_num_and_field_num_containing_position(table_ranges, line_num, col_num)
+function <SNR>338_cyan(str, ...)
+function WebDevIconsNERDTreeMapActivateNodeSingleMode(node)
+function <SNR>306_ShowInPreviewWin() abort
+function airline#util#ignore_buf(name)
+function <SNR>198_setSyntax()
+function gitgutter#sign#clear_signs(bufnr) abort
+function ctrlp#utils#opts()
+function ctrlp#utils#lash()
+function startify#center(lines) abort
+function tagbar#currenttag(fmt, default, ...) abort
+function <SNR>179_error(msg)
+function SaveUserMaps(mapmode, maplead, mapchx, suffix)
+function fugitive#LogComplete(A, L, P) abort
+function NERDCommentIsLineCommented(lineNo)
+function <SNR>306_run_system(cmd, version) abort
+function go#config#GorenamePrefill() abort
+function <SNR>324_compare_by_kind(tag1, tag2) abort
+function nerdtree#compareNodes(n1, n2) abort
+function go#util#EchoProgress(msg)
+function SuperTab(command)
+function rainbow_csv#cell_jump(direction)
+function ale#util#FunctionArgCount(function) abort
+function gitgutter#hunk#close_hunk_preview_window()
+function <SNR>154_EnableLongestEnhancement()
+function <SNR>337_restore_event_ignore() abort
+function airline#extensions#searchcount#init(ext) abort
+function <SNR>304_ArgSplit(string) abort
+function <SNR>304_TempDelete(file) abort
+function ctrlp#mrufiles#remove(files)
+function <SNR>337_get_selected_text(...) abort
+function ingo#fs#path#Separator()
+function <SNR>304_StageInlineGetDiff(diff_section, info) abort
+function <SNR>304_BlobTemp(url) abort
+function airline#update_tabline()
+function <SNR>281_get_cur_word() abort
+function <SNR>107_do_offscreen_popup_nvim(offscreen) abort
+function <SNR>218_openExplorer(node) abort
+function airline#load_theme()
+function <SNR>336_compval(...)
+function SuperTabLongestHighlight(dir)
+function <SNR>279__can_be_canceled() abort dict
+function airline#extensions#prepend_to_section(name, value)
+function <SNR>278_on_redraw(helper) abort
+function fzf#vim#complete(...)
+function <SNR>146_rand(max) abort
+function <SNR>218_previewNodeCurrent(node) abort
+function <SNR>304_NextHunk(count) abort
+function <SNR>164_map_new_path(helper) abort
+function <SNR>182_LP_Or(pat1, pat2)
+function <SNR>269_guess_table_params_from_content_frequency_based()
+function <SNR>104_motion_init_module()
+function <SNR>306_ToggleAutoclose() abort
+function <SNR>340_close_popup_on_escape(winid, key)
+function <SNR>154_CaptureKeyPresses()
+function <SNR>304_DoStageUntrackedHeading(heading) abort
+function fugitive#LogCommand(line1, count, range, bang, mods, args, type) abort
+function <SNR>223_buildGitStatusCommand(workdir) abort
+function <SNR>272_init_env()
+function matchup#delim#get_surrounding(type, count, opts) abort
+function ingo#buffer#ExistOtherBuffers(targetBufNr)
+function <SNR>306_do_delayed_update() abort
+function ale#balloon#Expr() abort
+function ctrlp#utils#cachedir()
+function <SNR>304_ReplaceCmd(cmd) abort
+function airline#update_statusline_focuslost()
+def <SNR>290_HereDocIndent(line_A: string): number
+function <SNR>278_handle_error(err) abort
+function fzf#vim#_format_buffer(b)
+function ale#code_action#DisablePopUpMenu() abort
+function go#util#Shelllist(arglist, ...) abort
+function <SNR>174_GetBufNbrAtLine(lineNbr)
+function ale#util#BinarySearch(loclist, buffer, line, column) abort
+function <SNR>130_obsolete(what)
+function <SNR>304_SystemList(cmd) abort
+function nerdtree#runningMac() abort
+def <SNR>290_Indent(lnum: number): number
+function <SNR>304_IsConflicted() abort
+function <SNR>177_split(dict)
+function airline#parts#readonly()
+function <SNR>336_narrowable()
+function matchup#pos#val(...)
+function <SNR>304_can_diffoff(buf) abort
+function fugitive#Head(...) abort
+function <SNR>306_LoadUserTypeDefs(...) abort
+function quick_scope#Aim(motion) abort
+function <SNR>44_DeleteNextSurroundingFunctionCall()
+function <SNR>264_section_is_empty(self, content)
+function tagbar#toggle_pause() abort
+function <SNR>336_ToggleByFname()
+function ale#engine#RunLinters(buffer, linters, should_lint_file) abort
+function gitgutter#utility#base_path(bufnr)
+function airline#init#bootstrap()
+function <SNR>304_ReloadStatusBuffer() abort
+function <SNR>304_BufName(var) abort
+def <SNR>17_BMMunge(fname: string, bnum: number): string
+function <SNR>299_exec_silent(cmd) abort
+function <SNR>304_ResolveUrl(target, ...) abort
+function ingo#os#IsWinOrDos()
+function ale#util#GetItemPriority(item) abort
+function <SNR>269_index_encode_delim(delim)
+function <SNR>156_obsolete(var)
+function nerdtree#postSourceActions() abort
+def <SNR>17_SetupColorSchemes()
+function <SNR>179_create_popup(hl, opts) abort
+function <SNR>304_DoToggleUntrackedHeading(...) abort
+function go#config#ImportsAutosave() abort
+function context#util#active() abort
+function nerdtree#has_opt(options, name) abort
+function go#config#ListAutoclose() abort
+function <SNR>269_init_groups_from_colors()
+function <SNR>52_setup_styledEmmetAbbreviation() abort
+function <SNR>218_toggleShowFileLines() abort
+function ingo#str#trcd(src, fromstr)
+function UnicodePercent()
+function StripStoreCurSel()
+function <SNR>254_format_wordcount(wordcount)
+function fugitive#PrepareDirEnvGitFlagsArgs(...) abort
+def <SNR>290_AtStartOf(line_A: dict<any>, syntax: string): bool
+function go#util#ShellError() abort
+function fugitive#WqCommand(...) abort
+function TestSuperTabCodeComplete(findstart, base)
+function <SNR>244_neoterm_id(bufnr) abort
+function rainbow_csv#align_field(field, is_first_line, max_field_components_lens, is_last_column)
+function <SNR>304_DiffModifier(count, default) abort
+function tagbar#RestoreSession() abort
+function ale#handlers#writegood#GetCommand(buffer) abort
+function go#config#HighlightFunctionParameters() abort
+def <SNR>17_TagFiles()
+function <SNR>179_execute_tmux(dict, command, temps) abort
+function fugitive#PullComplete(A, L, P, ...) abort
+function <SNR>177_fzf_expand(fmt)
+function <SNR>272_set_custom_section(section) abort
+function nerdtree#echoWarning(msg) abort
+function SetupRemoteReplies()
+function <SNR>174_Error(msg)
+function <SNR>174_MRULen(mru)
+function <SNR>304_RunWait(state, tmp, job, ...) abort
+function <SNR>337_generate_error_cmd(is_visual) abort
+function <SNR>174_ShouldIgnore(buf)
+function airline#cmdwinenter(...)
+def <SNR>17_BMFilename(name: string, num: number)
+function <SNR>179_split(dict)
+function <SNR>312_GetLintFileSlots(buffer, linters) abort
+function <SNR>157_is_file_buffer(bufnr) abort
+function nerdtree#closeTreeOnOpen() abort
+function <SNR>261_exec_separator(dict, from, to, inverse, suffix) abort
+function <SNR>234_IsScratchBuffer()
+function ctrlp#setpathmode(pmode, ...)
+function <SNR>338_complete_insert(lines)
+function <SNR>304_StageSeek(info, fallback) abort
+function <SNR>272_set_cursor() abort
+function <SNR>198_DevIconsGetArtifactFix()
+function fugitive#statusline(...) abort
+function <SNR>174_GetBufNbrAtCursor()
+function <SNR>336_formatline(str)
+function <SNR>304_SshParseHost(value) abort
+function <SNR>174_MRURemoveMustExist(mru, item)
+function nerdtree#exec(cmd, ignoreAll) abort
+function <SNR>223_enableLiveUpdate() abort
+function go#config#DebugLogDelay() abort
+function <SNR>107_close_floating_win()
+function <SNR>69_gomod()
+function <SNR>266_set_enabled(arg, enabled) abort
+function <SNR>336_usrign(item, type)
+function airline#builder#should_change_group(group1, group2)
+function <SNR>156_on_buffilepost(bufnr)
+function <SNR>336_ispathitem()
+function <SNR>165__dot_to_sharp(name) abort
+function rainbow_csv#ft_to_dialect(ft_val)
+def <SNR>290_SearchPairStart(start: string, middle: string, end: string): number
+function rainbow_csv#whitespace_split(line, preserve_whitespaces)
+function <SNR>338_commits_sink(lines)
+function go#config#FillStructMode() abort
+function <SNR>304_LogFlushQueue(state, dir) abort
+function <SNR>235_Canonicalize(filespec, isResolveLinks) abort
+function tagbar#gettypeconfig(type) abort
+def <SNR>290_IndentMoreLineContinuation(): number
+function airline#extensions#fzf#inactive_apply(...) abort
+function <SNR>156_on_buffilepre(bufnr)
+function <SNR>177_open(cmd, target)
+function ingo#buffer#IsEmpty(...)
+function <SNR>304_diff_window_count() abort
+function <SNR>336_ifilter(list, str)
+function <SNR>304_FormatRebase(dict) abort
+function fugitive#Result(...) abort
+function <SNR>336_ToggleRegex()
+function <SNR>147_check_defined(variable, default)
+function <SNR>305_on_exit_mq(channel) abort dict
+function <SNR>139_LoclistFollowToggle(bnr, ...)
+function rainbow_csv#smart_split(line, delim, policy)
+function airline#extensions#fzf#apply(...) abort
+def <SNR>17_SynOnOff()
+function <SNR>304_BlameMaps(is_ftplugin) abort
+function <SNR>338_cmd_history_sink(lines)
+function <SNR>279__throw_if_cancellation_requested() abort dict
+function <SNR>218_openVSplitBookmark(bm) abort
+function <SNR>234_IsContainedInSessionBlacklist(filespec)
+function <SNR>336_textdialog(str)
+function <SNR>182_LP_PatPop(lookup)
+function peekaboo#peek(count, mode, visualmode)
+function GrabSimpleMaps()
+function <SNR>34_MRU_Toggle(pat, splitdir) abort
+function rainbow_csv#get_visual_selection()
+function ale#util#LocItemCompare(left, right) abort
+function <SNR>269_init_groups_from_links()
+function <SNR>304_DoToggleUnpulled(record) abort
+function <SNR>304_StatusProcess(result, stat) abort
+function <SNR>173_wrapreg(reg, char, removed, special)
+function <SNR>304_QuickfixStream(nr, event, title, cmd, first, mods, callback, ...) abort
+def <SNR>290_EndsWithClosingBracket(line: dict<any>): bool
+function <SNR>304_repo_rev_parse(rev) abort dict
+function <SNR>177_compare_binary_versions(a, b)
+function <SNR>48_ReadFile(path, line_count) abort
+function <SNR>270_feed(count, mode, reg, rest)
+function fugitive#Remote(...) abort
+function gitgutter#utility#repo_path(bufnr, shellesc) abort
+def <SNR>290_FirstLinePreviousCommand(line: dict<any>): dict<any>
+function TbCsv()
+function <SNR>138_BufferCount() abort
+function <SNR>218_refreshRoot() abort
+function <SNR>66_checkVersion() abort
+function airline#async#vim_vcs_untracked(config, file)
+function <SNR>68_exec(cmd, ...) abort
+function <SNR>166_reject(...) abort
+function <SNR>338_escape(path)
+function nerdtree#renderView() abort
+function rainbow_csv#generate_escaped_rfc_rainbow_syntax(delim)
+function <SNR>177_wrap_cmds(cmds)
+function <SNR>304_TempState(...) abort
+function airline#switch_matching_theme()
+function ClearFancyGlyphs()
+function <SNR>336_isterminal(buf)
+function <SNR>218_initCustomOpenArgs() abort
+function vital#_fern#Async#Promise#import() abort
+function <SNR>251_airline_ale_count(cnt, symbol)
+function <SNR>338_open(target)
+function <SNR>34_MRU_Cmd(pat, splitdir, winsz) abort
+function <SNR>173_opfunc(type, ...) abort
+function ctrlp#clra()
+function <SNR>166__promise_catch(...) abort dict
+function fugitive#WriteCommand(line1, line2, range, bang, mods, arg, ...) abort
+function go#util#EchoInfo(msg)
+function <SNR>179_execute_term(dict, command, temps) abort
+function go#config#AutoTypeInfo() abort
+def <SNR>290_BlockStartKeyword(line: string): string
+function <SNR>305_set_clean_variables(file, vcs, val)
+function go#config#SetDebugDiag(value) abort
+function airline#highlighter#add_accent(accent) abort
+function BufExplorer_ReSize()
+function airline#extensions#ale#init(ext)
+function <SNR>174_MRUAddBufTab(bufNbr, tabId)
+function fugitive#SshHostAlias(authority) abort
+function <SNR>247_parse_hunk_status_dict(hunks) abort
+function rainbow_csv#ensure_syntax_exists(rainbow_ft, delim, policy, comment_prefix)
+function ctrlp#init(type, ...)
+function go#util#camelcase(word) abort
+function <SNR>304_StatusRender(stat) abort
+function <SNR>252_ws_refresh()
+function SuperTabChain(completefunc, completekeys, ...)
+function MatchupStatusOffscreen()
+function <SNR>112_ChangeCmp(left, right) abort
+function fugitive#Cfile() abort
+function fugitive#Resume() abort
+function <SNR>304_DoToggleHeadHeader(value) abort
+function go#config#DocPopupWindow() abort
+function go#config#ImportsMode() abort
+function fugitive#EditComplete(A, L, P) abort
+function <SNR>304_PushSubcommand(...) abort
+function <SNR>306_Init(silent) abort
+function <SNR>174_GetBufferInfo(onlyBufNbr)
+function airline#extensions#whitespace#init(...)
+function TWSDark()
+function TweakLS()
+function <SNR>304_ParseDiffHeader(str) abort
+function <SNR>336_writecache(cafile)
+function ale#events#InsertLeaveEvent(buffer) abort
+function <SNR>306_goto_win(winnr, ...) abort
+function go#util#LineEnding() abort
+function <SNR>36_set_highlight_colors()
+function fugitive#Foldtext() abort
+function <SNR>337_get_pos_in_cword(cword, ...) abort
+function <SNR>336_nosplit()
+function ShowTrailingWhitespace#NotFiltered()
+function fugitive#BisectComplete(A, L, P, ...) abort
+function ale#util#Mode(...) abort
+function <SNR>273_parse_args(args) abort
+function quick_scope#HighlightLineDelayCallback(direction, targets, _id) abort
+function <SNR>34_MRU_escape_filename(fname) abort
+function ale#linter#PreventLoading(filetype) abort
+function <SNR>132_config_fuzzyspell(...) abort
+function WebDevIconsNERDTreeMapUpdirKeepOpen()
+function <SNR>274_effline(expr)
+function <SNR>338_version_requirement(val, min)
+function nerdtree#deprecated(func, ...) abort
+function <SNR>304_GrepCfile(result) abort
+function <SNR>340_line_adjustment_for_current_hunk() abort
+function <SNR>177_present(dict, ...)
+function <SNR>338_line_handler(lines)
+function <SNR>179_exit_handler(code, command, ...)
+function <SNR>174_GetColumns()
+function <SNR>338_align_lists(lists)
+function <SNR>338_inject_snippet(line)
+function <SNR>338_conf(name, default)
+function <SNR>64_Initial()
+function matchup#perf#toc(context, state)
+function <SNR>173_process(string)
+function <SNR>154_CaptureKeyMap(key)
+function <SNR>158_get_foreground_fallback_colors(type)
+function <SNR>336_getextvar(key)
+def <SNR>290_CommentIndent(): number
+function go#util#TestName() abort
+function <SNR>309_getKind(kind) abort dict
+function <SNR>306_ShrinkIfExpanded() abort
+function <SNR>304_Uniq(list) abort
+function <SNR>338_grep_multi_line(opts)
+function <SNR>179_skim_tempname()
+function <SNR>275_get_random_offset(max) abort
+function <SNR>146_FocusGainedHandler(timer)
+function context#toggle(all) abort
+function <SNR>304_CommitInteractive(line1, line2, range, bang, mods, options, patch) abort
+def dist#vimindent#Expr(lnum: unknown = v:lnum): number
+function ale#util#InSandbox() abort
+function ale#util#ToResource(uri) abort
+function <SNR>174_AssignTabId(tabNbr)
+function <SNR>304_ContainingCommit() abort
+function nerdtree#ui_glue#clearBookmarks(bookmarks) abort
+function <SNR>174_ToggleShowTabBuffer()
+function <SNR>281_dict_has_key_pat(d, key) abort
+function airline#parts#crypt()
+function <SNR>174_Set(var, default)
+function gitgutter#utility#dir(bufnr) abort
+function airline#parts#define_condition(key, predicate)
+function matchup#util#in_indent(...)
+function fugitive#MapCfile(...) abort
+function <SNR>338_sort_buffers(...)
+function <SNR>64_HaveAtt()
+function tagbar#prototypes#normaltag#new(name) abort
+function <SNR>336_PrtCurLeft()
+function context#util#update_state() abort
+function gitgutter#highlight#define_signs() abort
+function go#config#DeclsMode() abort
+function <SNR>340_screen_lines(lines)
+function <SNR>153_addtomrufs(fname)
+function <SNR>166__subscribe(parent, child, on_fulfilled, on_rejected) abort
+function <SNR>336_getenv()
+function <SNR>104_surround_init_module()
+function gitgutter#highlight#linenr_enable() abort
+function <SNR>304_NextSection(count) abort
+function <SNR>304_MergetoolSubcommand(line1, line2, range, bang, mods, options) abort
+function <SNR>177_use_sh()
+function tagbar#debug#enabled() abort
+function SuperTabCodeComplete(findstart, base)
+function <SNR>304_diffoff() abort
+function FirmUnComment(c)
+function go#config#FmtFailSilently() abort
+function <SNR>269_index_decode_delim(encoded_delim)
+function <SNR>249_init_buffer()
+function ctrlp#clr(...)
+function fugitive#FetchComplete(A, L, P, ...) abort
+function matchup#pos#prev(...) abort
+function ctrlp#j2l(nr)
+function <SNR>177_common_sink(action, lines) abort
+function <SNR>272_check_user_options(path) abort
+function <SNR>304_RunTick(job) abort
+function context#util#log_indent(amount) abort
+function <SNR>166_resolve(...) abort
+function WebDevIconsGetFileFormatSymbol(...)
+function <SNR>306_TagbarBufName() abort
+function <SNR>154_CompletionMode()
+function <SNR>338_format_excmd(ex)
+function airline#extensions#unicode#apply(...)
+function ale#util#EscapeVim(unsafe_string) abort
+function <SNR>174_Key_mru(buf)
+function <SNR>154_IsNoCompleteAfterReset()
+function <SNR>179_default_layout()
+function matchup#delim#skip(...)
+function rainbow_csv#adjust_column_stats(column_stats)
+function nerdtree#ui_glue#createDefaultBindings() abort
+function ale_linters#vim#vint#Handle(buffer, lines) abort
+function ctrlp#mrufiles#refresh(...)
+function <SNR>336_ToggleType(dir)
+function fzf#vim#gitfiles(args, ...)
+function <SNR>298_Ansi2Gui(code)
+def <SNR>290_ContinuesBelowBracketBlock(line_A: string, line_B: dict<any>, block: dict<any>): bool
+function <SNR>321_getPrototype(short) abort dict
+function <SNR>272_cd_to_vcs_root(path) abort
+function nerdtree#echoError(msg) abort
+function <SNR>218_jumpToParent(node) abort
+function rainbow_csv#generate_escaped_rainbow_syntax(delim)
+function WebDevIconsNERDTreeDirCloseRecursively(node)
+function <SNR>174_DisplayBufferList()
+function fugitive#simplify(url) abort
+function ToggleGUIwidth(default, other)
+function <SNR>269_char_class_escape(src)
+function airline#extensions#quickfix#apply(...)
+function matchup#delim#end_offset(delim) abort
+function <SNR>304_GrepSubcommand(line1, line2, range, bang, mods, options) abort
+function <SNR>249_sh_autocmd_handler()
+function <SNR>304_SystemError(cmd, ...) abort
+function <SNR>132_config_fuzzy(...) abort
+function <SNR>304_RemoteParseArgs(args) abort
+function <SNR>159_history(arg, extra, bang)
+function <SNR>304_Mods(mods, ...) abort
+function rainbow_csv#dbg_set_system_python_interpreter(interpreter)
+function rainbow_csv#csv_shrink()
+function <SNR>336_sublist7071(l, s, e)
+function <SNR>272_create_last_session_link(session_path)
+function ale_linters#vim#ale_custom_linting_rules#GetCwd(buffer) abort
+function go#config#HighlightDiagnosticErrors() abort
+function <SNR>179_xterm_launcher()
+function go#config#DebugBreakpointSignText() abort
+function <SNR>177_calc_size(max, val, dict)
+function <SNR>304_MapMotion(lhs, rhs) abort
+function context#util#map_zt() abort
 function webdevicons#version()
+function startify#set_batchmode(batchmode) abort
+function nerdtree#version(...) abort
+function <SNR>306_ToggleHideNonPublicTags() abort
+function airline#parts#define(key, config)
+function ale#util#ShowMessage(string, ...) abort
+function <SNR>177_enc_to_cp(str)
+function <SNR>306_RenderContent(...) abort
+function airline#extensions#hunks#init(ext) abort
+function rainbow_csv#find_python_interpreter()
+function fugitive#PagerFor(argv, ...) abort
+function <SNR>165_import(name, ...) abort dict
+function <SNR>233_DetectAll()
+function <SNR>304_MapGitOps(is_ftplugin) abort
+function ale#events#EmulateInsertLeave(buffer) abort
+function <SNR>338_changes_sink(lines)
+function fzf#vim#tags(query, ...)
+function <SNR>174_DoWinEnter()
+function <SNR>304_LogParse(state, dir, prefix, line) abort
+function <SNR>322_add_snr(funcname) abort
+function airline#extensions#fugitiveline#init(ext) abort
+function <SNR>218_previewNodeVSplitBookmark(bookmark) abort
+function <SNR>174_MRUGarbageCollectTabs()
+function <SNR>304_cfile() abort
+function startify#fortune#quote() abort
+function <SNR>304_repo_find(object) abort dict
+function <SNR>218_openInNewTab(target) abort
+function <SNR>134_getKeysAsList(keys)
+function ale#statusline#Update(buffer, loclist) abort
+function ingo#fs#path#IsUncPathRoot(filespec)
+function gitgutter#highlight#line_disable() abort
+function go#config#MetalinterAutosaveEnabled() abort
+function <SNR>339_find_current_signs(bufnr) abort
+function <SNR>304_VimExecPath() abort
+function go#config#DefMode() abort
+function <SNR>310_getTagsByName(tagname) abort dict
+function <SNR>304_StageJump(offset, section, ...) abort
+function airline#extensions#vimtex#get_scope()
+function startify#get_separator() abort
+function <SNR>336_setlines_post()
+function ShowTrailingWhitespace#Set(isTurnOn, isGlobal)
+function airline#highlighter#remove_separators_for_bufnr(bufnr) abort
+function <SNR>336_async_glob_on_exit(...)
+function <SNR>336_PrtInsert(...)
+function ctrlp#files()
+function fugitive#FileWriteCmd(...) abort
+function ale#engine#HandleLoclist(linter_name, buffer, loclist, from_other_source) abort
+function gitgutter#utility#file(bufnr)
+function airline#extensions#wordcount#get()
+function fugitive#GrepCommand(line1, line2, range, bang, mods, arg) abort
+function <SNR>269_py_source_escape(src)
+function <SNR>336_compmatlen(...)
+function <SNR>337_get_col_in_visual(pos) abort
+function <SNR>260_wrap_accent(part, value)
+function <SNR>304_TreeInfo(dir, commit) abort
+function gitgutter#hunk#reset(bufnr) abort
+function rainbow_csv#is_rainbow_table_or_was_just_disabled()
+function <SNR>336_OpenMulti(...)
+function <SNR>239_check_defined_section(name)
+function ingo#hlgroup#LinksTo(name)
+function fugitive#RevParse(rev, ...) abort
+function go#config#MetalinterAutosave() abort
+function <SNR>125_add_menu() abort
+function ale#statusline#FirstProblem(buffer, type) abort
+function <SNR>306_ToggleFold() abort
+function <SNR>165_new(plugin_name) abort
+function <SNR>107_add_matches(corrlist, ...)
+function airline#extensions#quickfix#init(ext)
+function LogiPat(pat, ...)
+function <SNR>174_BufferNumLines()
+function asterisk#r() abort
+def <SNR>316_DetectFromHashBang(firstline: string)
+function <SNR>272_get_lists() abort
+function <SNR>304_ChompStderr(...) abort
+function <SNR>153_record(bufnr)
+function <SNR>336_SetWD(args)
+function fugitive#Open(cmd, bang, mods, arg, ...) abort
+function <SNR>291_has(feature)
+function <SNR>136_CreateUniqueMapping(lhs, rhs, ...)
+function ale#linter#Define(filetype, linter) abort
+function <SNR>336_safe_printf(format, ...)
+function <SNR>304_DoStageUnstaged(record) abort
+function <SNR>338_ag_handler(name, lines)
+function <SNR>304_DoToggleUnpushed(record) abort
+function <SNR>278_on_syntax(...) abort
+function <SNR>234_IsContainedInPersistedBlacklist(filespec)
+function go#config#TestShowName() abort
+function <SNR>254_get_wordcount(visual_mode_active)
+function <SNR>304_RunEcho(tmp) abort
+function <SNR>304_shellesc(arg) abort
+function <SNR>68_unset(name) abort
+function matchup#delim#get_surround_nearest(open, ...) abort
+function webdevicons#refresh()
+function <SNR>299_new(obj) abort
+function <SNR>251_ale_refresh()
+function <SNR>166__race(promises, resolve, reject) abort
+function ale_linters#vim#ale_custom_linting_rules#GetExecutable(buffer) abort
+function <SNR>158_define_sign_linenr_highlights() abort
+function NERDTreeExecFileActive()
+def <SNR>17_FixFText(): string
+function <SNR>269_try_read_lines(src_path)
+function <SNR>174_Key_fullpath(buf)
+function <SNR>130_keymap(mode, action, dir)
+function <SNR>336_getparent(item)
+function <SNR>51_SetUpMessage(filename) abort
+function <SNR>336_lsCmd()
+function <SNR>304_DoToggleUnstagedHeading(...) abort
+function <SNR>218_previewNodeVSplit(node) abort
+function <SNR>218_toggleZoom() abort
+function <SNR>336_bufparts(bufnr)
+function go#config#HighlightDiagnosticWarnings() abort
+function BufExplorer_IsValid()
+function ShowTrailingWhitespace#Detect(isInsertMode)
+function airline#util#has_lawrencium()
+function fzf#vim#locate(query, ...)
+function <SNR>336_vacantdict(dict)
+function matchup#loader#capture_group_replacement_order(cg) abort
+function <SNR>173_getchar()
+function <SNR>299_ObserveOptions()
+function <SNR>64_AsEmpty()
+function <SNR>321_add_snr(funcname) abort
+function ale#util#FindItemAtCursor(buffer) abort
+function <SNR>306_DetectFiletype(bufnr) abort
+function <SNR>304_DoUnstageStaged(record) abort
+function <SNR>304_SshParseConfig(into, root, file) abort
+function airline#extensions#ctrlp#load_theme(palette)
+function gitgutter#highlight#line_enable() abort
+function fern_git_status#init() abort
+function <SNR>223_onNERDTreeDirChanged(path) abort
+function startify#session_save(bang, ...) abort
+function <SNR>48_CeilingDirectories() abort
+function fugitive#RemoveCommand(line1, line2, range, bang, mods, arg, ...) abort
+function FugitiveConfigGetAll(name, ...) abort
+function <SNR>304_BlameSubcommand(line1, count, range, bang, mods, options) abort
+function <SNR>177_cmd(bang, ...) abort
+function <SNR>306_EscapeCtagsCmd(ctags_bin, args, ...) abort
+function <SNR>304_DoStageUnpushed(record) abort
+function <SNR>104_init_oldstyle_ops()
+function <SNR>272_show_commands() abort
+function <SNR>304_BrowserOpen(url, mods, echo_copy) abort
+function go#util#gomod() abort
+function ale#linter#GetExecutable(buffer, linter) abort
+function go#config#SetFmtAutosave(value) abort
+def <SNR>290_AtStartOfBracketBlock(line_A: dict<any>): bool
+function <SNR>338_find_open_window(b)
+function <SNR>309_createKinddict() abort dict
+function go#config#SetAsmfmtAutosave(value) abort
+function <SNR>336_ForceUpdate()
+function <SNR>338_git_version_requirement(...)
+function <SNR>159_fzf_vim_term()
+function <SNR>271_has_fresh_changes(bufnr) abort
+function <SNR>306_ChangeFoldLevel(diff, force) abort
+function fugitive#ReadComplete(A, L, P) abort
+function <SNR>165_search(pattern) abort dict
+function <SNR>107_set_popup_text_2(lnum, adjust, offscreen) abort
+function <SNR>218_jumpToNextSibling(node) abort
+function rainbow_csv#manual_disable_comment_prefix()
+function go#config#HighlightOperators() abort
+function <SNR>173_extractbefore(str)
+def <SNR>17_EditVimrc()
+def <SNR>290_EndsWithLineContinuation(line_B: dict<any>): bool
+function <SNR>338_mark_sink(lines)
+function ale#util#GetFunction(string_or_ref) abort
+function airline#extensions#keymap#status()
+function gitgutter#sign#reset()
+function ale#util#Tempname() abort
+function <SNR>338_complete_trigger()
+function airline#extensions#ctrlp#apply(...)
+function airline#extensions#ctrlp#ctrlp_airline_status(...)
+function rainbow_csv#init_rb_color_groups()
+def <SNR>137_Qf_filter(qf: bool, searchpat: string, bang: string)
+function <SNR>107_highlight_background(corrlist)
+function <SNR>177_fzf_getcwd()
+function <SNR>139_LoclistFollow(scope, bnr) abort
+function airline#themes#generate_color_map(sect1, sect2, sect3, ...)
+function <SNR>218_refreshCurrent(node) abort
+function GrabBmmFn()
+function airline#extensions#hunks#get_hunks() abort
+function <SNR>179_warn(msg)
+function go#config#TextobjIncludeVariable() abort
+function <SNR>336_MarkToOpen()
+function go#config#LspLog() abort
+function <SNR>198_set(var, default) abort
+function picker#IsString(variable) abort
+function <SNR>336_PrtAdd(char)
+function <SNR>129_live_easy_align_op(type, ...)
+function asterisk#do(mode, config) abort
+function nerdtree#ui_glue#upDir(preserveState) abort
+function <SNR>223_onGitWorkdirSuccessCB(job) abort
+function <SNR>336_PrtDelete()
+function <SNR>268_open() abort
+function <SNR>129_repeat_in_visual()
+function <SNR>304_add_methods(namespace, method_names) abort
+function go#config#HighlightChanWhitespaceError() abort
+function <SNR>338_key_sink(line)
+function ingo#buffer#IsScratch(...)
+function go#config#HighlightDebug() abort
+function undotree#UndotreeToggle() abort
+def <SNR>290_EndsWithLambdaArrow(line_A: dict<any>): bool
+function ale#balloon#MessageForPos(bufnr, lnum, col) abort
+function <SNR>251_new_airline_ale_get_line_number(cnt, type) abort
+function ShowTrailingWhitespace#SetLocalExtraPattern(pattern)
+function <SNR>107_ensure_scroll_timer()
+function <SNR>269_get_auto_comment_prefix()
+function <SNR>157_abs_path(bufnr, shellesc)
+function ale#linter#GetCwd(buffer, linter) abort
+function <SNR>177_evaluate_opts(options)
+function <SNR>127_SetGlobalOpt(opt, val)
+function <SNR>269_use_system_python()
+function <SNR>223_setupNERDTreeKeyMappings()
+function <SNR>337_sort_num(xs) abort
+function <SNR>336_unmarksigns()
+function <SNR>306_CloseFold() abort
+function <SNR>338_reverse_list(opts)
+function <SNR>174_MRUOrderForBuf(bufNbr)
+function gitgutter#toggle() abort
+function <SNR>336_leavepre()
+function airline#util#has_gina()
+function <SNR>144_default_mapping(motions, do_mapping)
+function <SNR>337_generate_restore_cmd() abort
+function airline#extensions#vimtex#init(ext)
+function <SNR>265_get_section(winnr, key, ...)
+function <SNR>64_Handler(xml_tag, isHtml)
+function go#config#SnippetEngine() abort
+function <SNR>103_DoMatchParen()
+function airline#highlighter#reset_hlcache() abort
+function matchup#perf#tic(context)
+function <SNR>306_ShowPrototype(short) abort
+function <SNR>306_MapKeys() abort
+function <SNR>336_delbufcond(bufnr)
+function <SNR>249_display_hg_branch()
+function ale#engine#EscapeCommandPart(command_part) abort
+function <SNR>337_curswant() abort
+function <SNR>304_RemoteResolve(url, flags) abort
+function <SNR>304_PreviousHunk(count) abort
+function <SNR>179_open(cmd, target)
+function ale#engine#MarkLinterActive(info, linter) abort
+function <SNR>37_add_to_highlight_patterns(patterns, highlights) abort
+function <SNR>272_display_by_path(path_prefix, path_format, use_env) abort
+function airline#extensions#ale#get_warning()
+function <SNR>39_bclose_completion_options(ArgLead, CmdLine, CursorPos) abort
+function <SNR>174_FindBufExplorer()
+function <SNR>338_ag_to_qf(line)
+function matchup#delim#get_current(type, side, ...) abort
+function <SNR>272_cd_cmd() abort
+def <SNR>290_SearchPair(start: string, middle: string, end: string, flags: string, stopline: unknown = 0): number
+function <SNR>179_dopopd()
+def <SNR>17_SpellPopup()
+function go#config#SetAutoTypeInfo(value) abort
+function <SNR>304_JobExecute(argv, jopts, stdin, callback, ...) abort
+function go#util#IsWin() abort
+function go#config#ImplementsMode() abort
+function gitstatus#util#ParseGitStatusLines(root, statusLines, opts) abort
+function WebDevIconsNERDTreeMapCloseChildren(node)
+function <SNR>198_isDarwin()
+function <SNR>179_wrap_cmds(cmds)
+function gitgutter#hunk#set_hunks(bufnr, hunks) abort
+function <SNR>218_jumpToChild(node, last) abort
+function NERDTreeDeleteNode()
+function <SNR>52_install_plugin(mode, buffer)
+function <SNR>304_CompleteBisect(A, L, P, ...) abort
+function <SNR>157_exists_file(bufnr) abort
+function airline#extensions#ctrlp#init(ext)
+function WebDevIconsNERDTreeUpDirCurrentRootClosedHandler()
+function nerdtree#ui_glue#invokeKeyMap(key) abort
+function <SNR>136_GotoBuffer(cmd, bang)
+function fugitive#ReloadStatus(...) abort
+function go#config#GoplsDeepCompletion() abort
+function <SNR>165__get_builtin_module(name) abort
+function <SNR>104_init_default_mappings()
+function fzf#run(...) abort
+function <SNR>272_hide_endofbuffer_markers()
+function <SNR>322_getClosedParentTline() abort dict
+function RestoreWinPosn(...)
+def <SNR>290_CacheHeredoc(line_A: dict<any>)
+function context#enable(all) abort
+function <SNR>154_ClosePreview()
+function <SNR>304_PathUrlEncode(str) abort
+function context#popup#layout() abort
+function <SNR>336_regexfilter(str)
+function <SNR>272_show_dir() abort
+function <SNR>306_warning(msg) abort
+function <SNR>304_Remove(after, force) abort
+def <SNR>290_AlsoClosesBlock(line_B: dict<any>): bool
+function <SNR>322_isKindheader() abort dict
+function go#util#hostosarch() abort
+function <SNR>165__get_module(name) abort dict
+function <SNR>310_closeKindFold(kind) abort dict
+function airline#builder#new(context)
+function <SNR>304_repo_config(name) abort dict
+function <SNR>312_RemapItemTypes(type_map, loclist) abort
