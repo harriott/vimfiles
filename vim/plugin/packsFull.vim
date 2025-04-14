@@ -635,6 +635,7 @@ function! GrabAllFunctions()
   normal! p
   write
 endfunction
+" used in  $vimfiles/settings-active-vim/unix-functions.vim
 
 "">> grab Vim settings - maps of Fn keys
 function! GrabBmmFn()
@@ -650,8 +651,9 @@ function! GrabBmmFn()
   write
 endfunction
 " used in
-"  $vimfiles/settings-active-vim/vim-unix-functions.vim
-"  $vimfiles/settings-active-vim/vim-unix-maps-fn-active.txt
+"  $vimfiles/settings-active-nvim/unix-maps-fn.vim
+"  $vimfiles/settings-active-vim/unix-maps-fn.vim
+"  $vimfiles/settings-active-vim/win64-maps-fn.vim
 
 "">> grab Vim settings - simple maps
 function! GrabSimpleMaps()
