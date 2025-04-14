@@ -612,19 +612,6 @@ packadd targets.vim
 " :Bufferize <something>  is handy, but the buffer's fragile...
 packadd bufferize.vim
 
-"">> grab Vim settings - all functions
-function! GrabAllFunctions()
-  silent execute 'Bufferize function'
-  winc k
-  sort
-  normal! ggVGd
-  bdelete
-  blast
-  normal! p
-  write
-endfunction
-" used in  $vimfiles/settings-active-vim/unix-functions.vim
-
 "">> grab Vim settings - maps of Fn keys
 function! GrabBmmFn()
   silent execute 'Bufferize map|map!'
@@ -637,7 +624,7 @@ function! GrabBmmFn()
   blast
   normal! p
   write
-endfunction
+endfunction  " because can't  :pu=execute('map|map!')
 " used in
 "  $vimfiles/settings-active-nvim/unix-maps-fn.vim
 "  $vimfiles/settings-active-vim/unix-maps-fn.vim
