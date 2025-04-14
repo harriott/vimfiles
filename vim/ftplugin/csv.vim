@@ -39,18 +39,6 @@ if has('nvim')
 endif " needs  lazy = false  in  $vfn/lua/lazy/csvview_nvim.lua
 
 ""> plugin Rainbow CSV
-if exists('g:rbcsv')
-  let b:RainbowAligned = 0
-  nnoremap <silent><buffer><f7> :call RainbowAligned()<cr>
-  inoremap <silent><buffer><f7> <esc>:call RainbowAligned()<cr>
-  vnoremap <silent><buffer><f7> <esc>:call RainbowAligned()<cr>
-  function! RainbowAStoggle()
-    if b:RainbowAligned = 0
-      let b:RainbowAligned = 1
-      RainbowAlign
-    else
-      let b:RainbowAligned = 0
-      RainbowShrink
-    endif
-  endfunction
-endif
+let b:RainbowAligned = 0
+" see $vfv/plugin/packsFull.vim
+

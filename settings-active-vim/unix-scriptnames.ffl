@@ -3,7 +3,7 @@ vim: set nowrap:
 Three choices to paste below:
 
 	:call GrabScriptnames() " (in  $vfv/plugin/packsFull.vim, using  Bufferize)
-	:enew|pu=execute('scriptnames')
+	:put=execute('scriptnames')
 	:redir @s | silent scr | redir END | exe "normal! \"sp"
 
   1: /etc/vimrc

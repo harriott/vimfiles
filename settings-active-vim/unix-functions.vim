@@ -1,5 +1,5 @@
 
-pu=execute('function') " pastes list of all Vim commands below (with inconsistent columnisation)
+put=execute('function') " pastes list of all Vim commands below (with inconsistent columnisation)
 
 function <SNR>306_ExecuteCtags(ctags_cmd) abort
 function <SNR>336_ToggleMRURelative()

@@ -1,6 +1,6 @@
 vim: set nowrap:
 
-pu=execute('command') " pastes list of all Vim commands below (with inconsistent columnisation)
+put=execute('command') " pastes list of all Vim commands below (with inconsistent columnisation)
 
     Name              Args Address Complete    Definition
 b   VimKeywordPrg     1                        :exe 'help' s:Help(<q-args>)

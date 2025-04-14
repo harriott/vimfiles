@@ -542,6 +542,7 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :if 0 | echo 'true' | else | echo 'false' | endif  " try  if 1
 :ni<somecharacter><enter>                          " inserts <somecharacters> n time
 :h g_CTRL-G                                        " position and word info, works on a range too
+:pu=exe('<vim_command>')                           " :put=execute('...')
 :put ='this_text'
 :sleep
 :t.                                                " reproduce line

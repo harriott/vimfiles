@@ -1,7 +1,6 @@
 
 Joseph's (g)Vim Quick Reference
 
-    r $vfs
     let v=6 | echo g:v | =vim.g.v  " lua print(vim.api.nvim_eval('exists("g:v")'))
 
 # guifont

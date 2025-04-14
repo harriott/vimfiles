@@ -1,6 +1,6 @@
 vim: set nowrap:
 
-pu=execute('command') " pastes list of all Vim commands below (with inconsistent columnisation)
+put=execute('command') " pastes list of all Vim commands below (with inconsistent columnisation)
 
     Name              Args Address Complete    Definition
 |   ALECodeAction     0    .                   :call ale#codefix#Execute(<range>)

@@ -470,20 +470,16 @@ endfunction
 let g:xml_syntax_folding = 1
 
 ""> grab Vim settings
-" also
-"  my functions using  :Bufferize
-"  r $vfs
-
 " mkexrc
-function! GrabMK()
-  cd $vfs
-  let $mkh = 'vim'
-  if has('nvim')  | let $mkh =  'n'.$mkh | endif
-  if has('unix')  | let $mkh =  $mkh.'-unix.exrc' | endif
-  if has('win64') | let $mkh =  $mkh.'-win64.exrc' | endif
-  call delete($mkh)
-  mkexrc $mkh
-  edit $mkh
+function! Grab_exrc()
+  cd $vimfiles
+  let fse = 'settings-active-vim' " flavour system exrc
+  if has('nvim')  | let fse = 'settings-active-nvim' | endif
+  if has('unix')  | let fse =  fse.'/unix.exrc' | endif
+  if has('win64') | let fse =  fse.'/win64.exrc' | endif
+  call delete(fse)
+  mkexrc fse
+  edit fse
   sil! %s//<esc>/g
   sil! %s//<cr>/g
   sil! %s//<c-w>/g
@@ -491,14 +487,12 @@ function! GrabMK()
   norm ggO" vim: se nowrap:
   norm o
   norm x
-  norm o" generated from within Vim by  call GrabMK()
+  norm o" generated from within Vim by  :call Grab_exrc()
   norm o
   norm x
   write
   edit  " invokes the nowrap
-  let $mkh = $host.'.exrc'
 endfunction
-" call GrabMK() makes  $vfs/*-*.exrc - tidied settings, including all the package mappings
 
 ""> layout
 " clearmatches (see  $jtCP/Vim/plugins/csv_vim/HiColumnLeaky/issue.md)

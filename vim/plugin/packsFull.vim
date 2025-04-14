@@ -173,6 +173,21 @@ nnoremap <expr> <C-Right> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoRight<CR>' :
 nnoremap <expr> <C-Up> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoUp<CR>' : '<C-Up>'
 nnoremap <expr> <C-Down> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoDown<CR>' : '<C-Down>'
 
+"">>>> safely toggle alignment
+function! RainbowAStoggle()
+  if b:RainbowAligned
+    let b:RainbowAligned = 0 " preset in  $vfv/ftplugin/csv.vim
+    silent! RainbowShrink
+  else
+    let b:RainbowAligned = 1
+    silent! RainbowAlign
+  endif
+endfunction
+command! RAST silent ! call RainbowAStoggle()
+nnoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? ':call RainbowAStoggle()<cr>' : '<f7>'
+inoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr>' : '<f7>'
+vnoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr>' : '<f7>'
+
 "">> SimpylFold
 " packadd SimpylFold
 " Python folding

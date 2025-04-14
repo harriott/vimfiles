@@ -1,6 +1,6 @@
 " vim: se nowrap:
 
-" generated from within Vim by  call GrabMK()
+" generated from within Vim by  :call Grab_exrc()
 
 let s:cpo_save=&cpo
 set cpo&vim

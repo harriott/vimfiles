@@ -1,6 +1,6 @@
 " vim: se nowrap:
 
-" generated from within Vim by  :call GrabMK()
+" generated from within Vim by  :call Grab_exrc()
 
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
