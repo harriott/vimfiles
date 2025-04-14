@@ -622,7 +622,7 @@ function! GrabAllCommands()
   normal! p
   write
 endfunction
-" for use in  $vfs/*-*-commands.txt
+" used in  $vimfiles/settings-active-nvim/unix-maps-fn.txt
 
 "">> grab Vim settings - all functions
 function! GrabAllFunctions()
@@ -635,7 +635,6 @@ function! GrabAllFunctions()
   normal! p
   write
 endfunction
-" for use in  $vfs/*-commands-*.txt
 
 "">> grab Vim settings - maps of Fn keys
 function! GrabBmmFn()
@@ -650,8 +649,9 @@ function! GrabBmmFn()
   normal! p
   write
 endfunction
-" $vimfiles/settings-active-nvim/unix-maps-fn.txt
-" won't catch buffer-specific maps
+" used in
+"  $vimfiles/settings-active-vim/vim-unix-functions.vim
+"  $vimfiles/settings-active-vim/vim-unix-maps-fn-active.txt
 
 "">> grab Vim settings - simple maps
 function! GrabSimpleMaps()
