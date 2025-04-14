@@ -71,7 +71,8 @@ return {
               -- keyword_length = 3, -- the default trigger length
             }, },
           -- { name = 'cmdline_history' },
-          { name = 'lazydev', group_index = 0, }, -- :LazyDev
+          { name = 'lazydev', group_index = 0,
+            }, -- :LazyDev, & completion source for require statements and module annotations
           { name = 'nvim_lsp' }, -- cmp-nvim-lsp
           { name = 'luasnip' },
           { name = 'nvim_lsp_signature_help' },
@@ -90,7 +91,7 @@ return {
         vim.g.cmp_on = not vim.g.cmp_on
         if vim.g.cmp_on then vim.notify('nvim-cmp on') else vim.notify('nvim-cmp off') end
       end)
-      vim.keymap.set("n", "<leader>ss", function() -- useful for  cmp-spell
+      vim.keymap.set("n", "<leader>cs", function() -- useful for  cmp-spell
         vim_opt_toggle("spell") end)
     end,
   },

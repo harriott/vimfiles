@@ -70,24 +70,25 @@ if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
 " extra tools in  $vfv/ftplugin/csv.vim
 "  & see  $vfv/after/plugin/packs.vim
 
+" $vfvp/packs-cp-full/opt/csv.vim/doc/ft-csv.txt
 " $vfvp/packs-cp-full/opt/csv.vim/ftdetect/csv.vim
-" :h ft-csv  ($vfvp/packs-cp-full/opt/csv.vim/doc/ft-csv.txt) the help
-
-packadd csv.vim
 
 "">>> column highlighting
 " :HiColumn [n]  " highlight column [n] using  WildMenu  syntax colour
 " :HiColumn!  " removes
 " - f7 toggle defined in  $vfv/ftplugin/csv.vim
 
+"">>>> global variables
+" automatic
+let g:csv_highlight_column = 'y'
+" - could be useful, but makes seeing the cursor difficult in  tomorrow
+
 " my preferred syntax colour
 let g:csv_hiGroup = 'Directory'  " good in my  Vim
 if has('nvim') | let g:csv_hiGroup = 'CursorLineNr' |
 elseif has("gui_running") | :let g:csv_hiGroup = 'DiffText' | endif
 
-" automatic
-let g:csv_highlight_column = 'y'
-" - could be useful, but makes seeing the cursor difficult in  tomorrow
+" none are set by default
 
 "">>> commands
 " :%Substitute 4,12/\./,/g
@@ -115,6 +116,16 @@ let g:csv_highlight_column = 'y'
 "  <enter>  hides away non-matching lines
 "  <backspace>  successively removes filters
 "  <space>  hides away matching lines
+
+"">>> configurations
+" :let g:csv_delim_test = ',;|'
+" :let b:delimiter
+
+" "">>> load
+" if !has('nvim')
+"   let g:csv_vim_loaded = 1 | packadd csv.vim
+"   " changes target of  :h ft-csv
+" endif
 
 "">> emmet-vim
 " EmmetInstall  for CSS/HTML
@@ -148,6 +159,19 @@ packadd neomutt.vim
 
 "">> Org.vim
 packadd org.vim
+
+"">> Rainbow CSV
+" $vfvp/packs-cp-full/opt/rainbow_csv/doc/rainbow_csv.txt
+" $vfvp/packs-cp-full/opt/rainbow_csv/README.md
+" :CSVLint
+" :RainbowAlign  :RainbowShrink  burst out and back, good for column operations
+packadd rainbow_csv
+
+"">>> keymaps requiring b:rbcsv
+nnoremap <expr> <C-Left> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoLeft<CR>' : '<C-Left>'
+nnoremap <expr> <C-Right> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoRight<CR>' : '<C-Right>'
+nnoremap <expr> <C-Up> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoUp<CR>' : '<C-Up>'
+nnoremap <expr> <C-Down> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoDown<CR>' : '<C-Down>'
 
 "">> SimpylFold
 " packadd SimpylFold
@@ -598,7 +622,7 @@ function! GrabAllCommands()
   normal! p
   write
 endfunction
-" for use in  $vfs/*-commands-*.txt
+" for use in  $vfs/*-*-commands.txt
 
 "">> grab Vim settings - all functions
 function! GrabAllFunctions()
@@ -626,7 +650,7 @@ function! GrabBmmFn()
   normal! p
   write
 endfunction
-" for use in  $vfs/*-FnMaps.txt
+" $vimfiles/settings-active-nvim/unix-maps-fn.txt
 " won't catch buffer-specific maps
 
 "">> grab Vim settings - simple maps

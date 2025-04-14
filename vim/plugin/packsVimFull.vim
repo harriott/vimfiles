@@ -50,6 +50,7 @@ endif
 " FZF  is the only command, hence  fzf.vim
 " $vfv/plugin/fzf/shell/completion.bash
 " $vfv/plugin/fzf/shell/key-bindings.bash
+" $vfv/plugin/fzf/bin/fzf-preview.sh
 
 ""> fzf - fzf.exe
 " :!fzf  to check that it's interactively finding files
@@ -57,6 +58,7 @@ endif
 " $HADL\Microsoft\WinGet\Links\fzf.exe  is found
 
 ""> fzf - fzf.vim
+" $vfvp/packs-cp-full/opt/fzf.vim/bin/preview.sh
 if has('unix')
   " $vfvp/packs-cp-full/opt/fzf.vim/doc/fzf-vim.txt
   " requires  :set shell  be unchanged from  cmd.exe
@@ -108,9 +110,10 @@ inoremap <s-f3> <Esc>:Commits<CR>
 vnoremap <s-f3> <Esc>:Commits<CR>
 
 ""> fzf - vim-fzf-dictionary
+" $vfvp/packs-cp-full/opt//vim-fzf-dictionary/README.md
 packadd vim-fzf-dictionary
 imap <c-d> <Plug>(fzf-dictionary-open)
-" no longer having any effect
+" - no longer having any effect
 
 ""> layout - clrzr
 " just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt

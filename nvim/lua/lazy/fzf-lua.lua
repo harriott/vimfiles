@@ -12,6 +12,7 @@
 --  f1 = toggle help
 --  f2 = toggle fullscreen
 --  f4 = toggle preview
+--  f5/f6 = cycle layouts
 
 -- ▩--> buffers
 -- :FzfLua blines

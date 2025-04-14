@@ -80,9 +80,9 @@ vim.opt.hlsearch = true
 vim.opt.updatetime = 250 -- decrease swap update time
 vim.opt.inccommand = 'split' -- preview substitutions as you type
 
--- Easier diagnostics:
-vim.keymap.set({'n'},'ç(', vim.diagnostic.goto_prev)
-vim.keymap.set({'n'},'ç)', vim.diagnostic.goto_next)
+-- Easier diagnostics on AZERTY:
+vim.keymap.set({'n'},'ç(', function() vim.diagnostic.jump({count= -1,float = true}) end, {desc='previous diagnostic'})
+vim.keymap.set({'n'},'ç)', function() vim.diagnostic.jump({count= 1,float = true}) end, {desc='next diagnostic'})
 
 -- ▩--> disable  netrw  for  nvim-tree
 vim.g.loaded_netrw = 1
@@ -122,9 +122,10 @@ require('lazy').setup(
       -- shows Nvim tabs as numbers to right
       -- l-mouse  selects
       -- r-mouse  drops
-    {'dstein64/nvim-scrollview',config=function() require'scrollview'.setup()
+    {'dstein64/nvim-scrollview', config=function() require'scrollview'.setup()
       vim.keymap.set({'n'},'<leader>sv',"<Cmd>ScrollViewToggle<CR>") end,},
       -- $lazy/nvim-scrollview/doc/scrollview.txt
+    -- {'gelguy/wilder.nvim', config=function() end,},
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
       -- $lazy/gitsigns.nvim/doc/gitsigns.txt
     {'MagicDuck/grug-far.nvim', config = function() require('grug-far').setup({}); end, },
@@ -136,6 +137,7 @@ require('lazy').setup(
     -- ▩---> moduled
     require'lazy/boole_nvim',
     -- require'lazy/catppuccin',
+    -- require'lazy/csvview_nvim',
     require'lazy/fzf-lua',
     require'lazy/harpoon',
     require'lazy/helpview_nvim', -- :h helpview.nvim-commands  :Helpview toggle
@@ -149,9 +151,11 @@ require('lazy').setup(
     require'lazy/nvim-web-devicons',
     require'lazy/oil',
     require'lazy/nvim-surround',
+    -- require'lazy/rainbow_csv_nvim',
     require'lazy/render-markdown_nvim',
     -- require'lazy/tabby',
     require'lazy/snipe_nvim',
+    require'lazy/snipe-spell',
     require'lazy/telescope', -- something in here slowing folding of large md's
       require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',
@@ -216,4 +220,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
       {buffer=ev.buf,desc='Lspsaga outline'})
   end,}) -- q
 -- can't figure how to include this in  $vfn/lua/lazy/lspsaga.lua
+
+-- ▩-> 2 for nvim-notify
+vim.notify('ready for :Notifications')
+
+-- -- ▩-> 2 for wilder
+-- vim.cmd("call wilder#setup({'modes': [':', '/', '?']})")
+-- vim.cmd("call wilder#set_option('renderer', wilder#popupmenu_renderer({ 'highlighter': wilder#basic_highlighter(), }))")
+-- -- but it's broken...
 

@@ -6,8 +6,8 @@
 
 $cf = "$vfv/getRepos/packs.clones"
 
-# #=> 0 $vfvp clones optionally update  packs.clones
-# sl $vfvp; . $misc/GRs/getClonesList.ps1 $cf; sl $vfv
+#=> 0 $vfvp clones optionally update  packs.clones
+sl $vfvp; . $misc/GRs/getClonesList.ps1 $cf; sl $vfv
 
 # #=> 1 clones remove
 # # see  $vfv/getRepos/unix.sh

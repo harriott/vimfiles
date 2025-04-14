@@ -15,6 +15,7 @@ Joseph's (g)Vim Quick Reference
     :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
     C /usr/share/nvim/runtime
+    :lua vim.notify('test notification')
     nvim -?
     nvim -v
 
@@ -44,6 +45,16 @@ Joseph's (g)Vim Quick Reference
 ### boolean
     lua b = true
     lua b = not b; print(b)
+
+### package.loaded
+    :echo luaeval('package.loaded["csvview"]') " v:null if not loaded
+    :h package.loaded
+    :lua print(package.loaded)
+    :lua print(package.loaded['csvview']) " nil  if not loaded
+
+#### tests
+    :if !empty(luaeval('package.loaded["csvview"]')) | echo 'loaded' | endif
+    :lua if package.loaded['csvview'] then print('loaded') end
 
 ### print(...)
     :lua print("Hello!")
@@ -106,7 +117,6 @@ Joseph's (g)Vim Quick Reference
 - `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
 
 ## settings
-
 `:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
 
 ### default-mappings
@@ -114,6 +124,10 @@ Joseph's (g)Vim Quick Reference
 
 - `<c-w>k` => `vim.diagnostic.open_float()`
 - `[d`/`]d`=> previous/next diagnostic
+
+## spell
+`\cs` = `cmp-spell` which underlines in red possible mistakes
+`\ss` = `snipe-spell` if `cword` is misspelled, get labelled picker
 
 ## terminal
     :lua vim.cmd.terminal()
@@ -170,6 +184,7 @@ $misc/CP/vimtest/README.md
 
 ## messages
     :mes
+    :mes clear
 
 - `:echo v:errmsg` - the last one
 - `g<` - review
@@ -218,6 +233,7 @@ $misc/CP/vimtest/README.md
     :se fenc=utf8          " fileencoding
     :se spc                " pattern for of a sentence
     :se ttm                " ms timeout for key codes
+    :se wop                " wildoptions
     :verb se tw            " shows where textwidth was set
 
     $VIMRUNTIME

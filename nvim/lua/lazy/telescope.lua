@@ -10,7 +10,9 @@
 -- Shows keymaps:
 --  insert mode: <c-/>
 --  normal mode: ?
--- $vfv/ftplugin/lua-nvim.vim  maps  =m  to show up my mappings
+-- $vfv/ftplugin/lua-nvim.vim  maps
+--  =c  show up my Telescope commands
+--  =k  show up my mappings
 
 return {
   { 'nvim-telescope/telescope.nvim',
@@ -82,12 +84,13 @@ return {
         vim.keymap.set({'n'},'<leader>lff',builtin.lsp_type_definitions,{desc=':Telescope lsp_type_definitions'})
 
       -- ▩---> shell
-      vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'})
-
-      vim.keymap.set({'n'},'<leader><leader><f1>',function() builtin.jumplist{show_line=false} end,
-        {desc='usable  :Telescope jumplist'})
-
       vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc=':Telescope man_pages'})
+
+      -- ▩----> files
+      local function tch_MRU() builtin.command_history({default_text="MRU \\.",}) end
+      vim.keymap.set({'n'},'<leader>m',tch_MRU,{desc=':Telescope command_history MRU .'})
+
+      vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'})
 
       vim.keymap.set({'n'},'<leader>j',function()
         if vim.g.djh == nil then
@@ -97,20 +100,21 @@ return {
         end
       end, {desc='cd $DJH (or just $coreIT)  then  :Telescope find_files'})
 
-      vim.keymap.set({'n'},'<leader>lg',":Telescope live_grep_args<CR>") -- rg based on cwd
+      -- ▩----> file contents
+      vim.keymap.set({'n'},'<leader><leader><f1>',function() builtin.jumplist{show_line=false} end,
+        {desc='usable  :Telescope jumplist'})
 
       vim.keymap.set({'n'},'<leader><leader>g',function()
           vim.cmd('cd %:p:h') vim.cmd('pwd') vim.fn.StripStoreCurSel()
           builtin.grep_string({search=vim.api.nvim_eval("g:strippedSearch")}) end,
         {desc='move cwd to file\'s and  :Telescope grep_string  on current search'})
 
-      local function tch_MRU() builtin.command_history({default_text="MRU \\.",}) end
-      vim.keymap.set({'n'},'<leader>m',tch_MRU,{desc=':Telescope command_history MRU .'})
-
       vim.keymap.set({'n'},'<leader><leader>r',function()
           vim.cmd('Rooter') vim.fn.StripStoreCurSel()
           builtin.grep_string({search=vim.api.nvim_eval("g:strippedSearch")}) end,
         {desc=':Rooter  then  :Telescope grep_string  on current search'})
+
+      vim.keymap.set({'n'},'<leader>lg',":Telescope live_grep_args<CR>") -- rg based on cwd
 
       -- ▩---> telescope
       vim.keymap.set({'n'},'<leader>pp',builtin.resume,{desc=':Telescope resume (= previous picker)'})

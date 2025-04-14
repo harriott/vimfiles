@@ -24,6 +24,7 @@ return {
       -- might get over failure to find  vim-language-server  on  win64
     config = function()
 
+      -- configurations in  $lazy/nvim-lspconfig/doc/configs.md
       -- try
         -- :MasonInstall emmet-language-server
           -- for  css, html, less, sass, scss
@@ -48,28 +49,29 @@ return {
       if vim.fn.has("win64") == 1 then require'lspconfig'.lemminx.setup{} end
 
       -- ▩-> ltex
-      -- for human language inside a few markup languages
+      -- for human languages within a few markup languages
       -- :MasonInstall ltex-ls
       -- :MasonUninstall ltex-ls
       require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
       -- can take a while, then underlines possible errors
+      -- ignores  nospell
 
       -- ▩-> lua_ls
       -- :MasonInstall lua-language-server
         -- :MasonUninstall lua-language-server  with no lua files open instead of updating
       require'lspconfig'.lua_ls.setup {
-          on_init = function(client)
-              local path = client.workspace_folders[1].name
-              if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-                  client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-                      runtime = { version = 'LuaJIT' },
-                      workspace = { library = { vim.env.VIMRUNTIME } },
-                  })
-                  client.notify("workspace/didChangeConfiguration",
-                    { settings = client.config.settings })
-              end return true
-          end, -- https://www.reddit.com/r/neovim/comments/15owd43/comment/jvvswah/
-          settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
+        on_init = function(client)
+          local path = client.workspace_folders[1].name
+          if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+            client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+              runtime = { version = 'LuaJIT' },
+              workspace = { library = { vim.env.VIMRUNTIME } },
+            })
+            client.notify("workspace/didChangeConfiguration",
+              { settings = client.config.settings })
+          end return true
+        end, -- https://www.reddit.com/r/neovim/comments/15owd43/comment/jvvswah/
+        settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
         } -- and see fix in  $vfn/lua/init.lua
 
       -- ▩-> mdx_analyzer
@@ -129,11 +131,8 @@ return {
       require'lspconfig'.texlab.setup{}
 
       -- ▩-> keymaps
-      vim.keymap.set({'n'},'<localleader>[', function() vim.diagnostic.jump({count= -1,float = true}) end, {desc='jump to & show previous diagnostic'})
-      vim.keymap.set({'n'},'<localleader>]', function() vim.diagnostic.jump({count= 1,float = true}) end, {desc='jump to & show next diagnostic'})
-
       vim.keymap.set({'n'},'<localleader>r', function() vim.cmd('LspRestart') print('LspRestart\'d') end,{desc=':LspRestart'})
-      vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'})
+      vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'}) -- no generic way to disable on opening a specific file
 
     -- ▩-> end
     end,

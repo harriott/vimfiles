@@ -607,6 +607,9 @@ autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <E
     autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* silent! %s/^> */>/g | go
 
 ""> registers - named
+" @h @l @s  used by  StripStoreCurSel()
+" reg abcdefghijklmnopqrstuvwxyz
+
 " call ClearNamedRegisters()
 function! ClearNamedRegisters()
   let nrs=split('a b c d e f g h i j k l m n o p q r s t u v w x y z')
@@ -625,8 +628,6 @@ function! SetNamedRegisters()
   let nrs=split('a b c d e f g h i j k l m n o p q r s t u v w x y z')
   for nr in nrs | exec 'let @'.nr.'="'.nr.'"' | endfor
 endfunction
-
-" reg abcdefghijklmnopqrstuvwxyz
 
 ""> registers - easy q macro
 if v:lang =~ 'en'
@@ -689,6 +690,8 @@ function! StripStoreCurSel()
   " remove '\<' & '\>' (:s#\(^\\<\|\\>$\)##g):
   let g:strippedSearch = substitute(@h, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
   let @s = g:strippedSearch
+  " escape spaces for  FzfLua grep
+  let @b = substitute(@s, " ", "\\\\ ", "g")
 endfunction
 
 " cd to file's and vimgrep for last search

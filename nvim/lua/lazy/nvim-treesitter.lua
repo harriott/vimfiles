@@ -22,7 +22,8 @@ return {
 
       highlight = { -- parser configurations - see  $vfn/lua/init.lua
         -- enable = true, -- when true, large md's fold slowly
-        disable = {'bash','lua','markdown','muttrc','vim',},
+        disable = {'bash','csv','lua','markdown','muttrc','vim',},
+          -- csv  overrides  csvview_nvim, Rainbow CSV, rainbow_csv.nvim
           -- large md's fold slowly
           -- my  lua  &  vim  fold syntax are definitively lost
         enable = {'perl',},

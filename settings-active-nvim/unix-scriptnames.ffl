@@ -2,7 +2,7 @@ vim: set nowrap:
 
 Two choices to paste below:
 
-	:call GrabScriptnames() " (in $vfv/plugin/plugin.vim, using Bufferize)
+	:call GrabScriptnames() " (in  $vfv/plugin/packsFull.vim, using  Bufferize)
 	:redir @s | silent scr | redir END | exe "normal! \"sp"
 
   1: /usr/share/nvim/runtime/ftplugin.vim

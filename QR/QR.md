@@ -7,6 +7,8 @@ Joseph's (g)Vim Quick Reference
     $ $vimfiles/QR> m4ps 0 1
     $vimfiles/QR/QR.md
 
+    $vimfiles/test/scratch.vim
+
     :h quickref
     :helptags ALL
 
@@ -59,10 +61,12 @@ Joseph's (g)Vim Quick Reference
     :h :g         " global
     :h :v         " vglobal (=  :g!)
 
+after a search, `:v//d` removes all non-matching lines
+
 # layout
     :h CTRL-L
     :Prettier     " apply  prettier  to json & others
-    :se et        " expandtab - allows  :retab
+    :se et?       " expandtab - allows  :retab
     :se ch        " cmdheight
     :set cole=0   " conceallevel
     :se cwh       " cmdwinheight - I like 30
@@ -478,6 +482,7 @@ gx                    " open url under cursor (or all of first line of markdown 
 :e ++ff=dos | set ff=unix | w!  " remove CRLFs
 :e.                             " dirvish (or netrw) on current directory
 :f  or  c-g                     " relative filename (:h :f)
+:o                              " oldfiles
 \<f11>                          " last modification time
 \vg                             " cd to file's and vimgrep for last search
 gf                              " open file under cursor - :h gF

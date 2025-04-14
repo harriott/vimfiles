@@ -1,0 +1,109 @@
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimAll.vim ⋮nnoremap <F10> :cd %:p:h<CR>:NERDTreeCWD<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimAll.vim ⋮inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsFull.vim ⋮nnoremap <F3> :call StripStoreCurSel()<CR>:Ggrep -i "<C-R>s" <bar>cw
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsFull.vim ⋮nnoremap <F6> :execute "normal \<Plug>(openbrowser-smart-search)"<bar>silent !nsBt<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsFull.vim ⋮vmap <F6> <Plug>(openbrowser-smart-search)
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  nnoremap <f1> :FuzzyBuffers<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  inoremap <f1> <Esc>:FuzzyBuffers<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  vnoremap <f1> <Esc>:BuffFuzzyers<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  nnoremap <F8> :FuzzyCmdHistory<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  inoremap <F8> <Esc>:FuzzyCmdHistory<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  vnoremap <F8> <Esc>:FuzzyCmdHistory<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  nnoremap <S-F9> call popup_clear(1):<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  nnoremap <f1> :Buffers<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  inoremap <f1> <Esc>:Buffers<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  vnoremap <f1> <Esc>:Buffers<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  nnoremap <F8> :History:<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  inoremap <F8> <Esc>:History:<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  vnoremap <F8> <Esc>:History:<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  nnoremap <F9> :History/<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  inoremap <F9> <Esc>:History/<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  vnoremap <F9> <Esc>:History/<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮  nnoremap <s-f1> :Jumps<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮nnoremap <s-f3> :Commits<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮inoremap <s-f3> <Esc>:Commits<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/packsVimFull.vim ⋮vnoremap <s-f3> <Esc>:Commits<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ nnoremap <buffer> <F4> :wa<CR>:q<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮autocmd BufRead,BufNewFile /.git/COMMIT_EDITMSG/ inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮nnoremap <F5> :wa<CR>:edit<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮inoremap <F5> <Esc>:wa<CR>:e<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮vnoremap <F5> <Esc>:wa<CR>:e<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮autocmd BufRead,BufNewFile /tmp/.nnn* nnoremap <buffer> <F4> :wa<CR>:q<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮autocmd BufRead,BufNewFile /tmp/.nnn* inoremap <buffer> <F4> <Esc>:wa<CR>:q<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <F12> :%s#^name="\v(.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)\n(^.*$)#name="\1â\2â\3â\4â\5â\6#g <bar> nohlsearch <CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮autocmd BufRead,BufNewFile *msgFilterRules.dat nnoremap <buffer> <S-F12> :%s#^name="\v(.*)â(.*)â(.*)â(.*)â(.*)â(.*)$#name="\1\r\2\r\3\r\4\r\5\r\6#g<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮inoremap <leader><leader><f5> :call clearmatches()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮nnoremap <leader><leader><f5> :call clearmatches()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮inoremap <leader><f5> :<Esc>syntax sync fromstart<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮nnoremap <leader><f5> :syntax sync fromstart<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* inoremap <buffer> <F4> <Esc>:call BackupQuit()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮nnoremap <silent><leader><F11> :echo strftime('%c',getftime(expand('%')))<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮inoremap <silent><leader><F11> <Esc>:echo strftime('%c',getftime(expand('%')))<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮vnoremap <silent><leader><F11> <Esc>:echo strftime('%c',getftime(expand('%')))<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮nnoremap <leader><f12> :call OpenInEmacs()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮inoremap <leader><f12> :<Esc>call OpenInEmacs()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮nnoremap <F2> :wa<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮inoremap <F2> <Esc>:wa<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮vnoremap <F2> <Esc>:wa<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮inoremap <F3> <Esc>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/plugin/plugin.vim ⋮inoremap <S-F2> <Esc>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc-Arch.vim ⋮  noremap <F11> :silent !dolphin %:p:h &<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc-Arch.vim ⋮  imap <F11> <Esc><F11>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc-Arch.vim ⋮  noremap <F11> :cd %:p:h<CR><bar>:silent !pcmanfm &<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc-Arch.vim ⋮  imap <F11> <Esc><F11>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc.vim ⋮nnoremap <f4> :call VimWriteClose()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc.vim ⋮inoremap <f4> <Esc>:call VimWriteClose()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc.vim ⋮vnoremap <f4> <Esc>:call VimWriteClose()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc.vim ⋮nnoremap <leader><f4> :Bdelete other<CR>:sleep<CR>:call VimWriteClose()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc.vim ⋮inoremap <leader><f4> <Esc>:Bdelete other<CR>::sleep<CR>call VimWriteClose()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc-Win10.vim ⋮nnoremap <F11> :!start explorer %:p:h<CR><CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/enter/vimrc-Win10.vim ⋮inoremap <F11> <Esc><F11>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/php/phpfolding.vim ⋮"       map <F5> <Esc>:EnableFastPHPFolds<Cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/php/phpfolding.vim ⋮"       map <F6> <Esc>:EnablePHPFolds<Cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/php/phpfolding.vim ⋮"       map <F7> <Esc>:DisablePHPFolds<Cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/fugitive.vim ⋮  nnoremap <buffer><f1> :Buffers<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/csv.vim ⋮  nnoremap <buffer><f7> :call CVCT()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/csv.vim ⋮    nnoremap <buffer><f7> :CsvViewToggle<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/csv.vim ⋮  nnoremap <silent><buffer><f7> :call RainbowAligned()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/csv.vim ⋮  inoremap <silent><buffer><f7> <esc>:call RainbowAligned()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/csv.vim ⋮  vnoremap <silent><buffer><f7> <esc>:call RainbowAligned()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮  nnoremap <buffer><F12> :call CompiledPDF()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮nnoremap <buffer><leader><F7> :call TabularFullAlign()<CR><Bar>:update<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮inoremap <buffer><leader><F7> <Esc>:call TabularFullAlign()<CR><Bar>:update<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮  nnoremap <silent><buffer><leader><F7> :call PHMatch()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮  inoremap <silent><buffer><leader><F7> <Esc>:call PHMatch()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮  vnoremap <silent><buffer><leader><F7> <Esc>:call PHMatch()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮  nnoremap <silent><buffer><leader><F7> :call LaTeXsyntaxFolding()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮  inoremap <silent><buffer><leader><F7> <Esc>:call LaTeXsyntaxFolding()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮  vnoremap <silent><buffer><leader><F7> <Esc>:call LaTeXsyntaxFolding()<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tex.vim ⋮  nnoremap <localleader><f5> :let &cole=(&cole == 2) ? 0 : 2 <bar> echo 'conceallevel ' . &cole <CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/md.vim ⋮  nnoremap <buffer> <F12> :call CompiledPDF()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/md.vim ⋮  nnoremap <buffer><leader><leader><F7> :execute "silent !perl $misc/CP/PerlTools/MessengerMd.pl ".expand('%:p')<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/md.vim ⋮  nnoremap <buffer><leader><leader><F7> :call MessengerMd()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/md.vim ⋮" check with  :map <leader><leader><F7>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/md.vim ⋮  nnoremap <buffer><leader><f7> :execute "silent !perl $misc/CP/PerlTools/mysmsMd.pl ".expand('%:p')<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/md.vim ⋮  nnoremap <buffer><leader><f7> :call MysmsMd()<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/md.vim ⋮  " - check with  :map <leader><f7>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/nvim/lua/lazy/fzf-lua.lua ⋮    vim.keymap.set({'n'},'<s-f1>','<Cmd>FzfLua buffers<CR>')
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/muttaliases.vim ⋮nnoremap <buffer> <F7> gg2jVG:sort u <cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/nvim/lua/lazy/telescope.lua ⋮      vim.keymap.set({'n'},'<leader><f1>',function() builtin.buffers{sort_mru=true} end,{desc=':Telescope buffers'})
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/nvim/lua/lazy/telescope.lua ⋮      vim.keymap.set({'n'},'<leader><leader><f1>',function() builtin.jumplist{show_line=false} end,
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/nvim/lua/lazy/telescope.lua ⋮      vim.keymap.set({'n','i','v'},'<f8>',builtin.command_history,{desc=':Telescope command_history'})
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/nvim/lua/lazy/telescope.lua ⋮      vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc=':Telescope search_history'})
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/nvim/lua/lazy/snipe_nvim.lua ⋮    vim.keymap.set({'n'},'<f1>',function() snipe.open_buffer_menu() end,{desc = "Open Snipe buffer menu", }),
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tbmo.vim ⋮nnoremap <buffer><f7> :s/\n/, / <bar> nohlsearch <CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/ftplugin/tbmo.vim ⋮nnoremap <buffer><s-f7> :s/, /\r/g <bar> nohlsearch <CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/nvim/lua/lazy/oil.lua ⋮      vim.keymap.set({'i','n','v'},'<leader><f10>',
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/nvim/lua/lazy/nvim-tree.lua ⋮      vim.keymap.set({'i','n'},'<f10>',function()vim.cmd('NvimTreeFindFileToggle!')end,
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-all/opt/supertab/plugin/supertab.vim ⋮  "   nmap <F6> :call SetSuperTabCompletionType("<c-p>")<cr>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/bufexplorer/plugin/bufexplorer.vim ⋮"                   nnoremap <silent> <F11> :BufExplorer<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/bufexplorer/plugin/bufexplorer.vim ⋮"                   nnoremap <silent> <s-F11> :ToggleBufExplorer<CR>
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/bufexplorer/plugin/bufexplorer.vim ⋮    nmap <nowait> <buffer> <F1>             <Plug>(BufExplorer_ToggleHelp)
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/fern.vim/autoload/fern/mapping/node.vim ⋮    nmap <buffer><nowait> <F5> <Plug>(fern-action-reload)
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/unicode.vim/plugin/unicode.vim ⋮        nmap <F4> <Plug>(MakeDigraph)
+/mnt/SDU3D1TB/Dropbox/JH/core/IT/onGitHub/vimfiles/vim/packs/packs-cp-full/opt/unicode.vim/plugin/unicode.vim ⋮        vmap <F4> <Plug>(MakeDigraph)
+/home/jo/.local/share/nvim/lazy/rainbow_csv.nvim/lua/rainbow_csv/fns.lua ⋮		vim.keymap.set('n', '<F5>', M.finish_query_editing, { noremap = true, buffer = true })
+/home/jo/.local/share/nvim/lazy/rainbow_csv.nvim/lua/rainbow_csv/fns.lua ⋮		vim.keymap.set('n', '<F7>', function()
+/home/jo/.local/share/nvim/lazy/rainbow_csv.nvim/lua/rainbow_csv/fns.lua ⋮		vim.keymap.del('n', '<F5>', { buffer = true })
+/home/jo/.local/share/nvim/lazy/rainbow_csv.nvim/lua/rainbow_csv/fns.lua ⋮		vim.keymap.set('n', '<F5>', M.select_from_file, { noremap = true, buffer = true })

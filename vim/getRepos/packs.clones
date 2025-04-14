@@ -108,6 +108,7 @@ packs-cp-full/opt/listtoggle https://github.com/valloric/listtoggle
 packs-cp-full/opt/listtoggle https://github.com/valloric/listtoggle
 packs-cp-full/opt/MatchTagAlways https://github.com/Valloric/MatchTagAlways
 packs-cp-full/opt/MatchTagAlways https://github.com/Valloric/MatchTagAlways
+packs-cp-full/opt/mechatroner/rainbow_csv https://github.com/mechatroner/rainbow_csv
 packs-cp-full/opt/mediawiki.vim https://github.com/chikamichi/mediawiki.vim
 packs-cp-full/opt/mediawiki.vim https://github.com/chikamichi/mediawiki.vim
 packs-cp-full/opt/minimap.vim https://github.com/wfxr/minimap.vim

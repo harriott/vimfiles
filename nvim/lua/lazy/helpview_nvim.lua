@@ -6,7 +6,7 @@
 
 -- $lazy/helpview.nvim/README.md
 -- $lazy/helpview.nvim/helpview.nvim.wiki/Home.md
--- v  toggles
+-- v  toggles, but see  $vfv/ftplugin/help.vim
 
 return { 'OXY2DEV/helpview.nvim',
   lazy = false,
