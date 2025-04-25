@@ -1,6 +1,9 @@
---
+
+-- Joseph Harriott - https://harriott.github.io/ - Fri 25 Apr 2025
+
+-- $lazy/nvim-cmp/doc/cmp.txt
 -- $vfn/lua/lazy/nvim-cmp.lua
--- started from  $DCGRs/d-CP/d-Vim-Nvim/r-dam9000-kickstart-modular.nvim/lua/kickstart/plugins/cmp.lua
+-- :CmpStatus
 
 return {
   { 'hrsh7th/nvim-cmp',
@@ -65,12 +68,12 @@ return {
         },
         snippet = { expand = function(args) luasnip.lsp_expand(args.body) end, },
         sources = cmp.config.sources( {
-          { name = 'buffer',
+          { name = 'buffer', -- cmp-buffer
             option = {
               get_bufnrs = function() return vim.api.nvim_list_bufs() end, -- all buffers
-              -- keyword_length = 3, -- the default trigger length
+              keyword_length = 2, -- trigger length (default 3)
+              keyword_pattern = [[\k\+]], -- finds accented words
             }, },
-          -- { name = 'cmdline_history' },
           { name = 'lazydev', group_index = 0,
             }, -- :LazyDev, & completion source for require statements and module annotations
           { name = 'nvim_lsp' }, -- cmp-nvim-lsp
@@ -82,7 +85,6 @@ return {
               enable_in_context = function() return true end,
               preselect_correct_word = true,
             }, }, -- doesn't do anything in French
-          { name = 'treesitter' },
           { name = 'vimtex', },
         }), -- triggers the popups
       }

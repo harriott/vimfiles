@@ -80,7 +80,6 @@ let $HADR = $HOME.'\AppData\Roaming'
       let $ulLA = $ulL.'\Arch'
     let $vimfiles = $onGH.'\vimfiles'
       let $vfn = $vimfiles.'\nvim'
-      let $vfs = $vimfiles.'\settings'
       let $vfv = $vimfiles.'\vim'
         let $vfvp = $vfv.'\packs'
 

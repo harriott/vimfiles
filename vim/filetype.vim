@@ -26,6 +26,9 @@ au BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
 ""> 0 my Arch Bash history
 au BufNewFile,BufRead ~/Arch/bash_history setlocal filetype=sh
 
+""> 0 my CCh backups
+au BufNewFile,BufRead $machLg/CHh/* setlocal filetype=ps1
+
 ""> 0 nomacs configuration
 au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dosini
 

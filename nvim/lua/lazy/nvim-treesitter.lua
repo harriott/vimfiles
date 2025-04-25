@@ -22,10 +22,11 @@ return {
 
       highlight = { -- parser configurations - see  $vfn/lua/init.lua
         -- enable = true, -- when true, large md's fold slowly
-        disable = {'bash','csv','lua','markdown','muttrc','vim',},
+        disable = {'bash','csv','lua','markdown','muttrc','tsv','vim',},
           -- csv  overrides  csvview_nvim, Rainbow CSV, rainbow_csv.nvim
           -- large md's fold slowly
           -- my  lua  &  vim  fold syntax are definitively lost
+          -- tsv  overrides  Rainbow CSV
         enable = {'perl',},
           -- bad
             -- diff      layout isn't preferable
@@ -84,12 +85,12 @@ return {
 }
 
 -- ▩-> parsers on unix
-  -- $vfs/nvim-unix-TSInstallInfo-DOP3040D11S.txt
-  -- $vfs/nvim-unix-TSInstallInfo-sbMb.txt
+  -- $vimfiles/settings-active-nvim/unix-TSInstallInfo-DOP3040D11S.txt
+  -- $vimfiles/settings-active-nvim/unix-TSInstallInfo-sbMb.txt
   -- /usr/lib/tree_sitter
   -- r $lazy/nvim-treesitter/parser
 
 -- ▩-> parsers on win64
-  -- $vfs/nvim-win64-TSInstallInfo-HPEB840G37.txt
+  -- $vimfiles/settings-active-nvim/win64-TSInstallInfo-HPEB840G37.txt
   -- g $lazy\nvim-treesitter\parser
 

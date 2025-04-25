@@ -406,7 +406,9 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
     \\q                         " search in my QuickReference notes
 	\C (anywhere)               " force case
 	\c (anywhere)               " ignore case
+	\k                          " iskeyword
     \vs                         " last search in escaped visual selection
+    :h %(
     planet\(Awesome\|Terrible\) " planetAwesome or planetTerrible
 	text\|alt                   " searches for text & alt
 
@@ -528,8 +530,26 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
     :tabclose
 
 # text objects
-    ci> " change inside angle brackets
-    ci} " change inside curly braces
+    c<text_object>
+    v<text_object>
+
+`targets.vim`
+
+## objects
+    a<object_trigger> " an object
+    i<object_trigger> " inner object
+
+## triggers
+    " ' `
+    p s w W
+
+`t` tag block
+
+### parenthesis
+`b` (= `)` = `(`)
+`B` (= `}` = `{`)
+`[` (= `]`)
+`<` (= `>`)
 
 # tricks
     :%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends

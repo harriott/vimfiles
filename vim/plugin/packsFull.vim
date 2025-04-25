@@ -660,7 +660,7 @@ function! GrabSimpleMaps()
   normal! p
   write
 endfunction
-" for use in  $vfs/*-simpleMaps-*.txt
+" for use in  $vimfiles/settings-maps-all/*-simpleMaps-*.txt
 
 "">> grab Vim settings - scriptnames
 function! GrabScriptnames()
@@ -672,7 +672,7 @@ function! GrabScriptnames()
   normal! p
   write
 endfunction
-" for use in  $vfs/*-scriptnames-*.ffl
+" for use in  $vimfiles/settings-maps-all/*-scriptnames-*.ffl
 
 ""> vim - buffers - vim-bufkill
 " :BB :BF  could be mapped to replace some of the functionality of  vim-buffing-wheel
