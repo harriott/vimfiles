@@ -2,7 +2,7 @@
 
 " Language: markdown
 " Maintainer: Joseph Harriott
-" Last Change: dim 12 mai 2024
+" Last Change: Tue 29 Apr 2025
 " $vfv/ftplugin/markdown.vim
 "  supplementary to
 "   $vfvp/packs-cp-full/opt/vim-markdown/README.md
@@ -33,6 +33,10 @@ nnoremap <buffer><localleader>b viwc****<Esc>hP
 
 " folding by header marks
 source $vfv/ftplugin/HashFolding.vim
+
+" outline.nvim
+noremap <buffer><leader>o :Outline<CR>
+" $vfn/lua/lazy/outline_nvim.lua
 
 " Vim Markdown
 setlocal conceallevel=2

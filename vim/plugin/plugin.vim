@@ -513,7 +513,12 @@ nnoremap z? :exe ':spellrare  '.expand('<cWORD>')<CR>
 "  overriden by  vim-airline  extension  tabline
 
 " toggle centering current line
-nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
+if has('nvim')
+  " $vfn/lua/lazy/stay-centered_nvim.lua
+else
+  nnoremap <leader>zz :let &scrolloff=999-&scrolloff<CR>
+  " disables  H  T  zb  zt
+endif
 
 " toggle cursorcolumn:
 nnoremap <silent><leader><leader>c :set cuc! cuc? <CR>
