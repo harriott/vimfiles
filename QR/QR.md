@@ -498,10 +498,13 @@ se ff                           " fileformat
 :Vexplore  " vertical split and explore
 ```
 
-## open webpages
+## WAN
+get text of site into buffer: `:r!w3m -dump https://unixtime.org/`
+
+### open webpages
 	F6 " open a uURL using open-browser.vim
 
-### vim-open-url
+#### vim-open-url
 	gB " open URL
 	gS " search word
 	gW " search Wikipedia

@@ -129,9 +129,14 @@ Joseph's (g)Vim Quick Reference
 `\ss` = `snipe-spell` if `cword` is misspelled, get labelled picker
 
 ## terminal
+`lynx`, `w3m` override Nvim's keys...
+
+### in current window
     :lua vim.cmd.terminal()
+    :te  " :terminal
+
+### in split
     :sp +te
-    :te  " :terminal  in current window
     :vs +te
 
 # Vim

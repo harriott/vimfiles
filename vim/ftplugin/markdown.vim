@@ -13,6 +13,10 @@
 "  $VIMRUNTIME/filetype.vim
 "  $vfvp/packs-cp/opt/vim-markdown/ftdetect/markdown.vim
 
+" see also
+"  $vfv/ftplugin/md.vim
+"  $vfn/lua/lazy/markdown-preview.lua
+
 setlocal expandtab
 
 " disable filter

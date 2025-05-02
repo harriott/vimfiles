@@ -1,4 +1,4 @@
--- vim: fdl=3:
+-- vim: fdl=4:
 
 -- $vfn/lua/lazy/leap.lua
 

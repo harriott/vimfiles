@@ -143,6 +143,7 @@ require('lazy').setup(
     require'lazy/helpview_nvim', -- :h helpview.nvim-commands  :Helpview toggle
     require'lazy/leap',
     require'lazy/lualine',
+    require'lazy/markdown-preview',
     require'lazy/neogit',
     -- require'lazy/nvim-hlslens',
     require'lazy/nvim-cmp', -- $vfn/lua/lazy/nvim-cmp.lua
