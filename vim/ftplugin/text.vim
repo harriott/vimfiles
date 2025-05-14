@@ -5,6 +5,8 @@
 " Last Change: Sun 21 Apr 2024
 " $vfv/ftplugin/text.vim  - supplementary to  $VIMRUNTIME/ftplugin/text.vim
 
+" also  $vfv/syntax/text.vim
+
 setlocal expandtab
 " textwidth=0  is defined in  $vfvrc_example.vim
 

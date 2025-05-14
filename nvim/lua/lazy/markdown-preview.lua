@@ -2,6 +2,9 @@
 
 -- $vfn/lua/lazy/markdown-preview.lua
 
+-- requires  corepack enable  on the system
+--  sudo rm -r $lazy/markdown-preview.nvim  then  Lazy  will build it on next launch of  Nvim
+
 -- $lazy/markdown-preview.nvim/README.md
 
 -- $vfv/ftplugin/markdown.vim
@@ -18,6 +21,7 @@ return { "iamcco/markdown-preview.nvim", -- :Lazy update  might fail
   ft = { "markdown" },
   config = function()
     vim.keymap.set('n','<f7>','<Cmd>MarkdownPreview<CR>') -- for all markdowns
+      -- not taking on  HPEB840G37...
       -- just closing the browser window when done turns it off globally
   end,
 }

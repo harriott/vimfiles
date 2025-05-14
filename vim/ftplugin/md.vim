@@ -33,6 +33,14 @@ endif
 " go file when square bracketed
 nnoremap <buffer>gF vi[gf
 
+""> convert DokuWiki file
+" was for use in  $coreIT/JHdocs
+function! ConvertDWmd()
+  " Bash code, but comments therein interpreted as folds...
+  %s#^</code>$#```
+  %s/^<code bash>$/```bash
+endfunction
+
 ""> convert messenger screen scrape to markdown
 "  (I'm using <leader> here to avoid accidentally running this)
 if has('unix') " should really be asking if Perl is available

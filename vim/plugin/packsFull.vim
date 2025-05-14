@@ -189,6 +189,7 @@ inoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr
 vnoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr>' : '<f7>'
 
 "">> SimpylFold
+" $vfvp/packs-cp-full/opt/SimpylFold/README.md
 " packadd SimpylFold
 " Python folding
 

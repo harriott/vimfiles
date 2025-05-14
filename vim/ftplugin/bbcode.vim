@@ -14,7 +14,7 @@ source $vfv/ftplugin/HashFolding.vim
 setlocal foldcolumn=1
 
 ""> tags - inline code
-" [color=navy]this ain't readable in dark themes[/color]
+" [color=navy]this ain't readable in dark themes[/color], so I'm leveraging insert
 
 " wrap the inner word under cursor
 nnoremap <buffer> <leader><leader>] viwc[ins][/ins]<Esc>bbp
@@ -23,6 +23,8 @@ nnoremap <buffer> <leader><leader>] viwc[ins][/ins]<Esc>bbp
 vnoremap <buffer> <leader><leader>] c[ins][/ins]<Esc>bbp
 
 ""> tags - code
+" Sets the content in a code box!
+
 " wrap the inner word under cursor
 nnoremap <buffer> <leader>] viwc[code][/code]<Esc>bbp
 

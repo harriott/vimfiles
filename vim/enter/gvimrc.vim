@@ -8,6 +8,8 @@
 
 let g:sourced_gvimrc_vim = 1
 
+if has('unix') | set imdisable | endif  " $jtULl/Arch/IBUS-WARNING.bbcode
+
 ""> 0 preliminaries
 " adapted from  $VIMRUNTIME/gvimrc_example.vim
 

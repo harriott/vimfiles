@@ -37,6 +37,7 @@ cd $vfv
 # cd $vfvp
 # msv="$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
 # [ -f $msv ] && rm -r $msv  # temporarily, because it's got no .git
+# # sf='SimpylFold'
 # # sf='vim-dokuwiki'
 # # sf='vim-gfm-syntax'
 # # once=yes
@@ -59,6 +60,10 @@ cd $vfv
 # done <"$cf"
 # echo 'Now check the forks!' # incase they've fallen behind their upstreams
 # echo
+
+#=> 3 fix SimpylFold
+ft=$vfvp/packs-cp-full/opt/SimpylFold/ftplugin; cy=$ft/cython
+cp -Lr $cy $ft/c; rm -r $cy; mv $ft/c $cy
 
 #=> 3 fix vim-ShowTrailingWhitespace
 sed -i 's/^c/" c/' $vfvp/packs-cp-full/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_ShowTrailingWhitespace.vim

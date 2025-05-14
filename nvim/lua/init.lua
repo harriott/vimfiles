@@ -101,7 +101,7 @@ vim.g.rmn_on = true -- $vfn/lua/lazy/nvim-cmp.lua
 
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
--- :h lazy.nvim
+-- :h lazy.nvim  internal links broken by fancy glyphs, so search manually
 -- :Lazy update
 require 'lazy/bootstrap'
 

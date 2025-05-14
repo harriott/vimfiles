@@ -652,7 +652,6 @@ g<Ctrl-G>  " statistics
 ### files
     :spelld  " (= spelldump) from a file with  spell  active, splits down a buffer with the vast list (en > 174k, fr > 667k) and source filenames
 
-
 #### .add files
     $vfv/spell/en.utf-8.add
     $vfv/spell/fr.utf-8.add

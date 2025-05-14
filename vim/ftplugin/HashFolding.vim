@@ -22,3 +22,5 @@ endfunction
 
 setlocal foldexpr=HashFold() foldmethod=expr
 
+" Can't see how I could easily exclude comments in code blocks...
+

@@ -6,6 +6,12 @@
 "   $VIMRUNTIME/filetype.lua
 "   $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
 
+""> 0 $MSWml/CHh
+au BufNew,BufNewFile,BufRead $coreIT/MSWin/ml-*/CHh/* setlocal filetype=ps1
+
+""> 0 /usr/share/applications/mimeinfo.cache
+au BufNew,BufNewFile,BufRead /usr/share/applications/mimeinfo.cache setlocal filetype=dosini
+
 ""> 0 aesl - Thymio's Aseba code
 "  I suppose that sgml filetype might be more appropriate,
 "   but I use xml filetype because it has folding
@@ -27,7 +33,9 @@ au BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
 au BufNewFile,BufRead ~/Arch/bash_history setlocal filetype=sh
 
 ""> 0 my CCh backups
-au BufNewFile,BufRead $machLg/CHh/* setlocal filetype=ps1
+
+""> 0 my tmux.conf backups
+au BufNew,BufNewFile,BufRead $ulLA/ml-*/tmux/**/*.conf setlocal filetype=tmux
 
 ""> 0 nomacs configuration
 au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dosini
