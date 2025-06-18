@@ -3,13 +3,17 @@
 -- $vfn/lua/lazy/markdown-preview.lua
 
 -- requires  corepack enable  on the system
---  sudo rm -r $lazy/markdown-preview.nvim  then  Lazy  will build it on next launch of  Nvim
+
+-- :Lazy update  might fail, if so
+--   $ sudo rm -r $lazy/markdown-preview.nvim
+--   PS> remove-itemsafely $lazy/markdown-preview.nvim
+--  then  Lazy  will build it on next launch of  Nvim
 
 -- $lazy/markdown-preview.nvim/README.md
 
 -- $vfv/ftplugin/markdown.vim
 
-return { "iamcco/markdown-preview.nvim", -- :Lazy update  might fail
+return { "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   build = "cd app && yarn install",
   init = function()

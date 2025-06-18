@@ -13,11 +13,9 @@
 "  $VIMRUNTIME/filetype.vim > TeX
 
 " Syntax: can't seem to add my own supplemental  tex.vim
-"
+
 " open compiled pdf
   nnoremap <buffer><F12> :call CompiledPDF()<CR>
-" convert md url
-  nnoremap <buffer><localleader>< :s/</\\url{/<bar>s/>/}/<bar>nohls<CR>
 
 " EasyAlign  mappings for  tabular  environment
 nnoremap <buffer><leader><F7> :call TabularFullAlign()<CR><Bar>:update<CR>
@@ -37,6 +35,10 @@ nnoremap <buffer><localleader>r :s#\\\h\+{##<bar>s/}//<bar>nohls<CR>  " remove f
 vnoremap <buffer><localleader>b c\textbf{<Esc>pa}<Esc>  " enbolden
 vnoremap <buffer><localleader>d c\dgy{<Esc>pa}<Esc>  " $LTXj/JH.sty
 vnoremap <buffer><localleader>i c\textit{<Esc>pa}<Esc>  " italicize
+
+""> \url{}
+" convert md url
+  nnoremap <buffer><localleader>< :s/</\\url{/<bar>s/>/}/<bar>nohls<CR>
 
 ""> demote or promote sections
 " select a region, then

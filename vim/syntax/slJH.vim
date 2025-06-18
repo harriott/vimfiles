@@ -5,8 +5,8 @@
 " Maintainer: Joseph Harriott
 " Last Change: Wed 03 Jan 2024
 
-" $vimfiles/syntax/slJH.vim (& $vimfiles/ftplugin/slJH.vim)
-" see  $misc/linux/symlinks_log.sh
+" $vfv/syntax/slJH.vim (& $vimfiles/ftplugin/slJH.vim)
+" see  $misc/linux/slJH.sh
 
 if exists('b:current_syntax') | finish |  endif
 

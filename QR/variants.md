@@ -91,7 +91,15 @@ Joseph's (g)Vim Quick Reference
 
 > ...shada.tmp.X files exist, fixes "cannot write ShaDa file!"
 
+#### win64 ?
+    :lua if package.config:sub(1,1) == "\\" then print('win64') end  " leveraging pure Lua
+
+##### has()
+    :=vim.fn.has("win64")
+    :lua if vim.fn.has("win64") == 1 then print('win64') else print('not win6') end
+
 ### unix
+    :if $XDG_CURRENT_DESKTOP == '' | echo 'might be Openbox' | endif
     n ~/.vimswap
 
 #### shada file
@@ -99,13 +107,6 @@ Joseph's (g)Vim Quick Reference
     r ~/.local/share/nvim/shada
 
 `Arch`, if `handlr get .texty_extension`  returns `vim.desktop`, both `gVim` & `Vim` launch with `$VIM` & `$VIMRUNTIM` set as for `Nvim`!
-
-### win64 ?
-    :lua if package.config:sub(1,1) == "\\" then print('win64') end  " leveraging pure Lua
-
-#### has()
-    :=vim.fn.has("win64")
-    :lua if vim.fn.has("win64") == 1 then print('win64') else print('not win6') end
 
 ## plugins
     $lazy
@@ -172,7 +173,7 @@ command-line window: C-c C-c  closes
 :echo getline(1) " contents of line 1
 :echo hostname()
 
-$DCGRs/CP/Vim/vim-vim/README.md
+$cGRs/CP/Vim/vim-vim/README.md
 vim -u NONE
 vim --version
 vim(1)

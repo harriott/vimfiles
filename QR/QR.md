@@ -71,7 +71,6 @@ after a search, `:v//d` removes all non-matching lines
     :set cole=0   " conceallevel
     :se cwh       " cmdwinheight - I like 30
     \ll           " location list (ListToggle) if it's there
-    \q            " quickfix list (ListToggle)
     \\c           " cursorcolumn toggle
     \\l           " cursorline toggle
     \\ll          " listchars (:h 'list') toggle (local)
@@ -83,7 +82,7 @@ after a search, `:v//d` removes all non-matching lines
 
 - rgba(255, 255, 255, 0.05) - no
 - rgba(255, 255, 255, 5) - yes
-- works for  $ulLA/IM-magick-list_color.txt
+- works for  $culLA/IM-magick-list_color.txt
 
 ## colorizer
     <leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
@@ -204,6 +203,11 @@ set fdo?
 ## indentation
     :%le     " remove all indents
     :h 'sw'  " autoindentation - shiftwidth
+
+## quickfix
+    \q  " quickfix list (ListToggle)
+
+can't set a height other than the default of 10, but can resize
 
 ## windows splits - move them around
     c-w+H  " move split to far left (:h ctrl-w_h)

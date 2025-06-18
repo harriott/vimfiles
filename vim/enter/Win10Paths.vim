@@ -10,6 +10,9 @@
 
 ""> paths
 let $CPF = $programfiles
+let $tricky = 'D:\tricky'
+  let $cGRs = $tricky.'\GRs'
+
 "">> 0 $Drpbx, or just $coreIT
 if $HOME == 'C:\Users\deaur'
   let $coreIT = 'D:\IT'
@@ -40,8 +43,8 @@ else
         let $tIs = $JHt.'\IT-storage'  " $tIs\diskUsage.txt
       let $JHw = $DJH.'\work'
         let $JHm = $JHw.'\IT-Jekyll-harriott-minima'
+        let $wP = $JHw.'\France\IdF\Paris'
       let $Thb = $DJH.'\Thb-dr'
-    let $DCGRs = $Drpbx.'\Cop\GRs'
 endif
 
 "">> 0 $HOME
@@ -75,9 +78,9 @@ let $HADR = $HOME.'\AppData\Roaming'
     let $OSL = $onGH.'\OS-Linux'
       let $clMail = $OSL.'\nodes\jo\clm'
         let $clMn = $clMail.'\neomutt'
-    let $ulL = $coreIT.'\ulLinux'
-      let $lclm = $ulL.'\clm'
-      let $ulLA = $ulL.'\Arch'
+    let $culL = $coreIT.'\ulLinux'
+      let $lclm = $culL.'\clm'
+      let $culLA = $culL.'\Arch'
     let $vimfiles = $onGH.'\vimfiles'
       let $vfn = $vimfiles.'\nvim'
       let $vfv = $vimfiles.'\vim'

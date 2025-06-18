@@ -90,6 +90,7 @@ packs-cp-full/opt/vim-gfm-syntax https://github.com/harriott/vim-gfm-syntax
 packs-cp-full/opt/vim-gitgutter https://github.com/airblade/vim-gitgutter
 packs-cp-full/opt/vim-go https://github.com/fatih/vim-go
 packs-cp-full/opt/vim-Grammalecte https://github.com/dpelle/vim-Grammalecte
+packs-cp-full/opt/vim-grepper https://github.com/mhinz/vim-grepper
 packs-cp-full/opt/vim-hjson https://github.com/hjson/vim-hjson
 packs-cp-full/opt/vim-ingo-library https://github.com/inkarkat/vim-ingo-library
 packs-cp-full/opt/vim-interestingwords https://github.com/lfv89/vim-interestingwords

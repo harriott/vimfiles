@@ -3,7 +3,7 @@
 
 -- $vfn/lua/init.lua
 --  required by  $vfn/init.vim
---  adapted from  $DCGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
+--  adapted from  $cGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 
 vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
 
@@ -126,6 +126,9 @@ require('lazy').setup(
       vim.keymap.set({'n'},'<leader>sv',"<Cmd>ScrollViewToggle<CR>") end,},
       -- $lazy/nvim-scrollview/doc/scrollview.txt
     -- {'gelguy/wilder.nvim', config=function() end,},
+    -- {'kevinhwang91/nvim-bqf', ft = 'qf'},
+      -- $lazy/nvim-bqf/doc/bqf.txt
+      -- <tab>/<s-tab>  toggles items, then  zn  remakes only those markeed, zN  those not marked
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
       -- $lazy/gitsigns.nvim/doc/gitsigns.txt
     {'MagicDuck/grug-far.nvim', config = function() require('grug-far').setup({}); end, },
@@ -133,7 +136,9 @@ require('lazy').setup(
       -- :GrugFar
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
     {'numToStr/Comment.nvim', opts={}, }, -- $vimfiles/QR/variants.md
-    { "wurli/visimatch.nvim", opts = {} },
+    {'yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end, },
+      -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
+    {'wurli/visimatch.nvim', opts = {} },
     -- ▩---> moduled
     require'lazy/boole_nvim',
     -- require'lazy/catppuccin',
@@ -146,6 +151,7 @@ require('lazy').setup(
     require'lazy/markdown-preview',
     require'lazy/neogit',
     -- require'lazy/nvim-hlslens',
+    require'lazy/nvim-bqf', -- $vfn/lua/lazy/nvim-bqf.lua
     require'lazy/nvim-cmp', -- $vfn/lua/lazy/nvim-cmp.lua
     require'lazy/nvim-surround',
     require'lazy/nvim-notify',

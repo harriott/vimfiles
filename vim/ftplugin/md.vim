@@ -24,7 +24,7 @@ if v:lang =~ 'fr'
   endif
 endif
 
-" hack to stop accidental filtering
+" hack intended to stop accidental filtering
   setlocal equalprg=no_filter_md_files
 
 " open Pandoc'd pdf

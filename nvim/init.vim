@@ -21,7 +21,7 @@ if has('win64')
     let g:loaded_perl_provider = 0
 else
   if exists('g:neovide')
-    if hostname() == 'sbMb'
+    if hostname() == 'sbMb' && $XDG_CURRENT_DESKTOP == ''
       set guifont=UbuntuMono_Nerd_Font_Mono:h8
     else " DOP3040D11S
       set guifont=UbuntuMono_Nerd_Font_Mono:h9

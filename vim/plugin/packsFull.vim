@@ -545,6 +545,12 @@ packadd calendar-vim
 let g:grammalecte_cli_py="$ITscc/CP/Grammalecte-fr-v2_1_1/grammalecte-cli.py"
 packadd vim-Grammalecte
 
+""> shell - vim-grepper
+" :Grepper -buffers -tool rg  " defaults to  -cword
+" :h grepper
+" $vfvp/packs-cp-full/opt/vim-grepper/doc/grepper.txt
+packadd vim-grepper
+
 ""> shell - open-browser.vim
 " $vfvp/packs-cp-full/opt/open-browser.vim/doc/openbrowser.txt
 " requires  :set shell  be unchanged from  cmd.exe
@@ -687,12 +693,13 @@ let g:BufKillCreateMappings = 0
 noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
 " - has at least a chance of landing on a different buffer than already visible
 
-""> vim - location/quickfix list
-
-"">> cfilter
+""> vim - location/quickfix list - cfilter
+" https://vimhelp.org/quickfix.txt.html
+"  :Cfilter[!] /{pat}/
+"  :Lfilter[!] /{pat}/
 packadd cfilter
 
-"">> ListToggle
+""> vim - location/quickfix list - ListToggle
 " $vfvp/packs-cp-full/opt/listtoggle/README.md
 
 packadd listtoggle
@@ -703,7 +710,7 @@ let g:lt_height = 15
 " let g:lt_location_list_toggle_map = '<leader>l'
 " let g:lt_quickfix_list_toggle_map = '<leader>q'
 
-"">> vim-loclist-follow
+""> vim - location/quickfix list - vim-loclist-follow
 let g:loclist_follow = 1
 packadd vim-loclist-follow
 

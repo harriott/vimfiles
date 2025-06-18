@@ -15,7 +15,7 @@ syntax sync fromstart  " for longer build scripts
 
 ""> 0 highlight my folds
 " overriding  :hi def link luaComment Comment
-" eg for  $ulLA/old/mb-AsusW202/jo/awesome/rc.lua
+" eg for  $culLA/old/mb-AsusW202/jo/awesome/rc.lua
 
 " syntax match foldLua '-- ▩-.*$'
 syntax match foldLua '^\s*-- ▩-\+>.*$'

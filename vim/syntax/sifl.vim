@@ -1,7 +1,7 @@
 
 " Language: sifl - for string in files functions in  $MSn/PS/Profile.ps1
 " Maintainer: Joseph Harriott
-" Last Change: ven 04 oct 2024
+" Last Change: lun 26 mai 2025
 " Detection: $vfv/filetype.vim
 
 " $vfv/syntax/sifl.vim  also  $vfv/ftplugin/sifl.vim
@@ -14,7 +14,7 @@ syn match sifw_gdoafwe '\([-._0-9a-zA-Z]\+\ze\/\.gitignore \|[-_0-9a-zA-Zé ]\+\
 " - matches git directory or any file with extension that starts with a letter
 hi def link sifw_gdoafwe DiffText
 
-syn match sifw_fade ' > \zs.\+'
+syn match sifw_fade ' > \zs.\+' " useful for  rgw  in  $MSn/PS/Profile.ps1
 syn match sifw_fade '^:.\+'
 syn match sifw_fade '^github.*'
 syn match sifw_fade '^stackexchange'

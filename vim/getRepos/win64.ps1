@@ -33,7 +33,7 @@ foreach ($clone in $clones) {
 # $msv = "$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
 # rm -recurse $msv  # temporarily, because it's got no .git
 # . $misc/GRs/update-depth1.ps1
-# robocopy /mir $DCGRs/d-unix/d-linux/r-marlam-msmtp/scripts/vim/ $msv
+# robocopy /mir $cGRs/d-unix/d-linux/r-marlam-msmtp/scripts/vim/ $msv
 # sl $vfv
 
 # #=> 3 updates 2 plugins

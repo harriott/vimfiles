@@ -18,7 +18,7 @@ let g:context_enabled = 0
 " overwrites  lspsaga's  breadcrumbs
 packadd context.vim
 
-""> languages
+""> languages - omni completion
 " quicker access to omni completion
 inoremap <c-x><c-x> <c-x><c-o>
 " - I'd preferred  <C-M>, but that's <CR>

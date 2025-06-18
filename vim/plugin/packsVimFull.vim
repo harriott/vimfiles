@@ -117,7 +117,7 @@ imap <c-d> <Plug>(fzf-dictionary-open)
 
 ""> layout - clrzr
 " just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt
-" doesn't work for  $ulLA/IM-magick-list_color.txt
+" doesn't work for  $culLA/IM-magick-list_color.txt
 
 ""> shell - Fern
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>

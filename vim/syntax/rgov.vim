@@ -1,8 +1,8 @@
 
 " Language: rgov
 "  for output of
-"   $vfs/all-unix-maps.ps1
-"   $vfs/all-win64-maps.ps1
+"   $vimfiles/settings-maps-all/unix.sh
+"   $vimfiles/settings-maps-all/win64.ps1
 " Maintainer: Joseph Harriott
 " Last Change: dim 30 mars 2025
 " $vfv/syntax/rgov.vim  also  $vfv/ftplugin/rgov.vim

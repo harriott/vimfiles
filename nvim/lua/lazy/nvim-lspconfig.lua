@@ -4,10 +4,13 @@
 -- $vfn/lua/lazy/nvim-lspconfig.lua
 
 -- $lazy/nvim-lspconfig/doc/lspconfig.txt
--- install language servers with Mason ($vfn/lua/init.lua)
+-- No sign of version...
+
+-- install language servers with  Mason ($vfn/lua/init.lua)
 
 -- :LspInfo  then  q
 -- :LspLog (~/.local/state/nvim/lsp.log)
+-- :LspStop <tab>
 
 -- Diagnostics:
 --  also $vfn/lua/init.lua
@@ -18,7 +21,7 @@ return {
   { 'folke/lazydev.nvim', -- recommended
     ft = 'lua',
     opts = { library = { { path = '${3rd}/luv/library', words = { 'vim%.uv' } }, }, },
-  }, -- $DCGRs/d-CP/d-Vim-Nvim/r-dam9000-kickstart-modular.nvim/lua/kickstart/plugins/lspconfig.lua
+  }, -- $cGRs/d-CP/d-Vim-Nvim/r-dam9000-kickstart-modular.nvim/lua/kickstart/plugins/lspconfig.lua
   { 'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
       -- might get over failure to find  vim-language-server  on  win64
@@ -55,6 +58,7 @@ return {
       require'lspconfig'.ltex.setup{ltex={completionEnabled='true',language='en-GB'}}
       -- can take a while, then underlines possible errors
       -- ignores  nospell
+      -- :LspStop ltex
 
       -- ▩-> lua_ls
       -- :MasonInstall lua-language-server
@@ -132,7 +136,10 @@ return {
 
       -- ▩-> keymaps
       vim.keymap.set({'n'},'<localleader>r', function() vim.cmd('LspRestart') print('LspRestart\'d') end,{desc=':LspRestart'})
-      vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'}) -- no generic way to disable on opening a specific file
+      -- ▩--> LspStop
+      -- no generic way to disable on opening a specific file
+      vim.keymap.set({'n'},'<localleader>l', function() vim.cmd('LspStop ltex') print('LspStop\'d ltex') end,{desc=':LspStop ltex'}) -- if  =s  fails
+      vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'})
 
     -- ▩-> end
     end,

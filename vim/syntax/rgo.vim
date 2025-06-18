@@ -1,31 +1,30 @@
 
-" Language: rgo - for general  ripgrep  output
+" Language: rgo - rgw ... > results.rgo
 " Maintainer: Joseph Harriott
-" Last Change: Mon 15 Apr 2024
-" $vfv/syntax/rgo.vim
+" Last Change: Sun 25 May 2025
 " Detection: $vfv/filetype.vim
+
+" $vfv/syntax/rgo.vim  also  $vfv/ftplugin/rgo.vim
 
 if exists('b:current_syntax') | finish | endif
 
-" syn match rgOFN '^\(C:\|..\)[^:]*:'  " dim out the filename
-" hi def link rgOFN LineNr
+" results.rgo  can have quite varied filepaths
+"  consider these commands run from  $onGH:
+"     $ rg tricky       > test.rgo  gets  misc/tricky/...
+"     $ rg tricky $onGH > test.rgo  gets  /mnt/SDU3D1TB/Dropbox/...
+"   PS> rg tricky       > test.rgo  gets  misc\tricky\...
+"   PS> rg tricky $onGH > test.rgo  gets  D:\Dropbox\...
+" so I don't bother trying to highlight them
+" (and the quoted text, of course, could be anything)
+" it'd be nice to highlight the filename.ext, but it's too fiddly
 
-" syn match rgofpc '^.\+' contains=rgofn  " ripgrep output file path & :
-" syn match rgofnc '^\v(D:|)\zs[-/.\\_0-9a-zA-Z]+:'
-" syn match rgofnc '^\v(D:|)\zs[-/.\\_0-9a-zA-Z]+:' contains=rgofnl
-" syn match rgofnc '^\v(D:|)[-/.\\_0-9a-zA-Z]+:' contains=rgofnl
-" syn match rgofnc '^\(D:\)\@<=[-/.\\_0-9a-zA-Z]+:' contains=rgofnl
-" - matches up to rg's colon
-" syn match rgofnl '\v(D:|).{-}\zs[-_0-9a-zA-Zé ]\+\(\.\a[0-9a-zA-Z]\+\)\=\ze:' contained
-syn match wrgofn 'D:\\[-\_0-9a-zA-Zé ]\{-}\zs[-_0-9a-zA-Zé ]\+\(\.\a[0-9a-zA-Z]\+\)\=\ze:' contained
-syn match urgofn '^.*[-/_0-9a-zA-Zé ]\{-}\zs[-_0-9a-zA-Zé ]\+\(\.\a[0-9a-zA-Z]\+\)\=\ze:' contained
-" syn match rgofnl 'lua' contained
-" syn match rgofnl 'lua' containedin=rgofnc contained
-" - matches git directory or any file with extension that starts with a letter
-hi def link rgofnl DiffText
+" (I also have  rgw  in  $MSn/PS/Profile.ps1)
 
-syn match rgsc ':'  " dimming out punctuation
-hi def link rgsc LineNr
+syn match rgo_quoted ':::.*' contains=ALL
+hi def link rgo_quoted LineNr
+
+syn match rgo_fms ':::' contained
+hi def link rgo_fms CursorLineNr
 
 let b:current_syntax = "rgo"
 

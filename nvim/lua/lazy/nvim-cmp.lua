@@ -1,3 +1,4 @@
+-- vim: set fdl=4:
 
 -- Joseph Harriott - https://harriott.github.io/ - Fri 25 Apr 2025
 

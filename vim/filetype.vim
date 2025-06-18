@@ -35,7 +35,7 @@ au BufNewFile,BufRead ~/Arch/bash_history setlocal filetype=sh
 ""> 0 my CCh backups
 
 ""> 0 my tmux.conf backups
-au BufNew,BufNewFile,BufRead $ulLA/ml-*/tmux/**/*.conf setlocal filetype=tmux
+au BufNew,BufNewFile,BufRead $culLA/ml-*/tmux/**/*.conf setlocal filetype=tmux
 
 ""> 0 nomacs configuration
 au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dosini
@@ -87,7 +87,6 @@ aug filetypedetect
   au! BufRead,BufNewFile *.mail      setf mail      " $vfv/syntax/mail.vim
   au! BufRead,BufNewFile *.osp       setf json      " $vfv/after/syntax/json.vim
   au! BufRead,BufNewFile *.rgo       setf rgo       " $vfv/syntax/rgo.vim
-  au! BufRead,BufNewFile *.rgou      setf rgou      " $vfv/syntax/rgou.vim
   au! BufRead,BufNewFile *.rgov      setf rgov      " $vfv/syntax/rgov.vim
   au! BufRead,BufNewFile *.rgtl      setf rgtl      " $vfv/syntax/rgtl.vim
   au! BufRead,BufNewFile *.sifl      setf sifl      " $vfv/syntax/sifl.vim
