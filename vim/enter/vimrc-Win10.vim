@@ -33,6 +33,7 @@ if has('nvim') && !exists('g:neovide')
 endif
 
 ""> 3 my initial settings
+let g:zip_unzipcmd= "C:/Git/usr/bin/unzip.exe"
 " set noloadplugins
 
 "">> colorscheme

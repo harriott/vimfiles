@@ -7,7 +7,7 @@
 --  <enter> jumps to
 --  <tab>   toggles folds
 --  q       quits
--- no providors: dw help
+-- no providors: dw, help
 -- used in
 --  $vfv/ftplugin/man.vim
 --  $vfv/ftplugin/markdown.vim

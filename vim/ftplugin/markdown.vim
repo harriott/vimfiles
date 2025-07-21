@@ -38,6 +38,9 @@ nnoremap <buffer><localleader>b viwc****<Esc>hP
 " folding by header marks
 source $vfv/ftplugin/HashFolding.vim
 
+" Markdown Preview
+nnoremap <buffer><F7> :MarkdownPreview<CR>
+
 " outline.nvim
 noremap <buffer><leader>o :Outline<CR>
 " $vfn/lua/lazy/outline_nvim.lua

@@ -43,7 +43,7 @@ set guioptions-=m  " removes it by default
 " Ctrl+f1 can toggle it:
 nnoremap <C-F1> :if &guioptions=~#'m'<Bar>set guioptions-=m<Bar>else<Bar>set guioptions+=m<Bar>endif<CR>
 
-"">> gVim siwe
+"">> gVim size
 " set lines=34  " good for screen with 600 pixel height
 set lines=46  " good for screen with 768 pixel height
 if has('unix') && g:monitorheight == '900'
@@ -51,7 +51,7 @@ if has('unix') && g:monitorheight == '900'
 elseif has('unix') && g:monitorheight == '1050'
   set lines=60
 elseif has('unix') && g:monitorheight == '1080'
-  set lines=63
+  set lines=67
 elseif has('win64') && g:monitorheight == '1080'
   set lines=60
 endif

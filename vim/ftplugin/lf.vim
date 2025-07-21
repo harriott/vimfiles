@@ -1,11 +1,11 @@
 
 " vim: set fdl=1:
 
-" Language: lf
+" Language: lf - $MSn/lf/lfrc ($vfvp/packs-cp-full/opt/lf-vim/ftdetect/lf.vim)
 " Maintainer: Joseph Harriott
-" Last Change: jeu 16 mai 2024
+" Last Change: mar 08 juil 2025
 
-" $vfvp/packs-cp/opt/lf-vim/ftdetect/lf.vim
+" $vfv/ftplugin/lf.vim
 
 setlocal tw=0
 

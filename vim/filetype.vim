@@ -89,6 +89,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.rgo       setf rgo       " $vfv/syntax/rgo.vim
   au! BufRead,BufNewFile *.rgov      setf rgov      " $vfv/syntax/rgov.vim
   au! BufRead,BufNewFile *.rgtl      setf rgtl      " $vfv/syntax/rgtl.vim
+  au! BufRead,BufNewFile *.rplp      setf rplp      " $vfv/syntax/rplp.vim
   au! BufRead,BufNewFile *.sifl      setf sifl      " $vfv/syntax/sifl.vim
   au! BufRead,BufNewFile *.slJH      setf slJH      " $vfv/plugin/slJH.vim
   au! BufRead,BufNewFile *.tbmo      setf tbmo      " $vfv/syntax/tbmo.vim

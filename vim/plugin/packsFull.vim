@@ -164,10 +164,11 @@ packadd org.vim
 " $vfvp/packs-cp-full/opt/rainbow_csv/doc/rainbow_csv.txt
 " $vfvp/packs-cp-full/opt/rainbow_csv/README.md
 " :CSVLint
-" :RainbowAlign  :RainbowShrink  burst out and back, good for column operations
+" :RainbowAlign  :RainbowShrink  burst out and back, good for column operations (failed in semicolon aligned)
 packadd rainbow_csv
 
 "">>> keymaps requiring b:rbcsv
+" let b:rbcsv
 nnoremap <expr> <C-Left> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoLeft<CR>' : '<C-Left>'
 nnoremap <expr> <C-Right> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoRight<CR>' : '<C-Right>'
 nnoremap <expr> <C-Up> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoUp<CR>' : '<C-Up>'
@@ -176,7 +177,8 @@ nnoremap <expr> <C-Down> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoDown<CR>' : '
 "">>>> safely toggle alignment
 function! RainbowAStoggle()
   if b:RainbowAligned
-    let b:RainbowAligned = 0 " preset in  $vfv/ftplugin/csv.vim
+    let b:RainbowAligned = 0
+    "  preset in  $vfv/ftplugin/csv.vim, $vfv/ftplugin/tsv.vim
     silent! RainbowShrink
   else
     let b:RainbowAligned = 1
@@ -693,7 +695,7 @@ let g:BufKillCreateMappings = 0
 noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
 " - has at least a chance of landing on a different buffer than already visible
 
-""> vim - location/quickfix list - cfilter
+""> vim - quickfix lists - cfilter
 " https://vimhelp.org/quickfix.txt.html
 "  :Cfilter[!] /{pat}/
 "  :Lfilter[!] /{pat}/

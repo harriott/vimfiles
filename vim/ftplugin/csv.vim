@@ -4,6 +4,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Sun 13 Apr 2025
 " $vfv/ftplugin/csv.vim
+"  supplementary to  $VIMRUNTIME/ftplugin/csv.vim
 
 setlocal nowrap
 

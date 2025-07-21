@@ -8,11 +8,11 @@
 
 vim.g.test = 1
 
--- ▩-> 1 lazy.nvim
-require 'lazy/bootstrap'
+-- -- ▩-> 1 lazy.nvim
+-- require 'lazy/bootstrap'
 
--- ▩-> 2 gitsigns.nvim
-require('lazy').setup({
-  {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,},
-})
+-- -- ▩-> 2 gitsigns.nvim
+-- require('lazy').setup({
+--   {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,},
+-- })
 

@@ -35,9 +35,9 @@ function! ColorLightDark()
 endfunction
 
 ""> guifont
+" coordinate with  g:monitorheight
 " first font is always applied
 " set guifont=DejaVuSansM\ Nerd\ Font\ Mono\ 9
 " set guifont=JetBrainsMono\ NFM\ 9
-" set guifont=MesloLGS\ Nerd\ Font\ Mono\ 9
-set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 10
+set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 9
 

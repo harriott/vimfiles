@@ -204,10 +204,12 @@ set fdo?
     :%le     " remove all indents
     :h 'sw'  " autoindentation - shiftwidth
 
-## quickfix
+## quickfix lists
+    $vfv/ftplugin/qf.vim
+    :h quickfix-window
     \q  " quickfix list (ListToggle)
 
-can't set a height other than the default of 10, but can resize
+window-local: `:h location-list`
 
 ## windows splits - move them around
     c-w+H  " move split to far left (:h ctrl-w_h)
@@ -217,11 +219,20 @@ can't set a height other than the default of 10, but can resize
     c-w+r  " rotate split to right
 
 ## windows splits - sizes
+    :echo winheight(0)
+    :se wfh?  " winfixheight - resists  c-w =, so  se nowfh
+
+### resize
     $vfv/plugin/plugin.vim > resize
     c-w =  " equalise window sizes
-    c-w _  " maximizes a window
-    Resize Splits with mouse
-    se wfh?  " winfixheight - resists  c-w =, so  se nowfh
+
+with mouse
+
+#### maximize
+    :h CTRL-W__
+    c-w _
+
+I mostly use `c-w o`.
 
 ## windows splits - split
     :ba      " view all buffers, split horizontally
@@ -471,6 +482,7 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 :r<file>              " reads <file> into buffer
 :r!<shell_command>    " reads shell command output into current buffer
 :se sh                " returns the path to the shell
+:se ssop              " sessionoptions
 :tabe $HOME\_vimrc    " bring up my vimrc in a new tab
 :term
 <shellcmd> | gvim -   " pipes shell command output into gvim
@@ -522,8 +534,8 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 :echo $computername
 :echo $programfiles
 :echo $username
-:put =$HOME
-:put =$PATH
+:pu=$HOME
+:pu=$PATH
 ```
 
 ## Python
@@ -567,10 +579,7 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 ```vim
 :g\^\m 0                                           " reverse the entire buffer
 :if 0 | echo 'true' | else | echo 'false' | endif  " try  if 1
-:ni<somecharacter><enter>                          " inserts <somecharacters> n time
 :h g_CTRL-G                                        " position and word info, works on a range too
-:pu=exe('<vim_command>')                           " :put=execute('...')
-:put ='this_text'
 :sleep
 :t.                                                " reproduce line
 :t.|s\.\=\g                                        " setext-style header underlining
@@ -578,9 +587,17 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 \yy                                                " CalendarH
 ctrl-q ctrl-m                                      " inserts ^M (carriage return)
 g&                                                 " repeat last command over the whole document
+ni<somecharacter><esc>                             " inserts <somecharacters> n time
 ```
 
 in command-line `\t` inserts a tab character
+
+## :put
+```vim
+:pu=exe('<vim_command>') " :put=execute('...')
+:pu='this_text'
+:h :pu
+```
 
 ## base64
 ```
@@ -590,8 +607,12 @@ in command-line `\t` inserts a tab character
 
 ## counting stuff
     :%s\.\\gn|noh  " characters in buffer
-    :s\.\&\gn|noh  " show number of characters in a long line
-    [selection]g ctrl-g       " counts in context
+    [selection]g ctrl-g  " counts in context
+
+### in a line
+    :s/,/&/gn|noh  " characters
+    :s/./&/gn|noh  " characters
+    :s/;/&/gn|noh  " semicolons
 
 ## case
 ```
@@ -616,9 +637,9 @@ u            " lowercase a visual block
     ^Vu03b2  " gets greek small letter beta
 
 ## number lists
-    :for i in range(1,11) | put =i.'. ' | endfor  " creates a numbered markdown list, ready for items
+    :for i in range(1,31) | pu=i.'. ' | endfor  " creates a numbered markdown list, ready for items
     :h v_g_CTRL-A
-    :put =range(202101,202112) " create a series of numbers
+    :pu=range(202101,202112) " create a series of numbers
 
 ### working down entire buffer
     :let i=1 | g#/# s##\='\'.i# | let i+=1  " prefix-number all files in nnn's neovim window

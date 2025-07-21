@@ -1,7 +1,7 @@
 
-" Language: IMfo - see $OSAB/QR.md
+" Language: IMfo - see $OSAB/QR/QR.md
 " Maintainer: Joseph Harriott
-" Last Change: Tue 09 Apr 2024
+" Last Change: Tue 08 Jul 2025
 " Detection: $vfv/filetype.vim
 
 " $vfv/ftplugin/IMfo.vim

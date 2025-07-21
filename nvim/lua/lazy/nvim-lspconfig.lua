@@ -13,7 +13,7 @@
 -- :LspStop <tab>
 
 -- Diagnostics:
---  also $vfn/lua/init.lua
+--  also  $vfn/lua/init.lua
 --  K => vim.lsp.buf.hover()
 --  KK => enters hover window, q quits
 

@@ -2,7 +2,7 @@
 " Language: Get-NetFirewallRule
 " Maintainer: Joseph Harriott
 " Last Change: Mon 17 Jan 2022
-" $vimfiles/ftplugin/NFR.vim
+" $vfv/ftplugin/NFR.vim
 
 " you'll need modeline  vim: set ft=NFR:
 

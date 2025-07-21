@@ -84,7 +84,7 @@ return {
         vim.keymap.set({'n'},'<leader>lff',builtin.lsp_type_definitions,{desc=':Telescope lsp_type_definitions'})
 
       -- ▩---> shell
-      vim.keymap.set({'n'},'<leader>a',builtin.man_pages,{desc=':Telescope man_pages'})
+      vim.keymap.set({'n'},'<leader>M',builtin.man_pages,{desc=':Telescope man_pages'})
 
       -- ▩----> files
       local function tch_MRU() builtin.command_history({default_text="MRU \\.",}) end

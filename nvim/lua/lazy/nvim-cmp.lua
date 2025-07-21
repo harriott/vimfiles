@@ -74,7 +74,7 @@ return {
               get_bufnrs = function() return vim.api.nvim_list_bufs() end, -- all buffers
               keyword_length = 2, -- trigger length (default 3)
               keyword_pattern = [[\k\+]], -- finds accented words
-            }, },
+            }, }, -- most handy, not activating in  *.ps1
           { name = 'lazydev', group_index = 0,
             }, -- :LazyDev, & completion source for require statements and module annotations
           { name = 'nvim_lsp' }, -- cmp-nvim-lsp
@@ -95,7 +95,7 @@ return {
         if vim.g.cmp_on then vim.notify('nvim-cmp on') else vim.notify('nvim-cmp off') end
       end)
       vim.keymap.set("n", "<leader>cs", function() -- useful for  cmp-spell
-        vim_opt_toggle("spell") end)
+        vim_opt_toggle("spell") end,{desc='toggle :spell'})
     end,
   },
 }

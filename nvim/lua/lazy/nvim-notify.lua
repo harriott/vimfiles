@@ -14,7 +14,7 @@ return {
     config = function() vim.notify = require("notify") end,
     lazy = false,
     vim.keymap.set({'i','n','v'},'<leader>vn',
-      function() vim.notify.dismiss() end, {desc='dismiss notification'})
+      function() vim.notify.dismiss() end,{desc='dismiss notification'})
   }
 }
 

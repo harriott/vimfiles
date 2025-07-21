@@ -1,7 +1,7 @@
 
-" Language: rgo
+" Language: rgo - $AjB/bashrc-console
 " Maintainer: Joseph Harriott
-" Last Change: Mon 15 Apr 2024
+" Last Change: Tue 08 Jul 2025
 " for general  ripgrep  output
 
 " $vfv/ftplugin/rgo.vim

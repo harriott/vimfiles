@@ -97,7 +97,6 @@ vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode
 
 -- ▩-> 0 nvim-cmp on
 vim.g.cmp_on = true -- $vfn/lua/lazy/nvim-cmp.lua
-vim.g.rmn_on = true -- $vfn/lua/lazy/nvim-cmp.lua
 
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
@@ -131,6 +130,8 @@ require('lazy').setup(
       -- <tab>/<s-tab>  toggles items, then  zn  remakes only those markeed, zN  those not marked
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
       -- $lazy/gitsigns.nvim/doc/gitsigns.txt
+      -- :Gitsigns toggle_signs
+      -- provides signs in the  signcolumn
     {'MagicDuck/grug-far.nvim', config = function() require('grug-far').setup({}); end, },
       -- $lazy/grug-far.nvim/README.md
       -- :GrugFar
@@ -140,6 +141,7 @@ require('lazy').setup(
       -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
     {'wurli/visimatch.nvim', opts = {} },
     -- ▩---> moduled
+    require'lazy/auto-session',
     require'lazy/boole_nvim',
     -- require'lazy/catppuccin',
     -- require'lazy/csvview_nvim',

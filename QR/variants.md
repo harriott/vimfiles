@@ -13,7 +13,6 @@ Joseph's (g)Vim Quick Reference
     :echo has('nvim')
     :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
-    C /usr/share/nvim/runtime
     :lua vim.notify('test notification')
     nvim -?
     nvim -v
@@ -117,13 +116,17 @@ Joseph's (g)Vim Quick Reference
 - `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
 
 ## settings
+    :Bufferize echo stdpath("cache")
+    :Bufferize echo stdpath("config")
+    :Bufferize echo stdpath("data")
+
 `:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
 
 ### default-mappings
     :h default-mappings
+    <c-w>d  " (:h CTRL-W_d-default) opens diagnostic
 
-- `<c-w>k` => `vim.diagnostic.open_float()`
-- `[d`/`]d`=> previous/next diagnostic
+`[d`/`]d`=> previous/next diagnostic
 
 ## spell
 `\cs` = `cmp-spell` which underlines in red possible mistakes
@@ -181,6 +184,8 @@ vim(1)
 $misc/CP/vimtest/README.md
 ```
 
+`&&`, `||`
+
 ## fzf.vim
 ```vim
 \B                    " :BLines
@@ -227,25 +232,15 @@ $misc/CP/vimtest/README.md
     :Bufferize lan         " language  settings
     :Bufferize let         " all internal variables
     :Bufferize scr         " (:scriptnames) list of files sourced, in order
-    :Bufferize se          " all option changes
-    :Bufferize se ofu      " omnifunc
     :Bufferize ve          " Vim version etc
+    :Bufferize verb se scl " where signcolumn was last set
     :colo [default]        " current colorscheme
     :echo has ('gui_running')
     :function <name_of_function_to_reveal>
     :let mapleader
-    :se                    " show all modified options
-    :se fenc=utf8          " fileencoding
-    :se spc                " pattern for of a sentence
-    :se ttm                " ms timeout for key codes
-    :se wop                " wildoptions
-    :verb se tw            " shows where textwidth was set
 
     /usr/share/vim/vim91/filetype.vim
     C:\Vim\vim90\ftplugin
-
-- `&&`, `||`
-- options as variable: `:echo &textwidth`
 
 ### file formats
     :se ff        " fileformat
@@ -266,6 +261,18 @@ $misc/CP/vimtest/README.md
 ##### in terminals
 - `alt+<key>`
 - `<s-fn>` from  Alacritty  or xterm
+
+### options
+    :Bufferize se          " all option changes
+    :Bufferize se ofu      " omnifunc
+    :se                    " show all modified options
+    :se fenc=utf8          " fileencoding
+    :se spc                " (spellcapcheck) pattern for defining a sentence
+    :se ttm                " ms timeout for key codes
+    :se wop                " wildoptions
+    :verb se tw?           " shows where textwidth was set (? is only really needed for booleans)
+
+options as variable: `:echo &textwidth`
 
 ### runtimepath
     $VIMRUNTIME
@@ -288,18 +295,18 @@ $misc/CP/vimtest/README.md
 
 `syntax.txt`
 
+#### settings
+    :Bufferize sy  " :h syn-list
+    :Bufferize Inspect  " to see what's highlighting under the cursor
+	:hi
+    :se smc=0  " (synmaxcol) removes 3000 character limit
+	:so $VIMRUNTIME/syntax/hitest.vim  " wait for it to load!
+    :sy sync fromstart  " but can't find any way to check this setting
+	$VIMRUNTIME/syntax/syncolor.vim
+
 #### state
     :h syn-off
     :let g:syntax_on
     :sy off
     :sy on
-
-#### settings
-    :Bufferize sy  " :h syn-list
-    :Bufferize Inspect  " to see what's highlighting under the cursor
-	:hi
-    :se synmaxcol=0  " removes 3000 character limit (:se smc)
-	:so $VIMRUNTIME/syntax/hitest.vim  " wait for it to load!
-    :sy sync fromstart  " but can't find any way to check this setting
-	$VIMRUNTIME/syntax/syncolor.vim
 

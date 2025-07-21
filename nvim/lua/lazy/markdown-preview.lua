@@ -10,6 +10,7 @@
 --  then  Lazy  will build it on next launch of  Nvim
 
 -- $lazy/markdown-preview.nvim/README.md
+-- Markdown Preview
 
 -- $vfv/ftplugin/markdown.vim
 
@@ -24,9 +25,10 @@ return { "iamcco/markdown-preview.nvim",
   end,
   ft = { "markdown" },
   config = function()
-    vim.keymap.set('n','<f7>','<Cmd>MarkdownPreview<CR>') -- for all markdowns
-      -- not taking on  HPEB840G37...
+    -- vim.keymap.set('n','<f7>','<Cmd>MarkdownPreview<CR>') -- for all markdowns
+      -- global mapping, so moved to  $vfv/ftplugin/markdown.vim
       -- just closing the browser window when done turns it off globally
+      -- not taking on  HPEB840G37...
   end,
 }
 
