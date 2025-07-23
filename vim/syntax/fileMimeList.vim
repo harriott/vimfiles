@@ -5,7 +5,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Tue 23 May 2023
 
-" $vimfiles/syntax/fileMimeList.vim
+" $vfv/syntax/fileMimeList.vim
 
 if exists('b:current_syntax') | finish |  endif
 

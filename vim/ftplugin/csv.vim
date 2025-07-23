@@ -6,7 +6,7 @@
 " $vfv/ftplugin/csv.vim
 "  supplementary to  $VIMRUNTIME/ftplugin/csv.vim
 
-setlocal nowrap
+setlocal nowrap textwidth=0
 
 ""> plugin csv.vim
 " clearmatches
