@@ -15,16 +15,16 @@ let $tricky = 'D:\tricky'
 
 "">> 0 $Drpbx, or just $coreIT
 if $HOME == 'C:\Users\deaur'
-  let $coreIT = 'D:\IT'
+  let $coreIT = 'D:\ITr-coreIT'
 else
   let $Drpbx = 'D:\Dropbox'
     let $DJH = $Drpbx.'\JH'
       let $Cfzd = $DJH.'\work-Cz'
         let $CzMa = $Cfzd.'\manage'
         let $CzPeo = $Cfzd.'\people'
-          let $Csst = $CzPeo.'\adherents\sstreat'
-            let $d0g = $Csst.'\data-0-grab'
-            let $d1ad = $Csst.'\data-1-adh'
+          let $Cmdt = $CzPeo.'\adherents\dt'
+            let $Cmd0 = $Cmdt.'\data-0-wgetGS'
+            let $d1ad = $Cmdt.'\data-1-adh'
         let $CzPhy = $Cfzd.'\PhysicalProperty'
       let $CfWk = $DJH.'\Cop-work'
       let $core = $DJH.'\core'
@@ -59,7 +59,7 @@ let $HADR = $HOME.'\AppData\Roaming'
   let $Pandoc = $HADR.'\Pandoc'
   let $tex = $HADR.'\MiKTeX\tex'
 
-  "">> 1 rooting on $coreIT
+  "">> 1 normally rooting on $coreIT
   let $ITsCP = $coreIT.'\CP'
     let $LTXj = $ITsCP.'\documenting\LaTeX\jo'
   let $DWp = $coreIT.'\DokuWiki\pages'
@@ -83,7 +83,11 @@ let $HADR = $HOME.'\AppData\Roaming'
     let $culL = $coreIT.'\ulLinux'
       let $lclm = $culL.'\clm'
       let $culLA = $culL.'\Arch'
-    let $vimfiles = $onGH.'\vimfiles'
+    if $HOME == 'C:\Users\deaur'
+      let $vimfiles = 'D:\ITJ\RC-vimfiles'
+    else
+      let $vimfiles = $onGH.'\vimfiles'
+    endif
       let $vfn = $vimfiles.'\nvim'
       let $vfv = $vimfiles.'\vim'
         let $vfvp = $vfv.'\packs'

@@ -423,6 +423,7 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 	\c (anywhere)               " ignore case
 	\k                          " iskeyword
     \vs                         " last search in escaped visual selection
+    \v,(f|m|s),                 " finds  ,f,  ,m,  ,s,
     :h %(
     planet\(Awesome\|Terrible\) " planetAwesome or planetTerrible
 	text\|alt                   " searches for text & alt

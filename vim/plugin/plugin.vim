@@ -202,6 +202,7 @@ function! ClearFancyGlyphs()
   :sil!%s/ﬂ/fl/g  " latin small ligature fl
   :sil!%s/×/x/g
 endfunction
+" :%s/|/│/g  # return tree glyphs
 
 "">> clear mathematical alphanumeric symbols
 nnoremap <leader><leader>2 :call ClearMAS()<cr>

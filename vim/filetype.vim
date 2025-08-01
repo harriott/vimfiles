@@ -87,6 +87,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.leader    setf leader    " $vfv/syntax/leader.vim
   au! BufRead,BufNewFile *.mail      setf mail      " $vfv/syntax/mail.vim
   au! BufRead,BufNewFile *.osp       setf json      " $vfv/after/syntax/json.vim
+  au! BufRead,BufNewFile *.gpgk      setf gpgk      " $vfv/after/syntax/gpgk.vim
   au! BufRead,BufNewFile *.rgo       setf rgo       " $vfv/syntax/rgo.vim
   au! BufRead,BufNewFile *.rgov      setf rgov      " $vfv/syntax/rgov.vim
   au! BufRead,BufNewFile *.rgtl      setf rgtl      " $vfv/syntax/rgtl.vim

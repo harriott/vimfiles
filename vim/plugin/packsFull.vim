@@ -192,8 +192,9 @@ vnoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr
 
 "">> SimpylFold
 " $vfvp/packs-cp-full/opt/SimpylFold/README.md
+" $vfvp/packs-cp-full/opt/SimpylFold/ftplugin/python/SimpylFold.vim
 " packadd SimpylFold
-" Python folding
+" Python folding: def import
 
 "">> syntastic
 if has('unix')
