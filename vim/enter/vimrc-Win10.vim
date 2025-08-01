@@ -18,21 +18,25 @@ if !has('nvim')
 endif
 
 ""> 2 mswin.vim
-if filereadable(expand("$VIMRUNTIME/mswin.vim"))
-  source $VIMRUNTIME/mswin.vim  " *map <c-f4>  to close window
-  " $env:programfiles\Neovim\share\nvim\runtime\mswin.vim
+" $env:programfiles\Neovim\share\nvim\runtime
+" *map <c-f4>  to close window
 
-  " Undo some:
-  unmap <C-A>
-  " - revert Ctrl-A back to number increment:
-  if has('gui_running') && !has('nvim')
-    unmap <c-f>
-    " - ctrl-f back to move forward
-  endif
-  if has('nvim') && !exists('g:neovide')
-    " it was  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
-    unmap <c-v>
-  endif
+if filereadable(expand("$VIMRUNTIME/mswin.vim"))
+  source $VIMRUNTIME/mswin.vim
+else
+  source $VIMRUNTIME/scripts/mswin.vim
+endif
+
+" Undo some:
+unmap <C-A>
+" - revert Ctrl-A back to number increment:
+if has('gui_running') && !has('nvim')
+  unmap <c-f>
+  " - ctrl-f back to move forward
+endif
+if has('nvim') && !exists('g:neovide')
+  " it was  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
+  unmap <c-v>
 endif
 
 ""> 3 my initial settings
@@ -41,32 +45,32 @@ let g:zip_unzipcmd= "C:/Git/usr/bin/unzip.exe"
 
 "">> colorscheme
 if !has('nvim')
-  " 1) tomorrow dark
-  function! STWDG()
-    set background=dark
-      let g:useSTW='1'
-      " highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
-      highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
-    let g:CSDark = 1
-  endfunction
-  call STWDG()
-  colorscheme tomorrow
-  " set background=dark
+" 1) tomorrow dark
+function! STWDG()
+  set background=dark
+    let g:useSTW='1'
+    " highlight ShowTrailingWhitespace ctermbg=Grey guibg=DarkGreen
+    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Black
+  let g:CSDark = 1
+endfunction
+call STWDG()
+colorscheme tomorrow
+" set background=dark
 
-  " 2) reliable light-dark toggle
-  nnoremap <C-F5> :call ColorLightDark()<cr>
-  function! ColorLightDark()
-    if g:CSDark
-      set background=light
-      " " if Solarized
-      " highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
-      " if Tomorrow
-      highlight ShowTrailingWhitespace ctermbg=Grey guibg=Grey
-      let g:CSDark = 0
-    else
-      call STWDG()
-    endif
-  endfunction
+" 2) reliable light-dark toggle
+nnoremap <C-F5> :call ColorLightDark()<cr>
+function! ColorLightDark()
+  if g:CSDark
+    set background=light
+    " " if Solarized
+    " highlight ShowTrailingWhitespace ctermbg=Grey guibg=White
+    " if Tomorrow
+    highlight ShowTrailingWhitespace ctermbg=Grey guibg=Grey
+    let g:CSDark = 0
+  else
+    call STWDG()
+  endif
+endfunction
 endif
 
 "">> continue vimrc
@@ -74,31 +78,31 @@ source $vfv/enter/vimrc.vim
 
 "">> ensure vimswap
 if isdirectory($HOME.'/.vimswap') == 0
-  :silent !md \%UserProfile\%\\.vimswap
+:silent !md \%UserProfile\%\\.vimswap
 endif
 
 "">> ensure vimundo
 if isdirectory($HOME.'/.vimundo') == 0
-  :silent !md \%UserProfile\%\\.vimundo
+:silent !md \%UserProfile\%\\.vimundo
 endif
 
 "">> nicer font
 if hostname() == 'HPEB840G36'
-  set guifont=Lucida_Console:h8  " smallest available (for 1366x768 screen)
+set guifont=Lucida_Console:h8  " smallest available (for 1366x768 screen)
 else
-  set guifont=Lucida_Console:h9
+set guifont=Lucida_Console:h9
 endif
 " - better to append size so that it's reported
 set linespace=4
 
 "">> open in Emacs
 function! OpenInEmacs()
-  execute 'silent !C:\Emacs\emacs-29.2\bin\runemacs.exe --no-splash +'.line('.').' '.expand('%:p')
+execute 'silent !C:\Emacs\emacs-29.2\bin\runemacs.exe --no-splash +'.line('.').' '.expand('%:p')
 endfunction
 
 "">> open equivalent LaTeX compiled PDF
 function! CompiledPDF()
-  execute 'silent !start '.expand('%:p:r').".pdf"
+execute 'silent !start '.expand('%:p:r').".pdf"
 endfunction
 " this function is only needed for markdown and TeX files
 
