@@ -18,7 +18,9 @@ if !has('nvim')
 endif
 
 ""> 2 mswin.vim
-source $VIMRUNTIME/mswin.vim  " *map <c-f4>  to close window
+if filereadable(expand("$VIMRUNTIME/mswin.vim"))
+  source $VIMRUNTIME/mswin.vim  " *map <c-f4>  to close window
+endif
 
 " Undo some:
 unmap <C-A>

@@ -175,6 +175,7 @@ command-line window: C-c C-c  closes
 :echo expand('<cword>')  " echos the word under the cursor
 :echo getline(1) " contents of line 1
 :echo hostname()
+:if filereadable(expand("~/_vimrc")) | echo "there" | endif
 
 $cGRs/CP/Vim/vim-vim/README.md
 vim -u NONE
