@@ -20,6 +20,7 @@ endif
 ""> 2 mswin.vim
 if filereadable(expand("$VIMRUNTIME/mswin.vim"))
   source $VIMRUNTIME/mswin.vim  " *map <c-f4>  to close window
+  " $env:programfiles\Neovim\share\nvim\runtime\mswin.vim
 
   " Undo some:
   unmap <C-A>
