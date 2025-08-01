@@ -20,18 +20,18 @@ endif
 ""> 2 mswin.vim
 if filereadable(expand("$VIMRUNTIME/mswin.vim"))
   source $VIMRUNTIME/mswin.vim  " *map <c-f4>  to close window
-endif
 
-" Undo some:
-unmap <C-A>
-" - revert Ctrl-A back to number increment:
-if has('gui_running') && !has('nvim')
-  unmap <c-f>
-  " - ctrl-f back to move forward
-endif
-if has('nvim') && !exists('g:neovide')
-  " it was  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
-  unmap <c-v>
+  " Undo some:
+  unmap <C-A>
+  " - revert Ctrl-A back to number increment:
+  if has('gui_running') && !has('nvim')
+    unmap <c-f>
+    " - ctrl-f back to move forward
+  endif
+  if has('nvim') && !exists('g:neovide')
+    " it was  $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
+    unmap <c-v>
+  endif
 endif
 
 ""> 3 my initial settings
