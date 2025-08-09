@@ -175,7 +175,6 @@ command-line window: C-c C-c  closes
 :echo expand('<cword>')  " echos the word under the cursor
 :echo getline(1) " contents of line 1
 :echo hostname()
-:if filereadable(expand("~/_vimrc")) | echo "there" | endif
 
 $cGRs/CP/Vim/vim-vim/README.md
 vim -u NONE
@@ -186,6 +185,10 @@ $misc/CP/vimtest/README.md
 ```
 
 `&&`, `||`
+
+## detect file
+    :if filereadable(expand("~/_vimrc")) | echo "there" | endif
+    :if !empty(expand(glob("~/_vimrc"))) | echo "there" | endif  # also detects unreadable files
 
 ## fzf.vim
 ```vim
@@ -253,6 +256,7 @@ $misc/CP/vimtest/README.md
     :Bufferize map!          " e i
     :Bufferize map|map!      " e i n s v
     :h unmap
+    :h <sid>
     :verb map <localleader>q " where that mapping was set
     :[verb ]map <c-n>        " shows the mapping
 

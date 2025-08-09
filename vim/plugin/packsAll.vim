@@ -84,6 +84,7 @@ nnoremap <leader>bd  :Bdelete hidden<CR>
 packadd close-buffers.vim
 
 ""> vim - buffers - vim-buffing-wheel
+" $vfvp/packs-cp-all/opt/vim-buffing-wheel/readme.md
 packadd vim-buffing-wheel
 " - + X
 " if  netrw  has been run, keeping getting a  [No Name]  buffer created...

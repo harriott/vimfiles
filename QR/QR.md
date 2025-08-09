@@ -611,7 +611,7 @@ in command-line `\t` inserts a tab character
     [selection]g ctrl-g  " counts in context
 
 ### in a line
-    :s/,/&/gn|noh  " characters
+    :s/,/&/gn|noh  " commas
     :s/./&/gn|noh  " characters
     :s/;/&/gn|noh  " semicolons
 

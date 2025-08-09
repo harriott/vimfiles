@@ -43,7 +43,9 @@ return {
       require'lspconfig'.astro.setup{} -- :MasonInstall astro-language-server
 
       -- ▩-> bashls
-      require'lspconfig'.bashls.setup{} -- :MasonInstall bash-language-server
+      require'lspconfig'.bashls.setup{}
+      -- :MasonInstall bash-language-server
+      -- :MasonUninstall bash-language-server
       -- $mason/bash-language-server/node_modules/bash-language-server/src/config.ts
       -- reports Error for CLRFs
 

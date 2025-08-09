@@ -14,5 +14,6 @@ foreach($vfl in $vimfiles, $lazy){
   rg --field-match-separator=' ⋮' -tlua -tvim --no-ignore -w 'imap|inoremap|keymap|map |nmap|noremap|nnoremap|omap|onoremap|vmap|vnoremap|xmap|xnoremap' $vfl >> $ml
   '' >> $ml
   }
+sleep 1
 ((gc $ml) -join "`n") + "`n" | seco -NoNewline $ml  # CRLF -> LF
 

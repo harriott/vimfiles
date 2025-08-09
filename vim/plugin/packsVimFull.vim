@@ -213,12 +213,13 @@ if !has('gui_running') | packadd Highlight.vim | endif  " plain vim only
 packadd vim-surround
 
 ""> vim - buffers - bufexplorer
+" $vfvp/packs-cp-full/opt/bufexplorer/doc/bufexplorer.txt
 packadd bufexplorer
 noremap <silent> <leader>be :BufExplorer<CR>
 
-"">> default mappings
-"  <Leader>be - Opens BufExplorer
-"  <Leader>bt - Toggles BufExplorer open or closed
-"  <Leader>bs - Opens horizontally split window BufExplorer
-"  <Leader>bv - Opens vertically split window BufExplorer
+"">>\ default mappings
+"  <leader>be - Opens BufExplorer
+"  <leader>bt - Toggles BufExplorer open or closed
+"  <leader>bs - Opens horizontally split window BufExplorer
+"  <leader>bv - Opens vertically split window BufExplorer
 

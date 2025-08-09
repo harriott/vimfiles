@@ -130,7 +130,7 @@ require('lazy').setup(
       -- <tab>/<s-tab>  toggles items, then  zn  remakes only those markeed, zN  those not marked
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
       -- $lazy/gitsigns.nvim/doc/gitsigns.txt
-      -- :Gitsigns toggle_signs
+      -- :Gitsigns toggle_signs  " :se rnu
       -- provides signs in the  signcolumn
     {'MagicDuck/grug-far.nvim', config = function() require('grug-far').setup({}); end, },
       -- $lazy/grug-far.nvim/README.md
@@ -181,10 +181,12 @@ require('lazy').setup(
         -- :che mason
         -- :LspInfo
         -- :Mason
+        -- :unmap X | Mason
           -- g?  toggles help
         -- :MasonLog (~/.local/state/nvim/mason.log)
         -- for  $vfn/lua/lazy/nvim-lspconfig.lua
         -- packages directory
+          -- $mason  can be deleted if something won't install
           -- :edit $MASON/packages (where defined?)
           -- g $mason
           -- r $mason
