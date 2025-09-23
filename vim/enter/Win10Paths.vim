@@ -10,8 +10,8 @@
 
 ""> paths
 let $CPF = $programfiles
-let $tricky = 'D:\tricky'
-  let $cGRs = $tricky.'\GRs'
+let $notDr = 'D:\notDr'
+  let $cGRs = $notDr.'\GRs'
 
 "">> 0 $Drpbx, or just $coreIT
 if $HOME == 'C:\Users\deaur'

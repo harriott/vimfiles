@@ -84,14 +84,6 @@ after a search, `:v//d` removes all non-matching lines
 - rgba(255, 255, 255, 5) - yes
 - works for  $culLA/IM-magick-list_color.txt
 
-## colorizer
-    <leader>tc          " (mapped to) ColorToggle (by colorizer) and files open fast when off
-    :packadd colorizer  " load the plugin from an opt directory
-
-- deprecated: use `clrzr` on Linux
-- doesn't handle rgba's
-- only interprets codes
-
 ## colorscheme background
     :h 'bg'
     :se bg
@@ -252,7 +244,7 @@ I mostly use `c-w o`.
 # modes
 `Ex`: `gQ` begins persistent command-line, `:vi` (`:visual`) quits
 
-## Insert
+## Insert-mode
     c-ke'    " digraph code for é
     c-a      " repeats last recorded insert
     c-o      " moves to normal mode for just one command
@@ -591,8 +583,6 @@ g&                                                 " repeat last command over th
 ni<somecharacter><esc>                             " inserts <somecharacters> n time
 ```
 
-in command-line `\t` inserts a tab character
-
 ## :put
 ```vim
 :pu=exe('<vim_command>') " :put=execute('...')
@@ -634,8 +624,9 @@ u            " lowercase a visual block
 
 ## entering specials
     digraphs
-    Entering special characters
     ^Vu03b2  " gets greek small letter beta
+
+Entering special characters
 
 ## number lists
     :for i in range(1,31) | pu=i.'. ' | endfor  " creates a numbered markdown list, ready for items
@@ -659,6 +650,13 @@ u            " lowercase a visual block
     :%sor!                   " reverse
     :sor n                   " numeric
     :{range}sor /<regex>/ r  " sorts by matching
+
+## tabs
+`\t` inserts in command-line
+
+### Insert-mode
+- unix: `Ctrl-v tab`
+- win64: `Ctrl-q tab`
 
 # words
 ```

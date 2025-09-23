@@ -8,7 +8,7 @@ return { 'nat-418/boole.nvim',
       allow_caps_additions = {
         {'enable', 'disable'},
       },
-      mappings = { increment = '<C-a>', decrement = '<C-x>', },
+      mappings = { increment = '<C-a>', decrement = '<C-x>', }, -- Ctrl-a/x
     })
   end,
 } -- doesn't handle French weekdays

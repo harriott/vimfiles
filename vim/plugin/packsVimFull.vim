@@ -116,6 +116,7 @@ imap <c-d> <Plug>(fzf-dictionary-open)
 " - no longer having any effect
 
 ""> layout - clrzr
+" $vfvp/packs-unix/opt/clrzr/doc/clrzr.txt
 " just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt
 " doesn't work for  $culLA/IM-magick-list_color.txt
 

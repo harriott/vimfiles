@@ -46,7 +46,7 @@ return {
       require'lspconfig'.bashls.setup{}
       -- :MasonInstall bash-language-server
       -- :MasonUninstall bash-language-server
-      -- $mason/bash-language-server/node_modules/bash-language-server/src/config.ts
+      -- $nvmp/bash-language-server/node_modules/bash-language-server/src/config.ts
       -- reports Error for CLRFs
 
       -- ▩-> lemminx
@@ -91,7 +91,7 @@ return {
 
       -- ▩-> perlnavigator
       -- :MasonInstall perlnavigator
-        -- $mason/perlnavigator/package.json
+        -- $nvmp/perlnavigator/package.json
       require'lspconfig'.perlnavigator.setup{cmd={"perlnavigator"}, settings = {
           perlnavigator = { perlPath = 'perl', enableWarnings = true, perltidyProfile = '',
             perlcriticProfile = '', perlcriticEnabled = true, } } }
@@ -111,7 +111,7 @@ return {
 
       -- ▩-> vimls
       -- :MasonInstall vim-language-server
-      -- $mason/vim-language-server/node_modules/vim-language-server/README.md
+      -- $nvmp/vim-language-server/node_modules/vim-language-server/README.md
       vim.g.markdown_fenced_languages = { 'vim' }
       require'lspconfig'.vimls.setup{
         cmd={"vim-language-server","--stdio"},

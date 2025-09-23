@@ -6,7 +6,7 @@
 
 -- $lazy/nvim-bqf/doc/bqf.txt
 -- <c-b>/<c-f>  operates on the magic window, which can't otherwise be entered
--- <tab>/<s-tab>  toggles items, then  zn  remakes only those markeed, zN  those not marked
+-- <tab>/<s-tab>  toggles items, then  zn  remakes only those marked, zN  those not marked
 -- From quickfix-window:
 --  :BqfEnable
 --  :BqfDisable  " also releases  <c-b>/<c-f>  to work again in the  quickfix-window

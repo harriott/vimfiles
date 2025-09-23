@@ -122,6 +122,11 @@ Joseph's (g)Vim Quick Reference
 
 `:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
 
+### inccommand
+- `:h icm`
+- `:let &icm = ''` disables preview of substitute changes
+- `:se icm` shows default is `split`
+
 ### default-mappings
     :h default-mappings
     <c-w>d  " (:h CTRL-W_d-default) opens diagnostic
@@ -145,32 +150,32 @@ Joseph's (g)Vim Quick Reference
 
 # Vim
 ```vim
-@@           " = @: = repeat last command-line
-\8           " toggle 82\106 columns
-echo g:      " list of all variable"
-ga           " returns code values for character under cursor
-gQ           " enter Ex mode
-K            " brings up a man page (if there is one) for word under cursor
-q:           " brings up an interactive history of :commands (in an editable window)
-vi           " exit Ex mode
-:ar          " the argument list
+@@               " = @: = repeat last command-line
+\8               " toggle 82\106 columns
+echo g:          " list of all variable"
+ga               " returns code values for character under cursor
+gQ               " enter Ex mode
+K                " brings up a man page (if there is one) for word under cursor
+q:               " brings up an interactive history of :commands (in an editable window)
+vi               " exit Ex mode
+:ar              " the argument list
 :echo has('win32')
 :echo has('win64')
 :h key-notation
-:h index     " lists the all of the commands
+:h index        " lists the all of the commands
 :h split()
-:his         " Display command-line history
-:his s       " Display search string history
-:profile ... " for speed tests
-:so %        " source the current file
-:DiffOrig    " brings the Recover version up left
-:X           " prompts for an encryption key
+:his            " Display command-line history
+:his s          " Display search string history
+:packadd clrzr  " $vfv/plugin/packsVimFull.vim
+:profile ...    " for speed tests
+:so %           " source the current file
+:DiffOrig       " brings the Recover version up left
+:X              " prompts for an encryption key
 ```
 
 ```
 c-k<non-text-key> " enters the Vim value of a non-text-key
 c-r "  " (in command line) insert the unnamed register
-command-line window: C-c C-c  closes
 :echo $HOME
 :echo expand('<cword>')  " echos the word under the cursor
 :echo getline(1) " contents of line 1
@@ -184,7 +189,8 @@ vim(1)
 $misc/CP/vimtest/README.md
 ```
 
-`&&`, `||`
+- `&&`, `||`
+- command-line window: `C-c C-c`  closes
 
 ## detect file
     :if filereadable(expand("~/_vimrc")) | echo "there" | endif

@@ -85,8 +85,8 @@ packadd close-buffers.vim
 
 ""> vim - buffers - vim-buffing-wheel
 " $vfvp/packs-cp-all/opt/vim-buffing-wheel/readme.md
-packadd vim-buffing-wheel
-" - + X
+packadd vim-buffing-wheel  " can be done again to restore  X
+" -, +, X (conflicts with Mason)
 " if  netrw  has been run, keeping getting a  [No Name]  buffer created...
 
 ""> vim - vim-repeat

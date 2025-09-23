@@ -136,6 +136,7 @@ require('lazy').setup(
       -- $lazy/grug-far.nvim/README.md
       -- :GrugFar
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
+      -- :N  briefly centers around line N
     {'numToStr/Comment.nvim', opts={}, }, -- $vimfiles/QR/variants.md
     {'yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end, },
       -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
@@ -153,8 +154,9 @@ require('lazy').setup(
     require'lazy/markdown-preview',
     require'lazy/neogit',
     -- require'lazy/nvim-hlslens',
-    require'lazy/nvim-bqf', -- $vfn/lua/lazy/nvim-bqf.lua
-    require'lazy/nvim-cmp', -- $vfn/lua/lazy/nvim-cmp.lua
+    require'lazy/nvim-bqf',
+    require'lazy/nvim-cmp',
+    require'lazy/nvim-colorizer_lua',
     require'lazy/nvim-surround',
     require'lazy/nvim-notify',
     require'lazy/nvim-tree',
@@ -181,15 +183,14 @@ require('lazy').setup(
         -- :che mason
         -- :LspInfo
         -- :Mason
-        -- :unmap X | Mason
+          -- :unmap X  would free (from  vim-buffing-wheel) for X'ing (uninstalling) packages
           -- g?  toggles help
         -- :MasonLog (~/.local/state/nvim/mason.log)
         -- for  $vfn/lua/lazy/nvim-lspconfig.lua
         -- packages directory
-          -- $mason  can be deleted if something won't install
-          -- :edit $MASON/packages (where defined?)
-          -- g $mason
-          -- r $mason
+          -- (= $MASON/packages) can be deleted if something won't install
+          -- g $nvmp
+          -- r $nvmp
       {"williamboman/mason-lspconfig.nvim",
         -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
         -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs

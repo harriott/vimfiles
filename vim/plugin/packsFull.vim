@@ -169,10 +169,10 @@ packadd rainbow_csv
 
 "">>> keymaps requiring b:rbcsv
 " let b:rbcsv
-nnoremap <expr> <C-Left> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoLeft<CR>' : '<C-Left>'
+nnoremap <expr> <C-Left>  get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoLeft<CR>' : '<C-Left>'
 nnoremap <expr> <C-Right> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoRight<CR>' : '<C-Right>'
-nnoremap <expr> <C-Up> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoUp<CR>' : '<C-Up>'
-nnoremap <expr> <C-Down> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoDown<CR>' : '<C-Down>'
+nnoremap <expr> <C-Up>    get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoUp<CR>' : '<C-Up>'
+nnoremap <expr> <C-Down>  get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoDown<CR>' : '<C-Down>'
 
 "">>>> safely toggle alignment
 function! RainbowAStoggle()
@@ -270,10 +270,13 @@ packadd vim-mbsync
 packadd vim-pandoc-syntax
 
 "">> vim-prettier
-" $vfvp/packs-cp-full/opt/vim-prettier/doc/prettier.txt
-" files that have '@format' annotation in the header of the file.
-" :Prettier  " css graphql javascript json less scss typescript
-packadd vim-prettier
+nnoremap <leader>p :echo "\\p"<cr>
+  packadd vim-prettier
+
+" Use:
+"  $vfvp/packs-cp-full/opt/vim-prettier/doc/prettier.txt
+"  :Prettier
+"  css  graphql  javascript  json  less  scss  typescript
 
 "">> vim-ps1
 " $vfvp\cp\opt\vim-ps1\ftdetect\ps1.vim
