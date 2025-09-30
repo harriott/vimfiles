@@ -275,7 +275,7 @@ nnoremap <leader>p :echo "\\p"<cr>
 
 " Use:
 "  $vfvp/packs-cp-full/opt/vim-prettier/doc/prettier.txt
-"  :Prettier
+"  :Prettier<Esc>
 "  css  graphql  javascript  json  less  scss  typescript
 
 "">> vim-ps1

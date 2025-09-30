@@ -11,7 +11,7 @@ let NERDSpaceDelims = 1
 " <leader>c<space> -> NERDCommenterToggle
 
 " extra filetypes
-" $vfvp/packs-cp/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
+" $vfvp/packs-cp-all/opt/nerdcommenter/autoload/nerdcommenter.vim > let s:delimiterMap
 let g:NERDCustomDelimiters = { 'clifm': { 'left': '#' }, }
 let g:NERDCustomDelimiters = { 'lf': { 'left': '#' }, }
 
@@ -44,6 +44,12 @@ function! IlluminateMoreToggle()
     " echo 'illuminatedWord buildN - refresh the buffer'
   endif
 endfunction
+
+""> layout - rainbow
+" coloured brackets & html pairs
+let g:rainbow_active = 1
+packadd rainbow
+" :RainbowToggle
 
 ""> layout - statusline
 if has('unix') " vim-airline

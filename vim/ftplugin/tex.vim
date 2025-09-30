@@ -68,8 +68,9 @@ nnoremap <buffer><leader>< :call PromoteSubSections()<CR>
 vnoremap <buffer><leader>< <Esc>:call PromoteSubSections()<CR>
 
 ""> folding
+let b:PandocLaTeX = get(g:, 'PandocLaTeX', '0') " $vfv/plugin/plugin.vim
 if b:PandocLaTeX
-  " I've made this case for easier management of $onGH/pandoc-templates/default-jh-3.latex
+  " I've made this case for easier management of  $onGH/pandoc-templates/defaultJH2.latex
   setlocal fde=LTXF() fdl=0 fdm=expr
   function! LTXF()
       let l:percents = matchstr(getline(v:lnum), '^%\+') "defined l:percents, even in no match

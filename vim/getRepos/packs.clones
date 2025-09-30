@@ -16,6 +16,7 @@ packs-cp-all/opt/mru https://github.com/yegappan/mru
 packs-cp-all/opt/nerdcommenter https://github.com/scrooloose/nerdcommenter
 packs-cp-all/opt/nerdtree https://github.com/scrooloose/nerdtree
 packs-cp-all/opt/quick-scope https://github.com/unblevable/quick-scope
+packs-cp-all/opt/rainbow https://github.com/luochen1990/rainbow
 packs-cp-all/opt/supertab https://github.com/ervandew/supertab
 packs-cp-all/opt/vim-airline https://github.com/bling/vim-airline
 packs-cp-all/opt/vim-airline-themes https://github.com/vim-airline/vim-airline-themes

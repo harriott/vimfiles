@@ -352,25 +352,6 @@ mJ  " put a file-specific mark in current file (can use A-Z0-9)
     zz        " current line at centre of window
     \zz       " toggle centering current line
 
-# registers
-    :h registers
-    :let @a = 'a'|let @A ='a'|reg a
-
-`"` also triggers `vim-peekaboo`
-
-## clear
-- `call ClearNamedRegisters()`
-- `qaq` clears the `a` register (but still listed until `shada` is rewritten)
-
-## macros
-- `@` also triggers `vim-peekaboo`
-- `qj` begins recording macro in `j`, `q` ends recording, `@j` runs it
-- `Q` (`$vfv/plugin/plugin.vim`)
-
-## show
-    :reg
-    :reg abcdefghijklmnopqrstuvwxyz
-
 # replace
     &              " repeat last substitute
     :ncc           " change n lines
@@ -557,7 +538,7 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 
 `t` tag block
 
-### parenthesis
+### parentheses
 `b` (= `)` = `(`)
 `B` (= `}` = `{`)
 `[` (= `]`)

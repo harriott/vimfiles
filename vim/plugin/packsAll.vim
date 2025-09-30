@@ -9,13 +9,13 @@ let g:packsAll = 1
 
 ""> encoding - context.vim
 " $vfvp/packs-cp-all/opt/context.vim/doc/context.vim.txt
-"  try $misc/CP/workHours/makeDats.pl
+"  try enabling it in  $misc/CP/workHours/makeDats.pl
+"  Big overlay in  Neovim...
 
 " :ContextToggleWindow  mapped in
 "  $vfv/ftplugin/perl.vim
 "  $vfv/ftplugin/ps1.vim
 let g:context_enabled = 0
-" overwrites  lspsaga's  breadcrumbs
 packadd context.vim
 
 ""> languages - omni completion

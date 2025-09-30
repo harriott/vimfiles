@@ -82,6 +82,7 @@ return {
       vim.keymap.set({'n'},'<localleader>t',function() vim.treesitter.stop() print("treesitter highlights off until refresh") end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vfv/after/syntax/lua.vim
     end,
   },
+  { 'nvim-treesitter/nvim-treesitter-context', } -- marginally useful - try in  $onGH/FM-DirLVF/DirLVF.py
 }
 
 -- ▩-> parsers on unix

@@ -19,6 +19,7 @@ return {
     event = 'VimEnter',
     branch = '0.1.x',
     dependencies = {
+      'benfowler/telescope-luasnip.nvim', --   :Telescope luasnip
       'nvim-lua/plenary.nvim',
       'nvim-tree/nvim-web-devicons',
       { "nvim-telescope/telescope-live-grep-args.nvim" , version = "^1.0.0", },
@@ -123,6 +124,7 @@ return {
       vim.keymap.set({'n','i','v'},'<f8>',builtin.command_history,{desc=':Telescope command_history'})
       vim.keymap.set({'n','i','v'},'<f9>',builtin.search_history,{desc=':Telescope search_history'})
       vim.keymap.set({'n'},'<leader>ht',builtin.help_tags,{desc=':Telescope help_tags'})
+      vim.keymap.set({'n'},'<leader>sn',function() vim.cmd('Telescope luasnip') end,{desc=':Telescope luasnip'})
       vim.keymap.set({'n'},'<leader>va',builtin.marks,{desc=':Telescope marks'})
       vim.keymap.set({'n'},'<leader>vc',builtin.commands,{desc=':Telescope commands'})
       vim.keymap.set({'n'},'<leader>vf',builtin.filetypes,{desc=':Telescope fileTypes (known to  vim)'})

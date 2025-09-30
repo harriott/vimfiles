@@ -11,10 +11,10 @@ vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
 function vim_opt_toggle(opt)
   local message = opt
   if vim.opt[opt]:get() == false then
-    message = message .. " on"
+    message = message .. ' on'
     vim.opt[opt] = true
   else
-    message = message .. " off"
+    message = message .. ' off'
     vim.opt[opt] = false
   end
   vim.notify(message)
@@ -35,10 +35,10 @@ vim.diagnostic.config({
   float = { header = 'vim.diagnostic', source = true, },
   jump = { float = true, }, -- opens the float
   virtual_text = false, -- no messy stuff
-}) -- lua vim.diagnostic.setqflist()  " quickfix of recents
+}) -- lua vim.diagnostic.setqflist() " quickfix of recents
 
 -- ▩--> window title
-if vim.fn.has("win64") == 1 then
+if vim.fn.has('win64') == 1 then
   -- $MSWin10\PSProfile.ps1  sets  $env:TERM
   -- if I don't set the title, get the path to the shell executable
   vim.opt.title = true
@@ -47,11 +47,11 @@ if vim.fn.has("win64") == 1 then
 
   -- bufferline:
   vim.opt.titlelen = 19 -- and 21 is bad...
-  vim.opt.titlestring = [[%{expand("%:h")}%H%M%R%q%W]]
+  vim.opt.titlestring = [[%{expand('%:h')}%H%M%R%q%W]]
 
   -- no  bufferline:
   -- vim.opt.titlelen = 24
-  -- vim.opt.titlestring = [[%{expand("%:p")}%H%M%R%q%W]]
+  -- vim.opt.titlestring = [[%{expand('%:p')}%H%M%R%q%W]]
 
   -- flags:
   --  %H  ,HLP (help buffer)
@@ -63,8 +63,8 @@ end
 
 -- ▩-> 0 Neovide
 if vim.g.neovide then
-  -- vim.g.neovide_cursor_vfx_mode = "railgun"
-  vim.g.neovide_cursor_vfx_mode = "torpedo"
+  -- vim.g.neovide_cursor_vfx_mode = 'railgun'
+  vim.g.neovide_cursor_vfx_mode = 'torpedo'
   vim.g.neovide_opacity = 0.93
    -- only currently effective on win64, okay with high contrast image behind
   -- vim.g.neovide_normal_opacity = 0.8  -- defaults to 1
@@ -98,6 +98,34 @@ vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode
 -- ▩-> 0 nvim-cmp on
 vim.g.cmp_on = true -- $vfn/lua/lazy/nvim-cmp.lua
 
+-- ▩-> 0 vim.lsp
+-- $cGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
+-- $lazy/nvim-lspconfig/doc/configs.md  has notes for each  LSP
+vim.lsp.enable({'astro'}) -- $vfn/lsp/astro.lua
+vim.lsp.enable({'bashls'}) -- $vfn/lsp/bashls.lua
+-- vim.lsp.enable({'ts_ls'}) -- $vfn/lsp/ts_ls.lua
+vim.lsp.enable({'lemminx'}) -- $vfn/lsp/lemminx.lua
+vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
+vim.lsp.enable({'lua_ls'}) -- $vfn/lsp/lua_ls.lua
+vim.lsp.enable({'mdx_analyzer'}) -- $vfn/lsp/mdx_analyzer.lua
+vim.lsp.enable({'mutt_ls'}) -- $vfn/lsp/mutt_ls.lua
+vim.lsp.enable({'perlnavigator'}) -- $vfn/lsp/perlnavigator.lua
+vim.lsp.enable({'powershell_es'}) -- $vfn/lsp/powershell_es.lua
+vim.lsp.enable({'pyright'}) -- $vfn/lsp/pyright.lua
+vim.lsp.enable({'texlab'}) -- $vfn/lsp/texlab.lua
+vim.lsp.enable({'typos_lsp'}) -- $vfn/lsp/typos_lsp.lua
+vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
+-- in a file, :checkhealth vim.lsp  reports the active  LS's
+-- unclear what's the benefit of LuaDoc Annotations
+-- try
+  -- emmet-language-server (for  css, html, less, sass, scss)
+  -- nginx_language_server
+  -- phpactor
+  -- vscode-html-languageservice  for  html
+  -- vscode-json-languageservice  for  json
+  -- yamlls
+
+
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
 -- :h lazy.nvim  internal links broken by fancy glyphs, so search manually
@@ -109,10 +137,7 @@ require('lazy').setup(
   -- ▩--> nvim packages
   {
     -- ▩---> direct calls
-    {'akinsho/bufferline.nvim', config=function() require'bufferline'.setup()
-      options = {
-        themable = true, -- ensures current buffer name is visible
-      } end,},
+    {'akinsho/bufferline.nvim', config=function() require'bufferline'.setup() end,},
       -- :BufferLineCloseOthers
       -- :BufferLinePickClose
       -- :BufferLinePick
@@ -122,15 +147,16 @@ require('lazy').setup(
       -- l-mouse  selects
       -- r-mouse  drops
     {'dstein64/nvim-scrollview', config=function() require'scrollview'.setup()
-      vim.keymap.set({'n'},'<leader>sv',"<Cmd>ScrollViewToggle<CR>") end,},
+      vim.keymap.set({'n'},'<leader>sv','<Cmd>ScrollViewToggle<CR>') end,},
       -- $lazy/nvim-scrollview/doc/scrollview.txt
     -- {'gelguy/wilder.nvim', config=function() end,},
     -- {'kevinhwang91/nvim-bqf', ft = 'qf'},
       -- $lazy/nvim-bqf/doc/bqf.txt
       -- <tab>/<s-tab>  toggles items, then  zn  remakes only those markeed, zN  those not marked
+    {'HiPhish/rainbow-delimiters.nvim'}, -- parentheses slightly less visible but easier to distinguish
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
       -- $lazy/gitsigns.nvim/doc/gitsigns.txt
-      -- :Gitsigns toggle_signs  " :se rnu
+      -- :Gitsigns toggle_signs  ' :se rnu
       -- provides signs in the  signcolumn
     {'MagicDuck/grug-far.nvim', config = function() require('grug-far').setup({}); end, },
       -- $lazy/grug-far.nvim/README.md
@@ -138,6 +164,9 @@ require('lazy').setup(
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
       -- :N  briefly centers around line N
     {'numToStr/Comment.nvim', opts={}, }, -- $vimfiles/QR/variants.md
+    {'pmizio/typescript-tools.nvim',
+      dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+      opts = {}, }, -- brings in  tsserver  Diagnostics
     {'yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end, },
       -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
     {'wurli/visimatch.nvim', opts = {} },
@@ -148,7 +177,8 @@ require('lazy').setup(
     -- require'lazy/csvview_nvim',
     require'lazy/fzf-lua',
     require'lazy/harpoon',
-    require'lazy/helpview_nvim', -- :h helpview.nvim-commands  :Helpview toggle
+    require'lazy/helpview_nvim',
+    require'lazy/indent-blankline_nvim',
     require'lazy/leap',
     require'lazy/lualine',
     require'lazy/markdown-preview',
@@ -177,8 +207,7 @@ require('lazy').setup(
     require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
     -- ▩---> nvim-lspconfig
     require('lazy/nvim-lspconfig'),
-    require("lazy/lspsaga"),
-      {'williamboman/mason.nvim', config=function() require'mason'.setup() end,},
+      {'mason-org/mason.nvim', config=function() require'mason'.setup() end,},
         -- $lazy/mason.nvim/doc/mason.txt
         -- :che mason
         -- :LspInfo
@@ -191,13 +220,14 @@ require('lazy').setup(
           -- (= $MASON/packages) can be deleted if something won't install
           -- g $nvmp
           -- r $nvmp
-      {"williamboman/mason-lspconfig.nvim",
+      {'mason-org/mason-lspconfig.nvim',
         -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
         -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
-         config=function() require('mason-lspconfig').setup() end,},
+         config=function() require('mason-lspconfig').setup{automatic_enable = false} end,},
+      require('lazy/lspsaga'), -- excellent breadcrumbs, among other things
     -- ▩---> nvim-treesitter
     require'lazy/nvim-treesitter', -- $vfn/lua/lazy/nvim-treesitter.lua
-      'nvim-treesitter/nvim-treesitter-context',
+      -- 'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
         -- context.vim  works better
   -- ▩--> more stuff
@@ -239,7 +269,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.notify('ready for :Notifications')
 
 -- -- ▩-> 2 for wilder
--- vim.cmd("call wilder#setup({'modes': [':', '/', '?']})")
--- vim.cmd("call wilder#set_option('renderer', wilder#popupmenu_renderer({ 'highlighter': wilder#basic_highlighter(), }))")
+-- vim.cmd('call wilder#setup({'modes': [':', '/', '?']})')
+-- vim.cmd('call wilder#set_option('renderer', wilder#popupmenu_renderer({ 'highlighter': wilder#basic_highlighter(), }))')
 -- -- but it's broken...
 
