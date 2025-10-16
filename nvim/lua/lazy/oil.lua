@@ -1,3 +1,4 @@
+-- vim: set fdl=4:
 
 -- $vfn/lua/lazy/oil.lua
 

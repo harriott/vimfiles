@@ -29,10 +29,11 @@ au BufNewFile,BufRead ~/.emacs.d/history setlocal filetype=lisp
 ""> 0 GitHub Flavored Markdown
 au BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
 
-""> 0 my Arch Bash history
-au BufNewFile,BufRead ~/Arch/bash_history setlocal filetype=sh
+""> 0 PSReadLine history
+au BufRead,BufNew,BufNewFile */AppData/Roaming/Microsoft/Windows/PowerShell/PSReadLine/ConsoleHost_history.txt setlocal ft=ps1
 
-""> 0 my CCh backups
+""> 0 my Arch Bash history
+au BufNewFile,BufRead */bash_history setlocal filetype=sh
 
 ""> 0 my tmux.conf backups
 au BufNew,BufNewFile,BufRead $culLA/ml-*/tmux/**/*.conf setlocal filetype=tmux

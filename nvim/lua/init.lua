@@ -195,7 +195,7 @@ require('lazy').setup(
     require'lazy/outline_nvim',
     -- require'lazy/rainbow_csv_nvim',
     require'lazy/render-markdown_nvim',
-    -- require'lazy/tabby',
+    -- require'lazy/tabby_nvim',
     require'lazy/snipe_nvim',
     require'lazy/snipe-spell',
     require'lazy/stay-centered_nvim',

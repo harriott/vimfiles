@@ -6,8 +6,6 @@
 -- $vfn/lua/test.lua
 --  required by  $vimfiles/test/configs/init.vim
 
-vim.g.test = 1
-
 -- -- ▩-> 1 lazy.nvim
 -- require 'lazy/bootstrap'
 

@@ -1,6 +1,7 @@
 -- vim: fdl=4:
 
 -- $vfn/lua/lazy/snipe_nvim.lua
+-- $lazy/snipe.nvim/README.md
 -- begun with  $cGRs/d-unix/r-linkarzu-dotfiles-latest/neovim/neobean/lua/plugins/snipe.lua
 
 return { "leath-dub/snipe.nvim",

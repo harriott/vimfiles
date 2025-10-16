@@ -4,6 +4,7 @@
 "  $ABjo/textEdit/Vim/vimrc
 "  $vfn/init.vim
 
+if exists('g:test') | finish | endif
 source $vfv/enter/vimrc-linux.vim  " $vfvrc-linux.vim
 
 if hostname() == 'AsusW202'

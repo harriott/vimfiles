@@ -457,7 +457,6 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 :r!<shell_command>    " reads shell command output into current buffer
 :se sh                " returns the path to the shell
 :se ssop              " sessionoptions
-:tabe $HOME\_vimrc    " bring up my vimrc in a new tab
 :term
 <shellcmd> | gvim -   " pipes shell command output into gvim
 gx                    " open url under cursor (or all of first line of markdown link)
@@ -518,9 +517,10 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 `:version` shows what minor version of Python is expected
 
 # tab views
-    gT  gt    " move around tabs
-    :tab ball " all buffers into tabs
+    Ctrl-w gf  " gf  into new tab
+    gT  gt     " move around tabs
     :tabclose
+    :tabe $HOME/.vimrc
 
 # text objects
     c<text_object>

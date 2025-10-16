@@ -2,6 +2,9 @@
 " https://harriott.githubio/ - Wed 29 May 2024
 
 " $vfv/plugin/packs.vim
+"  symlinked in
+"   $MSn/set/3.ps1
+"   $OSAB/nodes-set/jo-2-whenWM-0.sh
 
 " $ ls $vimfiles -r vim/packs*/opt
 

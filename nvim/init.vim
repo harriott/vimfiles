@@ -55,7 +55,7 @@ set tgc  "  termguicolors  somehow impacts  bufferline.nvim  in  Neovide
 " set shell=powershell  " Windows PowerShell
 " set shell=pwsh  " PowerShell
 
-""> 1 pull in Vim configuration
+""> 1 pull in vimrc
 if has('win64')
   source $HOME\vimfiles\Win10Paths.vim  " $vimfiles\vim\enter\Win10Paths.vim
   source $vimfiles\vim\enter\vimrc-Win10.vim
@@ -123,4 +123,12 @@ if has('win64')
 endif " - for  $vfn/lua/lazy/nvim-neoclip.lua
 lua require('init')
 " - $vfn/lua/init.lua
+
+""> 3 pull in the rest - automatic
+" In order:
+"  lazy stuff begins
+"  $vfv/plugin/packs.vim
+"  $vfv/plugin/plugin.vim
+"  $vfv/after/...
+"  $vfv/filetype.vim
 

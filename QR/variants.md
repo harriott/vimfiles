@@ -85,6 +85,8 @@ Joseph's (g)Vim Quick Reference
     g $lazy
     g 'C:\Program Files\Neovim\share\nvim\runtime'
 
+navigating into `C:\Vim` requires cursor on C
+
 #### ShaDa file
     g $HADL\nvim-data\shada
     rm $HADL\nvim-data\shada\main.shada.tmp.*  # works while nvim is running
@@ -99,8 +101,13 @@ Joseph's (g)Vim Quick Reference
     :lua if vim.fn.has('win64') == 1 then print('win64') else print('not win6') end
 
 ### unix
+    $nvmp
     :if $XDG_CURRENT_DESKTOP == '' | echo 'might be Openbox' | endif
     n ~/.vimswap
+
+#### plugins
+    $lazy
+    /root/.local/share/nvim/lazy
 
 #### ShaDa file
     cp ~/.local/share/nvim/shada/main.shada ~/nvim.shada
@@ -121,12 +128,9 @@ Joseph's (g)Vim Quick Reference
     :Bufferize echo stdpath('cache')
     :Bufferize echo stdpath('config')
     :Bufferize echo stdpath('data')
+    nvim --clean
 
 - `:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
-
-### ShaDa file
-- `MessagePack` format which is almost unreadable from `Vim`
-- manually editing: with no `Neovim` running, `nvim --clean ~/.local/state/nvim/shada/main.shada`, remove the relevant lines, `:w|wsh|q`
 
 ### inccommand
 - `:h icm`
@@ -138,6 +142,10 @@ Joseph's (g)Vim Quick Reference
     <c-w>d  ' (:h CTRL-W_d-default) opens diagnostic
 
 `[d`/`]d`=> previous/next diagnostic
+
+### ShaDa file
+- `MessagePack` format which is almost unreadable from `Vim`
+- manually editing: with no `Neovim` running, `nvim --clean ~/.local/state/nvim/shada/main.shada`, remove the relevant lines, `:w|wsh|q`
 
 ## spell
 `\cs` = `cmp-spell` which underlines in red possible mistakes
@@ -156,26 +164,27 @@ Joseph's (g)Vim Quick Reference
 
 # Vim
 ```vim
-@@               ' = @: = repeat last command-line
-\8               ' toggle 82\106 columns
-ga               ' returns code values for character under cursor
-gQ               ' enter Ex mode
-K                ' brings up a man page (if there is one) for word under cursor
-q:               ' brings up an interactive history of :commands (in an editable window)
-vi               ' exit Ex mode
-:ar              ' the argument list
+@@               " = @: = repeat last command-line
+\8               " toggle 82\106 columns
+ga               " returns code values for character under cursor
+gQ               " enter Ex mode
+K                " brings up a man page (if there is one) for word under cursor
+q:               " brings up an interactive history of :commands (in an editable window)
+vi               " exit Ex mode
+:ar              " the argument list
 :echo has('win32')
 :echo has('win64')
 :h key-notation
-:h index        ' lists the all of the commands
+:h index        " lists the all of the commands
 :h split()
-:his            ' Display command-line history
-:his s          ' Display search string history
-:packadd clrzr  ' $vfv/plugin/packsVimFull.vim
-:profile ...    ' for speed tests
-:so %           ' source the current file
-:DiffOrig       ' brings the Recover version up left
-:X              ' prompts for an encryption key
+:his            " Display command-line history
+:his s          " Display search string history
+:packadd clrzr  " $vfv/plugin/packsVimFull.vim
+:profile ...    " for speed tests
+:so %           " source the current file
+:tab ball       " all buffers into tabs
+:DiffOrig       " brings the Recover version up left
+:X              " prompts for an encryption key
 ```
 
 ```
@@ -327,6 +336,9 @@ options as variable: `:echo &textwidth`
     :se smc=0  ' (synmaxcol) removes 3000 character limit
 	:so $VIMRUNTIME/syntax/hitest.vim  ' wait for it to load!
     :sy sync fromstart  ' but can't find any way to check this setting
+
+##### not Nvim
+    $cGRs/d-CP/d-Vim-Vim/r-vim-vim/runtime/syntax/syncolor.vim
 	$VIMRUNTIME/syntax/syncolor.vim
 
 #### state

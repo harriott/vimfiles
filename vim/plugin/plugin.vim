@@ -3,13 +3,14 @@
 
 " $vfv/plugin/plugin.vim
 
+if exists('g:test') | finish | endif
+let g:plugin = 1
+
 " better searching
 set ignorecase smartcase
 
 " clear registers b-z
 command! WipeReg for i in range(98,122) | silent! call setreg(nr2char(i), []) | endfor
-
-let g:sourced_plugin_vim = 1
 
 " maxmempattern
 " set mmp=90000  " for $TeNo/TN/JH-DailyLife/Health/Ingest/Regimes.md

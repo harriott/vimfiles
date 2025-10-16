@@ -3,6 +3,8 @@
 
 " $vfv/plugin/packsFull.vim - only sourced by  $vfv/plugin/packs.vim  for full installations
 
+let g:packsFull = 1
+
 ""> encoding - AnsiEsc
 if has('unix') | packadd vim-plugin-AnsiEsc | endif
 
