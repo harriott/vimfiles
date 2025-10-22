@@ -20,6 +20,11 @@ au BufNewFile,BufRead *.aesl setlocal filetype=xml
 ""> 0 default applications
 au BufRead,BufNew,BufNewFile mimeapps.list setlocal ft=dosini
 
+""> 0 dunstrc
+" /etc/dunst/dunstrc  detected as  .cfg  unless  BufWinEnter  here
+" my copies are detected as  .conf
+au BufRead,BufNew,BufNewFile,BufWinEnter */dunstrc,/etc/dunst/dunstrc setlocal ft=dosini
+
 ""> 0 Dropbox Paper
 au BufRead,BufNew,BufNewFile *.paper setlocal ft=json
 
@@ -72,6 +77,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.asc       setf pem       " $vfv/ftplugin/pem.vim
   au! BufRead,BufNewFile *.clones    setf clones    " $vfv/syntax/clones.vim
   au! BufRead,BufNewFile *.cmplt     setf cmplt     " $vfv/syntax/cmplt.vim
+  au! BufRead,BufNewFile *.cslF      setf cslF      " $vfv/syntax/cslF.vim
   au! BufRead,BufNewFile *.dcc       setf dcc       " $vfv/ftplugin/dcc.vim
   au! BufRead,BufNewFile *.digs      setf digs      " $vfv/ftplugin/digs.vim
   au! BufRead,BufNewFile *.dirl      setf dirl      " $vfv/syntax/dirl.vim
@@ -99,6 +105,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.toc       setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
   au! BufRead,BufNewFile *.tree      setf tree      " $vfv/ftplugin/tree.vim
   au! BufRead,BufNewFile *.ufco      setf ufco      " $vfv/syntax/ufco.vim
+  au! BufRead,BufNewFile *.WGPfn     setf WGPfn     " $vfv/syntax/WGPfn.vim
   au! BufRead,BufNewFile *.whatsapp  setf whatsapp  " $vfv/syntax/whatsapp.vim
   au! BufRead,BufNewFile .spacemacs  setf lisp
 aug END  " - overrides  $VIMRUNTIME/filetype.vim
