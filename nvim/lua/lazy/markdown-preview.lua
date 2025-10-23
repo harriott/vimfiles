@@ -16,7 +16,8 @@
 
 return { "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-  build = "cd app && yarn install",
+  build = "cd app && npm install",
+  -- build = "cd app && yarn install",
   init = function()
     vim.g.mkdp_filetypes = { "markdown" }
     vim.g.mkdp_auto_close = 0 -- leave browser tab open when leaving markdown buffer
