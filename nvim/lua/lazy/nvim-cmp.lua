@@ -24,6 +24,7 @@ return {
             require("luasnip.loaders.from_lua").load({ paths = "./lua/snippets" })
               -- $vfn/lua/snippets
           end, }, },
+        -- :Lazy update  might fail, if so  $ sudo rm -r $lazy/LuaSnip
       }, -- and  :Telescope luasnip
       'micangl/cmp-vimtex',
       'onsails/lspkind.nvim',

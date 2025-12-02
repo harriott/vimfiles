@@ -56,7 +56,7 @@ packadd vim-rhubarb  " for GitHub
 let g:gfm_syntax_emoji_conceal = 1
 let g:gfm_syntax_enable_always = 0
 let g:gfm_syntax_enable_filetypes = ['gfm']
-" packadd vim-gfm-syntax  " for viewing  $coreIT/CP/encoding/EMOJI_CHEAT_SHEET.gfm
+packadd vim-gfm-syntax  " for viewing  $coreIT/CP/encoding/EMOJI_CHEAT_SHEET.gfm
 
 ""> encoding - languages
 packadd CSS-one-line--multi-line-folding
@@ -138,7 +138,9 @@ packadd emmet-vim
 " packadd vim-liquid  " $vfvp/packs-cp-full/opt/vim-liquid/ftdetect/liquid.vim
 
 "">> mediawiki.vim
-packadd mediawiki.vim  " $vfvp/packs-cp-full/opt/mediawiki.vim/README.md
+packadd mediawiki.vim
+" $vfvp/packs-cp-full/opt/mediawiki.vim/README.md
+" $vimfiles/ftplugin/mediawiki.vim
 
 "">> msmtp-scripts-vim
 " marlam  in  $vfv/getRepos/unix.sh, $vfv/getRepos/win64.ps1
@@ -252,6 +254,8 @@ let g:vim_markdown_frontmatter = 1  " highlight YAML Front Matter
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_strikethrough = 1  " ~~ struck thru ~~
 packadd vim-markdown  " harriott  clone of  preservim
+" if this isn't added, neovim throws a lua syntax error on a markdown file...
+" somehow  ```mediawiki  throws <https://.../> back to less pleasant default highlighting
 
 " Movements:
 " ]] => next header
@@ -550,7 +554,7 @@ packadd calendar-vim
 " $vfvp/packs-cp-full/opt/vim-Grammalecte/doc/Grammalecte.txt
 " :GrammalecteCheck
 " :GrammalecteClear
-let g:grammalecte_cli_py="$ITscc/CP/Grammalecte-fr-v2_1_1/grammalecte-cli.py"
+let g:grammalecte_cli_py="$cITcc/CP/Grammalecte-fr-v2_1_1/grammalecte-cli.py"
 packadd vim-Grammalecte
 
 ""> shell - vim-grepper
@@ -572,6 +576,7 @@ vmap <F6> <Plug>(openbrowser-smart-search)
 packadd open-browser.vim
 
 ""> shell - vim-clifm
+" $vfvp/packs-cp-full/opt/vim-clifm/ReadMe.md
 packadd vim-clifm
 
 ""> shell - vim-open-url

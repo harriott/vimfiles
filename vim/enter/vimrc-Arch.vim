@@ -7,7 +7,7 @@
 if exists('g:test') | finish | endif
 source $vfv/enter/vimrc-linux.vim  " $vfvrc-linux.vim
 
-if hostname() == 'AsusW202'
+if hostname() == 'DOP3040D11S'
   set redrawtime=4000  " for  linux-pn.dw
 elseif hostname() == 'sbMb'
   set redrawtime=50000  " for  pack/packs-cp/opt/vim-markdown/test/syntax.vader
@@ -16,8 +16,8 @@ endif
 set linespace=2
 
 ""> LanguageTool
-let g:langtool_jar = $ITscc.'/CP/LanguageTool/languagetool-commandline.jar'
-let g:languagetool_jar = $ITscc.'/CP/LanguageTool/languagetool-commandline.jar'
+let g:langtool_jar = $cITcc.'/CP/LanguageTool/languagetool-commandline.jar'
+let g:languagetool_jar = $cITcc.'/CP/LanguageTool/languagetool-commandline.jar'
 
 ""> open in Emacs
 function! OpenInEmacs()

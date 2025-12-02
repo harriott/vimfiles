@@ -38,7 +38,7 @@ return {
       end,{desc=':LspRestart lua_ls typos_lsp'})
       -- ▩--> LspStop
       -- no generic way to disable on opening a specific file
-      vim.keymap.set({'n'},'<localleader>l', function() vim.cmd('LspStop ltex') print('LspStop\'d ltex') end,{desc=':LspStop ltex'}) -- if  =s  fails
+      vim.keymap.set({'n'},'<localleader>l', function() vim.cmd('LspStop ltex') print('LspStop\'d ltex') end,{desc=':LspStop ltex'}) -- if  =s  fails. Needs  C:\Lua  in path
       vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'})
 
     -- ▩-> end

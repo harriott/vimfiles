@@ -75,7 +75,7 @@ nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
 " when  $JHm/_posts  have  fdm=syntax
 
 ""> syntax highlighting fix
-" maxmempattern  is set in  $vimfiles/plugin/plugin.vim
+" maxmempattern  is set in  $vfv/plugin/plugin.vim
 setlocal synmaxcol=0
 
 ""> for Verse

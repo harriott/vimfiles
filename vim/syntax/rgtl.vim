@@ -1,5 +1,5 @@
 
-" Language: rgtl - solely for  rg --type-list > $ITscr/CP/ripgrep-type-list.rgtl
+" Language: rgtl - solely for  rg --type-list > $cITcr/CP/ripgrep-type-list.rgtl
 " Maintainer: Joseph Harriott
 " Last Change: ven 04 oct 2024
 

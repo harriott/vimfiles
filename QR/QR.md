@@ -453,6 +453,7 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 :echo expand("%:p:h") " <path_to_current_file>
 :Locate <pattern>
 :packadd syntastic    " load the plugin from an opt directory
+:pw                   " pwd
 :r<file>              " reads <file> into buffer
 :r!<shell_command>    " reads shell command output into current buffer
 :se sh                " returns the path to the shell

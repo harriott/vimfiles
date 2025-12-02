@@ -62,11 +62,11 @@ let $HADR = $HOME.'\AppData\Roaming'
   let $tex = $HADR.'\MiKTeX\tex'
 
 "">> 1 normally rooting on $coreIT
-let $ITsCP = $coreIT.'\CP'
-  let $LTXj = $ITsCP.'\documenting\LaTeX\jo'
+let $cITCP = $coreIT.'\CP'
+  let $LTXj = $cITCP.'\documenting\LaTeX\jo'
 let $DWp = $coreIT.'\DokuWiki\pages'
-let $ITscc = $coreIT.'\copied-code'
-let $ITscr = $coreIT.'\copied-reference'
+let $cITcc = $coreIT.'\copied-code'
+let $cITcr = $coreIT.'\copied-reference'
 if $HOME == 'C:\Users\deaur'
   let $MSWml = 'D:\ITJ\ml'
 else

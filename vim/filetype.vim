@@ -1,6 +1,6 @@
 
 " Maintainer: Joseph Harriott
-" Last Change: Fri 11 Apr 2025
+" Last Change: mar 04 nov 2025
 " $vfv/filetype.vim
 "  supplemental to
 "   $VIMRUNTIME/filetype.lua

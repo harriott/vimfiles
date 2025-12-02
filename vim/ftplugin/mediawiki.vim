@@ -1,11 +1,8 @@
 
-" My adjustments
-" Language: mediawiki
+" Language: mediawiki - see  $vfv/plugin/packsFull.vim
 " Maintainer: Joseph Harriott
 " Last Change: Fri 07 Oct 2016
 " $vimfiles/ftplugin/mediawiki.vim
-
-" You should also have  https://github.com/chikamichi/mediawiki.vim  installed
 
 " <!-- vim: set fdl=2: -->
 

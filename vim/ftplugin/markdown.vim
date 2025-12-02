@@ -39,7 +39,10 @@ nnoremap <buffer><localleader>b viwc****<Esc>hP
 source $vfv/ftplugin/HashFolding.vim
 
 " Markdown Preview
-nnoremap <buffer><F7> :MarkdownPreview<CR>
+if has('nvim')
+  nnoremap <buffer><F7> :MarkdownPreview<CR>
+  " $vfn/lua/lazy/markdown-preview.lua
+endif
 
 " outline.nvim
 noremap <buffer><leader>o :Outline<CR>

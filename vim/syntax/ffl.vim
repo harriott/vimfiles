@@ -6,6 +6,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: lun 31 mars 2025
 " Detection: $vfv/filetype.vim
+" was  fetl
 
 " $vfv/syntax/ffl.vim  also  $vfv/ftplugin/ffl.vim
 

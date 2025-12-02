@@ -1,9 +1,9 @@
 
 " Language: autohotkey
 " Maintainer: Joseph Harriott
-" Last Change: Tue 24 May 2022
+" Last Change: ven 24 oct 2025
 
 " $vfv/ftplugin/autohotkey.vim
 
-setlocal textwidth=0
+setlocal expandtab textwidth=0
 

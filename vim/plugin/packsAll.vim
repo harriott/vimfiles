@@ -23,6 +23,10 @@ packadd context.vim
 inoremap <c-x><c-x> <c-x><c-o>
 " - I'd preferred  <C-M>, but that's <CR>
 
+""> languages - vim-SPDFset
+if has('win64') | packadd vim-SPDFset | endif
+" $vfvp/packs-win64/opt/vim-SPDFset/README.md
+
 ""> layout - characterize.vim
 " enhances  ga
 packadd vim-characterize

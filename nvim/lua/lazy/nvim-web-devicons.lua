@@ -1,3 +1,4 @@
+-- vim: set fdl=5:
 
 -- $vfn/lua/lazy/nvim-web-devicons
 

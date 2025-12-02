@@ -1,11 +1,15 @@
+-- vim: fdl=2:
 
 -- $vfn/lua/lazy/render-markdown_nvim.lua
+
+-- https://harriott.github.io/ - Tue 04 Nov 2025
 
 -- $lazy/render-markdown.nvim/README.md
 -- $lazy/render-markdown.nvim/doc/render-markdown.txt
 -- :h render-markdown
 
--- check with  $vimfiles/test/README.md
+-- could be occasionally useful
+--  check with  $vimfiles/test/README.md
 
 return { 'MeanderingProgrammer/render-markdown.nvim',
   dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },

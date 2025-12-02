@@ -2,7 +2,7 @@
 -- $vfn/lua/lazy/nvim-tree.lua
 
 -- $lazy/nvim-tree.lua/doc/nvim-tree-lua.txt
---  Git Integration:
+--  Git Integration (not always showing in  win64):
 --   ✗  unstaged
 --   ✓  staged
 --     unmerged

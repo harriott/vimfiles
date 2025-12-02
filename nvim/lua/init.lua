@@ -112,10 +112,11 @@ vim.lsp.enable({'mutt_ls'}) -- $vfn/lsp/mutt_ls.lua
 vim.lsp.enable({'perlnavigator'}) -- $vfn/lsp/perlnavigator.lua
 vim.lsp.enable({'powershell_es'}) -- $vfn/lsp/powershell_es.lua
 vim.lsp.enable({'pyright'}) -- $vfn/lsp/pyright.lua
+vim.lsp.enable({'sqls'}) -- $vfn/lsp/pyright.lua
 vim.lsp.enable({'texlab'}) -- $vfn/lsp/texlab.lua
 vim.lsp.enable({'typos_lsp'}) -- $vfn/lsp/typos_lsp.lua
 vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
--- in a file, :checkhealth vim.lsp  reports the active  LS's
+-- in a file, :che vim.lsp  reports the active  LS's
 -- unclear what's the benefit of LuaDoc Annotations
 -- try
   -- emmet-language-server (for  css, html, less, sass, scss)
@@ -124,7 +125,6 @@ vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
   -- vscode-html-languageservice  for  html
   -- vscode-json-languageservice  for  json
   -- yamlls
-
 
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
@@ -167,6 +167,12 @@ require('lazy').setup(
     {'pmizio/typescript-tools.nvim',
       dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
       opts = {}, }, -- brings in  tsserver  Diagnostics
+    {'sindrets/diffview.nvim'},
+      --  $lazy/diffview.nvim/doc/diffview.txt
+      --  :DiffviewFileHistory %
+        --  Tab/Shift-Tab  cycles through commit pairs in the repository, latest always at right
+      --  :DiffviewClose
+      --  g?
     {'yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end, },
       -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
     {'wurli/visimatch.nvim', opts = {} },
@@ -182,7 +188,7 @@ require('lazy').setup(
     require'lazy/leap',
     require'lazy/lualine',
     require'lazy/markdown-preview',
-    require'lazy/neogit',
+    -- require'lazy/neogit',
     -- require'lazy/nvim-hlslens',
     require'lazy/nvim-bqf',
     require'lazy/nvim-cmp',
@@ -207,6 +213,7 @@ require('lazy').setup(
     require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
     -- ▩---> nvim-lspconfig
     require('lazy/nvim-lspconfig'),
+      -- $lazy/nvim-lspconfig/lsp - code for each LSP
       {'mason-org/mason.nvim', config=function() require'mason'.setup() end,},
         -- $lazy/mason.nvim/doc/mason.txt
         -- :che mason
@@ -222,7 +229,8 @@ require('lazy').setup(
           -- r $nvmp
       {'mason-org/mason-lspconfig.nvim',
         -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig.txt
-        -- $lazy/mason-lspconfig.nvim/doc/mason-lspconfig-mapping.txt - the LSPs
+        -- $lazy/mason-lspconfig.nvim/lua/mason-lspconfig/filetype_mappings.lua
+          -- usage of LSPs by filetype
          config=function() require('mason-lspconfig').setup{automatic_enable = false} end,},
       require('lazy/lspsaga'), -- excellent breadcrumbs, among other things
     -- ▩---> nvim-treesitter

@@ -2,17 +2,18 @@
 
 -- $vfn/lua/lazy/markdown-preview.lua
 
--- requires  corepack enable  on the system
+-- https://harriott.github.io/ - Tue 04 Nov 2025
+
+-- Markdown Preview
+--  very nice preview in browser
+--   requires  corepack enable  on the system
 
 -- :Lazy update  might fail, if so
 --   $ sudo rm -r $lazy/markdown-preview.nvim
---   PS> remove-itemsafely $lazy/markdown-preview.nvim
+--   g $lazy  to open FE and Delete  markdown-preview.nvim
 --  then  Lazy  will build it on next launch of  Nvim
 
 -- $lazy/markdown-preview.nvim/README.md
--- Markdown Preview
-
--- $vfv/ftplugin/markdown.vim
 
 return { "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

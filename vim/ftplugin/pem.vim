@@ -1,3 +1,4 @@
+" vim: set fdl=1:
 
 " Language: PEM (Privacy Enhanced Mail)
 " Maintainer: Joseph Harriott - http://harriott.github.io
@@ -12,8 +13,7 @@
 
 setlocal fdc=1 fde=PEMFold() fdm=expr
 
-" fold up blocks
-" --------------
+""> fold up blocks
 function! PEMFold()
   let j = getline(v:lnum)
   if !empty(matchstr(j, '^-----BEGIN '))

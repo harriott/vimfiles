@@ -7,10 +7,8 @@
 " also  $vimfiles/ftplugin/tbmo.vim
 " *.tbmo  is detected by  $vimfiles/filetype.vim
 
-" Quit when a (custom) syntax file was already loaded
-if exists("b:current_syntax")
-  finish
-endif
+" quit when a (custom) syntax file was already loaded
+if exists("b:current_syntax") | finish | endif
 
 " email
 syntax match email '<.\{-}>'

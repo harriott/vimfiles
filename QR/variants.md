@@ -130,7 +130,9 @@ navigating into `C:\Vim` requires cursor on C
     :Bufferize echo stdpath('data')
     nvim --clean
 
-- `:che` (`:checkhealth`) if stuck in `unix`, `pkill neovim`
+- `:che` (`:checkhealth`)
+    - if stuck in `unix`, `pkill neovim`
+    - somehow accesses `:white_check_mark:` ✅
 
 ### inccommand
 - `:h icm`

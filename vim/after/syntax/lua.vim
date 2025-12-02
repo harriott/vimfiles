@@ -23,7 +23,7 @@ syntax match foldLua '^\s*-- ▩-\+>.*$'
 " Unfolded headings:
 hi def foldLua term=bold cterm=bold gui=bold guifg=LightGreen
 " - in  Neovide  or  WT  neet to disable  highlights.scm
-"   ($ITsCP\encoding\Vim\nvim\lua_syntax_in_NVIM_0_10_0.md)
+"   ($cITCP\encoding\Vim\nvim\lua_syntax_in_NVIM_0_10_0.md)
 "   done in  $vfn/lua/init.lua
 
 ""> 1 ends

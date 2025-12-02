@@ -1,12 +1,14 @@
 
-" Language: wntf - for output from my  fonts  function
+" Language: wntf - see  $MSn/PS/Profile.ps1
 " Maintainer: Joseph Harriott
-" Last Change: jeu. 07 mars 2024
-" see  $MSn/PS/Profile.ps1
+" Last Change: dim 26 oct 2025
+" Detection: $vfv/filetype.vim
 
 " $vfv/syntax/wntf.vim
 
 if exists('b:current_syntax') | finish | endif
+
+setlocal nowrap
 
 syntax match wntf '^.*='
 
