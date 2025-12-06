@@ -1,6 +1,6 @@
 
 " Maintainer: Joseph Harriott
-" Last Change: mar 04 nov 2025
+" Last Change: Thu 04 Dec 2025
 " $vfv/filetype.vim
 "  supplemental to
 "   $VIMRUNTIME/filetype.lua
@@ -68,7 +68,7 @@ if has('nvim')
 endif
 
 ""> 0 Thunderbird dosini files
-au BufNewFile,BufRead *thunderbird/installs.ini,*thunderbird/profiles.ini,*Thb-dr/compatibility.ini setlocal fdl=1
+au BufNewFile,BufRead *profiles.ini,*installs.ini,*compatibility.ini setlocal fdl=1
 
 ""> 1 other filetypes
 " if exists("did_load_filetypes") | finish | endif  " kills detection in Neovim

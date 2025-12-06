@@ -59,6 +59,7 @@ let $HADL = $HOME.'\AppData\Local'
   let $nvim = $HADL.'\nvim'
 let $HADR = $HOME.'\AppData\Roaming'
   let $Pandoc = $HADR.'\Pandoc'
+  let $RTh = $HADR.'\Thunderbird'
   let $tex = $HADR.'\MiKTeX\tex'
 
 "">> 1 normally rooting on $coreIT
