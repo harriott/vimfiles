@@ -43,12 +43,12 @@ else
         let $jtIT = $JHt.'\IT'
           let $jtCP = $jtIT.'\CP'
         let $tIs = $JHt.'\IT-storage'  " $tIs\diskUsage.txt
+      let $JHThb = $DJH.'\Thb'
       let $JHw = $DJH.'\work'
         let $JHm = $JHw.'\IT-Jekyll-harriott-minima'
         let $wP = $JHw.'\France\IdF\Paris'
       let $JJt0 = $DJH.'\Jo-then0'
         let $T0Fr = $JJt0.'\world-Europe\France'
-      let $Thb = $DJH.'\Thb-dr'
 endif
 
 "">> 0 $HOME

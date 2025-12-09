@@ -56,7 +56,7 @@ packadd vim-rhubarb  " for GitHub
 let g:gfm_syntax_emoji_conceal = 1
 let g:gfm_syntax_enable_always = 0
 let g:gfm_syntax_enable_filetypes = ['gfm']
-packadd vim-gfm-syntax  " for viewing  $coreIT/CP/encoding/EMOJI_CHEAT_SHEET.gfm
+packadd vim-gfm-syntax  " for viewing  $cITCP/encoding/EMOJI_CHEAT_SHEET.gfm
 
 ""> encoding - languages
 packadd CSS-one-line--multi-line-folding

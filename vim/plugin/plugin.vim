@@ -1,5 +1,5 @@
 
-" Joseph Harriott - Thu 18 Apr 2024
+" Joseph Harriott - Tue 09 Dec 2025
 
 " $vfv/plugin/plugin.vim
 
@@ -138,6 +138,9 @@ endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 " map:
 nnoremap <leader>U :Underline
+
+" remove CRLFs
+nnoremap <leader>le :e ++ff=dos <bar> set ff=unix <bar> w! <cr>
 
 "">> clear fancy glyphs
 " - left & right double & single quotes (as these aren't mapped to a keyboard key)

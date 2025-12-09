@@ -9,5 +9,5 @@
 if ! has('nvim') | source $VIMRUNTIME/syntax/markdown.vim | endif
 
 " $vfvp/packs-cp-full/opt/vim-gfm-syntax/autoload/gfm_syntax/emoji.vim
-" $coreIT/CP/encoding/EMOJI_CHEAT_SHEET.gfm
+" $cITCP/encoding/EMOJI_CHEAT_SHEET.gfm
 

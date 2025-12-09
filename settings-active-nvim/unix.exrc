@@ -2,6 +2,8 @@
 
 " generated from within Vim by  :call Grab_exrc()
 
+" :v/\v<(s-|)f\d+>/d
+
 let s:cpo_save=&cpo
 set cpo&vim
 inoremap <silent> <Plug>(peekaboo) <bar><bar>:<bar>call peekaboo#aboo()<cr>
