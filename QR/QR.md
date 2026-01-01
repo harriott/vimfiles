@@ -397,7 +397,7 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 	\k                          " iskeyword
     \vs                         " last search in escaped visual selection
     \v,(f|m|s),                 " finds  ,f,  ,m,  ,s,
-    :h %(
+    :h %(                       " %(...) group isn't counted as a sub-expression
     planet\(Awesome\|Terrible\) " planetAwesome or planetTerrible
 	text\|alt                   " searches for text & alt
 

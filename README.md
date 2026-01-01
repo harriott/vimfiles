@@ -15,6 +15,8 @@ All of my `vim` files, except my `.gvimrc` &amp; `.vimrc` - which vary by machin
 - quick navigation around my vast personal notes, which include web addresses
 
 ## exploring
+    lt $vfvp > $vfvp/all.tree
+
 Some of my `vim` configuraton files are long, but they don't appear so to me as I use my own `vim_build` filetype ([$vfv/ftplugin/build.vim](https://github.com/harriott/vimfiles/blob/master/vim/ftplugin/build.vim)), which folds my headings nicely.
 
 ## prerequisites

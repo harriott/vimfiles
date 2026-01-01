@@ -167,32 +167,12 @@ packadd org.vim
 "">> Rainbow CSV
 " $vfvp/packs-cp-full/opt/rainbow_csv/doc/rainbow_csv.txt
 " $vfvp/packs-cp-full/opt/rainbow_csv/README.md
-" :CSVLint
-" :RainbowAlign  :RainbowShrink  burst out and back, good for column operations (failed in semicolon aligned)
 packadd rainbow_csv
 
-"">>> keymaps requiring b:rbcsv
-" let b:rbcsv
-nnoremap <expr> <C-Left>  get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoLeft<CR>' : '<C-Left>'
-nnoremap <expr> <C-Right> get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoRight<CR>' : '<C-Right>'
-nnoremap <expr> <C-Up>    get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoUp<CR>' : '<C-Up>'
-nnoremap <expr> <C-Down>  get(b:, 'rbcsv', 0) == 1 ? ':RainbowCellGoDown<CR>' : '<C-Down>'
-
-"">>>> safely toggle alignment
-function! RainbowAStoggle()
-  if b:RainbowAligned
-    let b:RainbowAligned = 0
-    "  preset in  $vfv/ftplugin/csv.vim, $vfv/ftplugin/tsv.vim
-    silent! RainbowShrink
-  else
-    let b:RainbowAligned = 1
-    silent! RainbowAlign
-  endif
-endfunction
-command! RAST silent ! call RainbowAStoggle()
-nnoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? ':call RainbowAStoggle()<cr>' : '<f7>'
-inoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr>' : '<f7>'
-vnoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr>' : '<f7>'
+" :CSVLint
+" my mappings in  $vfv/ftplugin/RainbowCSV.vim
+" :RainbowAlign  :RainbowShrink  burst out and back, good for column operations (failed in semicolon aligned)
+" no column Delete function
 
 "">> SimpylFold
 " $vfvp/packs-cp-full/opt/SimpylFold/README.md

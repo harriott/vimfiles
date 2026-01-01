@@ -8,6 +8,5 @@
 setlocal nowrap
 
 ""> plugin Rainbow CSV
-let b:RainbowAligned = 0
-" see $vfv/plugin/packsFull.vim
+source $vfv/ftplugin/RainbowCSV.vim
 

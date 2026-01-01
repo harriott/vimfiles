@@ -230,8 +230,8 @@ $misc/CP/vimtest/README.md
 - `g<` - review
 
 ### buffer listing recents
-    :Bufferize mes  ' including Lua errors
-	:redi @m | sil mes | redi END | new | exe 'norm! \'mp'  ' in a split below
+    :Bufferize mes  " including Lua errors
+    :redi @m | sil mes | redi END | new | exe 'norm! \'mp'  ' in a split below
 
 ## quickfix
     :cc n    ' goto error n
@@ -241,14 +241,14 @@ $misc/CP/vimtest/README.md
     :cw      ' open if errors or close
 
 ## registers
-    ':p                               ' paste in last command.
-    'kyy                              ' copies current line into register k
-    :echo @%                          ' (relative) filepath
+    ':p                               " paste in last command.
+    'kyy                              " copies current line into register k
+    :echo @%                          " (relative) filepath
     :h registers
     :let @a = 'a'|let @A ='a'|reg a
-    :let@/='something to search for'  ' makes that last search
-    :let@a=@_                         ' sets a to (always empty) black hole register
-    :let@q=@k                         ' sets a to contents of register k
+    :let@/='something to search for'  " makes that last search
+    :let@a=@_                         " sets a to (always empty) black hole register
+    :let@q=@k                         " sets a to contents of register k
 
 - `'` also triggers `vim-peekaboo`
 
@@ -263,13 +263,12 @@ $misc/CP/vimtest/README.md
 
 ## settings
     $ rg -uu vim9script $vimfiles
-    :Bufferize dig!        ' categorised digraphs
-    :Bufferize lan         ' language  settings
-    :Bufferize let         ' all internal variables
-    :Bufferize scr         ' (:scriptnames) list of files sourced, in order
-    :Bufferize ve          ' Vim version etc
-    :Bufferize verb se scl ' where signcolumn was last set
-    :colo [default]        ' current colorscheme
+    :Bufferize dig!        " categorised digraphs
+    :Bufferize lan         " language  settings
+    :Bufferize let         " all internal variables
+    :Bufferize scr         " (:scriptnames) list of files sourced, in order
+    :Bufferize ve          " Vim version etc
+    :Bufferize verb se scl " where signcolumn was last set
     :echo has ('gui_running')
     :function <name_of_function_to_reveal>
     :let mapleader
@@ -278,10 +277,24 @@ $misc/CP/vimtest/README.md
     /usr/share/vim/vim91/filetype.vim
     C:\Vim\vim90\ftplugin
 
+### colorscheme
+    :Bufferize colo
+    :colo default
+    :colo PaperColor
+    :colo tomorrow  " $vfv/enter/gvimrc-Arch.vim
+
+#### background
+    :se bg=dark
+    :se bg=light
+
 ### file formats
     :se ff        ' fileformat
     :se ffs       ' fileformats
     :e ++ff=unix  ' shows ^M at end of dos files
+
+### language
+    :echo v:lang
+    :if v:lang =~ 'gb' | echo 'Great Britain' | endif
 
 ### mappings
     :Bufferize map           ' n s v
@@ -323,8 +336,8 @@ options as variable: `:echo &textwidth`
     :se pp
 
 ### syntax highlighting
-	:h ownsyntax
-	:h syn-region
+    :h ownsyntax
+    :h syn-region
     :windo echo b:current_syntax
     C \usr\share\vim\vim90\syntax
     C:\Vim\vim90\syntax
@@ -332,16 +345,16 @@ options as variable: `:echo &textwidth`
 `syntax.txt`
 
 #### settings
-    :Bufferize sy  ' :h syn-list
-    :Bufferize Inspect  ' to see what's highlighting under the cursor
-	:hi
-    :se smc=0  ' (synmaxcol) removes 3000 character limit
-	:so $VIMRUNTIME/syntax/hitest.vim  ' wait for it to load!
-    :sy sync fromstart  ' but can't find any way to check this setting
+    :Bufferize sy  " :h syn-list
+    :Bufferize Inspect  " to see what's highlighting under the cursor
+    :hi
+    :se smc=0  " (synmaxcol) removes 3000 character limit
+    :so $VIMRUNTIME/syntax/hitest.vim  " wait for it to load!
+    :sy sync fromstart  " but can't find any way to check this setting
 
 ##### not Nvim
     $cGRs/d-CP/d-Vim-Vim/r-vim-vim/runtime/syntax/syncolor.vim
-	$VIMRUNTIME/syntax/syncolor.vim
+    $VIMRUNTIME/syntax/syncolor.vim
 
 #### state
     :h syn-off

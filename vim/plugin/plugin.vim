@@ -1,12 +1,13 @@
 
-" Joseph Harriott - Tue 09 Dec 2025
+" Joseph Harriott - Thu 11 Dec 2025
 
 " $vfv/plugin/plugin.vim
+"  symlinked by  $OSAB/nodes-set/jo-2-whenWM-0.sh
 
 if exists('g:test') | finish | endif
 let g:plugin = 1
 
-" better searching
+" better searching (needed early for  Thu 11 Dec 2025)
 set ignorecase smartcase
 
 " clear registers b-z

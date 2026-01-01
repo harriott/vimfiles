@@ -2,7 +2,7 @@
 
 " Language: tree - output from (unix) tree, nicely folded up
 " Maintainer: Joseph Harriott
-" Last Change: Sat 08 Mar 2025
+" Last Change: Thu 25 Dec 2025
 
 " $vfv/ftplugin/tree.vim
 "  also  $vfv/syntax/tree.vim
@@ -10,13 +10,16 @@
 " a hack using trailing colons to indicate fold level
 " %s/ :*$
 
-""> 0 set : marks
-if search(':') == 0
-  silent %su/  /  /g
-  silent %su/^\v(%(└|├)── .*)\n(.   %(└|├))/\1 :\r\2/
-  silent %su/^\v(.   %(└|├)── .*)\n(.   .   %(└|├))/\1 ::\r\2/
-endif
-" enough for two levels ($Drpbx/Cop/GRs-nerd-fonts/readme.md)
+""> set : marks
+function! UnixTreeMark()
+  if search(':') == 0
+    silent! %su/  /  /g
+    silent! %su/^\v(%(└|├)── .*)\n(.   %(└|├))/\1 :\r\2/
+    silent! %su/^\v(.   %(└|├)── .*)\n(.   .   %(└|├))/\1 ::\r\2/
+    silent! %su/^\v(.   .   %(└|├)── .*)\n(.   .   .   %(└|├))/\1 :::\r\2/
+  endif  " enough for three levels ($machLg/fonts/)
+endfunction
+nnoremap <buffer><F7> :call UnixTreeMark()<CR>
 
 ""> folding by number of trailing colons
 setlocal foldcolumn=1

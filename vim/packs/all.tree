@@ -1,7 +1,7 @@
 packs
 ├── all.tree
-├── packs-colo
-│   └── opt
+├── packs-colo :
+│   └── opt ::
 │       ├── Apprentice
 │       │   ├── colors
 │       │   │   └── apprentice.vim
@@ -497,8 +497,8 @@ packs
 │           │   └── vim-deus.jpg
 │           └── terminal
 │               └── alacritty.yml
-├── packs-cp-all
-│   └── opt
+├── packs-cp-all :
+│   └── opt ::
 │       ├── close-buffers.vim
 │       │   ├── doc
 │       │   │   ├── close-buffers.txt
@@ -1219,8 +1219,8 @@ packs
 │               ├── session
 │               ├── viminfo
 │               └── vimrc
-├── packs-cp-full
-│   └── opt
+├── packs-cp-full :
+│   └── opt ::
 │       ├── ale
 │       │   ├── ale_linters
 │       │   │   ├── ada
@@ -9100,8 +9100,8 @@ packs
 │           │   ├── cecutil.vim
 │           │   └── visPlugin.vim
 │           └── README
-├── packs-unix
-│   └── opt
+├── packs-unix :
+│   └── opt ::
 │       ├── clrzr
 │       │   ├── autoload
 │       │   │   ├── clrzr.awk
@@ -9171,8 +9171,8 @@ packs
 │           └── syntax
 │               ├── ssh_authorized_keys.vim
 │               └── ssh_known_hosts.vim
-├── packs-win64
-│   └── opt
+├── packs-win64 :
+│   └── opt ::
 │       ├── fuzzyy
 │       │   ├── autoload
 │       │   │   └── fuzzyy
