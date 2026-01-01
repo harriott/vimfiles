@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim: sw=2:
 
-# Joseph Harriott - Sat 19 Oct 2024
+# Joseph Harriott - Thu 01 Jan 2026
 # cd $vfv; bash $vfv/getRepos/unix.sh
 
 set -e  # quits on error
@@ -13,9 +13,10 @@ cd $vfvp; . $misc/GRs/getClonesList.sh $cf; cd $vfv
 
 #=> 1 clones 1 remove
 sudo rm -r $vfv/plugin/fzf
+
+# These will be re-cloned in the next step:
 sudo rm -r $vfvp/packs-cp-full/opt/vim-gitgutter
 sudo rm -r $vfvp/packs-cp-full/opt/vim-tagbar
-# these will be re-cloned in the next step
 
 #=> 1 clones 2 get
 # from  $cf - can prefix  test https://github.com/test

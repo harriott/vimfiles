@@ -124,3 +124,4 @@ packs-unix/opt/vim-plugin-AnsiEsc https://github.com/powerman/vim-plugin-AnsiEsc
 packs-unix/opt/vim-ssh-annex https://github.com/qnighy/vim-ssh-annex
 packs-win64/opt/fuzzyy https://github.com/Donaldttt/fuzzyy
 packs-win64/opt/lightline.vim https://github.com/itchyny/lightline.vim
+packs-win64/opt/vim-SPDFset https://github.com/harriott/vim-SPDFset
