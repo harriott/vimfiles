@@ -62,6 +62,7 @@ packadd vim-gfm-syntax  " for viewing  $cITCP/encoding/EMOJI_CHEAT_SHEET.gfm
 packadd CSS-one-line--multi-line-folding
 
 "">> conky-syntax.vim
+" was relevant for my old-style  conkyrc's
 " $vfvp/packs-cp-full/opt/conky-syntax.vim/ftdetect/conkyrc.vim  delete 2nd *
 if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
 

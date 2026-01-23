@@ -9,8 +9,16 @@ $cf = "$vfv/getRepos/packs.clones"
 #=> 0 $vfvp clones optionally update  packs.clones
 sl $vfvp; . $misc/GRs/getClonesList.ps1 $cf; sl $vfv
 
-# #=> 1 clones remove
-# # see  $vfv/getRepos/unix.sh
+#=> 1 clones remove
+# These will be re-cloned in the next step:
+if ( test-path "$vfvp/packs-cp-full/opt/vim-gitgutter" ) {
+  ri -recurse $vfvp/packs-cp-full/opt/vim-gitgutter
+  read-host '- should''ve removed  $vfvp/packs-cp-full/opt/vim-gitgutter'
+}
+if ( test-path "$vfvp/packs-cp-full/opt/vim-tagbar" ) {
+  ri -recurse $vfvp/packs-cp-full/opt/vim-tagbar
+  read-host '- should''ve removed  $vfvp/packs-cp-full/opt/vim-tagbar'
+}
 
 #=> 2 $vfvp clones get
 $clones = gc $cf
@@ -26,6 +34,7 @@ foreach ($clone in $clones) {
 }
 
 #=> 3 updates 0 warn
+''
 read-host 'Going to update repositories - you''ve closed instances of vim? '
 
 #=> 3 updates 1 packs
@@ -33,7 +42,7 @@ sl $vfvp
 $msv = "$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
 rm -recurse $msv  # temporarily, because it's got no .git
 . $misc/GRs/update-depth1.ps1
-robocopy /mir $cGRs/d-unix/d-linux/r-marlam-msmtp/scripts/vim/ $msv
+robocopy /mir $cITcc/CP/msmtp-scripts-vim $msv
 sl $vfv
 
 #=> 3 updates 2 plugins
