@@ -1,7 +1,7 @@
 
 " Language: dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: jeu 08 août 2024
+" Last Change: Mon 16 Feb 2026
 " $vfv/ftplugin/dokuwiki.vim
 
 " tweaked  $vfvp/packs-cp-full/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax
@@ -91,9 +91,12 @@ nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
 " create a heading:
 nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
 
-""> monospacing
+""> inline monospacing
 " convert monospaced to unformatted
-nnoremap <leader><leader>5 ?''<cr>i<cr><esc>:s/''/%% /<cr>:s/''/ %%/<cr>kJ
+nnoremap <buffer><leader><leader>5 ?''<cr>i<cr><esc>:s/''/%% /<cr>:s/''/ %%/<cr>kJ
+
+" select
+nnoremap <buffer><leader><leader>' T'vt'y
 
 " wrap the inner word under cursor with ''
 nnoremap <buffer> <leader>' viwc''''<Esc>hP

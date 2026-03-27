@@ -165,6 +165,12 @@ navigating into `C:\Vim` requires cursor on C
     :vs +te
 
 # Vim
+    :echo $HOME
+    c-k<non-text-key> " enters the Vim value of a non-text-key
+    c-r '  " (in command line) insert the unnamed register
+    vim -u NONE
+    vim --version
+
 ```vim
 @@               " = @: = repeat last command-line
 \8               " toggle 82\106 columns
@@ -174,8 +180,6 @@ K                " brings up a man page (if there is one) for word under cursor
 q:               " brings up an interactive history of :commands (in an editable window)
 vi               " exit Ex mode
 :ar              " the argument list
-:echo has('win32')
-:echo has('win64')
 :h key-notation
 :h index        " lists the all of the commands
 :h split()
@@ -189,37 +193,18 @@ vi               " exit Ex mode
 :X              " prompts for an encryption key
 ```
 
-```
-c-k<non-text-key> ' enters the Vim value of a non-text-key
-c-r '  ' (in command line) insert the unnamed register
-:echo $HOME
-:echo expand('<cword>')  ' echos the word under the cursor
-:echo getline(1) ' contents of line 1
-:echo hostname()
-
-$cGRs/CP/Vim/vim-vim/README.md
-vim -u NONE
-vim --version
-vim(1)
-
-$misc/CP/vimtest/README.md
-```
-
 - `&&`, `||`
 - command-line window: `C-c C-c`  closes
+- vim(1)
 
 ## completion
     :Bufferize se ofu  ' omnifunc
     :h compl-spelling
 
-## detect file
-    :if filereadable(expand('~/_vimrc')) | echo 'there' | endif
-    :if !empty(expand(glob('~/_vimrc'))) | echo 'there' | endif  # also detects unreadable files
-
 ## fzf.vim
 ```vim
-\B                    ' :BLines
-\L                    ' :Lines
+\B " :BLines
+\L " :Lines
 ```
 
 ## messages
@@ -243,16 +228,33 @@ $misc/CP/vimtest/README.md
 ## registers
     ':p                               " paste in last command.
     'kyy                              " copies current line into register k
-    :echo @%                          " (relative) filepath
     :h registers
+
+`"` also triggers `vim-peekaboo`
+
+## scripting
+```vim
+:echo expand('<cword>') " echos the word under the cursor
+:echo getline(1) " contents of line 1
+:echo has('win32')
+:echo has('win64')
+:echo hostname()
+```
+
+vimscript
+
+### detect file
+    :if filereadable(expand('~/_vimrc')) | echo 'there' | endif
+    :if !empty(expand(glob('~/_vimrc'))) | echo 'there' | endif  # also detects unreadable files
+
+### registers
+    :echo @%                          " (relative) filepath
     :let @a = 'a'|let @A ='a'|reg a
     :let@/='something to search for'  " makes that last search
     :let@a=@_                         " sets a to (always empty) black hole register
     :let@q=@k                         " sets a to contents of register k
 
-- `'` also triggers `vim-peekaboo`
-
-### registers
+#### registers
 - `'` = unnamed (default) register
 - `*` = X11 primary (mouse) register
 - `+` = X11 clipboard register
@@ -260,6 +262,15 @@ $misc/CP/vimtest/README.md
 - `0` = yank register
 - `1-9` = shifting delete registers
 - `_` = null register
+
+### variables
+    echo 'count'.len('four')
+    if g:empty | true | endif
+    let g:empty = 0 | if empty(g:empty) | echo 'empty' | endif
+    let g:v = 1 | if g:v | echo g:v | endif
+
+- `echo g:` gets a vast list
+- `let g:v = get(g:, 'v', 'v_not_set')` then `let g:v = 'v_set'`
 
 ## settings
     $ rg -uu vim9script $vimfiles
@@ -361,8 +372,4 @@ options as variable: `:echo &textwidth`
     :let g:syntax_on
     :sy off
     :sy on
-
-## variables
-- `echo g:` gets a vast list
-- `let g:v = get(g:, 'v', 'v_not_set')` then `let g:v = 'v_set'`
 

@@ -2,7 +2,7 @@
 
 " Language: tree - output from (unix) tree, nicely folded up
 " Maintainer: Joseph Harriott
-" Last Change: Thu 25 Dec 2025
+" Last Change: Sat 14 Feb 2026
 
 " $vfv/ftplugin/tree.vim
 "  also  $vfv/syntax/tree.vim
@@ -17,16 +17,27 @@ function! UnixTreeMark()
     silent! %su/^\v(%(└|├)── .*)\n(.   %(└|├))/\1 :\r\2/
     silent! %su/^\v(.   %(└|├)── .*)\n(.   .   %(└|├))/\1 ::\r\2/
     silent! %su/^\v(.   .   %(└|├)── .*)\n(.   .   .   %(└|├))/\1 :::\r\2/
-  endif  " enough for three levels ($machLg/fonts/)
-endfunction
+  endif  " only when probably not yet done
+endfunction  " enough for three levels ($machLg/fonts/)
 nnoremap <buffer><F7> :call UnixTreeMark()<CR>
 
 ""> folding by number of trailing colons
+let g:tree_foldEnd = 0
 setlocal foldcolumn=1
 
 function! UnixTreeFold()
 	let l:coloncount = matchstr(getline(v:lnum), ':\+')
-	if empty(l:coloncount) | return "=" | else | return ">".len(l:coloncount) | endif
+    if getline(v:lnum) =~ '└' | let g:tree_foldEnd = 1 | endif
+	if empty(l:coloncount)
+      if empty(g:tree_foldEnd)
+        return "="
+      else
+        let g:tree_foldEnd = 0
+        return "<1"
+      endif
+    else
+      return ">".len(l:coloncount)
+    endif
 endfunction
 
 setlocal foldexpr=UnixTreeFold() foldmethod=expr

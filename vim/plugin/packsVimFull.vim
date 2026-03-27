@@ -1,11 +1,70 @@
 
-" https://harriott.githubio/ - Thu 06 Mar 2025
+" https://harriott.githubio/ - sam 28 févr 2026
 
 " $vfv/plugin/packsVimFull.vim  optionally sourced by  $vfv/plugin/packs.vim
 "  needs recent Vim
 "  $vfvp/packs-cp-full
 
 let g:packsVimFull = 1
+
+""> encoding - csv.vim
+" extra tools in  $vfv/ftplugin/csv.vim
+"  & see  $vfv/after/plugin/packs.vim
+
+" $vfvp/packs-cp-full/opt/csv.vim/doc/ft-csv.txt
+" $vfvp/packs-cp-full/opt/csv.vim/ftdetect/csv.vim
+
+"">> column highlighting
+" :HiColumn [n]  " highlight column [n] using  WildMenu  syntax colour
+" :HiColumn!  " removes
+" - f7 toggle defined in  $vfv/ftplugin/csv.vim
+
+"">>> global variables
+" automatic
+let g:csv_highlight_column = 'y'
+" - could be useful, but makes seeing the cursor difficult in  tomorrow
+
+" my preferred syntax colour
+let g:csv_hiGroup = 'Directory'  " good in my  Vim
+if has('nvim') | let g:csv_hiGroup = 'CursorLineNr' |
+elseif has("gui_running") | :let g:csv_hiGroup = 'DiffText' | endif
+
+" none are set by default
+
+"">> commands
+" :%Substitute 4,12/\./,/g
+" :WhatColumn
+" H -> go left
+" L -> go right
+
+" %ArrangeColumn  " is slow, and makes changes
+" %UnArrangeColumn  " undoes
+" :AddColumn  " after current
+" :CSVInit  " reinitialise the plugin (clears HiColumn)
+" :DeleteColumn [n[-m]]  " deleted column(s) [n[-m]]
+" :MoveColumn [n] [m]  " moves column [n] to right [of column m] (m can be $)
+" :SearchInColumn [n] <text>  " doesn't work for numbers...
+" :Sort [column}
+" :SumCol
+
+" column hiding
+"  :VertFold  " hides from left to current
+"  :VertFold!  " unhide
+" :CSVTabularize  " open as table in new buffer
+
+" dynamic filters (:h csv-filter) see lines containing same value
+"  :Filter  " show them
+"  <enter>  hides away non-matching lines
+"  <backspace>  successively removes filters
+"  <space>  hides away matching lines
+
+"">> configurations
+" :let g:csv_delim_test = ',;|'
+" :let b:delimiter
+
+" "">> load
+" let g:csv_vim_loaded = 1 | packadd csv.vim
+" " changes target of  :h ft-csv
 
 ""> encoding - vim-gitgutter
 let g:gitgutter_max_signs = 600

@@ -82,7 +82,7 @@ after a search, `:v//d` removes all non-matching lines
 
 - rgba(255, 255, 255, 0.05) - no
 - rgba(255, 255, 255, 5) - yes
-- works for  $culLA/IM-magick-list_color.txt
+- works for `$culLA/IM-magick-list_color.txt`
 
 ## colorscheme background
     :h 'bg'
@@ -549,6 +549,7 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
     :%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
     :echo &bomb " 1 if BOM
     :exe        " :execute
+    :if 1 | echo "yes" | endif
     :so /usr/share/vim/vim90/tools/emoji_list.vim
 
 ```vim

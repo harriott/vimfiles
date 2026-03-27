@@ -19,13 +19,13 @@ inoremap <silent> <Plug>(ScrollViewDisable) <Cmd>ScrollViewDisable<cr>
 inoremap <S-F2> <esc>
 inoremap <F3> <esc>
 inoremap <F2> <esc>:wa<cr>
-inoremap <F5> <esc>:wa<cr>:e<cr>
+inoremap <F5> <esc>:wa<cr>:e<cr>
 inoremap <silent> <Plug>(peekaboo) <cr><cr>:<cr>call peekaboo#aboo()<cr>
 inoremap <silent> <Plug>(ale_complete) <cr><cr>:ALEComplete<cr>
 imap <silent> <C-G>% <Plug>(matchup-c_g%)
 inoremap <silent> <Plug>(matchup-c_g%) <cr><cr>:call matchup#motion#insert_mode()<cr>
 inoremap <C-X><C-X> <cr><cr>
-cnoremap <silent> <Plug>(TelescopeFuzzyCommandSearch) <cr>e "lua require('telescope.builtin').command_history { default_text = [=[" . escape(getcmdline(), '"') . "]=] }"<cr><cr>
+cnoremap <silent> <Plug>(TelescopeFuzzyCommandSearch) <cr>e "lua require('telescope.builtin').command_history { default_text = [=[" . escape(getcmdline(), '"') . "]=] }"<cr><cr>
 inoremap <F11> <esc><F11>
 inoremap <F4> <esc>:call VimWriteClose()<cr>
 cnoremap <C-F4> <cr><cr>c
@@ -39,7 +39,7 @@ inoremap <C-Z> <cr>u
 imap <S-Insert> <cr><cr>
 cmap <S-Insert> <cr>+
 cmap <C-V> <cr>+
-inoremap <C-S> <esc>:update<cr>gi
+inoremap <C-S> <esc>:update<cr>gi
 inoremap <C-W> <cr>u<cr>
 inoremap <C-U> <cr>u<cr>
 vnoremap <cr> "+y
@@ -85,7 +85,7 @@ nnoremap @: <Nop>
 nnoremap @@ @:
 xnoremap <silent> @(targets) :<cr>call targets#do()<cr>
 onoremap <silent> @(targets) :<cr>call targets#do()<cr>
-xnoremap <silent> <expr> @ mode() ==# 'V' ? ':normal! @'.getcharstr().'<cr>' : '@'
+xnoremap <silent> <expr> @ mode() ==# 'V' ? ':normal! @'.getcharstr().'<cr>' : '@'
 xmap <expr> A targets#e('o', 'A', 'A')
 omap <expr> A targets#e('o', 'A', 'A')
 inoremap ² <esc>~a
@@ -106,7 +106,7 @@ omap <silent> [% <Plug>(matchup-[%)
 xmap <silent> [% <Plug>(matchup-[%)
 nmap <silent> [% <Plug>(matchup-[%)
 noremap \gg :call GitGutterFocus()<cr>
-nnoremap \d :cd %:p:h<cr>:pwd<cr>
+nnoremap \d :cd %:p:h<cr>:pwd<cr>
 nnoremap \\t :sp term://pwsh<cr>
 nnoremap \<F12> :call OpenInEmacs()<cr>
 nnoremap \- :Hexplore<cr>
@@ -140,7 +140,7 @@ noremap \\ll :set list! list? <cr>
 nnoremap \\<F5> :call clearmatches()<cr>
 nnoremap \( :call UnicodePercent()<cr>
 nnoremap \9 :call PercentUnicode()<cr>
-noremap \yp :lan tim English_United Kingdom<cr>:exe ":norm a".strftime('%a %d %b %Y')<cr>:lan tim French<cr>
+noremap \yp :lan tim English_United Kingdom<cr>:exe ":norm a".strftime('%a %d %b %Y')<cr>:lan tim French<cr>
 vnoremap \_ <esc>:call DateFr()<cr>
 nnoremap \_ :call DateFr()<cr>
 nnoremap \\2 :call ClearMAS()<cr>
@@ -149,7 +149,7 @@ nnoremap \U :Underline
 nnoremap \\( :s/\m\[.\{-}]//g<cr>
 nnoremap <silent> \q :QToggle<cr>
 nnoremap <silent> \l :LToggle<cr>
-noremap <silent> \\d :BD<cr>:bp<cr>
+noremap <silent> \\d :BD<cr>:bp<cr>
 nmap <silent> \ba <Plug>BufKillAlt
 nmap <silent> \bundo <Plug>BufKillUndo
 nmap <silent> \!bw <Plug>BufKillBangBw
@@ -190,7 +190,7 @@ nnoremap \sv <Cmd>ScrollViewToggle<cr>
 nnoremap \lg :Telescope live_grep_args<cr>
 nnoremap \k <Cmd>lua vim.diagnostic.open_float()<cr>
 nnoremap \à :call ToggleGUIwidth(108,150)<cr>
-nnoremap \<F4> :Bdelete other<cr>:sleep<cr>:call VimWriteClose()<cr>
+nnoremap \<F4> :Bdelete other<cr>:sleep<cr>:call VimWriteClose()<cr>
 vnoremap \k :exe 'h '.expand('<cr><cword>')<cr>
 onoremap \k :exe 'h '.expand('<cr><cword>')<cr>
 omap <silent> ]% <Plug>(matchup-]%)
@@ -222,8 +222,8 @@ xmap gG <Plug>(open-url-search-google)
 nmap gG <Plug>(open-url-search-google)
 xmap gW <Plug>(open-url-search-wikipedia)
 nmap gW <Plug>(open-url-search-wikipedia)
-xmap g<cr> <Plug>(open-url-search)
-nmap g<cr> <Plug>(open-url-search)
+xmap g<cr> <Plug>(open-url-search)
+nmap g<cr> <Plug>(open-url-search)
 xmap gB <Plug>(open-url-browser)
 nmap gB <Plug>(open-url-browser)
 omap <silent> g% <Ignore><Plug>(matchup-g%)
@@ -263,7 +263,7 @@ nmap <silent> z% <Plug>(matchup-z%)
 map z# <Plug>(asterisk-z#)  " rg --no-ignore ' z# '
 map z* <Plug>(asterisk-z*)  " rg --no-ignore ' z\* '
 nnoremap <silent> <expr> zt context#util#map_zt()
-vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<cr>gv""Pgv
+vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<cr>gv""Pgv
 nnoremap <SNR>252_: :<cr><cr>=v:count ? v:count : ''<cr>
 noremap <silent> <Plug>(ScrollViewToggle) <Cmd>ScrollViewToggle<cr>
 noremap <silent> <Plug>(ScrollViewRefresh) <Cmd>ScrollViewRefresh<cr>
@@ -281,8 +281,8 @@ nnoremap <C-=> <cr>=
 nnoremap <C-K> <cr>k
 nnoremap <C-J> <cr>j
 nnoremap <C-H> <cr>h
-vnoremap <F5> <esc>:wa<cr>:e<cr>
-nnoremap <F5> :wa<cr>:edit<cr>
+vnoremap <F5> <esc>:wa<cr>:e<cr>
+nnoremap <F5> :wa<cr>:edit<cr>
 xnoremap <silent> <Plug>(peekaboo) :<cr>call peekaboo#aboo()<cr>
 nnoremap <silent> <Plug>(peekaboo) :<cr>call peekaboo#aboo()<cr>
 nnoremap <silent> <Plug>MarkSearchGroup9Prev :<cr>if ! mark#SearchGroupMark(9, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
@@ -357,7 +357,7 @@ xmap <C-Right> <Plug>(textmanip-move-right)
 xmap <C-Left> <Plug>(textmanip-move-left)
 xmap <C-Up> <Plug>(textmanip-move-up)
 xmap <C-Down> <Plug>(textmanip-move-down)
-xnoremap <Plug>(textmanip-toggle-mode) :<cr>call textmanip#mode('toggle')<cr>gv
+xnoremap <Plug>(textmanip-toggle-mode) :<cr>call textmanip#mode('toggle')<cr>gv
 nnoremap <Plug>(textmanip-toggle-mode) :<cr>call textmanip#mode('toggle')<cr>
 xnoremap <silent> <Plug>(textmanip-blank-below) :<cr>call textmanip#start("blank", "v", "x", "auto")<cr>
 xnoremap <silent> <Plug>(textmanip-blank-above) :<cr>call textmanip#start("blank", "^", "x", "auto")<cr>
@@ -411,15 +411,15 @@ nnoremap <silent> <Plug>(textmanip-duplicate-down) :<cr>call textmanip#start("d
 nnoremap <silent> <Plug>(textmanip-duplicate-up-r) :<cr>call textmanip#start("duplicate", "^", "n", "replace")<cr>
 nnoremap <silent> <Plug>(textmanip-duplicate-up-i) :<cr>call textmanip#start("duplicate", "^", "n", "insert")<cr>
 nnoremap <silent> <Plug>(textmanip-duplicate-up) :<cr>call textmanip#start("duplicate", "^", "n", "auto")<cr>
-xnoremap <Plug>(open-url-search-wikipedia) :<cr>OpenSearchURL wikipedia <cr>=open_url#get_selection()<cr><cr>
+xnoremap <Plug>(open-url-search-wikipedia) :<cr>OpenSearchURL wikipedia <cr>=open_url#get_selection()<cr><cr>
 nnoremap <Plug>(open-url-search-wikipedia) :OpenSearchURL wikipedia <cr><cword><cr>
-xnoremap <Plug>(open-url-search-google) :<cr>OpenSearchURL google <cr>=open_url#get_selection()<cr><cr>
+xnoremap <Plug>(open-url-search-google) :<cr>OpenSearchURL google <cr>=open_url#get_selection()<cr><cr>
 nnoremap <Plug>(open-url-search-google) :OpenSearchURL google <cr><cword><cr>
-xnoremap <Plug>(open-url-search-so) :<cr>OpenSearchURL so <cr>=open_url#get_selection()<cr><cr>
+xnoremap <Plug>(open-url-search-so) :<cr>OpenSearchURL so <cr>=open_url#get_selection()<cr><cr>
 nnoremap <Plug>(open-url-search-so) :OpenSearchURL so <cr><cword><cr>
-xnoremap <Plug>(open-url-search) :<cr>OpenSearchURL <cr>=open_url#get_selection()<cr><cr>
+xnoremap <Plug>(open-url-search) :<cr>OpenSearchURL <cr>=open_url#get_selection()<cr><cr>
 nnoremap <Plug>(open-url-search) :OpenSearchURL <cr><cword><cr>
-xnoremap <Plug>(open-url-browser) :<cr>OpenURL <cr>=open_url#get_selection()<cr><cr>
+xnoremap <Plug>(open-url-browser) :<cr>OpenURL <cr>=open_url#get_selection()<cr><cr>
 nnoremap <Plug>(open-url-browser) :OpenURL <cr><cfile><cr>
 xnoremap <silent> <Plug>(openbrowser-smart-search) :<cr>call openbrowser#_keymap_smart_search('v')<cr>
 nnoremap <silent> <Plug>(openbrowser-smart-search) :<cr>call openbrowser#_keymap_smart_search('n')<cr>
@@ -528,7 +528,7 @@ nnoremap <silent> <Plug>(PrettierFragment) :PrettierFragment<cr>
 nnoremap <silent> <Plug>(PrettierAsync) :PrettierAsync<cr>
 nnoremap <silent> <Plug>(Prettier) :Prettier<cr>
 nnoremap <silent> <Plug>TagalongReapply :call tagalong#Reapply()<cr>
-nnoremap <F3> :call StripStoreCurSel()<cr>:Ggrep -i "<cr>s" <cr>|cw
+nnoremap <F3> :call StripStoreCurSel()<cr>:Ggrep -i "<cr>s" <cr>|cw
 noremap <silent> <expr> <Plug>(asterisk-gz#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 0, 'is_whole' : 0})
 noremap <silent> <expr> <Plug>(asterisk-z#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 0, 'is_whole' : 1})
 noremap <silent> <expr> <Plug>(asterisk-g#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 1, 'is_whole' : 0})
@@ -571,7 +571,7 @@ tnoremap <C-K> <Cmd>wincmd k<cr>
 tnoremap <C-J> <Cmd>wincmd k<cr>
 tnoremap <C-L> <Cmd>wincmd k<cr>
 tnoremap <C-H> <Cmd>wincmd k<cr>
-nnoremap <F11> :!start explorer %:p:h<cr><cr>
+nnoremap <F11> :!start explorer %:p:h<cr><cr>
 vnoremap <F4> <esc>:call VimWriteClose()<cr>
 nnoremap <F4> :call VimWriteClose()<cr>
 nnoremap <C-F11> 2<cr>
@@ -604,7 +604,7 @@ inoremap <cr> <cr>gg<cr>gH<cr>G
 inoremap <cr>S <Plug>(nvim-surround-insert-line)
 inoremap <cr>s <Plug>(nvim-surround-insert)
 imap <silent> <cr>% <Plug>(matchup-c_g%)
-inoremap <cr> <esc>:update<cr>gi
+inoremap <cr> <esc>:update<cr>gi
 inoremap <cr> <cr>u<cr>
 cmap <cr><cr> <cr>+
 inoremap <cr> <cr>u<cr>
@@ -616,7 +616,7 @@ inoremap <silent> \<F11> <esc>:echo strftime('%c',getftime(expand('%')))<cr>
 inoremap \<F5> :<esc>syntax sync fromstart<cr>
 inoremap \\<F5> :call clearmatches()<cr>
 inoremap \_ <esc>:call DateFr()<cr>
-inoremap \<F4> <esc>:Bdelete other<cr>::sleep<cr>call VimWriteClose()<cr>
+inoremap \<F4> <esc>:Bdelete other<cr>::sleep<cr>call VimWriteClose()<cr>
 iabbr <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 iabbr <expr> d8s strftime("%d/%m/%y")
 iabbr <expr> d8p strftime("%Y-%m-%d %H:%M")

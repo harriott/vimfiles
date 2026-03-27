@@ -79,8 +79,8 @@ packs-cp-full/opt/vim-clean-fold https://github.com/arecarn/vim-clean-fold
 packs-cp-full/opt/vim-clifm https://github.com/harriott/vim-clifm
 packs-cp-full/opt/vim-closetag https://github.com/alvan/vim-closetag
 packs-cp-full/opt/vim-css-color https://github.com/ap/vim-css-color
-packs-cp-full/opt/vim-dirvish https://github.com/justinmk/vim-dirvish
 packs-cp-full/opt/vim-dirvish-git https://github.com/kristijanhusak/vim-dirvish-git
+packs-cp-full/opt/vim-dirvish https://github.com/justinmk/vim-dirvish
 packs-cp-full/opt/vim-dokuwiki https://github.com/harriott/vim-dokuwiki
 packs-cp-full/opt/vim-easy-align https://github.com/junegunn/vim-easy-align
 packs-cp-full/opt/vim-flog https://github.com/rbong/vim-flog
@@ -99,8 +99,8 @@ packs-cp-full/opt/vim-langtool https://github.com/Konfekt/vim-langtool
 packs-cp-full/opt/vim-LanguageTool https://github.com/dpelle/vim-LanguageTool
 packs-cp-full/opt/vim-liquid https://github.com/tpope/vim-liquid
 packs-cp-full/opt/vim-loclist-follow https://github.com/elbeardmorez/vim-loclist-follow
-packs-cp-full/opt/vim-mark https://github.com/inkarkat/vim-mark
 packs-cp-full/opt/vim-markdown https://github.com/harriott/vim-markdown
+packs-cp-full/opt/vim-mark https://github.com/inkarkat/vim-mark
 packs-cp-full/opt/vim-matchup https://github.com/andymass/vim-matchup
 packs-cp-full/opt/vim-mbsync https://github.com/chunkhang/vim-mbsync
 packs-cp-full/opt/vim-open-url https://github.com/dhruvasagar/vim-open-url
@@ -113,10 +113,10 @@ packs-cp-full/opt/vim-rooter https://github.com/airblade/vim-rooter
 packs-cp-full/opt/vim-ShowTrailingWhitespace https://github.com/inkarkat/vim-ShowTrailingWhitespace
 packs-cp-full/opt/vim-surround https://github.com/tpope/vim-surround
 packs-cp-full/opt/vim-tagbar https://github.com/harriott/vim-tagbar
+packs-cp-full/opt/vimtex https://github.com/lervag/vimtex
 packs-cp-full/opt/vim-textmanip https://github.com/t9md/vim-textmanip
 packs-cp-full/opt/vim-visual-star-search https://github.com/bronson/vim-visual-star-search
 packs-cp-full/opt/vim-wombat-scheme https://github.com/sheerun/vim-wombat-scheme
-packs-cp-full/opt/vimtex https://github.com/lervag/vimtex
 packs-cp-full/opt/vis https://github.com/vim-scripts/vis
 packs-unix/opt/clrzr https://github.com/BourgeoisBear/clrzr
 packs-unix/opt/vim-picker https://github.com/srstevenson/vim-picker

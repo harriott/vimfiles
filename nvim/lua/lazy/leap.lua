@@ -6,8 +6,12 @@
 
 -- $lazy/leap.nvim/doc/leap.txt
 
+-- Fixing:
+--  $ sudo rm -r $lazy/leap.nvim
+--  g $lazy  to open FE and Delete  markdown-preview.nvim
+
 return {
-  { 'ggandor/leap.nvim',
+  { url = 'https://codeberg.org/andyg/leap.nvim',
     lazy = false,  -- for  nvim-notify
     config = function()
       if vim.fn.has('gui_running') == 1 then

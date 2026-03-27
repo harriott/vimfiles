@@ -721,7 +721,7 @@ endfunction
 nnoremap <leader><leader>q :call VimgrepQRs()<CR>
 function! VimgrepQRs()
   call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$misc.'/linux/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
+  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$misc.'/unix_like/linux/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
   copen
 endfunction
 

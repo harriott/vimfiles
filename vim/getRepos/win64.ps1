@@ -6,19 +6,17 @@
 
 $cf = "$vfv/getRepos/packs.clones"
 
-#=> 0 $vfvp clones optionally update  packs.clones
-sl $vfvp; . $misc/GRs/getClonesList.ps1 $cf; sl $vfv
-
-#=> 1 clones remove
+#=> 0 clones remove
 # These will be re-cloned in the next step:
 if ( test-path "$vfvp/packs-cp-full/opt/vim-gitgutter" ) {
-  ri -recurse $vfvp/packs-cp-full/opt/vim-gitgutter
-  read-host '- should''ve removed  $vfvp/packs-cp-full/opt/vim-gitgutter'
+  ''; read-host 'Manually delete  $vfvp/packs-cp-full/opt/vim-gitgutter!'
 }
 if ( test-path "$vfvp/packs-cp-full/opt/vim-tagbar" ) {
-  ri -recurse $vfvp/packs-cp-full/opt/vim-tagbar
-  read-host '- should''ve removed  $vfvp/packs-cp-full/opt/vim-tagbar'
+  ''; read-host 'Manually delete  $vfvp/packs-cp-full/opt/vim-tagbar!'
 }
+
+#=> 1 $vfvp clones optionally update  packs.clones
+sl $vfvp; . $misc/GRs/getClonesList.ps1 $cf; sl $vfv
 
 #=> 2 $vfvp clones get
 $clones = gc $cf
@@ -67,4 +65,6 @@ $md = "$vfvp/packs-cp-full/opt/vim-ShowTrailingWhitespace/ftplugin/markdown_Show
 #=> 5 helptags
 Write-Host " try to " -nonewline
   Write-Host ":helptags ALL" -foregroundcolor red -backgroundcolor yellow -nonewline
+''
+'for linux, probably now need to fix hundreds of files that have CRLFs - $vimfiles/README.md'
 

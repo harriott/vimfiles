@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - ven 01 nov 2024
+" https://harriott.githubio/ - sam 28 févr 2026
 
 " $vfv/plugin/packsFull.vim - only sourced by  $vfv/plugin/packs.vim  for full installations
 
@@ -68,67 +68,6 @@ if has('nvim') | packadd conky-syntax.vim | endif  " (doesn't work in  init.vim)
 
 " "">> CSS Color
 " packadd vim-css-color  " slows down every other filetype...
-
-"">> csv.vim
-" extra tools in  $vfv/ftplugin/csv.vim
-"  & see  $vfv/after/plugin/packs.vim
-
-" $vfvp/packs-cp-full/opt/csv.vim/doc/ft-csv.txt
-" $vfvp/packs-cp-full/opt/csv.vim/ftdetect/csv.vim
-
-"">>> column highlighting
-" :HiColumn [n]  " highlight column [n] using  WildMenu  syntax colour
-" :HiColumn!  " removes
-" - f7 toggle defined in  $vfv/ftplugin/csv.vim
-
-"">>>> global variables
-" automatic
-let g:csv_highlight_column = 'y'
-" - could be useful, but makes seeing the cursor difficult in  tomorrow
-
-" my preferred syntax colour
-let g:csv_hiGroup = 'Directory'  " good in my  Vim
-if has('nvim') | let g:csv_hiGroup = 'CursorLineNr' |
-elseif has("gui_running") | :let g:csv_hiGroup = 'DiffText' | endif
-
-" none are set by default
-
-"">>> commands
-" :%Substitute 4,12/\./,/g
-" :WhatColumn
-" H -> go left
-" L -> go right
-
-" %ArrangeColumn  " is slow, and makes changes
-" %UnArrangeColumn  " undoes
-" :AddColumn  " after current
-" :CSVInit  " reinitialise the plugin (clears HiColumn)
-" :DeleteColumn [n[-m]]  " deleted column(s) [n[-m]]
-" :MoveColumn [n] [m]  " moves column [n] to right [of column m] (m can be $)
-" :SearchInColumn [n] <text>  " doesn't work for numbers...
-" :Sort [column}
-" :SumCol
-
-" column hiding
-"  :VertFold  " hides from left to current
-"  :VertFold!  " unhide
-" :CSVTabularize  " open as table in new buffer
-
-" dynamic filters (:h csv-filter) see lines containing same value
-"  :Filter  " show them
-"  <enter>  hides away non-matching lines
-"  <backspace>  successively removes filters
-"  <space>  hides away matching lines
-
-"">>> configurations
-" :let g:csv_delim_test = ',;|'
-" :let b:delimiter
-
-" "">>> load
-" if !has('nvim')
-"   let g:csv_vim_loaded = 1 | packadd csv.vim
-"   " changes target of  :h ft-csv
-" endif
 
 "">> emmet-vim
 " EmmetInstall  for CSS/HTML
@@ -219,6 +158,7 @@ let g:dokuwiki_fenced_languages = ['html', 'python', 'sh', 'vim']
 " also  $vfv/ftplugin/dokuwiki.vim
 
 "">> vim-go
+" $vfvp/packs-cp-full/opt/vim-go/ftdetect/gofiletype.vim
 packadd vim-go
 
 "">> vim-hjson
@@ -335,19 +275,19 @@ packadd vimtex
 " MinimapToggle
 if ! exists('g:WSL') | packadd minimap.vim | endif
 
-""> encoding - Tagbar
-" $vfvp/packs-cp-full/opt/vim-tagbar/doc/tagbar.txt
-" $vfvp/packs-cp-full/opt/vim-tagbar/README.md
+" ""> encoding - Tagbar
+" " $vfvp/packs-cp-full/opt/vim-tagbar/doc/tagbar.txt
+" " $vfvp/packs-cp-full/opt/vim-tagbar/README.md
 
-" :TagbarToggle  mapping set in
-"  $vfv/ftplugin/perl.vim
-"  $vfv/ftplugin/python.vim
+" " :TagbarToggle  mapping set in
+" "  $vfv/ftplugin/perl.vim
+" "  $vfv/ftplugin/python.vim
 
-" h tagbar-contents
-" h tagbar-ignore
+" " h tagbar-contents
+" " h tagbar-ignore
 
-autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
-packadd vim-tagbar
+" autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
+" packadd vim-tagbar
 
 ""> encoding - unicode.vim
 " $vfvp/packs-cp-full/opt/unicode.vim/doc/unicode.txt

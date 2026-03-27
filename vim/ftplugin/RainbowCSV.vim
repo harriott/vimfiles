@@ -31,7 +31,7 @@ function! RainbowAStoggle()
     silent! RainbowAlign
   endif
 endfunction
-command! RAST silent ! call RainbowAStoggle()
+" command! RAST silent ! call RainbowAStoggle()
 nnoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? ':call RainbowAStoggle()<cr>' : '<f7>'
 inoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr>' : '<f7>'
 vnoremap <expr> <f7> get(b:, 'rbcsv', 0) == 1 ? '<esc>:call RainbowAStoggle()<cr>' : '<f7>'

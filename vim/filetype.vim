@@ -104,6 +104,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.tbmo      setf tbmo      " $vfv/syntax/tbmo.vim
   au! BufRead,BufNewFile *.toc       setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
   au! BufRead,BufNewFile *.tree      setf tree      " $vfv/ftplugin/tree.vim
+  au! BufRead,BufNewFile *.txtree    setf txtree    " $vfv/ftplugin/tree.vim
   au! BufRead,BufNewFile *.ufco      setf ufco      " $vfv/syntax/ufco.vim
   au! BufRead,BufNewFile *.WGPfn     setf WGPfn     " $vfv/syntax/WGPfn.vim
   au! BufRead,BufNewFile *.whatsapp  setf whatsapp  " $vfv/syntax/whatsapp.vim

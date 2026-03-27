@@ -27,7 +27,7 @@ Some of my `vim` configuraton files are long, but they don't appear so to me as 
     - [$MSn/set/6-WSL-nodes.sh](https://github.com/harriott/OS-MSWin10/blob/master/nodes/set/6-WSL-nodes.sh)
 
 ## snag: CRLF line endings on Arch
-When I somehow managed, from `PowerShell` to convert hundreds of files in my configuration to CRLF line endings all the Vim variants on my `Arch Linux` machines were broken.
+When I somehow managed, from `PowerShell` to convert hundreds of files in my configuration to CRLF line endings all the `Vim` variants on my `Arch Linux` machines were broken.
 
 ### fix 1: delete my $vimfiles and repopulate from remote repositories
     rm -r $vimfiles

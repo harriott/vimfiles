@@ -5,8 +5,8 @@
 " Last Change: Thu 12 Oct 2023
 
 " $vimfiles/ftplugin/tbmo.vim
-" also  $vimfiles/syntax/tbmo.vim
-" *.tbmo  is detected by  $vimfiles/filetype.vim
+"  also  $vfv/syntax/tbmo.vim
+" *.tbmo  is detected by  $vfv/filetype.vim
 
 " nf7 - pull n lines into a comma-separated list
 nnoremap <buffer><f7> :s/\n/, / <bar> nohlsearch <CR>
