@@ -18,6 +18,8 @@ if $HOME == 'C:\Users\deaur'
   let $coreIT = 'D:\ITr-coreIT'
 else
   let $Drpbx = 'D:\Dropbox'
+    let $DrCop = $Drpbx.'\Cop'
+      let $COT = $DrCop.'\OutThere'
     let $DJH = $Drpbx.'\JH'
       let $Cfzd = $DJH.'\work-Cz'
         let $CzMa = $Cfzd.'\manage'

@@ -6,5 +6,5 @@
 "  also  $vfv/syntax/txtree.vim
 " *.txtree  is detected by  $vfv/filetype.vim
 
-setlocal foldmethod=indent
+setlocal fdc=7 foldmethod=indent sw=2
 

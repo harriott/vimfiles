@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - sam 28 févr 2026
+" https://harriott.githubio/ - Sat 28 Mar 2026
 
 " $vfv/plugin/packsVimFull.vim  optionally sourced by  $vfv/plugin/packs.vim
 "  needs recent Vim
@@ -178,6 +178,11 @@ imap <c-d> <Plug>(fzf-dictionary-open)
 " $vfvp/packs-unix/opt/clrzr/doc/clrzr.txt
 " just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt
 " doesn't work for  $culLA/IM-magick-list_color.txt
+
+""> move - vindent.vim
+let g:vindent_motion_less_prev = '[-' " jump to prev line with less indent
+let g:vindent_motion_less_next = ']-' " jump to next line with less indent
+packadd vindent.vim
 
 ""> shell - Fern
 noremap <c-e> :cd %:p:h<CR>:Fern . -reveal=%<CR>

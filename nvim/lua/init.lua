@@ -7,6 +7,9 @@
 
 vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
 
+-- ▩-> 0 for auto-session
+vim.o.ssop='blank,buffers,curdir,folds,tabpages,winsize,winpos,localoptions'
+
 -- ▩-> 0 generic boolean option toggle function
 function vim_opt_toggle(opt)
   local message = opt

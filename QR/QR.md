@@ -185,12 +185,13 @@ after a search, `:v//d` removes all non-matching lines
     zr             " increase foldlevel (#zr -> foldlevel #)
     zv             " view cursor line (opening just enough folds)
     zx             " update folds
+    [z             " move to start of open fold
     :h fold-methods
     :se fdl?       " reports the current foldlevel
 
 ### foldopen
-h 'fdo'
-set fdo?
+    :h 'fdo'
+    :set fdo?
 
 ## indentation
     :%le     " remove all indents
