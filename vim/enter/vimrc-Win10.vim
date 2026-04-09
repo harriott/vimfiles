@@ -88,9 +88,9 @@ endif
 
 "">> nicer font
 if hostname() == 'HPEB840G36'
-set guifont=Lucida_Console:h8  " smallest available (for 1366x768 screen)
+  set guifont=Lucida_Console:h8  " smallest available (for 1366x768 screen)
 else
-set guifont=Lucida_Console:h9
+  set guifont=Lucida_Console:h9
 endif
 " - better to append size so that it's reported
 set linespace=4

@@ -1,10 +1,9 @@
 
 " Language: TextTree
 " Maintainer: Joseph Harriott
-" Last Change: Fri 27 Mar 2026
-" $vfv/ftplugin/txtree.vim
-"  also  $vfv/syntax/txtree.vim
+" Last Change: sam 28 mars 2026
+" $vfv/ftplugin/txtree.vim (also  $vfv/syntax/txtree.vim)
 " *.txtree  is detected by  $vfv/filetype.vim
 
-setlocal fdc=7 foldmethod=indent sw=2
+setlocal cuc fdc=3 foldmethod=indent nowrap sw=2
 

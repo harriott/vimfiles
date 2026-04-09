@@ -399,8 +399,6 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
     \vs                         " last search in escaped visual selection
     \v,(f|m|s),                 " finds  ,f,  ,m,  ,s,
     :h %(                       " %(...) group isn't counted as a sub-expression
-    planet\(Awesome\|Terrible\) " planetAwesome or planetTerrible
-	text\|alt                   " searches for text & alt
 
 ### magic levels
 	\M  " nomagic (for what follows), eg returning . & * to themselves
@@ -431,10 +429,9 @@ z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 `set magic` is the default, `\v` goes very
 
 #### multiple targets
-```vim
-\(alt1\|alt2\|alt3\)
-\v(alt1|alt2|alt3)
-```
+    \(alt1\|alt2\|alt3\)
+    \v(alt1|alt2|alt3)
+    planet\(Awesome\|Terrible\) " planetAwesome or planetTerrible
 
 #### searching before and after
     \ze<endPatternToDiscard>

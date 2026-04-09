@@ -307,7 +307,7 @@ packadd unicode.vim
 "  i% = inside
 "  a% = all
 nnoremap <leader>ww :<c-u>MatchupWhereAmI??<cr>
-packadd vim-matchup
+" packadd vim-matchup " off for Neovim v0.12.0
 
 ""> encoding - vim-ssh-annex
 autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts

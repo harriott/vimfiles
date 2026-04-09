@@ -1,5 +1,5 @@
 
--- https://harriott.github.io/ - mer 02 avr 2025
+-- https://harriott.github.io/ - Thu 09 Apr 2026
 
 -- $vfn/lua/init.lua
 --  required by  $vfn/init.vim
@@ -72,6 +72,10 @@ if vim.g.neovide then
    -- only currently effective on win64, okay with high contrast image behind
   -- vim.g.neovide_normal_opacity = 0.8  -- defaults to 1
 
+  -- if vim.fn.has('nvim-0.12.0') == 1 then
+  --   vim.opt.guifont = { "Lucida Console", ":h9" }
+  -- end
+
   -- These don`t change Telescope floats:
   -- vim.g.neovide_floating_z_height = 10
   -- vim.g.neovide_light_angle_degrees = 45
@@ -101,33 +105,12 @@ vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode
 -- ▩-> 0 nvim-cmp on
 vim.g.cmp_on = true -- $vfn/lua/lazy/nvim-cmp.lua
 
--- ▩-> 0 vim.lsp
--- $cGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
--- $lazy/nvim-lspconfig/doc/configs.md  has notes for each  LSP
-vim.lsp.enable({'astro'}) -- $vfn/lsp/astro.lua
-vim.lsp.enable({'bashls'}) -- $vfn/lsp/bashls.lua
--- vim.lsp.enable({'ts_ls'}) -- $vfn/lsp/ts_ls.lua
-vim.lsp.enable({'lemminx'}) -- $vfn/lsp/lemminx.lua
-vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
-vim.lsp.enable({'lua_ls'}) -- $vfn/lsp/lua_ls.lua
-vim.lsp.enable({'mdx_analyzer'}) -- $vfn/lsp/mdx_analyzer.lua
-vim.lsp.enable({'mutt_ls'}) -- $vfn/lsp/mutt_ls.lua
-vim.lsp.enable({'perlnavigator'}) -- $vfn/lsp/perlnavigator.lua
-vim.lsp.enable({'powershell_es'}) -- $vfn/lsp/powershell_es.lua
-vim.lsp.enable({'pyright'}) -- $vfn/lsp/pyright.lua
-vim.lsp.enable({'sqls'}) -- $vfn/lsp/pyright.lua
-vim.lsp.enable({'texlab'}) -- $vfn/lsp/texlab.lua
-vim.lsp.enable({'typos_lsp'}) -- $vfn/lsp/typos_lsp.lua
-vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
--- in a file, :che vim.lsp  reports the active  LS's
--- unclear what's the benefit of LuaDoc Annotations
--- try
-  -- emmet-language-server (for  css, html, less, sass, scss)
-  -- nginx_language_server
-  -- phpactor
-  -- vscode-html-languageservice  for  html
-  -- vscode-json-languageservice  for  json
-  -- yamlls
+-- ▩-> 0 treesitter
+if vim.fn.has('nvim-0.12.1') == 1 then vim.treesitter.stop() end
+-- a partial workaround to the effective impossibility of installing a C compiler on MSWin
+--  but doesn't seem to disable  highlights.scm
+
+vim.keymap.set({'n'},'<localleader>t',function() vim.treesitter.stop() print("treesitter highlights off until refresh") end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vfv/after/syntax/lua.vim
 
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
@@ -213,7 +196,8 @@ require('lazy').setup(
       require'lazy/telescope-fzf-native',
       require'lazy/nvim-neoclip',
     require'lazy/trouble_nvim',
-    require'lazy/vim-illuminate', -- $vfn/lua/lazy/vim-illuminate.lua
+    require'lazy/vim-illuminate',
+    require'lazy/vindent_nvim',
     -- ▩---> nvim-lspconfig
     require('lazy/nvim-lspconfig'),
       -- $lazy/nvim-lspconfig/lsp - code for each LSP
@@ -237,11 +221,11 @@ require('lazy').setup(
          config=function() require('mason-lspconfig').setup{automatic_enable = false} end,},
       require('lazy/lspsaga'), -- excellent breadcrumbs, among other things
     -- ▩---> nvim-treesitter
-    require'lazy/nvim-treesitter', -- $vfn/lua/lazy/nvim-treesitter.lua
+    require'lazy/nvim-treesitter' -- $vfn/lua/lazy/nvim-treesitter.lua
       -- 'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
         -- context.vim  works better
-  -- ▩--> more stuff
+  -- ▩--> post-setup
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack
@@ -279,8 +263,64 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- ▩-> 2 for nvim-notify
 vim.notify('ready for :Notifications')
 
+-- ▩-> 2 for vim.lsp
+-- $cGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
+-- $lazy/nvim-lspconfig/doc/configs.md  has notes for each  LSP
+vim.lsp.enable({'astro'}) -- $vfn/lsp/astro.lua
+vim.lsp.enable({'bashls'}) -- $vfn/lsp/bashls.lua
+-- vim.lsp.enable({'ts_ls'}) -- $vfn/lsp/ts_ls.lua
+vim.lsp.enable({'lemminx'}) -- $vfn/lsp/lemminx.lua
+vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
+vim.lsp.enable({'lua_ls'}) -- $vfn/lsp/lua_ls.lua
+vim.lsp.enable({'mdx_analyzer'})
+vim.lsp.enable({'mutt_ls'}) -- $vfn/lsp/mutt_ls.lua
+vim.lsp.enable({'perlnavigator'}) -- $vfn/lsp/perlnavigator.lua
+vim.lsp.enable({'powershell_es'}) -- $vfn/lsp/powershell_es.lua
+vim.lsp.enable({'pyright'}) -- $vfn/lsp/pyright.lua
+vim.lsp.enable({'sqls'}) -- $vfn/lsp/pyright.lua
+vim.lsp.enable({'texlab'}) -- $vfn/lsp/texlab.lua
+vim.lsp.enable({'typos_lsp'}) -- $vfn/lsp/typos_lsp.lua
+vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
+-- in a file, :che vim.lsp  reports the active  LS's
+-- unclear what's the benefit of LuaDoc Annotations
+-- try
+  -- emmet-language-server (for  css, html, less, sass, scss)
+  -- nginx_language_server
+  -- phpactor
+  -- vscode-html-languageservice  for  html
+  -- vscode-json-languageservice  for  json
+  -- yamlls
+
 -- -- ▩-> 2 for wilder
 -- vim.cmd('call wilder#setup({'modes': [':', '/', '?']})')
 -- vim.cmd('call wilder#set_option('renderer', wilder#popupmenu_renderer({ 'highlighter': wilder#basic_highlighter(), }))')
 -- -- but it's broken...
+
+-- ▩-> 2 nvim-treesitter parsers
+function GetTSParsers()
+  -- vim.cmd 'TSInstall bash'
+  -- vim.cmd 'TSInstall gnuplot'
+  -- vim.cmd 'TSInstall lua'
+    -- error (vim-illuminate) if open a  *.lua  without this parser present
+  -- vim.cmd 'TSInstall markdown'
+  -- vim.cmd 'TSInstall perl'
+  -- vim.cmd 'TSInstall python'
+  -- vim.cmd 'TSInstall query'
+  -- vim.cmd 'TSInstall sh'
+  -- vim.cmd 'TSInstall vim'
+  -- vim.cmd 'TSInstall vimdoc'
+end -- lua GetTSParsers(), then update the :TSInstallInfo  lists
+-- on MSWin do these in  x64 Native Tools Command Prompt
+-- :TSUpdate  updates all parsers
+
+-- ▩--> on unix
+-- $vimfiles/settings-active-nvim/unix-TSInstallInfo-DOP3040D11S.txt
+-- $vimfiles/settings-active-nvim/unix-TSInstallInfo-sbMb.txt
+-- /usr/lib/tree_sitter  seem slightly outdated
+-- r $lazy/nvim-treesitter/parser - when neovim 11
+-- r ~/.local/share/nvim/site/parser
+
+-- ▩--> on win64
+  -- $vimfiles/settings-active-nvim/win64-TSInstallInfo-HPEB840G37.txt
+  -- g $lazy\nvim-treesitter\parser
 

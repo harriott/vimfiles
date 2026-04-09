@@ -1,7 +1,7 @@
 
 " Language: md
 " Maintainer: Joseph Harriott
-" Last Change: Thu 07 Nov 2024
+" Last Change: Thu 09 Apr 2026
 " this is for extra funtionality that I like for my *.md files
 " $vfv/ftplugin/md.vim  supplemental to  $vfv/ftplugin/markdown.vim
 " as  $VIMRUNTIME/filetype.vim  sets filetype  markdown  for *.md,
@@ -75,6 +75,7 @@ nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
 " when  $JHm/_posts  have  fdm=syntax
 
 ""> syntax highlighting fix
+lua vim.treesitter.stop()
 " maxmempattern  is set in  $vfv/plugin/plugin.vim
 setlocal synmaxcol=0
 

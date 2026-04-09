@@ -11,18 +11,24 @@ Joseph's (g)Vim Quick Reference
     $vfn/lua/lazy/nvim-lspconfig.lua
     $VIMRUNTIME/filetype.lua
     :echo has('nvim')
+    :echo has('nvim-0.11')
+    :echo has('nvim-0.12.0')
+    :=not vim.fn.has('nvim-0.12.0')
     :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
     :lua vim.notify('test notification')
+    :verb ve  ' :verbose version
     nvim -?
     nvim -v
 
     fd health\.lua $vfn/packs-nvim  ' health.lua
     fd init\.lua $vfn/packs-nvim  ' init.lua
 
-```vim
-:verb ve  ' :verbose version
-```
+## Treesitter
+    :=vim.treesitter.language_version  " :lua vim.treesitter.inspect_tree()
+    :InspectTree
+    :lua vim.treesitter.start()
+    :lua vim.treesitter.stop()
 
 ## help
     \K  ' $vfn/init.vim

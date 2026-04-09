@@ -118,6 +118,7 @@ packs-cp-full/opt/vim-textmanip https://github.com/t9md/vim-textmanip
 packs-cp-full/opt/vim-visual-star-search https://github.com/bronson/vim-visual-star-search
 packs-cp-full/opt/vim-wombat-scheme https://github.com/sheerun/vim-wombat-scheme
 packs-cp-full/opt/vindent.vim  https://github.com/jessekelighine/vindent.vim
+packs-cp-full/opt/vindent.vim https://github.com/jessekelighine/vindent.vim
 packs-cp-full/opt/vis https://github.com/vim-scripts/vis
 packs-unix/opt/clrzr https://github.com/BourgeoisBear/clrzr
 packs-unix/opt/vim-picker https://github.com/srstevenson/vim-picker

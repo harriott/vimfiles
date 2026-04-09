@@ -50,7 +50,6 @@ packs-cp-full/opt/gitignore.vim
 packs-cp-full/opt/Highlight.vim
 packs-cp-full/opt/incsearch-fuzzy.vim
 packs-cp-full/opt/incsearch.vim
-packs-cp-full/opt/jessekelighine-vindent.vim
 packs-cp-full/opt/lf-vim
 packs-cp-full/opt/limelight.vim
 packs-cp-full/opt/listtoggle
@@ -118,6 +117,7 @@ packs-cp-full/opt/vimtex
 packs-cp-full/opt/vim-textmanip
 packs-cp-full/opt/vim-visual-star-search
 packs-cp-full/opt/vim-wombat-scheme
+packs-cp-full/opt/vindent.vim
 packs-cp-full/opt/vis
 packs-unix/opt/clrzr
 packs-unix/opt/vim-picker

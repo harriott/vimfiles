@@ -1,7 +1,7 @@
 
 -- $vfn/lua/lazy/telescope.lua
 
--- :checkhealth telescope
+-- :che telescope
 -- :h telescope  then  /^builtin.
 -- :Telescope colorscheme
 -- :Telescope command_history default_text=MRU\ \.
@@ -15,9 +15,8 @@
 --  =k  show up my mappings
 
 return {
-  { 'nvim-telescope/telescope.nvim',
+  { 'nvim-telescope/telescope.nvim', version = '*',
     event = 'VimEnter',
-    branch = '0.1.x',
     dependencies = {
       'benfowler/telescope-luasnip.nvim', --   :Telescope luasnip
       'nvim-lua/plenary.nvim',

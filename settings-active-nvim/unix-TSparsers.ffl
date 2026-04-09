@@ -1,0 +1,32 @@
+" vim: se nowrap:
+
+" pu=nvim_get_runtime_file('parser/*.so', v:true)
+
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/bash.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/css.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/csv.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/diff.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/gitignore.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/gnuplot.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/html.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/lua.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/markdown.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/muttrc.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/perl.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/python.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/tmux.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/toml.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/tsv.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/vim.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/vimdoc.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/xml.so
+/home/jo/.local/share/nvim/lazy/nvim-treesitter/parser/yaml.so
+/usr/share/nvim/runtime/parser/bash.so
+/usr/share/nvim/runtime/parser/c.so
+/usr/share/nvim/runtime/parser/lua.so
+/usr/share/nvim/runtime/parser/markdown.so
+/usr/share/nvim/runtime/parser/markdown_inline.so
+/usr/share/nvim/runtime/parser/python.so
+/usr/share/nvim/runtime/parser/query.so
+/usr/share/nvim/runtime/parser/vim.so
+/usr/share/nvim/runtime/parser/vimdoc.so
