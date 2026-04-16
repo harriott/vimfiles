@@ -7,8 +7,9 @@ local s = luasnip.snippet
 local t = luasnip.text_node
 
 luasnip.add_snippets("all", {
-  s("Cz", {
-    t("Cafézoïde"),
-  }),
+  s("@g", { t("@gmail.com"), }),
+  s("@h", { t("@hotmail.com"), }),
+  s("@y", { t("@yahoo.com"), }),
+  s("Cz", { t("Cafézoïde"), }),
 })
 

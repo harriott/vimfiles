@@ -3,7 +3,7 @@
 
 " Language: Lua
 " Maintainer: Joseph Harriott
-" Last Change: mer 02 avr 2025
+" Last Change: Thu 09 Apr 2026
 " $vfv/ftplugin/lua.vim
 "  supplementary to  $VIMRUNTIME/ftplugin/lua.vim
 "  also
@@ -39,7 +39,7 @@ function! LuaF()
   endif
 endfunction
 
-setlocal expandtab foldcolumn=1 foldexpr=LuaF() foldmethod=expr shiftwidth=2
+setlocal expandtab foldcolumn=1 foldexpr=LuaF() foldmethod=expr shiftwidth=2 textwidth=0
 
 " pull away from nvim-treesitter foldexpr
 nnoremap <localleader>e :set foldexpr=LuaF()<cr>

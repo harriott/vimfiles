@@ -1,5 +1,5 @@
 
--- https://harriott.github.io/ - Thu 09 Apr 2026
+-- https://harriott.github.io/ - Thu 16 Apr 2026
 
 -- $vfn/lua/init.lua
 --  required by  $vfn/init.vim
@@ -106,7 +106,12 @@ vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode
 vim.g.cmp_on = true -- $vfn/lua/lazy/nvim-cmp.lua
 
 -- ▩-> 0 treesitter
-if vim.fn.has('nvim-0.12.1') == 1 then vim.treesitter.stop() end
+--  :che treesitter
+
+-- ▩--> 0 stop
+-- $vfv/ftplugin/md.vim
+
+if vim.fn.has('win64')==1 and vim.fn.has('nvim-0.12.1')==1 then vim.treesitter.stop() end
 -- a partial workaround to the effective impossibility of installing a C compiler on MSWin
 --  but doesn't seem to disable  highlights.scm
 
@@ -124,6 +129,8 @@ require('lazy').setup(
   {
     -- ▩---> direct calls
     {'akinsho/bufferline.nvim', config=function() require'bufferline'.setup() end,},
+      -- $lazy/bufferline.nvim/README.md
+      -- $lazy/bufferline.nvim/doc/bufferline.txt
       -- :BufferLineCloseOthers
       -- :BufferLinePickClose
       -- :BufferLinePick
@@ -149,7 +156,9 @@ require('lazy').setup(
       -- :GrugFar
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
       -- :N  briefly centers around line N
-    {'numToStr/Comment.nvim', opts={}, }, -- $vimfiles/QR/variants.md
+    {'numToStr/Comment.nvim',opts={},},
+      -- $lazy/Comment.nvim/doc/Comment.txt
+      -- $vimfiles/QR/variants.md
     {'pmizio/typescript-tools.nvim',
       dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
       opts = {}, }, -- brings in  tsserver  Diagnostics
@@ -163,6 +172,7 @@ require('lazy').setup(
       -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
     {'wurli/visimatch.nvim', opts = {} },
     -- ▩---> moduled
+    -- $vfn/lua/lazy
     require'lazy/auto-session',
     require'lazy/boole_nvim',
     -- require'lazy/catppuccin',
@@ -296,7 +306,7 @@ vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
 -- vim.cmd('call wilder#set_option('renderer', wilder#popupmenu_renderer({ 'highlighter': wilder#basic_highlighter(), }))')
 -- -- but it's broken...
 
--- ▩-> 2 nvim-treesitter parsers
+-- ▩-> 2 nvim-treesitter parsers - Neovim 0.11.x
 function GetTSParsers()
   -- vim.cmd 'TSInstall bash'
   -- vim.cmd 'TSInstall gnuplot'
@@ -311,16 +321,16 @@ function GetTSParsers()
   -- vim.cmd 'TSInstall vimdoc'
 end -- lua GetTSParsers(), then update the :TSInstallInfo  lists
 -- on MSWin do these in  x64 Native Tools Command Prompt
--- :TSUpdate  updates all parsers
 
--- ▩--> on unix
+-- ▩-> 2 nvim-treesitter parsers - on unix
 -- $vimfiles/settings-active-nvim/unix-TSInstallInfo-DOP3040D11S.txt
 -- $vimfiles/settings-active-nvim/unix-TSInstallInfo-sbMb.txt
 -- /usr/lib/tree_sitter  seem slightly outdated
 -- r $lazy/nvim-treesitter/parser - when neovim 11
 -- r ~/.local/share/nvim/site/parser
 
--- ▩--> on win64
+-- ▩-> 2 nvim-treesitter parsers - on win64
   -- $vimfiles/settings-active-nvim/win64-TSInstallInfo-HPEB840G37.txt
-  -- g $lazy\nvim-treesitter\parser
+  -- fd parser$ $HADL\nvim-data
+  -- g $lazy\nvim-treesitter\parser - when neovim 11
 

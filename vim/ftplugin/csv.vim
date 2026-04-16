@@ -35,10 +35,10 @@ endif
 ""> csvview.nvim
 if has('nvim')
   if !empty(luaeval('package.loaded["csvview"]'))
-    nnoremap <buffer><leader><f7> :CsvViewToggle<cr>
+    nnoremap <buffer><f7> :CsvViewToggle<cr>
   endif
 endif " needs  lazy = false  in  $vfn/lua/lazy/csvview_nvim.lua
 
 ""> Rainbow CSV
-source $vfv/ftplugin/RainbowCSV.vim
+if exists('b:rbcsv') | source $vfv/ftplugin/RainbowCSV.vim | endif
 

@@ -1,7 +1,7 @@
 
 Joseph's (g)Vim Quick Reference
 
-    let v=6 | echo g:v | =vim.g.v  ' lua print(vim.api.nvim_eval('exists('g:v')'))
+    let v=6 | echo g:v | =vim.g.v  " lua print(vim.api.nvim_eval('exists('g:v')'))
 
 # guifont
     :Bufferize se gfn
@@ -17,12 +17,12 @@ Joseph's (g)Vim Quick Reference
     :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
     :lua vim.notify('test notification')
-    :verb ve  ' :verbose version
+    :verb ve  " :verbose version
     nvim -?
     nvim -v
 
-    fd health\.lua $vfn/packs-nvim  ' health.lua
-    fd init\.lua $vfn/packs-nvim  ' init.lua
+    fd health\.lua $vfn/packs-nvim  " health.lua
+    fd init\.lua $vfn/packs-nvim  " init.lua
 
 ## Treesitter
     :=vim.treesitter.language_version  " :lua vim.treesitter.inspect_tree()
@@ -43,7 +43,7 @@ Joseph's (g)Vim Quick Reference
 ## lua
     :h vim.cmd
     :lua if x==nil then print('x is nil') end
-    :lua vim.b.v = '5' ' then  :echo b:v
+    :lua vim.b.v = '5'  " then  :echo b:v
     :lua vim.cmd.tabnew()
     :lua vim.cmd('wshada')
 
@@ -85,11 +85,10 @@ Joseph's (g)Vim Quick Reference
     :=vim.fn.has('linux')
 
 ### MSWin
-    $ProgramFiles\Neovim\share\nvim\runtime\mswin.vim
+    $CPF\Neovim\share\nvim\runtime\mswin.vim
     $CPF\Neovim\share\nvim\runtime\filetype.lua
     g $HOME\.vimswap
     g $lazy
-    g 'C:\Program Files\Neovim\share\nvim\runtime'
 
 navigating into `C:\Vim` requires cursor on C
 
@@ -128,6 +127,8 @@ navigating into `C:\Vim` requires cursor on C
 
 ### Comment.nvim
 - `gb[motion]`/`gc[motion]` toggles block/line comment [motion] or selection
+- `gcA` append comment
+- `gco`/`gcO` begin comment on next/previous line
 - `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
 
 ## settings
@@ -301,6 +302,7 @@ vimscript
     :colo tomorrow  " $vfv/enter/gvimrc-Arch.vim
 
 #### background
+    :h 'bg'
     :se bg=dark
     :se bg=light
 

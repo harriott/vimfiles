@@ -1,11 +1,13 @@
 
--- https://harriott.githubio/ - Thu 09 Apr 2026
+-- https://harriott.githubio/ - Thu 16 Apr 2026
 
 -- $vfn/lua/lazy/nvim-treesitter.lua
 --  $lazy/nvim-treesitter/doc/nvim-treesitter.txt
---  :che treesitter
+--  :che nvim-treesitter
 --  :h nvim-treesitter-commands
---  $vfn/lua/init.lua > parsers
+--  parsers
+--   $lazy/nvim-treesitter/SUPPORTED_LANGUAGES.md
+--   end of  $vfn/lua/init.lua
 
 -- ▩-> return {
 return {
@@ -75,23 +77,40 @@ return {
   },
 
   -- ▩--> nvim-treesitter  for  nvim 12
-  { 'nvim-treesitter/nvim-treesitter',
-    branch = 'main', -- maybe not needed
+  {
+    'neovim-treesitter/nvim-treesitter', branch = 'main',
+      dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
+    -- 'nvim-treesitter/nvim-treesitter', -- no longer maintained
+
     cond = vim.fn.has('nvim-0.12.1') == 1 and vim.fn.has("win64") == 0,
     lazy = false,
     build = ':TSUpdate',
 
     config = function()
-      -- require('nvim-treesitter').install{'rust'} -- for testing (rm ~/.local/share/nvim/site/parser/rust.so)
-      require('nvim-treesitter').install{'bash','gnuplot','lua','markdown','perl','python','query','sh','vim','vimdoc'} -- they go to  ~/.local/share/nvim/site/parser
-
-      require('nvim-treesitter').setup { }
+      -- require('nvim-treesitter').install{'zig'} -- for testing
+      -- ~/.local/share/nvim/site; rm -r parser parser-info queries
+      require('nvim-treesitter').install{'bash','gnuplot','lua','markdown','perl','powershell','python','query','rust','vim','vimdoc'} -- repopulates
     end,
   },
 
   -- ▩--> nvim-treesitter-context
   { 'nvim-treesitter/nvim-treesitter-context',
+    cond = vim.fn.has("win64") == 0,
   }, -- marginally useful - try in  $onGH/FM-DirLVF/DirLVF.py
+
+  -- ▩--> nvim-treesitter-textobjects
+  --  $lazy/nvim-treesitter-textobjects/doc/nvim-treesitter-textobjects.txt
+  { "nvim-treesitter/nvim-treesitter-textobjects", branch = "main",
+    cond = vim.fn.has("win64") == 0,
+    config = function()
+      require('nvim-treesitter-textobjects').setup {
+        move = {
+          set_jumps = true, -- jumplist
+        },
+      }
+    end,
+    -- mappings could go here, but they're very detailed ($lazy/nvim-treesitter-textobjects/queries)
+  },
 
 -- ▩-> return }
   }

@@ -84,10 +84,6 @@ after a search, `:v//d` removes all non-matching lines
 - rgba(255, 255, 255, 5) - yes
 - works for `$culLA/IM-magick-list_color.txt`
 
-## colorscheme background
-    :h 'bg'
-    :se bg
-
 ## colours - calmar.ws
  0 #000000  1 #800000  2 #008000  3 #808000  4 #000080  5 #800080  6 #008080  7 #c0c0c0
  8 #808080  9 #ff0000 10 #00ff00 11 #ffff00 12 #0000ff 13 #ff00ff 14 #00ffff 15 #ffffff
@@ -299,10 +295,12 @@ I mostly use `c-w o`.
 # movements - in buffer
     nG      " go to line n
     :n      " go to line n
-    gj\k    " go down\up a visual line
+    gj/k    " go down\up a visual line
     [{ / ]} " jump to opening / closing }
     ][ / [] " jump to previous / next } in 1st column
     [( / ]) " jump to opening / closing )
+    [m / ]m " jump to previous / next start of method
+    [M / ]M " jump to previous / next end of method
     { or }  " move cursor to start or end of paragraph
     ( or )  " move cursor to start or end of sentence
 

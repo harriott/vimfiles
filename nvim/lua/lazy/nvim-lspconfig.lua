@@ -7,9 +7,14 @@
 -- $lazy/nvim-lspconfig/doc/lspconfig.txt
 -- No sign of version...
 
--- :LspInfo  then  q
--- :LspLog (~/.local/state/nvim/lsp.log)
--- :LspStop <tab>
+-- Neovim 0.11.x:
+--  :LspInfo  then  q
+--  :LspLog (~/.local/state/nvim/lsp.log)
+--  :LspStop <tab>
+-- Neovim 0.12.x:
+--  :checkhealth vim.lsp
+--  :lsp disable
+--  :lsp enable
 
 -- Diagnostics:
 --  also  $vfn/lua/init.lua
@@ -38,12 +43,12 @@ return {
       end,{desc=':LspRestart lua_ls typos_lsp'})
       -- ▩--> LspStop
       -- no generic way to disable on opening a specific file
-      if vim.fn.has('nvim-0.12.0') == 1 then
+      if vim.fn.has('nvim-0.12.1') == 1 then
         vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('silent! lsp disable') print('lsp disable\'d') end,{desc=':lsp disable'})
       else
-        vim.keymap.set({'n'},'<localleader>l', function() vim.cmd('LspStop ltex') print('LspStop\'d ltex') end,{desc=':LspStop ltex'}) -- if  =s  fails. Needs  C:\Lua  in path
         vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'})
-    end
+        vim.keymap.set({'n'},'<localleader>l', function() vim.cmd('LspStop ltex') print('LspStop\'d ltex') end,{desc=':LspStop ltex'}) -- if  =s  fails. Needs  C:\Lua  in path
+      end
 
     -- ▩-> end
     end,
