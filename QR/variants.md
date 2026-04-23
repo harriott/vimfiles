@@ -14,6 +14,7 @@ Joseph's (g)Vim Quick Reference
     :echo has('nvim-0.11')
     :echo has('nvim-0.12.0')
     :=not vim.fn.has('nvim-0.12.0')
+    :=vim.api.nvim_get_current_buf()
     :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
     :lua vim.notify('test notification')
@@ -24,11 +25,14 @@ Joseph's (g)Vim Quick Reference
     fd health\.lua $vfn/packs-nvim  " health.lua
     fd init\.lua $vfn/packs-nvim  " init.lua
 
-## Treesitter
-    :=vim.treesitter.language_version  " :lua vim.treesitter.inspect_tree()
-    :InspectTree
-    :lua vim.treesitter.start()
-    :lua vim.treesitter.stop()
+## coding
+- `Ctrl-]` (= `:lua vim.lsp.buf.definition()`) `:h CTRL-]`
+- `:ts` (`:tselect`) for what's under the cursor
+
+## comments
+    :h cms  " commentstring
+    :h gc-default
+    :se cms
 
 ## help
     \K  ' $vfn/init.vim
@@ -121,20 +125,11 @@ navigating into `C:\Vim` requires cursor on C
 - `~/.local/state/nvim/shada/main.shada` has more recent command history
 - `Arch`, if `handlr get .texty_extension`  returns `vim.desktop`, both `gVim` & `Vim` launch with `$VIM` & `$VIMRUNTIM` set as for `Nvim`!
 
-## plugins
-    $lazy
-    $vfn/lua/lazy/telescope.lua
-
-### Comment.nvim
-- `gb[motion]`/`gc[motion]` toggles block/line comment [motion] or selection
-- `gcA` append comment
-- `gco`/`gcO` begin comment on next/previous line
-- `[n]gbc`/`[n]gcc` toggles block/line comment for [n] line
-
 ## settings
     :Bufferize echo stdpath('cache')
     :Bufferize echo stdpath('config')
     :Bufferize echo stdpath('data')
+    :=vim.fn.stdpath("data")
     nvim --clean
 
 - `:che` (`:checkhealth`)
@@ -170,6 +165,12 @@ navigating into `C:\Vim` requires cursor on C
 ### in split
     :sp +te
     :vs +te
+
+## Treesitter
+    :=vim.treesitter.language_version  " :lua vim.treesitter.inspect_tree()
+    :InspectTree
+    :lua vim.treesitter.start()
+    :lua vim.treesitter.stop()
 
 # Vim
     :echo $HOME
@@ -300,6 +301,9 @@ vimscript
     :colo default
     :colo PaperColor
     :colo tomorrow  " $vfv/enter/gvimrc-Arch.vim
+    :exe 'colo '.g:colors_name  " reload
+    :hi Normal guifg=Red ctermfg=Red  " to sabotage it
+    :let g:colors_name
 
 #### background
     :h 'bg'

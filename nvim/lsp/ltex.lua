@@ -8,7 +8,6 @@
 --  can take a while, then underlines possible errors
 --  diagnostics are labelled  LTeX
 --  ignores  nospell
---  :LspStop ltex
 
 local language_id_mapping = {
   bib = 'bibtex',
@@ -20,7 +19,7 @@ local language_id_mapping = {
   text = 'plaintext',
 }
 
-local filetypes = { 'bib', 'gitcommit', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex', 'pandoc', 'quarto', 'rmd', 'context', 'html', 'xhtml', 'mail', 'text', }
+local filetypes = { 'bib', 'gitcommit', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex', 'pandoc', 'quarto', 'rmd', 'context', 'html', 'xhtml', 'mail', } -- removed { 'text', } -- as this lsp is leaking therein unshutdownably
 
 local function get_language_id(_, filetype)
   local language_id = language_id_mapping[filetype]
@@ -48,10 +47,7 @@ return {
   filetypes = filetypes,
   root_markers = { '.git' },
   get_language_id = get_language_id,
-  settings = {
-    ltex = {
-      enabled = enabled_ids,
-    },
-  },
+  ---@type lspconfig.settings.ltex
+  settings = { ltex = { enabled = enabled_ids, }, },
 } -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ltex.lua
 

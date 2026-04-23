@@ -320,6 +320,7 @@ packadd vim-ingo-library
 
 ""> languages - ALE
 " :ALEFix
+" :ALEToggle
 " :h ale-languagetool-options
 " settings for the filetype, including recommended modules
 "  :ALEInfo
@@ -334,7 +335,7 @@ packadd vim-ingo-library
 
 " \ll
 
-" Using
+" Using:
 "  bash-language-server
 "  languagetool, needs  g:languagetool_jar  defined
 
@@ -546,10 +547,14 @@ map z/ <Plug>(incsearch-fuzzy-stay)
 packadd incsearch-fuzzy.vim
 
 ""> text wrangling - find/replace - vim-mark
+" $vfvp/packs-cp-full/opt/vim-mark/doc/mark.txt
 " :h mark.txt
 " :Mark => disable them
 " :Mark /arbitrary/
-" :Mark word
+" :Mark with space
+" :MarkClear
+" :Marks
+" :sil exe 'Mark 1st'|sil exe 'Mark 2nd'
 
 let g:mw_no_mappings = 1
 nmap <leader><leader>m <Plug>MarkSet

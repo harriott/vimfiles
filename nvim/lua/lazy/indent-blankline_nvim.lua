@@ -5,7 +5,7 @@
 -- $lazy/indent-blankline.nvim/doc/indent_blankline.txt
 
 -- :help ibl.config
--- :IBLToggle  " all buffers
+-- :IBLToggle  " shows vertical line for indentations, all buffers
 
 return { 'lukas-reineke/indent-blankline.nvim',
   main = "ibl",

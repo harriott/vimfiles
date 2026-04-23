@@ -1,9 +1,14 @@
 -- vim: fdl=2:
 
+-- https://harriott.githubio/ - Mon 20 Apr 2026
+
 -- $vfn/lua/lazy/vim-illuminate.lua
 
+-- $lazy/vim-illuminate/README.md
+-- :IlluminateToggle
+
 return { 'RRethy/vim-illuminate',
-  config = function() -- $vfvp/packs-cp-all/opt/vim-illuminate/README.md
+  config = function()
     providers = { 'lsp', 'treesitter', 'regex', }
     delay = 100
     filetype_overrides = {}

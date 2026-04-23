@@ -128,25 +128,14 @@ require('lazy').setup(
   -- ▩--> nvim packages
   {
     -- ▩---> direct calls
-    {'akinsho/bufferline.nvim', config=function() require'bufferline'.setup() end,},
-      -- $lazy/bufferline.nvim/README.md
-      -- $lazy/bufferline.nvim/doc/bufferline.txt
-      -- :BufferLineCloseOthers
-      -- :BufferLinePickClose
-      -- :BufferLinePick
-      -- :h bufferline
-      -- :h bufferline-highlights
-      -- shows Nvim tabs as numbers to right
-      -- l-mouse  selects
-      -- r-mouse  drops
-    {'dstein64/nvim-scrollview', config=function() require'scrollview'.setup()
-      vim.keymap.set({'n'},'<leader>sv','<Cmd>ScrollViewToggle<CR>') end,},
-      -- $lazy/nvim-scrollview/doc/scrollview.txt
+    {'chaneyzorn/spellwand.nvim',},
     -- {'gelguy/wilder.nvim', config=function() end,},
     -- {'kevinhwang91/nvim-bqf', ft = 'qf'},
       -- $lazy/nvim-bqf/doc/bqf.txt
-      -- <tab>/<s-tab>  toggles items, then  zn  remakes only those markeed, zN  those not marked
+      -- <tab>/<s-tab>  toggles items, then  zn  remakes only those marked, zN  those not marked
+    {'folke/ts-comments.nvim', event = "VeryLazy",}, -- for minor improvements
     {'HiPhish/rainbow-delimiters.nvim'}, -- parentheses slightly less visible but easier to distinguish
+    {'JoosepAlviste/nvim-ts-context-commentstring'}, -- recognition of code blocks
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
       -- $lazy/gitsigns.nvim/doc/gitsigns.txt
       -- :Gitsigns toggle_signs  ' :se rnu
@@ -156,9 +145,7 @@ require('lazy').setup(
       -- :GrugFar
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
       -- :N  briefly centers around line N
-    {'numToStr/Comment.nvim',opts={},},
-      -- $lazy/Comment.nvim/doc/Comment.txt
-      -- $vimfiles/QR/variants.md
+    -- {'numToStr/Comment.nvim',opts={},},
     {'pmizio/typescript-tools.nvim',
       dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
       opts = {}, }, -- brings in  tsserver  Diagnostics
@@ -168,6 +155,15 @@ require('lazy').setup(
         --  Tab/Shift-Tab  cycles through commit pairs in the repository, latest always at right
       --  :DiffviewClose
       --  g?
+    {'tzhouhc/virt-counter.nvim',
+      opts = {
+        format = function(lines, words, chars)
+          return string.format("%dl %dw %dc", lines, words, chars)
+        end,
+        highlight_group = "NonText",
+      }, },
+      -- lua require("virt-counter").disable()
+      -- lua require("virt-counter").enable()
     {'yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end, },
       -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
     {'wurli/visimatch.nvim', opts = {} },
@@ -175,20 +171,25 @@ require('lazy').setup(
     -- $vfn/lua/lazy
     require'lazy/auto-session',
     require'lazy/boole_nvim',
+    require'lazy/bufferline_nvim',
     -- require'lazy/catppuccin',
+    -- require'lazy/Comment_nvim',
     -- require'lazy/csvview_nvim',
     require'lazy/fzf-lua',
     require'lazy/harpoon',
     require'lazy/helpview_nvim',
     require'lazy/indent-blankline_nvim',
+    -- require'lazy/interestingwords',
     require'lazy/leap',
     require'lazy/lualine',
     require'lazy/markdown-preview',
+    -- require'lazy/mistake_nvim', -- auto spell-corrects
     -- require'lazy/neogit',
     -- require'lazy/nvim-hlslens',
     require'lazy/nvim-bqf',
     require'lazy/nvim-cmp',
     require'lazy/nvim-colorizer_lua',
+    require'lazy/nvim-scrollview',
     require'lazy/nvim-surround',
     require'lazy/nvim-notify',
     require'lazy/nvim-tree',
@@ -214,7 +215,6 @@ require('lazy').setup(
       {'mason-org/mason.nvim', config=function() require'mason'.setup() end,},
         -- $lazy/mason.nvim/doc/mason.txt
         -- :che mason
-        -- :LspInfo
         -- :Mason
           -- :unmap X  would free (from  vim-buffing-wheel) for X'ing (uninstalling) packages
           -- g?  toggles help
@@ -280,13 +280,15 @@ vim.lsp.enable({'astro'}) -- $vfn/lsp/astro.lua
 vim.lsp.enable({'bashls'}) -- $vfn/lsp/bashls.lua
 -- vim.lsp.enable({'ts_ls'}) -- $vfn/lsp/ts_ls.lua
 vim.lsp.enable({'lemminx'}) -- $vfn/lsp/lemminx.lua
-vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
+-- vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
+vim.lsp.enable({'ltex_plus'}) -- $vfn/lsp/ltex_plus.lua
 vim.lsp.enable({'lua_ls'}) -- $vfn/lsp/lua_ls.lua
 vim.lsp.enable({'mdx_analyzer'})
 vim.lsp.enable({'mutt_ls'}) -- $vfn/lsp/mutt_ls.lua
 vim.lsp.enable({'perlnavigator'}) -- $vfn/lsp/perlnavigator.lua
 vim.lsp.enable({'powershell_es'}) -- $vfn/lsp/powershell_es.lua
 vim.lsp.enable({'pyright'}) -- $vfn/lsp/pyright.lua
+-- vim.lsp.enable({'spellwand'}) -- $vfn/lsp/spellwand.lua
 vim.lsp.enable({'sqls'}) -- $vfn/lsp/pyright.lua
 vim.lsp.enable({'texlab'}) -- $vfn/lsp/texlab.lua
 vim.lsp.enable({'typos_lsp'}) -- $vfn/lsp/typos_lsp.lua

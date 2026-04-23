@@ -1,6 +1,7 @@
 packs-colo/opt/Apprentice https://github.com/romainl/Apprentice
 packs-colo/opt/darcula https://github.com/doums/darcula
 packs-colo/opt/dracula https://github.com/dracula/vim
+packs-colo/opt/felipec-vim-felipec https://github.com/felipec/vim-felipec
 packs-colo/opt/jellybeans.vim https://github.com/nanotech/jellybeans.vim
 packs-colo/opt/kanagawa.nvim https://github.com/rebelot/kanagawa.nvim
 packs-colo/opt/nightfox.nvim https://github.com/EdenEast/nightfox.nvim
