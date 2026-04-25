@@ -4,7 +4,7 @@
 --  :MasonInstall vim-language-server
 --  $nvmp/vim-language-server/node_modules/vim-language-server/README.md
 --  enabled in  $vfn/lua/init.lua
---  diagnostics labelled as  vimlsp
+--  diagnostics labelled as  vimlsp (try  ^fuck)
 
 vim.g.markdown_fenced_languages = { 'help', 'vim' }
   -- echo g:markdown_fenced_languages, but can't see any benefit

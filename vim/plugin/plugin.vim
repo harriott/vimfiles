@@ -138,7 +138,7 @@ function! s:Underline(chars)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
 " map:
-nnoremap <leader>U :Underline
+nnoremap <leader><leader>U :Underline
 
 " remove CRLFs
 nnoremap <leader>le :e ++ff=dos <bar> set ff=unix <bar> w! <cr>

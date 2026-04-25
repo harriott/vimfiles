@@ -3,7 +3,7 @@
 
 -- $vfn/lua/lazy/nvim-treesitter.lua
 --  $lazy/nvim-treesitter/doc/nvim-treesitter.txt
---  :che nvim-treesitter
+--  :checkhealth nvim-treesitter
 --  :h nvim-treesitter-commands
 --  parsers
 --   $lazy/nvim-treesitter/SUPPORTED_LANGUAGES.md

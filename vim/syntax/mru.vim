@@ -8,7 +8,7 @@
 
 if exists('b:current_syntax') | finish |  endif
 
-syn match MRU_Cz 'Cafezoide'
+syn match MRU_Cz 'work_Cz'
 hi def link MRU_Cz DiffDelete
 
 syn match MRU_DW 'DokuWiki'

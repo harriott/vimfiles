@@ -637,6 +637,11 @@ Entering special characters
 - unix: `Ctrl-v tab`
 - win64: `Ctrl-q tab`
 
+## undo tree
+    :h undo-tree
+
+`:undol` (`:undolist`)
+
 # words
 ```
 \wt        " thesaurus_query.vim

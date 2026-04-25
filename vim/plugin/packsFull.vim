@@ -653,9 +653,6 @@ let g:lt_height = 15
 let g:loclist_follow = 1
 packadd vim-loclist-follow
 
-""> vim - undotree
-packadd undotree
-
 ""> vim - vim-peekaboo
 packadd vim-peekaboo
 " triggered by "/@ normal mode, <CTRL-R> insert mode

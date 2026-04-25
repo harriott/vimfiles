@@ -1,9 +1,9 @@
 -- vim: set fdl=3:
 
--- $vfn/lsp/ltex.lua  LTeX Language Server  for  LanguageTool
+-- $vfn/lsp/ltex_plus.lua
 --  for human languages within a few markup languages
---  :MasonInstall ltex-ls
---  :MasonUninstall ltex-ls
+--  :MasonInstall ltex-ls-plus
+--  :MasonUninstall ltex-ls-plus
 --  enabled in  $vfn/lua/init.lua
 --  can take a while, then underlines possible errors
 --  diagnostics are labelled  LTeX

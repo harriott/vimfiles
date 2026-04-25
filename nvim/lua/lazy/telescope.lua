@@ -1,7 +1,7 @@
 
 -- $vfn/lua/lazy/telescope.lua
 
--- :che telescope
+-- :checkhealth telescope
 -- :h telescope  then  /^builtin.
 -- :Telescope colorscheme
 -- :Telescope command_history default_text=MRU\ \.
@@ -90,7 +90,7 @@ return {
       local function tch_MRU() builtin.command_history({default_text="MRU \\.",}) end
       vim.keymap.set({'n'},'<leader>m',tch_MRU,{desc=':Telescope command_history MRU .'})
 
-      vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'})
+      vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'}) -- unreliable
 
       vim.keymap.set({'n'},'<leader>j',function()
         if vim.g.djh == nil then

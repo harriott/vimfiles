@@ -1,6 +1,7 @@
 -- vim: set fdl=5:
 
 -- $vfn/lsp/lua_ls.lua
+--  :lsp enable lua_ls
 --  :MasonInstall lua-language-server
 --   :MasonUninstall lua-language-server  with no lua files open instead of updating
 --  enabled in  $vfn/lua/init.lua

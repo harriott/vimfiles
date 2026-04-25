@@ -75,7 +75,9 @@ nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
 " when  $JHm/_posts  have  fdm=syntax
 
 ""> syntax highlighting fix
-lua vim.treesitter.stop()
+if has('nvim')
+  lua vim.treesitter.stop()
+endif
 " maxmempattern  is set in  $vfv/plugin/plugin.vim
 setlocal synmaxcol=0
 

@@ -6,7 +6,7 @@
 " Last Change: Sat 19 Oct 2024
 " Detection: $vfv/filetype.vim
 
-" $vimfiles/syntax/clones.vim
+" $vfv/syntax/clones.vim
 
 if exists("b:current_syntax")
   finish

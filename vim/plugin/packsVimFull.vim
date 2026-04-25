@@ -288,3 +288,9 @@ noremap <silent> <leader>be :BufExplorer<CR>
 "  <leader>bs - Opens horizontally split window BufExplorer
 "  <leader>bv - Opens vertically split window BufExplorer
 
+""> vim - undotree
+" $vfvp/packs-cp-full/opt/undotree/doc/undotree.txt
+" :UndotreeToggle
+" :let g:undotree_UndoDir
+packadd undotree
+

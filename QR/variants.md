@@ -8,8 +8,8 @@ Joseph's (g)Vim Quick Reference
     :se gfn=*         ' pop-up font selection
 
 # Nvim
-    $vfn/lua/lazy/nvim-lspconfig.lua
     $VIMRUNTIME/filetype.lua
+
     :echo has('nvim')
     :echo has('nvim-0.11')
     :echo has('nvim-0.12.0')
@@ -19,15 +19,15 @@ Joseph's (g)Vim Quick Reference
     :echo nvim_get_runtime_file('parser', v:true)
     :lua vim.notify('test notification')
     :verb ve  " :verbose version
+
     nvim -?
     nvim -v
 
     fd health\.lua $vfn/packs-nvim  " health.lua
     fd init\.lua $vfn/packs-nvim  " init.lua
 
-## coding
-- `Ctrl-]` (= `:lua vim.lsp.buf.definition()`) `:h CTRL-]`
 - `:ts` (`:tselect`) for what's under the cursor
+- `gO` (`:h gO`) create a navigable outline (help, Man, LSP)
 
 ## comments
     :h cms  " commentstring
@@ -43,6 +43,19 @@ Joseph's (g)Vim Quick Reference
 #### unix
     :Man Bash
     :Man rg
+
+## LSP
+    $vfn/lua/lazy/nvim-lspconfig.lua
+    :h lsp-commands
+    :lsp disable [config]
+    :lsp enable [config]
+    :lsp restart [client]
+    :lsp stop [client]
+
+- `[d`/`]d`=> previous/next diagnostic
+- `<c-w>d` (`:h CTRL-W_d-default`) opens diagnostic
+- `Ctrl-]` (= `:lua vim.lsp.buf.definition()`) `:h CTRL-]`
+- `gri` list implementations of symbol
 
 ## lua
     :h vim.cmd
@@ -114,6 +127,8 @@ navigating into `C:\Vim` requires cursor on C
     :if $XDG_CURRENT_DESKTOP == '' | echo 'might be Openbox' | endif
     n ~/.vimswap
 
+`~/.local/state/nvim/undo` can store persistent undo files in the weird internal format
+
 #### plugins
     $lazy
     /root/.local/share/nvim/lazy
@@ -129,7 +144,9 @@ navigating into `C:\Vim` requires cursor on C
     :Bufferize echo stdpath('cache')
     :Bufferize echo stdpath('config')
     :Bufferize echo stdpath('data')
+    :h default-mappings
     :=vim.fn.stdpath("data")
+    :=vim.fn.stdpath("state")
     nvim --clean
 
 - `:che` (`:checkhealth`)
@@ -141,12 +158,6 @@ navigating into `C:\Vim` requires cursor on C
 - `:let &icm = ''` disables preview of substitute changes
 - `:se icm` shows default is `split`
 
-### default-mappings
-    :h default-mappings
-    <c-w>d  ' (:h CTRL-W_d-default) opens diagnostic
-
-`[d`/`]d`=> previous/next diagnostic
-
 ### ShaDa file
 - `MessagePack` format which is almost unreadable from `Vim`
 - manually editing: with no `Neovim` running, `nvim --clean ~/.local/state/nvim/shada/main.shada`, remove the relevant lines, `:w|wsh|q`
@@ -154,6 +165,10 @@ navigating into `C:\Vim` requires cursor on C
 ## spell
 `\cs` = `cmp-spell` which underlines in red possible mistakes
 `\ss` = `snipe-spell` if `cword` is misspelled, get labelled picker
+
+## Telescope
+    $vfn/lua/lazy/telescope.lua
+    :map <c-o>
 
 ## terminal
 `lynx`, `w3m` override Nvim's keys...

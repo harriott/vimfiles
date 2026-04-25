@@ -1,4 +1,4 @@
-" https://harriott.github.io/ - mar 16 juil 2024
+" https://harriott.github.io/ - Sat 25 Apr 2026
 
 " -------------------------
 " configurations for neovim
@@ -41,6 +41,8 @@ else
 endif
 
 noremap <leader>K :exe 'h '.expand('<cword>')<cr>
+
+" packadd nvim.undotree  " allowing  :Undotree, but obviated by  $vfn/lua/lazy/ts-comments_nvim.lua
 
 set keywordprg=:help  " doesn't trigger old use of  K
 

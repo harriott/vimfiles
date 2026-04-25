@@ -2,7 +2,7 @@
 
 -- $vfn/lua/lazy/lspsaga.lua
 
--- $lazy/lspsaga.nvim/doc/lspsaga.nvim.txt
+-- https://github.com/nvimdev/lspsaga.nvim  not in Firefox
 
 -- \lo = Lspsaga outline ($vfn/lua/init.lua)
 
@@ -18,5 +18,5 @@ return {
   },
 }
 
--- :che lspsaga
+-- :checkhealth lspsaga
 

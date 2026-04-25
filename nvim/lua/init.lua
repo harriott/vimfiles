@@ -1,11 +1,13 @@
 
--- https://harriott.github.io/ - Thu 16 Apr 2026
+-- https://harriott.github.io/ - Sat 25 Apr 2026
 
 -- $vfn/lua/init.lua
 --  required by  $vfn/init.vim
 --  adapted from  $cGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 
 vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
+
+-- vim.opt.undofile = true  -- persistent undo
 
 -- ▩-> 0 for auto-session
 vim.o.ssop='blank,buffers,curdir,folds,tabpages,winsize,winpos,localoptions'
@@ -106,7 +108,7 @@ vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode
 vim.g.cmp_on = true -- $vfn/lua/lazy/nvim-cmp.lua
 
 -- ▩-> 0 treesitter
---  :che treesitter
+--  :checkhealt treesitter
 
 -- ▩--> 0 stop
 -- $vfv/ftplugin/md.vim
@@ -133,7 +135,6 @@ require('lazy').setup(
     -- {'kevinhwang91/nvim-bqf', ft = 'qf'},
       -- $lazy/nvim-bqf/doc/bqf.txt
       -- <tab>/<s-tab>  toggles items, then  zn  remakes only those marked, zN  those not marked
-    {'folke/ts-comments.nvim', event = "VeryLazy",}, -- for minor improvements
     {'HiPhish/rainbow-delimiters.nvim'}, -- parentheses slightly less visible but easier to distinguish
     {'JoosepAlviste/nvim-ts-context-commentstring'}, -- recognition of code blocks
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
@@ -146,9 +147,6 @@ require('lazy').setup(
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
       -- :N  briefly centers around line N
     -- {'numToStr/Comment.nvim',opts={},},
-    {'pmizio/typescript-tools.nvim',
-      dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-      opts = {}, }, -- brings in  tsserver  Diagnostics
     {'sindrets/diffview.nvim'},
       --  $lazy/diffview.nvim/doc/diffview.txt
       --  :DiffviewFileHistory %
@@ -206,7 +204,10 @@ require('lazy').setup(
       require'lazy/telescope-frecency',
       require'lazy/telescope-fzf-native',
       require'lazy/nvim-neoclip',
+    require'lazy/ts-comments_nvim',
+    require'lazy/typescript-tools_nvim',
     require'lazy/trouble_nvim',
+    require'lazy/undotree',
     require'lazy/vim-illuminate',
     require'lazy/vindent_nvim',
     -- ▩---> nvim-lspconfig
@@ -214,7 +215,7 @@ require('lazy').setup(
       -- $lazy/nvim-lspconfig/lsp - code for each LSP
       {'mason-org/mason.nvim', config=function() require'mason'.setup() end,},
         -- $lazy/mason.nvim/doc/mason.txt
-        -- :che mason
+        -- :checkhealth mason
         -- :Mason
           -- :unmap X  would free (from  vim-buffing-wheel) for X'ing (uninstalling) packages
           -- g?  toggles help
@@ -268,19 +269,21 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n','<leader>lo','<cmd>Lspsaga outline<cr>',
       {buffer=ev.buf,desc='Lspsaga outline'})
   end,}) -- q
--- can't figure how to include this in  $vfn/lua/lazy/lspsaga.lua
+-- can't figure how to include this in my  $vfn/lua/lazy/lspsaga.lua
 
 -- ▩-> 2 for nvim-notify
 vim.notify('ready for :Notifications')
 
 -- ▩-> 2 for vim.lsp
 -- $cGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
+vim.keymap.set({'n'},'<leader>S','<cmd>checkhealth vim.lsp<cr>', {desc=':checkhealth vim.lsp'})
+
 -- $lazy/nvim-lspconfig/doc/configs.md  has notes for each  LSP
 vim.lsp.enable({'astro'}) -- $vfn/lsp/astro.lua
 vim.lsp.enable({'bashls'}) -- $vfn/lsp/bashls.lua
 -- vim.lsp.enable({'ts_ls'}) -- $vfn/lsp/ts_ls.lua
 vim.lsp.enable({'lemminx'}) -- $vfn/lsp/lemminx.lua
--- vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
+vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
 vim.lsp.enable({'ltex_plus'}) -- $vfn/lsp/ltex_plus.lua
 vim.lsp.enable({'lua_ls'}) -- $vfn/lsp/lua_ls.lua
 vim.lsp.enable({'mdx_analyzer'})
@@ -293,7 +296,7 @@ vim.lsp.enable({'sqls'}) -- $vfn/lsp/pyright.lua
 vim.lsp.enable({'texlab'}) -- $vfn/lsp/texlab.lua
 vim.lsp.enable({'typos_lsp'}) -- $vfn/lsp/typos_lsp.lua
 vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
--- in a file, :che vim.lsp  reports the active  LS's
+-- :checkhealth vim.lsp  reports the active  LS's
 -- unclear what's the benefit of LuaDoc Annotations
 -- try
   -- emmet-language-server (for  css, html, less, sass, scss)
