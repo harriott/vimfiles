@@ -13,7 +13,7 @@
 --  :LspLog (~/.local/state/nvim/lsp.log)
 --  :LspStop <tab>
 -- Neovim 0.12.x:
---  :checkhealth vim.lsp
+--  :che vim.lsp  " checkhealth
 --  :lsp disable
 --  :lsp enable
 

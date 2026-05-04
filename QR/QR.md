@@ -376,7 +376,7 @@ g# (or g*)            " # (or *) without \< \>
 :%s/pattern//ng       " reports number of occurances
 [I or ]I              " list lines containing word under cursor
 n                     " find next highlighted search result
-z\                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.vim)
+z/                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.vim)
 ```
 
     vim-mark
@@ -549,7 +549,7 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
     :so /usr/share/vim/vim90/tools/emoji_list.vim
 
 ```vim
-:g\^\m 0                                           " reverse the entire buffer
+:g/^/m 0                                           " reverse the entire buffer
 :if 0 | echo 'true' | else | echo 'false' | endif  " try  if 1
 :h g_CTRL-G                                        " position and word info, works on a range too
 :sleep
@@ -576,7 +576,8 @@ ni<somecharacter><esc>                             " inserts <somecharacters> n 
 ```
 
 ## counting stuff
-    :%s\.\\gn|noh  " characters in buffer
+    :%s/.//gn|noh  " characters in buffer
+    :%s/@//gn|noh  " characters in buffer
     [selection]g ctrl-g  " counts in context
 
 ### in a line

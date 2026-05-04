@@ -108,7 +108,7 @@ vim.keymap.set({'t'},'<Esc>','<C-\\><C-n>',{ desc = 'Exit terminal (insert) mode
 vim.g.cmp_on = true -- $vfn/lua/lazy/nvim-cmp.lua
 
 -- ▩-> 0 treesitter
---  :checkhealt treesitter
+--  :checkhealth treesitter
 
 -- ▩--> 0 stop
 -- $vfv/ftplugin/md.vim
@@ -276,7 +276,8 @@ vim.notify('ready for :Notifications')
 
 -- ▩-> 2 for vim.lsp
 -- $cGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
-vim.keymap.set({'n'},'<leader>S','<cmd>checkhealth vim.lsp<cr>', {desc=':checkhealth vim.lsp'})
+vim.keymap.set({'n'},'<leader>D',function() vim.diagnostic.reset(nil, vim.api.nvim_get_current_buf()) end, {desc='cleared Diagnostics'})
+vim.keymap.set({'n'},'<leader>S','<cmd>che vim.lsp<cr>', {desc=':checkhealth vim.lsp'})
 
 -- $lazy/nvim-lspconfig/doc/configs.md  has notes for each  LSP
 vim.lsp.enable({'astro'}) -- $vfn/lsp/astro.lua
@@ -296,7 +297,6 @@ vim.lsp.enable({'sqls'}) -- $vfn/lsp/pyright.lua
 vim.lsp.enable({'texlab'}) -- $vfn/lsp/texlab.lua
 vim.lsp.enable({'typos_lsp'}) -- $vfn/lsp/typos_lsp.lua
 vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
--- :checkhealth vim.lsp  reports the active  LS's
 -- unclear what's the benefit of LuaDoc Annotations
 -- try
   -- emmet-language-server (for  css, html, less, sass, scss)

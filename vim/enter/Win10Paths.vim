@@ -25,7 +25,7 @@ else
         let $CzMa = $Cfzd.'\manage'
           let $CzMaEx = $CzMa.'\expenses'
         let $CzPeo = $Cfzd.'\people'
-          let $Cmdt = $CzPeo.'\adherents\dt'
+          let $Cmdt = $CzPeo.'\members\data\dt'
             let $Cmd0 = $Cmdt.'\data-0-wgetGS'
             let $Cmd1 = $Cmdt.'\data-1-adh'
             let $Cmdts = $Cmdt.'\scripts'

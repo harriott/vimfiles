@@ -4,9 +4,12 @@
 --  :MasonInstall bash-language-server
 --  :MasonUninstall bash-language-server
 --  $nvmp/bash-language-server/node_modules/bash-language-server/src/config.ts
---  diagnostics from  explainshell  shellcheck  shfmt
---  reports Error for CLRFs
 --  enabled in  $vfn/lua/init.lua
+
+--  :lsp enable bashls
+--  diagnostics from  explainshell  shellcheck  shfmt
+--  offers no Ctags
+--  reports Error for CLRFs
 
 ---@type vim.lsp.Config
 return {

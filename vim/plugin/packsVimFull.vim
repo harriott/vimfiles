@@ -290,7 +290,7 @@ noremap <silent> <leader>be :BufExplorer<CR>
 
 ""> vim - undotree
 " $vfvp/packs-cp-full/opt/undotree/doc/undotree.txt
-" :UndotreeToggle
 " :let g:undotree_UndoDir
 packadd undotree
+noremap <leader>U :UndotreeToggle<CR>
 

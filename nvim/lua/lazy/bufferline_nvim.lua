@@ -5,8 +5,6 @@
 -- $vfn/lua/lazy/bufferline_nvim.lua
 
 -- $lazy/bufferline.nvim/README.md
-  -- :exe 'colo '.g:colors_name  " if active buffer label dims out
-  -- shows Nvim tabs as numbers at right of the bufferline
 
 -- $lazy/bufferline.nvim/doc/bufferline.txt
 
@@ -20,6 +18,8 @@
   -- l-mouse  selects
   -- r-mouse  drops
 
+  -- shows Nvim tabs as numbers at right of the bufferline
+
 return { 'akinsho/bufferline.nvim',
   config=function()
     require'bufferline'.setup()
@@ -31,6 +31,6 @@ return { 'akinsho/bufferline.nvim',
         return string.format('%s', opts.lower(opts.id))
         -- return string.format('%s', opts.raise(opts.id)) --superscript
       end, } }
-    vim.keymap.set({'n'},'<leader>co',"<Cmd>exe 'colo '.g:colors_name<bar>echo 'colorscheme reset'<cr>")
+    vim.keymap.set({'n'},'<leader>co',"<Cmd>exe 'colo '.g:colors_name<bar>echo 'colorscheme reset'<cr>") -- if active buffer label dims out
   end,
   }
