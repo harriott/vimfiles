@@ -490,10 +490,7 @@ get text of site into buffer: `:r!w3m -dump https://unixtime.org/`
 ### open webpages
 	F6 " open a uURL using open-browser.vim
 
-#### vim-open-url
-	gB " open URL
-	gS " search word
-	gW " search Wikipedia
+vim-open-url
 
 ## OS
 linux: must have LF's

@@ -208,6 +208,7 @@ vi               " exit Ex mode
 :h split()
 :his            " Display command-line history
 :his s          " Display search string history
+:mkexrc $HOME/vim.exrc
 :packadd clrzr  " $vfv/plugin/packsVimFull.vim
 :profile ...    " for speed tests
 :so %           " source the current file
@@ -335,13 +336,15 @@ vimscript
     :if v:lang =~ 'gb' | echo 'Great Britain' | endif
 
 ### mappings
-    :Bufferize map           ' n s v
-    :Bufferize map!          ' e i
-    :Bufferize map|map!      ' e i n s v
+    :Bufferize map           " n s v
+    :Bufferize map!          " e i
+    :Bufferize map|map!      " e i n s v
+    :h i_CTRL-W
     :h unmap
     :h <sid>
-    :verb map <localleader>q ' where that mapping was set
-    :[verb ]map <c-n>        ' shows the mapping
+    :tmap
+    :verb map <localleader>q " where that mapping was set
+    :[verb ]map <c-n>        " shows the mapping
 
 #### won't work
     <leader><leader><f11>

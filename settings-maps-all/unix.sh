@@ -1,7 +1,7 @@
 #!/bin/bash
 # vim set sw=2:
 
-# Joseph Harriott - https://harriott.github.io/ - Tue 09 Dec 2025
+# Joseph Harriott - https://harriott.github.io/ - Thu 07 May 2026
 
 # bash $vimfiles/settings-maps-all/unix.sh
 
@@ -15,6 +15,6 @@ for vfl in $vimfiles $lazy; do
   echo "rg'ing for maps in  $vfl"
   echo "maps in  $vfl" >> $ml
   echo >> $ml
-  rg --field-match-separator=' ⋮' -tlua -tvim --no-ignore -w 'imap|inoremap|keymap|map |nmap|noremap|nnoremap|omap|onoremap|vmap|vnoremap|xmap|xnoremap' $vfl >> $ml
+  rg --field-match-separator=' ⋮ ' -tlua -tvim --no-ignore -w 'imap|inoremap|keymap|map |nmap|noremap|nnoremap|omap|onoremap|vmap|vnoremap|xmap|xnoremap' $vfl >> $ml
   echo >> $ml
 done

@@ -502,6 +502,10 @@ packadd open-browser.vim
 packadd vim-clifm
 
 ""> shell - vim-open-url
+" $vfvp/packs-cp-full/opt/vim-open-url/doc/open-url.txt
+"  g<cr>/gS = search word
+"  gB       = open URL
+"  gW       = search Wikipedia
 packadd vim-open-url
 
 ""> shell - vim-rooter

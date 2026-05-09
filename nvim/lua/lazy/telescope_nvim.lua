@@ -1,5 +1,5 @@
 
--- $vfn/lua/lazy/telescope.lua
+-- $vfn/lua/lazy/telescope_nvim.lua
 
 -- :checkhealth telescope
 -- :h telescope  then  /^builtin.

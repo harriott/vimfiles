@@ -476,20 +476,34 @@ endfunction
 let g:xml_syntax_folding = 1
 
 ""> grab Vim settings
-" mkexrc
 function! Grab_exrc()
   cd $vimfiles
   let fse = 'settings-active-vim' " flavour system exrc
   if has('nvim')  | let fse = 'settings-active-nvim' | endif
   if has('unix')  | let fse =  fse.'/unix.exrc' | endif
   if has('win64') | let fse =  fse.'/win64.exrc' | endif
+" # $vimfiles/settings-active-*/*.exrc
+  echo fse
   call delete(fse)
-  mkexrc fse
-  edit fse
-  sil! %s//<esc>/g
-  sil! %s//<cr>/g
-  sil! %s//<c-w>/g
-  sil! %s//<bar>/g
+  exe 'mkexrc' fse
+  exe 'edit' fse
+  " sil! %s///g  " U+000D carriage return
+  sil! %s//<c-a>/g  " U+0016 U+0001
+  sil! %s//<c-d>/g  " U+0016 U+0004
+  sil! %s//<c-g>/g  " U+0016 U+0007
+  sil! %s//<c-h>/g  " U+0016 U+0008
+  sil! %s//<c-k>/g  " U+0016 U+000B
+  sil! %s//<c-l>/g  " U+0016 U+000C
+  sil! %s//<cr>/g  " U+0016 U+000D
+  sil! %s//<c-n>/g  " U+0016 U+000E
+  sil! %s//<c-o>/g  " U+0016 U+000F
+  sil! %s//<c-r>/g  " U+0016 U+0012
+  sil! %s//<c-u>/g  " U+0016 U+0015
+  sil! %s//<c-w>/g  " U+0016 U+0017
+  sil! %s//<c-x>/g  " U+0016 U+0018
+  sil! %s//<esc>/g  " U+0016 U+001B
+  sil! %s//<c-\\>/g  " U+0016 U+001C
+  sil! %s//<bar>/g  " U+0016, finally
   norm ggO" vim: se nowrap:
   norm o
   norm x
@@ -592,7 +606,7 @@ autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* setlocal textwidth=0
 function! BackupQuit()
   wa
   " precautionary save, incase something goes wrong with the send:
-  exec 'sav' $HOME.'/.cache/mutt/sends/'.strftime('%Y-%m-%d-%H:%M:%S').'.txt'
+  exe 'sav' $HOME.'/.cache/mutt/sends/'.strftime('%Y-%m-%d-%H:%M:%S').'.txt'
   q
 endfunction
 autocmd BufRead,BufNewFile ~/.cache/mutt/tmp/neomutt-* nnoremap <buffer> <F4> :call BackupQuit()<CR>

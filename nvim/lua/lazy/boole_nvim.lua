@@ -2,7 +2,7 @@
 
 -- $vfn/lua/lazy/boole_nvim.lua
 
-return { 'nat-418/boole.nvim',
+return {'nat-418/boole.nvim',
   config = function()
     require('boole').setup({
       allow_caps_additions = {

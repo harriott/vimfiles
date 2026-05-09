@@ -1,5 +1,5 @@
 
--- https://harriott.github.io/ - Sat 25 Apr 2026
+-- https://harriott.github.io/ - ven 08 mai 2026
 
 -- $vfn/lua/init.lua
 --  required by  $vfn/init.vim
@@ -200,9 +200,10 @@ require('lazy').setup(
     require'lazy/snipe_nvim',
     require'lazy/snipe-spell',
     require'lazy/stay-centered_nvim',
-    require'lazy/telescope', -- something in here slowing folding of large md's
-      require'lazy/telescope-frecency',
-      require'lazy/telescope-fzf-native',
+    require'lazy/telescope_nvim', -- something in here slowing folding of large md's
+      require'lazy/telescope-frecency_nvim',
+      require'lazy/telescope-fzf-native_nvim',
+      require'lazy/telescope-everything_nvim',
       require'lazy/nvim-neoclip',
     require'lazy/ts-comments_nvim',
     require'lazy/typescript-tools_nvim',

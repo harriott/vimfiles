@@ -5,48 +5,51 @@
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
-inoremap <silent> <Plug>(peekaboo) <bar><bar>:<bar>call peekaboo#aboo()<cr>
+inoremap <S-F2> <esc>
+inoremap <F3> <esc>
+inoremap <F2> <esc>:wa<cr>
+inoremap <F5> <esc>:wa<cr>:e<cr>
 imap <C-G>S <Plug>ISurround
 imap <C-G>s <Plug>Isurround
 imap <C-S> <Plug>Isurround
-imap <S-Tab> <Plug>SuperTabBackward
-inoremap <C-Tab> <bar>	
-inoremap <F10> <esc>:cd %:p:h<cr>:NERDTreeCWD<cr>
-inoremap <silent> <Plug>(ale_complete) <bar><bar>:ALEComplete<cr>
+imap <C-D> <Plug>(fzf-dictionary-open)
+inoremap <Plug>(fzf-dictionary-open) <Cmd>call fzf#dictionary#open()<cr>
+inoremap <S-F3> <esc>:Commits<cr>
+inoremap <C-F3> <esc>:BCommits<cr>
 inoremap <F9> <esc>:History/<cr>
 inoremap <F8> <esc>:History:<cr>
-inoremap <silent> <Plug>(fzf-maps-i) <bar>:call fzf#vim#maps('i', 0)<cr>
+inoremap <F1> <esc>:Buffers<cr>
+inoremap <silent> <Plug>(fzf-maps-i) <cr>:call fzf#vim#maps('i', 0)<cr>
 inoremap <expr> <Plug>(fzf-complete-buffer-line) fzf#vim#complete#buffer_line()
 inoremap <expr> <Plug>(fzf-complete-line) fzf#vim#complete#line()
 inoremap <expr> <Plug>(fzf-complete-file-ag) fzf#vim#complete#path('ag -l -g ""')
-inoremap <expr> <Plug>(fzf-complete-file) fzf#vim#complete#path("find . -path '*/\.*' -prune -o -type f -print -o -type l -print <bar>| sed 's:^..::'")
-inoremap <expr> <Plug>(fzf-complete-path) fzf#vim#complete#path("find . -path '*/\.*' -prune -o -print <bar>| sed '1d;s:^..::'")
+inoremap <expr> <Plug>(fzf-complete-file) fzf#vim#complete#path("find . -path '*/\.*' -prune -o -type f -print -o -type l -print <cr>| sed 's:^..::'")
+inoremap <expr> <Plug>(fzf-complete-path) fzf#vim#complete#path("find . -path '*/\.*' -prune -o -print <cr>| sed '1d;s:^..::'")
 inoremap <expr> <Plug>(fzf-complete-word) fzf#vim#complete#word()
-imap <silent> <C-G>% <Plug>(matchup-c_g%)
-inoremap <silent> <Plug>(matchup-c_g%) <bar><bar>:call matchup#motion#insert_mode()<cr>
-inoremap <silent> <Plug>NERDCommenterInsert <bar><bar>:call nerdcommenter#Comment('i', "Insert")<cr>
-inoremap <S-F5> <esc><S-F5>
-inoremap <F4> <esc>:wa<cr>:bd<cr>
-inoremap <F2> <esc>:wa<cr>
-inoremap <S-F11> <esc><S-F11>
-inoremap <F5> <esc>:wa<cr>:e<cr>
+imap <S-Tab> <Plug>SuperTabBackward
+inoremap <C-Tab> <cr>	
+inoremap <F10> <esc>:cd %:p:h<cr>:NERDTreeCWD<cr>
+inoremap <silent> <Plug>NERDCommenterInsert <cr><cr>:call nerdcommenter#Comment('i', "Insert")<cr>
+inoremap <silent> <Plug>(peekaboo) <cr><cr>:<cr>call peekaboo#aboo()<cr>
+inoremap <silent> <Plug>(ale_complete) <cr><cr>:ALEComplete<cr>
+inoremap <C-X><C-X> <cr><cr>
 imap <F11> <esc><F11>
 inoremap <Insert> <esc> :CapsLockOff <cr>
-inoremap <S-F2> <esc>
-inoremap <F3> <esc>
-inoremap <F1> <esc><c-w><c-w>
-inoremap <C-U> <bar>u<bar>
+inoremap <F4> <esc>:call VimWriteClose()<cr>
+inoremap <C-U> <cr>u<cr>
 map! <S-Insert> <MiddleMouse>
-noremap <bar> :cd %:p:h<cr>:Fern . -reveal=%<cr>
-noremap <silent> <NL> <Plug>(ale_next_wrap)
-noremap <silent> <bar> <Plug>(ale_previous_wrap)
-noremap <bar> :NERDTreeToggle<cr>
-map <bar> <Plug>(ctrlp)
-nnoremap <bar>  za
+noremap <cr> :cd %:p:h<cr>:Fern . -reveal=%<cr>
+nnoremap <cr> <cr>h
+nnoremap <NL> <cr>j
+nnoremap <cr> <cr>k
+nnoremap <cr> <cr>l
+noremap <cr> :NERDTreeToggle<cr>
+nmap <cr> <Plug>(ctrlp)
+nnoremap <cr>  za
 map # <Plug>(asterisk-#)
-omap <silent> % <Ignore><Plug>(matchup-%)
-xmap <silent> % <Plug>(matchup-%)
-nmap <silent> % <Plug>(matchup-%)
+omap <silent> % <Plug>(MatchitOperationForward)
+xmap <silent> % <Plug>(MatchitVisualForward)
+nmap <silent> % <Plug>(MatchitNormalForward)
 map * <Plug>(asterisk-*)
 onoremap , :
 xnoremap , :
@@ -54,11 +57,12 @@ nnoremap , :
 onoremap : ,
 xnoremap : ,
 nnoremap : ,
-nnoremap =h :echo 'you just hit =h'<cr>
-xnoremap <silent> @(targets) :<bar>call targets#do()<cr>
-onoremap <silent> @(targets) :<bar>call targets#do()<cr>
+vnoremap == <esc>:echo 'you just hit =='<cr>
+nnoremap == :echo 'you just hit =='<cr>
 nnoremap @: <Nop>
 nnoremap @@ @:
+xnoremap <silent> @(targets) :<cr>call targets#do()<cr>
+onoremap <silent> @(targets) :<cr>call targets#do()<cr>
 xmap <expr> A targets#e('o', 'A', 'A')
 omap <expr> A targets#e('o', 'A', 'A')
 xmap F <Plug>(QuickScopeF)
@@ -69,61 +73,67 @@ xmap <expr> I targets#e('o', 'I', 'I')
 omap <expr> I targets#e('o', 'I', 'I')
 noremap Q @q
 xmap S <Plug>VSurround
-nmap S <Plug>(SubversiveSubstituteRange)
 xmap T <Plug>(QuickScopeT)
 omap T <Plug>(QuickScopeT)
 nmap T <Plug>(QuickScopeT)
-nnoremap U :CapsLockOff<cr> <bar>| U
-omap <silent> [% <Plug>(matchup-[%)
-xmap <silent> [% <Plug>(matchup-[%)
-nmap <silent> [% <Plug>(matchup-[%)
-nnoremap \8 :call EightyTwoColumns()<cr>
+nnoremap U :CapsLockOff<cr> <cr>| U
+omap <silent> [% <Plug>(MatchitOperationMultiBackward)
+xmap <silent> [% <Plug>(MatchitVisualMultiBackward)
+nmap <silent> [% <Plug>(MatchitNormalMultiBackward)
+map <silent> [- <Plug>(VindentMotion_prev_less)
+nnoremap \0 :call ToggleGUIwidth(106,160)<cr>
 noremap \gg :call GitGutterFocus()<cr>
-nnoremap <silent> \q :QToggle<cr>
-nnoremap <silent> \l :LToggle<cr>
-noremap <silent> \\d :BD<cr>
-nmap <silent> \ba <Plug>BufKillAlt
-nmap <silent> \bundo <Plug>BufKillUndo
-nmap <silent> \!bw <Plug>BufKillBangBw
-nmap <silent> \bw <Plug>BufKillBw
-nmap <silent> \!bd <Plug>BufKillBangBd
-nmap <silent> \!bun <Plug>BufKillBangBun
-nmap <silent> \bun <Plug>BufKillBun
-nnoremap \bd :Bdelete hidden<cr>
-nnoremap \bdd :Bdelete other<cr>
+nnoremap \d :cd %:p:h<cr>:pwd<cr>
+nnoremap \\t :sp term://pwsh<cr>
+nnoremap \<F12> :call OpenInEmacs()<cr>
+nnoremap \- :Hexplore<cr>
+vnoremap <silent> \<F11> <esc>:echo strftime('%c',getftime(expand('%')))<cr>
+nnoremap <silent> \<F11> :echo strftime('%c',getftime(expand('%')))<cr>
+nnoremap \f :let@f=@%<cr>
+vnoremap \vs <esc>:call ConvertSearchForVisualSelection()<cr>
+nnoremap \vs :call ConvertSearchForVisualSelection()<cr>
+nnoremap \pt :call ParenthsToggle()<cr>
+nnoremap \\q :call VimgrepQRs()<cr>
+nnoremap \bp :call VimgrepBcPc()<cr>
+nnoremap \vg :call VimgrepSelection()<cr>
+nnoremap \is :call IncSearchToggle()<cr>
+nnoremap \/ :call TweakLS()<cr>
+vnoremap \n <esc>:nohlsearch<cr>
+nnoremap \n :nohlsearch<cr>
+nnoremap \c= :windo set nowfh <cr>
+nnoremap \<Right> 10<cr>>
+nnoremap \<Left> 10<cr><cr><
+nnoremap \<Up> 5<cr>+
+nnoremap \<Down> 5<cr>-
+nnoremap \\o :write<cr>|close<cr>
+nnoremap \\v :vsplit<cr>
+nnoremap \\h :split<cr>
+nnoremap \x <cr>c
+nnoremap \<F5> :syntax sync fromstart<cr>
+nnoremap <silent> \rn :set rnu! rnu? <cr>
+nnoremap <silent> \\l :set cul! cul? <cr>
+nnoremap <silent> \\c :set cuc! cuc? <cr>
+nnoremap \zz :let &scrolloff=999-&scrolloff<cr>
+noremap \\ll :set list! list? <cr>
+nnoremap \\<F5> :call clearmatches()<cr>
+nnoremap \5 :call UnicodePercent()<cr>
+nnoremap \9 :call PercentUnicode()<cr>
+noremap \yp :lan fr_FR.UTF-8<cr>:call DateFr()<cr>:lan en_GB.UTF-8<cr>
+nnoremap \\2 :call ClearMAS()<cr>
+nnoremap \2 :call ClearFancyGlyphs()<cr>
+nnoremap \le :e ++ff=dos <cr>| set ff=unix <cr>| w! <cr>
+nnoremap \\U :Underline
+nnoremap \[ :s/\m\[.\{-}]//g<cr>
+noremap \U :UndotreeToggle<cr>
 noremap <silent> \be :BufExplorer<cr>
-nmap \s <Plug>(SubversiveSubstituteRangeConfirm)
-nmap \\n <Plug>MarkClear
-nmap \\m <Plug>MarkSet
-nnoremap \e :call EasyMotionSearchToggle()<cr>
-nmap \\w <Plug>(easymotion-overwin-w)
-vmap \\w <Plug>(easymotion-bd-w)
-omap \\w <Plug>(easymotion-bd-w)
-nmap \\f <Plug>(easymotion-overwin-f)
-vmap \\f <Plug>(easymotion-bd-f)
-omap \\f <Plug>(easymotion-bd-f)
-map \\ <Plug>(easymotion-prefix)
 nmap \pb <Plug>(PickerBuffer)
 nmap \pe <Plug>(PickerEdit)
-nnoremap \m :MRU
-nnoremap \bb :CtrlPBuffer<cr>
-nmap \caL <Plug>CalendarH
-nmap \cal <Plug>CalendarV
-noremap \yy :CalendarH<cr>
-nmap <silent> \\0 <Plug>FontsizeDefault
-nmap <silent> \\- <Plug>FontsizeDec
-nmap <silent> \\+ <Plug>FontsizeInc
-nmap <silent> \\= <Plug>FontsizeBegin
-nnoremap <silent> \it :call IlluminateMoreToggle()<cr>
-nnoremap \LT :call LanguageTool_lopen() <cr>
-nnoremap \lt :LangTool <bar>| lopen 15 <cr>
-nnoremap \th :ThesaurusQueryReplaceCurrentWord<cr>
-noremap \aa :call ALEToggleBufferShow()<cr>
-nnoremap \j :Files /mnt/SDU3D1TB/Dropbox/JH<cr>
-nnoremap \bf :Buffers<cr>
+nnoremap \j :Files $DJH<cr>
 nnoremap \L :Lines<cr>
 nnoremap \B :BLines<cr>
-nnoremap \pp :<bar>MatchupWhereAmI??<cr>
+nnoremap <silent> \it :call IlluminateMoreToggle()<cr>
+nmap \\f <Plug>(easymotion-overwin-f)
+map \\ <Plug>(easymotion-prefix)
 nmap \ca <Plug>NERDCommenterAltDelims
 xmap \cu <Plug>NERDCommenterUncomment
 nmap \cu <Plug>NERDCommenterUncomment
@@ -143,61 +153,55 @@ xmap \cn <Plug>NERDCommenterNested
 nmap \cn <Plug>NERDCommenterNested
 xmap \cm <Plug>NERDCommenterMinimal
 nmap \cm <Plug>NERDCommenterMinimal
-xmap \c<bar>  <Plug>NERDCommenterToggle
-nmap \c<bar>  <Plug>NERDCommenterToggle
+xmap \c<cr>  <Plug>NERDCommenterToggle
+nmap \c<cr>  <Plug>NERDCommenterToggle
 xmap \cc <Plug>NERDCommenterComment
 nmap \cc <Plug>NERDCommenterComment
-nmap \p <Plug>(Prettier)
+nnoremap <silent> \q :QToggle<cr>
+nnoremap <silent> \l :LToggle<cr>
+noremap <silent> \\d :BD<cr>:bp<cr>
+nmap <silent> \ba <Plug>BufKillAlt
+nmap <silent> \bundo <Plug>BufKillUndo
+nmap <silent> \!bw <Plug>BufKillBangBw
+nmap <silent> \bw <Plug>BufKillBw
+nmap <silent> \!bd <Plug>BufKillBangBd
+nmap <silent> \!bun <Plug>BufKillBangBun
+nmap <silent> \bun <Plug>BufKillBun
+nmap <silent> \bf <Plug>BufKillForward
+nnoremap \bb :CtrlPBuffer<cr>
+nmap \\n <Plug>MarkClear
+nmap \\m <Plug>MarkSet
+nmap \caL <Plug>CalendarH
+nmap \cal <Plug>CalendarV
+noremap \C :CalendarH<cr>
+nmap <silent> \fs <Plug>FontsizeBegin
+nmap <silent> \\0 <Plug>FontsizeDefault
+nmap <silent> \\- <Plug>FontsizeDec
+nmap <silent> \\+ <Plug>FontsizeInc
+nmap <silent> \\= <Plug>FontsizeBegin
+nnoremap \LT :call LanguageTool_lopen() <cr>
+nnoremap \lt :LangTool <cr>| lopen 15 <cr>
+nnoremap \wt :ThesaurusQueryReplaceCurrentWord<cr>
+nnoremap \ww :<cr>MatchupWhereAmI??<cr>
+nnoremap \p :echo "\\p"<cr>
 nnoremap \atob/ :%s/\v()/\=base64#decode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
 nnoremap \btoa/ :%s/\v()/\=base64#encode(submatch(1))/<Home><Right><Right><Right><Right><Right><Right>
-vnoremap <silent> \btoa :<bar>call base64#v_btoa()<cr>
-vnoremap <silent> \atob :<bar>call base64#v_atob()<cr>
+vnoremap <silent> \btoa :<cr>call base64#v_btoa()<cr>
+vnoremap <silent> \atob :<cr>call base64#v_atob()<cr>
 map \rwp <Plug>RestoreWinPosn
 map \swp <Plug>SaveWinPosn
-nnoremap \d :cd %:p:h<cr>:pwd<cr>
-nnoremap \- :Hexplore<cr>
-vnoremap <silent> \<F11> <esc>:echo strftime('%c',getftime(expand('%')))<cr>
-nnoremap <silent> \<F11> :echo strftime('%c',getftime(expand('%')))<cr>
-nnoremap \f :let@f=@%<cr>
+nnoremap \bd :Bdelete hidden<cr>
+nnoremap \bdd :Bdelete other<cr>
+nnoremap \m :MRU 
+nnoremap \<F4> :Bdelete other<cr>:sleep<cr>:call VimWriteClose()<cr>
 nnoremap \v v$hy
-vnoremap \vs <esc>:call ConvertSearchForVisualSelection()<cr>
-nnoremap \vs :call ConvertSearchForVisualSelection()<cr>
-nnoremap \pt :call ParenthsToggle()<cr>
-nnoremap \is :call IncSearchToggle()<cr>
-nnoremap \\q :call VimgrepQRs()<cr>
-nnoremap \vg :call VimgrepSelection()<cr>
-nnoremap \/ :call TweakLS()<cr>
-vnoremap \n <esc>:nohlsearch<cr>
-nnoremap \n :nohlsearch<cr>
-nnoremap \vv :call SplitVtoggle()<cr>
-nnoremap \hh :call SplitHtoggle()<cr>
-nnoremap \vn :vnew<cr>
-nnoremap <silent> \rn :set rnu! rnu? <cr>
-nnoremap \zz :let &scrolloff=999-&scrolloff<cr>
-nnoremap \<F5> :call clearmatches()<cr>
-nnoremap \U :Underline
-nnoremap \[ :s/\m\[.\{-}]//g<cr>
-nnoremap \5 :call UnicodePercent()<cr>
-nnoremap \9 :call PercentUnicode()<cr>
-noremap \yp :lan fr_FR.UTF-8<cr>:call DateFr()<cr>:lan en_GB.UTF-8<cr>
-nnoremap \\2 :call ClearMAS()<cr>
-nnoremap \2 :call ClearFancyGlyphs()<cr>
-nnoremap \c= :windo set nowfh <cr>
-nnoremap \<Right> 10<c-w>>
-nnoremap \<Left> 10<c-w><bar><
-nnoremap \<Up> 5<c-w>+
-nnoremap \<Down> 5<c-w>-
-nnoremap <silent> \\l :set cul! cul? <cr>
-nnoremap <silent> \\c :set cuc! cuc? <cr>
-nnoremap \x <c-w>c
-noremap \\ll :set list! list? <cr>  " (:h 'list')
-omap <silent> ]% <Plug>(matchup-]%)
-xmap <silent> ]% <Plug>(matchup-]%)
-nmap <silent> ]% <Plug>(matchup-]%)
+omap <silent> ]% <Plug>(MatchitOperationMultiForward)
+xmap <silent> ]% <Plug>(MatchitVisualMultiForward)
+nmap <silent> ]% <Plug>(MatchitNormalMultiForward)
+map <silent> ]- <Plug>(VindentMotion_next_less)
+xmap a% <Plug>(MatchitVisualTextObject)
 xmap <expr> a targets#e('o', 'a', 'a')
 omap <expr> a targets#e('o', 'a', 'a')
-omap <silent> a% <Plug>(matchup-a%)
-xmap <silent> a% <Plug>(matchup-a%)
 xmap af <Plug>DsfTextObjectA
 omap af <Plug>DsfTextObjectA
 nmap cS <Plug>CSurround
@@ -210,11 +214,14 @@ nmap dsf <Plug>DsfDelete
 xmap f <Plug>(QuickScopef)
 omap f <Plug>(QuickScopef)
 nmap f <Plug>(QuickScopef)
-xmap gx <Plug>NetrwBrowseXVis
-nmap gx <Plug>NetrwBrowseX
+omap <silent> g% <Plug>(MatchitOperationBackward)
+xmap <silent> g% <Plug>(MatchitVisualBackward)
+nmap <silent> g% <Plug>(MatchitNormalBackward)
+xmap gx <Plug>(open-word-under-cursor)
+nmap gx <Plug>(open-word-under-cursor)
+nnoremap g, <Nop>
+nnoremap g: g,
 xmap gS <Plug>VgSurround
-map g# <Plug>(asterisk-g#)  " rg --no-ignore ' g# '
-map g* <Plug>(asterisk-g*)  " rg --no-ignore ' g\* '
 map g/ <Plug>(incsearch-stay)
 xmap gA <Plug>(EasyAlign)
 nmap gA <Plug>(EasyAlign)
@@ -222,20 +229,15 @@ xmap gG <Plug>(open-url-search-google)
 nmap gG <Plug>(open-url-search-google)
 xmap gW <Plug>(open-url-search-wikipedia)
 nmap gW <Plug>(open-url-search-wikipedia)
-xmap g<cr> <Plug>(open-url-search)
-nmap g<cr> <Plug>(open-url-search)
+xmap g<cr> <Plug>(open-url-search)
+nmap g<cr> <Plug>(open-url-search)
 xmap gB <Plug>(open-url-browser)
 nmap gB <Plug>(open-url-browser)
+map g# <Plug>(asterisk-g#)  " rg --no-ignore ' g# '
+map g* <Plug>(asterisk-g*)  " rg --no-ignore ' g\* '
 nmap ga <Plug>(characterize)
-omap <silent> g% <Ignore><Plug>(matchup-g%)
-xmap <silent> g% <Plug>(matchup-g%)
-nmap <silent> g% <Plug>(matchup-g%)
-nnoremap g, <Nop>
-nnoremap g: g,
 xmap <expr> i targets#e('o', 'i', 'i')
 omap <expr> i targets#e('o', 'i', 'i')
-omap <silent> i% <Plug>(matchup-i%)
-xmap <silent> i% <Plug>(matchup-i%)
 xmap if <Plug>DsfTextObjectI
 omap if <Plug>DsfTextObjectI
 xnoremap q: <Nop>
@@ -251,101 +253,186 @@ nmap ySs <Plug>YSsurround
 nmap yss <Plug>Yssurround
 nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
+nnoremap z? :exe ':spellrare  '.expand('<cr><cWORD>')<cr>
+map z/ <Plug>(incsearch-fuzzy-stay)
 map z# <Plug>(asterisk-z#)  " rg --no-ignore ' z# '
 map z* <Plug>(asterisk-z*)  " rg --no-ignore ' z\* '
-map z/ <Plug>(incsearch-fuzzy-stay)
-omap <silent> z% <Plug>(matchup-z%)
-xmap <silent> z% <Plug>(matchup-z%)
-nmap <silent> z% <Plug>(matchup-z%)
 nnoremap <silent> <expr> zt context#util#map_zt()
-nnoremap zr :exe ':spellrare  '.expand('<bar><cWORD>')<cr>
-vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<cr>gv""Pgv
-nnoremap <SNR>293_: :<bar><bar>=v:count ? v:count : ''<cr>
+vnoremap ~ y:call setreg('', TwiddleCase(@"), getregtype(''))<cr>gv""Pgv
 nnoremap <C-F5> :call ColorLightDark()<cr>
-nnoremap <S-F1> :if &guioptions=~#'m'<bar>|set guioptions-=m<bar>|else<bar>|set guioptions+=m<bar>|endif<cr>
-xnoremap <silent> <Plug>NetrwBrowseXVis :<bar>call netrw#BrowseXVis()<cr>
-nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<cr>
-tnoremap <silent> <Plug>(fzf-normal) <bar><bar>
-tnoremap <silent> <Plug>(fzf-insert) <bar><bar>i
+nnoremap <C-F1> :if &guioptions=~#'m'<cr>|set guioptions-=m<cr>|else<cr>|set guioptions+=m<cr>|endif<cr>
+xmap <silent> <Plug>(MatchitVisualTextObject) <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+onoremap <silent> <Plug>(MatchitOperationMultiForward) :<cr>call matchit#MultiMatch("W",  "o")<cr>
+onoremap <silent> <Plug>(MatchitOperationMultiBackward) :<cr>call matchit#MultiMatch("bW", "o")<cr>
+xnoremap <silent> <Plug>(MatchitVisualMultiForward) :<cr>call matchit#MultiMatch("W",  "n")<cr>m'gv``
+xnoremap <silent> <Plug>(MatchitVisualMultiBackward) :<cr>call matchit#MultiMatch("bW", "n")<cr>m'gv``
+nnoremap <silent> <Plug>(MatchitNormalMultiForward) :<cr>call matchit#MultiMatch("W",  "n")<cr>
+nnoremap <silent> <Plug>(MatchitNormalMultiBackward) :<cr>call matchit#MultiMatch("bW", "n")<cr>
+onoremap <silent> <Plug>(MatchitOperationBackward) :<cr>call matchit#Match_wrapper('',0,'o')<cr>
+onoremap <silent> <Plug>(MatchitOperationForward) :<cr>call matchit#Match_wrapper('',1,'o')<cr>
+xnoremap <silent> <Plug>(MatchitVisualBackward) :<cr>call matchit#Match_wrapper('',0,'v')<cr>m'gv``
+xnoremap <silent> <Plug>(MatchitVisualForward) :<cr>call matchit#Match_wrapper('',1,'v')<cr>:if col("''") != col("$") <cr>| exe ":normal! m'" <cr>| endif<cr>gv``
+nnoremap <silent> <Plug>(MatchitNormalBackward) :<cr>call matchit#Match_wrapper('',0,'n')<cr>
+nnoremap <silent> <Plug>(MatchitNormalForward) :<cr>call matchit#Match_wrapper('',1,'n')<cr>
+xnoremap <Plug>(open-word-under-cursor) <ScriptCmd>vim9.Open(getregion(getpos('v'), getpos('.'), { type: mode() })->join())<cr>
+nnoremap <Plug>(open-word-under-cursor) <ScriptCmd>vim9.Open(GetWordUnderCursor())<cr>
+tnoremap <silent> <Plug>(fzf-normal) <cr><cr>
+tnoremap <silent> <Plug>(fzf-insert) <cr><cr>i
 nnoremap <silent> <Plug>(fzf-normal) <Nop>
 nnoremap <silent> <Plug>(fzf-insert) i
-xnoremap <silent> <Plug>(peekaboo) :<bar>call peekaboo#aboo()<cr>
-nnoremap <silent> <Plug>(peekaboo) :<bar>call peekaboo#aboo()<cr>
+vnoremap <F2> <esc>:wa<cr>
+nnoremap <F2> :wa<cr>
+nnoremap <C-=> <cr>=
+nnoremap <C-K> <cr>k
+nnoremap <C-J> <cr>j
+nnoremap <C-L> <cr>l
+nnoremap <C-H> <cr>h
+vnoremap <F5> <esc>:wa<cr>:e<cr>
+nnoremap <F5> :wa<cr>:edit<cr>
 nnoremap <silent> <Plug>SurroundRepeat .
-nnoremap <silent> <Plug>(_SubversiveSubstituteRangeSecondary) :<bar>set opfunc=subversive#lineRangeMotion#selectRangeMotion<cr>g@
-nnoremap <silent> <Plug>(SubversiveSubvertWordRangeNoPrompt) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 1, 1, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@iw
-xnoremap <silent> <Plug>(SubversiveSubvertRangeNoPrompt) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 1, 0, 0)<cr><esc>:call subversive#lineRangeMotion#selectTextMotion('char', 1)<cr>
-nnoremap <silent> <Plug>(SubversiveSubvertRangeNoPrompt) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 1, 0, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@
-nnoremap <silent> <Plug>(SubversiveSubvertWordRange) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 1, 1, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@iw
-xnoremap <silent> <Plug>(SubversiveSubvertRange) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 1, 0, 0)<cr><esc>:call subversive#lineRangeMotion#selectTextMotion('char', 1)<cr>
-nnoremap <silent> <Plug>(SubversiveSubvertRange) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 1, 0, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@
-nnoremap <silent> <Plug>(SubversiveSubstituteWordRangeNoPromptConfirm) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 0, 1, 1)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@iw
-xnoremap <silent> <Plug>(SubversiveSubstituteRangeNoPromptConfirm) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 0, 0, 1)<cr><esc>:call subversive#lineRangeMotion#selectTextMotion('char', 1)<cr>
-nnoremap <silent> <Plug>(SubversiveSubstituteRangeNoPromptConfirm) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 0, 0, 1)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@
-nnoremap <silent> <Plug>(SubversiveSubstituteWordRangeNoPrompt) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 0, 1, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@iw
-xnoremap <silent> <Plug>(SubversiveSubstituteRangeNoPrompt) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 0, 0, 0)<cr><esc>:call subversive#lineRangeMotion#selectTextMotion('char', 1)<cr>
-nnoremap <silent> <Plug>(SubversiveSubstituteRangeNoPrompt) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 0, 0, 0, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@
-nnoremap <silent> <Plug>(SubversiveSubstituteWordRangeConfirm) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 0, 1, 1)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@iw
-xnoremap <silent> <Plug>(SubversiveSubstituteRangeConfirm) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 0, 0, 1)<cr><esc>:call subversive#lineRangeMotion#selectTextMotion('char', 1)<cr>
-nnoremap <silent> <Plug>(SubversiveSubstituteRangeConfirm) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 0, 0, 1)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@
-nnoremap <silent> <Plug>(SubversiveSubstituteWordRange) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 0, 1, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@iw
-xnoremap <silent> <Plug>(SubversiveSubstituteRangeDelete) :<bar>call subversive#lineRangeMotion#preSubstitute("_", 1, 0, 0, 0)<cr><esc>:call subversive#lineRangeMotion#selectTextMotion('char', 1)<cr>
-nnoremap <silent> <Plug>(SubversiveSubstituteRangeDelete) :<bar>call subversive#lineRangeMotion#preSubstitute("_", 1, 0, 0, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@
-xnoremap <silent> <Plug>(SubversiveSubstituteRange) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 0, 0, 0)<cr><esc>:call subversive#lineRangeMotion#selectTextMotion('char', 1)<cr>
-nnoremap <silent> <Plug>(SubversiveSubstituteRange) :<bar>call subversive#lineRangeMotion#preSubstitute(v:register, 1, 0, 0, 0)<cr>:set opfunc=subversive#lineRangeMotion#selectTextMotion<cr>g@
-nnoremap <silent> <Plug>(SubversiveSubstituteLine) :<bar>call subversive#singleMotion#substituteLineSetup(v:register, v:count)<cr>:set opfunc=subversive#singleMotion#substituteLine<cr>g@l
-nnoremap <silent> <Plug>(SubversiveSubstituteToEndOfLine) :<bar>call subversive#singleMotion#substituteToEndOfLineSetup(v:register, v:count)<cr>:set opfunc=subversive#singleMotion#substituteToEndOfLine<cr>g@l
-xnoremap <silent> <Plug>(SubversiveSubstitute) :<bar>call subversive#singleMotion#preSubstitute(v:register, 1, visualmode())<cr><esc>`<bar><:set opfunc=subversive#singleMotion#substituteMotion<cr>g@`>
-nnoremap <silent> <Plug>(SubversiveSubstitute) :<bar>call subversive#singleMotion#preSubstitute(v:register, 0, '')<cr>:set opfunc=subversive#singleMotion#substituteMotion<cr>g@
-nnoremap <silent> <Plug>MarkSearchGroup9Prev :<bar>if ! mark#SearchGroupMark(9, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup9Next :<bar>if ! mark#SearchGroupMark(9, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup8Prev :<bar>if ! mark#SearchGroupMark(8, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup8Next :<bar>if ! mark#SearchGroupMark(8, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup7Prev :<bar>if ! mark#SearchGroupMark(7, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup7Next :<bar>if ! mark#SearchGroupMark(7, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup6Prev :<bar>if ! mark#SearchGroupMark(6, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup6Next :<bar>if ! mark#SearchGroupMark(6, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup5Prev :<bar>if ! mark#SearchGroupMark(5, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup5Next :<bar>if ! mark#SearchGroupMark(5, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup4Prev :<bar>if ! mark#SearchGroupMark(4, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup4Next :<bar>if ! mark#SearchGroupMark(4, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup3Prev :<bar>if ! mark#SearchGroupMark(3, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup3Next :<bar>if ! mark#SearchGroupMark(3, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup2Prev :<bar>if ! mark#SearchGroupMark(2, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup2Next :<bar>if ! mark#SearchGroupMark(2, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup1Prev :<bar>if ! mark#SearchGroupMark(1, v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroup1Next :<bar>if ! mark#SearchGroupMark(1, v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchCascadePrevNoStop :<bar>if ! mark#cascade#Next(v:count1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchCascadeNextNoStop :<bar>if ! mark#cascade#Next(v:count1, 0, 0)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchCascadeStartNoStop :<bar>if ! mark#cascade#Start(v:count, 0)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"   <bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchCascadePrevWithStop :<bar>if ! mark#cascade#Next(v:count1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchCascadeNextWithStop :<bar>if ! mark#cascade#Next(v:count1, 1, 0)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchCascadeStartWithStop :<bar>if ! mark#cascade#Start(v:count, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"   <bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchUsedGroupPrev :<bar>if ! mark#SearchNextGroup(v:count1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchUsedGroupNext :<bar>if ! mark#SearchNextGroup(v:count1, 0)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroupPrev :<bar>if ! mark#SearchGroupMark(v:count, 1, 1, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchGroupNext :<bar>if ! mark#SearchGroupMark(v:count, 1, 0, 1)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchAnyOrDefaultPrev :<bar>if mark#IsEnabled() && mark#GetCount() > 0<bar>|if ! mark#SearchAnyMark(1)<bar>|echoerr ingo#err#Get()<bar>|endif<bar>|else<bar>|execute 'normal!' v:count1 . 'Nzv'<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchAnyOrDefaultNext :<bar>if mark#IsEnabled() && mark#GetCount() > 0<bar>|if ! mark#SearchAnyMark(0)<bar>|echoerr ingo#err#Get()<bar>|endif<bar>|else<bar>|execute 'normal!' v:count1 . 'nzv'<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchOrAnyPrev :<bar>if ! mark#SearchNext(1,'mark#SearchAnyMark')<bar>|execute 'normal!' v:count1 . '#zv'<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchOrAnyNext :<bar>if ! mark#SearchNext(0,'mark#SearchAnyMark')<bar>|execute 'normal!' v:count1 . '*zv'<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchOrCurPrev :<bar>if ! mark#SearchNext(1,'mark#SearchCurrentMark')<bar>|execute 'normal!' v:count1 . '#zv'<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchOrCurNext :<bar>if ! mark#SearchNext(0,'mark#SearchCurrentMark')<bar>|execute 'normal!' v:count1 . '*zv'<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchPrev :<bar>if ! mark#SearchNext(1)<bar>|execute 'normal!' v:count1 . '#zv'<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchNext :<bar>if ! mark#SearchNext(0)<bar>|execute 'normal!' v:count1 . '*zv'<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchAnyPrev :<bar>if ! mark#SearchAnyMark(1)<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchAnyNext :<bar>if ! mark#SearchAnyMark(0)<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchCurrentPrev :<bar>if ! mark#SearchCurrentMark(1)<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSearchCurrentNext :<bar>if ! mark#SearchCurrentMark(0)<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkToggle :<bar>call mark#Toggle()<cr>
-nnoremap <silent> <Plug>MarkConfirmAllClear :<bar>if confirm('Really delete all marks? This cannot be undone.', "&Yes\n&No") == 1<bar>|call mark#ClearAll()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkAllClear :<bar>call mark#ClearAll()<cr>
-nnoremap <silent> <Plug>MarkClear :<bar>if ! mark#Clear(v:count)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-vnoremap <silent> <Plug>MarkRegex :<bar>if ! mark#MarkRegex(v:count, mark#GetVisualSelectionAsRegexp())<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkRegex :<bar>if ! mark#MarkRegex(v:count, '')<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|echoerr ingo#err#Get()<bar>|endif<cr>
-vnoremap <silent> <Plug>MarkIWhiteSet :<bar>if ! mark#DoMark(v:count, mark#GetVisualSelectionAsLiteralWhitespaceIndifferentPattern())[0]<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|endif<cr>
-vnoremap <silent> <Plug>MarkSet :<bar>if ! mark#DoMark(v:count, mark#GetVisualSelectionAsLiteralPattern())[0]<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|endif<cr>
-nnoremap <silent> <Plug>MarkSet :<bar>if ! mark#MarkCurrentWord(v:count)<bar>|execute "normal! \<bar><C-\>\<bar><C-n>\<bar><Esc>"<bar>|endif<cr>
+nnoremap <silent> <Plug>(PickerHelp) :PickerHelp<cr>
+nnoremap <silent> <Plug>(PickerBufferTag) :PickerBufferTag<cr>
+nnoremap <silent> <Plug>(PickerStag) :PickerStag<cr>
+nnoremap <silent> <Plug>(PickerTag) :PickerTag<cr>
+nnoremap <silent> <Plug>(PickerBufferVsplit) :PickerBufferVsplit<cr>
+nnoremap <silent> <Plug>(PickerBufferSplit) :PickerBufferSplit<cr>
+nnoremap <silent> <Plug>(PickerBuffer) :PickerBuffer<cr>
+nnoremap <silent> <Plug>(PickerVsplit) :PickerVsplit<cr>
+nnoremap <silent> <Plug>(PickerTabdrop) :PickerTabdrop<cr>
+nnoremap <silent> <Plug>(PickerTabedit) :PickerTabedit<cr>
+nnoremap <silent> <Plug>(PickerSplit) :PickerSplit<cr>
+nnoremap <silent> <Plug>(PickerEdit) :PickerEdit<cr>
+noremap <C-E> :cd %:p:h<cr>:Fern . -reveal=%<cr>
+xnoremap <Plug>(VindentObject_XX_ii) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(1,'NoLe','ii',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_XX_ai) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(1,'NoLe','ai',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_XX_aI) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(1,'NoLe','aI',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_XO_ii) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(1,'Same','ii',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_XO_ai) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(1,'Same','ai',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_XO_aI) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(1,'Same','aI',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_OX_ii) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(0,'NoLe','ii',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_OX_ai) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(0,'NoLe','ai',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_OX_aI) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(0,'NoLe','aI',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_OO_ii) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(0,'Same','ii',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_OO_ai) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(0,'Same','ai',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentObject_OO_aI) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Object(0,'Same','aI',g:vindent_temp)<cr>
+onoremap <Plug>(VindentObject_XX_ii) :<cr>call vindent#Object(1,'NoLe','ii',v:count1)<cr>
+onoremap <Plug>(VindentObject_XX_ai) :<cr>call vindent#Object(1,'NoLe','ai',v:count1)<cr>
+onoremap <Plug>(VindentObject_XX_aI) :<cr>call vindent#Object(1,'NoLe','aI',v:count1)<cr>
+onoremap <Plug>(VindentObject_XO_ii) :<cr>call vindent#Object(1,'Same','ii',v:count1)<cr>
+onoremap <Plug>(VindentObject_XO_ai) :<cr>call vindent#Object(1,'Same','ai',v:count1)<cr>
+onoremap <Plug>(VindentObject_XO_aI) :<cr>call vindent#Object(1,'Same','aI',v:count1)<cr>
+onoremap <Plug>(VindentObject_OX_ii) :<cr>call vindent#Object(0,'NoLe','ii',v:count1)<cr>
+onoremap <Plug>(VindentObject_OX_ai) :<cr>call vindent#Object(0,'NoLe','ai',v:count1)<cr>
+onoremap <Plug>(VindentObject_OX_aI) :<cr>call vindent#Object(0,'NoLe','aI',v:count1)<cr>
+onoremap <Plug>(VindentObject_OO_ii) :<cr>call vindent#Object(0,'Same','ii',v:count1)<cr>
+onoremap <Plug>(VindentObject_OO_ai) :<cr>call vindent#Object(0,'Same','ai',v:count1)<cr>
+onoremap <Plug>(VindentObject_OO_aI) :<cr>call vindent#Object(0,'Same','aI',v:count1)<cr>
+xnoremap <Plug>(VindentBlockMotion_XX_ss) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockEdgeMotion('prev',1,'NoLe','X')<cr>
+xnoremap <Plug>(VindentBlockMotion_XX_se) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockEdgeMotion('next',1,'NoLe','X')<cr>
+xnoremap <Plug>(VindentBlockMotion_XO_ss) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockEdgeMotion('prev',1,'Same','X')<cr>
+xnoremap <Plug>(VindentBlockMotion_XO_se) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockEdgeMotion('next',1,'Same','X')<cr>
+xnoremap <Plug>(VindentBlockMotion_OX_ss) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockEdgeMotion('prev',0,'NoLe','X')<cr>
+xnoremap <Plug>(VindentBlockMotion_OX_se) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockEdgeMotion('next',0,'NoLe','X')<cr>
+xnoremap <Plug>(VindentBlockMotion_OO_ss) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockEdgeMotion('prev',0,'Same','X')<cr>
+xnoremap <Plug>(VindentBlockMotion_OO_se) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockEdgeMotion('next',0,'Same','X')<cr>
+onoremap <Plug>(VindentBlockMotion_XX_ss) :<cr>call                                        vindent#BlockEdgeMotion('prev',1,'NoLe','O')<cr>
+onoremap <Plug>(VindentBlockMotion_XX_se) :<cr>call                                        vindent#BlockEdgeMotion('next',1,'NoLe','O')<cr>
+onoremap <Plug>(VindentBlockMotion_XO_ss) :<cr>call                                        vindent#BlockEdgeMotion('prev',1,'Same','O')<cr>
+onoremap <Plug>(VindentBlockMotion_XO_se) :<cr>call                                        vindent#BlockEdgeMotion('next',1,'Same','O')<cr>
+onoremap <Plug>(VindentBlockMotion_OX_ss) :<cr>call                                        vindent#BlockEdgeMotion('prev',0,'NoLe','O')<cr>
+onoremap <Plug>(VindentBlockMotion_OX_se) :<cr>call                                        vindent#BlockEdgeMotion('next',0,'NoLe','O')<cr>
+onoremap <Plug>(VindentBlockMotion_OO_ss) :<cr>call                                        vindent#BlockEdgeMotion('prev',0,'Same','O')<cr>
+onoremap <Plug>(VindentBlockMotion_OO_se) :<cr>call                                        vindent#BlockEdgeMotion('next',0,'Same','O')<cr>
+nnoremap <Plug>(VindentBlockMotion_XX_ss) :<cr>call                                        vindent#BlockEdgeMotion('prev',1,'NoLe','N')<cr>
+nnoremap <Plug>(VindentBlockMotion_XX_se) :<cr>call                                        vindent#BlockEdgeMotion('next',1,'NoLe','N')<cr>
+nnoremap <Plug>(VindentBlockMotion_XO_ss) :<cr>call                                        vindent#BlockEdgeMotion('prev',1,'Same','N')<cr>
+nnoremap <Plug>(VindentBlockMotion_XO_se) :<cr>call                                        vindent#BlockEdgeMotion('next',1,'Same','N')<cr>
+nnoremap <Plug>(VindentBlockMotion_OX_ss) :<cr>call                                        vindent#BlockEdgeMotion('prev',0,'NoLe','N')<cr>
+nnoremap <Plug>(VindentBlockMotion_OX_se) :<cr>call                                        vindent#BlockEdgeMotion('next',0,'NoLe','N')<cr>
+nnoremap <Plug>(VindentBlockMotion_OO_ss) :<cr>call                                        vindent#BlockEdgeMotion('prev',0,'Same','N')<cr>
+nnoremap <Plug>(VindentBlockMotion_OO_se) :<cr>call                                        vindent#BlockEdgeMotion('next',0,'Same','N')<cr>
+xnoremap <Plug>(VindentBlockMotion_XX_prev) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockMotion('prev',1,'NoLe','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentBlockMotion_XX_next) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockMotion('next',1,'NoLe','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentBlockMotion_XO_prev) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockMotion('prev',1,'Same','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentBlockMotion_XO_next) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockMotion('next',1,'Same','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentBlockMotion_OX_prev) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockMotion('prev',0,'NoLe','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentBlockMotion_OX_next) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockMotion('next',0,'NoLe','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentBlockMotion_OO_prev) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockMotion('prev',0,'Same','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentBlockMotion_OO_next) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#BlockMotion('next',0,'Same','X',g:vindent_temp)<cr>
+onoremap <Plug>(VindentBlockMotion_XX_prev) :<cr>call                                        vindent#BlockMotion('prev',1,'NoLe','O',v:count1)<cr>
+onoremap <Plug>(VindentBlockMotion_XX_next) :<cr>call                                        vindent#BlockMotion('next',1,'NoLe','O',v:count1)<cr>
+onoremap <Plug>(VindentBlockMotion_XO_prev) :<cr>call                                        vindent#BlockMotion('prev',1,'Same','O',v:count1)<cr>
+onoremap <Plug>(VindentBlockMotion_XO_next) :<cr>call                                        vindent#BlockMotion('next',1,'Same','O',v:count1)<cr>
+onoremap <Plug>(VindentBlockMotion_OX_prev) :<cr>call                                        vindent#BlockMotion('prev',0,'NoLe','O',v:count1)<cr>
+onoremap <Plug>(VindentBlockMotion_OX_next) :<cr>call                                        vindent#BlockMotion('next',0,'NoLe','O',v:count1)<cr>
+onoremap <Plug>(VindentBlockMotion_OO_prev) :<cr>call                                        vindent#BlockMotion('prev',0,'Same','O',v:count1)<cr>
+onoremap <Plug>(VindentBlockMotion_OO_next) :<cr>call                                        vindent#BlockMotion('next',0,'Same','O',v:count1)<cr>
+nnoremap <Plug>(VindentBlockMotion_XX_prev) :<cr>call                                        vindent#BlockMotion('prev',1,'NoLe','N',v:count1)<cr>
+nnoremap <Plug>(VindentBlockMotion_XX_next) :<cr>call                                        vindent#BlockMotion('next',1,'NoLe','N',v:count1)<cr>
+nnoremap <Plug>(VindentBlockMotion_XO_prev) :<cr>call                                        vindent#BlockMotion('prev',1,'Same','N',v:count1)<cr>
+nnoremap <Plug>(VindentBlockMotion_XO_next) :<cr>call                                        vindent#BlockMotion('next',1,'Same','N',v:count1)<cr>
+nnoremap <Plug>(VindentBlockMotion_OX_prev) :<cr>call                                        vindent#BlockMotion('prev',0,'NoLe','N',v:count1)<cr>
+nnoremap <Plug>(VindentBlockMotion_OX_next) :<cr>call                                        vindent#BlockMotion('next',0,'NoLe','N',v:count1)<cr>
+nnoremap <Plug>(VindentBlockMotion_OO_prev) :<cr>call                                        vindent#BlockMotion('prev',0,'Same','N',v:count1)<cr>
+nnoremap <Plug>(VindentBlockMotion_OO_next) :<cr>call                                        vindent#BlockMotion('next',0,'Same','N',v:count1)<cr>
+xnoremap <Plug>(VindentMotion_prev_same) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Motion('prev',1,'Same','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentMotion_prev_more) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Motion('prev',1,'More','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentMotion_prev_less) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Motion('prev',1,'Less','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentMotion_prev_diff) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Motion('prev',1,'Diff','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentMotion_next_same) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Motion('next',1,'Same','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentMotion_next_more) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Motion('next',1,'More','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentMotion_next_less) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Motion('next',1,'Less','X',g:vindent_temp)<cr>
+xnoremap <Plug>(VindentMotion_next_diff) :<cr>let g:vindent_temp=v:count1<cr>gv<esc>:call vindent#Motion('next',1,'Diff','X',g:vindent_temp)<cr>
+onoremap <Plug>(VindentMotion_prev_same) :<cr>call                                        vindent#Motion('prev',1,'Same','O',v:count1)<cr>
+onoremap <Plug>(VindentMotion_prev_more) :<cr>call                                        vindent#Motion('prev',1,'More','O',v:count1)<cr>
+onoremap <Plug>(VindentMotion_prev_less) :<cr>call                                        vindent#Motion('prev',1,'Less','O',v:count1)<cr>
+onoremap <Plug>(VindentMotion_prev_diff) :<cr>call                                        vindent#Motion('prev',1,'Diff','O',v:count1)<cr>
+onoremap <Plug>(VindentMotion_next_same) :<cr>call                                        vindent#Motion('next',1,'Same','O',v:count1)<cr>
+onoremap <Plug>(VindentMotion_next_more) :<cr>call                                        vindent#Motion('next',1,'More','O',v:count1)<cr>
+onoremap <Plug>(VindentMotion_next_less) :<cr>call                                        vindent#Motion('next',1,'Less','O',v:count1)<cr>
+onoremap <Plug>(VindentMotion_next_diff) :<cr>call                                        vindent#Motion('next',1,'Diff','O',v:count1)<cr>
+nnoremap <Plug>(VindentMotion_prev_same) :<cr>call                                        vindent#Motion('prev',1,'Same','N',v:count1)<cr>
+nnoremap <Plug>(VindentMotion_prev_more) :<cr>call                                        vindent#Motion('prev',1,'More','N',v:count1)<cr>
+nnoremap <Plug>(VindentMotion_prev_less) :<cr>call                                        vindent#Motion('prev',1,'Less','N',v:count1)<cr>
+nnoremap <Plug>(VindentMotion_prev_diff) :<cr>call                                        vindent#Motion('prev',1,'Diff','N',v:count1)<cr>
+nnoremap <Plug>(VindentMotion_next_same) :<cr>call                                        vindent#Motion('next',1,'Same','N',v:count1)<cr>
+nnoremap <Plug>(VindentMotion_next_more) :<cr>call                                        vindent#Motion('next',1,'More','N',v:count1)<cr>
+nnoremap <Plug>(VindentMotion_next_less) :<cr>call                                        vindent#Motion('next',1,'Less','N',v:count1)<cr>
+nnoremap <Plug>(VindentMotion_next_diff) :<cr>call                                        vindent#Motion('next',1,'Diff','N',v:count1)<cr>
+vnoremap <S-F3> <esc>:Commits<cr>
+nnoremap <S-F3> :Commits<cr>
+vnoremap <C-F3> <esc>:BCommits<cr>
+nnoremap <C-F3> :BCommits<cr>
+nnoremap <S-F1> :Jumps<cr>
+vnoremap <F9> <esc>:History/<cr>
+nnoremap <F9> :History/<cr>
+vnoremap <F8> <esc>:History:<cr>
+nnoremap <F8> :History:<cr>
+vnoremap <F1> <esc>:Buffers<cr>
+nnoremap <F1> :Buffers<cr>
+onoremap <silent> <Plug>(fzf-maps-o) <cr>:<cr>call fzf#vim#maps('o', 0)<cr>
+xnoremap <silent> <Plug>(fzf-maps-x) :<cr>call fzf#vim#maps('x', 0)<cr>
+nnoremap <silent> <Plug>(fzf-maps-n) :<cr>call fzf#vim#maps('n', 0)<cr>
+nnoremap <silent> <Plug>GitGutterPreviewHunk :call gitgutter#utility#warn('Please change your map <cr><Plug>GitGutterPreviewHunk to <cr><Plug>(GitGutterPreviewHunk)')<cr>
+nnoremap <silent> <Plug>(GitGutterPreviewHunk) :GitGutterPreviewHunk<cr>
+nnoremap <silent> <Plug>GitGutterUndoHunk :call gitgutter#utility#warn('Please change your map <cr><Plug>GitGutterUndoHunk to <cr><Plug>(GitGutterUndoHunk)')<cr>
+nnoremap <silent> <Plug>(GitGutterUndoHunk) :GitGutterUndoHunk<cr>
+nnoremap <silent> <Plug>GitGutterStageHunk :call gitgutter#utility#warn('Please change your map <cr><Plug>GitGutterStageHunk to <cr><Plug>(GitGutterStageHunk)')<cr>
+nnoremap <silent> <Plug>(GitGutterStageHunk) :GitGutterStageHunk<cr>
+xnoremap <silent> <Plug>GitGutterStageHunk :call gitgutter#utility#warn('Please change your map <cr><Plug>GitGutterStageHunk to <cr><Plug>(GitGutterStageHunk)')<cr>
+xnoremap <silent> <Plug>(GitGutterStageHunk) :GitGutterStageHunk<cr>
+nnoremap <silent> <expr> <Plug>GitGutterPrevHunk &diff ? '[c' : ":\<cr>call gitgutter#utility#warn('Please change your map \<cr><Plug>GitGutterPrevHunk to \<cr><Plug>(GitGutterPrevHunk)')\<cr>"
+nnoremap <silent> <expr> <Plug>(GitGutterPrevHunk) &diff ? '[c' : ":\<cr>execute v:count1 . 'GitGutterPrevHunk'\<cr>"
+nnoremap <silent> <expr> <Plug>GitGutterNextHunk &diff ? ']c' : ":\<cr>call gitgutter#utility#warn('Please change your map \<cr><Plug>GitGutterNextHunk to \<cr><Plug>(GitGutterNextHunk)')\<cr>"
+nnoremap <silent> <expr> <Plug>(GitGutterNextHunk) &diff ? ']c' : ":\<cr>execute v:count1 . 'GitGutterNextHunk'\<cr>"
+xnoremap <silent> <Plug>(GitGutterTextObjectOuterVisual) :<cr>call gitgutter#hunk#text_object(0)<cr>
+xnoremap <silent> <Plug>(GitGutterTextObjectInnerVisual) :<cr>call gitgutter#hunk#text_object(1)<cr>
+onoremap <silent> <Plug>(GitGutterTextObjectOuterPending) :<cr>call gitgutter#hunk#text_object(0)<cr>
+onoremap <silent> <Plug>(GitGutterTextObjectInnerPending) :<cr>call gitgutter#hunk#text_object(1)<cr>
+nnoremap <F10> :cd %:p:h<cr>:NERDTreeCWD<cr>
+noremap <C-N> :NERDTreeToggle<cr>
+nmap <C-P> <Plug>(ctrlp)
+nnoremap <silent> <Plug>(ctrlp) :<cr>CtrlPMRU<cr>
 map <silent> <Plug>(easymotion-prefix)N <Plug>(easymotion-N)
 map <silent> <Plug>(easymotion-prefix)n <Plug>(easymotion-n)
 map <silent> <Plug>(easymotion-prefix)k <Plug>(easymotion-k)
@@ -363,385 +450,438 @@ map <silent> <Plug>(easymotion-prefix)t <Plug>(easymotion-t)
 map <silent> <Plug>(easymotion-prefix)s <Plug>(easymotion-s)
 map <silent> <Plug>(easymotion-prefix)F <Plug>(easymotion-F)
 map <silent> <Plug>(easymotion-prefix)f <Plug>(easymotion-f)
-xnoremap <silent> <Plug>(easymotion-activate) :<bar>call EasyMotion#activate(1)<cr>
-nnoremap <silent> <Plug>(easymotion-activate) :<bar>call EasyMotion#activate(0)<cr>
-snoremap <silent> <Plug>(easymotion-activate) :<bar>call EasyMotion#activate(0)<cr>
-onoremap <silent> <Plug>(easymotion-activate) :<bar>call EasyMotion#activate(0)<cr>
-noremap <silent> <Plug>(easymotion-dotrepeat) :<bar>call EasyMotion#DotRepeat()<cr>
-xnoremap <silent> <Plug>(easymotion-repeat) <esc>:<bar>call EasyMotion#Repeat(1)<cr>
-nnoremap <silent> <Plug>(easymotion-repeat) :<bar>call EasyMotion#Repeat(0)<cr>
-snoremap <silent> <Plug>(easymotion-repeat) :<bar>call EasyMotion#Repeat(0)<cr>
-onoremap <silent> <Plug>(easymotion-repeat) :<bar>call EasyMotion#Repeat(0)<cr>
-xnoremap <silent> <Plug>(easymotion-prev) :<bar>call EasyMotion#NextPrevious(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-prev) :<bar>call EasyMotion#NextPrevious(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-prev) :<bar>call EasyMotion#NextPrevious(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-prev) :<bar>call EasyMotion#NextPrevious(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-next) :<bar>call EasyMotion#NextPrevious(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-next) :<bar>call EasyMotion#NextPrevious(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-next) :<bar>call EasyMotion#NextPrevious(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-next) :<bar>call EasyMotion#NextPrevious(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-wl) <esc>:<bar>call EasyMotion#WBL(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-wl) :<bar>call EasyMotion#WBL(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-wl) :<bar>call EasyMotion#WBL(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-wl) :<bar>call EasyMotion#WBL(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-lineforward) <esc>:<bar>call EasyMotion#LineAnywhere(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-lineforward) :<bar>call EasyMotion#LineAnywhere(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-lineforward) :<bar>call EasyMotion#LineAnywhere(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-lineforward) :<bar>call EasyMotion#LineAnywhere(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-lineanywhere) <esc>:<bar>call EasyMotion#LineAnywhere(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-lineanywhere) :<bar>call EasyMotion#LineAnywhere(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-lineanywhere) :<bar>call EasyMotion#LineAnywhere(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-lineanywhere) :<bar>call EasyMotion#LineAnywhere(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-wl) <esc>:<bar>call EasyMotion#WBL(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-wl) :<bar>call EasyMotion#WBL(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-wl) :<bar>call EasyMotion#WBL(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-wl) :<bar>call EasyMotion#WBL(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-linebackward) <esc>:<bar>call EasyMotion#LineAnywhere(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-linebackward) :<bar>call EasyMotion#LineAnywhere(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-linebackward) :<bar>call EasyMotion#LineAnywhere(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-linebackward) :<bar>call EasyMotion#LineAnywhere(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-bl) <esc>:<bar>call EasyMotion#WBL(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-bl) :<bar>call EasyMotion#WBL(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-bl) :<bar>call EasyMotion#WBL(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-bl) :<bar>call EasyMotion#WBL(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-el) <esc>:<bar>call EasyMotion#EL(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-el) :<bar>call EasyMotion#EL(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-el) :<bar>call EasyMotion#EL(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-el) :<bar>call EasyMotion#EL(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-gel) <esc>:<bar>call EasyMotion#EL(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-gel) :<bar>call EasyMotion#EL(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-gel) :<bar>call EasyMotion#EL(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-gel) :<bar>call EasyMotion#EL(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-el) <esc>:<bar>call EasyMotion#EL(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-el) :<bar>call EasyMotion#EL(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-el) :<bar>call EasyMotion#EL(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-el) :<bar>call EasyMotion#EL(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-jumptoanywhere) <esc>:<bar>call EasyMotion#JumpToAnywhere(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-jumptoanywhere) :<bar>call EasyMotion#JumpToAnywhere(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-jumptoanywhere) :<bar>call EasyMotion#JumpToAnywhere(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-jumptoanywhere) :<bar>call EasyMotion#JumpToAnywhere(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-vim-n) <esc>:<bar>call EasyMotion#Search(1,0,1)<cr>
-nnoremap <silent> <Plug>(easymotion-vim-n) :<bar>call EasyMotion#Search(0,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-vim-n) :<bar>call EasyMotion#Search(0,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-vim-n) :<bar>call EasyMotion#Search(0,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-n) <esc>:<bar>call EasyMotion#Search(1,0,0)<cr>
-nnoremap <silent> <Plug>(easymotion-n) :<bar>call EasyMotion#Search(0,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-n) :<bar>call EasyMotion#Search(0,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-n) :<bar>call EasyMotion#Search(0,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-n) <esc>:<bar>call EasyMotion#Search(1,2,0)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-n) :<bar>call EasyMotion#Search(0,2,0)<cr>
-snoremap <silent> <Plug>(easymotion-bd-n) :<bar>call EasyMotion#Search(0,2,0)<cr>
-onoremap <silent> <Plug>(easymotion-bd-n) :<bar>call EasyMotion#Search(0,2,0)<cr>
-xnoremap <silent> <Plug>(easymotion-vim-N) <esc>:<bar>call EasyMotion#Search(1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-vim-N) :<bar>call EasyMotion#Search(0,1,1)<cr>
-snoremap <silent> <Plug>(easymotion-vim-N) :<bar>call EasyMotion#Search(0,1,1)<cr>
-onoremap <silent> <Plug>(easymotion-vim-N) :<bar>call EasyMotion#Search(0,1,1)<cr>
-xnoremap <silent> <Plug>(easymotion-N) <esc>:<bar>call EasyMotion#Search(1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-N) :<bar>call EasyMotion#Search(0,1,0)<cr>
-snoremap <silent> <Plug>(easymotion-N) :<bar>call EasyMotion#Search(0,1,0)<cr>
-onoremap <silent> <Plug>(easymotion-N) :<bar>call EasyMotion#Search(0,1,0)<cr>
-xnoremap <silent> <Plug>(easymotion-eol-j) <esc>:<bar>call EasyMotion#Eol(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-eol-j) :<bar>call EasyMotion#Eol(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-eol-j) :<bar>call EasyMotion#Eol(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-eol-j) :<bar>call EasyMotion#Eol(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-sol-k) <esc>:<bar>call EasyMotion#Sol(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-sol-k) :<bar>call EasyMotion#Sol(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-sol-k) :<bar>call EasyMotion#Sol(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-sol-k) :<bar>call EasyMotion#Sol(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-sol-j) <esc>:<bar>call EasyMotion#Sol(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-sol-j) :<bar>call EasyMotion#Sol(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-sol-j) :<bar>call EasyMotion#Sol(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-sol-j) :<bar>call EasyMotion#Sol(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-k) <esc>:<bar>call EasyMotion#JK(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-k) :<bar>call EasyMotion#JK(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-k) :<bar>call EasyMotion#JK(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-k) :<bar>call EasyMotion#JK(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-j) <esc>:<bar>call EasyMotion#JK(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-j) :<bar>call EasyMotion#JK(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-j) :<bar>call EasyMotion#JK(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-j) :<bar>call EasyMotion#JK(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-jk) <esc>:<bar>call EasyMotion#JK(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-jk) :<bar>call EasyMotion#JK(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-jk) :<bar>call EasyMotion#JK(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-jk) :<bar>call EasyMotion#JK(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-eol-bd-jk) <esc>:<bar>call EasyMotion#Eol(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-eol-bd-jk) :<bar>call EasyMotion#Eol(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-eol-bd-jk) :<bar>call EasyMotion#Eol(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-eol-bd-jk) :<bar>call EasyMotion#Eol(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-sol-bd-jk) <esc>:<bar>call EasyMotion#Sol(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-sol-bd-jk) :<bar>call EasyMotion#Sol(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-sol-bd-jk) :<bar>call EasyMotion#Sol(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-sol-bd-jk) :<bar>call EasyMotion#Sol(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-eol-k) <esc>:<bar>call EasyMotion#Eol(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-eol-k) :<bar>call EasyMotion#Eol(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-eol-k) :<bar>call EasyMotion#Eol(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-eol-k) :<bar>call EasyMotion#Eol(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-iskeyword-ge) <esc>:<bar>call EasyMotion#EK(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-iskeyword-ge) :<bar>call EasyMotion#EK(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-iskeyword-ge) :<bar>call EasyMotion#EK(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-iskeyword-ge) :<bar>call EasyMotion#EK(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-w) <esc>:<bar>call EasyMotion#WB(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-w) :<bar>call EasyMotion#WB(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-w) :<bar>call EasyMotion#WB(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-w) :<bar>call EasyMotion#WB(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-W) <esc>:<bar>call EasyMotion#WBW(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-W) :<bar>call EasyMotion#WBW(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-W) :<bar>call EasyMotion#WBW(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-W) :<bar>call EasyMotion#WBW(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-iskeyword-w) <esc>:<bar>call EasyMotion#WBK(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-iskeyword-w) :<bar>call EasyMotion#WBK(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-iskeyword-w) :<bar>call EasyMotion#WBK(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-iskeyword-w) :<bar>call EasyMotion#WBK(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-gE) <esc>:<bar>call EasyMotion#EW(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-gE) :<bar>call EasyMotion#EW(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-gE) :<bar>call EasyMotion#EW(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-gE) :<bar>call EasyMotion#EW(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-e) <esc>:<bar>call EasyMotion#E(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-e) :<bar>call EasyMotion#E(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-e) :<bar>call EasyMotion#E(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-e) :<bar>call EasyMotion#E(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-E) <esc>:<bar>call EasyMotion#EW(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-E) :<bar>call EasyMotion#EW(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-E) :<bar>call EasyMotion#EW(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-E) :<bar>call EasyMotion#EW(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-iskeyword-e) <esc>:<bar>call EasyMotion#EK(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-iskeyword-e) :<bar>call EasyMotion#EK(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-iskeyword-e) :<bar>call EasyMotion#EK(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-iskeyword-e) :<bar>call EasyMotion#EK(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-b) <esc>:<bar>call EasyMotion#WB(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-b) :<bar>call EasyMotion#WB(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-b) :<bar>call EasyMotion#WB(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-b) :<bar>call EasyMotion#WB(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-iskeyword-b) <esc>:<bar>call EasyMotion#WBK(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-iskeyword-b) :<bar>call EasyMotion#WBK(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-iskeyword-b) :<bar>call EasyMotion#WBK(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-iskeyword-b) :<bar>call EasyMotion#WBK(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) <esc>:<bar>call EasyMotion#WBK(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :<bar>call EasyMotion#WBK(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :<bar>call EasyMotion#WBK(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :<bar>call EasyMotion#WBK(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-W) <esc>:<bar>call EasyMotion#WBW(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-W) :<bar>call EasyMotion#WBW(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-W) :<bar>call EasyMotion#WBW(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-W) :<bar>call EasyMotion#WBW(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-w) <esc>:<bar>call EasyMotion#WB(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-w) :<bar>call EasyMotion#WB(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-w) :<bar>call EasyMotion#WB(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-w) :<bar>call EasyMotion#WB(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) <esc>:<bar>call EasyMotion#EK(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :<bar>call EasyMotion#EK(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :<bar>call EasyMotion#EK(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :<bar>call EasyMotion#EK(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-ge) <esc>:<bar>call EasyMotion#E(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-ge) :<bar>call EasyMotion#E(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-ge) :<bar>call EasyMotion#E(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-ge) :<bar>call EasyMotion#E(0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-E) <esc>:<bar>call EasyMotion#EW(1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-E) :<bar>call EasyMotion#EW(0,0)<cr>
-snoremap <silent> <Plug>(easymotion-E) :<bar>call EasyMotion#EW(0,0)<cr>
-onoremap <silent> <Plug>(easymotion-E) :<bar>call EasyMotion#EW(0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-e) <esc>:<bar>call EasyMotion#E(1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-e) :<bar>call EasyMotion#E(0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-e) :<bar>call EasyMotion#E(0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-e) :<bar>call EasyMotion#E(0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-B) <esc>:<bar>call EasyMotion#WBW(1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-B) :<bar>call EasyMotion#WBW(0,1)<cr>
-snoremap <silent> <Plug>(easymotion-B) :<bar>call EasyMotion#WBW(0,1)<cr>
-onoremap <silent> <Plug>(easymotion-B) :<bar>call EasyMotion#WBW(0,1)<cr>
-nnoremap <silent> <Plug>(easymotion-overwin-w) :<bar>call EasyMotion#overwin#w()<cr>
-nnoremap <silent> <Plug>(easymotion-overwin-line) :<bar>call EasyMotion#overwin#line()<cr>
-nnoremap <silent> <Plug>(easymotion-overwin-f2) :<bar>call EasyMotion#OverwinF(2)<cr>
-nnoremap <silent> <Plug>(easymotion-overwin-f) :<bar>call EasyMotion#OverwinF(1)<cr>
-xnoremap <silent> <Plug>(easymotion-Tln) <esc>:<bar>call EasyMotion#TL(-1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-Tln) :<bar>call EasyMotion#TL(-1,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-Tln) :<bar>call EasyMotion#TL(-1,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-Tln) :<bar>call EasyMotion#TL(-1,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-t2) <esc>:<bar>call EasyMotion#T(2,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-t2) :<bar>call EasyMotion#T(2,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-t2) :<bar>call EasyMotion#T(2,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-t2) :<bar>call EasyMotion#T(2,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-t) <esc>:<bar>call EasyMotion#T(1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-t) :<bar>call EasyMotion#T(1,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-t) :<bar>call EasyMotion#T(1,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-t) :<bar>call EasyMotion#T(1,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-s) <esc>:<bar>call EasyMotion#S(1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-s) :<bar>call EasyMotion#S(1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-s) :<bar>call EasyMotion#S(1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-s) :<bar>call EasyMotion#S(1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-tn) <esc>:<bar>call EasyMotion#T(-1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-tn) :<bar>call EasyMotion#T(-1,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-tn) :<bar>call EasyMotion#T(-1,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-tn) :<bar>call EasyMotion#T(-1,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-t2) <esc>:<bar>call EasyMotion#T(2,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-t2) :<bar>call EasyMotion#T(2,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-t2) :<bar>call EasyMotion#T(2,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-t2) :<bar>call EasyMotion#T(2,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-tl) <esc>:<bar>call EasyMotion#TL(1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-tl) :<bar>call EasyMotion#TL(1,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-tl) :<bar>call EasyMotion#TL(1,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-tl) :<bar>call EasyMotion#TL(1,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-tn) <esc>:<bar>call EasyMotion#T(-1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-tn) :<bar>call EasyMotion#T(-1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-tn) :<bar>call EasyMotion#T(-1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-tn) :<bar>call EasyMotion#T(-1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-fn) <esc>:<bar>call EasyMotion#S(-1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-fn) :<bar>call EasyMotion#S(-1,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-fn) :<bar>call EasyMotion#S(-1,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-fn) :<bar>call EasyMotion#S(-1,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-tl) <esc>:<bar>call EasyMotion#TL(1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-tl) :<bar>call EasyMotion#TL(1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-tl) :<bar>call EasyMotion#TL(1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-tl) :<bar>call EasyMotion#TL(1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-fl) <esc>:<bar>call EasyMotion#SL(1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-fl) :<bar>call EasyMotion#SL(1,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-fl) :<bar>call EasyMotion#SL(1,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-fl) :<bar>call EasyMotion#SL(1,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-tl2) <esc>:<bar>call EasyMotion#TL(2,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-tl2) :<bar>call EasyMotion#TL(2,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-tl2) :<bar>call EasyMotion#TL(2,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-tl2) :<bar>call EasyMotion#TL(2,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-fn) <esc>:<bar>call EasyMotion#S(-1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-fn) :<bar>call EasyMotion#S(-1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-fn) :<bar>call EasyMotion#S(-1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-fn) :<bar>call EasyMotion#S(-1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-f) <esc>:<bar>call EasyMotion#S(1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-f) :<bar>call EasyMotion#S(1,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-f) :<bar>call EasyMotion#S(1,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-f) :<bar>call EasyMotion#S(1,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-fl) <esc>:<bar>call EasyMotion#SL(1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-fl) :<bar>call EasyMotion#SL(1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-fl) :<bar>call EasyMotion#SL(1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-fl) :<bar>call EasyMotion#SL(1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-Fl2) <esc>:<bar>call EasyMotion#SL(2,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-Fl2) :<bar>call EasyMotion#SL(2,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-Fl2) :<bar>call EasyMotion#SL(2,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-Fl2) :<bar>call EasyMotion#SL(2,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-tl2) <esc>:<bar>call EasyMotion#TL(2,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-tl2) :<bar>call EasyMotion#TL(2,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-tl2) :<bar>call EasyMotion#TL(2,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-tl2) :<bar>call EasyMotion#TL(2,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-f2) <esc>:<bar>call EasyMotion#S(2,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-f2) :<bar>call EasyMotion#S(2,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-f2) :<bar>call EasyMotion#S(2,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-f2) :<bar>call EasyMotion#S(2,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-Fln) <esc>:<bar>call EasyMotion#SL(-1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-Fln) :<bar>call EasyMotion#SL(-1,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-Fln) :<bar>call EasyMotion#SL(-1,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-Fln) :<bar>call EasyMotion#SL(-1,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-sln) <esc>:<bar>call EasyMotion#SL(-1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-sln) :<bar>call EasyMotion#SL(-1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-sln) :<bar>call EasyMotion#SL(-1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-sln) :<bar>call EasyMotion#SL(-1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-tln) <esc>:<bar>call EasyMotion#TL(-1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-tln) :<bar>call EasyMotion#TL(-1,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-tln) :<bar>call EasyMotion#TL(-1,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-tln) :<bar>call EasyMotion#TL(-1,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-fl2) <esc>:<bar>call EasyMotion#SL(2,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-fl2) :<bar>call EasyMotion#SL(2,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-fl2) :<bar>call EasyMotion#SL(2,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-fl2) :<bar>call EasyMotion#SL(2,0,0)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-fl2) <esc>:<bar>call EasyMotion#SL(2,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-fl2) :<bar>call EasyMotion#SL(2,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-fl2) :<bar>call EasyMotion#SL(2,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-fl2) :<bar>call EasyMotion#SL(2,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-T2) <esc>:<bar>call EasyMotion#T(2,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-T2) :<bar>call EasyMotion#T(2,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-T2) :<bar>call EasyMotion#T(2,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-T2) :<bar>call EasyMotion#T(2,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-tln) <esc>:<bar>call EasyMotion#TL(-1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-tln) :<bar>call EasyMotion#TL(-1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-tln) :<bar>call EasyMotion#TL(-1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-tln) :<bar>call EasyMotion#TL(-1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-T) <esc>:<bar>call EasyMotion#T(1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-T) :<bar>call EasyMotion#T(1,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-T) :<bar>call EasyMotion#T(1,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-T) :<bar>call EasyMotion#T(1,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-t) <esc>:<bar>call EasyMotion#T(1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-t) :<bar>call EasyMotion#T(1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-t) :<bar>call EasyMotion#T(1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-t) :<bar>call EasyMotion#T(1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-Tn) <esc>:<bar>call EasyMotion#T(-1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-Tn) :<bar>call EasyMotion#T(-1,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-Tn) :<bar>call EasyMotion#T(-1,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-Tn) :<bar>call EasyMotion#T(-1,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-s2) <esc>:<bar>call EasyMotion#S(2,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-s2) :<bar>call EasyMotion#S(2,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-s2) :<bar>call EasyMotion#S(2,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-s2) :<bar>call EasyMotion#S(2,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-Tl) <esc>:<bar>call EasyMotion#TL(1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-Tl) :<bar>call EasyMotion#TL(1,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-Tl) :<bar>call EasyMotion#TL(1,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-Tl) :<bar>call EasyMotion#TL(1,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-sn) <esc>:<bar>call EasyMotion#S(-1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-sn) :<bar>call EasyMotion#S(-1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-sn) :<bar>call EasyMotion#S(-1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-sn) :<bar>call EasyMotion#S(-1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-Fn) <esc>:<bar>call EasyMotion#S(-1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-Fn) :<bar>call EasyMotion#S(-1,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-Fn) :<bar>call EasyMotion#S(-1,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-Fn) :<bar>call EasyMotion#S(-1,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-sl) <esc>:<bar>call EasyMotion#SL(1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-sl) :<bar>call EasyMotion#SL(1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-sl) :<bar>call EasyMotion#SL(1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-sl) :<bar>call EasyMotion#SL(1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-Fl) <esc>:<bar>call EasyMotion#SL(1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-Fl) :<bar>call EasyMotion#SL(1,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-Fl) :<bar>call EasyMotion#SL(1,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-Fl) :<bar>call EasyMotion#SL(1,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-sl2) <esc>:<bar>call EasyMotion#SL(2,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-sl2) :<bar>call EasyMotion#SL(2,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-sl2) :<bar>call EasyMotion#SL(2,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-sl2) :<bar>call EasyMotion#SL(2,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-fln) <esc>:<bar>call EasyMotion#SL(-1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-fln) :<bar>call EasyMotion#SL(-1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-fln) :<bar>call EasyMotion#SL(-1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-fln) :<bar>call EasyMotion#SL(-1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-F) <esc>:<bar>call EasyMotion#S(1,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-F) :<bar>call EasyMotion#S(1,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-F) :<bar>call EasyMotion#S(1,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-F) :<bar>call EasyMotion#S(1,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-f) <esc>:<bar>call EasyMotion#S(1,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-f) :<bar>call EasyMotion#S(1,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-f) :<bar>call EasyMotion#S(1,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-f) :<bar>call EasyMotion#S(1,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-F2) <esc>:<bar>call EasyMotion#S(2,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-F2) :<bar>call EasyMotion#S(2,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-F2) :<bar>call EasyMotion#S(2,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-F2) :<bar>call EasyMotion#S(2,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-bd-f2) <esc>:<bar>call EasyMotion#S(2,1,2)<cr>
-nnoremap <silent> <Plug>(easymotion-bd-f2) :<bar>call EasyMotion#S(2,0,2)<cr>
-snoremap <silent> <Plug>(easymotion-bd-f2) :<bar>call EasyMotion#S(2,0,2)<cr>
-onoremap <silent> <Plug>(easymotion-bd-f2) :<bar>call EasyMotion#S(2,0,2)<cr>
-xnoremap <silent> <Plug>(easymotion-Tl2) <esc>:<bar>call EasyMotion#TL(2,1,1)<cr>
-nnoremap <silent> <Plug>(easymotion-Tl2) :<bar>call EasyMotion#TL(2,0,1)<cr>
-snoremap <silent> <Plug>(easymotion-Tl2) :<bar>call EasyMotion#TL(2,0,1)<cr>
-onoremap <silent> <Plug>(easymotion-Tl2) :<bar>call EasyMotion#TL(2,0,1)<cr>
-xnoremap <silent> <Plug>(easymotion-fln) <esc>:<bar>call EasyMotion#SL(-1,1,0)<cr>
-nnoremap <silent> <Plug>(easymotion-fln) :<bar>call EasyMotion#SL(-1,0,0)<cr>
-snoremap <silent> <Plug>(easymotion-fln) :<bar>call EasyMotion#SL(-1,0,0)<cr>
-onoremap <silent> <Plug>(easymotion-fln) :<bar>call EasyMotion#SL(-1,0,0)<cr>
-noremap <silent> <expr> <Plug>(asterisk-gz#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 0, 'is_whole' : 0})
-noremap <silent> <expr> <Plug>(asterisk-z#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 0, 'is_whole' : 1})
-noremap <silent> <expr> <Plug>(asterisk-g#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 1, 'is_whole' : 0})
-noremap <silent> <expr> <Plug>(asterisk-#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 1, 'is_whole' : 1})
-noremap <silent> <expr> <Plug>(asterisk-gz*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 0, 'is_whole' : 0})
-noremap <silent> <expr> <Plug>(asterisk-z*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 0, 'is_whole' : 1})
-noremap <silent> <expr> <Plug>(asterisk-g*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 1, 'is_whole' : 0})
-noremap <silent> <expr> <Plug>(asterisk-*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 1, 'is_whole' : 1})
-xnoremap <silent> <Plug>(QuickScopeToggle) :<bar>call quick_scope#Toggle()<cr>
-nnoremap <silent> <Plug>(QuickScopeToggle) :call quick_scope#Toggle()<cr>
-nnoremap <silent> <Plug>(QuickScopeT) :<bar>call quick_scope#Ready() <bar>| execute "normal!" v:count1 . quick_scope#Aim("T") <bar>| call quick_scope#Reload() <bar>| call quick_scope#DoubleTap()<cr>
-xnoremap <expr> <Plug>(QuickScopeT) quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
-onoremap <expr> <Plug>(QuickScopeT) quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
-nnoremap <silent> <Plug>(QuickScopet) :<bar>call quick_scope#Ready() <bar>| execute "normal!" v:count1 . quick_scope#Aim("t") <bar>| call quick_scope#Reload() <bar>| call quick_scope#DoubleTap()<cr>
-xnoremap <expr> <Plug>(QuickScopet) quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
-onoremap <expr> <Plug>(QuickScopet) quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
-nnoremap <silent> <Plug>(QuickScopeF) :<bar>call quick_scope#Ready() <bar>| execute "normal!" v:count1 . quick_scope#Aim("F") <bar>| call quick_scope#Reload() <bar>| call quick_scope#DoubleTap()<cr>
-xnoremap <expr> <Plug>(QuickScopeF) quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
-onoremap <expr> <Plug>(QuickScopeF) quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
-nnoremap <silent> <Plug>(QuickScopef) :<bar>call quick_scope#Ready() <bar>| execute "normal!" v:count1 . quick_scope#Aim("f") <bar>| call quick_scope#Reload() <bar>| call quick_scope#DoubleTap()<cr>
-xnoremap <expr> <Plug>(QuickScopef) quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
-onoremap <expr> <Plug>(QuickScopef) quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+xnoremap <silent> <Plug>(easymotion-activate) :<cr>call EasyMotion#activate(1)<cr>
+nnoremap <silent> <Plug>(easymotion-activate) :<cr>call EasyMotion#activate(0)<cr>
+snoremap <silent> <Plug>(easymotion-activate) :<cr>call EasyMotion#activate(0)<cr>
+onoremap <silent> <Plug>(easymotion-activate) :<cr>call EasyMotion#activate(0)<cr>
+noremap <silent> <Plug>(easymotion-dotrepeat) :<cr>call EasyMotion#DotRepeat()<cr>
+xnoremap <silent> <Plug>(easymotion-repeat) <esc>:<cr>call EasyMotion#Repeat(1)<cr>
+nnoremap <silent> <Plug>(easymotion-repeat) :<cr>call EasyMotion#Repeat(0)<cr>
+snoremap <silent> <Plug>(easymotion-repeat) :<cr>call EasyMotion#Repeat(0)<cr>
+onoremap <silent> <Plug>(easymotion-repeat) :<cr>call EasyMotion#Repeat(0)<cr>
+xnoremap <silent> <Plug>(easymotion-prev) :<cr>call EasyMotion#NextPrevious(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-prev) :<cr>call EasyMotion#NextPrevious(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-prev) :<cr>call EasyMotion#NextPrevious(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-prev) :<cr>call EasyMotion#NextPrevious(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-next) :<cr>call EasyMotion#NextPrevious(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-next) :<cr>call EasyMotion#NextPrevious(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-next) :<cr>call EasyMotion#NextPrevious(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-next) :<cr>call EasyMotion#NextPrevious(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-wl) <esc>:<cr>call EasyMotion#WBL(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-wl) :<cr>call EasyMotion#WBL(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-wl) :<cr>call EasyMotion#WBL(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-wl) :<cr>call EasyMotion#WBL(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-lineforward) <esc>:<cr>call EasyMotion#LineAnywhere(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-lineforward) :<cr>call EasyMotion#LineAnywhere(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-lineforward) :<cr>call EasyMotion#LineAnywhere(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-lineforward) :<cr>call EasyMotion#LineAnywhere(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-lineanywhere) <esc>:<cr>call EasyMotion#LineAnywhere(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-lineanywhere) :<cr>call EasyMotion#LineAnywhere(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-lineanywhere) :<cr>call EasyMotion#LineAnywhere(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-lineanywhere) :<cr>call EasyMotion#LineAnywhere(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-wl) <esc>:<cr>call EasyMotion#WBL(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-wl) :<cr>call EasyMotion#WBL(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-wl) :<cr>call EasyMotion#WBL(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-wl) :<cr>call EasyMotion#WBL(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-linebackward) <esc>:<cr>call EasyMotion#LineAnywhere(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-linebackward) :<cr>call EasyMotion#LineAnywhere(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-linebackward) :<cr>call EasyMotion#LineAnywhere(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-linebackward) :<cr>call EasyMotion#LineAnywhere(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-bl) <esc>:<cr>call EasyMotion#WBL(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-bl) :<cr>call EasyMotion#WBL(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-bl) :<cr>call EasyMotion#WBL(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-bl) :<cr>call EasyMotion#WBL(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-el) <esc>:<cr>call EasyMotion#EL(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-el) :<cr>call EasyMotion#EL(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-el) :<cr>call EasyMotion#EL(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-el) :<cr>call EasyMotion#EL(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-gel) <esc>:<cr>call EasyMotion#EL(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-gel) :<cr>call EasyMotion#EL(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-gel) :<cr>call EasyMotion#EL(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-gel) :<cr>call EasyMotion#EL(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-el) <esc>:<cr>call EasyMotion#EL(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-el) :<cr>call EasyMotion#EL(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-el) :<cr>call EasyMotion#EL(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-el) :<cr>call EasyMotion#EL(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-jumptoanywhere) <esc>:<cr>call EasyMotion#JumpToAnywhere(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-jumptoanywhere) :<cr>call EasyMotion#JumpToAnywhere(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-jumptoanywhere) :<cr>call EasyMotion#JumpToAnywhere(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-jumptoanywhere) :<cr>call EasyMotion#JumpToAnywhere(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-vim-n) <esc>:<cr>call EasyMotion#Search(1,0,1)<cr>
+nnoremap <silent> <Plug>(easymotion-vim-n) :<cr>call EasyMotion#Search(0,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-vim-n) :<cr>call EasyMotion#Search(0,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-vim-n) :<cr>call EasyMotion#Search(0,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-n) <esc>:<cr>call EasyMotion#Search(1,0,0)<cr>
+nnoremap <silent> <Plug>(easymotion-n) :<cr>call EasyMotion#Search(0,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-n) :<cr>call EasyMotion#Search(0,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-n) :<cr>call EasyMotion#Search(0,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-n) <esc>:<cr>call EasyMotion#Search(1,2,0)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-n) :<cr>call EasyMotion#Search(0,2,0)<cr>
+snoremap <silent> <Plug>(easymotion-bd-n) :<cr>call EasyMotion#Search(0,2,0)<cr>
+onoremap <silent> <Plug>(easymotion-bd-n) :<cr>call EasyMotion#Search(0,2,0)<cr>
+xnoremap <silent> <Plug>(easymotion-vim-N) <esc>:<cr>call EasyMotion#Search(1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-vim-N) :<cr>call EasyMotion#Search(0,1,1)<cr>
+snoremap <silent> <Plug>(easymotion-vim-N) :<cr>call EasyMotion#Search(0,1,1)<cr>
+onoremap <silent> <Plug>(easymotion-vim-N) :<cr>call EasyMotion#Search(0,1,1)<cr>
+xnoremap <silent> <Plug>(easymotion-N) <esc>:<cr>call EasyMotion#Search(1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-N) :<cr>call EasyMotion#Search(0,1,0)<cr>
+snoremap <silent> <Plug>(easymotion-N) :<cr>call EasyMotion#Search(0,1,0)<cr>
+onoremap <silent> <Plug>(easymotion-N) :<cr>call EasyMotion#Search(0,1,0)<cr>
+xnoremap <silent> <Plug>(easymotion-eol-j) <esc>:<cr>call EasyMotion#Eol(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-eol-j) :<cr>call EasyMotion#Eol(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-eol-j) :<cr>call EasyMotion#Eol(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-eol-j) :<cr>call EasyMotion#Eol(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-sol-k) <esc>:<cr>call EasyMotion#Sol(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-sol-k) :<cr>call EasyMotion#Sol(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-sol-k) :<cr>call EasyMotion#Sol(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-sol-k) :<cr>call EasyMotion#Sol(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-sol-j) <esc>:<cr>call EasyMotion#Sol(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-sol-j) :<cr>call EasyMotion#Sol(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-sol-j) :<cr>call EasyMotion#Sol(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-sol-j) :<cr>call EasyMotion#Sol(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-k) <esc>:<cr>call EasyMotion#JK(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-k) :<cr>call EasyMotion#JK(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-k) :<cr>call EasyMotion#JK(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-k) :<cr>call EasyMotion#JK(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-j) <esc>:<cr>call EasyMotion#JK(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-j) :<cr>call EasyMotion#JK(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-j) :<cr>call EasyMotion#JK(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-j) :<cr>call EasyMotion#JK(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-jk) <esc>:<cr>call EasyMotion#JK(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-jk) :<cr>call EasyMotion#JK(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-jk) :<cr>call EasyMotion#JK(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-jk) :<cr>call EasyMotion#JK(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-eol-bd-jk) <esc>:<cr>call EasyMotion#Eol(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-eol-bd-jk) :<cr>call EasyMotion#Eol(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-eol-bd-jk) :<cr>call EasyMotion#Eol(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-eol-bd-jk) :<cr>call EasyMotion#Eol(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-sol-bd-jk) <esc>:<cr>call EasyMotion#Sol(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-sol-bd-jk) :<cr>call EasyMotion#Sol(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-sol-bd-jk) :<cr>call EasyMotion#Sol(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-sol-bd-jk) :<cr>call EasyMotion#Sol(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-eol-k) <esc>:<cr>call EasyMotion#Eol(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-eol-k) :<cr>call EasyMotion#Eol(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-eol-k) :<cr>call EasyMotion#Eol(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-eol-k) :<cr>call EasyMotion#Eol(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-iskeyword-ge) <esc>:<cr>call EasyMotion#EK(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-iskeyword-ge) :<cr>call EasyMotion#EK(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-iskeyword-ge) :<cr>call EasyMotion#EK(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-iskeyword-ge) :<cr>call EasyMotion#EK(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-w) <esc>:<cr>call EasyMotion#WB(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-w) :<cr>call EasyMotion#WB(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-w) :<cr>call EasyMotion#WB(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-w) :<cr>call EasyMotion#WB(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-W) <esc>:<cr>call EasyMotion#WBW(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-W) :<cr>call EasyMotion#WBW(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-W) :<cr>call EasyMotion#WBW(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-W) :<cr>call EasyMotion#WBW(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-iskeyword-w) <esc>:<cr>call EasyMotion#WBK(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-iskeyword-w) :<cr>call EasyMotion#WBK(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-iskeyword-w) :<cr>call EasyMotion#WBK(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-iskeyword-w) :<cr>call EasyMotion#WBK(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-gE) <esc>:<cr>call EasyMotion#EW(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-gE) :<cr>call EasyMotion#EW(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-gE) :<cr>call EasyMotion#EW(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-gE) :<cr>call EasyMotion#EW(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-e) <esc>:<cr>call EasyMotion#E(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-e) :<cr>call EasyMotion#E(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-e) :<cr>call EasyMotion#E(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-e) :<cr>call EasyMotion#E(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-E) <esc>:<cr>call EasyMotion#EW(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-E) :<cr>call EasyMotion#EW(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-E) :<cr>call EasyMotion#EW(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-E) :<cr>call EasyMotion#EW(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-iskeyword-e) <esc>:<cr>call EasyMotion#EK(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-iskeyword-e) :<cr>call EasyMotion#EK(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-iskeyword-e) :<cr>call EasyMotion#EK(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-iskeyword-e) :<cr>call EasyMotion#EK(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-b) <esc>:<cr>call EasyMotion#WB(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-b) :<cr>call EasyMotion#WB(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-b) :<cr>call EasyMotion#WB(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-b) :<cr>call EasyMotion#WB(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-iskeyword-b) <esc>:<cr>call EasyMotion#WBK(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-iskeyword-b) :<cr>call EasyMotion#WBK(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-iskeyword-b) :<cr>call EasyMotion#WBK(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-iskeyword-b) :<cr>call EasyMotion#WBK(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) <esc>:<cr>call EasyMotion#WBK(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :<cr>call EasyMotion#WBK(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :<cr>call EasyMotion#WBK(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-iskeyword-bd-w) :<cr>call EasyMotion#WBK(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-W) <esc>:<cr>call EasyMotion#WBW(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-W) :<cr>call EasyMotion#WBW(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-W) :<cr>call EasyMotion#WBW(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-W) :<cr>call EasyMotion#WBW(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-w) <esc>:<cr>call EasyMotion#WB(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-w) :<cr>call EasyMotion#WB(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-w) :<cr>call EasyMotion#WB(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-w) :<cr>call EasyMotion#WB(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) <esc>:<cr>call EasyMotion#EK(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :<cr>call EasyMotion#EK(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :<cr>call EasyMotion#EK(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-iskeyword-bd-e) :<cr>call EasyMotion#EK(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-ge) <esc>:<cr>call EasyMotion#E(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-ge) :<cr>call EasyMotion#E(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-ge) :<cr>call EasyMotion#E(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-ge) :<cr>call EasyMotion#E(0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-E) <esc>:<cr>call EasyMotion#EW(1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-E) :<cr>call EasyMotion#EW(0,0)<cr>
+snoremap <silent> <Plug>(easymotion-E) :<cr>call EasyMotion#EW(0,0)<cr>
+onoremap <silent> <Plug>(easymotion-E) :<cr>call EasyMotion#EW(0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-e) <esc>:<cr>call EasyMotion#E(1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-e) :<cr>call EasyMotion#E(0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-e) :<cr>call EasyMotion#E(0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-e) :<cr>call EasyMotion#E(0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-B) <esc>:<cr>call EasyMotion#WBW(1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-B) :<cr>call EasyMotion#WBW(0,1)<cr>
+snoremap <silent> <Plug>(easymotion-B) :<cr>call EasyMotion#WBW(0,1)<cr>
+onoremap <silent> <Plug>(easymotion-B) :<cr>call EasyMotion#WBW(0,1)<cr>
+nnoremap <silent> <Plug>(easymotion-overwin-w) :<cr>call EasyMotion#overwin#w()<cr>
+nnoremap <silent> <Plug>(easymotion-overwin-line) :<cr>call EasyMotion#overwin#line()<cr>
+nnoremap <silent> <Plug>(easymotion-overwin-f2) :<cr>call EasyMotion#OverwinF(2)<cr>
+nnoremap <silent> <Plug>(easymotion-overwin-f) :<cr>call EasyMotion#OverwinF(1)<cr>
+xnoremap <silent> <Plug>(easymotion-Tln) <esc>:<cr>call EasyMotion#TL(-1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-Tln) :<cr>call EasyMotion#TL(-1,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-Tln) :<cr>call EasyMotion#TL(-1,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-Tln) :<cr>call EasyMotion#TL(-1,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-t2) <esc>:<cr>call EasyMotion#T(2,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-t2) :<cr>call EasyMotion#T(2,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-t2) :<cr>call EasyMotion#T(2,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-t2) :<cr>call EasyMotion#T(2,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-t) <esc>:<cr>call EasyMotion#T(1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-t) :<cr>call EasyMotion#T(1,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-t) :<cr>call EasyMotion#T(1,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-t) :<cr>call EasyMotion#T(1,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-s) <esc>:<cr>call EasyMotion#S(1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-s) :<cr>call EasyMotion#S(1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-s) :<cr>call EasyMotion#S(1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-s) :<cr>call EasyMotion#S(1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-tn) <esc>:<cr>call EasyMotion#T(-1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-tn) :<cr>call EasyMotion#T(-1,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-tn) :<cr>call EasyMotion#T(-1,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-tn) :<cr>call EasyMotion#T(-1,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-t2) <esc>:<cr>call EasyMotion#T(2,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-t2) :<cr>call EasyMotion#T(2,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-t2) :<cr>call EasyMotion#T(2,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-t2) :<cr>call EasyMotion#T(2,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-tl) <esc>:<cr>call EasyMotion#TL(1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-tl) :<cr>call EasyMotion#TL(1,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-tl) :<cr>call EasyMotion#TL(1,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-tl) :<cr>call EasyMotion#TL(1,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-tn) <esc>:<cr>call EasyMotion#T(-1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-tn) :<cr>call EasyMotion#T(-1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-tn) :<cr>call EasyMotion#T(-1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-tn) :<cr>call EasyMotion#T(-1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-fn) <esc>:<cr>call EasyMotion#S(-1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-fn) :<cr>call EasyMotion#S(-1,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-fn) :<cr>call EasyMotion#S(-1,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-fn) :<cr>call EasyMotion#S(-1,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-tl) <esc>:<cr>call EasyMotion#TL(1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-tl) :<cr>call EasyMotion#TL(1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-tl) :<cr>call EasyMotion#TL(1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-tl) :<cr>call EasyMotion#TL(1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-fl) <esc>:<cr>call EasyMotion#SL(1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-fl) :<cr>call EasyMotion#SL(1,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-fl) :<cr>call EasyMotion#SL(1,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-fl) :<cr>call EasyMotion#SL(1,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-tl2) <esc>:<cr>call EasyMotion#TL(2,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-tl2) :<cr>call EasyMotion#TL(2,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-tl2) :<cr>call EasyMotion#TL(2,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-tl2) :<cr>call EasyMotion#TL(2,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-fn) <esc>:<cr>call EasyMotion#S(-1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-fn) :<cr>call EasyMotion#S(-1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-fn) :<cr>call EasyMotion#S(-1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-fn) :<cr>call EasyMotion#S(-1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-f) <esc>:<cr>call EasyMotion#S(1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-f) :<cr>call EasyMotion#S(1,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-f) :<cr>call EasyMotion#S(1,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-f) :<cr>call EasyMotion#S(1,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-fl) <esc>:<cr>call EasyMotion#SL(1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-fl) :<cr>call EasyMotion#SL(1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-fl) :<cr>call EasyMotion#SL(1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-fl) :<cr>call EasyMotion#SL(1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-Fl2) <esc>:<cr>call EasyMotion#SL(2,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-Fl2) :<cr>call EasyMotion#SL(2,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-Fl2) :<cr>call EasyMotion#SL(2,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-Fl2) :<cr>call EasyMotion#SL(2,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-tl2) <esc>:<cr>call EasyMotion#TL(2,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-tl2) :<cr>call EasyMotion#TL(2,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-tl2) :<cr>call EasyMotion#TL(2,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-tl2) :<cr>call EasyMotion#TL(2,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-f2) <esc>:<cr>call EasyMotion#S(2,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-f2) :<cr>call EasyMotion#S(2,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-f2) :<cr>call EasyMotion#S(2,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-f2) :<cr>call EasyMotion#S(2,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-Fln) <esc>:<cr>call EasyMotion#SL(-1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-Fln) :<cr>call EasyMotion#SL(-1,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-Fln) :<cr>call EasyMotion#SL(-1,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-Fln) :<cr>call EasyMotion#SL(-1,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-sln) <esc>:<cr>call EasyMotion#SL(-1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-sln) :<cr>call EasyMotion#SL(-1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-sln) :<cr>call EasyMotion#SL(-1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-sln) :<cr>call EasyMotion#SL(-1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-tln) <esc>:<cr>call EasyMotion#TL(-1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-tln) :<cr>call EasyMotion#TL(-1,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-tln) :<cr>call EasyMotion#TL(-1,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-tln) :<cr>call EasyMotion#TL(-1,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-fl2) <esc>:<cr>call EasyMotion#SL(2,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-fl2) :<cr>call EasyMotion#SL(2,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-fl2) :<cr>call EasyMotion#SL(2,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-fl2) :<cr>call EasyMotion#SL(2,0,0)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-fl2) <esc>:<cr>call EasyMotion#SL(2,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-fl2) :<cr>call EasyMotion#SL(2,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-fl2) :<cr>call EasyMotion#SL(2,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-fl2) :<cr>call EasyMotion#SL(2,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-T2) <esc>:<cr>call EasyMotion#T(2,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-T2) :<cr>call EasyMotion#T(2,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-T2) :<cr>call EasyMotion#T(2,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-T2) :<cr>call EasyMotion#T(2,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-tln) <esc>:<cr>call EasyMotion#TL(-1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-tln) :<cr>call EasyMotion#TL(-1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-tln) :<cr>call EasyMotion#TL(-1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-tln) :<cr>call EasyMotion#TL(-1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-T) <esc>:<cr>call EasyMotion#T(1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-T) :<cr>call EasyMotion#T(1,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-T) :<cr>call EasyMotion#T(1,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-T) :<cr>call EasyMotion#T(1,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-t) <esc>:<cr>call EasyMotion#T(1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-t) :<cr>call EasyMotion#T(1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-t) :<cr>call EasyMotion#T(1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-t) :<cr>call EasyMotion#T(1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-Tn) <esc>:<cr>call EasyMotion#T(-1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-Tn) :<cr>call EasyMotion#T(-1,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-Tn) :<cr>call EasyMotion#T(-1,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-Tn) :<cr>call EasyMotion#T(-1,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-s2) <esc>:<cr>call EasyMotion#S(2,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-s2) :<cr>call EasyMotion#S(2,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-s2) :<cr>call EasyMotion#S(2,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-s2) :<cr>call EasyMotion#S(2,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-Tl) <esc>:<cr>call EasyMotion#TL(1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-Tl) :<cr>call EasyMotion#TL(1,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-Tl) :<cr>call EasyMotion#TL(1,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-Tl) :<cr>call EasyMotion#TL(1,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-sn) <esc>:<cr>call EasyMotion#S(-1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-sn) :<cr>call EasyMotion#S(-1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-sn) :<cr>call EasyMotion#S(-1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-sn) :<cr>call EasyMotion#S(-1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-Fn) <esc>:<cr>call EasyMotion#S(-1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-Fn) :<cr>call EasyMotion#S(-1,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-Fn) :<cr>call EasyMotion#S(-1,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-Fn) :<cr>call EasyMotion#S(-1,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-sl) <esc>:<cr>call EasyMotion#SL(1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-sl) :<cr>call EasyMotion#SL(1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-sl) :<cr>call EasyMotion#SL(1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-sl) :<cr>call EasyMotion#SL(1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-Fl) <esc>:<cr>call EasyMotion#SL(1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-Fl) :<cr>call EasyMotion#SL(1,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-Fl) :<cr>call EasyMotion#SL(1,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-Fl) :<cr>call EasyMotion#SL(1,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-sl2) <esc>:<cr>call EasyMotion#SL(2,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-sl2) :<cr>call EasyMotion#SL(2,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-sl2) :<cr>call EasyMotion#SL(2,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-sl2) :<cr>call EasyMotion#SL(2,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-fln) <esc>:<cr>call EasyMotion#SL(-1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-fln) :<cr>call EasyMotion#SL(-1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-fln) :<cr>call EasyMotion#SL(-1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-fln) :<cr>call EasyMotion#SL(-1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-F) <esc>:<cr>call EasyMotion#S(1,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-F) :<cr>call EasyMotion#S(1,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-F) :<cr>call EasyMotion#S(1,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-F) :<cr>call EasyMotion#S(1,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-f) <esc>:<cr>call EasyMotion#S(1,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-f) :<cr>call EasyMotion#S(1,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-f) :<cr>call EasyMotion#S(1,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-f) :<cr>call EasyMotion#S(1,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-F2) <esc>:<cr>call EasyMotion#S(2,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-F2) :<cr>call EasyMotion#S(2,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-F2) :<cr>call EasyMotion#S(2,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-F2) :<cr>call EasyMotion#S(2,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-bd-f2) <esc>:<cr>call EasyMotion#S(2,1,2)<cr>
+nnoremap <silent> <Plug>(easymotion-bd-f2) :<cr>call EasyMotion#S(2,0,2)<cr>
+snoremap <silent> <Plug>(easymotion-bd-f2) :<cr>call EasyMotion#S(2,0,2)<cr>
+onoremap <silent> <Plug>(easymotion-bd-f2) :<cr>call EasyMotion#S(2,0,2)<cr>
+xnoremap <silent> <Plug>(easymotion-Tl2) <esc>:<cr>call EasyMotion#TL(2,1,1)<cr>
+nnoremap <silent> <Plug>(easymotion-Tl2) :<cr>call EasyMotion#TL(2,0,1)<cr>
+snoremap <silent> <Plug>(easymotion-Tl2) :<cr>call EasyMotion#TL(2,0,1)<cr>
+onoremap <silent> <Plug>(easymotion-Tl2) :<cr>call EasyMotion#TL(2,0,1)<cr>
+xnoremap <silent> <Plug>(easymotion-fln) <esc>:<cr>call EasyMotion#SL(-1,1,0)<cr>
+nnoremap <silent> <Plug>(easymotion-fln) :<cr>call EasyMotion#SL(-1,0,0)<cr>
+snoremap <silent> <Plug>(easymotion-fln) :<cr>call EasyMotion#SL(-1,0,0)<cr>
+onoremap <silent> <Plug>(easymotion-fln) :<cr>call EasyMotion#SL(-1,0,0)<cr>
+nnoremap <Plug>NERDCommenterAltDelims :call nerdcommenter#SwitchToAlternativeDelimiters(1)<cr>
+xnoremap <silent> <Plug>NERDCommenterUncomment :call nerdcommenter#Comment("x", "Uncomment")<cr>
+nnoremap <silent> <Plug>NERDCommenterUncomment :call nerdcommenter#Comment("n", "Uncomment")<cr>
+xnoremap <silent> <Plug>NERDCommenterAlignBoth :call nerdcommenter#Comment("x", "AlignBoth")<cr>
+nnoremap <silent> <Plug>NERDCommenterAlignBoth :call nerdcommenter#Comment("n", "AlignBoth")<cr>
+xnoremap <silent> <Plug>NERDCommenterAlignLeft :call nerdcommenter#Comment("x", "AlignLeft")<cr>
+nnoremap <silent> <Plug>NERDCommenterAlignLeft :call nerdcommenter#Comment("n", "AlignLeft")<cr>
+nnoremap <silent> <Plug>NERDCommenterAppend :call nerdcommenter#Comment("n", "Append")<cr>
+xnoremap <silent> <Plug>NERDCommenterYank :call nerdcommenter#Comment("x", "Yank")<cr>
+nnoremap <silent> <Plug>NERDCommenterYank :call nerdcommenter#Comment("n", "Yank")<cr>
+xnoremap <silent> <Plug>NERDCommenterSexy :call nerdcommenter#Comment("x", "Sexy")<cr>
+nnoremap <silent> <Plug>NERDCommenterSexy :call nerdcommenter#Comment("n", "Sexy")<cr>
+xnoremap <silent> <Plug>NERDCommenterInvert :call nerdcommenter#Comment("x", "Invert")<cr>
+nnoremap <silent> <Plug>NERDCommenterInvert :call nerdcommenter#Comment("n", "Invert")<cr>
+nnoremap <silent> <Plug>NERDCommenterToEOL :call nerdcommenter#Comment("n", "ToEOL")<cr>
+xnoremap <silent> <Plug>NERDCommenterNested :call nerdcommenter#Comment("x", "Nested")<cr>
+nnoremap <silent> <Plug>NERDCommenterNested :call nerdcommenter#Comment("n", "Nested")<cr>
+xnoremap <silent> <Plug>NERDCommenterMinimal :call nerdcommenter#Comment("x", "Minimal")<cr>
+nnoremap <silent> <Plug>NERDCommenterMinimal :call nerdcommenter#Comment("n", "Minimal")<cr>
+xnoremap <silent> <Plug>NERDCommenterToggle :call nerdcommenter#Comment("x", "Toggle")<cr>
+nnoremap <silent> <Plug>NERDCommenterToggle :call nerdcommenter#Comment("n", "Toggle")<cr>
+xnoremap <silent> <Plug>NERDCommenterComment :call nerdcommenter#Comment("x", "Comment")<cr>
+nnoremap <silent> <Plug>NERDCommenterComment :call nerdcommenter#Comment("n", "Comment")<cr>
+xnoremap <silent> <Plug>(peekaboo) :<cr>call peekaboo#aboo()<cr>
+nnoremap <silent> <Plug>(peekaboo) :<cr>call peekaboo#aboo()<cr>
+nnoremap <silent> <Plug>MarkSearchGroup9Prev :<cr>if ! mark#SearchGroupMark(9, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup9Next :<cr>if ! mark#SearchGroupMark(9, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup8Prev :<cr>if ! mark#SearchGroupMark(8, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup8Next :<cr>if ! mark#SearchGroupMark(8, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup7Prev :<cr>if ! mark#SearchGroupMark(7, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup7Next :<cr>if ! mark#SearchGroupMark(7, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup6Prev :<cr>if ! mark#SearchGroupMark(6, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup6Next :<cr>if ! mark#SearchGroupMark(6, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup5Prev :<cr>if ! mark#SearchGroupMark(5, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup5Next :<cr>if ! mark#SearchGroupMark(5, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup4Prev :<cr>if ! mark#SearchGroupMark(4, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup4Next :<cr>if ! mark#SearchGroupMark(4, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup3Prev :<cr>if ! mark#SearchGroupMark(3, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup3Next :<cr>if ! mark#SearchGroupMark(3, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup2Prev :<cr>if ! mark#SearchGroupMark(2, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup2Next :<cr>if ! mark#SearchGroupMark(2, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup1Prev :<cr>if ! mark#SearchGroupMark(1, v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroup1Next :<cr>if ! mark#SearchGroupMark(1, v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchCascadePrevNoStop :<cr>if ! mark#cascade#Next(v:count1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchCascadeNextNoStop :<cr>if ! mark#cascade#Next(v:count1, 0, 0)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchCascadeStartNoStop :<cr>if ! mark#cascade#Start(v:count, 0)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"   <cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchCascadePrevWithStop :<cr>if ! mark#cascade#Next(v:count1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchCascadeNextWithStop :<cr>if ! mark#cascade#Next(v:count1, 1, 0)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchCascadeStartWithStop :<cr>if ! mark#cascade#Start(v:count, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"   <cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchUsedGroupPrev :<cr>if ! mark#SearchNextGroup(v:count1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchUsedGroupNext :<cr>if ! mark#SearchNextGroup(v:count1, 0)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroupPrev :<cr>if ! mark#SearchGroupMark(v:count, 1, 1, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchGroupNext :<cr>if ! mark#SearchGroupMark(v:count, 1, 0, 1)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchAnyOrDefaultPrev :<cr>if mark#IsEnabled() && mark#GetCount() > 0<cr>|if ! mark#SearchAnyMark(1)<cr>|echoerr ingo#err#Get()<cr>|endif<cr>|else<cr>|execute 'normal!' v:count1 . 'Nzv'<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchAnyOrDefaultNext :<cr>if mark#IsEnabled() && mark#GetCount() > 0<cr>|if ! mark#SearchAnyMark(0)<cr>|echoerr ingo#err#Get()<cr>|endif<cr>|else<cr>|execute 'normal!' v:count1 . 'nzv'<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchOrAnyPrev :<cr>if ! mark#SearchNext(1,'mark#SearchAnyMark')<cr>|execute 'normal!' v:count1 . '#zv'<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchOrAnyNext :<cr>if ! mark#SearchNext(0,'mark#SearchAnyMark')<cr>|execute 'normal!' v:count1 . '*zv'<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchOrCurPrev :<cr>if ! mark#SearchNext(1,'mark#SearchCurrentMark')<cr>|execute 'normal!' v:count1 . '#zv'<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchOrCurNext :<cr>if ! mark#SearchNext(0,'mark#SearchCurrentMark')<cr>|execute 'normal!' v:count1 . '*zv'<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchPrev :<cr>if ! mark#SearchNext(1)<cr>|execute 'normal!' v:count1 . '#zv'<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchNext :<cr>if ! mark#SearchNext(0)<cr>|execute 'normal!' v:count1 . '*zv'<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchAnyPrev :<cr>if ! mark#SearchAnyMark(1)<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchAnyNext :<cr>if ! mark#SearchAnyMark(0)<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchCurrentPrev :<cr>if ! mark#SearchCurrentMark(1)<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSearchCurrentNext :<cr>if ! mark#SearchCurrentMark(0)<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkToggle :<cr>call mark#Toggle()<cr>
+nnoremap <silent> <Plug>MarkConfirmAllClear :<cr>if confirm('Really delete all marks? This cannot be undone.', "&Yes\n&No") == 1<cr>|call mark#ClearAll()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkAllClear :<cr>call mark#ClearAll()<cr>
+nnoremap <silent> <Plug>MarkClear :<cr>if ! mark#Clear(v:count)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+vnoremap <silent> <Plug>MarkRegex :<cr>if ! mark#MarkRegex(v:count, mark#GetVisualSelectionAsRegexp())<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkRegex :<cr>if ! mark#MarkRegex(v:count, '')<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|echoerr ingo#err#Get()<cr>|endif<cr>
+vnoremap <silent> <Plug>MarkIWhiteSet :<cr>if ! mark#DoMark(v:count, mark#GetVisualSelectionAsLiteralWhitespaceIndifferentPattern())[0]<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|endif<cr>
+vnoremap <silent> <Plug>MarkSet :<cr>if ! mark#DoMark(v:count, mark#GetVisualSelectionAsLiteralPattern())[0]<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkPartialWord :<cr>if ! mark#MarkCurrentWord(v:count, 0)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|endif<cr>
+nnoremap <silent> <Plug>MarkSet :<cr>if ! mark#MarkCurrentWord(v:count)<cr>|execute "normal! \<cr><C-\>\<cr><C-n>\<cr><Esc>"<cr>|endif<cr>
 noremap <Plug>(_incsearch-g#) g#
 noremap <Plug>(_incsearch-g*) g*
 noremap <Plug>(_incsearch-#) #
@@ -764,114 +904,94 @@ xmap <C-Right> <Plug>(textmanip-move-right)
 xmap <C-Left> <Plug>(textmanip-move-left)
 xmap <C-Up> <Plug>(textmanip-move-up)
 xmap <C-Down> <Plug>(textmanip-move-down)
-xnoremap <Plug>(textmanip-toggle-mode) :<bar>call textmanip#mode('toggle')<cr>gv
-nnoremap <Plug>(textmanip-toggle-mode) :<bar>call textmanip#mode('toggle')<cr>
-xnoremap <silent> <Plug>(textmanip-blank-below) :<bar>call textmanip#start("blank", "v", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-blank-above) :<bar>call textmanip#start("blank", "^", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-move1-right-r) :<bar>call textmanip#start("move1", ">", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-move1-right-i) :<bar>call textmanip#start("move1", ">", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-move1-right) :<bar>call textmanip#start("move1", ">", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-move1-left-r) :<bar>call textmanip#start("move1", "<bar><", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-move1-left-i) :<bar>call textmanip#start("move1", "<bar><", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-move1-left) :<bar>call textmanip#start("move1", "<bar><", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-move-right-r) :<bar>call textmanip#start("move", ">", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-move-right-i) :<bar>call textmanip#start("move", ">", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-move-right) :<bar>call textmanip#start("move", ">", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-move-left-r) :<bar>call textmanip#start("move", "<bar><", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-move-left-i) :<bar>call textmanip#start("move", "<bar><", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-move-left) :<bar>call textmanip#start("move", "<bar><", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-move-down-r) :<bar>call textmanip#start("move", "v", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-move-down-i) :<bar>call textmanip#start("move", "v", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-move-down) :<bar>call textmanip#start("move", "v", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-move-up-r) :<bar>call textmanip#start("move", "^", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-move-up-i) :<bar>call textmanip#start("move", "^", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-move-up) :<bar>call textmanip#start("move", "^", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-right-r) :<bar>call textmanip#start("duplicate", ">", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-right-i) :<bar>call textmanip#start("duplicate", ">", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-right) :<bar>call textmanip#start("duplicate", ">", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-left-r) :<bar>call textmanip#start("duplicate", "<bar><", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-left-i) :<bar>call textmanip#start("duplicate", "<bar><", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-left) :<bar>call textmanip#start("duplicate", "<bar><", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-down-r) :<bar>call textmanip#start("duplicate", "v", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-down-i) :<bar>call textmanip#start("duplicate", "v", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-down) :<bar>call textmanip#start("duplicate", "v", "x", "auto")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-up-r) :<bar>call textmanip#start("duplicate", "^", "x", "replace")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-up-i) :<bar>call textmanip#start("duplicate", "^", "x", "insert")<cr>
-xnoremap <silent> <Plug>(textmanip-duplicate-up) :<bar>call textmanip#start("duplicate", "^", "x", "auto")<cr>
-nnoremap <silent> <Plug>(textmanip-blank-below) :<bar>call textmanip#start("blank", "v", "n", "auto")<cr>
-nnoremap <silent> <Plug>(textmanip-blank-above) :<bar>call textmanip#start("blank", "^", "n", "auto")<cr>
-nnoremap <silent> <Plug>(textmanip-move-right-r) :<bar>call textmanip#start("move", ">", "n", "replace")<cr>
-nnoremap <silent> <Plug>(textmanip-move-right-i) :<bar>call textmanip#start("move", ">", "n", "insert")<cr>
-nnoremap <silent> <Plug>(textmanip-move-right) :<bar>call textmanip#start("move", ">", "n", "auto")<cr>
-nnoremap <silent> <Plug>(textmanip-move-left-r) :<bar>call textmanip#start("move", "<bar><", "n", "replace")<cr>
-nnoremap <silent> <Plug>(textmanip-move-left-i) :<bar>call textmanip#start("move", "<bar><", "n", "insert")<cr>
-nnoremap <silent> <Plug>(textmanip-move-left) :<bar>call textmanip#start("move", "<bar><", "n", "auto")<cr>
-nnoremap <silent> <Plug>(textmanip-move-down-r) :<bar>call textmanip#start("move", "v", "n", "replace")<cr>
-nnoremap <silent> <Plug>(textmanip-move-down-i) :<bar>call textmanip#start("move", "v", "n", "insert")<cr>
-nnoremap <silent> <Plug>(textmanip-move-down) :<bar>call textmanip#start("move", "v", "n", "auto")<cr>
-nnoremap <silent> <Plug>(textmanip-move-up-r) :<bar>call textmanip#start("move", "^", "n", "replace")<cr>
-nnoremap <silent> <Plug>(textmanip-move-up-i) :<bar>call textmanip#start("move", "^", "n", "insert")<cr>
-nnoremap <silent> <Plug>(textmanip-move-up) :<bar>call textmanip#start("move", "^", "n", "auto")<cr>
-nnoremap <silent> <Plug>(textmanip-duplicate-down-r) :<bar>call textmanip#start("duplicate", "v", "n", "replace")<cr>
-nnoremap <silent> <Plug>(textmanip-duplicate-down-i) :<bar>call textmanip#start("duplicate", "v", "n", "insert")<cr>
-nnoremap <silent> <Plug>(textmanip-duplicate-down) :<bar>call textmanip#start("duplicate", "v", "n", "auto")<cr>
-nnoremap <silent> <Plug>(textmanip-duplicate-up-r) :<bar>call textmanip#start("duplicate", "^", "n", "replace")<cr>
-nnoremap <silent> <Plug>(textmanip-duplicate-up-i) :<bar>call textmanip#start("duplicate", "^", "n", "insert")<cr>
-nnoremap <silent> <Plug>(textmanip-duplicate-up) :<bar>call textmanip#start("duplicate", "^", "n", "auto")<cr>
-nnoremap <silent> <Plug>(PickerHelp) :PickerHelp<cr>
-nnoremap <silent> <Plug>(PickerBufferTag) :PickerBufferTag<cr>
-nnoremap <silent> <Plug>(PickerStag) :PickerStag<cr>
-nnoremap <silent> <Plug>(PickerTag) :PickerTag<cr>
-nnoremap <silent> <Plug>(PickerBufferVsplit) :PickerBufferVsplit<cr>
-nnoremap <silent> <Plug>(PickerBufferSplit) :PickerBufferSplit<cr>
-nnoremap <silent> <Plug>(PickerBuffer) :PickerBuffer<cr>
-nnoremap <silent> <Plug>(PickerVsplit) :PickerVsplit<cr>
-nnoremap <silent> <Plug>(PickerTabdrop) :PickerTabdrop<cr>
-nnoremap <silent> <Plug>(PickerTabedit) :PickerTabedit<cr>
-nnoremap <silent> <Plug>(PickerSplit) :PickerSplit<cr>
-nnoremap <silent> <Plug>(PickerEdit) :PickerEdit<cr>
-nnoremap <silent> <Plug>(startify-open-buffers) :<bar>call startify#open_buffers()<cr>
-xnoremap <Plug>(open-url-search-wikipedia) :<bar>OpenSearchURL wikipedia <bar>=open_url#get_selection()<cr><cr>
-nnoremap <Plug>(open-url-search-wikipedia) :OpenSearchURL wikipedia <bar><cword><cr>
-xnoremap <Plug>(open-url-search-google) :<bar>OpenSearchURL google <bar>=open_url#get_selection()<cr><cr>
-nnoremap <Plug>(open-url-search-google) :OpenSearchURL google <bar><cword><cr>
-xnoremap <Plug>(open-url-search-so) :<bar>OpenSearchURL so <bar>=open_url#get_selection()<cr><cr>
-nnoremap <Plug>(open-url-search-so) :OpenSearchURL so <bar><cword><cr>
-xnoremap <Plug>(open-url-search) :<bar>OpenSearchURL <bar>=open_url#get_selection()<cr><cr>
-nnoremap <Plug>(open-url-search) :OpenSearchURL <bar><cword><cr>
-xnoremap <Plug>(open-url-browser) :<bar>OpenURL <bar>=open_url#get_selection()<cr><cr>
-nnoremap <Plug>(open-url-browser) :OpenURL <bar><cfile><cr>
-nnoremap <Plug>(dirvish_git_prev_file) :<bar>call dirvish_git#jump_to_prev_file()<cr>
-nnoremap <Plug>(dirvish_git_next_file) :<bar>call dirvish_git#jump_to_next_file()<cr>
-nnoremap <silent> <Plug>(dirvish_vsplit_up) :<bar>vsplit<bar>|exe 'Dirvish' fnameescape(fnamemodify(@%, ':p'.(@%[-1:]=~'[\\/]'?':h':'').repeat(':h',v:count1)))<cr>
-nnoremap <silent> <Plug>(dirvish_split_up) :<bar>split<bar>|exe 'Dirvish' fnameescape(fnamemodify(@%, ':p'.(@%[-1:]=~'[\\/]'?':h':'').repeat(':h',v:count1)))<cr>
-nnoremap <silent> <Plug>(dirvish_up) :<bar>exe 'Dirvish' fnameescape(fnamemodify(@%, ':p'.(@%[-1:]=~'[\\/]'?':h':'').repeat(':h',v:count1)))<cr>
-xnoremap <silent> <Plug>(openbrowser-smart-search) :<bar>call openbrowser#_keymap_smart_search('v')<cr>
-nnoremap <silent> <Plug>(openbrowser-smart-search) :<bar>call openbrowser#_keymap_smart_search('n')<cr>
-xnoremap <silent> <Plug>(openbrowser-search) :<bar>call openbrowser#_keymap_search('v')<cr>
-nnoremap <silent> <Plug>(openbrowser-search) :<bar>call openbrowser#_keymap_search('n')<cr>
-xnoremap <silent> <Plug>(openbrowser-open-incognito) :<bar>call openbrowser#_keymap_open('v', 0, ['--incognito'])<cr>
-nnoremap <silent> <Plug>(openbrowser-open-incognito) :<bar>call openbrowser#_keymap_open('n', 0, ['--incognito'])<cr>
-xnoremap <silent> <Plug>(openbrowser-open) :<bar>call openbrowser#_keymap_open('v')<cr>
-nnoremap <silent> <Plug>(openbrowser-open) :<bar>call openbrowser#_keymap_open('n')<cr>
+xnoremap <Plug>(textmanip-toggle-mode) :<cr>call textmanip#mode('toggle')<cr>gv
+nnoremap <Plug>(textmanip-toggle-mode) :<cr>call textmanip#mode('toggle')<cr>
+xnoremap <silent> <Plug>(textmanip-blank-below) :<cr>call textmanip#start("blank", "v", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-blank-above) :<cr>call textmanip#start("blank", "^", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-move1-right-r) :<cr>call textmanip#start("move1", ">", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-move1-right-i) :<cr>call textmanip#start("move1", ">", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-move1-right) :<cr>call textmanip#start("move1", ">", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-move1-left-r) :<cr>call textmanip#start("move1", "<cr><", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-move1-left-i) :<cr>call textmanip#start("move1", "<cr><", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-move1-left) :<cr>call textmanip#start("move1", "<cr><", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-move-right-r) :<cr>call textmanip#start("move", ">", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-move-right-i) :<cr>call textmanip#start("move", ">", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-move-right) :<cr>call textmanip#start("move", ">", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-move-left-r) :<cr>call textmanip#start("move", "<cr><", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-move-left-i) :<cr>call textmanip#start("move", "<cr><", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-move-left) :<cr>call textmanip#start("move", "<cr><", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-move-down-r) :<cr>call textmanip#start("move", "v", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-move-down-i) :<cr>call textmanip#start("move", "v", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-move-down) :<cr>call textmanip#start("move", "v", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-move-up-r) :<cr>call textmanip#start("move", "^", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-move-up-i) :<cr>call textmanip#start("move", "^", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-move-up) :<cr>call textmanip#start("move", "^", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-right-r) :<cr>call textmanip#start("duplicate", ">", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-right-i) :<cr>call textmanip#start("duplicate", ">", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-right) :<cr>call textmanip#start("duplicate", ">", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-left-r) :<cr>call textmanip#start("duplicate", "<cr><", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-left-i) :<cr>call textmanip#start("duplicate", "<cr><", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-left) :<cr>call textmanip#start("duplicate", "<cr><", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-down-r) :<cr>call textmanip#start("duplicate", "v", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-down-i) :<cr>call textmanip#start("duplicate", "v", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-down) :<cr>call textmanip#start("duplicate", "v", "x", "auto")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-up-r) :<cr>call textmanip#start("duplicate", "^", "x", "replace")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-up-i) :<cr>call textmanip#start("duplicate", "^", "x", "insert")<cr>
+xnoremap <silent> <Plug>(textmanip-duplicate-up) :<cr>call textmanip#start("duplicate", "^", "x", "auto")<cr>
+nnoremap <silent> <Plug>(textmanip-blank-below) :<cr>call textmanip#start("blank", "v", "n", "auto")<cr>
+nnoremap <silent> <Plug>(textmanip-blank-above) :<cr>call textmanip#start("blank", "^", "n", "auto")<cr>
+nnoremap <silent> <Plug>(textmanip-move-right-r) :<cr>call textmanip#start("move", ">", "n", "replace")<cr>
+nnoremap <silent> <Plug>(textmanip-move-right-i) :<cr>call textmanip#start("move", ">", "n", "insert")<cr>
+nnoremap <silent> <Plug>(textmanip-move-right) :<cr>call textmanip#start("move", ">", "n", "auto")<cr>
+nnoremap <silent> <Plug>(textmanip-move-left-r) :<cr>call textmanip#start("move", "<cr><", "n", "replace")<cr>
+nnoremap <silent> <Plug>(textmanip-move-left-i) :<cr>call textmanip#start("move", "<cr><", "n", "insert")<cr>
+nnoremap <silent> <Plug>(textmanip-move-left) :<cr>call textmanip#start("move", "<cr><", "n", "auto")<cr>
+nnoremap <silent> <Plug>(textmanip-move-down-r) :<cr>call textmanip#start("move", "v", "n", "replace")<cr>
+nnoremap <silent> <Plug>(textmanip-move-down-i) :<cr>call textmanip#start("move", "v", "n", "insert")<cr>
+nnoremap <silent> <Plug>(textmanip-move-down) :<cr>call textmanip#start("move", "v", "n", "auto")<cr>
+nnoremap <silent> <Plug>(textmanip-move-up-r) :<cr>call textmanip#start("move", "^", "n", "replace")<cr>
+nnoremap <silent> <Plug>(textmanip-move-up-i) :<cr>call textmanip#start("move", "^", "n", "insert")<cr>
+nnoremap <silent> <Plug>(textmanip-move-up) :<cr>call textmanip#start("move", "^", "n", "auto")<cr>
+nnoremap <silent> <Plug>(textmanip-duplicate-down-r) :<cr>call textmanip#start("duplicate", "v", "n", "replace")<cr>
+nnoremap <silent> <Plug>(textmanip-duplicate-down-i) :<cr>call textmanip#start("duplicate", "v", "n", "insert")<cr>
+nnoremap <silent> <Plug>(textmanip-duplicate-down) :<cr>call textmanip#start("duplicate", "v", "n", "auto")<cr>
+nnoremap <silent> <Plug>(textmanip-duplicate-up-r) :<cr>call textmanip#start("duplicate", "^", "n", "replace")<cr>
+nnoremap <silent> <Plug>(textmanip-duplicate-up-i) :<cr>call textmanip#start("duplicate", "^", "n", "insert")<cr>
+nnoremap <silent> <Plug>(textmanip-duplicate-up) :<cr>call textmanip#start("duplicate", "^", "n", "auto")<cr>
+xnoremap <Plug>(open-url-search-wikipedia) :<cr>OpenSearchURL wikipedia <cr>=open_url#get_selection()<cr><cr>
+nnoremap <Plug>(open-url-search-wikipedia) :OpenSearchURL wikipedia <cr><cword><cr>
+xnoremap <Plug>(open-url-search-google) :<cr>OpenSearchURL google <cr>=open_url#get_selection()<cr><cr>
+nnoremap <Plug>(open-url-search-google) :OpenSearchURL google <cr><cword><cr>
+xnoremap <Plug>(open-url-search-so) :<cr>OpenSearchURL so <cr>=open_url#get_selection()<cr><cr>
+nnoremap <Plug>(open-url-search-so) :OpenSearchURL so <cr><cword><cr>
+xnoremap <Plug>(open-url-search) :<cr>OpenSearchURL <cr>=open_url#get_selection()<cr><cr>
+nnoremap <Plug>(open-url-search) :OpenSearchURL <cr><cword><cr>
+xnoremap <Plug>(open-url-browser) :<cr>OpenURL <cr>=open_url#get_selection()<cr><cr>
+nnoremap <Plug>(open-url-browser) :OpenURL <cr><cfile><cr>
+xnoremap <silent> <Plug>(openbrowser-smart-search) :<cr>call openbrowser#_keymap_smart_search('v')<cr>
+nnoremap <silent> <Plug>(openbrowser-smart-search) :<cr>call openbrowser#_keymap_smart_search('n')<cr>
+xnoremap <silent> <Plug>(openbrowser-search) :<cr>call openbrowser#_keymap_search('v')<cr>
+nnoremap <silent> <Plug>(openbrowser-search) :<cr>call openbrowser#_keymap_search('n')<cr>
+xnoremap <silent> <Plug>(openbrowser-open-incognito) :<cr>call openbrowser#_keymap_open('v', 0, ['--incognito'])<cr>
+nnoremap <silent> <Plug>(openbrowser-open-incognito) :<cr>call openbrowser#_keymap_open('n', 0, ['--incognito'])<cr>
+xnoremap <silent> <Plug>(openbrowser-open) :<cr>call openbrowser#_keymap_open('v')<cr>
+nnoremap <silent> <Plug>(openbrowser-open) :<cr>call openbrowser#_keymap_open('n')<cr>
 vmap <F6> <Plug>(openbrowser-smart-search)
-nnoremap <F6> :execute "normal \<Plug>(openbrowser-smart-search)"<bar>|silent !nsBt<cr>
-nnoremap <F10> :cd %:p:h<cr>:NERDTreeCWD<cr>
-noremap <C-N> :NERDTreeToggle<cr>
-noremap <C-E> :cd %:p:h<cr>:Fern . -reveal=%<cr>
-map <C-P> <Plug>(ctrlp)
-nnoremap <silent> <Plug>(ctrlp) :<bar>CtrlPMRU<cr>
+nnoremap <F6> :execute "normal \<Plug>(openbrowser-smart-search)"<cr>|silent !nsBt<cr>
+xnoremap <silent> <Plug>(GrepperOperator) :<cr>call GrepperOperator(visualmode())<cr>
+nnoremap <silent> <Plug>(GrepperOperator) :set opfunc=GrepperOperator<cr>g@
 nnoremap <silent> <Plug>CalendarT :cal calendar#show(2)<cr>
 nnoremap <silent> <Plug>CalendarH :cal calendar#show(1)<cr>
 nnoremap <silent> <Plug>CalendarV :cal calendar#show(0)<cr>
-nnoremap <silent> <SNR>123_quit :<bar>call fontsize#quit()<cr>
-nnoremap <silent> <SNR>123_setDefault :<bar>call fontsize#setDefault()<cr>
-nnoremap <silent> <SNR>123_default :<bar>call fontsize#default()<cr>
-nnoremap <silent> <SNR>123_dec :<bar>call fontsize#dec()<cr>
-nnoremap <silent> <SNR>123_inc :<bar>call fontsize#inc()<cr>
-nnoremap <silent> <SNR>123_begin :<bar>call fontsize#begin()<cr>
-noremap <silent> <C-K> <Plug>(ale_previous_wrap)
-noremap <silent> <C-J> <Plug>(ale_next_wrap)
+nmap <silent> <SNR>41_DisableFontsizeDefault <Plug>FontsizeDefault
+nmap <silent> <SNR>41_DisableFontsizeDec <Plug>FontsizeDec
+nmap <silent> <SNR>41_DisableFontsizeInc <Plug>FontsizeInc
+nnoremap <silent> <SNR>116_quit :<cr>call fontsize#quit()<cr>
+nnoremap <silent> <SNR>116_setDefault :<cr>call fontsize#setDefault()<cr>
+nnoremap <silent> <SNR>116_default :<cr>call fontsize#default()<cr>
+nnoremap <silent> <SNR>116_dec :<cr>call fontsize#dec()<cr>
+nnoremap <silent> <SNR>116_inc :<cr>call fontsize#inc()<cr>
+nnoremap <silent> <SNR>116_begin :<cr>call fontsize#begin()<cr>
 nnoremap <silent> <Plug>(ale_info_preview) :ALEInfo -preview<cr>
 nnoremap <silent> <Plug>(ale_info_clipboard) :ALEInfo -clipboard<cr>
 nnoremap <silent> <Plug>(ale_info_echo) :ALEInfo -echo<cr>
@@ -921,63 +1041,6 @@ nnoremap <silent> <Plug>(ale_previous_wrap_error) :ALEPrevious -wrap -error<cr>
 nnoremap <silent> <Plug>(ale_previous_error) :ALEPrevious -error<cr>
 nnoremap <silent> <Plug>(ale_previous_wrap) :ALEPreviousWrap<cr>
 nnoremap <silent> <Plug>(ale_previous) :ALEPrevious<cr>
-vnoremap <F9> <esc>:History/<cr>
-nnoremap <F9> :History/<cr>
-vnoremap <F8> <esc>:History:<cr>
-nnoremap <F8> :History:<cr>
-onoremap <silent> <Plug>(fzf-maps-o) <bar>:<bar>call fzf#vim#maps('o', 0)<cr>
-xnoremap <silent> <Plug>(fzf-maps-x) :<bar>call fzf#vim#maps('x', 0)<cr>
-nnoremap <silent> <Plug>(fzf-maps-n) :<bar>call fzf#vim#maps('n', 0)<cr>
-nmap <silent> <2-LeftMouse> <Plug>(matchup-double-click)
-nnoremap <Plug>(matchup-reload) :<bar>MatchupReload<cr>
-nnoremap <silent> <Plug>(matchup-double-click) :<bar>call matchup#text_obj#double_click()<cr>
-onoremap <silent> <Plug>(matchup-a%) :<bar>call matchup#text_obj#delimited(0, 0, 'delim_all')<cr>
-onoremap <silent> <Plug>(matchup-i%) :<bar>call matchup#text_obj#delimited(1, 0, 'delim_all')<cr>
-xnoremap <silent> <Plug>(matchup-a%) :<bar>call matchup#text_obj#delimited(0, 1, 'delim_all')<cr>
-xnoremap <silent> <Plug>(matchup-i%) :<bar>call matchup#text_obj#delimited(1, 1, 'delim_all')<cr>
-onoremap <silent> <Plug>(matchup-Z%) :<bar>call matchup#motion#op('Z%')<cr>
-xnoremap <silent> <SNR>96_(matchup-Z%) :<bar>call matchup#motion#jump_inside_prev(1)<cr>
-nnoremap <silent> <Plug>(matchup-Z%) :<bar>call matchup#motion#jump_inside_prev(0)<cr>
-onoremap <silent> <Plug>(matchup-z%) :<bar>call matchup#motion#op('z%')<cr>
-xnoremap <silent> <SNR>96_(matchup-z%) :<bar>call matchup#motion#jump_inside(1)<cr>
-nnoremap <silent> <Plug>(matchup-z%) :<bar>call matchup#motion#jump_inside(0)<cr>
-onoremap <silent> <Plug>(matchup-[%) :<bar>call matchup#motion#op('[%')<cr>
-onoremap <silent> <Plug>(matchup-]%) :<bar>call matchup#motion#op(']%')<cr>
-xnoremap <silent> <SNR>96_(matchup-[%) :<bar>call matchup#motion#find_unmatched(1, 0)<cr>
-xnoremap <silent> <SNR>96_(matchup-]%) :<bar>call matchup#motion#find_unmatched(1, 1)<cr>
-nnoremap <silent> <Plug>(matchup-[%) :<bar>call matchup#motion#find_unmatched(0, 0)<cr>
-nnoremap <silent> <Plug>(matchup-]%) :<bar>call matchup#motion#find_unmatched(0, 1)<cr>
-onoremap <silent> <Plug>(matchup-g%) :<bar>call matchup#motion#op('g%')<cr>
-xnoremap <silent> <SNR>96_(matchup-g%) :<bar>call matchup#motion#find_matching_pair(1, 0)<cr>
-onoremap <silent> <Plug>(matchup-%) :<bar>call matchup#motion#op('%')<cr>
-xnoremap <silent> <SNR>96_(matchup-%) :<bar>call matchup#motion#find_matching_pair(1, 1)<cr>
-nnoremap <silent> <Plug>(matchup-g%) :<bar>call matchup#motion#find_matching_pair(0, 0)<cr>
-nnoremap <silent> <Plug>(matchup-%) :<bar>call matchup#motion#find_matching_pair(0, 1)<cr>
-nnoremap <silent> <expr> <SNR>96_(wise) empty(g:v_motion_force) ? 'v' : g:v_motion_force
-nnoremap <silent> <Plug>(matchup-hi-surround) :<bar>call matchup#matchparen#highlight_surrounding()<cr>
-nnoremap <Plug>NERDCommenterAltDelims :call nerdcommenter#SwitchToAlternativeDelimiters(1)<cr>
-xnoremap <silent> <Plug>NERDCommenterUncomment :call nerdcommenter#Comment("x", "Uncomment")<cr>
-nnoremap <silent> <Plug>NERDCommenterUncomment :call nerdcommenter#Comment("n", "Uncomment")<cr>
-xnoremap <silent> <Plug>NERDCommenterAlignBoth :call nerdcommenter#Comment("x", "AlignBoth")<cr>
-nnoremap <silent> <Plug>NERDCommenterAlignBoth :call nerdcommenter#Comment("n", "AlignBoth")<cr>
-xnoremap <silent> <Plug>NERDCommenterAlignLeft :call nerdcommenter#Comment("x", "AlignLeft")<cr>
-nnoremap <silent> <Plug>NERDCommenterAlignLeft :call nerdcommenter#Comment("n", "AlignLeft")<cr>
-nnoremap <silent> <Plug>NERDCommenterAppend :call nerdcommenter#Comment("n", "Append")<cr>
-xnoremap <silent> <Plug>NERDCommenterYank :call nerdcommenter#Comment("x", "Yank")<cr>
-nnoremap <silent> <Plug>NERDCommenterYank :call nerdcommenter#Comment("n", "Yank")<cr>
-xnoremap <silent> <Plug>NERDCommenterSexy :call nerdcommenter#Comment("x", "Sexy")<cr>
-nnoremap <silent> <Plug>NERDCommenterSexy :call nerdcommenter#Comment("n", "Sexy")<cr>
-xnoremap <silent> <Plug>NERDCommenterInvert :call nerdcommenter#Comment("x", "Invert")<cr>
-nnoremap <silent> <Plug>NERDCommenterInvert :call nerdcommenter#Comment("n", "Invert")<cr>
-nnoremap <silent> <Plug>NERDCommenterToEOL :call nerdcommenter#Comment("n", "ToEOL")<cr>
-xnoremap <silent> <Plug>NERDCommenterNested :call nerdcommenter#Comment("x", "Nested")<cr>
-nnoremap <silent> <Plug>NERDCommenterNested :call nerdcommenter#Comment("n", "Nested")<cr>
-xnoremap <silent> <Plug>NERDCommenterMinimal :call nerdcommenter#Comment("x", "Minimal")<cr>
-nnoremap <silent> <Plug>NERDCommenterMinimal :call nerdcommenter#Comment("n", "Minimal")<cr>
-xnoremap <silent> <Plug>NERDCommenterToggle :call nerdcommenter#Comment("x", "Toggle")<cr>
-nnoremap <silent> <Plug>NERDCommenterToggle :call nerdcommenter#Comment("n", "Toggle")<cr>
-xnoremap <silent> <Plug>NERDCommenterComment :call nerdcommenter#Comment("x", "Comment")<cr>
-nnoremap <silent> <Plug>NERDCommenterComment :call nerdcommenter#Comment("n", "Comment")<cr>
 nnoremap <silent> <Plug>(PrettierCliPath) :PrettierCliPath<cr>
 nnoremap <silent> <Plug>(PrettierCliVersion) :PrettierCliVersion<cr>
 nnoremap <silent> <Plug>(PrettierCli) :PrettierCli<cr>
@@ -987,46 +1050,58 @@ nnoremap <silent> <Plug>(PrettierFragment) :PrettierFragment<cr>
 nnoremap <silent> <Plug>(PrettierAsync) :PrettierAsync<cr>
 nnoremap <silent> <Plug>(Prettier) :Prettier<cr>
 nnoremap <silent> <Plug>TagalongReapply :call tagalong#Reapply()<cr>
-nnoremap <silent> <Plug>GitGutterPreviewHunk :call gitgutter#utility#warn('Please change your map <bar><Plug>GitGutterPreviewHunk to <bar><Plug>(GitGutterPreviewHunk)')<cr>
-nnoremap <silent> <Plug>(GitGutterPreviewHunk) :GitGutterPreviewHunk<cr>
-nnoremap <silent> <Plug>GitGutterUndoHunk :call gitgutter#utility#warn('Please change your map <bar><Plug>GitGutterUndoHunk to <bar><Plug>(GitGutterUndoHunk)')<cr>
-nnoremap <silent> <Plug>(GitGutterUndoHunk) :GitGutterUndoHunk<cr>
-nnoremap <silent> <Plug>GitGutterStageHunk :call gitgutter#utility#warn('Please change your map <bar><Plug>GitGutterStageHunk to <bar><Plug>(GitGutterStageHunk)')<cr>
-nnoremap <silent> <Plug>(GitGutterStageHunk) :GitGutterStageHunk<cr>
-xnoremap <silent> <Plug>GitGutterStageHunk :call gitgutter#utility#warn('Please change your map <bar><Plug>GitGutterStageHunk to <bar><Plug>(GitGutterStageHunk)')<cr>
-xnoremap <silent> <Plug>(GitGutterStageHunk) :GitGutterStageHunk<cr>
-nnoremap <silent> <expr> <Plug>GitGutterPrevHunk &diff ? '[c' : ":\<bar>call gitgutter#utility#warn('Please change your map \<bar><Plug>GitGutterPrevHunk to \<bar><Plug>(GitGutterPrevHunk)')\<cr>"
-nnoremap <silent> <expr> <Plug>(GitGutterPrevHunk) &diff ? '[c' : ":\<bar>execute v:count1 . 'GitGutterPrevHunk'\<cr>"
-nnoremap <silent> <expr> <Plug>GitGutterNextHunk &diff ? ']c' : ":\<bar>call gitgutter#utility#warn('Please change your map \<bar><Plug>GitGutterNextHunk to \<bar><Plug>(GitGutterNextHunk)')\<cr>"
-nnoremap <silent> <expr> <Plug>(GitGutterNextHunk) &diff ? ']c' : ":\<bar>execute v:count1 . 'GitGutterNextHunk'\<cr>"
-xnoremap <silent> <Plug>(GitGutterTextObjectOuterVisual) :<bar>call gitgutter#hunk#text_object(0)<cr>
-xnoremap <silent> <Plug>(GitGutterTextObjectInnerVisual) :<bar>call gitgutter#hunk#text_object(1)<cr>
-onoremap <silent> <Plug>(GitGutterTextObjectOuterPending) :<bar>call gitgutter#hunk#text_object(0)<cr>
-onoremap <silent> <Plug>(GitGutterTextObjectInnerPending) :<bar>call gitgutter#hunk#text_object(1)<cr>
-nnoremap <F3> :call StripStoreCurSel()<cr>:Ggrep -i "<bar>s" <bar>|cw
+nnoremap <F3> :call StripStoreCurSel()<cr>:Ggrep -i "<cr>s" <cr>|cw
 nmap <silent> <Plug>RestoreWinPosn :call RestoreWinPosn()<cr>
 nmap <silent> <Plug>SaveWinPosn :call SaveWinPosn()<cr>
-nnoremap <S-F5> :syntax sync fromstart<cr>
-vnoremap <F4> <esc>:wa<cr>:bd<cr>
-nnoremap <F4> :wa<cr>:bd<cr>
-vnoremap <F2> <esc>:wa<cr>
-nnoremap <F2> :wa<cr>
-nnoremap <S-F11> :call OpenInEmacs()<cr>
-vnoremap <F5> <esc>:wa<cr>:e<cr>
-nnoremap <F5> :wa<cr>:edit<cr>
-noremap <F11> :cd %:p:h<cr><bar>|:silent !pcmanfm &<cr>
+noremap <silent> <expr> <Plug>(asterisk-gz#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 0, 'is_whole' : 0})
+noremap <silent> <expr> <Plug>(asterisk-z#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 0, 'is_whole' : 1})
+noremap <silent> <expr> <Plug>(asterisk-g#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 1, 'is_whole' : 0})
+noremap <silent> <expr> <Plug>(asterisk-#) asterisk#do(mode(1), {'direction' : 0, 'do_jump' : 1, 'is_whole' : 1})
+noremap <silent> <expr> <Plug>(asterisk-gz*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 0, 'is_whole' : 0})
+noremap <silent> <expr> <Plug>(asterisk-z*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 0, 'is_whole' : 1})
+noremap <silent> <expr> <Plug>(asterisk-g*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 1, 'is_whole' : 0})
+noremap <silent> <expr> <Plug>(asterisk-*) asterisk#do(mode(1), {'direction' : 1, 'do_jump' : 1, 'is_whole' : 1})
+xnoremap <silent> <Plug>(QuickScopeToggle) :<cr>call quick_scope#Toggle()<cr>
+nnoremap <silent> <Plug>(QuickScopeToggle) :call quick_scope#Toggle()<cr>
+xnoremap <expr> <Plug>(QuickScopeWallhacks) quick_scope#Wallhacks()
+xnoremap <expr> <Plug>(QuickScopeWallhacksT) quick_scope#Wallhacks("T")
+xnoremap <expr> <Plug>(QuickScopeWallhacksF) quick_scope#Wallhacks("F")
+onoremap <expr> <Plug>(QuickScopeWallhacks) quick_scope#Wallhacks()
+onoremap <expr> <Plug>(QuickScopeWallhacksT) quick_scope#Wallhacks("T")
+onoremap <expr> <Plug>(QuickScopeWallhacksF) quick_scope#Wallhacks("F")
+nnoremap <expr> <Plug>(QuickScopeWallhacks) quick_scope#Wallhacks()
+nnoremap <expr> <Plug>(QuickScopeWallhacksT) quick_scope#Wallhacks("T")
+nnoremap <expr> <Plug>(QuickScopeWallhacksF) quick_scope#Wallhacks("F")
+nnoremap <silent> <Plug>(QuickScopeT) :<cr>call quick_scope#Ready() <cr>| execute "normal!" v:count1 . quick_scope#Aim("T") <cr>| call quick_scope#Reload() <cr>| call quick_scope#DoubleTap()<cr>
+xnoremap <expr> <Plug>(QuickScopeT) quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+onoremap <expr> <Plug>(QuickScopeT) quick_scope#Ready() . quick_scope#Aim("T") . quick_scope#Reload() . quick_scope#DoubleTap()
+nnoremap <silent> <Plug>(QuickScopet) :<cr>call quick_scope#Ready() <cr>| execute "normal!" v:count1 . quick_scope#Aim("t") <cr>| call quick_scope#Reload() <cr>| call quick_scope#DoubleTap()<cr>
+xnoremap <expr> <Plug>(QuickScopet) quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
+onoremap <expr> <Plug>(QuickScopet) quick_scope#Ready() . quick_scope#Aim("t") . quick_scope#Reload() . quick_scope#DoubleTap()
+nnoremap <silent> <Plug>(QuickScopeF) :<cr>call quick_scope#Ready() <cr>| execute "normal!" v:count1 . quick_scope#Aim("F") <cr>| call quick_scope#Reload() <cr>| call quick_scope#DoubleTap()<cr>
+xnoremap <expr> <Plug>(QuickScopeF) quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
+onoremap <expr> <Plug>(QuickScopeF) quick_scope#Ready() . quick_scope#Aim("F") . quick_scope#Reload() . quick_scope#DoubleTap()
+nnoremap <silent> <Plug>(QuickScopef) :<cr>call quick_scope#Ready() <cr>| execute "normal!" v:count1 . quick_scope#Aim("f") <cr>| call quick_scope#Reload() <cr>| call quick_scope#DoubleTap()<cr>
+xnoremap <expr> <Plug>(QuickScopef) quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+onoremap <expr> <Plug>(QuickScopef) quick_scope#Ready() . quick_scope#Aim("f") . quick_scope#Reload() . quick_scope#DoubleTap()
+nnoremap <silent> <Plug>(startify-open-buffers) :<cr>call startify#open_buffers()<cr>
+noremap <F11> :cd %:p:h<cr><cr>|:silent !pcmanfm &<cr>
 nnoremap <Insert> :CapsLockOff <cr>
-vnoremap <F1> <esc><c-w><c-w>
-nnoremap <F1> <c-w><c-w>
+vnoremap <F4> <esc>:call VimWriteClose()<cr>
+nnoremap <F4> :call VimWriteClose()<cr>
 map <S-Insert> <MiddleMouse>
-imap <bar>S <Plug>ISurround
-imap <bar>s <Plug>Isurround
-imap <silent> <bar>% <Plug>(matchup-c_g%)
-imap <bar>	 <Plug>SuperTabForward
-imap <bar> <Plug>Isurround
-inoremap <bar> <bar>u<bar>
+imap <cr> <Plug>(fzf-dictionary-open)
+imap <cr>S <Plug>ISurround
+imap <cr>s <Plug>Isurround
+imap <cr>	 <Plug>SuperTabForward
+imap <cr> <Plug>Isurround
+inoremap <cr> <cr>u<cr>
+inoremap <cr><cr> <cr><cr>
+inoremap \<F12> :<esc>call OpenInEmacs()<cr>
 inoremap <silent> \<F11> <esc>:echo strftime('%c',getftime(expand('%')))<cr>
-inoremap \<F5> :call clearmatches()<cr>
+inoremap \<F5> :<esc>syntax sync fromstart<cr>
+inoremap \\<F5> :call clearmatches()<cr>
+inoremap \<F4> <esc>:Bdelete other<cr>::sleep<cr>call VimWriteClose()<cr>
 iabbr <expr> d8t strftime("%y%m%d(%Hh%Mm%S)")
 iabbr <expr> d8s strftime("%d/%m/%y")
 iabbr <expr> d8p strftime("%Y-%m-%d %H:%M")
@@ -1036,29 +1111,29 @@ iabbr <expr> d8d strftime("%a %d %b %Y")
 iabbr <expr> d8c strftime("%y%m%d")
 iabbr <expr> d8a strftime("%Y-%m-%d-%a")
 iabbr <expr> d8- strftime("%y-%m-%d")
-cabbr h vert h
+cnoreabbr Flogsp Flogsplit
 let &cpo=s:cpo_save
 unlet s:cpo_save
 set autoread
 set background=dark
-set backspace=indent,eol,start
 set backupdir=~/.cache/vim/backup//
 set balloonexpr=ale#balloon#Expr()
-set clipboard=unnamedplus
-set cmdheight=2
+set clipboard=unnamedplus,autoselect,exclude:cons\\<cr>|linux
 set cmdwinheight=30
 set completefunc=thesaurus_query#auto_complete_integrate
+set completeopt=menu,preview,longest
 set directory=~/.vimswap//
 set display=truncate
 set fileencodings=ucs-bom,utf-8,default,latin1
 set fillchars=fold:\ 
-set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 10
+set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 9
 set guioptions=aegirLt
 set helplang=en
 set hidden
 set history=500
 set hlsearch
 set ignorecase
+set imdisable
 set incsearch
 set nojoinspaces
 set keywordprg=:help
@@ -1066,119 +1141,123 @@ set langnoremap
 set nolangremap
 set laststatus=2
 set linespace=2
-set listchars=eol:│,nbsp:?,trail:·,tab:»·
+set listchars=eol:│,nbsp:␣,trail:·,tab:»·
 set matchpairs=(:),{:},[:],<:>
 set maxmempattern=800000
 set modelines=4
 set mouse=nvi
 set nrformats=bin,hex
 set redrawtime=50000
-set ruler
 set runtimepath=
 set runtimepath+=~/.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/nerdtree
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-devicons
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-repeat
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-peekaboo
-set runtimepath+=~/.vim/pack/packs-cp/opt/undotree
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-loclist-follow
-set runtimepath+=~/.vim/pack/packs-cp/opt/listtoggle
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-bufkill
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-buffing-wheel
-set runtimepath+=~/.vim/pack/packs-cp/opt/close-buffers.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/bufferize.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/bufexplorer
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-surround
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-subversive
-set runtimepath+=~/.vim/pack/packs-cp/opt/targets.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/supertab
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-mark
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-easymotion
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-asterisk
-set runtimepath+=~/.vim/pack/packs-cp/opt/quick-scope
-set runtimepath+=~/.vim/pack/packs-cp/opt/incsearch-fuzzy.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/incsearch.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-textmanip
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-easy-align
-set runtimepath+=~/.vim/pack/packs-unix/opt/vim-picker
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-startify
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-open-url
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-dirvish-git
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-dirvish
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-clifm
-set runtimepath+=~/.vim/pack/packs-cp/opt/vifm.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/open-browser.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/nerdtree-git-plugin
-set runtimepath+=~/.vim/pack/packs-cp/opt/mru
-set runtimepath+=~/.vim/pack/packs-cp/opt/fern-renderer-nerdfont.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/fern-preview.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/fern-git-status.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/fern.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/ctrlp.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/calendar-vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-fontsize
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-airline-themes
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-airline
-set runtimepath+=~/.vim/pack/packs-cp/opt/lf-vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-ShowTrailingWhitespace
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-illuminate
-set runtimepath+=~/.vim/pack/packs-cp/opt/FoldText
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-characterize
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-LanguageTool
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-langtool
-set runtimepath+=~/.vim/pack/packs-cp/opt/thesaurus_query.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/ale
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-ingo-library
-set runtimepath+=~/.vim/pack/packs-cp/opt/fzf.vim
-set runtimepath+=~/.vim/pack/packs-unix/opt/vim-ssh-annex
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-matchup
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-tagbar
-set runtimepath+=~/.vim/pack/packs-cp/opt/nerdcommenter
-set runtimepath+=~/.vim/pack/packs-cp/opt/vimtex
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-ps1
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-prettier
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-pandoc-syntax
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-mbsync
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-markdown
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-hjson
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-go
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-dokuwiki
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-closetag
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-bbcode
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-base64
-set runtimepath+=~/.vim/pack/packs-cp/opt/vader.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/tagalong.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/org.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/MatchTagAlways
-set runtimepath+=~/.vim/pack/packs-cp/opt/mediawiki.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-liquid
-set runtimepath+=~/.vim/pack/packs-cp/opt/emmet-vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/csv.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/CSS-one-line--multi-line-folding
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-rhubarb
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-gitgutter
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-fugitive
-set runtimepath+=~/.vim/pack/packs-cp/opt/gitignore.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-flog
-set runtimepath+=~/.vim/pack/packs-cp/opt/dsf.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/context.vim
-set runtimepath+=~/.vim/pack/packs-cp/opt/minimap.vim
-set runtimepath+=~/.vim/pack/packs-unix/opt/vim-plugin-AnsiEsc
+set runtimepath+=~/.vim/pack/cp-all/opt/nerdtree
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-devicons
+set runtimepath+=~/.vim/pack/cp-full/opt/undotree
+set runtimepath+=~/.vim/pack/cp-full/opt/bufexplorer
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-surround
+set runtimepath+=~/.vim/pack/unix/opt/vim-picker
+set runtimepath+=~/.vim/pack/cp-full/opt/nerdtree-git-plugin
+set runtimepath+=~/.vim/pack/cp-full/opt/fern-renderer-nerdfont.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/fern-preview.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/fern-git-status.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/fern.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vindent.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-fzf-dictionary
+set runtimepath+=~/.vim/pack/cp-full/opt/fzf.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-gitgutter
+set runtimepath+=~/.vim/pack/cp-all/opt/supertab
+set runtimepath+=~/.vim/pack/cp-all/opt/ctrlp.vim
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-airline-themes
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-airline
+set runtimepath+=~/.vim/pack/cp-all/opt/rainbow
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-illuminate
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-easymotion
+set runtimepath+=~/.vim/pack/cp-all/opt/nerdcommenter
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-peekaboo
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-loclist-follow
+set runtimepath+=~/.vim/pack/cp-full/opt/listtoggle
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-bufkill
+set runtimepath+=~/.vim/pack/cp-full/opt/bufferize.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/targets.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-mark
+set runtimepath+=~/.vim/pack/cp-full/opt/incsearch-fuzzy.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/incsearch.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-textmanip
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-easy-align
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-rooter
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-open-url
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-clifm
+set runtimepath+=~/.vim/pack/cp-full/opt/open-browser.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-grepper
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-Grammalecte
+set runtimepath+=~/.vim/pack/cp-full/opt/calendar-vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-fontsize
+set runtimepath+=~/.vim/pack/cp-full/opt/lf-vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-ShowTrailingWhitespace
+set runtimepath+=~/.vim/pack/cp-full/opt/FoldText
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-LanguageTool
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-langtool
+set runtimepath+=~/.vim/pack/cp-full/opt/thesaurus_query.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/ale
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-ingo-library
+set runtimepath+=~/.vim/pack/unix/opt/vim-ssh-annex
+set runtimepath+=~/.vim/pack/cp-full/opt/unicode.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/minimap.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vimtex
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-ps1
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-prettier
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-pandoc-syntax
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-mbsync
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-markdown
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-hjson
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-go
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-dokuwiki
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-closetag
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-bbcode
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-base64
+set runtimepath+=~/.vim/pack/cp-full/opt/vader.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/tagalong.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/rainbow_csv
+set runtimepath+=~/.vim/pack/cp-full/opt/org.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/neomutt.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/mediawiki.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/emmet-vim
+set runtimepath+=~/.vim/pack/cp-full/opt/CSS-one-line--multi-line-folding
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-gfm-syntax
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-rhubarb
+set runtimepath+=~/.vim/pack/cp-full/opt/fugitive-gitlab.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-fugitive
+set runtimepath+=~/.vim/pack/cp-full/opt/gitignore.vim
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-flog
+set runtimepath+=~/.vim/pack/cp-full/opt/dsf.vim
+set runtimepath+=~/.vim/pack/unix/opt/vim-plugin-AnsiEsc
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-repeat
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-buffing-wheel
+set runtimepath+=~/.vim/pack/cp-all/opt/close-buffers.vim
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-asterisk
+set runtimepath+=~/.vim/pack/cp-all/opt/quick-scope
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-startify
+set runtimepath+=~/.vim/pack/cp-all/opt/mru
+set runtimepath+=~/.vim/pack/cp-all/opt/vim-characterize
+set runtimepath+=~/.vim/pack/cp-all/opt/context.vim
 set runtimepath+=/usr/share/vim/vimfiles
-set runtimepath+=/usr/share/vim/vim91
-set runtimepath+=/usr/share/vim/vim91/pack/dist/opt/cfilter
-set runtimepath+=/usr/share/vim/vim91/pack/dist/opt/matchit
-set runtimepath+=~/.vim/pack/packs-cp/opt/nerdtree-git-plugin/after
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-matchup/after
-set runtimepath+=~/.vim/pack/packs-cp/opt/vimtex/after
-set runtimepath+=~/.vim/pack/packs-cp/opt/vim-markdown/after
+set runtimepath+=/usr/share/vim/vim92
+set runtimepath+=/usr/share/vim/vim92/pack/dist/opt/netrw
+set runtimepath+=/usr/share/vim/vim92/pack/dist/opt/cfilter
+set runtimepath+=/usr/share/vim/vim92/pack/dist/opt/matchit
+set runtimepath+=~/.vim/pack/cp-full/opt/nerdtree-git-plugin/after
+set runtimepath+=~/.vim/pack/cp-full/opt/vimtex/after
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-markdown/after
+set runtimepath+=~/.vim/pack/cp-full/opt/vim-gfm-syntax/after
 set runtimepath+=/usr/share/vim/vimfiles/after
 set runtimepath+=~/.vim/after
 set sessionoptions=buffers,curdir,folds,options,tabpages,winsize,terminal,winpos
 set shiftwidth=4
 set shortmess=filnxtToOI
-set showcmd
+set noshowmode
 set smartcase
+set splitbelow
+set splitright
 set suffixes=.bak,~,.o,.info,.swp,.aux,.bbl,.blg,.brf,.cb,.dvi,.idx,.ilg,.ind,.inx,.jpg,.log,.out,.png,.toc
 set tabstop=4
 set termencoding=utf-8
@@ -1188,8 +1267,6 @@ set ttimeoutlen=100
 set undodir=~/.cache/vim/undo//
 set visualbell
 set wildignore=NTUSER.DAT*,*.lnk
-set wildmenu
 set wildmode=longest,full
-set window=62
 set winminheight=0
 " vim: set ft=vim :

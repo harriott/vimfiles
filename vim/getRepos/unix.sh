@@ -40,7 +40,7 @@ msv="$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
 [ -f $msv ] && rm -r $msv  # temporarily, because it's got no .git
 # sf='SimpylFold'
 # sf='vim-dokuwiki'
-sf='vim-gfm-syntax'
+# sf='vim-gfm-syntax'
 # once=yes
 rd=$pwd; . $misc/GRs/update-depth1.sh
 # $vfvp/repos  can be checked against  $cf
