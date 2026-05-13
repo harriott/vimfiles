@@ -1,4 +1,6 @@
 
+-- https://harriott.github.io/ - sam 09 mai 2026
+
 -- $vfn/lua/lazy/telescope_nvim.lua
 
 -- :checkhealth telescope
@@ -33,7 +35,7 @@ return {
         defaults = {
           -- file_ignore_patterns={"%.md"}, -- avoids folding delay but also makes .md's not there...
           layout_config = { vertical = { preview_height = 0.3, }, },
-          layout_strategy='vertical',
+          layout_strategy = 'vertical',
           mappings = { -- because  <c-v>  is hijacked by  mswin.vim
             i = {
               ["<c-e>"] = require('telescope.actions').select_vertical,
@@ -47,11 +49,14 @@ return {
           path_display={'truncate'},
         },
         extensions = {
-	      frecency = { db_safe_mode = false, matcher = "fuzzy", }, -- $vfn/lua/lazy/telescope-frecency.lua
-          ['ui-select'] = {
-            require'telescope.themes'.get_cursor(),
-        -- pickers = {}
-          },
+	      frecency = { db_safe_mode = false, matcher = "fuzzy", }, -- frecency_nvim
+          everything = { sort = true, }, -- everything_nvim
+        }, -- seem to need to be here, not in their return's
+        pickers = {
+          -- oldfiles = { theme = "dropdown", },
+          -- search_history = { theme = "cursor", },
+          -- search_history = { theme = "dropdown", },
+          -- search_history = { theme = "ivy", },
         },
         require"telescope".load_extension("live_grep_args"),
       }

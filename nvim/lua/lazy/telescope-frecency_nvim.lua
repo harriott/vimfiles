@@ -7,24 +7,36 @@
 -- $lazy/telescope-frecency.nvim/doc/telescope-frecency.txt
 --  :FrecencyDelete  " a file from the database
 --  :FrecencyValidate!  " clean DB without confirmation
---  :Telescope frecency
+--  :Telescope frecency  " easier to read than  :Telescope oldfiles
 
 -- $HADL\nvim-data\file_frecency.bin.lock  wouldn't delete until a reboot
 
 return { 'nvim-telescope/telescope-frecency.nvim',
   lazy = false,  -- for  db_safe_mode
+
   config = function()
+
+    require("frecency.config").setup {
+        ignore_patterns = { "*/lastVimDirectory", }, -- doesn't have any effect
+      }
+
     require'telescope'.load_extension 'frecency'
     -- configuration is done in  $vfn/lua/lazy/telescope.lua
 
     -- vim.keymap.set('n','<c-p>',"<Cmd>echo 'frecent files'<bar>Telescope frecency<CR>")
-    vim.keymap.set({'n'},'<c-p>',function()
+    vim.keymap.set({'n'},'<c-p>',
+      function()
         vim.cmd("echo 'frecent files'")
-        require'telescope'.extensions.frecency.frecency{} -- :h telescope-frecency-usage
-          -- {ignore_patterns={"*lastVimDirectory",},} doesn't have any effect
+        require'telescope'.extensions.frecency.frecency{
+          -- ignore_patterns = { "*lastVimDirectory", }, -- doesn't have any effect
+        } -- :h telescope-frecency-usage
       end,
-      {desc=':Telescope frecency'})
-    -- easier to read than  :Telescope oldfiles
+    {desc=':Telescope frecency'})
+
   end,
+
+  -- opts = {
+  --   matcher = "fuzzy",
+  -- }, -- doesn't work
 }
 

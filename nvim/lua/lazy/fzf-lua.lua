@@ -1,7 +1,10 @@
 
+-- https://harriott.githubio/ - Wed 13 May 2026
+
 -- $vfn/lua/lazy/fzf-lua.lua
 
 -- $lazy/fzf-lua/README-Win.md
+-- $lazy/fzf-lua/doc/fzf-lua.txt
 -- $lazy/fzf-lua/doc/fzf-lua-opts.txt
 
 -- ▩-> commands
@@ -52,15 +55,24 @@
 -- :FzfLua packadd
 -- :FzfLua registers
 -- :FzfLua search_history
+-- :FzfLua treesitter  " symbols
 
 -- ▩-> configure
 return { "ibhagwan/fzf-lua",
   config = function()
-    require("fzf-lua").setup({})
+
+    -- :h fzf-lua-profiles
+      -- :FzfLua profiles
+    -- No markdown syntax highlighting:
+      -- require'fzf-lua'.setup({})
+      -- require'fzf-lua'.setup({'telescope'})
+    require'fzf-lua'.setup({'telescope',winopts={preview={default='bat'}}})
+
     vim.keymap.set({'n'},'<s-f1>','<Cmd>FzfLua buffers<CR>')
     vim.keymap.set({'n'},'<leader>zd',"<Cmd>FzfLua files cwd=$DWp<CR>",{desc=':FzfLua files cwd=$DWp'})
     vim.keymap.set({'n'},'<leader>zt',"<Cmd>FzfLua files cwd=$TeNo<CR>",{desc=':FzfLua files cwd=$TeNo'})
     vim.keymap.set({'n'},'<leader>zg',"<Cmd>FzfLua files cwd=$onGH<CR>",{desc=':FzfLua files cwd=$onGH'})
+
   end,
 }
 

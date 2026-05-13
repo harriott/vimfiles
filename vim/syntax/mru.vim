@@ -4,14 +4,14 @@
 " Last Change: Sun 21 Jan 2024
 " see  $vfp/packs-cp/opt/mru/plugin/mru.vim
 
-" $vimfiles/syntax/mru.vim
+" $vfv/syntax/mru.vim
 
 if exists('b:current_syntax') | finish |  endif
 
-syn match MRU_Cz 'work_Cz'
+syn match MRU_Cz 'work-Cz'
 hi def link MRU_Cz DiffDelete
 
-syn match MRU_DW 'DokuWiki'
+syn match MRU_DW 'DokuWiki/pages/\zs[a-z]\+'
 hi def link MRU_DW DiffChange
 
 syn match MRU_onGH 'onGitHub'

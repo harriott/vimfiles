@@ -1,4 +1,6 @@
--- vim: set fdl=5:
+-- vim: set fdl=2:
+
+-- https://harriott.github.io/ - sam 09 mai 2026
 
 -- $vfn/lua/lazy/telescope-everything_nvim.lua
 
@@ -9,13 +11,7 @@ return {'Verf/telescope-everything.nvim',
   cond = vim.fn.has("win64") == 1,
   config = function()
     require'telescope'.load_extension 'everything'
-    require'telescope'.setup({
-      extensions = {
-        everything = {
-          sort = true,
-        }
-      },
-    })
+    -- configuration is done in  $vfn/lua/lazy/telescope.lua
   end,
 }
 
