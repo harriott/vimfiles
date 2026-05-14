@@ -1,6 +1,8 @@
 
 -- https://harriott.github.io/ - sam 09 mai 2026
 
+-- nvim-telescope/telescope.nvim
+
 -- $vfn/lua/lazy/telescope_nvim.lua
 
 -- :checkhealth telescope
@@ -31,6 +33,17 @@ return {
     config = function()
 
       -- ▩--> setup
+      -- local new_maker = function(filepath, bufnr, opts)
+      --   opts = opts or {}
+      --   if opts.use_ft_detect == nil then
+      --     local ft = require'plenary.filetype'.detect(filepath)
+      --     -- Here for example you can say: if ft == "xyz" then this_regex_highlighing else nothing end
+      --     opts.use_ft_detect = false
+      --     require'telescope.previewers.utils'.regex_highlighter(bufnr, ft)
+      --   end
+      --   previewers.buffer_previewer_maker(filepath, bufnr, opts)
+      -- end
+
       require'telescope'.setup{ -- :help telescope.setup()
         defaults = {
           -- file_ignore_patterns={"%.md"}, -- avoids folding delay but also makes .md's not there...
@@ -53,15 +66,18 @@ return {
           everything = { sort = true, }, -- everything_nvim
         }, -- seem to need to be here, not in their return's
         pickers = {
-          -- oldfiles = { theme = "dropdown", },
+          oldfiles = {
+            -- previewer = false,
+            -- theme = "dropdown",
+          },
           -- search_history = { theme = "cursor", },
           -- search_history = { theme = "dropdown", },
           -- search_history = { theme = "ivy", },
         },
-        require"telescope".load_extension("live_grep_args"),
+        require'telescope'.load_extension('live_grep_args'),
       }
       pcall(require'telescope'.load_extension, 'fzf')
-      local builtin = require 'telescope.builtin' -- :help telescope.builtin
+      local builtin = require'telescope.builtin' -- :help telescope.builtin
 
       -- ▩--> keymaps
       -- /^\s*vim.keymap.set({.*},'\zs.*\ze',

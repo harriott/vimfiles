@@ -137,6 +137,7 @@ require('lazy').setup(
       -- <tab>/<s-tab>  toggles items, then  zn  remakes only those marked, zN  those not marked
     {'HiPhish/rainbow-delimiters.nvim'}, -- parentheses slightly less visible but easier to distinguish
     {'JoosepAlviste/nvim-ts-context-commentstring'}, -- recognition of code blocks
+      -- $lazy/nvim-ts-context-commentstring/doc/nvim-ts-context-commentstring.txt
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
       -- $lazy/gitsigns.nvim/doc/gitsigns.txt
       -- :Gitsigns toggle_signs  ' :se rnu

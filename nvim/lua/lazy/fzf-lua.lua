@@ -63,6 +63,7 @@ return { "ibhagwan/fzf-lua",
 
     -- :h fzf-lua-profiles
       -- :FzfLua profiles
+    -- Dokuwiki syntax highlighting probably imppossible.
     -- No markdown syntax highlighting:
       -- require'fzf-lua'.setup({})
       -- require'fzf-lua'.setup({'telescope'})

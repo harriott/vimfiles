@@ -109,5 +109,6 @@ aug filetypedetect
   au! BufRead,BufNewFile *.WGPfn     setf WGPfn     " $vfv/syntax/WGPfn.vim
   au! BufRead,BufNewFile *.whatsapp  setf whatsapp  " $vfv/syntax/whatsapp.vim
   au! BufRead,BufNewFile .spacemacs  setf lisp
+  au! BufRead,BufNewFile Caddyfile  setf caddy
 aug END  " - overrides  $VIMRUNTIME/filetype.vim
 
