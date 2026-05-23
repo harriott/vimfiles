@@ -7,4 +7,5 @@
 "  also  $vfv/syntax/caddy.vim
 
 let &l:commentstring = '# %s'
+setlocal expandtab tw=0
 

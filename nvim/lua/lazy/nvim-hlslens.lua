@@ -2,6 +2,9 @@
 
 -- $vfn/lua/lazy/nvim-hlslens.lua
 
+-- adds virtual text at end of lines that contain the search term, [nm,N/N]
+-- $lazy/nvim-hlslens/doc/hlslens.txt
+
 return {
   {  'kevinhwang91/nvim-hlslens',
     config = function()

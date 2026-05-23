@@ -32,21 +32,15 @@ return {
     -- ▩-> config
     config = function()
 
-      -- ▩--> setup
-      -- local new_maker = function(filepath, bufnr, opts)
-      --   opts = opts or {}
-      --   if opts.use_ft_detect == nil then
-      --     local ft = require'plenary.filetype'.detect(filepath)
-      --     -- Here for example you can say: if ft == "xyz" then this_regex_highlighing else nothing end
-      --     opts.use_ft_detect = false
-      --     require'telescope.previewers.utils'.regex_highlighter(bufnr, ft)
-      --   end
-      --   previewers.buffer_previewer_maker(filepath, bufnr, opts)
-      -- end
-
       require'telescope'.setup{ -- :help telescope.setup()
         defaults = {
           -- file_ignore_patterns={"%.md"}, -- avoids folding delay but also makes .md's not there...
+          buffer_previewer_maker = function(filepath, bufnr, opts)
+              require'telescope.previewers'.buffer_previewer_maker(filepath, bufnr, opts)
+              if filepath:match("%.dw$") then vim.schedule(function() vim.bo[bufnr].filetype = "dokuwiki" end) end
+              -- if filepath:match("%.md$") then vim.schedule(function() vim.bo[bufnr].filetype = "markdown" end) end
+                -- not catching  $vfvp/packs-cp-full/opt/vim-markdown/syntax/markdown.vim
+          end,
           layout_config = { vertical = { preview_height = 0.3, }, },
           layout_strategy = 'vertical',
           mappings = { -- because  <c-v>  is hijacked by  mswin.vim

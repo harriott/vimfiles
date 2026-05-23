@@ -95,7 +95,7 @@ nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
 " convert monospaced to unformatted
 nnoremap <buffer><leader><leader>5 ?''<cr>i<cr><esc>:s/''/%% /<cr>:s/''/ %%/<cr>kJ
 
-" select
+" select 'within'
 nnoremap <buffer><leader><leader>' T'vt'y
 
 " wrap the inner word under cursor with ''

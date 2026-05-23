@@ -38,7 +38,7 @@ au BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
 au BufRead,BufNew,BufNewFile */AppData/Roaming/Microsoft/Windows/PowerShell/PSReadLine/ConsoleHost_history.txt setlocal ft=ps1
 
 ""> 0 my Arch Bash history
-au BufNewFile,BufRead */bash_history setlocal filetype=sh
+au BufNewFile,BufRead */bash_history* setlocal filetype=sh
 
 ""> 0 my tmux.conf backups
 au BufNew,BufNewFile,BufRead $culLA/ml-*/tmux/**/*.conf setlocal filetype=tmux

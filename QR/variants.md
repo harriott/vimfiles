@@ -203,6 +203,7 @@ K                " brings up a man page (if there is one) for word under cursor
 q:               " brings up an interactive history of :commands (in an editable window)
 vi               " exit Ex mode
 :ar              " the argument list
+:echo len(getbufinfo({'buflisted':1}))
 :h key-notation
 :h index        " lists the all of the commands
 :h split()
@@ -257,6 +258,9 @@ vi               " exit Ex mode
 `"` also triggers `vim-peekaboo`
 
 ## scripting
+    $cITcr/CP/encoding/textWrangling-vi/vim/learnvimscript.vim
+    $cITcr/CP/encoding/textWrangling-vi/vim/learnvim9script.vim
+
 ```vim
 :echo expand('<cword>') " echos the word under the cursor
 :echo getline(1) " contents of line 1
@@ -360,6 +364,7 @@ vimscript
     :se spc                ' (spellcapcheck) pattern for defining a sentence
     :se ttm                ' ms timeout for key codes
     :se wop                ' wildoptions
+    :se wrap?
     :verb se tw?           ' shows where textwidth was set (? is only really needed for booleans)
 
 options as variable: `:echo &textwidth`

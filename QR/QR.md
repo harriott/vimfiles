@@ -209,7 +209,7 @@ window-local: `:h location-list`
 
 ## windows splits - sizes
     :echo winheight(0)
-    :se wfh?  " winfixheight - resists  c-w =, so  se nowfh
+    :se wfh?  " winfixheight - resists  c-w =, so  :se nowfh
 
 ### resize
     $vfv/plugin/plugin.vim > resize
@@ -603,7 +603,9 @@ u            " lowercase a visual block
     digraphs
     ^Vu03b2  " gets greek small letter beta
 
-Entering special characters
+### $DWp
+- "Entering special characters"
+- "handling special characters"
 
 ## number lists
     :for i in range(1,31) | pu=i.'. ' | endfor  " creates a numbered markdown list, ready for items

@@ -450,20 +450,28 @@ packadd lf-vim
 
 ""> layout - vim-fontsize
 " $vfvp/packs-cp-full/opt/vim-fontsize/doc/fontsize.txt
+
 if has('gui_running')
   packadd vim-fontsize
+
     let g:fontsize#timeout = 0
     nmap <silent> <leader>fs <Plug>FontsizeBegin
-    " - enters fontsize mode
+    " - enters fontsize mode:
+    "    +/=             increases
+    "    -               decreases
+    "    0               returns to default
+    "    <CR>/<space>/q  quits
+
+    " Disables, not working:
     nmap <silent> <SID>DisableFontsizeInc     <Plug>FontsizeInc
     nmap <silent> <SID>DisableFontsizeDec     <Plug>FontsizeDec
     nmap <silent> <SID>DisableFontsizeDefault <Plug>FontsizeDefault
+    " - so still have:
+    "    \\+  increases
+    "    \\-  decreases
+    "    \\0  returns to default
+
 endif
-" fontsize mode:
-"  +/=             increases
-"  -               decreases
-"  0               returns to default
-"  <CR>/<space>/q  quits
 
 ""> shell - calendar-vim
 let g:calendar_monday = 1

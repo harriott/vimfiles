@@ -106,7 +106,7 @@ function! VimWriteClose()
   else
     let s:b = expand('%:t')
     silent wall
-    bdelete
+    quit  " not clear why previously  bdelete
     echo 'closed '.s:b
   endif
 endfunction
@@ -119,5 +119,6 @@ vnoremap <f4> <Esc>:call VimWriteClose()<CR>
 
 nnoremap <leader><f4> :Bdelete other<CR>:sleep<CR>:call VimWriteClose()<CR>
 inoremap <leader><f4> <Esc>:Bdelete other<CR>::sleep<CR>call VimWriteClose()<CR>
+" - $vfv/plugin/packsAll.vim
 " - the sleeps ensure recents aren't lost on win64
 

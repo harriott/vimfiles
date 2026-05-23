@@ -53,7 +53,7 @@ else
         let $tIs = $JHt.'\IT-storage'  " $tIs\diskUsage.txt
       let $JHThb = $DJH.'\Thb'
       let $JHw = $DJH.'\work'
-        let $JHm = $JHw.'\IT-Jekyll-harriott-minima'
+        let $JHm = $JHw.'\IT\Jekyll-harriott-minima'
         let $wP = $JHw.'\France\IdF\Paris'
       let $JJt0 = $DJH.'\Jo-then0'
         let $T0Fr = $JJt0.'\world-Europe\France'
