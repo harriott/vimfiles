@@ -1,11 +1,13 @@
 
--- https://harriott.github.io/ - ven 08 mai 2026
+-- https://harriott.github.io/ - Sun 24 May 2026
 
 -- $vfn/lua/init.lua
 --  required by  $vfn/init.vim
 --  adapted from  $cGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 
 vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
+
+-- vim.loader.enable()
 
 -- vim.opt.undofile = true  -- persistent undo
 
@@ -168,12 +170,15 @@ require('lazy').setup(
     {'wurli/visimatch.nvim', opts = {} },
     -- ▩---> moduled
     -- $vfn/lua/lazy
+    require'lazy/alpha-nvim',
     require'lazy/auto-session',
     require'lazy/boole_nvim',
     require'lazy/bufferline_nvim',
     -- require'lazy/catppuccin',
     -- require'lazy/Comment_nvim',
     -- require'lazy/csvview_nvim',
+    require'lazy/close-buffers_nvim',
+    require'lazy/dashboard-nvim',
     require'lazy/fzf-lua',
     require'lazy/harpoon',
     require'lazy/helpview_nvim',
@@ -286,7 +291,7 @@ vim.lsp.enable({'astro'}) -- $vfn/lsp/astro.lua
 vim.lsp.enable({'bashls'}) -- $vfn/lsp/bashls.lua
 -- vim.lsp.enable({'ts_ls'}) -- $vfn/lsp/ts_ls.lua
 vim.lsp.enable({'lemminx'}) -- $vfn/lsp/lemminx.lua
-vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
+-- vim.lsp.enable({'ltex'}) -- $vfn/lsp/ltex.lua
 vim.lsp.enable({'ltex_plus'}) -- $vfn/lsp/ltex_plus.lua
 vim.lsp.enable({'lua_ls'}) -- $vfn/lsp/lua_ls.lua
 vim.lsp.enable({'mdx_analyzer'})
@@ -297,6 +302,7 @@ vim.lsp.enable({'pyright'}) -- $vfn/lsp/pyright.lua
 -- vim.lsp.enable({'spellwand'}) -- $vfn/lsp/spellwand.lua
 vim.lsp.enable({'sqls'}) -- $vfn/lsp/pyright.lua
 vim.lsp.enable({'texlab'}) -- $vfn/lsp/texlab.lua
+vim.lsp.enable({'ts_ls'}) -- $vfn/lsp/ts_ls.lua
 vim.lsp.enable({'typos_lsp'}) -- $vfn/lsp/typos_lsp.lua
 vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
 -- unclear what's the benefit of LuaDoc Annotations

@@ -153,6 +153,11 @@ navigating into `C:\Vim` requires cursor on C
     - if stuck in `unix`, `pkill neovim`
     - somehow accesses `:white_check_mark:` ✅
 
+### syntax
+    \vh  " $vfn/lua/lazy/telescope_nvim.lua
+
+`right-click > Inspect` to see syntax of text at cursor
+
 ### inccommand
 - `:h icm`
 - `:let &icm = ''` disables preview of substitute changes
@@ -161,6 +166,12 @@ navigating into `C:\Vim` requires cursor on C
 ### ShaDa file
 - `MessagePack` format which is almost unreadable from `Vim`
 - manually editing: with no `Neovim` running, `nvim --clean ~/.local/state/nvim/shada/main.shada`, remove the relevant lines, `:w|wsh|q`
+
+## ShaDa
+    :o    " :oldfiles
+    :wsh  ":wshada
+
+shared data
 
 ## spell
 `\cs` = `cmp-spell` which underlines in red possible mistakes
@@ -188,11 +199,12 @@ navigating into `C:\Vim` requires cursor on C
     :lua vim.treesitter.stop()
 
 # Vim
+    $ sut="$vimfiles/startuptimes/vim-$host.sut"; rm $sut; vim --startuptime $sut
+    $ vim --version
+    $ vim -u NONE
     :echo $HOME
     c-k<non-text-key> " enters the Vim value of a non-text-key
     c-r '  " (in command line) insert the unnamed register
-    vim -u NONE
-    vim --version
 
 ```vim
 @@               " = @: = repeat last command-line
@@ -210,6 +222,7 @@ vi               " exit Ex mode
 :his            " Display command-line history
 :his s          " Display search string history
 :mkexrc $HOME/vim.exrc
+:ol             " :oldfiles
 :packadd clrzr  " $vfv/plugin/packsVimFull.vim
 :profile ...    " for speed tests
 :so %           " source the current file

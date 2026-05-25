@@ -582,6 +582,7 @@ nnoremap <leader>x <C-W>c
 nnoremap <leader><leader>h :split<CR>
 nnoremap <leader><leader>v :vsplit<CR>
 nnoremap <leader><leader>o :write<bar>close<CR>
+" - not dropping the buffer
 " - will only work on a split
 "   also  <c-f4>  from  mswin.vim
 

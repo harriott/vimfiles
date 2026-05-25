@@ -69,15 +69,15 @@ endif
 let g:useSTW = 0
 
 "">> colorscheme
+" $vfvp/packs-colo/opt/
+
 if has('win64') || exists('g:neovide')
   " $vfvp/packs-colo/opt/papercolor-theme/doc/PaperColor.txt
   let g:PaperColor_Theme_Options = { 'theme': { 'default': { 'allow_italic': 1 },
     \ 'default.dark': { 'override' : { 'color05':['','247'], 'error_fg':['','09'],
       \ 'folded_bg':['','234'], 'linenumber_fg':['','243'], } } } }
-  set background=dark | colorscheme PaperColor
-  " colo apprentice
+  set background=dark | color PaperColor
   " colo wombat
-  " packadd dracula | colo dracula
 else
   colo jellybeans
 endif

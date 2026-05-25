@@ -410,19 +410,17 @@ z/                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
     \=      " 0 or 1 more
     \+      " 1 or more
 
-```vim
-\a    " alphabetic character [A-Za-z]
-\d    " digit
-\D    " non-digit
-\h    " head of word character (a,b,c...z,A,B,C...Z and _)
-\S    " non-whitespace character
-\s    " whitespace character
-\u    " uppercase character
-\U    " non-uppercase character
-\w    " word character [0-9A-Za-z_]
-\{,m} " 0-m matches
-\{-}  " as few as possible (only seems to work for single characters)
-```
+    \a    " alphabetic character [A-Za-z]
+    \d    " digit
+    \D    " non-digit
+    \h    " head of word character (a,b,c...z,A,B,C...Z and _)
+    \S    " non-whitespace character
+    \s    " whitespace character
+    \u    " uppercase character
+    \U    " non-uppercase character
+    \w    " word character [0-9A-Za-z_]
+    \{,m} " 0-m matches
+    \{-}  " as few as possible (only seems to work for single characters)
 
 `set magic` is the default, `\v` goes very
 
@@ -458,6 +456,7 @@ z/                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 <shellcmd> | gvim -   " pipes shell command output into gvim
 gx                    " open url under cursor (or all of first line of markdown link)
 \<f12>                " open in Emacs
+'0                    " jump to global mark 0 (last position before closing)
 ```
 
 ## Git
@@ -469,8 +468,8 @@ gx                    " open url under cursor (or all of first line of markdown 
 2c-g                            " buffer number & full filename (<c-f11>  on  AZERTY)
 :e ++ff=dos | set ff=unix | w!  " remove CRLFs - $vfv/plugin/plugin.vim
 :e.                             " dirvish (or netrw) on current directory
+:echo v:oldfiles
 :f  or  c-g                     " relative filename (:h :f)
-:o                              " oldfiles
 \<f11>                          " last modification time
 \vg                             " cd to file's and vimgrep for last search
 gf                              " open file under cursor - :h gF

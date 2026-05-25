@@ -632,18 +632,6 @@ function! GrabScriptnames()
 endfunction
 " for use in  $vimfiles/settings-maps-all/*-scriptnames-*.ffl
 
-""> vim - buffers - vim-bufkill
-" :BB :BF  could be mapped to replace some of the functionality of  vim-buffing-wheel
-
-packadd vim-bufkill
-
-"">> mappings
-let g:BufKillCreateMappings = 0
-
-" :bd  maintaining splits
-noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
-" - has at least a chance of landing on a different buffer than already visible
-
 ""> vim - quickfix lists - cfilter
 " https://vimhelp.org/quickfix.txt.html
 "  :Cfilter[!] /{pat}/

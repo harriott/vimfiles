@@ -1,7 +1,7 @@
 
 " my portable vimrc - settings that work on linux & MSWin
 " -------------------------------------------------------
-" - Joseph Harriott - jeu 16 mai 2024
+" - Joseph Harriott - Sat 23 May 2026
 
 " $vfv/enter/vimrc.vim  source'd by
 "  $vfv/enter/vimrc-linux.vim
@@ -10,6 +10,10 @@
 " ------------------------------------------------------------------
 " typically basic Vim settings here - look in plugin folder for more
 " ------------------------------------------------------------------
+
+autocmd VimEnter * cd $DJH  " done early for
+"  $vfn/lua/lazy/alpha-nvim.lua
+"  vim-startify ($vfv/plugin/packsAll.vim)
 
 set cot+=longest  " completeopt
 set enc=utf-8  " encoding, get this done early
@@ -36,7 +40,7 @@ else
 endif
 
 ""> interface
-if !has('gui_running') && !has('nvim') | colorscheme deus | endif  " plain vim only
+au! BufRead,BufNewFile *PowerShell/PSReadLine/ConsoleHost_history.txt setlocal nospell
 
 set fillchars=fold:\ 
 " - '\ ' for cleaner folds
@@ -55,9 +59,15 @@ set shortmess-=S " display count of matches
 set splitright
 set splitbelow
 
-"">> special files
-autocmd BufRead,BufNewFile */sudoers setlocal ft=sudoers
-autocmd BufRead,BufNewFile *PowerShell/PSReadLine/ConsoleHost_history.txt setlocal nospell
+"">> colorscheme
+" $vfvp/packs-colo/opt/
+
+" colo apprentice  " not in nvim
+" colo dracula
+" colo jellybeans
+" color PaperColor
+" colo wombat
+if !has('gui_running') && !has('nvim') | color deus | endif  " plain vim only
 
 ""> mappings 0 for AZERTY
 if v:lang =~ 'fr'
@@ -93,32 +103,34 @@ let maplocalleader = '='
 " originally written for terminal nvim/vim, then realised it's handy for GUIs too
 function! VimWriteClose()
   if has('nvim')
-     NvimTreeClose
+    NvimTreeClose
+    " wshada  " ensures  v:oldfiles
   endif  " can't be scrunched to one line
   if len(getbufinfo({'buflisted':1})) == 1
     let cfd = expand('%:p:h') " current file directory
-    edit $HOME/lastVimDirectory  " for  $Bash/bashrc-console  &  $MSn\PS\PSProfile.ps1
+    edit $HOME/lastVimDirectory  " for  $AjB/bashrc-console  &  $MSn/PS/Profile.ps1
     normal dd
     put=cfd
     normal kdd
     wall
+    bdelete  " because don't want it to be the target of  '0
     quit  " this last file
   else
     let s:b = expand('%:t')
     silent wall
-    quit  " not clear why previously  bdelete
+    bdelete  " in  nvim  this doesn't get the associated file into  v:oldfiles
     echo 'closed '.s:b
   endif
 endfunction
 
+"">> mappings
+" more in
+"  $vfn/lua/lazy/close-buffers_nvim.lua
+"  $vfv/plugin/packsAll.vim
+
 nnoremap <f4> :call VimWriteClose()<CR>
-inoremap <f4> <Esc>:call VimWriteClose()<CR>
+inoremap <f4> <Esc>:echo 'now maybe  f4  again'<CR>
 " - overriden by some autocommands in  $vfv/plugin/plugin.vim
 
 vnoremap <f4> <Esc>:call VimWriteClose()<CR>
-
-nnoremap <leader><f4> :Bdelete other<CR>:sleep<CR>:call VimWriteClose()<CR>
-inoremap <leader><f4> <Esc>:Bdelete other<CR>::sleep<CR>call VimWriteClose()<CR>
-" - $vfv/plugin/packsAll.vim
-" - the sleeps ensure recents aren't lost on win64
 

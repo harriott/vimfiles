@@ -89,7 +89,7 @@ return {
     config = function()
       -- require('nvim-treesitter').install{'zig'} -- for testing
       -- ~/.local/share/nvim/site; rm -r parser parser-info queries
-      require('nvim-treesitter').install{'bash','gnuplot','lua','markdown','perl','powershell','python','query','rust','vim','vimdoc'} -- repopulates
+      require('nvim-treesitter').install{'bash','diff','gnuplot','lua','markdown','perl','powershell','python','query','rust','vim','vimdoc'} -- repopulates
     end,
   },
 

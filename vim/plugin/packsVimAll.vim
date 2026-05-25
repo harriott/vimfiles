@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - ven 01 nov 2024
+" https://harriott.githubio/ - Mon 25 May 2026
 
 " $vfv/plugin/packsVimAll.vim
 
@@ -106,4 +106,31 @@ inoremap <F10> <Esc>:cd %:p:h<CR>:NERDTreeCWD<CR>
 " :verb imap <tab>
 " c-q tab  to insert a literal tab
 packadd supertab
+
+""> vim - buffers - close-buffers.vim
+" $vfvp/packs-cp-all/opt/close-buffers.vim/README.md
+packadd close-buffers.vim
+
+"  quickly close all but current buffer
+nnoremap <leader>bdd :Bdelete other<CR>
+"  quickly close all but visible buffers
+nnoremap <leader>bd  :Bdelete hidden<CR>
+
+"">> close all
+" in  nvim  I needed these to start with a  :wshada, but now  $vfn/lua/lazy/close-buffers_nvim.lua
+nnoremap <leader><f4> :Bdelete other<CR>:sleep<CR>:call VimWriteClose()<CR>
+inoremap <leader><f4> <Esc>:Bdelete other<CR>::sleep<CR>call VimWriteClose()<CR>
+" - the sleeps ensure recents aren't lost on win64
+
+""> vim - buffers - vim-bufkill
+" :BB :BF  could be mapped to replace some of the functionality of  vim-buffing-wheel
+
+packadd vim-bufkill
+
+"">> mappings
+let g:BufKillCreateMappings = 0
+
+" :bd  maintaining splits
+noremap <silent> <leader><leader>d :BD<CR>:bp<CR>
+" - has at least a chance of landing on a different buffer than already visible
 

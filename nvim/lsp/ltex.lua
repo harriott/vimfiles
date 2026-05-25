@@ -2,6 +2,7 @@
 
 -- $vfn/lsp/ltex.lua  LTeX Language Server  for  LanguageTool
 --  for human languages within a few markup languages
+--  deprecated
 --  :MasonInstall ltex-ls
 --  :MasonUninstall ltex-ls
 --  enabled in  $vfn/lua/init.lua

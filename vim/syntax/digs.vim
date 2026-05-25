@@ -4,7 +4,7 @@
 " Maintainer: Joseph Harriott
 " Last Change: Wed 22 Mar 2023
 
-" $vimfiles/syntax/digs.vim  (also  $vimfiles/ftplugin/digs.vim)
+" $vfv/syntax/digs.vim  (also  $vfv/ftplugin/digs.vim)
 "Detection: $vimfiles/filetype.vim
 
 if exists('b:current_syntax') | finish | endif

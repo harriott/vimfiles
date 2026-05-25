@@ -100,7 +100,8 @@ aug filetypedetect
   au! BufRead,BufNewFile *.rgtl      setf rgtl      " $vfv/syntax/rgtl.vim
   au! BufRead,BufNewFile *.rplp      setf rplp      " $vfv/syntax/rplp.vim
   au! BufRead,BufNewFile *.sifl      setf sifl      " $vfv/syntax/sifl.vim
-  au! BufRead,BufNewFile *.slJH      setf slJH      " $vfv/plugin/slJH.vim
+  au! BufRead,BufNewFile *.slJH      setf slJH      " $vfv/ftplugin/slJH.vim
+  au! BufRead,BufNewFile *.sut       setf sut       " $vfv/ftplugin/sut.vim
   au! BufRead,BufNewFile *.tbmo      setf tbmo      " $vfv/syntax/tbmo.vim
   au! BufRead,BufNewFile *.toc       setf tex       " instead of  $VIMRUNTIME/syntax/cdrtoc.vim
   au! BufRead,BufNewFile *.tree      setf tree      " $vfv/ftplugin/tree.vim
@@ -108,7 +109,8 @@ aug filetypedetect
   au! BufRead,BufNewFile *.ufco      setf ufco      " $vfv/syntax/ufco.vim
   au! BufRead,BufNewFile *.WGPfn     setf WGPfn     " $vfv/syntax/WGPfn.vim
   au! BufRead,BufNewFile *.whatsapp  setf whatsapp  " $vfv/syntax/whatsapp.vim
+  au! BufRead,BufNewFile */sudoers   setf sudoers
   au! BufRead,BufNewFile .spacemacs  setf lisp
-  au! BufRead,BufNewFile Caddyfile  setf caddy
+  au! BufRead,BufNewFile Caddyfile   setf caddy
 aug END  " - overrides  $VIMRUNTIME/filetype.vim
 

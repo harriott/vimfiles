@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - mar 04 févr 2025
+" https://harriott.githubio/ - Mon 25 May 2026
 
 " $vfv/plugin/packsAll.vim  sourced by  $vfv/plugin/packs.vim
 "  all instances of Vim, including WSL
@@ -44,6 +44,7 @@ let MRU_Window_Height = 20
 " let MRU_Use_Current_Window = 1
 
 if !has('nvim') | nnoremap <leader>m :MRU | endif
+nnoremap <leader>u :MRU<cr>:only<cr>
 packadd mru
 
 " $HOME/.vim_mru_files
@@ -60,6 +61,9 @@ packadd mru
 
 ""> shell - vim-startify
 " $vfvp/packs-cp-all/opt/vim-startify/doc/startify.txt
+" in nvim it's frequently not capturing old files
+let g:startify_lists = [ { 'type': 'files',     'header': ['   MRU'] }, ]
+let g:startify_files_number = 40
 packadd vim-startify
 " Startify
 
@@ -78,14 +82,6 @@ map g# <Plug>(asterisk-g#)  " rg --no-ignore ' g# '
 map z* <Plug>(asterisk-z*)  " rg --no-ignore ' z\* '
 " z*cgn  make change to this first match, escape, . does same on next match
 map z# <Plug>(asterisk-z#)  " rg --no-ignore ' z# '
-
-""> vim - buffers - close-buffers.vim
-"  quickly close all but current buffer
-nnoremap <leader>bdd :Bdelete other<CR>
-"  quickly close all but visible buffers
-nnoremap <leader>bd  :Bdelete hidden<CR>
-
-packadd close-buffers.vim
 
 ""> vim - buffers - vim-buffing-wheel
 " $vfvp/packs-cp-all/opt/vim-buffing-wheel/readme.md
