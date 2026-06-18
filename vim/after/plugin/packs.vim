@@ -15,7 +15,7 @@ if exists('g:test') | finish | endif
 if !has('nvim')
   packadd vim-devicons  " recommended after many others
 endif
-packadd nerdtree  " $jtCP/Vim/plugins/vim-devicons/issue428.md
+packadd nerdtree  " $ITmCP/Vim/plugins/vim-devicons/issue428.md
 
 ""> encoding - vim-gitgutter
 " $vfv/plugin/packsVimFull.vim

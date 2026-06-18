@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - Mon 25 May 2026
+" https://harriott.githubio/ - mer 27 mai 2026
 
 " $vfv/plugin/packsAll.vim  sourced by  $vfv/plugin/packs.vim
 "  all instances of Vim, including WSL
@@ -63,7 +63,11 @@ packadd mru
 " $vfvp/packs-cp-all/opt/vim-startify/doc/startify.txt
 " in nvim it's frequently not capturing old files
 let g:startify_lists = [ { 'type': 'files',     'header': ['   MRU'] }, ]
-let g:startify_files_number = 40
+if hostname() =~ 'HPEB840G3'
+  let g:startify_files_number = 30  " good for  x768  screen
+else
+  let g:startify_files_number = 35  " good for  x1080  screen
+endif " allowing for some wraps
 packadd vim-startify
 " Startify
 

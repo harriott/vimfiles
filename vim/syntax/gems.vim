@@ -1,8 +1,8 @@
 
-" Language: gems
+" Language: gems - see  $OSAB/QR/encoding.md
 "  gem list > $culLA/$host/gems.gems
 " Maintainer: Joseph Harriott
-" Last Change: Mon 15 Apr 2024
+" Last Change: Thu 04 Jun 2026
 " $vfv/syntax/gems.vim
 " Detection: $vfv/filetype.vim
 

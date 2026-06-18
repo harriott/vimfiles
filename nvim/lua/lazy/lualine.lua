@@ -16,7 +16,7 @@ return {
           -- 'man' is helpful
           -- 'nvim-tree' shows the full path
           -- 'oil' shows the full path
-          -- 'quickfix' is helpful, but  $jtCP/Nvim-lualine-quickfix_extension_crashes_on_%.md
+          -- 'quickfix' is helpful, but  $ITmCP/Nvim-lualine-quickfix_extension_crashes_on_%.md
           -- 'toggleterm' is crap
         -- options = { theme = 'codedark' },
         -- options = { theme = 'gruvbox' },

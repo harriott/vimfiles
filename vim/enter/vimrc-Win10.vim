@@ -112,7 +112,6 @@ let g:webdevicons_enable_airline_statusline = 0  " to be able to see  fileformat
 "">> vim-langtool
 " let g:langtool_jar = 'C:\LanguageTool\languagetool-commandline.jar'
 let g:langtool_jar = $cITcc.'\CP\LanguageTool\languagetool-commandline.jar'
-" C:\Users\jharr\Dropbox\JH\core\IT_stack\copied-code\CP\LanguageTool\languagetool-commandline.jar
 
 "">> vim-LanguageTool
 " let g:languagetool_jar='C:\LanguageTool\languagetool-commandline.jar'

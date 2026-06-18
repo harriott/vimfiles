@@ -1,5 +1,5 @@
 
-" https://harriott.githubio/ - sam 28 févr 2026
+" https://harriott.githubio/ - Thu 11 Jun 2026
 
 " $vfv/plugin/packsFull.vim - only sourced by  $vfv/plugin/packs.vim  for full installations
 
@@ -83,7 +83,7 @@ packadd mediawiki.vim
 " $vimfiles/ftplugin/mediawiki.vim
 
 "">> msmtp-scripts-vim
-" marlam  in  $vfv/getRepos/unix.sh, $vfv/getRepos/win64.ps1
+" see  $misc/GRs/cGRs-needed.sh
 " $vfvp/packs-cp-full/opt/msmtp-scripts-vim/ftdetect/msmtp.vim
 if has('nvim') | packadd msmtp-scripts-vim | endif
 
@@ -275,19 +275,19 @@ packadd vimtex
 " MinimapToggle
 if ! exists('g:WSL') | packadd minimap.vim | endif
 
-" ""> encoding - Tagbar
-" " $vfvp/packs-cp-full/opt/vim-tagbar/doc/tagbar.txt
-" " $vfvp/packs-cp-full/opt/vim-tagbar/README.md
+""> encoding - Tagbar
+" $vfvp/packs-cp-full/opt/vim-tagbar/doc/tagbar.txt
+" $vfvp/packs-cp-full/opt/vim-tagbar/README.md
 
-" " :TagbarToggle  mapping set in
-" "  $vfv/ftplugin/perl.vim
-" "  $vfv/ftplugin/python.vim
+" :TagbarToggle  mapping set in
+"  $vfv/ftplugin/perl.vim
+"  $vfv/ftplugin/python.vim
 
-" " h tagbar-contents
-" " h tagbar-ignore
+" h tagbar-contents
+" h tagbar-ignore
 
-" autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
-" packadd vim-tagbar
+autocmd BufNewFile,BufReadPre *.md let b:tagbar_ignore = 1
+packadd vim-tagbar
 
 ""> encoding - unicode.vim
 " $vfvp/packs-cp-full/opt/unicode.vim/doc/unicode.txt
@@ -307,7 +307,7 @@ packadd unicode.vim
 "  i% = inside
 "  a% = all
 nnoremap <leader>ww :<c-u>MatchupWhereAmI??<cr>
-" packadd vim-matchup " off for Neovim v0.12.0
+packadd vim-matchup " off for Neovim v0.12.0
 
 ""> encoding - vim-ssh-annex
 autocmd BufRead,BufNewFile known_hosts-* setlocal filetype=ssh_known_hosts
@@ -362,14 +362,17 @@ nnoremap <leader>wt :ThesaurusQueryReplaceCurrentWord<CR>
 packadd thesaurus_query.vim
 
 ""> languages - vim-langtool
+" $vfvp/packs-cp-full/opt/vim-langtool/README.md
 nnoremap <leader>lt :LangTool <bar> lopen 15 <CR>
 packadd vim-langtool  " can then  :h langtool
 " needs  g:langtool_jar  defined
 
 " doesn't highlight anything
 " move to errors:  <cr>  :lne  :lpr
+" Now throwing errors...
 
 ""> languages - vim-LanguageTool
+" $vfvp/packs-cp-full/opt/vim-LanguageTool/README.md
 nnoremap <leader>LT :call LanguageTool_lopen() <CR>
 function! LanguageTool_lopen()
   LanguageToolCheck
@@ -380,7 +383,7 @@ endfunction
 let g:languagetool_win_height = -1
 " needs a  g:languagetool_*  defined
 packadd vim-LanguageTool " then can  :h LanguageTool
-" now preferring  vim-langtool
+" outdated so now preferring  vim-langtool
 
 ""> layout - color schemes
 " no need to  packadd  for Vim
@@ -484,7 +487,7 @@ packadd calendar-vim
 " $vfvp/packs-cp-full/opt/vim-Grammalecte/doc/Grammalecte.txt
 " :GrammalecteCheck
 " :GrammalecteClear
-let g:grammalecte_cli_py="$cITcc/CP/Grammalecte-fr-v2_1_1/grammalecte-cli.py"
+let g:grammalecte_cli_py="$ITccl/CP/Grammalecte-fr/grammalecte-cli.py"
 packadd vim-Grammalecte
 
 ""> shell - vim-grepper
@@ -641,12 +644,12 @@ packadd cfilter
 ""> vim - location/quickfix list - ListToggle
 " $vfvp/packs-cp-full/opt/listtoggle/README.md
 
-packadd listtoggle
 let g:lt_location_list_toggle_map = '<leader>ll'
 let g:lt_height = 15
+packadd listtoggle
 
 " Defaults:
-" let g:lt_location_list_toggle_map = '<leader>l'
+" let g:lt_location_list_toggle_map = '<leader>l' " :LToggle
 " let g:lt_quickfix_list_toggle_map = '<leader>q'
 
 ""> vim - location/quickfix list - vim-loclist-follow

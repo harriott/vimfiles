@@ -7,7 +7,7 @@
 "   $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
 
 ""> 0 $MSWml/CHh
-au BufNew,BufNewFile,BufRead $coreIT/MSWin/ml-*/CHh/* setlocal filetype=ps1
+au BufNew,BufNewFile,BufRead $$ITcore/MSWin/ml-*/CHh/* setlocal filetype=ps1
 
 ""> 0 /usr/share/applications/mimeinfo.cache
 au BufNew,BufNewFile,BufRead /usr/share/applications/mimeinfo.cache setlocal filetype=dosini

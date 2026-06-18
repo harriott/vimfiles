@@ -209,7 +209,7 @@ window-local: `:h location-list`
 
 ## windows splits - sizes
     :echo winheight(0)
-    :se wfh?  " winfixheight - resists  c-w =, so  :se nowfh
+    :se wfh?  " winfixheight - resists  c-w =, so  :se nowfh nowfw
 
 ### resize
     $vfv/plugin/plugin.vim > resize
@@ -381,12 +381,6 @@ z/                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 
     vim-mark
 
-## fzf.vim
-    :Rg <regex> " in the cwd
-    \j          " :Files \mnt\SDSSDA240G\Dropbox\JH
-    F8          " :History:
-    F9          " :History\
-
 ## following /
 	<ctrl-v>u0000               " (0000 is replaced by the hexadecimal code point value) for combining characters
     \/                          " TweakLS()
@@ -441,7 +435,7 @@ z/                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 :!<shellcmd>          " runs the external shell command
 :ALEToggle
 :Bufferize python3 print(sys.path)
-:cd $DJH
+:cd $DrJo
 :echo expand("%:h")   " <relative_path_to_current_file>
 :echo expand("%:p")   " <path_of_current_file>
 :echo expand("%:p:h") " <path_to_current_file>
@@ -599,12 +593,13 @@ u            " lowercase a visual block
     :.,$d         " delete to end of file
 
 ## entering specials
-    digraphs
     ^Vu03b2  " gets greek small letter beta
 
+    digraphs
+
 ### $DWp
-- "Entering special characters"
-- "handling special characters"
+- `Ctrl-K 2S` = ²
+- `^Vunnnn`
 
 ## number lists
     :for i in range(1,31) | pu=i.'. ' | endfor  " creates a numbered markdown list, ready for items

@@ -4,7 +4,7 @@
 
 " $vfv/enter/Win10Paths.vim
 " source'd by
-"  $MSWin10/mb/_vimrc-AZERTY
+"  $MSWin10/nodes/Vim/_vimrc-AZERTY
 "  $vfn/init.vim
 " symlinked in  $MSWin10/mb/symlinks-mostly.ps1
 
@@ -13,15 +13,13 @@ let $CPF = $programfiles
 let $notDr = 'D:\notDr'
   let $cGRs = $notDr.'\GRs'
 
-"">> 0 $Drpbx, or just $coreIT
+"">> 0 maybe $Drpbx
 if $HOME == 'C:\Users\deaur'
-  let $coreIT = 'D:\ITr-coreIT'
+  let $ITcore = 'D:\ITr\IT\core'
 else
   let $Drpbx = 'D:\Dropbox'
-    let $DrCop = $Drpbx.'\Cop'
-      let $COT = $DrCop.'\OutThere'
-    let $DJH = $Drpbx.'\JH'
-      let $Cfzd = $DJH.'\work-Cz'
+    let $DrJo = $Drpbx.'\Jo'
+      let $Cfzd = $DrJo.'\work-Cz'
         let $CzMa = $Cfzd.'\manage'
           let $CzMaEx = $CzMa.'\expenses'
         let $CzPeo = $Cfzd.'\people'
@@ -31,33 +29,24 @@ else
             let $Cmdts = $Cmdt.'\scripts'
               let $Cmdts1 = $Cmdts.'\1-process'
         let $CzPhy = $Cfzd.'\PhysicalProperty'
-      let $cFr = $DJH.'\Cop-France'
-        let $CFrp = $cFr.'\places'
-      let $CfWk = $DJH.'\Cop-work'
-        let $Cwet = $CfWk.'\education\technos'
-      let $core = $DJH.'\core'
-        let $coreIT = $core.'\IT'
-        let $TeNo = $core.'\TextNotes'
-      let $DaLi = $DJH.'\Jo-now\DailyLife'
-      let $ess = $DJH.'\Jo-now\essential'
+      let $DaLi = $DrJo.'\Jo-now\DailyLife'
+      let $ess = $DrJo.'\Jo-now\essential'
         let $hlth = $ess.'\health'
-      let $FrFa = $DJH.'\Jo-F+F'
+      let $FrFa = $DrJo.'\Jo-F+F'
         let $FFIdF = $FrFa.'\France\IdF'
-      let $JCop = $DJH.'\Cop'
-        let $JChu = $JCop.'\human'
-        let $Pr0 = $JCop.'\Practical0'
-          let $Pr0t = $Pr0.'\technos'
-      let $JHt = $DJH.'\Jo-technos'
-        let $jtIT = $JHt.'\IT'
-          let $jtCP = $jtIT.'\CP'
-        let $tIs = $JHt.'\IT-storage'  " $tIs\diskUsage.txt
-      let $JHThb = $DJH.'\Thb'
-      let $JHw = $DJH.'\work'
-        let $JHm = $JHw.'\IT\Jekyll-harriott-minima'
-        let $wP = $JHw.'\France\IdF\Paris'
-      let $JJt0 = $DJH.'\Jo-then0'
+      let $ITcore = $Drpbx.'\IT\core'
+      let $Jotech = $DrJo.'\Jo-technos'
+        let $jtIT = $Jotech.'\IT'
+          let $ITmCP = $jtIT.'\CP'
+        let $ITsto = $Jotech.'\IT-storage'  " $ITsto\diskUsage.txt
+      let $Jwk = $DrJo.'\work'
+        let $Jhm = $Jwk.'\IT\Jekyll-harriott-minima'
+        let $wP = $Jwk.'\France\IdF\Paris'
+      let $JJt0 = $DrJo.'\Jo-then0'
         let $T0Fr = $JJt0.'\world-Europe\France'
-      let $ZNc = $DJH.'\work-Cz-manage-online-ZNc'
+      let $TeNo = $DrJo.'\Jo-now\TextNotes'
+      let $ZNc = $DrJo.'\work-Cz-manage-online-ZNc'
+    let $DrThb = $Drpbx.'\Thb'
 endif
 
 "">> 0 $HOME
@@ -71,18 +60,17 @@ let $HADR = $HOME.'\AppData\Roaming'
   let $RTh = $HADR.'\Thunderbird'
   let $tex = $HADR.'\MiKTeX\tex'
 
-"">> 1 normally rooting on $coreIT
-let $cITCP = $coreIT.'\CP'
+"">> 1 normally rooting on $ITcore
+let $cITCP = $ITcore.'\CP'
   let $LTXj = $cITCP.'\documenting\LaTeX\jo'
-let $DWp = $coreIT.'\DokuWiki\pages'
-let $cITcc = $coreIT.'\copied-code'
-let $cITcr = $coreIT.'\copied-reference'
+let $DWp = $ITcore.'\DokuWiki\pages'
+let $cITcc = $ITcore.'\copied-code'
 if $HOME == 'C:\Users\deaur'
   let $MSWml = 'D:\ITJ\ml'
 else
-  let $MSWml = $coreIT.'\MSWin\ml-'.$computername
+  let $MSWml = $ITcore.'\MSWin\ml-'.$computername
 endif
-let $onGH = $coreIT.'\onGitHub'
+let $onGH = $ITcore.'\onGitHub'
   let $MD4PDF = $onGH.'\pandoc-md4pdf'
   let $misc = $onGH.'\misc'
   let $MSWin10 = $onGH.'\OS-MSWin10'
@@ -96,7 +84,7 @@ let $onGH = $coreIT.'\onGitHub'
   let $OSL = $onGH.'\OS-Linux'
     let $clMail = $OSL.'\nodes\jo\clm'
       let $clMn = $clMail.'\neomutt'
-  let $culL = $coreIT.'\ulLinux'
+  let $culL = $ITcore.'\ulLinux'
     let $lclm = $culL.'\clm'
     let $culLA = $culL.'\Arch'
   if $HOME == 'C:\Users\deaur'

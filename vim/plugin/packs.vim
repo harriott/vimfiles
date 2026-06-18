@@ -11,10 +11,12 @@
 if exists('g:test') | finish | endif
 let g:packs = 1
 
-source $vfv/plugin/packsAll.vim
-if ! exists('g:WSL') | source $vfv/plugin/packsFull.vim | endif
-if ! has('nvim')
-  source $vfv/plugin/packsVimAll.vim
-  if ! exists('g:WSL') | source $vfv/plugin/packsVimFull.vim | endif
-endif
+if $myDrA
+  source $vfv/plugin/packsAll.vim
+  if ! exists('g:WSL') | source $vfv/plugin/packsFull.vim | endif
+  if ! has('nvim')
+    source $vfv/plugin/packsVimAll.vim
+    if ! exists('g:WSL') | source $vfv/plugin/packsVimFull.vim | endif
+  endif
+fi
 

@@ -1,4 +1,4 @@
--- vim: set fdl=4:
+-- vim: set fdl=5:
 
 -- https://harriott.github.io/ - sam 09 mai 2026
 

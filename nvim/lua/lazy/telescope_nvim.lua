@@ -107,13 +107,12 @@ return {
 
       vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'})
 
+      vim.keymap.set({'n'},'<leader>i',function()
+        builtin.fd{cwd="$Drpbx/IT"}; vim.cmd("echo ':Telescope find_files in $Drpbx/IT'") end,
+        {desc='cd $Drpbx/IT   then  :Telescope find_files'})
       vim.keymap.set({'n'},'<leader>j',function()
-        if vim.g.djh == nil then
-          builtin.fd{cwd="$coreIT"}; vim.cmd("echo ':Telescope find_files in $coreIT'")
-        else
-          builtin.fd{cwd="$DJH"}; vim.cmd("echo ':Telescope find_files in Dropbox/JH'")
-        end
-      end, {desc='cd $DJH (or just $coreIT)  then  :Telescope find_files'})
+        builtin.fd{cwd="$DrJo"}; vim.cmd("echo ':Telescope find_files in $DrJo'") end,
+        {desc='cd $DrJo  then  :Telescope find_files'})
 
       -- ▩----> file contents
       vim.keymap.set({'n'},'<leader><leader><f1>',function() builtin.jumplist{show_line=false} end,

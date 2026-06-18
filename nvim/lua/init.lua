@@ -5,7 +5,7 @@
 --  required by  $vfn/init.vim
 --  adapted from  $cGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 
-vim.g.djh = vim.api.nvim_eval('$DJH') -- :=vim.g.djh
+vim.g.djh = vim.api.nvim_eval('$DrJo') -- :=vim.g.djh
 
 -- vim.loader.enable()
 
@@ -124,15 +124,17 @@ vim.keymap.set({'n'},'<localleader>t',function() vim.treesitter.stop() print("tr
 -- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
 -- :h lazy.nvim  internal links broken by fancy glyphs, so search manually
--- :Lazy update
 require 'lazy/bootstrap'
 
 -- ▩-> 1 lazy.nvim 1
+-- :Lazy update
+-- can  rm $nvim/lazy-lock.json  and it'll be rebuilt
+-- in this file, :UrlView lazy
 require('lazy').setup(
   -- ▩--> nvim packages
   {
     -- ▩---> direct calls
-    {'chaneyzorn/spellwand.nvim',},
+    {'chaneyzorn/spellwand.nvim'},
     -- {'gelguy/wilder.nvim', config=function() end,},
     -- {'kevinhwang91/nvim-bqf', ft = 'qf'},
       -- $lazy/nvim-bqf/doc/bqf.txt
@@ -215,6 +217,7 @@ require('lazy').setup(
     require'lazy/typescript-tools_nvim',
     require'lazy/trouble_nvim',
     require'lazy/undotree',
+    require'lazy/urlview_nvim',
     require'lazy/vim-illuminate',
     require'lazy/vindent_nvim',
     -- ▩---> nvim-lspconfig

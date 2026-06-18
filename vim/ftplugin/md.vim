@@ -34,7 +34,7 @@ endif
 nnoremap <buffer>gF vi[gf
 
 ""> convert DokuWiki file
-" was for use in  $coreIT/JHdocs
+" was for use in  $ITcore/JHdocs
 function! ConvertDWmd()
   " Bash code, but comments therein interpreted as folds...
   %s#^</code>$#```
@@ -72,7 +72,7 @@ endif
 ""> reset filetype
 nnoremap <buffer> <localleader>h :set filetype=markdown<CR>
 " when  ft=liquid
-" when  $JHm/_posts  have  fdm=syntax
+" when  $Jhm/_posts  have  fdm=syntax
 
 ""> syntax highlighting fix
 if has('nvim')

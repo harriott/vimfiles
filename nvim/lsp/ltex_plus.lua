@@ -8,6 +8,7 @@
 --  can take a while, then underlines possible errors
 --  diagnostics are labelled  LTeX
 --  ignores  nospell
+--  leaking into my  build  files - fix is my  \D
 
 local language_id_mapping = {
   bib = 'bibtex',

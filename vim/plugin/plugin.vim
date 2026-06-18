@@ -517,7 +517,7 @@ function! Grab_exrc()
 endfunction
 
 ""> layout
-" clearmatches (see  $jtCP/Vim/plugins/csv_vim/HiColumnLeaky/issue.md)
+" clearmatches (see  $ITmCP/Vim/plugins/csv_vim/HiColumnLeaky/issue.md)
 inoremap <leader><leader><f5> :call clearmatches()<cr>
 nnoremap <leader><leader><f5> :call clearmatches()<cr>
 
@@ -554,7 +554,7 @@ nnoremap <silent><leader>rn :set rnu! rnu? <CR>
 " highlighting sometimes disappears on some longer complex files after loading
 "  long dw's
 "  markdowns
-"   $coreIT/ulAndroid/phones.md
+"   $ITcore/ulAndroid/phones.md
 "   $TeNo/md-JH-DailyLife/roles/healing.md
 "   my various  .../QR.md
 inoremap <leader><f5> :<Esc>syntax sync fromstart<CR>
@@ -597,8 +597,8 @@ nnoremap <leader><leader>o :write<bar>close<CR>
   nnoremap <leader><right> 10<C-W>>
 " equalize windows (:h ctrl-w_=, - needed as I set = to localleader)
   nnoremap <c-=> <c-w>=
-" turn off winfixheight in all windows
-  nnoremap <leader>c= :windo set nowfh <CR>
+" turn off winfixheight, winfixwidth in all windows
+  nnoremap <leader>hw :windo set nowfh nowfw<CR>
 
 " :h window-resize
 
@@ -738,7 +738,7 @@ endfunction
 nnoremap <leader><leader>q :call VimgrepQRs()<CR>
 function! VimgrepQRs()
   call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$misc.'/unix_like/linux/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
+  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$OSL.'/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
   copen
 endfunction
 
@@ -797,7 +797,7 @@ inoremap <leader><f12> :<Esc>call OpenInEmacs()<CR>
 nnoremap <leader><leader>t :sp term://pwsh<CR>
 
 " working directory to file's
-nnoremap <leader>d :cd %:p:h<CR>:pwd<CR>
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " write all changed buffers
 nnoremap <F2> :wa<CR>

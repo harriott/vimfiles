@@ -17,7 +17,7 @@ return {'nvimdev/dashboard-nvim',
       }, -- of theme
       hide = { statusline = false, },
     }
-    vim.keymap.set({'n'},'<leader>B',"<Cmd>e $DJH<bar>sl 100m<bar>Dashboard<CR>",{desc=':Dashboard'})
+    vim.keymap.set({'n'},'<leader>B',"<Cmd>e $DrJo<bar>sl 100m<bar>Dashboard<CR>",{desc=':Dashboard'})
   end,
   dependencies = { {'nvim-tree/nvim-web-devicons'}}
 }

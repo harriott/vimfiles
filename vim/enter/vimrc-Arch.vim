@@ -16,8 +16,8 @@ endif
 set linespace=2
 
 ""> LanguageTool
-let g:langtool_jar = $cITcc.'/CP/LanguageTool/languagetool-commandline.jar'
-let g:languagetool_jar = $cITcc.'/CP/LanguageTool/languagetool-commandline.jar'
+let g:langtool_jar = $ITccl.'/CP/LanguageTool/languagetool-commandline.jar' " :exe 'edit '.g:langtool_jar
+let g:languagetool_jar = $ITccl.'/CP/LanguageTool/languagetool-commandline.jar'
 
 ""> open in Emacs
 function! OpenInEmacs()

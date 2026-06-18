@@ -11,7 +11,7 @@
 " typically basic Vim settings here - look in plugin folder for more
 " ------------------------------------------------------------------
 
-autocmd VimEnter * cd $DJH  " done early for
+autocmd VimEnter * cd $DrJo  " done early for
 "  $vfn/lua/lazy/alpha-nvim.lua
 "  vim-startify ($vfv/plugin/packsAll.vim)
 

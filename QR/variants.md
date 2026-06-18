@@ -181,16 +181,17 @@ shared data
     $vfn/lua/lazy/telescope.lua
     :map <c-o>
 
-## terminal
-`lynx`, `w3m` override Nvim's keys...
-
-### in current window
+## terminal - in current window
     :lua vim.cmd.terminal()
     :te  ' :terminal
 
-### in split
+## terminal - in split
     :sp +te
     :vs +te
+
+## terminal - web browsers
+- `Chawan` only shows top of page
+- `lynx`, `w3m` override Nvim's keys...
 
 ## Treesitter
     :=vim.treesitter.language_version  " :lua vim.treesitter.inspect_tree()
@@ -231,6 +232,7 @@ vi               " exit Ex mode
 :X              " prompts for an encryption key
 ```
 
+- `$vfv/plugin/packsVimFull.vim` > `fzf.vim`
 - `&&`, `||`
 - command-line window: `C-c C-c`  closes
 - vim(1)
@@ -238,12 +240,6 @@ vi               " exit Ex mode
 ## completion
     :Bufferize se ofu  ' omnifunc
     :h compl-spelling
-
-## fzf.vim
-```vim
-\B " :BLines
-\L " :Lines
-```
 
 ## messages
     :mes
@@ -271,8 +267,8 @@ vi               " exit Ex mode
 `"` also triggers `vim-peekaboo`
 
 ## scripting
-    $cITcr/CP/encoding/textWrangling-vi/vim/learnvimscript.vim
-    $cITcr/CP/encoding/textWrangling-vi/vim/learnvim9script.vim
+    $ITref/CP/encoding/textWrangling-vi/vim/learnvimscript.vim
+    $ITref/CP/encoding/textWrangling-vi/vim/learnvim9script.vim
 
 ```vim
 :echo expand('<cword>') " echos the word under the cursor
@@ -306,7 +302,7 @@ vimscript
 
 ### variables
     echo 'count'.len('four')
-    if g:empty | true | endif
+    if $myDrA | echo '$myDrA = '.$myDrA | else | echo '$myDrA undefined' | endif
     let g:empty = 0 | if empty(g:empty) | echo 'empty' | endif
     let g:v = 1 | if g:v | echo g:v | endif
 
@@ -315,12 +311,12 @@ vimscript
 
 ## settings
     $ rg -uu vim9script $vimfiles
-    :Bufferize dig!        " categorised digraphs
-    :Bufferize lan         " language  settings
-    :Bufferize let         " all internal variables
-    :Bufferize scr         " (:scriptnames) list of files sourced, in order
-    :Bufferize ve          " Vim version etc
-    :Bufferize verb se scl " where signcolumn was last set
+    :Bufferize dig!           " categorised digraphs
+    :Bufferize lan            " language  settings
+    :Bufferize let            " all internal variables
+    :Bufferize scr            " (:scriptnames) list of files sourced, in order
+    :Bufferize ve             " Vim version etc
+    :Bufferize verb se scl    " where signcolumn was last set
     :echo has ('gui_running')
     :function <name_of_function_to_reveal>
     :let mapleader
@@ -420,4 +416,9 @@ options as variable: `:echo &textwidth`
     :let g:syntax_on
     :sy off
     :sy on
+
+### variables
+    :echo keys(g:)            " unsorted list
+    :exe 'edit '.g:langtool_jar
+    /\v<(a|b|g|l|s|t|v|w):
 

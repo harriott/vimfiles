@@ -90,7 +90,7 @@ endif
 " :FuzzyHighlights - ctrl+k toggles light/dark
 " \fb = :FuzzyBuffers
 " \fc = :FuzzyCommands
-" \ff = :FuzzyFiles - in cwd - crap in  $DJH
+" \ff = :FuzzyFiles - in cwd - crap in  $DrJo
 " \fh = :FuzzyHelp
 " \fi = :FuzzyInBuffer [string]
 " \fm = :FuzzyMru - ctrl+k toggles all/cwd
@@ -134,7 +134,9 @@ if has('unix')
   nnoremap <leader>L :Lines<CR>
 
   " in ~/.vim: rg '>j' --no-ignore
-  nnoremap <leader>j :Files $DJH<CR>
+  nnoremap <leader>j :Files $DrJo<CR>
+
+  nnoremap <leader>t :Files $ITcore<CR>
 
   nnoremap <f1> :Buffers<CR>
   inoremap <f1> <Esc>:Buffers<CR>
@@ -156,6 +158,7 @@ if has('unix')
   " :Commits
   " :Helptags
   " :Maps  = normal mode mappings
+  " :Rg something
 endif
 
 "">> fugitive

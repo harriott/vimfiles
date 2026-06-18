@@ -1,4 +1,3 @@
--- vim: set fdl=4:
 
 -- $vfn/lua/lazy/Commen6_nvim.lua
 -- $lazy/Comment.nvim/doc/Comment.txt
