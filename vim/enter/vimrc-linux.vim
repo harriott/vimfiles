@@ -17,7 +17,7 @@ else
 endif
 
 " Include + register in c/d/y/p operations:
-set clipboard^=unnamedplus  " se cb, stackoverflow 23946289
+if $myDrA | set clipboard^=unnamedplus | endif  " se cb, stackoverflow 23946289
 " - needed because:
 "    Nvim sets nothing
 "    Vim sets  autoselect,exclude:cons\|linux  which somehow obviates  unnamedplus
