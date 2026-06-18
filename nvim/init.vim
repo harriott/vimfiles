@@ -66,7 +66,7 @@ else
 endif
 
 ""> 2 colors
-let g:useSTW = 0
+let g:useSTW = 0  " for  $vfv/plugin/packsFull.vim
 
 "">> colorscheme
 " $vfvp/packs-colo/opt/

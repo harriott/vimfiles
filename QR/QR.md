@@ -491,7 +491,7 @@ linux: must have LF's
 ### Win10
 ```
 $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
-:echo $computername
+:echo $computername  " unclear how this gets defined
 :echo $programfiles
 :echo $username
 :pu=$HOME

@@ -67,7 +67,7 @@ set splitbelow
 " colo jellybeans
 " color PaperColor
 " colo wombat
-if !has('gui_running') && !has('nvim') | color deus | endif  " plain vim only
+if $myDrA && !has('gui_running') && !has('nvim') | color deus | endif  " plain vim only
 
 ""> mappings 0 for AZERTY
 if v:lang =~ 'fr'

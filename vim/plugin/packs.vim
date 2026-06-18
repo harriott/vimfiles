@@ -18,5 +18,5 @@ if $myDrA
     source $vfv/plugin/packsVimAll.vim
     if ! exists('g:WSL') | source $vfv/plugin/packsVimFull.vim | endif
   endif
-fi
+endif
 
