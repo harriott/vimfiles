@@ -5,15 +5,20 @@
 
 " $vfv/enter/vimrc.vim  source'd by
 "  $vfv/enter/vimrc-linux.vim
-"  $vimfiles\vim\enter\vimrc-Win10.vim
+"  $vimfiles/vim/enter/vimrc-Win10.vim
 
 " ------------------------------------------------------------------
 " typically basic Vim settings here - look in plugin folder for more
 " ------------------------------------------------------------------
 
-autocmd VimEnter * cd $DrJo  " done early for
-"  $vfn/lua/lazy/alpha-nvim.lua
-"  vim-startify ($vfv/plugin/packsAll.vim)
+if $myDrA
+  autocmd VimEnter * cd $Drpbx
+else
+  autocmd VimEnter * cd $HOME
+endif
+" - done early for
+"    $vfn/lua/lazy/alpha-nvim.lua
+"    vim-startify ($vfv/plugin/packsAll.vim)
 
 set cot+=longest  " completeopt
 set enc=utf-8  " encoding, get this done early

@@ -1,12 +1,13 @@
 -- vim: set fdl=4:
 
--- https://harriott.github.io/ - Sat 23 May 2026
+-- https://harriott.github.io/ - Thu 18 Jun 2026
 
 -- $vfn/lua/lazy/alpha-nvim.lua
+
 -- $lazy/alpha-nvim/doc/alpha.txt
 --  :Alpha
 --  no way to increase the  mru_cwd  list length
--- cwd set at start in  $vfn/lua/init.lua
+-- cwd set at start in  $vfv/enter/vimrc.vim
 
 return { 'goolord/alpha-nvim',
   event = "VeryLazy", -- don't run at start

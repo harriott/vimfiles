@@ -74,7 +74,7 @@ function! ColorLightDark()
 endfunction
 endif
 
-"">> continue vimrc
+"">> vimrc.vim
 source $vfv/enter/vimrc.vim
 
 "">> ensure vimswap

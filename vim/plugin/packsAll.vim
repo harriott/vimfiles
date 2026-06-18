@@ -61,6 +61,7 @@ packadd mru
 
 ""> shell - vim-startify
 " $vfvp/packs-cp-all/opt/vim-startify/doc/startify.txt
+" cwd set at start in  $vfv/enter/vimrc.vim
 " in nvim it's frequently not capturing old files
 let g:startify_lists = [ { 'type': 'files',     'header': ['   MRU'] }, ]
 if hostname() =~ 'HPEB840G3'
@@ -69,7 +70,7 @@ else
   let g:startify_files_number = 35  " good for  x1080  screen
 endif " allowing for some wraps
 packadd vim-startify
-" Startify
+" :Startify
 
 ""> text wrangling - find/replace - quick-scope
 " trigger highlighting in the appropriate direction when pressing these keys:

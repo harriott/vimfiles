@@ -1,11 +1,9 @@
 
--- https://harriott.github.io/ - Sun 24 May 2026
+-- https://harriott.github.io/ - Thu 18 Jun 2026
 
 -- $vfn/lua/init.lua
 --  required by  $vfn/init.vim
 --  adapted from  $cGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
-
-vim.g.djh = vim.api.nvim_eval('$DrJo') -- :=vim.g.djh
 
 -- vim.loader.enable()
 
