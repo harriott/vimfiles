@@ -10,6 +10,7 @@
 -- :Telescope colorscheme
 -- :Telescope command_history default_text=MRU\ \.
 -- :Telescope symbols
+-- $lazy/telescope.nvim/README.md
 -- $lazy/telescope.nvim/doc/telescope.txt
 -- Shows keymaps:
 --  insert mode: <c-/>
@@ -108,10 +109,12 @@ return {
       vim.keymap.set({'n'},'<c-o>',builtin.oldfiles,{desc=':Telescope oldfiles no_ignore=true'})
 
       vim.keymap.set({'n'},'<leader>i',function()
-        builtin.fd{cwd="$Drpbx/IT"}; vim.cmd("echo ':Telescope find_files in $Drpbx/IT'") end,
+        builtin.fd{cwd="$Drpbx/IT",hidden=true,no_ignore=true};
+        vim.cmd("echo ':Telescope find_files in $Drpbx/IT'") end,
         {desc='cd $Drpbx/IT   then  :Telescope find_files'})
+
       vim.keymap.set({'n'},'<leader>j',function()
-        builtin.fd{cwd="$DrJo"}; vim.cmd("echo ':Telescope find_files in $DrJo'") end,
+        builtin.fd{cwd="$DrJo",hidden=true}; vim.cmd("echo ':Telescope find_files in $DrJo'") end,
         {desc='cd $DrJo  then  :Telescope find_files'})
 
       -- ▩----> file contents

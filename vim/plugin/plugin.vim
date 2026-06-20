@@ -525,7 +525,7 @@ nnoremap <leader><leader><f5> :call clearmatches()<cr>
 au! BufNewFile,BufRead *-md4pdfLog.tex setlocal fdm=manual
 
 noremap <leader><leader>ll :set list! list? <CR>
-" (:h 'list')
+" (:h 'list',  listchars)
 
 nnoremap z? :exe ':spellrare  '.expand('<cWORD>')<CR>
 " - should then  :mksp! %

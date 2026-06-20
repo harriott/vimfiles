@@ -1,7 +1,8 @@
 
-" Language: gpgk - pacman keys - $OSAB/QR/QR.md
+" Language: gpgk - GnuPG & pacman keys - $OSAB/QR/QR.md
+" cd $culLA; fd -tf -e gpgk
 " Maintainer: Joseph Harriott
-" Last Change: Wed 23 Jul 2025
+" Last Change: Sat 20 Jun 2026
 " Detection: $vfv/filetype.vim
 
 " $vfv/syntax/gpgk.vim

@@ -8,7 +8,7 @@
 
 " if $computername == 'HPEB840G36' | let mapleader = 'ù' | endif  " until  $MSWin10\AZERTY.ahk
 if $computername == 'T430I73520M' | let mapleader = '#' | endif  " because keyboard has no  \
-let $myDrA = 1  "globally active (originally I define in Bash_start's)
+let $myDrA = 1  " (globally active) $Drpbx  is there
 
 ""> 0 quit if called from Git's vim
 if $VIM == '/usr/share/vim' | finish | endif  " (adapted for Git-2.8.1-64-bit.exe on Windows 10)

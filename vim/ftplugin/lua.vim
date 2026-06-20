@@ -41,7 +41,7 @@ endfunction
 
 setlocal expandtab foldcolumn=1 foldexpr=LuaF() foldmethod=expr shiftwidth=2 textwidth=0
 
-" pull away from nvim-treesitter foldexpr
+" pull away from  nvim-treesitter  foldexpr  with  =e
 nnoremap <localleader>e :set foldexpr=LuaF()<cr>
 " - reverts back after any kind of refresh
 

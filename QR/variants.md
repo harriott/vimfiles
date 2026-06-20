@@ -125,6 +125,7 @@ navigating into `C:\Vim` requires cursor on C
 ### unix
     $nvmp
     :if $XDG_CURRENT_DESKTOP == '' | echo 'might be Openbox' | endif
+    :lua if vim.api.nvim_eval('$myDrA') == '1' then print('Dropbox') else print('no Dropbox') end
     n ~/.vimswap
 
 `~/.local/state/nvim/undo` can store persistent undo files in the weird internal format
@@ -270,13 +271,12 @@ vi               " exit Ex mode
     $ITref/CP/encoding/textWrangling-vi/vim/learnvimscript.vim
     $ITref/CP/encoding/textWrangling-vi/vim/learnvim9script.vim
 
-```vim
-:echo expand('<cword>') " echos the word under the cursor
-:echo getline(1) " contents of line 1
-:echo has('win32')
-:echo has('win64')
-:echo hostname()
-```
+    :echo empty(getline(2))  " line 2 is empty
+    :echo expand('<cword>') " echos the word under the cursor
+    :echo getline(1) " contents of line 1
+    :echo has('win32')
+    :echo has('win64')
+    :echo hostname()
 
 vimscript
 
