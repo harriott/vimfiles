@@ -18,13 +18,18 @@ All of my `vim` files, except my `.gvimrc` &amp; `.vimrc` - which vary by machin
 Some of my `vim` configuraton files are long, but they don't appear so to me as I use my own `vim_build` filetype ([$vfv/ftplugin/build.vim](https://github.com/harriott/vimfiles/blob/master/vim/ftplugin/build.vim)), which folds my headings nicely.
 
 ### using my OS environment variables
-    $lazy
+[$OSL/nodes/jo/export](https://github.com/harriott/OS-Linux/blob/main/nodes/jo/export)
+
+#### in $vimfiles
     $nvim
-    $nvmp  # mason packages
     $vfv
     $vfn
-    $vimfiles
     lt $vfvp > $vfvp/all.tree
+
+#### on machine
+    sudo rm -r ~/.local/share/nvim
+    $lazy
+    $nvmp  # mason packages
 
 ## prerequisites
 - a `Vim` flavour, of course

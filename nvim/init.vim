@@ -79,7 +79,7 @@ if has('win64') || exists('g:neovide')
   set background=dark | color PaperColor
   " colo wombat
 else
-  colo jellybeans
+  if $myDrA | colo jellybeans | endif
 endif
 
 ""> 2 mappings to toggle GUI width
