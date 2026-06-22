@@ -5,17 +5,14 @@
 .netrwhist
 grep_CRLF.ufco
 nvim/FrenchDate
+repos-fzf
+repos-packs
 scratch.vim
 startuptimes
 tags
 tags-cn
 tags-te
 thesaurus
-vim/packs/packs-colo
-vim/packs/packs-cp-all
-vim/packs/packs-cp-full
-vim/packs/packs-unix
-vim/packs/packs-win64
 vim/plugin/fzf
 vim/spell
 

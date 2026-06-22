@@ -730,7 +730,7 @@ endfunction
 nnoremap <leader>bp :call VimgrepBcPc()<CR>
 function! VimgrepBcPc()
   call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$AjB.'/* '.$MSWin10.'/nodes/PS/Env.ps1 '.$MSWin10.'/nodes/PS/Profile.ps1 '.$OSAB.'/nodes/Bash* '.$OSL.'/nodes/bashrc-*'
+  execute 'silent! vimgrep #'.@l.'#j '.$AjB.'/bash_profile '.$AjB.'/bashrc* '.$MSWin10.'/nodes/PS/Env.ps1 '.$MSWin10.'/nodes/PS/Profile.ps1 '.$OSAB.'/nodes-Bash/* '.$OSL.'/nodes/bashrc-*'
   copen
 endfunction
 
@@ -739,6 +739,14 @@ nnoremap <leader><leader>q :call VimgrepQRs()<CR>
 function! VimgrepQRs()
   call StripStoreCurSel()
   execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$OSL.'/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
+  copen
+endfunction
+
+" search in my Vim configuration
+nnoremap <leader>rc :call VimgrepQRs()<CR>
+function! VimgrepQRs()
+  call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@l.'#j '.$vfv.'/**/* '.$vfn.'/**/*'
   copen
 endfunction
 

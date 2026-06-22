@@ -3,27 +3,22 @@
 -- https://harriott.github.io/ - Thu 18 Jun 2026
 
 -- $vfn/lua/myDrA.lua
---  required by  $vfn/init.lua
+--  conditionally required by  $vfn/init.lua
 --  =e ($vfv/ftplugin/lua.vim)
 
--- ▩-> 1 check for  $Drpbx
-if vim.api.nvim_eval('$myDrA') == '1' then
---  $machBld/Bash_start (https://github.com/harriott/OS-ArchBuilds)
---  $vfv\enter\vimrc-Win10.vim
-
--- ▩--> 1 lazy.nvim 0 bootstrap
+-- ▩-> 1 lazy.nvim 0 bootstrap
 -- $lazy/lazy.nvim/doc/lazy.nvim.txt
 -- :h lazy.nvim  internal links broken by fancy glyphs, so search manually
 require 'lazy/bootstrap'
 
--- ▩--> 1 lazy.nvim 1
+-- ▩-> 1 lazy.nvim 1
 -- :Lazy update
 -- can  rm $nvim/lazy-lock.json  and it'll be rebuilt
 -- in this file, :UrlView lazy
 require('lazy').setup(
-  -- ▩---> nvim packages
+  -- ▩--> nvim packages
   {
-    -- ▩----> direct calls
+    -- ▩---> direct calls
     {'chaneyzorn/spellwand.nvim'},
     -- {'gelguy/wilder.nvim', config=function() end,},
     -- {'kevinhwang91/nvim-bqf', ft = 'qf'},
@@ -60,7 +55,7 @@ require('lazy').setup(
     {'yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end, },
       -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
     {'wurli/visimatch.nvim', opts = {} },
-    -- ▩----> moduled
+    -- ▩---> moduled
     -- $vfn/lua/lazy
     require'lazy/alpha-nvim',
     require'lazy/auto-session',
@@ -110,7 +105,7 @@ require('lazy').setup(
     require'lazy/urlview_nvim',
     require'lazy/vim-illuminate',
     require'lazy/vindent_nvim',
-    -- ▩----> nvim-lspconfig
+    -- ▩---> nvim-lspconfig
     require('lazy/nvim-lspconfig'),
       -- $lazy/nvim-lspconfig/lsp - code for each LSP
       {'mason-org/mason.nvim', config=function() require'mason'.setup() end,},
@@ -131,12 +126,12 @@ require('lazy').setup(
           -- usage of LSPs by filetype
          config=function() require('mason-lspconfig').setup{automatic_enable = false} end,},
       require('lazy/lspsaga'), -- excellent breadcrumbs, among other things
-    -- ▩----> nvim-treesitter
+    -- ▩---> nvim-treesitter
     require'lazy/nvim-treesitter' -- $vfn/lua/lazy/nvim-treesitter.lua
       -- 'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
         -- context.vim  works better
-  -- ▩---> post-setup
+  -- ▩--> post-setup
   },
   { performance = { reset_packpath = false, },
     -- allowing continued access to  ~/.config/nvim/pack
@@ -162,7 +157,7 @@ require('lazy').setup(
 -- somehow breaks  vim-hexokinase
 -- somehow kills nvim's access to  /usr/bin/fzf
 
--- ▩--> 2 for lspsaga
+-- ▩-> 2 for lspsaga
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('LspMappings', {}),
   callback = function(ev)
@@ -171,10 +166,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end,}) -- q
 -- can't figure how to include this in my  $vfn/lua/lazy/lspsaga.lua
 
--- ▩--> 2 for nvim-notify
+-- ▩-> 2 for nvim-notify
 vim.notify('ready for :Notifications')
 
--- ▩--> 2 for vim.lsp
+-- ▩-> 2 for vim.lsp
 -- $cGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
 vim.keymap.set({'n'},'<leader>D',function() vim.diagnostic.reset(nil, vim.api.nvim_get_current_buf()) end, {desc='cleared Diagnostics'})
 vim.keymap.set({'n'},'<leader>S','<cmd>che vim.lsp<cr>', {desc=':checkhealth vim.lsp'})
@@ -207,12 +202,12 @@ vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
   -- vscode-json-languageservice  for  json
   -- yamlls
 
--- -- ▩--> 2 for wilder
+-- -- ▩-> 2 for wilder
 -- vim.cmd('call wilder#setup({'modes': [':', '/', '?']})')
 -- vim.cmd('call wilder#set_option('renderer', wilder#popupmenu_renderer({ 'highlighter': wilder#basic_highlighter(), }))')
 -- -- but it's broken...
 
--- ▩--> 2 nvim-treesitter parsers - Neovim 0.11.x
+-- ▩-> 2 nvim-treesitter parsers - Neovim 0.11.x
 function GetTSParsers()
   -- vim.cmd 'TSInstall bash'
   -- vim.cmd 'TSInstall gnuplot'
@@ -228,17 +223,15 @@ function GetTSParsers()
 end -- lua GetTSParsers(), then update the :TSInstallInfo  lists
 -- on MSWin do these in  x64 Native Tools Command Prompt
 
--- ▩--> 2 nvim-treesitter parsers - on unix
+-- ▩-> 2 nvim-treesitter parsers - on unix
 -- $vimfiles/settings-active-nvim/unix-TSInstallInfo-DOP3040D11S.txt
 -- $vimfiles/settings-active-nvim/unix-TSInstallInfo-sbMb.txt
 -- /usr/lib/tree_sitter  seem slightly outdated
 -- r $lazy/nvim-treesitter/parser - when neovim 11
 -- r ~/.local/share/nvim/site/parser
 
--- ▩--> 2 nvim-treesitter parsers - on win64
+-- ▩-> 2 nvim-treesitter parsers - on win64
   -- $vimfiles/settings-active-nvim/win64-TSInstallInfo-HPEB840G37.txt
   -- fd parser$ $HADL\nvim-data
   -- g $lazy\nvim-treesitter\parser - when neovim 11
 
--- ▩-> end
-end

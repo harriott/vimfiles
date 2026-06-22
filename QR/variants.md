@@ -390,6 +390,8 @@ options as variable: `:echo &textwidth`
     :echo &pp
     :se pp
 
+`:put =&pp` then on the line `s/,/\r/g`
+
 ### syntax highlighting
     :h ownsyntax
     :h syn-region

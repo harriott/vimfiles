@@ -13,6 +13,10 @@
 -- ▩-> 0 for auto-session
 vim.o.ssop='blank,buffers,curdir,folds,tabpages,winsize,winpos,localoptions'
 
+-- ▩-> 0 bufs_nvim
+require'bufs_nvim' -- $vfn/lua/bufs_nvim.lua
+vim.keymap.set("n", "gb", function() require'bufs_nvim'.list_bufs() end)
+
 -- ▩-> 0 generic boolean option toggle function
 function vim_opt_toggle(opt)
   local message = opt
@@ -121,5 +125,9 @@ if vim.fn.has('win64')==1 and vim.fn.has('nvim-0.12.1')==1 then vim.treesitter.s
 vim.keymap.set({'n'},'<localleader>t',function() vim.treesitter.stop() print("treesitter highlights off until refresh") end,{desc='disable Neovim\'s treesitter highlights.scm'}) -- see  $vfv/after/syntax/lua.vim
 
 -- ▩-> 1 myDrA.lua
-require'myDrA' -- $vfn/lua/myDrA.lua
+if vim.api.nvim_eval('$myDrA') == '1' then require'myDrA' end -- if  $Drpbx, $vfn/lua/myDrA.lua
+-- $myDrA:
+--  $machBld/Bash_start (https://github.com/harriott/OS-ArchBuilds)
+--  $vfv\enter\vimrc-Win10.vim
+
 

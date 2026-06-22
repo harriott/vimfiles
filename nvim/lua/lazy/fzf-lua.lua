@@ -73,6 +73,7 @@ return { "ibhagwan/fzf-lua",
     vim.keymap.set({'n'},'<leader>d',"<Cmd>FzfLua files cwd=$DWp<CR>",{desc=':FzfLua files cwd=$DWp'})
     vim.keymap.set({'n'},'<leader>t',"<Cmd>FzfLua files cwd=$TeNo<CR>",{desc=':FzfLua files cwd=$TeNo'})
     vim.keymap.set({'n'},'<leader>g',"<Cmd>FzfLua files cwd=$onGH<CR>",{desc=':FzfLua files cwd=$onGH'})
+    vim.keymap.set({'n'},'<leader>ho',"<Cmd>FzfLua files cwd=$HOME<CR>",{desc=':FzfLua files cwd=$HOME'})
 
   end,
 }

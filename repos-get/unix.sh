@@ -1,18 +1,18 @@
 #!/bin/bash
 # vim: sw=2:
 
-# Joseph Harriott - Thu 01 Jan 2026
-# cd $vfv; bash $vfv/getRepos/unix.sh
+# Joseph Harriott - Sun 21 Jun 2026
+# cd $vimfiles; bash repos-get/unix.sh
 
 set -e  # quits on error
 
-cf="$vfv/getRepos/packs.clones"
+cf="$vimfiles/repos-get/packs.clones"
 
 #=> 1 clones 0 update  packs.clones
-cd $vfvp; . $misc/GRs/getClonesList.sh $cf; cd $vfv
+cd $vfvp; . $misc/GRs/getClonesList.sh $cf; cd $vimfiles
 
 #=> 1 clones 1 remove
-[ -d 'fzf' ] && sudo rm -r $vfv/plugin/fzf
+[ -d 'fzf' ] && sudo rm -r $vimfiles/repos-fzf
 
 # These will be re-cloned in the next step:
 sudo rm -r $vfvp/packs-cp-full/opt/vim-gitgutter
@@ -29,9 +29,10 @@ while read cl; do
     $gcc
   fi
 done <"$cf"
-cd $vfv
+cd $vimfiles
 
 #=> 2 updates 0 warn
+echo
 read -p "Going to update repositories - you've closed instances of vim? "
 
 #=> 2 updates 1 packs
@@ -46,11 +47,11 @@ rd=$pwd; . $misc/GRs/update-depth1.sh
 # $vfvp/repos  can be checked against  $cf
 echo 'Put back  marlam-msmtp/scripts/vim:'
 rsync -irtv --delete $GRs/d-unix-like/d-linux/r-marlam-msmtp/scripts/vim/ $msv
-cd $vfv
+cd $vimfiles
 
 #=> 2 updates 2 plugins
-cd $vfv/plugin
-[ ! -d 'fzf' ] && git clone --depth 1 https://github.com/junegunn/fzf
+cd $vimfiles
+[ ! -d 'repos-fzf' ] && git clone --depth 1 https://github.com/junegunn/fzf repos-fzf
 cd $vfv
 
 #=> 2 updates 3 my forks
@@ -63,7 +64,7 @@ echo 'Now check the forks!' # incase they've fallen behind their upstreams
 echo
 
 #=> 3 fix SimpylFold
-ft=$vfvp/packs-cp-full/opt/SimpylFold/ftplugin; cy=$ft/cython
+ft="$vfvp/packs-cp-full/opt/SimpylFold/ftplugin"; cy=$ft/cython
 cp -Lr $cy $ft/c; rm -r $cy; mv $ft/c $cy
 
 #=> 3 fix vim-ShowTrailingWhitespace

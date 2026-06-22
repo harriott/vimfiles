@@ -4,8 +4,6 @@
 "  $ABjo/textEdit/Vim/vimrc
 "  $vfn/init.vim
 
-if exists('g:test') | finish | endif
-
 if hostname() == 'DOP3040D11S'
   set redrawtime=4000  " for  linux-pn.dw
 elseif hostname() == 'sbMb'

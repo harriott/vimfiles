@@ -520,9 +520,12 @@ packadd vim-clifm
 packadd vim-open-url
 
 ""> shell - vim-rooter
+" $vfvp/packs-cp-full/opt/vim-rooter/doc/rooter.txt
+" :echo FindRootDirectory()
 let g:rooter_buftypes = ['']  " avoiding specials
 let g:rooter_manual_only = 1  " :Rooter
 packadd vim-rooter
+nnoremap <leader>R :exe 'e '.FindRootDirectory()<cr>
 
 ""> text wrangling - aligning - tabular
 " :vert h tabular
