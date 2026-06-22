@@ -107,7 +107,7 @@ let maplocalleader = '='
 ""> quit buffer(s), quit nvim
 " originally written for terminal nvim/vim, then realised it's handy for GUIs too
 function! VimWriteClose()
-  if has('nvim')
+  if has('nvim') && $myDrA
     NvimTreeClose
     " wshada  " ensures  v:oldfiles
   endif  " can't be scrunched to one line

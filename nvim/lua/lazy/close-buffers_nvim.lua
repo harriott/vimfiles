@@ -11,7 +11,6 @@ return {'kazhala/close-buffers.nvim',
     vim.keymap.set({'i'},'<leader><f4>', "<esc><cmd>echo 'now maybe  f4  again'<cr>",{desc='safely quit, maybe'})
     vim.keymap.set({'n'},'<leader><f4>',
       "<cmd>wshada<bar>BDelete other<cr><cmd>call VimWriteClose()<cr>",
-      -- function() require'close_buffers'.wipe{type='other'} vim.fn.VimWriteClose() end,
       {desc='safely quit'}) -- ensuring  ShaDa  populated
     vim.keymap.set({'n'},'<leader><leader>d', "<cmd>wshada<bar>BDelete this<cr>",{desc=':BDelete this'})
     vim.keymap.set({'n'},'<leader>bd', "<cmd>wshada<bar>BDelete hidden<cr>",{desc=':BDelete hidden'})
