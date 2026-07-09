@@ -11,5 +11,5 @@ return {
   filetypes = { 'muttrc', 'neomuttrc' },
   root_markers = { '.git' },
   settings = {},
-} -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/mutt_ls.lua
+} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/mutt_ls.lua
 

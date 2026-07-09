@@ -2,7 +2,7 @@
 
 -- $vfn/lua/lazy/snipe_nvim.lua
 -- $lazy/snipe.nvim/README.md
--- begun with  $cGRs/d-unix-like/d-macOS/r-linkarzu-dotfiles-latest/neovim/old-plugins/snipe.old
+-- begun with  $nDrGRs/d-unix-like/d-macOS/r-linkarzu-dotfiles-latest/neovim/old-plugins/snipe.old
 -- :lua require'lazy/snipe_nvim'
 
 return { "leath-dub/snipe.nvim",

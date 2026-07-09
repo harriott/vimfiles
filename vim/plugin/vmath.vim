@@ -1,6 +1,6 @@
 " Copied from  https://github.com/thoughtstream/Damian-Conway-s-Vim-Setup/blob/master/plugin/vmath.vim
 "  with thanks
-"   cp $cGRs/d-CP/d-Vim-Vim/r-thoughtstream-Damian-Conway-s-Vim-Setup/plugin/vmath.vim $vfv/plugin/vmath.vim
+"   cp $nDrGRs/d-CP/d-Vim-Vim/r-thoughtstream-Damian-Conway-s-Vim-Setup/plugin/vmath.vim $vfv/plugin/vmath.vim
 
 
 " Vim global plugin for math on visual regions

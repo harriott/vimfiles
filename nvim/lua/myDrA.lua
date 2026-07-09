@@ -1,4 +1,3 @@
--- vim: fdl=1:
 
 -- https://harriott.github.io/ - Thu 18 Jun 2026
 
@@ -19,14 +18,15 @@ require('lazy').setup(
   -- ▩--> nvim packages
   {
     -- ▩---> direct calls
-    {'chaneyzorn/spellwand.nvim'},
-    -- {'gelguy/wilder.nvim', config=function() end,},
-    -- {'kevinhwang91/nvim-bqf', ft = 'qf'},
-      -- $lazy/nvim-bqf/doc/bqf.txt
-      -- <tab>/<s-tab>  toggles items, then  zn  remakes only those marked, zN  those not marked
+    {'chaneyzorn/spellwand.nvim'}, -- $lazy/spellwand.nvim/README.md
+    -- {'gelguy/wilder.nvim', config=function() end,}, -- see below
     {'HiPhish/rainbow-delimiters.nvim'}, -- parentheses slightly less visible but easier to distinguish
     {'JoosepAlviste/nvim-ts-context-commentstring'}, -- recognition of code blocks
       -- $lazy/nvim-ts-context-commentstring/doc/nvim-ts-context-commentstring.txt
+    -- {'kevinhwang91/nvim-bqf', ft = 'qf'},
+      -- $lazy/nvim-bqf/doc/bqf.txt
+      -- $lazy/nvim-bqf/README.md
+      -- <tab>/<s-tab>  toggles items, then  zn  remakes only those marked, zN  those not marked
     {'lewis6991/gitsigns.nvim',config=function() require'gitsigns'.setup() end,lazy=false},
       -- $lazy/gitsigns.nvim/doc/gitsigns.txt
       -- :Gitsigns toggle_signs  ' :se rnu
@@ -52,9 +52,10 @@ require('lazy').setup(
       }, },
       -- lua require("virt-counter").disable()
       -- lua require("virt-counter").enable()
+    {'wurli/visimatch.nvim', opts = {} },
+      -- $lazy/visimatch.nvim/README.md
     {'yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end, },
       -- $lazy/nvim-pqf/README.md - prettier quickfix & location list windows
-    {'wurli/visimatch.nvim', opts = {} },
     -- ▩---> moduled
     -- $vfn/lua/lazy
     require'lazy/alpha-nvim',
@@ -106,7 +107,7 @@ require('lazy').setup(
     require'lazy/vim-illuminate',
     require'lazy/vindent_nvim',
     -- ▩---> nvim-lspconfig
-    require('lazy/nvim-lspconfig'),
+    require'lazy/nvim-lspconfig',
       -- $lazy/nvim-lspconfig/lsp - code for each LSP
       {'mason-org/mason.nvim', config=function() require'mason'.setup() end,},
         -- $lazy/mason.nvim/doc/mason.txt
@@ -170,7 +171,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 vim.notify('ready for :Notifications')
 
 -- ▩-> 2 for vim.lsp
--- $cGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
+-- $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
 vim.keymap.set({'n'},'<leader>D',function() vim.diagnostic.reset(nil, vim.api.nvim_get_current_buf()) end, {desc='cleared Diagnostics'})
 vim.keymap.set({'n'},'<leader>S','<cmd>che vim.lsp<cr>', {desc=':checkhealth vim.lsp'})
 

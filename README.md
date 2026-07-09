@@ -6,7 +6,7 @@ vim: set fdl=4:
 All of my `vim` files, except my `.gvimrc` &amp; `.vimrc` - which vary by machine:
 
 - [$ABjo/textEdit/Vim/vimrc](https://github.com/harriott/OS-ArchBuilds/blob/master/jo/textEdit/Vim/vimrc)
-- [$machBld/jo/gvimrc](https://github.com/harriott/OS-ArchBuilds/blob/master/mb-sbMb/jo/gvimrc)
+- `$ABnm/.../gvimrc`
 - [$MSWin10\mb\_gvimrc](https://github.com/harriott/OS-MSWin10/blob/master/mb/_gvimrc)
 - [$MSWin10\mb\_vimrc-AZERTY](https://github.com/harriott/OS-MSWin10/blob/master/mb/_vimrc-AZERTY)
 

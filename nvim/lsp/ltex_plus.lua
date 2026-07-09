@@ -27,5 +27,5 @@ return {
   root_markers = { '.git' },
   get_language_id = function(_, filetype) return language_id_mapping[filetype] or filetype end,
   settings = { ltex = { enabled = { 'asciidoc', 'bib', 'context', 'gitcommit', 'html', 'markdown', 'org', 'pandoc', 'plaintex', 'quarto', 'mail', 'mdx', 'rmd', 'rnoweb', 'rst', 'tex', 'latex', 'text', 'typst', 'xhtml', }, }, },
-} -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ltex_plus.lua
+} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ltex_plus.lua
 

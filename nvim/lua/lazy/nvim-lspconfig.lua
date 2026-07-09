@@ -27,7 +27,7 @@ return {
   { 'folke/lazydev.nvim', -- recommended, and my reason to keep using  nvim-lspconfig
     ft = 'lua',
     opts = { library = { { path = '${3rd}/luv/library', words = { 'vim%.uv' } }, }, },
-  }, -- $cGRs/d-CP/d-Vim-Nvim/r-dam9000-kickstart-modular.nvim/lua/kickstart/plugins/lspconfig.lua
+  }, -- $nDrGRs/d-CP/d-Vim-Nvim/r-dam9000-kickstart-modular.nvim/lua/kickstart/plugins/lspconfig.lua
 
   { 'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },

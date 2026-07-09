@@ -1,9 +1,9 @@
 -- vim: set fdl=1:
 
 -- $vfn/lsp/ts_ls.lua
---  based on  $cGRs/d-CP/d-Vim-Nvim/r-J03JB-nvim_config/lsp/ts_ls.lua
+--  based on  $nDrGRs/d-CP/d-Vim-Nvim/r-J03JB-nvim_config/lsp/ts_ls.lua
 --   (https://github.com/J03JB/nvim_config/blob/master/lsp/ts_ls.lua)
---  there's also the vast  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ts_ls.lua
+--  there's also the vast  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ts_ls.lua
 
 --  :MasonInstall typescript-language-server
 --  brings in  tsserver  Diagnostics

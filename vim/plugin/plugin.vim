@@ -738,13 +738,13 @@ endfunction
 nnoremap <leader><leader>q :call VimgrepQRs()<CR>
 function! VimgrepQRs()
   call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/*.md '.$OSL.'/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
+  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/**/*.md '.$OSL.'/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
   copen
 endfunction
 
 " search in my Vim configuration
-nnoremap <leader>rc :call VimgrepQRs()<CR>
-function! VimgrepQRs()
+nnoremap <leader>rc :call Vimgrepvimrc()<CR>
+function! Vimgrepvimrc()
   call StripStoreCurSel()
   execute 'silent! vimgrep #'.@l.'#j '.$vfv.'/**/* '.$vfn.'/**/*'
   copen

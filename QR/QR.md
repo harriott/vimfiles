@@ -1,11 +1,11 @@
 
+    $ $vimfiles/QR> m4ps 0 1
+    $vimfiles/QR/QR.md
+
 Joseph's (g)Vim Quick Reference
 
     :Tabularize\ "
     gA"  " align the lists in this file
-
-    $ $vimfiles/QR> m4ps 0 1
-    $vimfiles/QR/QR.md
 
     $vimfiles/test/scratch.vim
 
@@ -209,7 +209,7 @@ window-local: `:h location-list`
 
 ## windows splits - sizes
     :echo winheight(0)
-    :se wfh?  " winfixheight - resists  c-w =, so  :se nowfh nowfw
+    :se wfh?  " winfixheight - resists  c-w =, so  \hw ($vfv/plugin/plugin.vim)
 
 ### resize
     $vfv/plugin/plugin.vim > resize
@@ -246,7 +246,6 @@ I mostly use `c-w o`.
     c-a      " repeats last recorded insert
     c-o      " moves to normal mode for just one command
     c-r%     " insert relative path of current file
-    c-qu201c " unicode codepoint for “
 
 ### completion
     :h ins-completion
@@ -593,13 +592,84 @@ u            " lowercase a visual block
     :.,$d         " delete to end of file
 
 ## entering specials
+    ^Vunnnn
     ^Vu03b2  " gets greek small letter beta
 
     digraphs
 
-### $DWp
-- `Ctrl-K 2S` = ²
-- `^Vunnnn`
+### alignment characters
+- the awkward Unicode Paragraph Separator `Ctrl+q u2029`
+- the pesky [carriage return](http://www.fileformat.info/info/unicode/char/000D/index.htm) used by MSWin as a line-ending `Ctrl+q u000d`
+- [Unicode Character 'ESCAPE'](http://www.fileformat.info/info/unicode/char/1b/index.htm) `Ctrl+q u001b`
+[”](http://www.fileformat.info/info/unicode/char/201d/index.htm)
+
+### digraphs
+
+- ` ` ([null (U+000)](http://graphemica.com/0000)) `Ctrl+k NU`
+- ` ` (no-break space (U+00A0)) `Ctrl+k NS`
+- `¢` (cent sign) `Ctrl+k Ct`
+- `£` ([pound sign (U+00A3)](https://graphemica.com/%C2%A3)) `Ctrl+k Pd`
+- `§` ([the Section sign](http://en.wikipedia.org/wiki/Section_sign)) `Ctrl+k SE`
+- `©` ([Unicode Character 'COPYRIGHT SIGN' (U+00A9)](http://www.fileformat.info/info/unicode/char/00a9/index.htm)) `Ctrl+k Co`
+- `«` ([left-pointing double angle quotation mark](http://www.endmemo.com/unicode/u00ab.php)) `Ctrl+k <<`
+- `¬` (not sign) `Ctrl+k NO`
+- `°` (degree sign) `Ctrl+k DG`
+- `±` ([plus-minus sign](http://www.fileformat.info/info/unicode/char/00b1/index.htm)) `Ctrl+k +-`
+- `²` ([U+00B2 SUPERSCRIPT TWO](https://codepoints.net/U+00B2), [superscript two (U+00B2)](http://graphemica.com/%C2%B2), [Unicode Character 'SUPERSCRIPT TWO' (U+00B2)](http://www.fileformat.info/info/unicode/char/b2/index.htm)) `Ctrl+k 2S`
+- `³` (superscript three) `Ctrl+k 3S`
+- `µ` (micro sign) `Ctrl+k My`
+- `·` ([middle dot (U+00B7)](https://graphemica.com/%C2%B7)) `Ctrl+k .M`
+- `½` ([vulgar fraction one half (U+00BD)](http://graphemica.com/%C2%BD)) `Ctrl+k 12`
+- `Ø` ([ latin capital letter o with stroke (U+00D8)](https://graphemica.com/%C3%98)) `Ctrl+k 0/`
+- `ä` `Ctrl+k a:`
+- `ê` `Ctrl+k e>`
+- `α` ([greek small letter alpha (U+03B1)](https://graphemica.com/%CE%B1)) `Ctrl+k a*`
+- `α` ([greek small letter alpha (U+03B1)](https://graphemica.com/%CE%B1)) `Ctrl+k a*`
+- `β` ([greek small letter beta (U+03B2)](https://graphemica.com/%CE%B2)) `Ctrl+k b*`/`^Vu03b2`
+- `γ` ([greek small letter gamma](http://graphemica.com/%CE%B3)) `Ctrl+k g*`
+- `μ` ([greek small letter mu](http://graphemica.com/%CE%BC)) `Ctrl+k m*`
+- `“` (left double (smart) quote, [“](http://www.fileformat.info/info/unicode/char/201c/index.htm)) `Ctrl+k "6`/`Ctrl+q u201c`
+- `”` (right double (smart) quote, [“](http://www.fileformat.info/info/unicode/char/201d/index.htm)) `Ctrl+k "9`/`Ctrl+q u201d`
+- `†` ([dagger (U+2020)](https://graphemica.com/%E2%80%A0)) `Ctrl+k /-`
+- `…` (ellipsis, [Unicode Character 'HORIZONTAL ELLIPSIS' (U+2026)](https://www.fileformat.info/info/unicode/char/2026/index.htm)) `Ctrl+k ,.`
+- `№` (numero sign) `Ctrl+k N0`
+- `Ω` (ohm sign) `Ctrl+k Om`
+- `⅞` ([vulgar fraction seven eighths (U+215E)](https://graphemica.com/%E2%85%9E)) `Ctrl+k 78`
+- `→` (rightwards arrow) `Ctrl+k ->`
+- `∙` ([Unicode Character 'BULLET OPERATOR' (U+2219)](http://www.fileformat.info/info/unicode/char/2219/index.htm)) `Ctrl+k Sb`
+- `√` ([square root (U+221A)](https://graphemica.com/%E2%88%9A)) `Ctrl+k RT`
+- `∷` ([proportion (U+2237)](https://graphemica.com/%E2%88%B7)) `Ctrl+k ::`
+- `≡` ([identical to (U+2261)](http://graphemica.com/%E2%89%A1) `Ctrl+k =3`
+- `⋮` ([Unicode Character 'VERTICAL ELLIPSIS' (U+22EE)](https://www.fileformat.info/info/unicode/char/22ee/index.htm)) `Ctrl+k :3`
+- `⋯` ([Unicode Character 'MIDLINE HORIZONTAL ELLIPSIS' (U+22EF)](https://www.fileformat.info/info/unicode/char/22ef/index.htm)) `Ctrl+k .3`
+- `⌂` ([house (U+2302)](https://graphemica.com/%E2%8C%82)) `Ctrl+k Eh`
+- `━` ([box drawings heavy horizontal (U+2501)](https://graphemica.com/%E2%94%81)) `Ctrl+k HH`
+- `┅` ([Unicode Character "┅" (U+2505)](https://www.compart.com/en/unicode/U+2505) `Ctrl-k 3_`
+- `▀` (upper half block) `Ctrl+k TB`
+- `█` (full block) `Ctrl+k FB`
+- `▌` (left half block) `Ctrl+k lB`
+- `▐` ([right half block (U+2590)](https://graphemica.com/%E2%96%90)) `Ctrl+k RB`
+- `░` (light shade) `Ctrl+k .S`
+- `▓` (dark shade) `Ctrl+k ?S`
+- `■` ([black square (U+25A0)](https://graphemica.com/%E2%96%A0)) `Ctrl+k fS`
+- `□` ([white square (U+25A1)](https://graphemica.com/%E2%96%A1)) `Ctrl+k OS`
+- `▢` ([white square with rounded corners (U+25A2)](https://graphemica.com/%E2%96%A2)) `Ctrl+k RO`
+- `▥` ([square with vertical fill (U+25A5)](https://graphemica.com/%E2%96%A5)) `Ctrl+k RY`
+- `▧` ([square with upper left to lower right fill (U+25A7)](https://graphemica.com/%E2%96%A7)) `Ctrl+k RZ`
+- `▪` ([black small square (U+25AA)](https://graphemica.com/%E2%96%AA)) `Ctrl+k sB`
+- `▲` ([black up-pointing triangle (U+25B2)](http://graphemica.com/%E2%96%B2)) `Ctrl+k UT`
+- `▶` ([black right-pointing triangle (U+25B6)](https://graphemica.com/%E2%96%B6)) `Ctrl+k PR`
+- `▷` ([white right-pointing triangle (U+25B7)](https://graphemica.com/%E2%96%B7)) `Ctrl+k Tr`
+- `◇` ([white diamond (U+25C7)](https://graphemica.com/%E2%97%87)) `Ctrl+k Dw`
+- `○` ([white circle (U+25CB)](http://graphemica.com/%E2%97%8B)) `Ctrl+k 0m`
+- `◎` (bullseye) `Ctrl+k 0o`
+- `●` ([black circle (U+25CF)](https://graphemica.com/%E2%97%8F)) `Ctrl+k 0M`
+- `◙` ([inverse white circle (U+25D9)](http://graphemica.com/%E2%97%99)) `Ctrl+k Ic`
+- `☆` ([white star (U+2606)](https://graphemica.com/%E2%98%86)) `Ctrl+k *1`
+- `☺` ([white smiling face (U+263A)](https://graphemica.com/%E2%98%BA)) `Ctrl+k 0u`
+- `☼` ([white sun with rays](http://www.fileformat.info/info/unicode/char/263c/index.htm)) `Ctrl+k SU`
+- `♭` ([music flat sign](http://graphemica.com/%E2%99%AD)) `Ctrl+k Mb`
+- `♯` ([music sharp sign](http://graphemica.com/%E2%99%AF)) `Ctrl+k MX`
 
 ## number lists
     :for i in range(1,31) | pu=i.'. ' | endfor  " creates a numbered markdown list, ready for items

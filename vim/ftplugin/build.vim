@@ -1,6 +1,7 @@
 " vim: se fdl=1:
 
 " Language: build - text files of my system builds, nicely folded up
+" Detection: $vfv/filetype.vim
 " Maintainer: Joseph Harriott
 " Last Change: Thu 08 Sep 2022
 

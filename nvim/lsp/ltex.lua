@@ -51,5 +51,5 @@ return {
   get_language_id = get_language_id,
   ---@type lspconfig.settings.ltex
   settings = { ltex = { enabled = enabled_ids, }, },
-} -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ltex.lua
+} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ltex.lua
 

@@ -10,5 +10,5 @@
 return {
   cmd = { 'texlab' },
   filetypes = { 'tex', 'plaintex', 'bib' },
-} -- from the huge  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/texlab.lua
+} -- from the huge  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/texlab.lua
 

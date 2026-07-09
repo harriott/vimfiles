@@ -3,12 +3,15 @@
 
 -- $vfn/lua/init.lua
 --  require'd by  $vfn/init.vim
---  adapted from  $cGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
+--  adapted from  $nDrGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 --  =e ($vfv/ftplugin/lua.vim)
 
 -- vim.loader.enable()
 
 -- vim.opt.undofile = true  -- persistent undo
+
+-- Until  tmux > 3.7a
+vim.opt.termsync = false -- lua= vim.o.termsync - see  tmux/issues/5311
 
 -- ▩-> 0 for auto-session
 vim.o.ssop='blank,buffers,curdir,folds,tabpages,winsize,winpos,localoptions'
@@ -127,7 +130,7 @@ vim.keymap.set({'n'},'<localleader>t',function() vim.treesitter.stop() print("tr
 -- ▩-> 1 myDrA.lua
 if vim.api.nvim_eval('$myDrA') == '1' then require'myDrA' end -- if  $Drpbx, $vfn/lua/myDrA.lua
 -- $myDrA:
---  $machBld/Bash_start (https://github.com/harriott/OS-ArchBuilds)
+--  $ABnm/Bash_start (https://github.com/harriott/OS-ArchBuilds)
 --  $vfv\enter\vimrc-Win10.vim
 
 

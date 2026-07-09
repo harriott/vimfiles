@@ -21,5 +21,5 @@ return {
   },
   filetypes = { 'bash', 'sh' },
   root_markers = { '.git' },
-} -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/bashls.lua
+} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/bashls.lua
 

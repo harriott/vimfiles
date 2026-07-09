@@ -11,7 +11,7 @@
 ""> paths
 let $CPF = $programfiles
 let $notDr = 'D:\notDr'
-  let $cGRs = $notDr.'\GRs'
+  let $nDrGRs = $notDr.'\GRs'
 
 "">> 0 maybe $Drpbx
 if $HOME == 'C:\Users\deaur'
@@ -64,7 +64,7 @@ let $HADR = $HOME.'\AppData\Roaming'
 let $cITCP = $ITcore.'\CP'
   let $LTXj = $cITCP.'\documenting\LaTeX\jo'
 let $DWp = $ITcore.'\DokuWiki\pages'
-let $cITcc = $ITcore.'\copied-code'
+let $ITcop = $ITcore.'\copied-code'
 if $HOME == 'C:\Users\deaur'
   let $MSWml = 'D:\ITJ\ml'
 else

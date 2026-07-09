@@ -18,10 +18,8 @@ Joseph's (g)Vim Quick Reference
     :echo matchstr('source_to_match','match')
     :echo nvim_get_runtime_file('parser', v:true)
     :lua vim.notify('test notification')
+    :lua= vim.o.background
     :verb ve  " :verbose version
-
-    nvim -?
-    nvim -v
 
     fd health\.lua $vfn/packs-nvim  " health.lua
     fd init\.lua $vfn/packs-nvim  " init.lua
@@ -148,7 +146,6 @@ navigating into `C:\Vim` requires cursor on C
     :h default-mappings
     :=vim.fn.stdpath("data")
     :=vim.fn.stdpath("state")
-    nvim --clean
 
 - `:che` (`:checkhealth`)
     - if stuck in `unix`, `pkill neovim`
@@ -410,7 +407,7 @@ options as variable: `:echo &textwidth`
     :sy sync fromstart  " but can't find any way to check this setting
 
 ##### not Nvim
-    $cGRs/d-CP/d-Vim-Vim/r-vim-vim/runtime/syntax/syncolor.vim
+    $nDrGRs/d-CP/d-Vim-Vim/r-vim-vim/runtime/syntax/syncolor.vim
     $VIMRUNTIME/syntax/syncolor.vim
 
 #### state

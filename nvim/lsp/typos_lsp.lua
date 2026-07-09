@@ -11,5 +11,5 @@ return {
   filetypes = { 'markdown', 'tex' }, -- not helpful in  python
   root_markers = { "typos.toml", "_typos.toml", ".typos.toml", "pyproject.toml", "Cargo.toml" }, -- ordered by priority
   settings = {},
-} -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/typos_lsp.lua
+} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/typos_lsp.lua
 

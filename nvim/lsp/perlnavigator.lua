@@ -22,6 +22,6 @@ return {
     }, },
 }
 -- based on
---  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/perlnavigator.lua
+--  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/perlnavigator.lua
 --  bscan/PerlNavigator
 

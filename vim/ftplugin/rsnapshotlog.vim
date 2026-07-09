@@ -2,12 +2,12 @@
 
 " Language: rsnapshot log
 " Maintainer: Joseph Harriott
-" Last Change: Tue 31 May 2022
+" Last Change: mar 07 juil 2026
 
-" also  $vimfiles/syntax/rsnapshotlog.vim
-" for  /var/log/rsnapshot  (- defined in  $machBld/etc/rsnapshot.conf)
+" $vfv/ftplugin/rsnapshotlog.vim
+"  for  /var/log/rsnapshot  (- defined in  $ABnm/etc/rsnapshot.conf)
 
-" see also  $vimfiles/syntax/rsnapshotlog.vim
+" see also  $vfv/syntax/rsnapshotlog.vim
 
 " folding by " started"
 " ---------------------

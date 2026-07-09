@@ -4,8 +4,8 @@
 " Maintainer: Joseph Harriott - http://harriott.github.io
 " Last Change: Wed 08 Jan 2025
 " for
-"  .asc ($cGRs/dts-asc.ffl) ASCII armor (.pem  in  $vfv/filetype.vim)
-"  .crt ($culLAb/ml-$host/CAC) certificate (.pem  in  /usr/share/vim/vim91/filetype.vim)
+"  .asc ($nDrGRs/dts-asc.ffl) ASCII armor (.pem  in  $vfv/filetype.vim)
+"  .crt ($ITculLAb/ml-$host/CAC) certificate (.pem  in  /usr/share/vim/vim91/filetype.vim)
 
 " $vfv/ftplugin/pem.vim
 "  also  $vfv/syntax/pem.vim

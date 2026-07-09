@@ -21,19 +21,19 @@ if has('win64')
     let g:loaded_perl_provider = 0
 else
   if exists('g:neovide')
-    if hostname() == 'sbMb' && $XDG_CURRENT_DESKTOP == ''
-      set guifont=UbuntuMono_Nerd_Font_Mono:h8
-    else " DOP3040D11S
+    if hostname() =~ 'HPEB840G3'
+      set guifont=UbuntuMono_Nerd_Font_Mono:h10
+    else  " DOP3040D11S, sbMb
       set guifont=UbuntuMono_Nerd_Font_Mono:h9
-    endif " set  $machBld/jo/Bash/exportWS  accordingly
+    endif " set  $ABnm/.../exportWS  accordingly
     map! <S-Insert> <C-R>+
+    " - forgot why...
   endif
 endif
 
 if v:lang =~ 'fr'
-  " Easier searching:
-  nnoremap ! /
-  nnoremap q! q/
+  let mapleader = '²'
+  source $vfv/enter/vimrc-AZERTY.vim
 else
   " Easier jump to last position in newly opened file:
   nnoremap gl g`"
@@ -87,7 +87,7 @@ if exists('g:neovide')
   source $vfv/enter/GUIs.vim
   if has('unix')
     if hostname() == 'sbMb'
-      " se co=109  as in  $machBld/jo/Bash/exportWS
+      " se co=109  as in  $ABnm/.../exportWS
       " se co=133  is bigger, but not covering  Conky
       if v:lang =~ 'fr'
         nnoremap <leader>à :call ToggleGUIwidth(109,133)<cr>

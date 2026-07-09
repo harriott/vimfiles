@@ -40,5 +40,5 @@ return {
     '.git',
     }, -- ordered by priority
   settings = { Lua = { diagnostics = { globals = {'vim'} } } }, -- no more global vim warnings
-} -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/lua_ls.lua
+} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/lua_ls.lua
 

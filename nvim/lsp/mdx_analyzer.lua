@@ -4,7 +4,7 @@
 --  :MasonInstall mdx-analyzer
 --  e $nvmp/mdx-analyzer/node_modules/@mdx-js/language-server/README.md
 --  enabled in  $vfn/lua/init.lua
---  Searching through  $cGRs  I can't find any example of it's effect.
+--  Searching through  $nDrGRs  I can't find any example of it's effect.
 
 local util = require 'lspconfig.util'
 ---@type vim.lsp.Config
@@ -21,5 +21,5 @@ return {
       config.init_options.typescript.tsdk = util.get_typescript_server_path(config.root_dir)
     end
   end,
-} -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/mdx_analyzer.lua
+} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/mdx_analyzer.lua
 

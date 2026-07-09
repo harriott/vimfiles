@@ -1,7 +1,7 @@
 " vim: fdl=1:
 
 " nvim -u $vimfiles/test/init.vim <file_to_test>
-"  (unneccessarily symlinked by  $OSAB/nodes-set/jo-2-whenWM-0.sh)
+"  (unneccessarily symlinked by  $OSAB/nodes-set/jo-1-encoding.sh)
 
 let g:test = 1
 " - blocks these:
@@ -21,8 +21,8 @@ endif
 lua require('test')
 " - $vfn/lua/test.lua
 
-" ""> 3 packs 0 packpath
-se pp+=/home/jo/.config/nvim
+""> 3 packs 0 packpath
+se pp+=/home/jo/.config/nvim  " $nvim
 
 ""> 3 packs 1 vim-buffing-wheel
 packadd vim-buffing-wheel

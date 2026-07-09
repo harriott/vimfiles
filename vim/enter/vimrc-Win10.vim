@@ -3,7 +3,7 @@
 
 " $vfv\enter\vimrc-Win10.vim
 " source'd by
-"  $MSWin10\mb\_vimrc-AZERTY
+"  $MSn/Vim/_vimrc-AZERTY
 "  $vfn/init.vim
 
 " if $computername == 'HPEB840G36' | let mapleader = 'ù' | endif  " until  $MSWin10\AZERTY.ahk
@@ -112,11 +112,11 @@ let g:webdevicons_enable_airline_statusline = 0  " to be able to see  fileformat
 
 "">> vim-langtool
 " let g:langtool_jar = 'C:\LanguageTool\languagetool-commandline.jar'
-let g:langtool_jar = $cITcc.'\CP\LanguageTool\languagetool-commandline.jar'
+let g:langtool_jar = $ITccl.'\CP\LanguageTool\languagetool-commandline.jar'
 
 "">> vim-LanguageTool
 " let g:languagetool_jar='C:\LanguageTool\languagetool-commandline.jar'
-let g:languagetool_jar = $cITcc.'\CP\LanguageTool\languagetool-commandline.jar'
+let g:languagetool_jar = $ITccl.'\CP\LanguageTool\languagetool-commandline.jar'
 
 "">> Windows Explorer on current file
 nnoremap <F11> :!start explorer %:p:h<CR><CR>

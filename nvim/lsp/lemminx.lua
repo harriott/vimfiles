@@ -10,5 +10,5 @@ return {
   cmd = { 'lemminx' },
   filetypes = { 'xml', 'xsd', 'xsl', 'xslt', 'svg' },
   root_markers = { '.git' },
-} -- based on  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/lemminx.lua
+} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/lemminx.lua
 

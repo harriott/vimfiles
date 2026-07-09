@@ -20,6 +20,8 @@ endif
 "    $vfn/lua/lazy/alpha-nvim.lua
 "    vim-startify ($vfv/plugin/packsAll.vim)
 
+let g:sourced_vimrc = 1
+
 set cot+=longest  " completeopt
 set enc=utf-8  " encoding, get this done early
 set mps=(:),{:},[:],<:>

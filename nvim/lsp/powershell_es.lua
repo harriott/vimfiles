@@ -16,6 +16,6 @@ return {
   settings = { powershell = { codeFormatting = { Preset = 'OTBS' } } }, -- one true brace style
 }
 -- based on
---  $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/powershell_es.lua
+--  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/powershell_es.lua
 --  PowerShell/PowerShellEditorServices
 

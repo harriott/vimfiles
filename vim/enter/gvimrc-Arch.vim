@@ -1,6 +1,9 @@
 " vim: set fdl=1:
 
-" $vfv/enter/gvimrc-Arch.vim  sourced by  $machBld/jo/gvimrc
+" $vfv/enter/gvimrc-Arch.vim
+"  sourced by
+"   $ABnm/.../gvimrc
+"   $OSAB/mb-HPEB840G3x/hi/gvimrc
 
 " move on to the more portable configuration:
 source $vfv/enter/gvimrc.vim
@@ -35,9 +38,11 @@ function! ColorLightDark()
 endfunction
 
 ""> guifont
-" coordinate with  g:monitorheight
-" first font is always applied
-" set guifont=DejaVuSansM\ Nerd\ Font\ Mono\ 9  " $notDr
-" set guifont=JetBrainsMono\ NFM\ 9  " $notDr
-set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 9
+if g:monitorheight == '768'
+  set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 10
+else
+  " set guifont=DejaVuSansM\ Nerd\ Font\ Mono\ 9  " $notDr
+  " set guifont=JetBrainsMono\ NFM\ 9  " $notDr
+  set guifont=UbuntuMono\ Nerd\ Font\ Mono\ 9
+endif
 

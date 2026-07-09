@@ -51,5 +51,5 @@ return {
     vim.api.nvim_buf_create_user_command(bufnr, 'LspPyrightSetPythonPath', set_python_path, {
       desc = 'Reconfigure pyright with the provided python path', complete = 'file', nargs = 1, })
   end,
-} -- based on $cGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/pyright.lua
+} -- based on $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/pyright.lua
 
