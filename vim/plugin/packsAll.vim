@@ -61,6 +61,7 @@ packadd mru
 
 ""> shell - vim-startify
 " $vfvp/packs-cp-all/opt/vim-startify/doc/startify.txt
+" AZERTY numbers don't select in  WezTerm...
 " cwd set at start in  $vfv/enter/vimrc.vim
 " in nvim it's frequently not capturing old files
 let g:startify_lists = [ { 'type': 'files',     'header': ['   MRU'] }, ]
@@ -73,10 +74,14 @@ packadd vim-startify
 " :Startify
 
 ""> text wrangling - find/replace - quick-scope
+" $vfvp/packs-cp-all/opt/quick-scope/doc/quick-scope.txt
+
 " trigger highlighting in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-packadd quick-scope
+if $TERM_PROGRAM != 'WezTerm'
+  packadd quick-scope
+endif " $cITCP/encoding/Vim/quick-scope-Neovim_in_WezTerm_AZERTY_number_fail.md
 
 ""> text wrangling - vim-asterisk
 packadd vim-asterisk

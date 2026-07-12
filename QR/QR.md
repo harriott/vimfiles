@@ -553,7 +553,7 @@ ni<somecharacter><esc>                             " inserts <somecharacters> n 
 
 ## :put
 ```vim
-:pu=exe('<vim_command>') " :put=execute('...')
+:pu=execute('ve') " :version
 :pu='this_text'
 :h :pu
 ```

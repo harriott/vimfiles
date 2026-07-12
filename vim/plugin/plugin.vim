@@ -3,8 +3,9 @@
 
 " $vfv/plugin/plugin.vim
 "  symlinked by  $OSAB/nodes-set/jo-2-whenWM-0.sh
+"  annoyingly, sourced after  $vfv/plugin/packs.vim
 
-if exists('g:test') | finish | endif
+if exists('g:block_plugin_plugin') | finish | endif
 let g:plugin = 1
 
 " better searching (needed early for  Thu 11 Dec 2025)

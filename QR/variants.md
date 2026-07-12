@@ -89,9 +89,10 @@ Joseph's (g)Vim Quick Reference
 
 ## neovide
     $ neovide &
-    echo g:neovide
+    :let g:neovide_opacity = 1  " if taking a screenshot
 
 ### g:neovide
+    :echo g:neovide
     :if !exists('g:neovide') | echo 'no neovide' | endif
     :let g:neovide
 
@@ -258,8 +259,8 @@ vi               " exit Ex mode
     :cw      ' open if errors or close
 
 ## registers
-    ':p                               " paste in last command.
-    'kyy                              " copies current line into register k
+    ':p          " paste in last command.
+    'kyy         " copies current line into register k
     :h registers
 
 `"` also triggers `vim-peekaboo`
@@ -269,6 +270,8 @@ vi               " exit Ex mode
     $ITref/CP/encoding/textWrangling-vi/vim/learnvim9script.vim
 
     :echo empty(getline(2))  " line 2 is empty
+    :echo empty($TERM_PROGRAM)
+    :if $TERM_PROGRAM != 'WezTerm' | echo 'not WezTerm' | else | echo 'WezTerm' | endif
     :echo expand('<cword>') " echos the word under the cursor
     :echo getline(1) " contents of line 1
     :echo has('win32')
@@ -366,7 +369,7 @@ vimscript
 ### options
     :Bufferize se          ' all option changes
     :se                    ' show all modified options
-    :se fenc=utf8          ' fileencoding
+    :se fenc=utf8          ' (fileencoding) handy if  utf-16le
     :se spc                ' (spellcapcheck) pattern for defining a sentence
     :se ttm                ' ms timeout for key codes
     :se wop                ' wildoptions

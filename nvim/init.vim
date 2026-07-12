@@ -20,6 +20,7 @@ command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis 
 if has('win64')
     let g:loaded_perl_provider = 0
 else
+  " we're in Linux
   if exists('g:neovide')
     if hostname() =~ 'HPEB840G3'
       set guifont=UbuntuMono_Nerd_Font_Mono:h10
@@ -27,7 +28,7 @@ else
       set guifont=UbuntuMono_Nerd_Font_Mono:h9
     endif " set  $ABnm/.../exportWS  accordingly
     map! <S-Insert> <C-R>+
-    " - forgot why...
+    " - insert from the  + selection register
   endif
 endif
 
@@ -127,9 +128,8 @@ lua require('init')
 " - $vfn/lua/init.lua
 
 ""> 3 pull in the rest - automatic
-" In order:
-"  lazy stuff begins
-"  $vfv/plugin/packs.vim
+" In order (after lazy stuff):
+"  $vfv/plugin/packs.vim  (packadds)
 "  $vfv/plugin/plugin.vim
 "  $vfv/after/...
 "  $vfv/filetype.vim

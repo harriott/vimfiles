@@ -4,7 +4,7 @@
 
 " $vfv/after/plugin/packs.vim
 
-if exists('g:test') | finish | endif
+if exists('g:block_after_plugin_packs') | finish | endif
 
 " ""> csv.vim
 " " override  $vfvp/packs-cp/opt/csv.vim/ftdetect/csv.vim

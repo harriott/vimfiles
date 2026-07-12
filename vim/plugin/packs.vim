@@ -4,11 +4,15 @@
 " $vfv/plugin/packs.vim
 "  symlinked in
 "   $MSn/set/3.ps1
-"   $OSAB/nodes-set/jo-2-whenWM-0.sh
+"   $OSAB/nodes-set/jo-1-encoding.sh
+"  annoyingly, sourced before  $vfv/plugin/plugin.vim
 
 " $ ls $vimfiles -r vim/packs*/opt
 
-if exists('g:test') | finish | endif
+if exists('g:block_plugin_packs')
+  echo 'blocked  $vfv/plugin/packs.vim'
+  finish
+endif
 let g:packs = 1
 
 if $myDrA

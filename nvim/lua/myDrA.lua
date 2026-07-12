@@ -78,6 +78,7 @@ require('lazy').setup(
     -- require'lazy/mistake_nvim', -- auto spell-corrects
     -- require'lazy/neogit',
     -- require'lazy/nvim-hlslens',
+    require'lazy/notmuch_nvim',
     require'lazy/nvim-bqf',
     require'lazy/nvim-cmp',
     require'lazy/nvim-colorizer_lua',

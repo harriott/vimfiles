@@ -10,7 +10,7 @@
 
 -- vim.opt.undofile = true  -- persistent undo
 
--- Until  tmux > 3.7a
+-- Until I have  tmux > 3.7a
 vim.opt.termsync = false -- lua= vim.o.termsync - see  tmux/issues/5311
 
 -- ▩-> 0 for auto-session

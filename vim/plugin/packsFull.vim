@@ -190,9 +190,6 @@ packadd vim-markdown  " harriott  clone of  preservim
 " ge => open link in Vim
 " gx => open link in browser
 
-"">> vim-mbsync
-packadd vim-mbsync
-
 "">> vim-pandoc-syntax
 packadd vim-pandoc-syntax
 
