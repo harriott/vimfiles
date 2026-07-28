@@ -61,7 +61,7 @@ packadd mru
 
 ""> shell - vim-startify
 " $vfvp/packs-cp-all/opt/vim-startify/doc/startify.txt
-" AZERTY numbers don't select in  WezTerm...
+" AZERTY numbers don't select in  WezTerm (could  let g:startify_custom_indices)...
 " cwd set at start in  $vfv/enter/vimrc.vim
 " in nvim it's frequently not capturing old files
 let g:startify_lists = [ { 'type': 'files',     'header': ['   MRU'] }, ]
