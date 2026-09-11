@@ -82,6 +82,7 @@ aug filetypedetect
   au! BufRead,BufNewFile *.dcc          setf dcc          " $vfv/ftplugin/dcc.vim
   au! BufRead,BufNewFile *.digs         setf digs         " $vfv/ftplugin/digs.vim
   au! BufRead,BufNewFile *.dirl         setf dirl         " $vfv/syntax/dirl.vim
+  au! BufRead,BufNewFile *.drcl         setf drcl         " $vfv/ftplugin/drcl.vim
   au! BufRead,BufNewFile *.exts         setf exts         " $vfv/syntax/exts.vim
   au! BufRead,BufNewFile *.fclist       setf fclist       " $vfv/syntax/fclist.vim
   au! BufRead,BufNewFile *.fgc          setf fgc          " $vfv/syntax/fgc.vim

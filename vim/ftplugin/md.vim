@@ -25,10 +25,10 @@ if v:lang =~ 'fr'
 endif
 
 " hack intended to stop accidental filtering
-  setlocal equalprg=no_filter_md_files
+setlocal equalprg=no_filter_md_files
 
 " open Pandoc'd pdf
-  nnoremap <buffer> <F12> :call CompiledPDF()<CR>
+nnoremap <buffer> <F12> :call CompiledPDF()<CR>
 
 " go file when square bracketed
 nnoremap <buffer>gF vi[gf

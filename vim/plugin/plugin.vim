@@ -269,6 +269,7 @@ endfunction
 
 "">> date
 function! DateFr()
+  wincmd o  " only
   edit $vfn/FrenchDate " not worried about  fenc
   norm dd
   pu=strftime('%a %d %b %Y')

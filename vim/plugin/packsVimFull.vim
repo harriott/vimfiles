@@ -76,6 +76,15 @@ packadd vim-gitgutter
 let g:GGF = 0
 " $vfv/after/plugin/packs.vim
 
+""> encoding - vim-prettier
+nnoremap <leader>p :echo "\\p"<cr>
+  packadd vim-prettier
+
+" Use:
+"  $vfvp/packs-cp-full/opt/vim-prettier/doc/prettier.txt
+"  :Prettier
+"  css  graphql  javascript  json  less  scss  typescript
+
 ""> fuzzyy
 if has('win64')
   nnoremap <f1> :FuzzyBuffers<CR>

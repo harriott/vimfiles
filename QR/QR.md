@@ -200,39 +200,43 @@ after a search, `:v//d` removes all non-matching lines
 
 window-local: `:h location-list`
 
-## windows splits - move them around
+## windows
+    :h ctrl-w
+    :wincmd
+
+### splits - move them around
     c-w+H  " move split to far left (:h ctrl-w_h)
     c-w+J  " move split to very bottom
     c-w+K  " move split to very top
     c-w+L  " move split to far right
     c-w+r  " rotate split to right
 
-## windows splits - sizes
+### splits - sizes
     :echo winheight(0)
     :se wfh?  " winfixheight - resists  c-w =, so  \hw ($vfv/plugin/plugin.vim)
 
-### resize
+#### resize
     $vfv/plugin/plugin.vim > resize
     c-w =  " equalise window sizes
 
 with mouse
 
-#### maximize
+##### maximize
     :h CTRL-W__
     c-w _
 
 I mostly use `c-w o`.
 
-## windows splits - split
+### splits - split
     :ba      " view all buffers, split horizontally
     :vert ba " view all buffers, split vertically
 
-### current buffer
+#### current buffer
     :sp    " split horizontally
     :vsp   " split vertically
     c-w+v  " split vertical
 
-### new buffer
+#### new buffer
     :new     " new buffer, split above
     :vne[w]  " new buffer, split vertical
     c-w n    " new buffer, split horizontal
@@ -292,23 +296,20 @@ I mostly use `c-w o`.
     v  " character-based visual selection
 
 # movements - in buffer
-    nG      " go to line n
+    ( or )  " move cursor to start or end of sentence
+    :h ``
+    :h '.   " jump to last change
     :n      " go to line n
+    g;      " jump to last change
+    ge      " go backwards to end of word
     gj/k    " go down\up a visual line
+    nG      " go to line n
     [{ / ]} " jump to opening / closing }
     ][ / [] " jump to previous / next } in 1st column
     [( / ]) " jump to opening / closing )
     [m / ]m " jump to previous / next start of method
     [M / ]M " jump to previous / next end of method
     { or }  " move cursor to start or end of paragraph
-    ( or )  " move cursor to start or end of sentence
-
-```vim
-ge    " go backwards to end of word
-g;    " jump back to position of an older change
-:h ``
-:h '.
-```
 
 # movements - in current line
     $         " end of line
@@ -595,15 +596,13 @@ u            " lowercase a visual block
     ^Vunnnn
     ^Vu03b2  " gets greek small letter beta
 
-    digraphs
-
 ### alignment characters
-- the awkward Unicode Paragraph Separator `Ctrl+q u2029`
-- the pesky [carriage return](http://www.fileformat.info/info/unicode/char/000D/index.htm) used by MSWin as a line-ending `Ctrl+q u000d`
-- [Unicode Character 'ESCAPE'](http://www.fileformat.info/info/unicode/char/1b/index.htm) `Ctrl+q u001b`
-[”](http://www.fileformat.info/info/unicode/char/201d/index.htm)
+- `Ctrl+q u000d` the pesky [carriage return](http://www.fileformat.info/info/unicode/char/000D/index.htm) MSWin CTRLF
+- `Ctrl+q u001b` [Unicode Character 'ESCAPE'](http://www.fileformat.info/info/unicode/char/1b/index.htm)
+- `Ctrl+q u2029` - the awkward Unicode Paragraph Separator
 
 ### digraphs
+    $vimfiles/digraphs.digs
 
 - ` ` ([null (U+000)](http://graphemica.com/0000)) `Ctrl+k NU`
 - ` ` (no-break space (U+00A0)) `Ctrl+k NS`

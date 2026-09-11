@@ -109,7 +109,7 @@ require('lazy').setup(
     require'lazy/vindent_nvim',
     -- ▩---> nvim-lspconfig
     require'lazy/nvim-lspconfig',
-      -- $lazy/nvim-lspconfig/lsp - code for each LSP
+      -- $lazy/nvim-lspconfig/lsp/ - code for each LSP
       {'mason-org/mason.nvim', config=function() require'mason'.setup() end,},
         -- $lazy/mason.nvim/doc/mason.txt
         -- :checkhealth mason

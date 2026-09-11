@@ -193,15 +193,6 @@ packadd vim-markdown  " harriott  clone of  preservim
 "">> vim-pandoc-syntax
 packadd vim-pandoc-syntax
 
-"">> vim-prettier
-nnoremap <leader>p :echo "\\p"<cr>
-  packadd vim-prettier
-
-" Use:
-"  $vfvp/packs-cp-full/opt/vim-prettier/doc/prettier.txt
-"  :Prettier<Esc>
-"  css  graphql  javascript  json  less  scss  typescript
-
 "">> vim-ps1
 " $vfvp\cp\opt\vim-ps1\ftdetect\ps1.vim
 packadd vim-ps1
@@ -237,7 +228,7 @@ let g:vimtex_compiler_silent = 1  " doesn't hide the «latexmk is not executable
 let g:vimtex_fold_enabled = 1
 let g:vimtex_include_search_enabled = 0
 let g:vimtex_syntax_conceal = { 'accents': 1, 'ligatures': 0, 'cites': 1, 'fancy': 1, 'spacing': 0, 'greek': 1, 'math_bounds': 1, 'math_delimiters': 1, 'math_fracs': 1, 'math_super_sub': 1, 'math_symbols': 1, 'sections': 0, 'styles': 1, } " set cole=0
-let g:vimtex_grammar_textidote = '/usr/share/java/textidote.jar'
+" let g:vimtex_grammar_textidote = '/usr/share/java/textidote.jar' " causing errors
 " - search for  function! s:match_conceal_  in
 "     $vfvp/packs-cp-full/opt/vimtex/autoload/vimtex/syntax/core.vim
 let g:vimtex_syntax_custom_cmds = [

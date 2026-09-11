@@ -6,8 +6,11 @@
 
 -- $lazy/notmuch.nvim/doc/notmuch.txt
 -- $lazy/notmuch.nvim/README.md
--- :Notmuch (or more specifically  :Inbox) q  quits out
--- I prefer to sync & tag with my tools in  $OSL/nodes/bashrc-clm
+-- Usage:
+--  :Inbox
+--  :Notmuch  gets emails by tags
+--  I prefer to sync & tag with my tools in  $OSL/nodes/bashrc-clm
+--  q  quits out
 
 return { "yousefakbar/notmuch.nvim",
   config = function()

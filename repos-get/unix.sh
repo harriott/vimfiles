@@ -46,7 +46,7 @@ msv="$vfvp/packs-cp-full/opt/msmtp-scripts-vim"
 rd=$pwd; . $misc/GRs/update-depth1.sh
 # $vfvp/repos  can be checked against  $cf
 echo 'Put back  marlam-msmtp/scripts/vim:'
-rsync -irtv --delete $ITccl/CP/msmtp-scripts-vim/ $msv
+rsync -irtv --delete $ITccl/CP/msmtp-scripts-vim/ $msv  # ($misc/GRs/cGRs-needed.sh)
 cd $vimfiles
 
 #=> 2 updates 2 plugins
