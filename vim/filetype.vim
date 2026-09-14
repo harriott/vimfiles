@@ -7,7 +7,7 @@
 "   $VIMRUNTIME/filetype.vim  which sets  did_load_filetypes
 
 ""> 0 $MSWml/CHh
-au BufNew,BufNewFile,BufRead $$ITcore/MSWin/ml-*/CHh/* setlocal filetype=ps1
+au BufNew,BufNewFile,BufRead $ITcore/MSWin/ml-*/CHh/* setlocal filetype=ps1
 
 ""> 0 /usr/share/applications/mimeinfo.cache
 au BufNew,BufNewFile,BufRead /usr/share/applications/mimeinfo.cache setlocal filetype=dosini
@@ -48,6 +48,9 @@ au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dos
 
 ""> 0 nvim lua's
 au BufRead,BufNew,BufNewFile */nvim/**/*.lua source $vfv/ftplugin/lua-nvim.vim
+
+""> 0 OneTabs
+au BufNew,BufNewFile,BufRead $cITCP/WAN/browsers/bookmarks-OneTabs/* setlocal filetype=OneTab
 
 ""> 0 PKGBUILD
 if has('nvim')

@@ -204,6 +204,7 @@ function! ClearFancyGlyphs()
   :sil!%s/→/-->/g
   :sil!%s/⧹/\\/g  " normalise big backslash
   :sil!%s#⧸#/#g
+  :sil!%s/é/é/g  " e + combining acute accent
   :sil!%s/ﬁ/fi/g  " latin small ligature fi
   :sil!%s/ﬂ/fl/g  " latin small ligature fl
   :sil!%s/×/x/g
