@@ -2,7 +2,6 @@
 " Vim syntax file
 
 " Language: OneTab exports
-" Detection: $vfv/filetype.vim
 " Maintainer: Joseph Harriott
 " Last Change: lun 14 sept 2026
 " Detection: $vfv/filetype.vim

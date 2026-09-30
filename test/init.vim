@@ -1,8 +1,15 @@
 " vim: fdl=1:
 
-" nvim -u $vimfiles/test/init.vim <file_to_test>
+" nvim -u $vimfiles/test/init.vim $vimfiles/digraphs.digs
+" nvim -u $vimfiles/test/init.vim $vimfiles/test/scratch.vim
+" nvim -u $vimfiles/test/init.vim $lazy/keytrail.nvim/docs/test.yaml
 
-""> 0 nvim
+set ch=4  " cmdheight (clears) bigger, to see messages
+echo '$vimfiles/test/init.vim'
+
+let g:sourced_test_init_vim = 1
+
+""> 0 nvim basics
 if v:lang =~ 'fr'
   let mapleader = '²'
   source $vfv/enter/vimrc-AZERTY.vim
@@ -12,12 +19,12 @@ else
   " (`"  is easy on AZERTY)
 endif
 
-" ""> 1 pull in vimrc
-" if has('win64')
-"   source $HOME\vimfiles\Win10Paths.vim  " $vimfiles\vim\enter\Win10Paths.vim
-" else
-"   source $vfv/enter/vimrc-Arch.vim
-" endif
+""> 1 vimrc basics
+if has('win64')
+  source $HOME\vimfiles\Win10Paths.vim  " $vfv/enter/Win10Paths.vim
+else
+  source $vfv/enter/vimrc-Arch.vim
+endif
 
 ""> 2 colors
 let g:useSTW = 0  " for  $vfv/plugin/packsFull.vim
@@ -26,24 +33,29 @@ let g:useSTW = 0  " for  $vfv/plugin/packsFull.vim
 " if $myDrA | colo jellybeans | endif
 
 ""> 3 block packs, plugin (before lua)
-" these settings are only respected in the respective scripts if they're set here before requiring *.lua
-" let g:block_plugin_packs = 1  " $vfv/plugin/packs.vim
+" g:variables  are only effective if they're set before requiring *.lua
+
+"">> 1 optionally block plugin
 let g:block_plugin_plugin = 1  " $vfv/plugin/plugin.vim
-let g:block_after_plugin_packs = 1  " $vfv/after/plugin/packs.vim
 
-" ""> 4 pull in lua test configs
-" lua require('test')
-" " - $vfn/lua/test.lua
+"">> 2 packs already blocked until good packpath
+" se pp+=$nvim  doesn't work here
+"   so  $vfv/plugin/packs.vim  &  $vfv/after/plugin/packs.vim
+"    are blocked with  g:sourced_test_init_vim
 
-" ""> 4 pull in lua full configs
-" lua require('init')
-" " - $vfn/lua/init.lua
+""> 4 pull in lua test configs
+lua require('test')
+" - $vfn/lua/test.lua
+se pp+=$nvim  " finally works here
 
-""> 5 pull in the rest
-" se pp+=/home/jo/.config/nvim  " $nvim
+""> 5 packsAll
+" source $vfv/plugin/packsAll.vim " all of them
 
+"">> individually
+" let g:context_enabled = 0 | packadd context.vim
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T'] | packadd quick-scope
+" packadd mru
 " packadd vim-buffing-wheel
-
-" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-" packadd quick-scope
+" packadd vim-characterize
+" packadd vim-startify
 

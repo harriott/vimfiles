@@ -3,15 +3,15 @@
 " sourced by  $vfv/filetype.vim
 " Language: emdr - for my draft emails ($vimfiles/sample.emdr)
 " Maintainer: Joseph Harriott
-" Last Change: Fri 30 Sep 2022
+" Last Change: Wed 23 Sep 2026
 " also  $vfv/syntax/emdr.vim
 
 " For lists:
 if v:lang =~ 'fr'
   " AZERTY
-  iabbrev <buffer> =< ⇒
+  iabbrev <buffer> =< ⇒ 
 else
-  iabbrev <buffer> => ⇒
+  iabbrev <buffer> => ⇒ 
 endif
 "  s/^- /⇒ 
 

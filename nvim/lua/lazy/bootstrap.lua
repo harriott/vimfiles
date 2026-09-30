@@ -2,7 +2,7 @@
 
 -- https://harriott.github.io/ - mer 11 sept 2024
 
--- $vfn/lua/init.lua
+-- $vfn/lua/lazy/bootstrap.lua
 --  required by
 --   $vfn/lua/init.lua
 --   $vfn/lua/test.lua

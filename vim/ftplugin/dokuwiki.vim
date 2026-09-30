@@ -96,7 +96,10 @@ nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
 nnoremap <buffer><leader><leader>5 ?''<cr>i<cr><esc>:s/''/%% /<cr>:s/''/ %%/<cr>kJ
 
 " select 'within'
-nnoremap <buffer><leader><leader>' T'vt'y
+" nnoremap <buffer><leader><leader>' T'vt'y
+
+" select ''within''
+nnoremap <buffer><leader><leader>' ?\%.l''<cr>r<cr><<x/\%.l''<cr>D0y$u
 
 " wrap the inner word under cursor with ''
 nnoremap <buffer> <leader>' viwc''''<Esc>hP

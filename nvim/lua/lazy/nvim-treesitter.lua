@@ -7,11 +7,13 @@
 --  :h nvim-treesitter-commands
 --  parsers
 --   $lazy/nvim-treesitter/SUPPORTED_LANGUAGES.md
---   end of  $vfn/lua/init.lua
+--   end of  $vfn/lua/myDrA.lua
 
 -- ▩-> return {
 return {
--- $ to switch version, sudo rm -r $lazy/nvim-treesitter
+-- to switch version
+--  from deprecated  neovim-treesitter/nvim-treesitter: rm -rf ~/.local/share/nvim/site/queries
+--  both: sudo rm -r $lazy/nvim-treesitter
 
   -- ▩--> nvim-treesitter  for  nvim 11
   { 'nvim-treesitter/nvim-treesitter',
@@ -78,7 +80,7 @@ return {
 
   -- ▩--> nvim-treesitter  for  nvim 12
   {
-    'neovim-treesitter/nvim-treesitter', branch = 'main',
+    'nvim-treesitter/nvim-treesitter', branch = 'main',
       dependencies = { 'neovim-treesitter/treesitter-parser-registry' },
     -- 'nvim-treesitter/nvim-treesitter', -- no longer maintained
 
@@ -92,6 +94,7 @@ return {
       require('nvim-treesitter').install{'bash','diff','gnuplot','lua','markdown','perl','powershell','python','query','rust','vim','vimdoc'} -- repopulates
     end,
   },
+  -- :lua vim.treesitter.start() " highlighting (vim.treesitter.stop())
 
   -- ▩--> nvim-treesitter-context
   { 'nvim-treesitter/nvim-treesitter-context',

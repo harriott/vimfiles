@@ -9,10 +9,7 @@
 
 " $ ls $vimfiles -r vim/packs*/opt
 
-if exists('g:block_plugin_packs')
-  echo 'blocked  $vfv/plugin/packs.vim'
-  finish
-endif
+if exists('g:sourced_test_init_vim') | echo 'blocked  $vfv/plugin/packs.vim' | finish | endif
 let g:packs = 1
 
 if $myDrA

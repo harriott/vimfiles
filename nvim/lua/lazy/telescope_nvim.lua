@@ -24,7 +24,9 @@ return {
     event = 'VimEnter',
     dependencies = {
       'benfowler/telescope-luasnip.nvim', --   :Telescope luasnip
+      -- 'jfryy/keytrail.nvim',
       'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope-ui-select.nvim',
       'nvim-tree/nvim-web-devicons',
       { "nvim-telescope/telescope-live-grep-args.nvim" , version = "^1.0.0", },
     },
@@ -59,6 +61,7 @@ return {
         extensions = {
 	      frecency = { db_safe_mode = false, matcher = "fuzzy", }, -- frecency_nvim
           everything = { sort = true, }, -- everything_nvim
+          ["ui-select"] = { require("telescope.themes").get_dropdown { } },
         }, -- seem to need to be here, not in their return's
         pickers = {
           oldfiles = {
@@ -73,6 +76,7 @@ return {
       }
       pcall(require'telescope'.load_extension, 'fzf')
       local builtin = require'telescope.builtin' -- :help telescope.builtin
+      require'telescope'.load_extension('ui-select') -- eg  $vfn/lua/init.lua > /vim_opt_toggle > :lua vim.lsp.buf.code_action()
 
       -- ▩--> keymaps
       -- /^\s*vim.keymap.set({.*},'\zs.*\ze',

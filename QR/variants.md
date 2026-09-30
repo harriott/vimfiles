@@ -26,6 +26,7 @@ Joseph's (g)Vim Quick Reference
 
 - `:ts` (`:tselect`) for what's under the cursor
 - `gO` (`:h gO`) create a navigable outline (help, Man, LSP)
+- `*.json` with long lines slow to open & navigate, even if just a few lines
 
 ## comments
     :h cms  " commentstring
@@ -149,7 +150,7 @@ navigating into `C:\Vim` requires cursor on C
     :=vim.fn.stdpath("state")
 
 - `:che` (`:checkhealth`)
-    - if stuck in `unix`, `pkill neovim`
+    - if stuck in `unix`, `pkill -9 neovim`
     - somehow accesses `:white_check_mark:` ✅
 
 ### syntax
@@ -193,10 +194,10 @@ shared data
 - `lynx`, `w3m` override Nvim's keys...
 
 ## Treesitter
-    :=vim.treesitter.language_version  " :lua vim.treesitter.inspect_tree()
-    :InspectTree
+    :=vim.treesitter.language_version
+    :InspectTree  " :lua vim.treesitter.inspect_tree()
     :lua vim.treesitter.start()
-    :lua vim.treesitter.stop()
+    :lua vim.treesitter.stop()  " $vfn/lua/init.lua
 
 # Vim
     $ sut="$vimfiles/startuptimes/vim-$host.sut"; rm $sut; vim --startuptime $sut
@@ -306,6 +307,7 @@ vimscript
     let g:empty = 0 | if empty(g:empty) | echo 'empty' | endif
     let g:v = 1 | if g:v | echo g:v | endif
 
+- `echo [[1, 2], 'a']` nested list
 - `echo g:` gets a vast list
 - `let g:v = get(g:, 'v', 'v_not_set')` then `let g:v = 'v_set'`
 
@@ -388,6 +390,7 @@ options as variable: `:echo &textwidth`
 
 #### packpath
     :echo &pp
+    :h 'pp'
     :se pp
 
 `:put =&pp` then on the line `s/,/\r/g`

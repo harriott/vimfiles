@@ -9,13 +9,12 @@ require 'lazy/bootstrap'
 
 -- ▩-> 0 lazy.nvim 1
 require('lazy').setup(
-
-  -- ▩--> 1 snipe_nvim
-  require'lazy/snipe_nvim'
-  -- nvim -u $vimfiles/test/init.vim $vfn/lua/test.lua $vimfiles/test/init.vim
-
--- -- ▩-> 2 gitsigns.nvim
-
--- ▩-> post-setup
+  {
+    -- {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
+    require'lazy/keytrail_nvim',
+    require'lazy/nvim-treesitter',
+    -- require'lazy/snipe_nvim'
+    require'lazy/telescope_nvim',
+  } -- no comma!
 )
 

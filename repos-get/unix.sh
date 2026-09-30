@@ -12,6 +12,7 @@ cf="$vimfiles/repos-get/packs.clones"
 cd $vfvp; . $misc/GRs/getClonesList.sh $cf; cd $vimfiles
 
 #=> 1 clones 1 remove
+echo '- temporarily remove fzf, vim-gitgutter, vim-tagbar:'
 [ -d 'fzf' ] && sudo rm -r $vimfiles/repos-fzf
 
 # These will be re-cloned in the next step:

@@ -382,15 +382,17 @@ z/                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
     vim-mark
 
 ## following /
-	<ctrl-v>u0000               " (0000 is replaced by the hexadecimal code point value) for combining characters
-    \/                          " TweakLS()
-    \\q                         " search in my QuickReference notes
-	\C (anywhere)               " force case
-	\c (anywhere)               " ignore case
-	\k                          " iskeyword
-    \vs                         " last search in escaped visual selection
-    \v,(f|m|s),                 " finds  ,f,  ,m,  ,s,
-    :h %(                       " %(...) group isn't counted as a sub-expression
+	<ctrl-v>u0000 " (0000 is replaced by the hexadecimal code point value) for combining characters
+	<ctrl-v>u0000 " (0000 is replaced by the hexadecimal code point value) for combining characters
+    \%.lPATTERN   " in current line
+    \/            " TweakLS()
+    \\q           " search in my QuickReference notes
+	\C (anywhere) " force case
+	\c (anywhere) " ignore case
+	\k            " iskeyword
+    \vs           " last search in escaped visual selection
+    \v,(f|m|s),   " finds  ,f,  ,m,  ,s,
+    :h %(         " %(...) group isn't counted as a sub-expression
 
 ### magic levels
 	\M  " nomagic (for what follows), eg returning . & * to themselves

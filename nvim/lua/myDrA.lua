@@ -1,5 +1,5 @@
 
--- https://harriott.github.io/ - Thu 18 Jun 2026
+-- https://harriott.github.io/ - ven 18 sept 2026
 
 -- $vfn/lua/myDrA.lua
 --  conditionally required by  $vfn/init.lua
@@ -20,6 +20,9 @@ require('lazy').setup(
     -- ▩---> direct calls
     {'chaneyzorn/spellwand.nvim'}, -- $lazy/spellwand.nvim/README.md
     -- {'gelguy/wilder.nvim', config=function() end,}, -- see below
+    {'github/copilot.vim'}, -- $lazy/copilot.vim/doc/copilot.txt
+      -- :Copilot setup  for one-time code
+      -- <Tab>  accept the current suggestion
     {'HiPhish/rainbow-delimiters.nvim'}, -- parentheses slightly less visible but easier to distinguish
     {'JoosepAlviste/nvim-ts-context-commentstring'}, -- recognition of code blocks
       -- $lazy/nvim-ts-context-commentstring/doc/nvim-ts-context-commentstring.txt
@@ -34,7 +37,9 @@ require('lazy').setup(
     {'MagicDuck/grug-far.nvim', config = function() require('grug-far').setup({}); end, },
       -- $lazy/grug-far.nvim/README.md
       -- :GrugFar
+    {'mireq/large_file', config = function() require("large_file").setup() end, },
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
+      -- $lazy/numb.nvim/
       -- :N  briefly centers around line N
     -- {'numToStr/Comment.nvim',opts={},},
     {'sindrets/diffview.nvim'},
@@ -72,6 +77,7 @@ require('lazy').setup(
     require'lazy/helpview_nvim',
     require'lazy/indent-blankline_nvim',
     -- require'lazy/interestingwords',
+    -- require'lazy/keytrail_nvim',
     require'lazy/leap',
     require'lazy/lualine',
     require'lazy/markdown-preview',
@@ -129,7 +135,7 @@ require('lazy').setup(
          config=function() require('mason-lspconfig').setup{automatic_enable = false} end,},
       require('lazy/lspsaga'), -- excellent breadcrumbs, among other things
     -- ▩---> nvim-treesitter
-    require'lazy/nvim-treesitter' -- $vfn/lua/lazy/nvim-treesitter.lua
+    require'lazy/nvim-treesitter'
       -- 'nvim-treesitter/nvim-treesitter-context',
         -- *.lua  not perfect, even when  parser enabled
         -- context.vim  works better
@@ -159,6 +165,22 @@ require('lazy').setup(
 -- somehow breaks  vim-hexokinase
 -- somehow kills nvim's access to  /usr/bin/fzf
 
+-- ▩-> 2 for github/copilot.vim
+vim.cmd('Copilot disable') -- start off
+vim.g.copilot_enabled = 0
+
+local function CopilotToggle()
+  if vim.g.copilot_enabled == 0 then
+    vim.cmd('Copilot enable')
+    vim.g.copilot_enabled = 1
+  else
+    vim.cmd('Copilot disable')
+    vim.g.copilot_enabled = 0
+  end
+  vim.cmd('Copilot status')
+end
+vim.keymap.set('n','<leader>ct', CopilotToggle, {desc = 'toggle GitHub Copilot'})
+
 -- ▩-> 2 for lspsaga
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('LspMappings', {}),
@@ -171,6 +193,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
 -- ▩-> 2 for nvim-notify
 vim.notify('ready for :Notifications')
 
+-- ▩-> 2 for nvim-treesitter parsers - get
+-- :TSInstall! bash diff gnuplot markdown markdown_inline lua perl powershell python query rust vim vimdoc
+--  to  ~/.local/share/nvim/site/parser
+-- lua.so:  error (vim-illuminate) if open a  *.lua  without this parser present
+-- ▩-> 2 for nvim-treesitter parsers - on unix
+-- $vimfiles/settings-active-nvim/unix-TSInstallInfo-DOP3040D11S.txt
+-- $vimfiles/settings-active-nvim/unix-TSInstallInfo-sbMb.txt
+
+-- ▩-> 2 for nvim-treesitter parsers - on win64
+  -- $vimfiles/settings-active-nvim/win64-TSInstallInfo-HPEB840G37.txt
+  -- fd parser$ $HADL\nvim-data
+  -- g $lazy\nvim-treesitter\parser - when neovim 11
+
+-- ▩-> 2 for nvim-treesitter parsers - remove
+-- :TSUninstall bash diff ...
+--  from  ~/.local/share/nvim/site/parser
+--  nothing from  ~/.local/share/nvim/site/parser-info - still needed?
 -- ▩-> 2 for vim.lsp
 -- $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
 vim.keymap.set({'n'},'<leader>D',function() vim.diagnostic.reset(nil, vim.api.nvim_get_current_buf()) end, {desc='cleared Diagnostics'})
@@ -204,36 +243,19 @@ vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
   -- vscode-json-languageservice  for  json
   -- yamlls
 
+-- ▩--> Ruff
+-- :MasonInstall ruff
+vim.lsp.config('ruff', {
+  init_options = {
+    settings = {
+      fixAll = true  -- default setting, to avoid "invalid client settings"
+    }
+  }
+}) -- obviating  $vfn/lsp/ruff.lua
+vim.lsp.enable('ruff')
+
 -- -- ▩-> 2 for wilder
 -- vim.cmd('call wilder#setup({'modes': [':', '/', '?']})')
 -- vim.cmd('call wilder#set_option('renderer', wilder#popupmenu_renderer({ 'highlighter': wilder#basic_highlighter(), }))')
 -- -- but it's broken...
-
--- ▩-> 2 nvim-treesitter parsers - Neovim 0.11.x
-function GetTSParsers()
-  -- vim.cmd 'TSInstall bash'
-  -- vim.cmd 'TSInstall gnuplot'
-  -- vim.cmd 'TSInstall lua'
-    -- error (vim-illuminate) if open a  *.lua  without this parser present
-  -- vim.cmd 'TSInstall markdown'
-  -- vim.cmd 'TSInstall perl'
-  -- vim.cmd 'TSInstall python'
-  -- vim.cmd 'TSInstall query'
-  -- vim.cmd 'TSInstall sh'
-  -- vim.cmd 'TSInstall vim'
-  -- vim.cmd 'TSInstall vimdoc'
-end -- lua GetTSParsers(), then update the :TSInstallInfo  lists
--- on MSWin do these in  x64 Native Tools Command Prompt
-
--- ▩-> 2 nvim-treesitter parsers - on unix
--- $vimfiles/settings-active-nvim/unix-TSInstallInfo-DOP3040D11S.txt
--- $vimfiles/settings-active-nvim/unix-TSInstallInfo-sbMb.txt
--- /usr/lib/tree_sitter  seem slightly outdated
--- r $lazy/nvim-treesitter/parser - when neovim 11
--- r ~/.local/share/nvim/site/parser
-
--- ▩-> 2 nvim-treesitter parsers - on win64
-  -- $vimfiles/settings-active-nvim/win64-TSInstallInfo-HPEB840G37.txt
-  -- fd parser$ $HADL\nvim-data
-  -- g $lazy\nvim-treesitter\parser - when neovim 11
 

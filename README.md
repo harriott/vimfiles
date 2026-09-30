@@ -1,4 +1,4 @@
-vim: set fdl=4:
+vim: set fdl=3:
 
     $vimfiles/README.md
 

@@ -7,8 +7,7 @@
 " Last Change: Tue 08 Jul 2025
 " Detection: $vfv/filetype.vim
 
-" $vfv/ftplugin/ffl.vim
-"  also  $vfv/syntax/ffl.vim
+" $vfv/ftplugin/ffl.vim  also  $vfv/syntax/ffl.vim
 
 setlocal nowrap textwidth=0
 

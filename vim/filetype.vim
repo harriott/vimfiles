@@ -38,7 +38,7 @@ au BufRead,BufNew,BufNewFile *.gfm setlocal ft=gfm
 au BufRead,BufNew,BufNewFile */AppData/Roaming/Microsoft/Windows/PowerShell/PSReadLine/ConsoleHost_history.txt setlocal ft=ps1
 
 ""> 0 my Arch Bash history
-au BufNewFile,BufRead */bash_history* setlocal filetype=sh
+au BufNewFile,BufRead */*bash_history* setlocal filetype=sh
 
 ""> 0 my tmux.conf backups
 au BufNew,BufNewFile,BufRead $culLA/ml-*/tmux/**/*.conf setlocal filetype=tmux
@@ -79,6 +79,7 @@ aug filetypedetect
   au! BufRead,BufEnter /var/log/rsnapshot set ft=rsnapshotlog
   au! BufRead,BufNewFile *.asc          setf pem          " $vfv/ftplugin/pem.vim
   au! BufRead,BufNewFile *.build        setf build        " $vfv/syntax/build.vim
+  au! BufRead,BufNewFile *.cast         setf cast         " $vfv/syntax/cast.vim
   au! BufRead,BufNewFile *.clones       setf clones       " $vfv/syntax/clones.vim
   au! BufRead,BufNewFile *.cmplt        setf cmplt        " $vfv/syntax/cmplt.vim
   au! BufRead,BufNewFile *.cslF         setf cslF         " $vfv/syntax/cslF.vim
@@ -91,13 +92,14 @@ aug filetypedetect
   au! BufRead,BufNewFile *.fgc          setf fgc          " $vfv/syntax/fgc.vim
   au! BufRead,BufNewFile *.ffl          setf ffl          " $vfv/syntax/ffl.vim
   au! BufRead,BufNewFile *.Fn           setf Fn           " $vfv/syntax/Fn.vim
+  au! BufRead,BufNewFile *.gcfl         setf gcfl         " $vfv/syntax/gcfl.vim
   au! BufRead,BufNewFile *.gems         setf gems         " $vfv/syntax/gems.vim
   au! BufRead,BufNewFile *.gnudiff      setf gnudiff      " $vfv/syntax/gnudiff.vim
   au! BufRead,BufNewFile *.IMfo         setf IMfo         " $vfv/ftplugin/IMfo.vim
   au! BufRead,BufNewFile *.info         setf info         " $vfv/ftplugin/info.vim
   au! BufRead,BufNewFile *.jctl         setf jctl         " $vfv/syntax/jctl.vim
-  au! BufRead,BufNewFile *.leader       setf leader       " $vfv/syntax/leader.vim
-  au! BufRead,BufNewFile *.mail         setf mail         " $vfv/syntax/mail.vim
+  au! BufRead,BufNewFile *.mail         setf mail         " $VIMRUNTIME/syntax/mail.vim
+  au! BufRead,BufNewFile *.mbox         setf mail         " $VIMRUNTIME/syntax/mail.vim
   au! BufRead,BufNewFile *.osp          setf json         " $vfv/after/syntax/json.vim
   au! BufRead,BufNewFile *.gpgk         setf gpgk         " $vfv/after/syntax/gpgk.vim
   au! BufRead,BufNewFile *.rgo          setf rgo          " $vfv/syntax/rgo.vim
