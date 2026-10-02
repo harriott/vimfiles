@@ -47,6 +47,7 @@ else
       let $TeNo = $DrJo.'\Jo-now\TextNotes'
       let $ZNc = $DrJo.'\work-Cz-manage-online-ZNc'
     let $DrThb = $Drpbx.'\Thb'
+    let $ITcopfMSW = $Drpbx.'\IT\copied-forMSwin'
 endif
 
 "">> 0 $HOME
@@ -64,7 +65,6 @@ let $HADR = $HOME.'\AppData\Roaming'
 let $cITCP = $ITcore.'\CP'
   let $LTXj = $cITCP.'\documenting\LaTeX\jo'
 let $DWp = $ITcore.'\DokuWiki\pages'
-let $ITcop = $ITcore.'\copied-code'
 if $HOME == 'C:\Users\deaur'
   let $MSWml = 'D:\ITJ\ml'
 else

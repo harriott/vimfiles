@@ -729,6 +729,14 @@ function! VimgrepSelection()
   copen
 endfunction
 
+" search in my $DWp/public/
+nnoremap <leader>pu :call VimgrepDWpublic()<CR>
+function! VimgrepDWpublic()
+  call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@l.'#j '.$DWp.'/public/**/*.dw'
+  copen
+endfunction
+
 " search in my Bash & PowerShell configurations
 nnoremap <leader>bp :call VimgrepBcPc()<CR>
 function! VimgrepBcPc()

@@ -462,7 +462,7 @@ gx                    " open url under cursor (or all of first line of markdown 
 ## files & directories
 ```
 2c-g                            " buffer number & full filename (<c-f11>  on  AZERTY)
-:e ++ff=dos | set ff=unix | w!  " remove CRLFs - $vfv/plugin/plugin.vim
+:e ++ff=dos | set ff=unix | w!  " remove CRLF's - $vfv/plugin/plugin.vim
 :e.                             " dirvish (or netrw) on current directory
 :echo v:oldfiles
 :f  or  c-g                     " relative filename (:h :f)
