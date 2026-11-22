@@ -4,7 +4,7 @@
 
 " $vfv/syntax/caddy.vim
 "  copied from  https://github.com/isobit/vim-caddyfile  with thanks
-"   ($nDrGRs/d-CP/d-Vim-Vim/r-isobit-vim-caddyfile/syntax/caddyfile.vim)
+"   ($GRs/d-CP/d-Vim-Vim/r-isobit-vim-caddyfile/syntax/caddyfile.vim)
 
 "  also $vfv/ftplugin/caddy.vim
 

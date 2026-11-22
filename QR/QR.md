@@ -35,8 +35,6 @@ Joseph's (g)Vim Quick Reference
     C-6     " edit the alternate file (usually = the previous buffer)
     C-wgf   " open the file under the cursor in a new tab
     C-wo    " closes all other windows
-    C-i     " jump forward (to where you've been)
-    C-o     " jump back (to where you've been)
 
 ## BufExplorer
     \bd  " close all but visible buffers
@@ -64,16 +62,17 @@ Joseph's (g)Vim Quick Reference
 after a search, `:v//d` removes all non-matching lines
 
 # layout
+    :%!jq .    " unminify a JSON
     :h CTRL-L
-    :Prettier     " apply  prettier  to json & others
-    :se et?       " expandtab - allows  :retab
-    :se ch        " cmdheight
-    :set cole=0   " conceallevel
-    :se cwh       " cmdwinheight - I like 30
-    \ll           " location list (ListToggle) if it's there
-    \\c           " cursorcolumn toggle
-    \\l           " cursorline toggle
-    \\ll          " listchars (:h 'list') toggle (local)
+    :Prettier  " apply  prettier  to JSON & others
+    :se et?    " expandtab - allows  :retab
+    :se ch     " cmdheight
+    :se cole=0 " conceallevel
+    :se cwh    " cmdwinheight - I like 30
+    \ll        " location list (ListToggle) if it's there
+    \\c        " cursorcolumn toggle
+    \\l        " cursorline toggle
+    \\ll       " listchars (:h 'list') toggle (local)
 
 ## Colorizer
     :ColorClear         " clears colourizing
@@ -402,6 +401,7 @@ z/                    " begins an  incsearch-fuzzy-stay ($vfv/plugin/packsFull.v
 ### regex
     ^[^"]*  " match until quote
     [^/\\]  " all but / & \
+    [^A-Z]  " not upper case
     *       " 0 or more
     \=      " 0 or 1 more
     \+      " 1 or more
@@ -535,20 +535,21 @@ $APPDATA\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 
 # tricks
     :%s\\v^.*$\\= submatch(0)." ".repeat("=", 70 - len(submatch(0)))  " pad out ends
-    :echo &bomb " 1 if BOM
-    :exe        " :execute
+    :echo &bomb  " 1 if BOM
+    :exe  " :execute
+    :h g_CTRL-G  " position and word info, works on a range too
     :if 1 | echo "yes" | endif
     :so /usr/share/vim/vim90/tools/emoji_list.vim
 
 ```vim
+0d^                                                " delete line's leading whitespaces
 :g/^/m 0                                           " reverse the entire buffer
 :if 0 | echo 'true' | else | echo 'false' | endif  " try  if 1
-:h g_CTRL-G                                        " position and word info, works on a range too
 :sleep
 :t.                                                " reproduce line
 :t.|s\.\=\g                                        " setext-style header underlining
 :.,+3s/foo/bar                                     " replaces on this and next 3 lines
-\yy                                                " CalendarH
+\C                                                 " :CalendarH
 ctrl-q ctrl-m                                      " inserts ^M (carriage return)
 g&                                                 " repeat last command over the whole document
 ni<somecharacter><esc>                             " inserts <somecharacters> n time

@@ -6,7 +6,7 @@
 
 " $vfv/syntax/info.vim
 "  contents below copied from
-"   $nDrGRs/d-CP/d-Vim-Vim/r-HiPhish-info.vim/syntax/info.vim
+"   $GRs/d-CP/d-Vim-Vim/r-HiPhish-info.vim/syntax/info.vim
 
 " ============================================================================
 

@@ -1,7 +1,7 @@
 
 " Language: dokuwiki
 " Maintainer: Joseph Harriott
-" Last Change: Mon 16 Feb 2026
+" Last Change: Sun 22 Nov 2026
 " $vfv/ftplugin/dokuwiki.vim
 
 " tweaked  $vfvp/packs-cp-full/opt/vim-dokuwiki/syntax/dokuwiki.vim  manages the syntax
@@ -11,9 +11,6 @@ function! PageTitleToHyperlink()
   execute 's#\v(^.*)'.l:pagetitle.'  (http.*)($| )#\1[[\2 |'.l:pagetitle.']]#'
 endfunction
 vnoremap <buffer><leader>hy :call PageTitleToHyperlink()<CR>
-
-" convert  '^page_title  http...'  to external link ([[http... |page_title]])
-nnoremap <buffer><localleader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
 
 let b:match_words = '<:>'
 set nospell
@@ -91,6 +88,17 @@ nnoremap <buffer> <leader>= I=<Esc>A=<Esc>
 " create a heading:
 nnoremap <buffer> <leader><leader>= I=== <Esc>A ===<Esc>
 
+""> http... converts
+" '^page_title  http...' -> external link ([[http... |page_title]])
+nnoremap <buffer><localleader>h :s/\(.\+\)  \(http.\+\)/[[\2 \|\1]]/<bar>noh<cr>
+
+" https://wiki.archlinux.org/title/Main_page -> $usdaw/Main_page.html, which can then  gx
+function! Convert_to_usdaw()
+    :s;https://wiki.archlinux.org/title;''$usdaw
+    norm A.html''
+endfunction
+nnoremap <buffer><localleader>u :call Convert_to_usdaw()<CR>
+
 ""> inline monospacing
 " convert monospaced to unformatted
 nnoremap <buffer><leader><leader>5 ?''<cr>i<cr><esc>:s/''/%% /<cr>:s/''/ %%/<cr>kJ
@@ -99,7 +107,7 @@ nnoremap <buffer><leader><leader>5 ?''<cr>i<cr><esc>:s/''/%% /<cr>:s/''/ %%/<cr>
 " nnoremap <buffer><leader><leader>' T'vt'y
 
 " select ''within''
-nnoremap <buffer><leader><leader>' ?\%.l''<cr>r<cr><<x/\%.l''<cr>D0y$u
+nnoremap <buffer><leader><leader>' ?\%.l''<cr>xr<cr>0d^/\%.l''<cr>D0y$u
 
 " wrap the inner word under cursor with ''
 nnoremap <buffer> <leader>' viwc''''<Esc>hP

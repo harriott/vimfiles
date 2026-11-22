@@ -3,7 +3,7 @@
 --  lua require'bufs_nvim'.list_bufs()
 
 -- copied from
---  $nDrGRs/d-CP/d-Vim-Nvim/r-leath-dub-bufs_nvim/lua/bufs.lua
+--  $GRs/d-CP/d-Vim-Nvim/r-leath-dub-bufs_nvim/lua/bufs.lua
 --  (see  https://github.com/leath-dub/bufs.nvim)
 
 local M = {}

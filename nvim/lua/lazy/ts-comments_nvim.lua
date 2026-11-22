@@ -8,6 +8,7 @@ return { 'folke/ts-comments.nvim',
   event = "VeryLazy",
   opts = {
     lang = {
+      hjson = { "# %s" },
       ps1 = { "# %s" },
       vim = { "\" %s" },
     },

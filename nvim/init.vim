@@ -7,7 +7,7 @@
 " $vfn/init.vim
 " symlinked by
 "  $MSWin10\mb\symlinks.ps1
-"  $OSAB/nodes/set/jo-2-whenWM-0.sh
+"  $ABno/set/jo-2-whenWM-0.sh
 
 let g:sourced_init_vim = 1
 
@@ -78,6 +78,19 @@ if has('win64') || exists('g:neovide')
     \ 'default.dark': { 'override' : { 'color05':['','247'], 'error_fg':['','09'],
       \ 'folded_bg':['','234'], 'linenumber_fg':['','243'], } } } }
   set background=dark | color PaperColor
+  " syntax toggle :hi Folded - helpful for :Man ...
+  let g:FoldedLessObtrusive = 0
+  nnoremap <silent><leader>F :call HighlightFolded()<cr>
+  function! HighlightFolded()
+    if g:FoldedLessObtrusive
+      hi Folded guifg=#d787ff
+      let g:FoldedLessObtrusive = 0
+    else
+      hi Folded guifg=grey
+      let g:FoldedLessObtrusive = 1
+      " echo 'illuminatedWord buildN - refresh the buffer'
+    endif
+  endfunction
   " colo wombat
 else
   if $myDrA | colo jellybeans | endif

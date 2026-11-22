@@ -27,5 +27,5 @@ return {
     },
     suggest = { fromVimruntime = true, fromRuntimepath = true },
   },
-} -- from  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/vimls.lua
+} -- from  $GRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/vimls.lua
 

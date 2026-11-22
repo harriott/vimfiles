@@ -15,7 +15,7 @@ syntax sync fromstart  " for longer build scripts
 
 ""> 0 highlight my folds
 " overriding  :hi def link luaComment Comment
-" eg for  $culLA/old/mb-AsusW202/jo/awesome/rc.lua
+" eg for  $coAr/old/mb-AsusW202/jo/awesome/rc.lua
 
 " syntax match foldLua '-- ▩-.*$'
 syntax match foldLua '^\s*-- ▩-\+>.*$'
@@ -23,7 +23,7 @@ syntax match foldLua '^\s*-- ▩-\+>.*$'
 " Unfolded headings:
 hi def foldLua term=bold cterm=bold gui=bold guifg=LightGreen
 " - in  Neovide  or  WT  need to disable  highlights.scm
-"   ($cITCP/encoding/Vim/Nvim/lua_syntax_in_NVIM_0_10_0.md)
+"   ($CPenc/Vim/Nvim/lua_syntax_in_NVIM_0_10_0.md)
 "   done in  $vfn/lua/init.lua
 
 ""> 1 ends

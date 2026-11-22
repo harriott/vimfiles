@@ -189,7 +189,7 @@ imap <c-d> <Plug>(fzf-dictionary-open)
 ""> layout - clrzr
 " $vfvp/packs-unix/opt/clrzr/doc/clrzr.txt
 " just :packadd clrzr  then  $vfvp/packs-unix/opt/clrzr/colortest.txt
-" doesn't work for  $culLA/IM-magick-list_color.txt
+" doesn't work for  $coAr/IM-magick-list_color.txt
 
 ""> move - vindent.vim
 let g:vindent_motion_less_prev = '[-' " jump to prev line with less indent

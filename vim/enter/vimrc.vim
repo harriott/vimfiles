@@ -72,7 +72,7 @@ set splitbelow
 " colo apprentice  " not in nvim
 " colo dracula
 " colo jellybeans
-" color PaperColor
+" colo PaperColor
 " colo wombat
 if $myDrA && !has('gui_running') && !has('nvim') | color deus | endif  " plain vim only
 

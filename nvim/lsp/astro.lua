@@ -19,5 +19,5 @@ return {
       config.init_options.typescript.tsdk = util.get_typescript_server_path(config.root_dir)
     end
   end,
-} -- based on  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/astro.lua
+} -- based on  $GRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/astro.lua
 

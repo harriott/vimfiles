@@ -3,7 +3,7 @@
 
 -- $vfn/lua/init.lua
 --  require'd by  $vfn/init.vim
---  adapted from  $nDrGRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
+--  adapted from  $GRs/CP/Nvim/nvim-lua-kickstart.nvim/init.lua
 --  =e ($vfv/ftplugin/lua.vim)
 
 -- vim.loader.enable()

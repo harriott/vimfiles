@@ -5,6 +5,7 @@
 
 -- $vfn/lua/lazy/telescope_nvim.lua
 
+-- :cd $Drpbx/copied | Telescope find_files
 -- :checkhealth telescope
 -- :h telescope  then  /^builtin.
 -- :Telescope colorscheme

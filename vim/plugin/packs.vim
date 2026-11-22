@@ -4,7 +4,7 @@
 " $vfv/plugin/packs.vim
 "  symlinked in
 "   $MSn/set/3.ps1
-"   $OSAB/nodes-set/jo-1-encoding.sh
+"   $ABno-set/jo-3-encoding.sh
 "  annoyingly, sourced before  $vfv/plugin/plugin.vim
 
 " $ ls $vimfiles -r vim/packs*/opt

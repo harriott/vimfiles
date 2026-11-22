@@ -1,6 +1,6 @@
 
 " Language: gems - see  $OSAB/QR/encoding.md
-"  gem list > $culLA/$host/gems.gems
+"  gem list > $coAr/$host/gems.gems
 " Maintainer: Joseph Harriott
 " Last Change: Thu 04 Jun 2026
 " $vfv/syntax/gems.vim

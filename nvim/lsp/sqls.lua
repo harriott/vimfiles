@@ -12,5 +12,5 @@ return {
   filetypes = { 'sql', 'mysql' },
   root_markers = { 'config.yml' },
   settings = {},
-} -- based on $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/sqls.lua
+} -- based on $GRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/sqls.lua
 

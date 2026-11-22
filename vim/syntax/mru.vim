@@ -13,7 +13,7 @@ if exists('b:current_syntax') | finish |  endif
 syn match MRU_Cz 'work-Cz'
 hi def link MRU_Cz DiffDelete
 
-""> $culLA/build, $DWp
+""> $coAr/build, $DWp
 syn match MRU_dusty 'dusty'
 hi def link MRU_dusty Directory
 

@@ -81,7 +81,7 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 if $TERM_PROGRAM != 'WezTerm'
   packadd quick-scope
-endif " $cITCP/encoding/Vim/quick-scope-Neovim_in_WezTerm_AZERTY_number_fail.md
+endif " $CPenc/Vim/quick-scope-Neovim_in_WezTerm_AZERTY_number_fail.md
 
 ""> text wrangling - vim-asterisk
 packadd vim-asterisk

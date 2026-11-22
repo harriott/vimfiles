@@ -1,7 +1,11 @@
 
-" Language: my rsync log files
+" Language: FMrd
+"  $onGH/FM-rsync-drives/README.md
+"   https://github.com/harriott/FM-rsync-drives/blob/master/README.md
 " Maintainer: Joseph Harriott
-" Last Change: Mon 12 Oct 2020
+" Last Change: Sun 25 Oct 2026
+
+" $vfv/syntax/FMrd.vim (also  $vfv/ftplugin/FMrd.vim)
 
 syntax match Diminish '\(^-\|^A\|^v\).*$'
 syntax match Fail '^!.*$'
@@ -12,7 +16,7 @@ hi def Fail guifg=Red
 hi def Push guifg=LightGreen
 " see  cterm-colors  in  ../keystrokes.md
 
-let b:current_syntax = "rsynclog"
+let b:current_syntax = "FMrd"
 
 syntax sync fromstart  " for longer build scripts
 

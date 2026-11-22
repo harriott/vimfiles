@@ -37,7 +37,12 @@ require('lazy').setup(
     {'MagicDuck/grug-far.nvim', config = function() require('grug-far').setup({}); end, },
       -- $lazy/grug-far.nvim/README.md
       -- :GrugFar
-    {'mireq/large_file', config = function() require("large_file").setup() end, },
+    -- {'mireq/large_file', config = function() require("large_file").setup() end, },
+      -- $lazy/large_file/README.md
+      -- does  set buftype=nowrite
+      -- no way to not load it for a filetype, eg those managed by
+        -- $vfv/ftplugin/rsnapshotlog.vim
+        -- $vfv/ftplugin/rsynclog.vim
     {'nacro90/numb.nvim', config = function() require('numb').setup() end, },
       -- $lazy/numb.nvim/
       -- :N  briefly centers around line N
@@ -211,7 +216,7 @@ vim.notify('ready for :Notifications')
 --  from  ~/.local/share/nvim/site/parser
 --  nothing from  ~/.local/share/nvim/site/parser-info - still needed?
 -- ▩-> 2 for vim.lsp
--- $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
+-- $GRs/d-CP/d-Vim-Nvim/r-neovim-neovim/runtime/doc/lsp.txt
 vim.keymap.set({'n'},'<leader>D',function() vim.diagnostic.reset(nil, vim.api.nvim_get_current_buf()) end, {desc='cleared Diagnostics'})
 vim.keymap.set({'n'},'<leader>S','<cmd>che vim.lsp<cr>', {desc=':checkhealth vim.lsp'})
 
@@ -243,7 +248,7 @@ vim.lsp.enable({'vimls'}) -- $vfn/lsp/vimls.lua
   -- vscode-json-languageservice  for  json
   -- yamlls
 
--- ▩--> Ruff
+-- ▩--> Ruff (for Python)
 -- :MasonInstall ruff
 vim.lsp.config('ruff', {
   init_options = {

@@ -13,6 +13,6 @@ return {
   settings = {},
 }
 -- based on
---  $nDrGRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ruff.lua
+--  $GRs/d-CP/d-Vim-Nvim/r-neovim-nvim-lspconfig/lsp/ruff.lua
 --  same as in  https://docs.astral.sh/ruff/editors/setup/
 

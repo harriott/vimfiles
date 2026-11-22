@@ -27,7 +27,7 @@ return {
   { 'folke/lazydev.nvim', -- recommended, and my reason to keep using  nvim-lspconfig
     ft = 'lua',
     opts = { library = { { path = '${3rd}/luv/library', words = { 'vim%.uv' } }, }, },
-  }, -- $nDrGRs/d-CP/d-Vim-Nvim/r-dam9000-kickstart-modular.nvim/lua/kickstart/plugins/lspconfig.lua
+  }, -- $GRs/d-CP/d-Vim-Nvim/r-dam9000-kickstart-modular.nvim/lua/kickstart/plugins/lspconfig.lua
 
   { 'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
@@ -39,7 +39,7 @@ return {
         vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('silent! lsp disable') print('lsp disable\'d') end,{desc=':lsp disable'})
       else
         vim.keymap.set({'n'},'<localleader>s', function() vim.cmd('LspStop') print('LspStop\'d') end,{desc=':LspStop'})
-        vim.keymap.set({'n'},'<localleader>l', function() vim.cmd('LspStop ltex') print('LspStop\'d ltex') end,{desc=':LspStop ltex'}) -- if  =s  fails. Needs  C:\Lua  in path
+        vim.keymap.set({'n'},'<localleader>l', function() vim.cmd('LspStop ltex') print('LspStop\'d ltex') end,{desc=':LspStop ltex'}) -- if  =s  fails. Needs  C:\Lua  in path. For some reason not working in  *.md in unix.
       end
 
     end,

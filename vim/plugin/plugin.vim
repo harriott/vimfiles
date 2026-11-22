@@ -2,7 +2,7 @@
 " Joseph Harriott - Thu 11 Dec 2025
 
 " $vfv/plugin/plugin.vim
-"  symlinked by  $OSAB/nodes-set/jo-2-whenWM-0.sh
+"  symlinked by  $ABno-set/jo-2-whenWM-0.sh
 "  annoyingly, sourced after  $vfv/plugin/packs.vim
 
 if exists('g:block_plugin_plugin') | echo 'blocked  $vfv/plugin/plugin.vim' | finish | endif
@@ -191,7 +191,7 @@ function! ClearFancyGlyphs()
   :sil!%s/⎯/-/g  " horizontal line extension
   :sil!%s/―/-/g
   :sil!%s/−/-/g
-  :sil!%s/­//g  " remove soft hyphen
+  :sil!%s/­//g  " soft hyphen
   :sil!%s/…/.../g
   :sil!%s/，/,/g
   :sil!%s/：/:/g
@@ -520,6 +520,9 @@ function! Grab_exrc()
 endfunction
 
 ""> layout
+" :Man  pages
+let g:ft_man_folding_enable = 1
+
 " clearmatches (see  $ITmCP/Vim/plugins/csv_vim/HiColumnLeaky/issue.md)
 inoremap <leader><leader><f5> :call clearmatches()<cr>
 nnoremap <leader><leader><f5> :call clearmatches()<cr>
@@ -704,63 +707,6 @@ function! IncSearchToggle()
   endif
 endfunction
 
-"">> grepping
-" Strip the current selection & store it in the l then s register:
-function! StripStoreCurSel()
-  let l:lastvimsearch = getreg('/')
-  " remove the '\V' (very nomagic) prefix, if it's there:
-  let @l = substitute(l:lastvimsearch, "^\\\\V", "", "")
-  " remove any leading hyphens that somehow cause chaos in Ggrep:
-  let @h = substitute(@l, "^-\\+", "", "")
-  " remove '\<' & '\>' (:s#\(^\\<\|\\>$\)##g):
-  let g:strippedSearch = substitute(@h, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
-  let @s = g:strippedSearch
-  " escape spaces for  FzfLua grep
-  let @b = substitute(@s, " ", "\\\\ ", "g")
-endfunction
-
-" cd to file's and vimgrep for last search
-nnoremap <leader>vg :call VimgrepSelection()<CR>
-function! VimgrepSelection()
-  cd %:p:h
-  call StripStoreCurSel()
-  let l:filetypes = '*.{cls,md,dw,lua,sh,sty,tex,txt,vim}'
-  execute 'silent! vimgrep #'.@l.'#j '.l:filetypes' **/'.l:filetypes
-  copen
-endfunction
-
-" search in my $DWp/public/
-nnoremap <leader>pu :call VimgrepDWpublic()<CR>
-function! VimgrepDWpublic()
-  call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$DWp.'/public/**/*.dw'
-  copen
-endfunction
-
-" search in my Bash & PowerShell configurations
-nnoremap <leader>bp :call VimgrepBcPc()<CR>
-function! VimgrepBcPc()
-  call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$AjB.'/bash_profile '.$AjB.'/bashrc* '.$MSWin10.'/nodes/PS/Env.ps1 '.$MSWin10.'/nodes/PS/Profile.ps1 '.$OSAB.'/nodes-Bash/* '.$OSL.'/nodes/bashrc-*'
-  copen
-endfunction
-
-" search in my QuickReference notes
-nnoremap <leader><leader>q :call VimgrepQRs()<CR>
-function! VimgrepQRs()
-  call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/**/*.md '.$OSL.'/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
-  copen
-endfunction
-
-" search in my Vim configuration
-nnoremap <leader>rc :call Vimgrepvimrc()<CR>
-function! Vimgrepvimrc()
-  call StripStoreCurSel()
-  execute 'silent! vimgrep #'.@l.'#j '.$vfv.'/**/* '.$vfn.'/**/*'
-  copen
-endfunction
-
 "">> parenthesis matching
 if !exists("g:loaded_matchparen")
   autocmd VimEnter * NoMatchParen  "turn off parenthesis matching at start
@@ -808,9 +754,13 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 2
 nnoremap <leader>- :Hexplore<cr>
 
-" open in Emacs
+" open in  Emacs
 nnoremap <leader><f12> :call OpenInEmacs()<CR>
 inoremap <leader><f12> :<Esc>call OpenInEmacs()<CR>
+
+" open in  Firefox
+nnoremap <leader>F :call OpenInFirefox()<CR>
+inoremap <leader>F :<Esc>call OpenInFirefox()<CR>
 
 " PowerShell
 nnoremap <leader><leader>t :sp term://pwsh<CR>
@@ -822,6 +772,69 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <F2> :wa<CR>
 inoremap <F2> <Esc>:wa<CR>
 vnoremap <F2> <Esc>:wa<CR>
+
+" :Man  in  Vim
+if !has('nvim') && has('unix')
+  so $VIMRUNTIME/ftplugin/man.vim
+  " :Man find  throws a  troff  warning
+endif
+
+"">> grepping
+" Strip the current selection & store it in the l then s register:
+function! StripStoreCurSel()
+  let l:lastvimsearch = getreg('/')
+  " remove the '\V' (very nomagic) prefix, if it's there:
+  let @l = substitute(l:lastvimsearch, "^\\\\V", "", "")
+  " remove any leading hyphens that somehow cause chaos in Ggrep:
+  let @h = substitute(@l, "^-\\+", "", "")
+  " remove '\<' & '\>' (:s#\(^\\<\|\\>$\)##g):
+  let g:strippedSearch = substitute(@h, "\\(^\\\\<\\|\\\\>$\\)", "", "g")
+  let @s = g:strippedSearch
+  " escape spaces for  FzfLua grep
+  let @b = substitute(@s, " ", "\\\\ ", "g")
+endfunction
+
+" cd to file's and vimgrep for last search
+nnoremap <leader>vg :call VimgrepSelection()<CR>
+function! VimgrepSelection()
+  cd %:p:h
+  call StripStoreCurSel()
+  let l:filetypes = '**/*.{cls,md,dw,lua,sh,sty,tex,txt,vim}'
+  execute 'silent! vimgrep #'.@l.'#j '.l:filetypes
+  copen
+endfunction
+
+" search in my $DWp/public/
+nnoremap <leader>pu :call VimgrepDWpublic()<CR>
+function! VimgrepDWpublic()
+  call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@l.'#j '.$DWp.'/public/**/*.dw'
+  copen
+endfunction
+
+" search in my Bash & PowerShell configurations
+nnoremap <leader>bp :call VimgrepBcPc()<CR>
+function! VimgrepBcPc()
+  call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@l.'#j '.$ABno.'/Bash/**/* '.$AjB.'/bash_profile '.$AjB.'/bashrc* '.$MSWin10.'/nodes/PS/En.ps1 '.$MSWin10.'/nodes/PS/Profile.ps1 '.$OSAB.'/nodes-Bash/* '.$OSL.'/nodes/bashrc-*'
+  copen
+endfunction
+
+" search in my QuickReference notes
+nnoremap <leader><leader>q :call VimgrepQRs()<CR>
+function! VimgrepQRs()
+  call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@l.'#j '.$misc.'/CP/QR/**/*.md '.$OSL.'/QR/*.md '.$MSWin10.'/QR/*.md '.$OSAB.'/QR/*.md'
+  copen
+endfunction
+
+" search in my Vim configuration
+nnoremap <leader>rc :call Vimgrepvimrc()<CR>
+function! Vimgrepvimrc()
+  call StripStoreCurSel()
+  execute 'silent! vimgrep #'.@l.'#j '.$vfv.'/**/* '.$vfn.'/**/*'
+  copen
+endfunction
 
 ""> turn off some unused Fn keys in insert mode
 inoremap <F3> <Esc>

@@ -41,7 +41,7 @@ au BufRead,BufNew,BufNewFile */AppData/Roaming/Microsoft/Windows/PowerShell/PSRe
 au BufNewFile,BufRead */*bash_history* setlocal filetype=sh
 
 ""> 0 my tmux.conf backups
-au BufNew,BufNewFile,BufRead $culLA/ml-*/tmux/**/*.conf setlocal filetype=tmux
+au BufNew,BufNewFile,BufRead $coAr/ml-*/tmux/**/*.conf setlocal filetype=tmux
 
 ""> 0 nomacs configuration
 au BufRead,BufNew,BufNewFile ~/.config/nomacs/Image\ Lounge.conf setlocal ft=dosini

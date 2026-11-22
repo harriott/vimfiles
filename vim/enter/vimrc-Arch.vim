@@ -22,6 +22,12 @@ function! OpenInEmacs()
 endfunction
 " this function is only needed for markdown and TeX files
 
+""> 1 open in Firefox
+function! OpenInFirefox()
+  execute 'silent !firefox '.expand('%:p').' & disown'
+endfunction
+"
+
 ""> 1 open equivalent LaTeX compiled PDF
 function! CompiledPDF()
   execute 'silent !zathura '.expand('%:p:r').'.pdf & disown'

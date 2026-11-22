@@ -11,7 +11,7 @@
 ""> paths
 let $CPF = $programfiles
 let $notDr = 'D:\notDr'
-  let $nDrGRs = $notDr.'\GRs'
+  let $GRs = $notDr.'\GRs'
 
 "">> 0 maybe $Drpbx
 if $HOME == 'C:\Users\deaur'
@@ -36,8 +36,6 @@ else
         let $FFIdF = $FrFa.'\France\IdF'
       let $ITcore = $Drpbx.'\IT\core'
       let $Jotech = $DrJo.'\Jo-technos'
-        let $jtIT = $Jotech.'\IT'
-          let $ITmCP = $jtIT.'\CP'
         let $ITsto = $Jotech.'\IT-storage'  " $ITsto\diskUsage.txt
       let $Jwk = $DrJo.'\work'
         let $Jhm = $Jwk.'\IT\Jekyll-harriott-minima'
@@ -84,9 +82,9 @@ let $onGH = $ITcore.'\onGitHub'
   let $OSL = $onGH.'\OS-Linux'
     let $clMail = $OSL.'\nodes\jo\clm'
       let $clMn = $clMail.'\neomutt'
-  let $culL = $ITcore.'\ulLinux'
-    let $lclm = $culL.'\clm'
-    let $culLA = $culL.'\Arch'
+  let $coLi = $ITcore.'\ulLinux'
+    let $lclm = $coLi.'\clm'
+    let $coAr = $coLi.'\Arch'
   if $HOME == 'C:\Users\deaur'
     let $vimfiles = 'D:\ITJ\RC-vimfiles'
   else

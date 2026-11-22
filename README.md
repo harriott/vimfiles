@@ -34,7 +34,7 @@ Some of my `vim` configuraton files are long, but they don't appear so to me as 
 ## prerequisites
 - a `Vim` flavour, of course
 - The relevant files of this repository correctly symlinked, as in:
-    - [$OSAB/nodes/set/jo-2-whenWM-0.sh](https://github.com/harriott/OS-ArchBuilds/blob/master/nodes/set/jo-2-whenWM-0.sh)
+    - [$ABno/set/jo-2-whenWM-0.sh](https://github.com/harriott/OS-ArchBuilds/blob/master/nodes/set/jo-2-whenWM-0.sh)
     - [$MSn/set/3.ps1](https://github.com/harriott/OS-MSWin10/blob/master/nodes/set/3.ps1)
     - [$MSn/set/6-WSL-nodes.sh](https://github.com/harriott/OS-MSWin10/blob/master/nodes/set/6-WSL-nodes.sh)
 
@@ -48,7 +48,7 @@ When I somehow managed, from `PowerShell` to convert hundreds of files in my con
     & $vimfiles/vim/packs/get/unix/get.sh  # - not ready yet, see  $vimfiles/vim/packs/get/win64/get.ps1  which downloads all the plugins that I use
 
 ### fix 2: convert the snagging files to LF
-1. name for the dos files list: `df="$cITCP/encoding/Vim/grep_CRLF.ffl"` (using my [$vimfiles/syntax/ffl.vim](https://github.com/harriott/vimfiles/blob/master/vim/syntax/ffl.vim))
+1. name for the dos files list: `df="$CPenc/Vim/grep_CRLF.ffl"` (using my [$vimfiles/syntax/ffl.vim](https://github.com/harriott/vimfiles/blob/master/vim/syntax/ffl.vim))
 1. `cd $vimfiles`
 1. list the culprits: `fd -Itf -x grep -rIl -m 1 $'\r' > $df`
 1. do the conversions: `while read CRLFfile; do sed -i 's/\r//' "${CRLFfile/:*}"; done <$df`

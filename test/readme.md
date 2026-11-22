@@ -52,7 +52,7 @@ fn main() {
 my reduced vim files for testing
 
 ## linux tests
-    $cITCP/encoding/Vim/Nvim/numb_nvim/minimal_init.lua
+    $CPenc/Vim/Nvim/numb_nvim/minimal_init.lua
 
 `$vimfiles/test/init.vim` which requires `$vfn/lua/test.lua`
 

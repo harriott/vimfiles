@@ -4,7 +4,7 @@
 
 -- brings in  tsserver  Diagnostics
   -- $cITCP/scratch.ts
-  -- look in  $nDrGRs/dts-ts.ffl
+  -- look in  $GRs/dts-ts.ffl
 
 return { 'pmizio/typescript-tools.nvim',
     dependencies = {
